@@ -163,6 +163,7 @@ $$
 Im nachstehenden Video wird die Berechnung der Zerlegung eines Polynoms in Linearfaktoren im Zusammenhang der Nullstellenberechnung ganzrationaler Funktionen erläutert. Im darauf folgenden Video wird unter Voraussetzung nur reeller Nullstellen die Produktdarstellung in Linearfaktoren abgeleitet.
 
 !?[Linearfaktoren](https://www.youtube.com/watch?v=rXMLZmKoNck)
+
 !?[Linearfaktoren](https://www.youtube.com/watch?v=wRc6AtV7HmY)
 
 >**Folgerung 2.** ([Satz von Vieta](https://de.wikipedia.org/wiki/Satz_von_Vieta)) Für eine beliebige algebraische Gleichung $p(x)=0$ vom Grad $n$ mit $$
@@ -289,6 +290,56 @@ factor(p,x)
 @Algebrite.eval
 
 
+Sicher gewusst
+===
+
+
+Testen Sie Ihr Wissen in diesem Abschnitt und Beantworten Sie die folgenden Fragen.
+
+**Frage 1.** Eine algebraische Gleichung $p(x)=0$ mit dem Polynom $$
+  p(x)=\sum_{k=0}^n{a_k\cdot x^k}\quad\text{mit}\quad a_k\in\mathbb{R}\;,\quad a_n\not=0\;,\quad n\geq 2
+$$ mit besitzt die Lösung $x_0=-3+4\cdot i$, worin $i^2=-1$.
+
+Berechnen Sie einen reellen quadratischen Faktor des Polynoms $p(x)$.
+
+[( )] $$ x^2+6\cdot x-25 $$
+[(X)] $$ x^2+6\cdot x+25 $$
+[( )] $$ x^2-6\cdot x+25 $$
+[[?]] Mit $x_0$ ist auch deren komplex konjugierte Zahl $\bar{x}_0=-3-4\cdot i$ eine Lösung der Gleichung. Bilden Sie die zugehörigen Linearfaktoren sowie deren Produkt.
+****************************************
+
+Es sind $(x-x_0)=(x-(-3+4\cdot i))$ und $(x-\bar{x}_0)=(x-(-3-4\cdot i))$ Faktoren des reellen Polynoms $p(x)$, damit auch $$
+  (x-(-3+4\cdot i))\cdot(x-(-3-4\cdot i))=x^2+6\cdot x+25
+$$
+
+****************************************
+
+**Frage 2.** Die komplexen Zahlen $$
+  z_1=1+i\;,\quad z_2=-1+i\;,\quad z_3=-1-i\quad\text{und}\quad z_4=1-i\quad\text{mit}\quad i^2=-1
+$$ sind Lösungen einer algebraischen Gleichung $$
+  p(z)=z^4+a_3\cdot z^3+a_2\cdot z^2+a_1\cdot z^1+a_0=0
+$$ worin $a_j\in\mathbb{R}$ für alle $j$ reelle Koeffizienten bezeichnen.
+
+Berechnen Sie die das Polynom $p(z)$.
+
+[( )] $$ p(z)=z^2-2\cdot z+2 $$
+[( )] $$ p(z)=2\cdot z^4+8 $$
+[(X)] $$ p(z)=z^4+4 $$
+[[?]] Für jede Lösung $z_j$ von $p(z)=0$ lässt sich von $p(z)$ der Linearfaktor $(z-z_j)$ abspalten.
+****************************************
+
+Zu den Lösungen $z_j$, $j\in\{1,2,3,4\}$, können die Linearfaktoren $(z-z_j)$ gebildet werden. Da $z_1=\bar{z}_4$ sowie $z_2=\bar{z}_3$, können die reellen, quadratischen Faktoren $$
+  (z-z_1)\cdot(z-z_4)=z^2-2\cdot z+2\quad\text{und}\quad
+  (z-z_2)\cdot(z-z_3)=z^2+2\cdot z+2
+$$ berechnet werden. Deren Produkt ergibt $$
+  \left(z^2-2\cdot z+2\right)\cdot\left(z^2-2\cdot z+2\right)=x^4+4
+$$ Der Koeffizient dieses Produktes ist $a_4=1$, so dass $$
+  p(z)=x^4+1
+$$
+
+****************************************
+
+
 ### Lösungsmethoden
 
 
@@ -298,7 +349,7 @@ $$ deren Lösungen über $\mathbb{C}$ zu berechnen sind.
 
 
 Koeffizientenvergleich
-----------------------
+===
 
 
 Der [Koeffizientenvergleich](https://de.wikipedia.org/wiki/Koeffizientenvergleich) wird hier im Zusammenhang des Vergleichs reeller Polynome erklärt.
@@ -325,7 +376,7 @@ $$ woraus sich durch Vergleich der Koeffizienten das nachstehende System lineare
   b_{i-1} & - & b_i\cdot x_1 & \text{für} & i\in\{1,...,n-1\} \\
   & - & b_i\cdot x_1 & \text{für} & i=0
   \end{array}\right.
-$$ in dem sich die gesuchten Größen $b_i$ schrittweise bestimmt lassen.
+$$ in dem sich die gesuchten Größen $b_i$ schrittweise bestimmt lassen. (Der Nachweis zur Existenz und Eindeutigkeit der Lösungen erfolgt später.)
 3. Ist eine nichtreelle Lösung $x_j$ bekannt, o. B. d. A. $x_1\in\mathbb{C}\setminus\mathbb{R}$, so ist nach Satz 3 im Abschnitt [Fundamentalsatz der Algebra](#Fundamentalsatz-der-Algebra) auch die zu $x_1$ komplex konjugerte Zahl $\bar{x}_1$ eine Lösung von $p(x)=0$. Das Polynom $p(x)$ kann entsprechend als Produkt zweier reeller Polynome dargestellt werden $$
   p(x)=\left((x-x_1)\cdot(x-\bar{x}_1)\right)\cdot q(x)=\left(x^2-2\cdot\mathrm{Re}{\,x_1}\cdot x-|x_1|^2\right)\cdot\left(\sum_{k=0}^{n-2}{b_k\cdot x^k}\right)
 $$ Werden die Substitutionen $c=-2\cdot\mathrm{Re}{x_1}$ und $d=-|x_1|^2$ gewählt, berechnen sich die Koeffizienten aus dem Vergleich mit denen des Produktes $$
@@ -338,7 +389,7 @@ $$ Entsprechend dem obigen Fall berechnen sich die Koeffizienten $b_i$ schrittwe
   & & c\cdot b_{i-1} & + & d\cdot b_i & \text{für} & i=1 \\
   & & & & d\cdot b_i & \text{für} & i=0
   \end{array}\right.
-$$
+$$ (Der Nachweis zur Existenz und Eindeutigkeit der Lösungen erfolgt später.)
 
 **Beispiel 1.** Zur algebraischen Gleichung $p(x)=0$ sei die Lösung $x_1=1$ bekannt. Es gilt $$
   p(1)=1^3-2\cdot 1^2-5\cdot x+6=0
@@ -377,7 +428,7 @@ $$
 
 
 Polynomdivision
----------------
+===
 
 
 [Polynomdivision](https://de.wikipedia.org/wiki/Polynomdivision) ist ein Verfahren zur Division zweier Polynome, welche analog zur Division von Zahlen mit Rest verläuft. Es wird hier zur Reduktion des Grades eines Polynoms $p(x)$ durch Abspaltung eines Linearfaktors genutzt.
@@ -403,12 +454,14 @@ $$ kann unter dem Link [Polynomdivision](https://www.arndt-bruenner.de/mathe/scr
 In den folgenden Videos wird die Polynomdivision an Beispielen erläutert.
 
 !?[Polynomdivision-1](https://www.youtube.com/watch?v=Dg338bsBM1Y)
+
 !?[Polynomdivision-2](https://www.youtube.com/watch?v=Or1F8W0s0TU)
+
 !?[Polynomdivision-3](https://www.youtube.com/watch?v=OdlYNZXjmWA)
 
 
 Horner-Schema
--------------
+===
 
 Das [Horner-Schema](https://de.wikipedia.org/wiki/Horner-Schema) ist ein Umformungsverfahren für Polynome $p(x)$, mit dem sich
 
@@ -462,5 +515,50 @@ Das Horner-Schema wird unter [Opal](https://bildungsportal.sachsen.de/opal/auth/
 Im folgenden Video wird die Prüfung eines Polynomwertes $p(x_0)$ zu $x_0\in\mathbb{R}$ mit Hilfe des Horner-Schemas erläutert.
 
 !?[Horner-Schema](https://www.youtube.com/watch?v=tMehEcEsRsY)
+
+
+Sicher gewusst
+===
+
+
+Testen Sie Ihr Wissen in diesem Abschnitt und Beantworten Sie die folgenden Fragen.
+
+**Frage 1.** Zerlegen Sie das Polynom $p(x)=x^4-1$ in ein Produkt von Linearfaktoren.
+
+[(X)] $$ p(x)=\left(x-1\right)\cdot\left(x+1\right)\cdot\left(x-i\right)\cdot\left(x+i\right)\quad\text{mit}\quad i^2=-1$$
+[( )] $$ p(x)=\left(x-1\right)\cdot\left(x+1\right)\cdot\left(x^2+1\right) $$
+[( )] $$ p(x)=\left(x-1\right)^2\cdot\left(x+1\right)^2 $$
+[[?]] Das Polygon $p(x)$ besitzt den Grad $n=4$, die Koeffizienten sind $a_4=1$, $a_3=a_2=a_1=0$ und $a_0=-1$. Die Gleichung $p(x)=0$ besitzt demnach vier Lösungen in den komplexen Zahlen, wobei mit jeder nichtreellen Lösung auch deren komplex konjugierte Zahl eine Lösung darstellt.
+****************************************
+
+Die ganzen Zahlen $x_1=1$ und $x_2=-1$ sind offensichtlich Lösungen von $x^4-1=0$, wonach sich von $p(x)$ der Faktor $$
+  (x-1)\cdot(x+1)=x^2-1
+$$ (Polynomdivision ohne Rest) abspalten lässt. Unter Benutzung der Binomischen Formel $$
+  \left(x^2-1\right)\cdot\left(x^2+1\right)=x^4-1
+$$ Die Gleichung $$
+  x^2+1=0
+$$ besitzt die beiden Lösungen $\pm i$.
+
+****************************************
+
+**Frage 2.** Prüfen Sie für das Polynom $$
+  p(z)=(1-i)\cdot z^3-(4-2\cdot i)\cdot z^2+(5-i)\cdot z-(4+2\cdot i)
+$$ ob $p(2-i)=0$ gilt, wobei $i^2=-1$.
+
+[(X)] $$ p(2-i)\not=0 $$
+[( )] $$ p(2-i)=0 $$
+[[?]] Berechnen Sie den Polynomwert $p(2-i)$, wenden Sie zur Rechenvereinfachung das Horner-Schema an.
+****************************************
+
+Die Koeffizienten des Polynoms $p(z)$ sind $$
+  a_3=1-i\;,\quad a_2=-(4-2\cdot i)=-4+2\cdot i\;,\quad a_1=5-i\quad\text{und}\quad a_0=-(4+2\cdot i)=-4-2\cdot i
+$$ Mit dem Horner-Schema berechnet sich der Polynomwert $p(2-i)$ schrittweise $$ \begin{array}{r|rrrr}
+ & 1-i & -4+2\cdot i & 5-i & -4-2\cdot i \\\hline
+ x_0=2-i & & 1-3\cdot i & -7+i & -4+2\cdot i \\\hline
+ & 1-i & -3-i & -2 & -8
+\end{array}
+$$ worin die einzelnen Multiplikationen mit $x_0$ sowie die Additionen von $a_j$ mit $j\in[2,1,0]$ wechselweise auszuführen sind.
+
+****************************************
 
 [^1]: Allgemeiner können Polynome aus einem Polynomring betrachtet werden.
