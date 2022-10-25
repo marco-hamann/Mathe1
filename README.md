@@ -9,32 +9,11 @@ language: de
 
 comment:  Dieser Kurs richtet sich an Studierende der Hochschule für Technik und Wirtschaft Dresden im Studiengang Fahrzeugtechnik im 1. Semester.
 
-script: https://cdn.rawgit.com/davidedc/Algebrite/master/dist/algebrite.bundle-for-browser.js
-@Algebrite.eval: <script> Algebrite.run(`@input`)</script>
+import: https://raw.githubusercontent.com/LiaTemplates/tiny-turtle/master/README.md
 
-script:   https://cdn.jsdelivr.net/gh/liaTemplates/tiny-turtle/tiny-turtle.js
-@TinyTurtle: @TinyTurtle.eval(@uid,@0,@1,@2)
-@TinyTurtle.eval
-<script>
-send.handle("input", (cmd) => {
-  try{
-    let rslt = eval(cmd);
-    if (rslt)
-      console.log(rslt)
-  } catch (e) {
-    console.error("error", e)
-  }
-});
-function stop() {
-  send.lia("LIA: stop")
-}
-window.TinyTurtle("turtle_@0")
-@input
-if ("@3" == "true")
-  "LIA: terminal"
-</script>
-<canvas id="turtle_@0" width="@1" height="@2"></canvas>
-@end
+import: https://raw.githubusercontent.com/liaTemplates/algebrite/master/README.md
+
+import: https://github.com/LiaTemplates/Pyodide/blob/0.1.4/README.md
 
 -->
 
@@ -45,6 +24,532 @@ Dieser Kurs richtet sich an Studierende der Hochschule für Technik und Wirtscha
 Sie können diesen Kurs auf [LiaScript](https://liascript.github.io/course/?https://github.com/marco-hamann/Mathe1/blob/main/README.md) oder [Opal](https://bildungsportal.sachsen.de/opal/auth/RepositoryEntry/19931103237) aufrufen. Das Repository zu diesem Kurs finden Sie unter
 
 https://github.com/marco-hamann/Mathe1
+
+
+## Aussagenlogik
+
+
+Überblick
+-----
+
+
+In diesem ersten Kapitel lernen Sie allgemeine, elementare Begriffe der Mathematik kennen, die grundlegend für das Verständnis des strukturellen mathematischen Vorgehens sind. Dazu zählen u. a.
+
+* Aussagen und Aussageverbindungen
+* Prädikate und Quantoren
+
+Neben dieser strukturellen Sicht wird hierbei auch sichtbar, wie mathematische Aussagen unter Benutzung mathematischer Syntax notiert werden können.
+
+
+Lernziele
+-----
+
+
+* Sie wissen, was eine logische *Aussage* ist und wie sie sich von anderen sprachlich und grammatikalisch korrekten Sätzen unterscheidet.
+* Sie wandeln ausformulierte *Aussageverbindungen* in symbolische Schreibweise um und umgekehrt.
+* Sie bestimmen den *Wahrheitswert* von Aussageverbindungen in Abhängigkeit der Wahrheitswerte der Teilaussagen und ihrer Verknüpfungen und erstellen *Wahrheitstabellen*.
+* Sie begründen mit Hilfe äquivalenter Umformungen, dass eine Aussage eine *Tautologie* ist.
+* Sie unterscheiden *Aussagen* und *Aussageformen* und nennen eigene Beispiele.
+* Sie formulieren mathematische quantifizierbare Aussageformen vermöge der entsprechenden *Quantoren* und vice versa.
+
+
+### Aussagen
+
+
+Definition
+===
+
+
+Unter einer Aussage wird eine Äußerung verstanden, der man einen Wahrheitswert zuordnen kann.
+
+>**Definition 1.** Eine [Aussage](https://de.wikipedia.org/wiki/Aussage) $p$ ist ein sprachlich sinnvoller, konstatierender Satz. Hier werden ausschließlich zweiwertige Aussagen betrachtet, d. h. Aussagen, die entweder wahr oder falsch sind.
+>
+>  Der Wahrheitswert (engl. value) einer Aussage $p$ ist $$
+  v(p) \coloneqq
+  \begin{cases}
+    1 & \text{falls}\;p\;\text{wahr} \\
+    0 & \text{falls}\;p\;\text{falsch}
+  \end{cases}
+$$
+
+**Beispiel 1.** Es ist zu entscheiden, welche der nachstehenden sprachlichen Sätze Aussagen im Sinn von Definition 1 beschreiben. Nutzen Sie zur Anzeige der Begründungen die Navigation auf dieser Seite.
+
+{0-1}{$p\,$: Die Gleichung $x^2+4x+4=0$ besitzt als einzige Lösung $x=-2$.} {1}{Zur Prüfung des Wahrheitswertes der Aussage $p$ ist $$
+  x^2+4x+4=(x+2)^2=0\quad\Leftrightarrow\quad x_1=x_2=-2\quad\leadsto\quad v(p)=1
+  $$ zu betrachten, d. h. $p$ bezeichnet eine wahre Aussage.}
+
+{0-1}{$q\,$: Die Lösungen der [goniometrischen Gleichung](https://de.wikipedia.org/wiki/Trigonometrische_Gleichung) $\sin{\alpha}=\frac{1}{2}$ besitzen die Darstellung $$
+  \alpha=30^\circ+k\cdot360^\circ\,,\quad k\in\mathbb{Z}
+$$} {1}{Zur Prüfung des Wahrheitswertes der Aussage $q$ erhält man nach Einsetzen der Winkel $\alpha$ unter Verwendung des Additionstheorems für den Sinus für alle Parameterwerte $k$ eine wahre Aussage. Jedoch ist z. B. der Winkel $150^\circ$ ebenso eine Lösung, die nicht aus der Darstellung für $\alpha$ hervorgeht. Daher bezeichnet $q$ eine falsche Aussage.}
+
+{0-1}{$r\,$: Es gilt $a^2+b^2=c^2$.} {1}{Der Satz $r$ bezeichnet keine Aussage, da weder $v(r)=1$ noch $v(r)=0$ zuordenbar ist. Der Wahrheitswert ist abhängig von der Wahl der Parameterwerte für $a$, $b$ und $c$ bzw. von deren geometrischer Interpretation als Seitenlängen eines (speziellen) Dreiecks.}
+
+{0-1}{$s\,$: $\sqrt[3]{-8}=-2$.} {1}{Der Wahrheitswert $v(s)=0$, da der Radikant einer reellen $n$-ten Wurzel ($n\in\mathbb{N},n\geq1$) nicht negativ sein darf. Jedoch gilt für die Umkehrung $(-2)^3=-8$. Die Aussage $s$ ist eine falsche Aussage.}
+
+Die Aussage $q$ lässt sich mit Hilfe der Javascript-Bibliothek [Algebrite](http://algebrite.org) interaktiv prüfen. Berechnen Sie den Sinus für verschiedene Winkel $\alpha$. Verwenden Sie $\alpha$ im Bogenmaß.
+
+```javascript
+alpha=30
+sin(alpha/180*pi)
+arcsin(1/2)/pi*180
+```
+@Algebrite.eval
+
+
+Aussageverbindungen
+===
+
+
+Neue (zweiwertige) Aussagen entstehen durch logische Verknüpfungen mehrerer Aussagen.
+
+>**Definition 2.** Es bezeichnen $p$ und $q$ zweiwertige Aussagen im Sinne von Definition 1. Dann lassen sich durch Verknüpfung die nachstehenden Aussagen bilden.[^1]
+>
+>| Symbol | Bezeichnung | Sprechweise | Definition |
+>| :--------- | :--------- | :--------- | :--------- |
+>| $\neg p$ | Negation | "Nicht $p$" | $v(\neg p)=1$ genau dann, wenn $v(p)=0$ |
+>| $p \wedge q$ | Konjunktion | "$p$ und $q$" | $v(p\wedge q)=1$ genau dann, wenn $v(p)=v(q)=1$ |
+>| $p \vee q$ | Disjunktion | "$p$ oder $q$" | $v(p\vee q)=1$ genau dann, wenn $v(p)=1$ oder $v(q)=1$ |
+>| $p \veebar q$ | Alternative | "entweder $p$ oder $q$" | $v(p\veebar q)=1$ genau dann, wenn entweder $v(p)=1$ oder $v(q)=1$ |
+>| $p \rightarrow q$ | Implikation | "wenn $p$ dann $q$" | $v(p\rightarrow q)=0$ genau dann, wenn $v(p)=1$ und $v(q)=0$ |
+>| $p \leftrightarrow q$ | Äquivalenz | "genau dann $q$ wenn $p$" | $v(p\leftrightarrow q)=1$ genau dann, wenn $v(p)=v(q)=1$ oder $v(p)=v(q)=0$ |
+
+**Bemerkung 1:** Entsprechend ihrer Verwendung zur Bildung mathematischer Aussagen gibt es für die *Implikation* alternative Sprechweisen:
+
+* "aus Aussage $p$ folgt Aussage $q$"
+* "Aussage $p$ impliziert Aussage $q$"
+* "Aussage $p$ ist hinreichend für Aussage $q$"
+* "Aussage $q$ ist notwendig für Aussage $p$"
+* "Aussage $p$ ist Voraussetzung / Prämisse, Aussage $q$ ist Schlussfolgerung / Konklusion"
+
+In gleicher Weise sind die nachstehende alternativen Sprechweisen für eine *Äquivalenz* zu nennen.
+
+* "Aussage $p$ gilt dann und nur dann, wenn Aussage $q$ gilt"
+* "Aussage $p$ ist notwendig und hinreichend für Aussage $q$"
+
+Siehe auch [materielle Äquivalenz](https://de.wikipedia.org/wiki/Bikonditional).
+
+**Beispiel 2.** Gegeben sind die folgenden Aussagen $p$ und $q$.
+
+{0-1}{$p\,$: Jede ungerade natürliche Zahl $n$ besitzt die Darstellung $$
+  n=2m-1\,,\quad \left(m\in\mathbb{N}, m\geq1\right) $$} {1}{$p$ ist eine wahre Aussage, d. h. $v(p)=1$.}
+
+{0-1}{$q\,$: Der Nachfolger einer jeden ungeraden natürlichen Zahl $n$ ist gerade. $$
+  n\mapsto S(n)=n+1\,,\quad n\in\mathbb{N} $$ bezeichnet dabei die Nachfolgerfunktion.} {1}{$q$ ist eine wahre Aussage, d. h. $v(q)=1$.}
+
+Der Nachweis über deren Wahrheitswerte ist selbständig zu führen. Daneben sind die nachstehenden Aussagen zu bilden und deren Wahrheitswert abzuleiten. Nutzen Sie zur Anzeige der Begründungen die Navigation auf dieser Seite.
+
+{0-1}{$\neg{p}\,$: Es gibt eine ungerade Zahl $n$, die nicht die Darstellung $n=2m-1$ besitzt.} {1}{Da $v(p)=1$ gilt, folgt $v(\neg{p})=0$, d. h. die Aussage $\neg{p}$ ist falsch.}
+
+{0-1}{$\neg{q}\,$: Es gibt eine ungerade Zahl $n$, deren Nachfolger ungerade ist.} {1}{Da $v(q)=1$ gilt, folgt $v(\neg{q})=0$, d. h. die Aussage $\neg{q}$ ist falsch.}
+
+{0-1}{$p\rightarrow q\,$: Besitzt eine natürliche Zahl $n$ die Darstellung $n=2m-1$, so ist ihr Nachfolger gerade.} {1}{Die Aussageverbindung besitzt den Wahrheitswert $v(p\rightarrow q)=1$, da $v(p)=v(q)=1$. Alternativ folgt aus $$
+  n\mapsto n+1=\left(2\cdot m-1\right)+1=2\cdot m
+$$ dass der Nachfolger der ungeraden, natürlichen Zahl $n$ den Faktor $2$ enthält und somit gerade ist.}
+
+---
+
+Für Aussageverbindungen lassen sich die Wahrheitswerte in Wahrheitstabellen angeben. Aus obiger Festlegung folgen
+
+* für die Negation ( als einzige einstellige Operation):
+
+<!-- data-type="none" -->
+| $p$ | $\neg{p}$ |
+| :------: | :------: |
+| $1$ | $0$ |
+| $0$ | $1$ |
+
+* für die zweistelligen Operationen:
+
+<!-- data-type="none" -->
+| $p$ | $q$ | $p\wedge q$ | $p\vee q$ | $p\rightarrow q$ | $p\leftrightarrow q$ |
+| :------: | :------: | :------: | :------: | :------: | :------: |
+| $1$ | $1$ | $1$ | $1$ | $1$ | $1$ |
+| $0$ | $1$ | $0$ | $1$ | $1$ | $0$ |
+| $1$ | $0$ | $0$ | $1$ | $0$ | $0$ |
+| $0$ | $0$ | $0$ | $0$ | $1$ | $1$ |
+
+Aus der vorstehenden Wahrheitstabelle ergibt sich u. a., dass eine Implikation genau dann falsch ist, wenn die Prämisse wahr und die Schlussfolgerung falsch ist. Aus einer falschen Aussage lassen sich durch richtiges Schließen sowohl wahre als auch richtige Aussagen gewinnen.
+
+Unter Benutzung der Javascript-Bibliothek [Algebrite](http://algebrite.org/) einfache logische Verknüpfungen wie `and(.,.)` oder `or(.,.)` bzw. `not(.) `interaktiv verwendet werden In den Klammern sind die Wahrheitswerte $1$ bzw. $0$ - entsprechend der Stelligkeit der Operation - durch Komma getrennt einzugeben.
+
+```javascript
+not(1)
+and(1,1)
+or(not(0),0)
+```
+@Algebrite.eval
+
+**Beispiel 3.** Betrachtet werden die nachstehenden Implikationen.
+
+1. Gegeben ist die Aussage $p:\, -1=1$ mit $v(p)=0$. Durch Quadrieren von linker und rechter Seite folgt hieraus $q:\, 1=1$, d. h. $v(q)=1$. Die Implikation $p\rightarrow q$ ("Quadrieren") ist wahr.
+2. Gegeben ist die Aussage $p$. Durch Addieren von $1$ auf linker und rechter Seite folgt hieraus $q:\, 0=2$, d. h. $v(q)=0$. Die Implikation $p\rightarrow q$ ("Addieren von $1$") ist wahr.
+
+Einen Überblick über Aussageverbindungen erhalten Sie im nachstehenden Video.
+
+!?[Aussagenverbindungen](https://www.youtube.com/watch?v=Uq6661KAkYM "Daniel Jung, Überblick Aussagenlogik")
+
+>**Definition 3.** Zwei Aussagen $p$ und $q$ im Sinne von Definition 1 heißen [logisch äquivalent](https://de.wikipedia.org/wiki/Logische_Äquivalenz), $p\Leftrightarrow q$, wenn beide Aussagen bei jeder möglichen Interpretation denselben Wahrheitswert annehmen.[^2]
+
+**Beispiel 4.** Mit Hilfe einer Wahrheitstabelle sollen die logische Äquivalenz der nachstehenden Aussagen nachgewiesen werden.
+
+1. *Negation der Negation* $\quad p\;\Leftrightarrow\;\neg{(\neg{p})}$
+
+<!-- data-type="none" -->
+| $p$ | $\neg{p}$ | $\neg{(\neg{p})}$ |
+| :------: | :------: | :------: |
+| $\textcolor{red}{1}$ | $0$ | $\textcolor{red}{1}$ |
+| $\textcolor{red}{0}$ | $1$ | $\textcolor{red}{0}$ |
+
+2. *"Auflösen" einer Implikation* $\quad (p\rightarrow q)\;\Leftrightarrow\;(\neg{p}\vee q)$
+
+<!-- data-type="none" -->
+| $p$ | $q$ | $p\rightarrow q$ | $\neg{p}$ | $\neg{p}\vee q$ |
+| :------: | :------: | :------: | :------: | :------: |
+| $1$ | $1$ | $\textcolor{red}{1}$ | $0$ | $\textcolor{red}{1}$ |
+| $0$ | $1$ | $\textcolor{red}{1}$ | $1$ | $\textcolor{red}{1}$ |
+| $1$ | $0$ | $\textcolor{red}{0}$ | $0$ | $\textcolor{red}{0}$ |
+| $0$ | $0$ | $\textcolor{red}{1}$ | $1$ | $\textcolor{red}{1}$ |
+
+Analog lassen sich die nachstehenden logischen Äquivalenzen beweisen. (Bitte selbständig führen.)
+
+>**Satz 1.** Für zweiwertige Aussagen $p$, $q$ und $r$ im Sinne von Definition 1 gelten die nachstehenden logischen Äquivalenzen:
+>
+>| Form 1 | Form 2 | Gesetz |
+>| :---: | :---: | :---: |
+>| $\left(p\wedge q\right)\Leftrightarrow \left(q\wedge p\right)$ | $\left(p\vee q\right)\Leftrightarrow \left(q\vee p\right)$ | Kommutativgesetze |
+>|$\left(p\wedge q\right)\wedge r\Leftrightarrow p\wedge\left(q\wedge r\right)$ | $\left(p\vee q\right)\vee r\Leftrightarrow p\vee\left(q\vee r\right)$ | Assoziativgesetze |
+>| $\left(p\wedge q\right)\vee r\Leftrightarrow \left(p\vee r\right)\wedge\left(q\vee r\right)$ | $\left(p\vee q\right)\wedge r\Leftrightarrow \left(p\wedge r\right)\vee\left(q\wedge r\right)$ | Distributivgesetze |
+>| $\neg\left(p\wedge q\right)\Leftrightarrow \left(\neg p\vee \neg q\right)$ | $\neg\left(p\vee q\right)\Leftrightarrow \left(\neg p\wedge \neg q\right)$ | Regeln von de Morgan |
+
+**Bemerkung 2.** Aussageverbindungen lassen sich zur Beschreibung und Berechnung binärer Schaltnetze und Schaltwerke verwenden. Hierfür wird oft der Begriff [Schaltalgebra](https://de.wikipedia.org/wiki/Schaltalgebra) verwendet. Technische Elemente wie "AND", "OR", "NOT", "NAND" werden entsprechend der aussagenlogischen Verknüpfung benannt. Einfache interaktive Beispiele finden sich beispielsweise unter dem Link [Logikgatter](https://www.edumedia-sciences.com/de/media/146-logikgatter).
+
+Beispiel 4 (2) ist ebenso im nachstehenden Video besprochen.
+
+!?[Implikation auflösen](https://www.youtube.com/watch?v=cj0pmLs1c6Y "Christian Spannagel, Aussagenlogik (Teil 3)")
+
+Weitere Beispiele für logische Äquivalenzen finden Sie in den nachstehenden Videos.
+
+!?[Logische Äquivalenz 1](https://www.youtube.com/watch?v=ymBFrK5LtHc "Daniel Jung, Beispiel 1 logische Äquivalenz")
+
+!?[Logische Äquivalenz 2](https://www.youtube.com/watch?v=lNkTJugGPEI "Daniel Jung, Beispiel 2 logische Äquivalenz")
+
+
+Sicher gewusst
+===
+
+
+Testen Sie Ihr erworbenes Wissen und beantworten Sie die nachstehenden Fragen.
+
+**Frage 1.** Entscheiden Sie bei den nachgestellten Sätzen, ob es sich im mathematischen Sinn um (zweiwertige) Aussagen handelt.
+
+[[wahr] [falsch] [keine Aussage]]
+[(X) ( ) ( )]  $p\,:$ $73$ ist eine Primzahl.
+[(X) ( ) ( )]  $q\,:$ Für alle natürlichen Zahlen $n\in\mathbb{N}$ mit $n\geq1$ gilt: $1+2+...+n=\frac{n\cdot(n+1)}{2}$
+[( ) (X) ( )]  $r\,:$ Für alle natürlichen Zahlen $n\in\mathbb{N}$ gilt: $n^2\leq 2^n$.
+[( ) ( ) (X)]  $s\,:$ "Diese Aussage ist nicht wahr."
+[[?]] Für die Entscheidung, ob eine Aussage im mathematischen Sinn vorliegt, ist es nicht notwendig, deren Wahrheitswert bestimmen / nachzuweisen zu können. Es ist ausreichend, wenn die Frage, ob wahr oder falsch, sinnvoll ist.
+****************************************
+
+1. $p$ bezeichnet eine wahre Aussage, d. h. $73$ ist eine Primzahl. Für eine Prüfung lässt sich beispielsweise die Primfaktorzerlegung unter Nutzung der Javascript-Bibliothek [Algebrite](http://algebrite.org/) verwenden. Alternativ, siehe das [Sieb des Eratosthenes](https://de.wikipedia.org/wiki/Sieb_des_Eratosthenes).
+
+```javascript
+factor(73)
+factor(74)
+```
+@Algebrite.eval
+
+2. $q$ bezeichnet eine Aussage, die für jede natürliche Zahl $n\geq1$ wahr ist und [Gaußsche Summenformel](https://de.wikipedia.org/wiki/Gaußsche_Summenformel) genannt wird.
+3. $r$ bezeichnet eine falsche Aussage, da aus der Berechnung für die ersten natürlichen Zahlen $n$ folgt, dass $r$ nicht für alle natürlichen Zahlen erfüllt sein kann. Siehe nachstehende Tabelle.   
+
+<!-- data-type="none" -->
+| $n$ | $n^2$ | $2^n$ | $n^2\leq 2^n$ |
+| :---: | :---: | :---: | :---: |
+| $0$ | $0$ | $1$ | wahr |
+| $1$ | $1$ | $2$ | wahr |
+| $2$ | $4$ | $4$ | wahr |
+| $\textcolor{red}{3}$ | $\textcolor{red}{9}$ | $\textcolor{red}{8}$ | falsch <!-- style="color:red" --> |
+| $4$ | $16$ | $16$ | wahr |
+| $5$ | $25$ | $32$ | wahr |
+
+4. $s$ bezeichnet keine Aussage, da sich die Frage, ob wahr oder falsch, nicht beantworten lässt.
+
+****************************************
+
+---
+
+**Frage 2.** Gegeben ist eine zweiwertige Aussage $p$. Bestimmen Sie den Wahrheitswert der Aussage $p\wedge\neg{p}$.
+
+[(X)] $0$
+[( )] $1$
+[[?]] Bilden Sie die Wahrheitstabelle zur Aussage $p\wedge\neg{p}$.
+****************************************
+
+<!-- data-type="none" -->
+| $p$ | $\neg{p}$ | $p\wedge\neg{p}$ |
+| :---: | :---: | :---: |
+| $1$ | $0$ | $0$ |
+| $0$ | $1$ | $0$ |
+
+****************************************
+
+---
+
+**Frage 3.** Gegeben ist die Wahrheitstabelle zweier Aussagen $p$ und $q$. Bestimmen Sie eine Verknüpfung beider Aussagen, für die die in der Tabelle aufgeführten Wahrheitswerte angenommen werden.
+
+<!-- data-type="none" -->
+| $p$ | $q$ | $?$ |
+| :---: | :---: | :---: |
+| $1$ | $1$ | $0$ |
+| $0$ | $1$ | $0$ |
+| $1$ | $0$ | $1$ |
+| $0$ | $0$ | $0$ |
+
+[[ ]] $p\rightarrow q$
+[[ ]] $q\rightarrow p$
+[[X]] $\neg{(p\rightarrow q)}$
+[[ ]] $\neg{(q\rightarrow p)}$
+[[X]] $p\wedge\neg{q}$
+[[?]] Bilden Sie die Wahrheitstabellen zu den Aussagen der Antwortoptionen.
+****************************************
+
+<!-- data-type="none" -->
+| $p$ | $q$ | $p\rightarrow q$ | $q\rightarrow p$ | $\neg{(p\rightarrow q)}$ | $\neg{(q\leftrightarrow p)}$ | $p\wedge\neg{q}$ |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| $1$ | $1$ | $1$ | $1$ | $\textcolor{red}{0}$ | $0$ | $\textcolor{red}{0}$ |
+| $0$ | $1$ | $1$ | $0$ | $\textcolor{red}{0}$ | $1$ | $\textcolor{red}{0}$ |
+| $1$ | $0$ | $0$ | $1$ | $\textcolor{red}{1}$ | $0$ | $\textcolor{red}{1}$ |
+| $0$ | $0$ | $1$ | $1$ | $\textcolor{red}{0}$ | $0$ | $\textcolor{red}{0}$ |
+
+Vergleiche Beispiel 4 (2) und Satz 1 (Regeln von de Morgan).
+
+****************************************
+
+
+[^1]: Die Aussagenverknüpfungen lassen sich in einstellige - und [zweistellige](https://de.wikipedia.org/wiki/Zweistellige_Verknüpfung) Verknüpfungen einteilen, je nachdem eine bzw. zwei Aussagen miteinander verknüpft werden. Die Negation ist eine einstellige Verknüpfung, alle anderen sind zweistellig.
+
+[^2]: Der Begriff der logischen Äquivalenz soll unterschieden werden von der Äquivalenz im Sinne von Definition 2. In diesem Blick besitzen die Symbole $\leftrightarrow$ und $\Leftrightarrow$ verschiedene Bedeutung.
+
+
+### Aussageformen
+
+
+In diesem Abschnitt werden sogenannte Aussageformen eingeführt und ihre Verwendung bei der Konstruktion mathematischer Aussagen gezeigt.
+
+>**Definition 1.** Ein Gebilde $p$ heißt [Aussageform](https://www.wikiwand.com/de/Aussageform " aus Wikipedia, der freien Enzyklopädie"), wenn die folgenden beiden Bedingungen erfüllt sind:
+>
+>1. $p=p(x)$ enthält (mindestens) eine Variable $x$
+>2. wird die Variable durch ein entsprechendes Element ersetzt, entsteht eine Aussage.
+
+**Bemerkung 1.** Die Variablenwerte $x$ entstammen einer Gesamtheit $X$ (Menge) von Objekten mit einem gemeinsamen Merkmal, vergleiche Abschnitt [Definition einer Menge](#Definition-einer-Menge).
+
+**Beispiel 1.** Es bezeichne $X$ die Menge aller positiven ganzen Zahlen $x$. Des Weiteren $$
+  p(x)\,:\quad\text{"$x$ ist eine Primzahl"}
+$$ eine Aussageform. Dann bezeichnet $p(5)$ eine wahre Aussage, während $p(10)$ eine falsche Aussage ist. Für jedes $x$ aus der Grundgesamtheit $X$ lässt sich anhand der [Primfaktorzerlegung](https://de.wikipedia.org/wiki/Primfaktorzerlegung) prüfen, ob $p(x)$ wahr oder falsch ist.
+
+Unter Benutzung der Javascript-Bibliothek [Algebrite](http://algebrite.org/) lässt sich eine ganze Zahl $x$ als Produkt ihrer Primfaktoren schreiben. Nutzen Sie hierfür den Befehl `factor(.)`.
+
+```javascript
+x=5
+factor(x)
+```
+@Algebrite.eval
+
+**Beispiel 2.** Es bezeichne $X$ die Menge aller geordneten $3$-Tupel natürlicher Zahlen. Des Weiteren $$
+  q(a,b,c)\,:\quad a^2+b^2=c^2
+$$ eine Aussageform. Dann bezeichnen:
+
+1. $q(1,2,3)$ eine falsche Aussage, da $1^2+2^2\not=3^2$.
+2. $q(3,4,5)$ eine wahre Aussage, da $3^2+4^2=25=5^2$.[^1]
+
+Für jedes Tripel $(a,b,c)$ aus der Grundgesamtheit $X$ lässt durch Einsetzen in linke und rechte Seite prüfen, ob $q(a,b,c)$ wahr oder falsch ist.
+
+Unter Benutzung der Javascript-Bibliothek [Algebrite](http://algebrite.org/) lässt sich durch den Befehl `subst(a,x,q(x))` der Variablenwert $a$ für die Variable $x$ in den Term $q(x)$ einsetzen. Die Funktion `test(m,n,p)` gibt den Ausdruck $n$ zurück, wenn $m$ wahr ist, andernfalls $p$.
+
+```javascript
+a=3
+b=4
+c=5
+L=subst(a,x,subst(b,y,x^2+y^2))
+R=subst(c,z,z^2)
+test(L=R,wahr,falsch)
+```
+@Algebrite.eval
+
+Eine Gegenüberstellung der Begriffe *Aussage* und *Aussageform* ist im folgenden Video erklärt.
+
+!?[Aussageform](https://www.youtube.com/watch?v=Xl_JFxXKRAg "Youtube-Kanal [Abi ohne Lernen](https://www.youtube.com/c/AbiOhneLernen)")
+
+**Bemerkung 2.** In der Mathematik werden Aussagen in *Sätzen*, *Propositionen*, *Folgerungen* formuliert und besitzen oft eine der Formen:
+
+1. "Wenn-dann" (Implikation, $\rightarrow$)
+2. "Genau-dann-wenn" (Äquivalenz, $\leftrightarrow$)[^2]
+
+Diese Aussagen sind zu beweisen, d. h. ihr Wahrheitswert zu prüfen. Die verschiedenen Beweisverfahren werden hier exemplarisch wiederholt.
+
+
+Direkter Beweis
+---
+
+
+Die aussagenlogische Struktur des [Direkten Beweises](https://de.wikipedia.org/wiki/Beweis) ist nachstehend als Pseudocode dargestellt.
+
+```python
+WENN p gilt UND
+  WENN aus p folgt q
+DANN folgt q
+```
+
+Die Aussage $p$ bezeichnet darin die Prämisse (Voraussetzung) und $q$ die Konklusion (Schlussfolgerung). Der Direkte Beweis ist also durch die Aussageverbindung $$
+  \;[p\wedge (p\rightarrow q)]\rightarrow q
+$$ festgelegt. Die Wahrheitstabelle für diesen zeigt, dass die ihn festlegende Aussageverbindung immer wahr ist, unabhängig vom Wahrheitsgehalt der darin enthaltenen elementaren Aussagen.
+
+<!-- data-type="none" -->
+| $p$ | $q$ | $p\rightarrow q$ | $p\wedge(p\rightarrow q)$ | $[p\wedge (p\rightarrow q)]\rightarrow q$ |
+| :---: | :---: | :---: | :---: | :---: |
+| $1$ | $1$ | $1$ | $1$ | $1$ |
+| $1$ | $0$ | $0$ | $0$ | $1$ |
+| $0$ | $1$ | $1$ | $0$ | $1$ |
+| $0$ | $0$ | $1$ | $0$ | $1$ |
+
+**Beispiel 3.** Es lässt sich mithilfe eines Direkten Beweises zeigen:
+
+"*Die dritte Potenz einer beliebigen ungeraden natürlichen Zahl ist eine ungerade natürliche Zahl.*"
+
+Beweis: Für den Nachweis werden unter Benutzung von Beispiel 2 aus Abschnitt [Aussagen](#Aussagen) folgende elementare Aussageformen betrachtet: $$
+  p(n)\,:\;n=2\cdot m+1\;\text{mit}\; m\in\mathbb{N}\,,\quad
+  q(n)\,:\;n^3=2\cdot k+1\;\text{mit}\; k\in\mathbb{N}
+$$ Hieraus ergibt sich die Implikation $p(n)\rightarrow q(n)$ in der Form
+
+"*Wenn $n$ eine ungerade natürliche Zahl ist, dann ist ihre dritte Potenz eine ungerade natürliche Zahl.*"
+
+Mit der Annahme $p(n)$ (Prämisse) folgt unter Verwendung des Binomischen Lehrsatzes für die dritte Potenz von $n$ $$
+  n^3=(2\cdot m+1)^3=8\cdot m^3+12\cdot m^2+6\cdot m+1=
+  2\cdot\left(4\cdot m^3+6\cdot m^2+3\cdot m\right)+1
+$$ Der Ausdruck $$
+  k=4\cdot m^3+6\cdot m^2+3\cdot m
+$$ ist eine natürliche Zahl, da der Zahlbereich der natürlichen Zahlen abgeschlossen unter Addition und Multiplikation ist. Die Zahl $n^3=2\cdot k+1$ ist eine ungerade natürliche Zahl. $\square$
+
+
+
+Indirekter Beweis
+---
+
+
+Die aussagenlogische Struktur des [Indirekten Beweises](https://de.wikipedia.org/wiki/Beweis) ist nachstehend als Pseudocode dargestellt.
+
+```python
+WENN p gilt UND
+  WENN aus (Nicht q) folgt (Nicht p)
+DANN folgt q
+```
+
+Die Aussage $p$ bezeichnet darin die Prämisse (Voraussetzung) und $q$ die Konklusion (Schlussfolgerung). Der Indirekte Beweis ist also durch die Aussageverbindung $$
+  \;[p\wedge (\neg{q}\rightarrow \neg{p})]\rightarrow q
+$$ festgelegt. Die Wahrheitstabelle für diesen zeigt, dass die ihn festlegende Aussageverbindung immer wahr ist, unabhängig vom Wahrheitsgehalt der darin enthaltenen elementaren Aussagen.
+
+<!-- data-type="none" -->
+| $p$ | $q$ | $\neg{p}$ | $\neg{q}$ | $\neg{q}\rightarrow \neg{p}$ | $p\wedge(\neg{q}\rightarrow \neg{p})$ | $[p\wedge (\neg{q}\rightarrow \neg{p})]\rightarrow q$ |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| $1$ | $1$ | $0$ | $0$ | $1$ | $1$ | $1$ |
+| $1$ | $0$ | $0$ | $1$ | $0$ | $0$ | $1$ |
+| $0$ | $1$ | $1$ | $0$ | $1$ | $0$ | $1$ |
+| $0$ | $0$ | $1$ | $1$ | $1$ | $0$ | $1$ |
+
+**Beispiel 4.** Es lässt sich mithilfe eines Indirekten Beweises zeigen:
+
+"*Die Quadratwurzel aus $2$ ist eine [irrationale Zahl](https://de.wikipedia.org/wiki/Irrationale_Zahl).*"
+
+Beweis: Für den Nachweis werden folgende elementare Aussagen betrachtet: $$
+  p\,:\;\sqrt{2}\;\text{ist reell} \,,\quad
+  q\,:\;\sqrt{2}\;\text{ist irrational}
+$$ Die Zahl $\sqrt{2}$ ist nach Voraussetzung reell, d. h. entweder rational oder irrational. Siehe Abschnitt [Definition einer Menge](#Definition-einer-Menge). Hieraus ergibt sich die Implikation $\neg{q}\rightarrow \neg{p}$ in der Form
+
+"*Falls $\sqrt{2}$ keine irrationale Zahl ist - und somit also rational -, dann ist diese darstellbar als ein gemeiner Bruch $\frac{m}{n}$ mit ganzzahligen Zähler / Nenner*."
+
+Angenommen, $\sqrt{2}=\frac{m}{n}$ mit $m\in\mathbb{N}$ und $n\in\mathbb{N}$, $n\geq1$. Ohne Beschränkung der Allgemeinheit sind $m$ und $n$ teilerfremd angenommen, d. h. $\gcd{(m,n)}=1$ ist deren größter gemeinsamer Teiler. Dann ergebe sich durch Quadrieren linker und rechter Seite der Gleichung $$
+  2=\frac{m^2}{n^2}\quad\rightarrow\quad 2\cdot n^2=m^2
+$$ d. h. $2$ teilte $m^2$ (syntaktisch: $2|m^2$), der letzte Term wäre gerade. Hieraus folgte, dass $m$ selbst gerade ist (Nachweis selbständig führen) und somit $n$ nach Annahme $\gcd{(m,n)}=1$ ungerade sein müsste.
+
+Andererseits folgte mit $m=2\cdot k$ mit $k\in\mathbb{N}$, $k\geq1$ $$
+  m^2=(2\cdot k)^2=4\cdot k^2=2\cdot n^2\quad\leftrightarrow\quad 2\cdot k^2=n^2
+$$ woraus $2|n^2$ und somit $2|n$ folgte. Die natürliche Zahl $n$ wäre gerade.
+
+Aus dem Widerspruch, $n$ müsse gleichzeitig Gerade und ungerade sein, folgt, dass kein geordnetes Paar $(m,n)\in\mathbb{N}^2$ existiert, so dass $\frac{m}{n}=\sqrt{2}$. Die Quadratwurzel aus $2$ ist somit irrational. $\square$
+
+**Bemerkung 3.** Direkter und indirekter Beweis sind logische Gesetze, so genannte [Tautologien](https://de.wikipedia.org/wiki/Tautologie). Das sind Aussageverbindungen, die immer wahr sind, unabhängig vom Wahrheitsgehalt der enthaltenen elementaren Aussagen. Weitere Beispiele sind:
+
+* [Kettenschluss](https://de.wikipedia.org/wiki/Kettenschluss) $ [(a\rightarrow b)\wedge(b\rightarrow c)]\rightarrow (a\rightarrow c) $
+* [Kontraposition](https://de.wikipedia.org/wiki/Kontraposition) $ (a\rightarrow b)\Leftrightarrow (\neg{b}\rightarrow \neg{a}) $
+* [Beweisverfahren der vollständigen Induktion](https://de.wikipedia.org/wiki/Vollständige_Induktion), siehe Abschnitt [Zahlenmengen](#Zahlenmengen)
+
+
+Sicher gewusst
+===
+
+
+Hier können Sie Ihr in diesem Abschnitt erworbenes Wissen testen.
+
+**Frage 1.** Folgende Aussage soll mithilfe eines indirekten Beweises nachgewiesen werden.
+
+*Für beliebige natürliche Zahlen $n$ mit $n\geq1$ gilt $$
+  \frac{n^3+2}{n^2+n}>\frac{1}{n^2} $$*
+
+Bilden Sie die Gegenannahme zur Behauptung.
+
+[( )] Für beliebige $n$ mit $n\geq1$ gilt $$ \frac{n^3+2}{n^2+n}\leq\frac{1}{n^2} $$
+[(X)] Es existiert ein $n$ mit $n\geq1$, für das gilt $$ \frac{n^3+2}{n^2+n}\leq\frac{1}{n^2} $$
+[( )] Es existiert ein $n$ mit $n\geq1$, für das gilt $$ \frac{n^3+2}{n^2+n}<\frac{1}{n^2} $$
+[[?]] Für die Bildung der Gegenannahme ist zu beachten, dass das "Größer-kleiner-Zeichen" korrekt umgekehrt wird.
+****************************************
+
+Für die Negation der Behauptung ist es ausreichend, eine natürliche Zahl $n$ anzugeben, für die $$
+  \frac{n^3+2}{n^2+n}\leq\frac{1}{n^2}
+$$ gilt. Tatsächlich ist für $n\geq1$ $$
+  \frac{n^3+2}{n^2+n}\leq\frac{1}{n^2} \quad\Leftrightarrow \quad
+  (n^3+2)\cdot n^2\leq n^2+n \quad\Leftrightarrow \quad n^5+n^2-n=n\cdot(n^4+n-1)\leq0
+$$ Das Produkt $n\cdot(n^4+n-1)$ ist jedoch für keine Wahl von $n$ kleiner/gleich Null, da beide Faktoren größer Null sind. Dies bedeutet, dass kein $n$ mit $n\geq1$ existiert, für welches $$
+  \frac{n^3+2}{n^2+n}\leq\frac{1}{n^2}
+$$ gilt. Damit gilt für alle $n$ aus dem Grundbereich $$
+  \frac{n^3+2}{n^2+n}>\frac{1}{n^2}
+$$
+
+****************************************
+
+**Frage 2.** Bilden Sie die Kontraposition zu folgender Aussage:
+
+"*Wenn eine reelle Funktion $f$ an einer Stelle $x\in D$ differenzierbar ist, so ist sie dort stetig.*"
+
+[( )] Ist $f$ in $x\in D$ nicht stetig, so ist sie dort trotzdem differenzierbar.
+[( )] Ist $f$ in $x\in D$ nicht differenzierbar, so ist sie dort nicht stetig.
+[(X)] Ist $f$ in $x\in D$ nicht stetig, so ist sie dort nicht differenzierbar.
+[[?]] Stellen Sie obige Aussage als Implikation $a\rightarrow b$ elementarer Aussagen dar. $$ a\,:\;\text{"... differenzierbar"}\,,\quad
+   b\,:\;\text{"... stetig"} $$ Bilden Sie anschließend die Negationen $\neg{a}$ und $\neg{b}$ sowie die Implikation $(\neg{b}\rightarrow \neg{a})$.
+****************************************
+
+Bezeichnen $a$ bzw. $b$ die Aussagen
+
+* $a\,:\;f\text{ ist in } x\in D \text{ differenzierbar}$
+* $b\,:\;f\text{ ist in } x\in D \text{ stetig}$
+
+so besitzt die Aussage die logische Struktur $(a\rightarrow b)$.
+
+Die erste Antwortoption besitzt die logische Struktur $(\neg{b}\rightarrow a)$, während sich die logische Struktur der zweiten Antwortoption durch $(\neg{a}\rightarrow \neg{b})$ darstellen lässt. Die dritte Antwortoption entspricht der Kontraposition $(\neg{b}\rightarrow \neg{a})$.
+
+****************************************
+
+
+[^1]: Natürliche Zahlentripel $(a,b,c)$ mit der Eigenschaft $a^2+b^2=c^2$ heißen [pythagoräische Zahlentripel](https://de.wikipedia.org/wiki/Pythagoreisches_Tripel). Diese bilden nach dem Satz des Pythagoras die Seitenlängen eines rechtwinkligen Dreiecks.
+
+[^2]: In diesem Skript wird oft die abkürzende Schreibweise "g. d. w." für eine Äquivalenz genutzt.
+
+
+## Mengenlehre
+
+
+### Definition einer Menge
+
+
+### Zahlenmengen
 
 
 ## Algebraische Gleichungen
