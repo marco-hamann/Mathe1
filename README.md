@@ -1456,6 +1456,30 @@ $$ worin die einzelnen Multiplikationen mit $x_0$ sowie die Additionen von $a_j$
 
 ## Analytische Geometrie
 
+Die analytische Geometrie beschäftigt sich mit Eigenschaften ausgezeichneter Punktmengen in der Ebene oder im Raum und verwendet algebraische Methoden zur Beantwortung der sich daraus ergebenden Fragestellung.
+
+
+
+### Der $n$-dimensionale affine Raum
+
+>**Definition 1.** Ein affiner Raum der Dimension $n$ besteht aus einer nicht-leeren Menge $\mathcal{P}$ (Menge von Punkten), einem reellen Vektorraum $\mathcal{V}$ der Dimension $n$ und einer Abbildung $\alpha: \mathcal{P}\times\mathcal{P}\longrightarrow \mathcal{V}$, so dass gilt:
+>
+>1. Zu jedem Punkt $P\in\mathcal{P}$ und jedem Vektor  $v\in\mathcal{V}$ gibt es genau einen Punkt $Q\in\mathcal{P}$ mit $\alpha(P,Q)=v$.
+>
+>2. Für jeweils drei beliebige Punkte $P, Q, R\in\mathcal{P}$ gilt:<br>
+>   $\alpha(P,Q)+\alpha(Q,R)=\alpha(P,R)$.
+
+Aus Definition 1 lassen sich zunächst zwei einfache Eigenschaften der Abbildung $\alpha$ ableiten:
+
+* Für $P=Q=R$ erhalten wir aus 2. sofort <br>
+  $\alpha(P,P)+\alpha(P,P)=2\cdot \alpha(P,P)=\alpha(P,P)$ und somit $\alpha(P,P)=\mathcal{o}$ (wobei $\mathcal{o}$ der Nullvektor in $\mathcal{V}$ ist).
+* Hingegen bekommen wir für $P=R$: <br>
+  $\alpha(P,Q)+\alpha(Q,P)=\alpha(P,P)=\mathcal{o}$ und daher
+  $\alpha(Q,P)=-\alpha(P,Q)$.
+
+
+
+
 ## Differentialrechnung
 
 ### Differentialgleichungen
