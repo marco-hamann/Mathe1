@@ -1460,14 +1460,19 @@ Die analytische Geometrie beschäftigt sich mit Eigenschaften ausgezeichneter Pu
 
 
 
-### Der $n$-dimensionale affine Raum
+### Der affine Raum
 
->**Definition 1.** Ein affiner Raum der Dimension $n$ besteht aus einer nicht-leeren Menge $\mathcal{P}$ (Menge von Punkten), einem reellen Vektorraum $\mathcal{V}$ der Dimension $n$ und einer Abbildung $\alpha: \mathcal{P}\times\mathcal{P}\longrightarrow \mathcal{V}$, so dass gilt:
+>**Definition 1.** Ein affiner Raum $\mathcal{A}$ ist ein Tripel $(\mathcal{P},\mathcal{V},\alpha)$ bestehend aus einer nicht-leeren Menge $\mathcal{P}$, einem reellen Vektorraum $\mathcal{V}$ und einer Abbildung $\alpha: \mathcal{P}\times\mathcal{P}\longrightarrow \mathcal{V}$, so dass gilt:
 >
 >1. Zu jedem Punkt $P\in\mathcal{P}$ und jedem Vektor  $v\in\mathcal{V}$ gibt es genau einen Punkt $Q\in\mathcal{P}$ mit $\alpha(P,Q)=v$.
 >
 >2. Für jeweils drei beliebige Punkte $P, Q, R\in\mathcal{P}$ gilt:<br>
 >   $\alpha(P,Q)+\alpha(Q,R)=\alpha(P,R)$.
+>
+> **Bemerkungen:**
+>
+> * Die Elemente von $\mathcal{P}$ heißen Punkte des affinen Raumes $\mathcal{A}$.
+> * Die Dimension des affinen Raumes $\mathcal{A}$ ist definiert durch $\operatorname{dim}(\mathcal{A})=\operatorname{dim}(\mathcal{V})$.
 
 Aus Definition 1 lassen sich zunächst zwei einfache Eigenschaften der Abbildung $\alpha$ ableiten:
 
@@ -1477,7 +1482,28 @@ Aus Definition 1 lassen sich zunächst zwei einfache Eigenschaften der Abbildung
   $\alpha(P,Q)+\alpha(Q,P)=\alpha(P,P)=\mathcal{o}$ und daher
   $\alpha(Q,P)=-\alpha(P,Q)$.
 
+**Beispiel 1.**
 
+Wählen wir in der Definition 1 für die Punktmenge $\mathcal{P}$ die Menge $\mathbb{R}^3$, für den Vektorraum $\mathcal{V}$ den reellen Vektorraum $\mathbb{R}^3$  und $\alpha(P,Q)=Q-P$ für beliebige $P, Q\in\mathcal{P}=\mathbb{R}^3$, so ist $\mathcal{A}=(\mathcal{P},\mathcal{V},\alpha)$ ein $3$-dimensionaler affiner Raum, denn es gilt:
+
+1. Für einen beliebigen Punkt $P\in\mathbb{R}^3$ und einen beliebigen Vektor $v\in\mathbb{R}^3$ ist $Q=P+v\in\mathcal{P}$ und $\alpha(P,Q)=Q-P=P+v-P=v$.
+2. Für beliebige $P, Q, R\in\mathcal{P}$ ist $\alpha(P,Q)+\alpha(Q,R)=(Q-P) + (R-Q) = R-P=\alpha(P,R)$.
+
+Bemerkung:
+
+In diesem Beispiel kommen den Elementen der Menge $\mathbb{R}^3$ zwei unterschiedliche Bedeutungen zu: Zum einen als Punkte des affinen Raumes, zu anderen als Verschiebungsvektoren, vermittelt durch die Abbildung $\alpha$.
+
+Wir führen nun den Begriff eines affinen Unterraumes ein:
+
+>**Definition 2 (Affiner Unterraum).** Ist $\mathcal{A}=(\mathcal{P},\mathcal{V},\alpha)$ ein affiner Raum, $\mathcal{P}_0$ eine Teilmenge von $\mathcal{P}$ und die Menge $\mathcal{V}_0=\left\{\alpha(P,Q)\;\middle |\; P,Q\in\mathcal{P}_0\right\}\subseteq\mathcal{V}$ ein Untervektorraum von $\mathcal{V}$, so ist $\mathcal{A}_0=(\mathcal{P}_0,\mathcal{V}_0,\alpha_0)$ mit $\alpha_0(P,Q)=\alpha(P,Q)$ (für $P,Q\in\mathcal{P}_0$) ein affiner Unterraum von $\mathcal{A}$.
+
+**Beispiel 2.**
+
+Es sei $\mathcal{A}$ der affine Raum aus Beispiel 1. Für $a, b\in\mathbb{R}^3$ setzen wir $\mathcal{P}_0=\left\{a+\lambda\cdot b\,\middle |\; \lambda\in\mathbb{R}\right\}\subseteq\mathcal{P}$. Dann ist $\mathcal{P}_0$ Punktmenge des affinen Unterraumes $\mathcal{A}_0=(\mathcal{P}_0,\mathcal{V}_0,\alpha_0)$ mit dem Untervektorraum $\mathcal{V}_0=\left\{\alpha(P,Q)\;\middle |\; P,Q\in\mathcal{P}_0\right\}=\left\{\lambda\cdot b\;\middle |\;\lambda\in\mathbb{R}\right\}$ von $\mathcal{V}$ und $\alpha_0(P,Q)=\alpha(P,Q)=Q-P$ für $P, Q\in\mathcal{P}_0$.
+
+Dabei gilt $$\operatorname{dim}(\mathcal{A}_0)=\left\{\begin{array}{ccc} 0 &,\text{falls}& b=(0,0,0)^\top\\ 1 &,\text{falls}& b\neq (0,0,0)^\top \end{array}\right..$$
+
+Für $\operatorname{dim}(\mathcal{A}_0)=0$ ist $\mathcal{P}_0=\{a\}$ (einzelner Punkt).
 
 
 ## Differentialrechnung
