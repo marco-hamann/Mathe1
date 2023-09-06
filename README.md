@@ -1491,7 +1491,7 @@ Wählen wir in der Definition 1 für die Punktmenge $\mathcal{P}$ die Menge $\ma
 
 Bemerkung:
 
-In diesem Beispiel kommen den Elementen der Menge $\mathbb{R}^3$ zwei unterschiedliche Bedeutungen zu: Zum einen als Punkte des affinen Raumes, zu anderen als Verschiebungsvektoren, vermittelt durch die Abbildung $\alpha$.
+In diesem Beispiel kommen den Elementen der Menge $\mathbb{R}^3$ zwei unterschiedliche Bedeutungen zu: Zum einen als Punkte des affinen Raumes, zum anderen als Verschiebungsvektoren, vermittelt durch die Abbildung $\alpha$.
 
 Wir führen nun den Begriff eines affinen Unterraumes ein:
 
@@ -1503,7 +1503,7 @@ Es sei $\mathcal{A}$ der affine Raum aus Beispiel 1. Für $a, b\in\mathbb{R}^3$ 
 
 Dabei gilt $$\operatorname{dim}(\mathcal{A}_0)=\left\{\begin{array}{ccc} 0 &,\text{falls}& b=(0,0,0)^\top\\ 1 &,\text{falls}& b\neq (0,0,0)^\top \end{array}\right..$$
 
-Für $\operatorname{dim}(\mathcal{A}_0)=0$ ist $\mathcal{P}_0=\{a\}$ (einzelner Punkt).
+Für $\operatorname{dim}(\mathcal{A}_0)=0$ ist $\mathcal{P}_0=\{a\}$ und der affine Raum besteht aus einem einzelnen Punkt. Ist hingegen $\operatorname{dim}(\mathcal{A}_0)=1$, so beschreiben die Punkte eine Gerade in $\mathbb{R}^3$.
 
 
 ## Differentialrechnung
