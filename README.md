@@ -1456,11 +1456,9 @@ $$ worin die einzelnen Multiplikationen mit $x_0$ sowie die Additionen von $a_j$
 
 ## Analytische Geometrie
 
-Die analytische Geometrie beschäftigt sich mit Eigenschaften ausgezeichneter Punktmengen in der Ebene oder im Raum und verwendet algebraische Methoden zur Beantwortung der sich daraus ergebenden Fragestellung.
+Die analytische Geometrie beschäftigt sich mit Eigenschaften ausgezeichneter Punktmengen in der Ebene oder im Raum und verwendet algebraische Methoden (vor allem der linearen Algebra) zur Beantwortung der sich daraus ergebenden Fragestellungen.
 
-
-
-### Der affine Raum
+### Affine Räume
 
 >**Definition 1.** Ein affiner Raum $\mathcal{A}$ ist ein Tripel $(\mathcal{P},\mathcal{V},\alpha)$ bestehend aus einer nicht-leeren Menge $\mathcal{P}$, einem reellen Vektorraum $\mathcal{V}$ und einer Abbildung $\alpha: \mathcal{P}\times\mathcal{P}\longrightarrow \mathcal{V}$, so dass gilt:
 >
@@ -1482,6 +1480,16 @@ Aus Definition 1 lassen sich zunächst zwei einfache Eigenschaften der Abbildung
   $\alpha(P,Q)+\alpha(Q,P)=\alpha(P,P)=\mathcal{o}$ und daher
   $\alpha(Q,P)=-\alpha(P,Q)$.
 
+
+**Bemerkung 1.**
+
+Zeichnen wir in einem affinen Raum $\mathcal{A}=(\mathcal{P},\mathcal{V},\alpha)$ einen Punkt $O\in\mathcal{P}$ aus, so erhalten wir mittels der Eigenschaft 1 aus Definition 1 eine (von $O$ abhängige) eineindeutige Zuordnung zwischen den Punkten in $\mathcal{P}$ und den Vektoren in $\mathcal{V}$. Diese Zuordnung kann durch die Abbildung $\beta:\mathcal{P}\longrightarrow\mathcal{V}$ mit $\beta(P)=\alpha(O,P)\in\mathcal{V}$ beschrieben werden.
+
+>**Definition 2.**
+>Es sei $\mathcal{A}=(\mathcal{P},\mathcal{V},\alpha)$ ein affiner Raum, der Punkt $O\in\mathcal{P}$ beliebig aber fest gewählt und $\beta:\mathcal{P}\longrightarrow\mathcal{V}$ die Abbildung mit $\beta(P)=\alpha(O,P)\in\mathcal{V}$.
+>Dann heißt der Vektor $v=\beta(P)$ **Ortsvektor** des Punktes $P$.
+
+
 **Beispiel 1.**
 
 Wählen wir in der Definition 1 für die Punktmenge $\mathcal{P}$ die Menge $\mathbb{R}^3$, für den Vektorraum $\mathcal{V}$ den reellen Vektorraum $\mathbb{R}^3$  und $\alpha(P,Q)=Q-P$ für beliebige $P, Q\in\mathcal{P}=\mathbb{R}^3$, so ist $\mathcal{A}=(\mathcal{P},\mathcal{V},\alpha)$ ein $3$-dimensionaler affiner Raum, denn es gilt:
@@ -1492,6 +1500,9 @@ Wählen wir in der Definition 1 für die Punktmenge $\mathcal{P}$ die Menge $\ma
 Bemerkung:
 
 In diesem Beispiel kommen den Elementen der Menge $\mathbb{R}^3$ zwei unterschiedliche Bedeutungen zu: Zum einen als Punkte des affinen Raumes, zum anderen als Verschiebungsvektoren, vermittelt durch die Abbildung $\alpha$.
+
+Zeichnen wir in $\mathbb{R}^3$ den Punkt $O=(0,0,0)^\top$ aus, so gilt für die Abbildung $\beta:\mathcal{P}\longrightarrow\mathcal{V}$ aus Definition 2: $\beta(P)=\alpha(O,P)=P-O=P$ für alle $P\in\mathcal{P}$. Somit ist $\beta$ die Identität auf $\mathcal{P}$ und jeder Punkt stimmt gleichzeitig mit seinem Ortsvektor überein.
+
 
 Wir führen nun den Begriff eines affinen Unterraumes ein:
 
@@ -1507,9 +1518,36 @@ Für $\operatorname{dim}(\mathcal{A}_0)=0$ ist $\mathcal{P}_0=\{a\}$ und der aff
 
 **Beispiel 3.**
 
-Für $A\in\mathbb{R}^{m,n}$ und $b\in\mathbb{R}^n$ betrachten wir das lineare Gleichungssystem $Ax=b$. Das lineare Gleichungssystem ist genau dann lösbar, wenn $\operatorname{Rang}(A)=\operatorname{Rang}(A|b)$ gilt. In diesem Fall ist die Lösungsmenge die Punktmenge eines affinen Unterraumes $\mathcal{A}$ von $\mathbb{R}^n$ der Dimension $n-\operatorname{Rang}(A)$.
+Für $A\in\mathbb{R}^{m,n}$ und $b\in\mathbb{R}^n$ betrachten wir das lineare Gleichungssystem $Ax=b$. Dieses ist genau dann lösbar, wenn $\operatorname{Rang}(A)=\operatorname{Rang}(A|b)$ gilt. In diesem Fall ist die Lösungsmenge die Punktmenge eines affinen Unterraumes $\mathcal{A}$ von $\mathbb{R}^n$ der Dimension $n-\operatorname{Rang}(A)$.
 
 Denn die Menge $\mathcal{V}=\left\{x\in\mathbb{R}^n\;\middle |\; Ax=\mathcal{o}\right\}\subseteq \mathbb{R}^n$ ist ein Untervektorraum der Dimension $n-\operatorname{Rang}(A)$ und für $x, y\in \mathcal{P}=\left\{x\in\mathbb{R}^n\;\middle |\; Ax=b\right\}$ gilt $Ay-Ax=b-b=\mathcal{o}=A(y-x)$, d.h. $\alpha(x,y)=y-x\in\mathcal{V}$.
+
+
+### Darstellung von Punkten, Geraden und Ebenen in $\mathbb{R}^3$
+
+Punkte, Geraden und Ebenen in $\mathbb{R}^3$ sind genau die $0$-, $1$- und $2$-dimensionalen affinen Unterräume des affinen Raumes $\mathbb{R}^3$ (siehe auch den Abschnitt [Affine Räume](#Affine-Räume)).
+
+Eine Ebene $E$ kann auf verschiedene Weise angegeben werden:
+
+1. Durch eine **lineare Gleichung:**
+
+>Die **Lösungsmenge einer linearen Gleichung** der Form $a\cdot x_1+b\cdot x_2+c\cdot x_3=d$ mit $a^2+b^2+c^2\neq 0$ ist die Punktmenge einer Ebene $E$ in $\mathbb{R}^3$. Der Punkt $(x,y,z)^\top\in\mathbb{R}^3$ liegt genau dann in $E$, wenn $a\cdot x+b\cdot y+c\cdot z=d$ gilt. Umgekehrt ist jede Ebene Lösungsmenge einer solchen Gleichung.
+
+2. Durch explizite Angabe der Punkte der Ebene (**Parameterdarstellung**):
+>Sind $P=(p_1,p_2,p_2)^\top, Q=(q_1,q_2,q_3)^\top, R=(r_1,r_2,r_3)^\top\in\mathbb{R}^3$ drei Punkte einer Ebene $E$, welche nicht auf einer gemeinsamen Geraden liegen, so kann jeder Punkt $X=(x_1,x_2,x_3)^\top$ der Ebene durch die Gleichung $$\left(\begin{array}{ccc}x_1\\x_2\\x_3\end{array}\right)=\left(\begin{array}{ccc}p_1\\p_2\\p_3\end{array}\right)+\lambda\cdot \left(\begin{array}{ccc}q_1-p_1\\q_2-p_2\\q_3-p_3\end{array}\right)+\mu\cdot\left(\begin{array}{ccc}r_1-p_1\\r_2-p_2\\r_3-p_3\end{array}\right)$$ mit $\lambda, \mu\in\mathbb{R}$ angegeben werden.
+>Der Punkt $\left(\begin{array}{ccc}p_1\\p_2\\p_3\end{array}\right)$ wird manchmal **Aufpunkt** von $E$ genannt und die beiden Vektoren $\left(\begin{array}{ccc}q_1-p_1\\q_2-p_2\\q_3-p_3\end{array}\right)$ und $\left(\begin{array}{ccc}r_1-p_1\\r_2-p_2\\r_3-p_3\end{array}\right)$ sind **Richtungsvektoren** der Ebene.
+
+
+3. Durch eine **Normalenform** oder die **Hessesche Normalform**:
+>Sind $P=(p_1,p_2,p_2)^\top, Q=(q_1,q_2,q_3)^\top, R=(r_1,r_2,r_3)^\top\in\mathbb{R}^3$ drei Punkte einer Ebene $E$, welche nicht auf einer gemeinsamen Geraden liegen, so kann jeder Punkt $X=(x_1,x_2,x_3)^\top$ der Ebene durch die Gleichung $$n\circ\left(\begin{array}{ccc}x_1-p_1\\x_2-p_2\\x_3-p_3\end{array}\right)=0$$
+>mit $$n=(Q-P)\times (R-P)$$ beschrieben werden.
+>
+>Hierbei ist $\circ$ ein in $\mathbb{R}^3$ gewähltes Skalarprodukt und $\times$ das Vektorprodukt in $\mathbb{R}^3$.
+>Speziell für $|n|=1$ (mit $|n|$ der Norm/Länge von $n$) heißt diese **Normalengleichung** auch **Hessesche Normalform** von $E$.
+>
+>Der Vektor $n$ ist dann ein **Normalenvektor** der Ebene $E$.
+
+
 
 ## Differentialrechnung
 
