@@ -1471,6 +1471,7 @@ Die analytische Geometrie beschäftigt sich mit Eigenschaften ausgezeichneter Pu
 >
 > * Die Elemente von $\mathcal{P}$ heißen Punkte des affinen Raumes $\mathcal{A}$.
 > * Die Dimension des affinen Raumes $\mathcal{A}$ ist definiert durch $\operatorname{dim}(\mathcal{A})=\operatorname{dim}(\mathcal{V})$.
+> * Für $\mathcal{P}=\mathcal{V}=\mathbb{R}^n$ schreiben wir auch $\overrightarrow{PQ}$ anstatt $\alpha(P,Q)$.
 
 Aus Definition 1 lassen sich zunächst zwei einfache Eigenschaften der Abbildung $\alpha$ ableiten:
 
@@ -1504,6 +1505,8 @@ In diesem Beispiel kommen den Elementen der Menge $\mathbb{R}^3$ zwei unterschie
 Zeichnen wir in $\mathbb{R}^3$ den Punkt $O=(0,0,0)^\top$ aus, so gilt für die Abbildung $\beta:\mathcal{P}\longrightarrow\mathcal{V}$ aus Definition 2: $\beta(P)=\alpha(O,P)=P-O=P$ für alle $P\in\mathcal{P}$. Somit ist $\beta$ die Identität auf $\mathcal{P}$ und jeder Punkt stimmt gleichzeitig mit seinem Ortsvektor überein.
 
 
+
+
 Wir führen nun den Begriff eines affinen Unterraumes ein:
 
 >**Definition 2 (Affiner Unterraum).** Ist $\mathcal{A}=(\mathcal{P},\mathcal{V},\alpha)$ ein affiner Raum, $\mathcal{P}_0$ eine Teilmenge von $\mathcal{P}$ und die Menge $\mathcal{V}_0=\left\{\alpha(P,Q)\;\middle |\; P,Q\in\mathcal{P}_0\right\}\subseteq\mathcal{V}$ ein Untervektorraum von $\mathcal{V}$, so ist $\mathcal{A}_0=(\mathcal{P}_0,\mathcal{V}_0,\alpha_0)$ mit $\alpha_0(P,Q)=\alpha(P,Q)$ (für $P,Q\in\mathcal{P}_0$) ein affiner Unterraum von $\mathcal{A}$.
@@ -1523,30 +1526,97 @@ Für $A\in\mathbb{R}^{m,n}$ und $b\in\mathbb{R}^n$ betrachten wir das lineare Gl
 Denn die Menge $\mathcal{V}=\left\{x\in\mathbb{R}^n\;\middle |\; Ax=\mathcal{o}\right\}\subseteq \mathbb{R}^n$ ist ein Untervektorraum der Dimension $n-\operatorname{Rang}(A)$ und für $x, y\in \mathcal{P}=\left\{x\in\mathbb{R}^n\;\middle |\; Ax=b\right\}$ gilt $Ay-Ax=b-b=\mathcal{o}=A(y-x)$, d.h. $\alpha(x,y)=y-x\in\mathcal{V}$.
 
 
+### Darstellung von Punkten und Geraden in $\mathbb{R}^2$
+
+1. **Punkte**
+
+   Ein Punkt des affinen Raumes $\mathbb{R}^2$ ist ein Element der Menge $\mathbb{R}^2$.
+
+   *Beispiel*.: Der Punkt $A=\left(\begin{array}{c}1\\2\end{array}\right)$
+
+2. **Geraden**
+
+   Durch je zwei verschiedene Punkte $A$ und $B$ in $\mathbb{R}^2$ wird eindeutig eine Gerade festgelegt. Umgekehrt ist jede Gerade durch zwei verschiedene auf ihr liegende Punkte eindeutig bestimmt.            
+
+   >* *Gleichung*:
+   >
+   >Jede Gerade in $\mathbb{R}^2$ kann durch eine lineare Gleichung der Form $$a\cdot x + b\cdot y +c =0$$ mit $a, b, c\in\mathbb{R}$ und $a^2+b^2\neq 0$ beschrieben werden. Ein Punkt $P=(x_1,x_2)^\top\in\mathbb{R}^2$ liegt genau dann auf der Gerade, wenn die Gleichung $a\cdot x_1+b\cdot x_2+c=0$ erfüllt ist.
+   >
+   >* *Parameterdarstellung*:
+   >
+   >Sind $A, B\in\mathbb{R}^2$ mit $A\neq B$ zwei verschiedene Punkte und $g$ die eindeutig durch $A$ und $B$ festgelegte Gerade. Dann kann jeder Punkt $X$ von  $g$ durch die Gleichung $$X=A+\lambda\cdot (B-A)=A+\lambda\cdot \overrightarrow{AB}$$ mit $\lambda\in\mathbb{R}$ beschrieben werden. Der Vektor $\overrightarrow{AB}$ ist dann ein **Richtungsvektor** von $g$.
+   >* *Normalengleichung*
+   >
+   >Jede Gerade $g$ kann durch einen Normalenvektor $n\in\mathbb{R}^2$ und einen auf ihr liegenden Punkt $A\in\mathbb{R}^2$ durch die **Normalengleichung** $$n\cdot (X-A)=n\cdot \overrightarrow{AX}=0$$ angegeben werden. D.h. der Punkt $X\in\mathbb{R}^2$ liegt genau dann auf $g$, wenn die Gleichung erfüllt ist. Ist der Vektor $n$ normiert ($||n||=1$), so heißt diese Gleichung **Hessesche Normalform** von $g$.
+
+
+**Beispiel 1**:
+
+Gegeben seien die beiden Punkte $A=(1,2)^\top$ und $B=(3,-1)^\top$ in $\mathbb{R}^2$ und $g$ die durch $A$ und $B$ eindeutig festgelegte Gerade.
+Dann ist $$3\cdot x+2\cdot y-7=0$$ eine Gleichung der Gerade $g$ und $$X=\left(\begin{array}{c}x\\y\end{array}\right)=\left(\begin{array}{c}1\\2\end{array}\right)+\lambda\cdot \left(\begin{array}{c}2\\-3\end{array}\right)$$ mit $\lambda\in\mathbb{R}$ eine mögliche Parameterdarstellung.
+Des Weiteren ist der Vektor $n=\left(\begin{array}{c}3\\2\end{array}\right)$ orthogonal zu jedem Richtungsvektor von $g$, denn:
+$$n\cdot \overrightarrow{AB}=\left(\begin{array}{c}3\\2\end{array}\right)\cdot \left(\begin{array}{c}2\\-3\end{array}\right)=3\cdot 2+2\cdot (-3)=0.$$ Damit ist $n$ ein Normalenvektor von $g$ und die Gerade kann durch die Normalengleichung $$n\cdot (X-A)=\left(\begin{array}{c}3\\2\end{array}\right)\cdot \left(\begin{array}{c}x-1\\y-2\end{array}\right)=0$$ beschrieben werden.
+
+
+
 ### Darstellung von Punkten, Geraden und Ebenen in $\mathbb{R}^3$
 
 Punkte, Geraden und Ebenen in $\mathbb{R}^3$ sind genau die $0$-, $1$- und $2$-dimensionalen affinen Unterräume des affinen Raumes $\mathbb{R}^3$ (siehe auch den Abschnitt [Affine Räume](#Affine-Räume)).
 
-Eine Ebene $E$ kann auf verschiedene Weise angegeben werden:
+1. **Punkte**
 
-1. Durch eine **lineare Gleichung:**
+Ein Punkt des affinen Raumes $\mathbb{R}^3$ ist ein Element der Menge $\mathbb{R}^2$.
 
->Die **Lösungsmenge einer linearen Gleichung** der Form $a\cdot x_1+b\cdot x_2+c\cdot x_3=d$ mit $a^2+b^2+c^2\neq 0$ ist die Punktmenge einer Ebene $E$ in $\mathbb{R}^3$. Der Punkt $(x,y,z)^\top\in\mathbb{R}^3$ liegt genau dann in $E$, wenn $a\cdot x+b\cdot y+c\cdot z=d$ gilt. Umgekehrt ist jede Ebene Lösungsmenge einer solchen Gleichung.
+*Beispiel*.: Der Punkt $A=\left(\begin{array}{c}1\\2\\3\end{array}\right)$
 
-2. Durch explizite Angabe der Punkte der Ebene (**Parameterdarstellung**):
->Sind $P=(p_1,p_2,p_2)^\top, Q=(q_1,q_2,q_3)^\top, R=(r_1,r_2,r_3)^\top\in\mathbb{R}^3$ drei Punkte einer Ebene $E$, welche nicht auf einer gemeinsamen Geraden liegen, so kann jeder Punkt $X=(x_1,x_2,x_3)^\top$ der Ebene durch die Gleichung $$\left(\begin{array}{ccc}x_1\\x_2\\x_3\end{array}\right)=\left(\begin{array}{ccc}p_1\\p_2\\p_3\end{array}\right)+\lambda\cdot \left(\begin{array}{ccc}q_1-p_1\\q_2-p_2\\q_3-p_3\end{array}\right)+\mu\cdot\left(\begin{array}{ccc}r_1-p_1\\r_2-p_2\\r_3-p_3\end{array}\right)$$ mit $\lambda, \mu\in\mathbb{R}$ angegeben werden.
->Der Punkt $\left(\begin{array}{ccc}p_1\\p_2\\p_3\end{array}\right)$ wird manchmal **Aufpunkt** von $E$ genannt und die beiden Vektoren $\left(\begin{array}{ccc}q_1-p_1\\q_2-p_2\\q_3-p_3\end{array}\right)$ und $\left(\begin{array}{ccc}r_1-p_1\\r_2-p_2\\r_3-p_3\end{array}\right)$ sind **Richtungsvektoren** der Ebene.
+2. **Geraden**
 
+Durch je zwei verschiedene Punkte $A$ und $B$ in $\mathbb{R}^3$ wird eindeutig eine Gerade festgelegt. Umgekehrt ist jede Gerade durch zwei verschiedene auf ihr liegende Punkte eindeutig bestimmt.            
 
-3. Durch eine **Normalenform** oder die **Hessesche Normalform**:
->Sind $P=(p_1,p_2,p_2)^\top, Q=(q_1,q_2,q_3)^\top, R=(r_1,r_2,r_3)^\top\in\mathbb{R}^3$ drei Punkte einer Ebene $E$, welche nicht auf einer gemeinsamen Geraden liegen, so kann jeder Punkt $X=(x_1,x_2,x_3)^\top$ der Ebene durch die Gleichung $$n\circ\left(\begin{array}{ccc}x_1-p_1\\x_2-p_2\\x_3-p_3\end{array}\right)=0$$
->mit $$n=(Q-P)\times (R-P)$$ beschrieben werden.
+>* *Lösungsmenge zweier linearer Gleichungen*:
+>In $\mathbb{R}^3$ kann eine Gerade nicht durch eine einzelne lineare Gleichung, wie im Fall des $\mathbb{R}^2$, beschrieben werden. Jedoch gilt:
+>Die Lösungsmenge zweier linearer Gleichungen $a_1\cdot x_1+b_1\cdot x_2+c_1\cdot x_3=d_1$ und $a_2\cdot x_1+b_2\cdot x_2+c_2\cdot x_3 =d_2$ mit $a_i, b_i, c_i, d_i\in\mathbb{R}$ für $i\in\{1,2\}$ ist genau dann die Punktemenge einer Gerade in $\mathbb{R}^3$, wenn die beiden Vektoren $(a_1,b_1,c_1)^\top$ und $(a_2,b_2,c_2)^\top$ linear unabhängig sind.
+>Umgekehrt lässt sich jede Gerade durch zwei lineare Gleichungen dieser Form beschreiben.
 >
->Hierbei ist $\circ$ ein in $\mathbb{R}^3$ gewähltes Skalarprodukt und $\times$ das Vektorprodukt in $\mathbb{R}^3$.
->Speziell für $|n|=1$ (mit $|n|$ der Norm/Länge von $n$) heißt diese **Normalengleichung** auch **Hessesche Normalform** von $E$.
+>* *Parameterdarstellung:*
+>Sind $A$ und $B$ zwei verschiedene Punkte des $\mathbb{R}^3$, so kann jeder Punkt $X\in\mathbb{R}^3$ der durch $A$ und $B$ eindeutig festgelegten Geraden durch $$X=A+\lambda\cdot (B-A)=A+\lambda\cdot\overrightarrow{AB}$$ mit $\lambda\in\mathbb{R}$ berechnet werden.
+
+3. **Ebenen**
+
+>* *lineare Gleichung:*
+>Die **Lösungsmenge einer linearen Gleichung** der Form $a\cdot x_1+b\cdot x_2+c\cdot x_3=d$ mit $a^2+b^2+c^2\neq 0$ ist die Punktmenge einer Ebene $E$ in $\mathbb{R}^3$. Der Punkt $(x,y,z)^\top\in\mathbb{R}^3$ liegt genau dann in $E$, wenn $a\cdot x+b\cdot y+c\cdot z=d$ gilt. Umgekehrt ist jede Ebene Lösungsmenge einer solchen Gleichung.
+>
+>* *Parameterdarstellung*:
+>Sind $P, Q, R\in\mathbb{R}^3$ drei Punkte einer Ebene $E$, welche nicht auf einer gemeinsamen Geraden liegen, so kann jeder Punkt $X$ der Ebene durch die Gleichung $$X=P+\lambda\cdot \left(Q-P\right)+\mu\cdot\left(R-P\right)=P+\lambda\cdot\overrightarrow{PQ}+\mu\cdot\overrightarrow{PR}$$ mit $\lambda, \mu\in\mathbb{R}$ angegeben werden.
+>Der Punkt $P$ wird manchmal **Aufpunkt** von $E$ genannt und die beiden Vektoren $Q-P$ und $R-P$ sind **Richtungsvektoren** der Ebene.
+>
+>* Durch eine *Normalenform* oder die *Hessesche Normalform*:
+>Sind $P, Q, R\in\mathbb{R}^3$ drei Punkte einer Ebene $E$, welche nicht auf einer gemeinsamen Geraden liegen, so kann jeder Punkt $X$ der Ebene durch die Gleichung $$n\cdot\left(X-P\right)=n\cdot\overrightarrow{PX}=0$$
+>mit $$n=(Q-P)\times (R-P)=\overrightarrow{PQ}\times\overrightarrow{PR}$$ beschrieben werden.
+>
+>Hierbei ist $\times$ das Vektorprodukt in $\mathbb{R}^3$.
+>Speziell für $||n||=1$ (mit $||n||$ der Norm/Länge von $n$) heißt diese **Normalengleichung** auch **Hessesche Normalform** von $E$.
 >
 >Der Vektor $n$ ist dann ein **Normalenvektor** der Ebene $E$.
 
+
+
+### Lagebeziehungen in $\mathbb{R}^2$
+
+1. **Punkt - Gerade**
+
+Ist $A$ ein Punkt und $g$ eine Gerade in $\mathbb{R}^2$, so können genau zwei Fälle unterschieden werden:
+
+* Der Punkt $A$ liegt auf der Geraden $g$
+* Der Punkt $A$ liegt nicht auf der Geraden $g$
+
+2. **Gerade - Gerade**
+
+Für zwei Geraden $g$ und $h$ in $\mathbb{R}^2$ sind die folgenden Lagebeziehungen möglich:
+
+* $g$ und $h$ sind identisch
+* $g$ und $h$ schneiden sich in genau einem Punkt
+* $g$ und $h$ sind parallel
 
 
 ## Differentialrechnung
