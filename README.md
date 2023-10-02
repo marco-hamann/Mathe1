@@ -973,7 +973,8 @@ Lernziele
 -----
 
 
-* ..
+* Sie können die Gesetze für die Grundrechenarten zur Berechnung von Summen und Produkten endlich vieler reeller Zahlen anwenden.
+* ...
 
 
 ### Reelle Zahlen
