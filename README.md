@@ -723,7 +723,7 @@ Unter Benutzung von Quantoren schreibt sich die vorstehende Definition:
 2. $A$ ist ~~keine~~ Teilmenge von $B$, $\;A\not\subseteq B\;:\Leftrightarrow\; \exists x\in A\;\left( x\not\in B\right) $
 
 >**Definition 3.** Zwei Mengen $A$ und $B$ heißen **gleich**, kurz $A=B$, falls $A$ eine Teilmenge von $B$ ist und $B$ einen Teilmange von $A$. Unter Benutzung aussagenlogischer Verknüpfungen $$
-  A\subset B\;:\Leftrightarrow (A\subseteq B)\wedge (A\not= B)
+  A= B\;:\Leftrightarrow (A\subseteq B)\wedge (B\subseteq A)
 $$
 
 Damit sind zwei Mengen nicht gleich, $A\not=B$, falls $$
