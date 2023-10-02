@@ -33,20 +33,29 @@ In diesem ersten Kapitel lernen Sie allgemeine, elementare Begriffe der Mathemat
 
 * Aussagen und Aussageverbindungen
 * Prädikate und Quantoren
+* Aussageformen
+* Beweismethoden
+* Mengen und Verknüpfungen von Mengen
 
 Neben dieser strukturellen Sicht wird hierbei auch sichtbar, wie mathematische Aussagen unter Benutzung mathematischer Syntax notiert werden können.
+
+Für einen Überblick über die Themen dieses Kapitels sehen Sie in der nachstehenden Graphik einige zentrale Begriffe. Schlagen Sie diese in diesem Abschnitt nach.
+
+![Wordcloud Mengen](img/wc_mengen.png)<!-- style="display: block; margin-left: auto; margin-right: auto; max-width: 1000px;" -->
 
 
 Lernziele
 -----
 
 
-* Sie wissen, was eine logische *Aussage* ist und wie sie sich von anderen sprachlich und grammatikalisch korrekten Sätzen unterscheidet.
-* Sie wandeln ausformulierte *Aussageverbindungen* in symbolische Schreibweise um und umgekehrt.
-* Sie bestimmen den *Wahrheitswert* von Aussageverbindungen in Abhängigkeit der Wahrheitswerte der Teilaussagen und ihrer Verknüpfungen und erstellen *Wahrheitstabellen*.
-* Sie begründen mit Hilfe äquivalenter Umformungen, dass eine Aussage eine *Tautologie* ist.
-* Sie unterscheiden *Aussagen* und *Aussageformen* und nennen eigene Beispiele.
-* Sie formulieren mathematische quantifizierbare Aussageformen vermöge der entsprechenden *Quantoren* und vice versa.
+* Sie wissen, was eine logische Aussage ist und wie sie sich von anderen sprachlich und grammatikalisch korrekten Sätzen unterscheidet.
+* Sie wandeln ausformulierte Aussageverbindungen in symbolische Schreibweise um und umgekehrt.
+* Sie bestimmen den Wahrheitswert von Aussageverbindungen in Abhängigkeit der Wahrheitswerte der Teilaussagen und ihrer Verknüpfungen und erstellen Wahrheitstabellen.
+* Sie begründen mit Hilfe äquivalenter Umformungen, dass eine Aussage eine Tautologie ist.
+* Sie unterscheiden Aussagen und Aussageformen und nennen eigene Beispiele.
+* Sie formulieren mathematische quantifizierbare Aussageformen vermöge der entsprechenden Quantoren und vice versa.
+* Sie bilden Mengen und entscheiden, ob ein bestimmtes Objekt zu einer Menge gehört oder nicht.
+* Sie verknüpfen Mengen miteinander und können Relationen zwischen gegebenen Mengen wie Gleichheit, Teilmengeneigenschaft u. a. untersuchen.
 
 
 ### Aussagen
@@ -503,7 +512,7 @@ Aus dem Widerspruch, $n$ müsse gleichzeitig Gerade und ungerade sein, folgt, da
 
 * [Kettenschluss](https://de.wikipedia.org/wiki/Kettenschluss) $ [(a\rightarrow b)\wedge(b\rightarrow c)]\rightarrow (a\rightarrow c) $
 * [Kontraposition](https://de.wikipedia.org/wiki/Kontraposition) $ (a\rightarrow b)\Leftrightarrow (\neg{b}\rightarrow \neg{a}) $
-* [Beweisverfahren der vollständigen Induktion](https://de.wikipedia.org/wiki/Vollständige_Induktion), siehe Abschnitt [Zahlenmengen](#Zahlenmengen)
+* [Beweisverfahren der vollständigen Induktion](https://de.wikipedia.org/wiki/Vollständige_Induktion), siehe Abschnitt [Zahlen und Gleichungen](#Zahlen-und-Gleichungen)
 
 
 Quantoren
@@ -632,7 +641,7 @@ Die erste Antwortoption besitzt die logische Struktur $(\neg{b}\rightarrow a)$, 
 [[?]] Die Entscheidung des Wahrheitswertes einer zweiwertigen Aussage lässt sich auch an der Negation der Aussage prüfen.
 ****************************************
 
-1. "Für alle natürlichen Zahlen $n$ gilt $1+2+...+n=\frac{n\cdot(n+1)}{2}$." Diese Aussage soll im Abschnitt [Zahlenmengen](#Zahlenmengen) unter Verwendung des Beweisverfahrens der vollständigen Induktion beweisen werden. Hier soll zunächst eine Plausibilitätsbetrachtung unter Nutzung der nachstehenden Abbildung genügen.
+1. "Für alle natürlichen Zahlen $n$ gilt $1+2+...+n=\frac{n\cdot(n+1)}{2}$." Diese Aussage soll im Abschnitt [Zahlen und Gleichungen](#Zahlen-und-Gleichungen) unter Verwendung des Beweisverfahrens der vollständigen Induktion beweisen werden. Hier soll zunächst eine Plausibilitätsbetrachtung unter Nutzung der nachstehenden Abbildung genügen.
 
 ![bild](img/mat-bild-01.png)<!-- width = "450px" -->
 
@@ -697,7 +706,7 @@ Es ist zu entscheiden, welche der nachstehenden Aussagen im Sinn von Definition 
 
 3. {0}{$0.\overline{17}\in\mathbb{Q}$ wahr/falsch?}{1}{Diese Aussage ist wahr, da gilt: $ 100\cdot0.\overline{17}=17.\overline{17}\quad\leadsto\quad 100\cdot0.\overline{17}-0.\overline{17}=99\cdot 0.\overline{17}=17 \quad\leftrightarrow\quad 0.\overline{17}=\frac{17}{99}\in\mathbb{Q}$}
 
-Die rationalen Zahlen umfassen alle endlichen und nichtendlichen periodischen Dezimalbrüche.
+Die rationalen Zahlen umfassen alle endlichen und nichtendlichen periodischen Dezimalbrüche.[^1]
 
 **Bemerkung 1.** Mengen lassen sich durch Angabe aller Elemente beziehungsweise durch eine definierende Eigenschaft angeben. Sie werden unter Verwendung von Mengenklammern $\{.\}$ dargestellt und besitzen eine der nachstehenden Formen.
 
@@ -786,7 +795,7 @@ $$ Grafisch entspricht die Schnittmenge $A\cap B$ auf der Zahlengerade dem Absch
   \end{split}
 $$ worin $a$ die untere - und $b$ die obere *Intervallgrenze* bezeichnen. Außerdem legen $$
    [a,\infty):=\{x\in\mathbb{R}\vert a\leq x\}\quad\text{und}\quad (-\infty,b):=\{x\in\mathbb{R}\vert x<b\}
-$$ Intervalle mit unbegrenzter Länge fest.[^1]
+$$ Intervalle mit unbegrenzter Länge fest.[^2]
 
 >**Proposition 1.** Für Mengen $A$, $B$ und $C$ gelten:
 >
@@ -820,6 +829,13 @@ $$ d. i. die Menge aller Elemente, die in $A$ oder in $B$ enthalten sind.
 $$ d. i. die Menge aller Elemente, die zwar in $A$, jedoch nicht in $B$ enthalten sind.
 
 ![Differenz](img/mat-bild-04.png "_Fig._ Graphische Darstellung der Differenz (schraffierter Bereich) zweier Mengen $A$ und $B$ in einem Mengendiagramm.")<!-- style="display: block; margin-left: auto; margin-right: auto; max-width: 450px;" -->
+
+Im Folgenden wird für eingangs des Abschnitts betrachteten Mengen vereinbart:
+
+* $\mathbb{N}^\times:=\mathbb{N}\setminus\{0\}$ ... Menge der natürlichen Zahlen ~~ohne~~ Null
+* $\mathbb{Z}^\times:=\mathbb{Z}\setminus\{0\}$ ... Menge der ganzen Zahlen ~~ohne~~ Null
+* $\mathbb{Q}^\times:=\mathbb{Q}\setminus\{0\}$ ... Menge der rationalen Zahlen ~~ohne~~ Null
+* $\mathbb{R}^\times:=\mathbb{R}\setminus\{0\}$ ... Menge der reellen Zahlen ~~ohne~~ Null
 
 >**Definition 8.** Sind zwei Mengen $A$ und $B$ gegeben mit $B\subseteq A$, so heißt die Differenz $$
   B^c_A:=A\setminus B:=\{x|(x\in A)\wedge (x\not\in B)\}
@@ -927,17 +943,361 @@ $$ lässt sich aufgrund der Beschränktheit von $x$ und $y$ in $(x,y)$ als achse
 
 ****************************************
 
+[^1]: Unendliche nichtperiodische Dezimalbrüche sind irrationalen Zahlen. Bekannte Beispiele sind $\sqrt{2}\approx 1.41$, die Kreiszahl $\pi\approx 3.14$ und die Eulersche Zahl $e\approx 2.71$. Es gilt außerdem $$\sin{\alpha}\not\in\mathbb{Q}\quad\text{für alle}\quad 0^\circ<\alpha<90^\circ\quad\text{mit Ausnahme}\quad\alpha=30^\circ$$
 
-[^1]: Die Symbole $\infty$ und $-\infty$ bezeichnen keine reellen Zahlen, wonach die Klammern an diesen Grenzen nur runde Klammern und _keine_ eckigen sein dürfen.
+[^2]: Die Symbole $\infty$ und $-\infty$ bezeichnen keine reellen Zahlen, wonach die Klammern an diesen Grenzen nur runde Klammern und _keine_ eckigen sein dürfen.
 
 
-### Zahlen
+## Zahlen und Gleichungen
 
-## Komplexe Zahlen
+
+
+
+Überblick
+-----
+
+
+In diesem Kapitel soll der Zahlbegriff betrachtet werden. Ein Fokus liegt dabei auf dem Lösen algebraischer Gleichungen. Ausgehend von den reellen Zahlen werden hierfür die komplexen Zahlen eingeführt. Es werden u. a. betrachtet:
+
+* Rechengesetze für reelle Zahlen
+* Zahlenbereichserweiterung zu den komplexen Zahlen
+* Rechnen mit komplexen Zahlen
+* Methoden zur Lösung algebraischer Gleichungen
+
+Für einen Überblick über die Themen dieses Kapitels sehen Sie in der nachstehenden Graphik einige zentrale Begriffe. Schlagen Sie diese in diesem Abschnitt nach.
+
+![Wordcloud Mengen](img/wc_zahlen.png)<!-- style="display: block; margin-left: auto; margin-right: auto; max-width: 1000px;" -->
+
+
+Lernziele
+-----
+
+
+* ..
+
+
+### Reelle Zahlen
+
+
+Grundrechenarten
+=====
+
+Im Abschnitt [Mengen](#Mengen) wurden die aus der Schulmathematik bekannten Teilmengen reeller Zahlen wiederholt.
+
+* $\mathbb{N}$ ... Menge der natürlichen Zahlen
+* $\mathbb{Z}$ ... Menge der ganzen Zahlen
+* $\mathbb{Q}$ ... Menge der rationalen Zahlen
+* $\mathbb{R}$ ... Menge der reellen Zahlen
+
+Im Folgenden sollen noch einmal Operationen reeller Zahlen in den Blick genommen werden. Zunächst werden die in diesen Zahlbereichen erklärten Grundrechenoperationen mit den geltenden Rechenregeln angeführt.
+
+>**Addition und Multiplikation.** Summe und Produkt natürlicher bzw. ganzer bzw. rationaler bzw. reeller Zahlen sind wieder Zahlen desselben Zahlbereichs. Man sagt:
+>
+>*Die Mengen $\mathbb{N}$ bzw. $\mathbb{Z}$ bzw. $\mathbb{Q}$ bzw. $\mathbb{R}$ sind bezüglich der Addition und Multiplikation abgeschlossen.*
+>
+>Es gelten darüber hinaus:
+>
+>1. *Assoziativität*[^1] $$ \left(p+q\right)+r=p+\left(q+r\right) \quad\text{sowie}\quad \left(p\cdot q\right)\cdot w=p\cdot \left(q\cdot r\right) $$
+>2. *Kommutativität*[^1] $$ p+q=p+q\quad \text{sowie}\quad p\cdot q=q\cdot p $$
+>3. *Distributivität*[^1] $$ \left(p+q\right)\cdot r=p\cdot r+q\cdot r $$
+>3. *Neutrales Element*[^1] $$ p+0=p\quad\text{sowie}\quad q\cdot 1=q $$
+>
+>für beliebige natürliche bzw. ganze bzw. rationale bzw. reelle Zahlen $p$, $q$ und $r$.
+
+>**Subtraktion und Division.** Die Division reeller Zahlen durch Null ist nicht erklärt. Darüber hinaus gelten für die jeweiligen Zahlbereiche:
+>
+>* *Natürliche Zahlen.* Subtraktion und Division können aus $\mathbb{N}$ herausführen, d. h. Differenz und Quotient sind nicht für jede Wahl der Argumente wieder natürliche Zahlen.
+>* *Ganze Zahlen.* Die Menge $\mathbb{Z}$ ist gegenüber der Subtraktion abgeschlossen. Jedoch kann das Dividieren aus der Menge herausführen. Darüber hinaus besitzt jede ganze Zahl $p$ eine bezüglich der Addition eindeutig erklärte inverse Zahl $-p:=(-1)\cdot p$ mit $$
+  p+ (-p)=(-p)+ p=0
+$$ das $(-1)$-fache von $p$.
+>* Die Menge der *rationalen Zahlen* ist gegenüber der Subtraktion und Division abgeschlossen. Ausnahme bildet die Division durch Null. Darüber hinaus besitzt jede rationale Zahl $p\in\mathbb{Q}^\times$ eine bezüglich der Multiplikation eindeutig erklärte inverse Zahl $p^{-1}:=\frac{1}{p}$ mit $$
+  p\cdot p^{-1}=p^{-1}\cdot p=1
+$$ den Kehrwert von $p$.
+
+
+Vollständige Induktion
+=====
+
+
+Die Menge der natürlichen Zahlen kann mithilfe der **Nachfolgerfunktion** $$
+  S:\mathbb{N}\to\mathbb{N}\quad\text{mit}\quad S(n)=n+1
+$$ erklärt werden. Hierbei werden gefordert:
+
+1. Sind die Nachfolger $S(a)$ und $S(b)$ zweier natürlicher Zahlen gleich, so sind $a$ und $b$ selbst gleich. Kurz: $$
+  S(a)=S(b)\quad\rightarrow\quad a=b $$
+2. Die Null ist nicht Nachfolger einer natürlichen Zahl.[^2] D. h. $$
+  0\not\in S(\mathbb{N})=\left\{m|m=S(n)\wedge n\in\mathbb{N}\right\} $$ $S(\mathbb{N})$ bezeichnet hier die Bildmenge der Nachfolgerfunktion, also die Menge aller Nachfolger $S(n)$ einer natürlichen Zahl $n$.
+3. Gilt $M\subseteq\mathbb{N}$ mit $O\in M$ und des Weiteren die Implikation $$
+  n\in M\quad\rightarrow\quad S(n)\in M $$ so folgt $M=\mathbb{N}$.
+
+An der dritten Forderung orientiert sich ein Beweisverfahren für Allaussagen $a(n)$ für beliebige $n\in\mathbb{N}$.
+
+>**Vollständige Induktion.** Es bezeichnen $n$ und $k$ zwei natürliche Variablen und $a(n)$ eine Aussage in Abhängigkeit von $n$.
+>
+>*Induktionsanfang.* $a(n_0)$ eine wahre Aussage für ein $n_0\in\mathbb{N}$.
+>
+>*Induktionsschluss.* Folgt aus der Gültigkeit von $a(k)$ für ein beliebiges $k\in\mathbb{N}$ mit $k\geq n_0$ die Gültigkeit von $a(k+1)=a(S(k))$, so folgt mit dem Induktionsanfang die Gültigkeit für alle $n\in\mathbb{N}$ mit $n\geq n_0$.
+> $$ \left(a(n_0)\;\wedge\; \big[\forall k\geq n_0\left(a(k)\rightarrow a(k+1)\right)\big]\right)\rightarrow a(n)\quad\forall n\geq n_0 $$
+
+**Beispiel 1.** Nachzuweisen ist, dass $$
+  a(n)=1+2+3+...+n=\frac{n\cdot(n+1)}{2}
+$$ für beliebige natürliche Zahlen $n\geq 1$ gilt. Im nachstehenden Video erfolgt der Nachweis für die Summe der ersten einhundert natürlichen Zahlen, d. h. $$
+  1+2+3+...+99+100=\frac{100\cdot 101}{2}=50\cdot 101=5050 $$
+unter Nutzung von Assoziativ- und Kommutativgesetz bezüglich der Addition natürlicher Zahlen.
+
+!?[Gauss](https://www.youtube.com/watch?v=n2E_lfc2Bvc "Gaußsche Summenformel, Ausschnitt aus dem Film *Vermessung der Welt* nach dem gleichnamigen Roman von Daniel Kehlmann.")
+
+Hier soll nun der Nachweis für beliebige Werte $n\in\mathbb{N}^\times$ mittels vollständiger Induktion geführt werden.
+
+Induktionsanfang. Für $n=1$ gilt $1=\frac{1\cdot 2}{2}=0$.
+
+Induktionsschluss. Für ein $n=k\geq 1$ gelte $$
+  a(k)=1+2+3+...+k=\frac{k\cdot(k+1)}{2}
+$$ Daraus folgt nach Addition von $k+1$ auf beiden Seiten der Gleichung $$
+  1+2+3+...+k+\textcolor{purple}{(k+1)}=\frac{k\cdot(k+1)}{2}+\textcolor{purple}{(k+1)}
+$$ Für die rechte Seite der Gleichung folgt $$
+  \frac{k\cdot(k+1)}{2}+(k+1)=\frac{k\cdot(k+1)}{2}+\frac{2\cdot(k+1)}{2}=\frac{(k+1)\cdot(k+2)}{2}=a(k+1)
+$$ Schließlich folgt hieraus unter Einbeziehung des Induktionsanfangs die Allgemeingültigkeit von $a(n)$ für alle $n\in\mathbb{N}$ mit $n\geq1$.
+
+$\square$
+
+---
+
+**Beispiel 2.** Analog zum vorigen Beispiel lässt sich mittels vollständiger Induktion beweisen:
+
+{0-3}{Für beliebige natürliche Zahlen $n\in\mathbb{N}^\times$ gilt: $$ a(n)=1+3+5+...+2\cdot n-1=n^2 $$}
+
+{1-3}{*Induktionsanfang.* Für $n=1$ gilt nach Einsetzen in die vorstehende Formel: $1=1^2$ (wahre Aussage).}
+
+{2-3}{*Induktionsschluss.* Für $n=k$ mit $k\geq 1$ gelte: $$ 1+3+5+...+2\cdot k-1=k^2 $$ Hieraus folgt durch Addition von $2\cdot(k+1)-1$ zu beiden Seiten der Gleichung $$ (1+3+5+...+2\cdot k-1)+\textcolor{magenta}{2\cdot(k+1)-1}=k^2+\textcolor{magenta}{2\cdot(k+1)-1}=k^2+2\cdot k+1=(k+1)^2 $$ Mit dem Induktionsanfang folgt die Gültigkeit obiger Aussage für alle $n\in\mathbb{N}^\times$. $\quad\square$}
+
+
+Endliche Summen und Produkte
+===
+
+
+Zur übersichtlichen Darstellung von Summen bzw. Produkten reeller Zahlen werden die nachfolgenden Schreibweisen vereinbart.
+
+> **Summen- und Produktzeichen.** Es sind $i\in\{m,m+1,...,n-1,n\}\subset\mathbb{N}$ eine natürliche Variable und $a_i\in\mathbb{R}$ reelle Zahlen.
+>
+>1. Es bezeichnet $$ \sum_{i=m}^n{a_i}:=a_m+a_{m+1}+...+a_{n-1}+a_n $$ die [Summe](https://de.wikipedia.org/wiki/Summe) der reellen Zahlen $a_m$, $a_{m+1}$, ..., $a_{n-1}$ und $a_n$. Lies: "*Summe über alle Zahlen $a_i$ von $i$ gleich $m$ bis $n$*".
+>2. Demgegenüber bezeichnet $$ \prod_{i=m}^n{a_i}:=a_m\cdot a_{m+1}\cdot ...\cdot a_{n-1}\cdot a_n $$ das Produkt der reellen Zahlen $a_m$, $a_{m+1}$, ..., $a_{n-1}$ und $a_n$. Lies: "*Produkt aller Zahlen $a_i$ von $i$ gleich $m$ bis $n$*".
+>
+>Die Variable $i$ der Summen- / Produktdarstellung wird auch **Laufvariable** genannt.
+
+**Beispiel 3.** Für die Summenformeln in den vorstehenden Beispielen kann somit geschrieben werden:
+
+1. $$\sum_{i=1}^n{i}=1+2+3+...+n=\frac{n\cdot(n+1)}{2} \quad\text{(Beispiel 1)}$$
+2. $$\sum_{i=1}^n{(2\cdot i-1)}=1+3+5+...+2\cdot n-1=n^2 \quad\text{(Beispiel 2)} $$
+
+Darüber hinaus ergeben sich:
+
+3. $$\sum_{i=1}^n{1}=1+1+1+...+1=n\cdot 1=n$$
+4. $$\sum_{i=1}^n{j}=j+j+j+...+j=n\cdot j=n\cdot j$$
+
+In den beiden letzten Beispielen hängen die zu summierenden Zahlen nicht von der Laufvariable ab.
+
+**Beispiel 4.** Analog zum vorstehenden Beispiel lassen sich bilden:
+
+1. Das Produkt der ersten $n$ natürlichen Zahlen $$ \prod_{i=1}^n{i}=1\cdot 2\cdot ...\cdot n=:n! $$ wird *Fakultät von $n$* genannt. Per Definition ist $0!=1$, darüber hinaus gelten $$ (n+1)!=n!\cdot (n+1) \quad\text{sowie}\quad \prod_{i=m}^n{i}=\frac{n!}{(m-1)!} $$
+2. Das Produkt von Potenzen zur Basis $2$ unter Benutzung eines Potenzgesetzes $$\prod_{i=1}^n{(2^i)}=2^1\cdot 2^2\cdot ...\cdot 2^n=2^{1+2+...+n}=2^{\frac{n\cdot(n+1)}{2}}$$ worin ebenso die Gaußsche Summenformel (Beispiel 1) Anwendung findet.
+3. Analog berechnet sich das Produkt unter Benutzung eines weiteren Potenzgesetzes $$\prod_{i=1}^n{(2^k)}=2^k\cdot 2^k\cdot ... \cdot 2^k=\left(2^k\right)^n=2^{k\cdot n}$$ Der auftretende Faktor hängt hier nicht von der Laufvariable ab.
+
+>**Satz 1.** Für endlich viele Summanden gelten die nachstehenden Rechenregeln.
+>
+>1. Seien $a_i\in\mathbb{R}$ und $b_i\in\mathbb{R}$ mit $i\in\{m,m+1,...,n-1,n\}$. Dann gilt $$
+  \sum_{i=m}^n{(a_i+b_i)}=\sum_{i=m}^n{a_i}+\sum_{i=m}^n{b_i} $$
+>2. Für eine beliebige reelle Zahl $\lambda\in\mathbb{R}$ gilt ebenfalls $$
+  \sum_{i=m}^n{(\lambda\cdot a_i)}=\lambda\cdot\sum_{i=m}^n{a_i} $$
+>3. Für doppelte Summenbildung über die reellen Zahlen $c_{ik}$ mit $i\in\{m,m+1,...,n-1,n\}$ und $k\in\{a,a+1,...,b-1,b\}$ gilt $$
+  \textcolor{purple}{\sum_{i=m}^n}{\left(\sum_{k=a}^b{c_{\textcolor{purple}{i}k}}\right)}=\sum_{k=a}^b{\left(\textcolor{purple}{\sum_{i=m}^n}{c_{\textcolor{purple}{i}k}}\right)} $$
+
+**Beweis.** Der Nachweis der einzelnen Aussagen lässt sich unter Nutzung von Assoziativ- und Kommutativgesetz sowie dem Distributivgesetz für Summen endlich vieler reeller Zahlen führen. So lassen sich Eigenschaft 1 $$
+  \sum_{i=m}^n{(a_i+b_i)}=
+  (a_m+b_m)+(a_{m+1}+b_{m+1})+...+(a_{n-1}+b_{n-1})+(a_n+b_n)=(a_m+a_{m+1}+...+a_{n-1}+a_n)+(b_m+b_{m+1}+...+b_{n-1}+b_n)=
+  \sum_{i=m}^n{a_i}+\sum_{i=m}^n{b_i} $$
+und in gleicher Weise Eigenschaft 2 $$
+  \sum_{i=m}^n{(\lambda\cdot a_i)}=
+  (\lambda\cdot a_{m})+(\lambda\cdot a_{m+1})+...+(\lambda\cdot a_{n-1})+(\lambda\cdot a_{n})=
+  \lambda\cdot (a_{m}+a_{m+1}+...+a_{n-1}+a_{n})=
+  \lambda\cdot\sum_{i=m}^n{a_i} $$
+nachrechnen. Für den Nachweis von Eigenschaft 3 werden zunächst die Summen von "innen nach außen" durch Auflösung des Summenzeichens geschrieben[^3] $$
+  \textcolor{purple}{\sum_{i=m}^n}{\left(\sum_{k=a}^b{c_{\textcolor{purple}{i}k}}\right)}=
+  \textcolor{purple}{\sum_{i=m}^n}{\left(c_{\textcolor{purple}{i},a}+c_{\textcolor{purple}{i},a+1}+...+c_{\textcolor{purple}{i},b-1}+c_{\textcolor{purple}{i},b}\right)}=
+  \left(c_{\textcolor{purple}{m},a}+c_{\textcolor{purple}{m},a+1}+...+c_{\textcolor{purple}{m},b-1}+c_{\textcolor{purple}{m},b}\right)+\left(c_{\textcolor{purple}{m+1},a}+c_{\textcolor{purple}{m+1},a+1}+...+c_{\textcolor{purple}{m+1},b-1}+c_{\textcolor{purple}{m+1},b}\right)+...+\left(c_{\textcolor{purple}{n},a}+c_{\textcolor{purple}{n},a+1}+...+c_{\textcolor{purple}{n},b-1}+c_{\textcolor{purple}{n},b}\right)
+$$ Werden die Summanden unter Anwendung von Assoziativ- und Kommutativgesetz nun in der Form $$
+  \left(c_{\textcolor{purple}{m},a}+c_{\textcolor{purple}{m+1},a}+...+c_{\textcolor{purple}{n-1},a}+c_{\textcolor{purple}{n},a}\right)+\left(c_{\textcolor{purple}{m},{a+1}}+c_{\textcolor{purple}{m+1},{a+1}}+...+c_{\textcolor{purple}{n-1},{a+1}}+c_{\textcolor{purple}{n},{a+1}}\right)+...+\left(c_{\textcolor{purple}{m},b}+c_{\textcolor{purple}{m+1},b}+...+c_{\textcolor{purple}{n-1},b}+c_{\textcolor{purple}{n},b}\right)=\sum_{k=a}^b{\left(c_{\textcolor{purple}{m},k}+c_{\textcolor{purple}{m+1},k}+...+c_{\textcolor{purple}{n-1},k}+c_{\textcolor{purple}{n},k}\right)}=\sum_{k=a}^b{\left(\textcolor{purple}{\sum_{i=m}^n}{c_{\textcolor{purple}{i}k}}\right)}
+$$ geschrieben.
+
+$\square$
+
+**Bemerkung 1.** Die Laufvariable $i$ in einer Summe $$
+  \sum_{i=m}^n{a_i}=a_m+a_{m+1}+...+a_{n-1}+a_n
+$$ ist eine lokale Variable und lässt innerhalb dieser Summe beliebig umbenennen, aber auch "verschieben". Zum Beispiel lässt sich die nachstehende Summe durch die **Indexverschiebung** $k=i-1\,\leftrightarrow\, i=k+1$ $$
+  \sum_{i=1}^n{\left(2^{i-1}\right)}=2^0+2^1+...+2^{n-1}=\sum_{k=0}^{n-1}{\left(2^{k}\right)}
+$$ äquivalent darstellen.
+
+**Beispiel 5.** Der Laufindex $k$ in den nachstehenden Summen $$
+  \sum_{k=6}^{12}{\frac{1}{3+k}}\quad\text{bzw.}\quad
+  \sum_{k=1}^{21}{\frac{1}{k+2}}-\sum_{k=4}^{24}{\frac{1}{k-2}}
+$$ ist zu verschieben. Die aufgeführte Differenz ist zu berechnen.
+
+1. Der Laufindex ist zu verschieben, so dass von $i=1$ ab summiert wird. Mit $i=k-5$ ergibt sich $$
+  \sum_{k=6}^{12}{\frac{1}{3+k}} = \sum_{i=1}^{7}{\frac{1}{8+i}}
+$$ Mit der Indexverschiebung $i=k-3$ im Subtrahenden ergibt sich die Differenz $$
+  \begin{split}
+    \sum_{k=1}^{21}{\frac{1}{k+2}}-\sum_{k=4}^{24}{\frac{1}{k-2}}
+    & = \sum_{i=1}^{21}{\frac{1}{i+2}}-\sum_{i=1}^{21}{\frac{1}{i+1}} \\
+    & = \sum_{i=1}^{21}{\left({\frac{1}{i+2}}-{\frac{1}{i+1}}\right)} \\
+    & = \frac{1}{3} -\frac{1}{2} + \frac{1}{4} - \frac{1}{3} +\frac{1}{5} -\frac{1}{4}+ \dots +\frac{1}{21}-\frac{1}{20}+\frac{1}{22}-\frac{1}{21}+\frac{1}{23}-\frac{1}{22} \\
+    & = -\frac{1}{2} +\frac{1}{23} = -\frac{23}{46} + \frac{2}{46} = -\frac{21}{46} \approx -0.4565217
+  \end{split}
+$$
+2. Der Laufindex ist zu verschieben, so dass über $\frac{1}{m}$ summiert wird. Mit $m=3+k$ ergibt sich $$
+  \sum_{k=6}^{12}{\frac{1}{3+k}} = \sum_{m=9}^{15}{\frac{1}{m}}
+$$ Analog ergibt sich mit $m=k+2$ im Minuend und $m=k-2$ im Subtrahend für die Differenz $$
+ \begin{align*}
+        \sum_{k=1}^{21}{\frac{1}{k+2}}-\sum_{k=4}^{24}{\frac{1}{k-2}}
+        =\sum_{m=3}^{23}{\frac{1}{m}}-\sum_{m=2}^{22}{\frac{1}{m}}=\frac{1}{23}-\frac{1}{2}
+\end{align*}
+$$
+
+
+Sicher gewusst
+===
+
+
+Testen Sie Ihr Wissen in diesem Abschnitt und Beantworten Sie die folgenden Fragen.
+
+**Frage 1.** Entscheiden Sie. Führen Sie den Nachweis mittels vollständiger Induktion.
+
+[( )] $$\forall n\in\mathbb{N}\;\left(2^n\geq n^2\right)$$
+[( )] $$\forall n\in\mathbb{N}\,,n\geq 3\;\left(2^n\leq n^2\right)$$
+[(X)] $$\forall n\in\mathbb{N}\,,n\geq 4\;\left(2^n\geq n^2\right)$$
+[[?]] Eine Entscheidung lässt sich unter Benutzung der Funktionsgraphen zu den Funktionen $$
+  n\mapsto 2^n\quad\text{und}\quad n\mapsto n^2
+$$ ableiten. Die beiden Funktionsgraphen haben für $n\in[0,\infty)$ zwei Punkte gemeinsam, bei $n=2$ und $n=4$. Für $n=1$, $n=3$ und $n\in\mathbb{N}$ mit $n\geq 4$ sind die Funktionswerte beider Funktionen zu vergleichen. ![Funktionsgraphen](img/mat-bild-10.png)
+****************************************
+
+Der Nachweis erfolgt mit Hilfe des Beweisverfahrens der vollständigen Induktion.
+
+1. Für $n_0=4$ gilt $2^4=16=4^2$.
+2. Aus der angenommenen Ungleichung $$
+  2^k\geq k^2\quad\text{für}\quad k>4
+$$ folgt unter Benutzung der Aussage für $k$ $$
+  2^{k+\textcolor{magenta}{1}}=2\cdot 2^k\geq 2\cdot k^2=k^2+k\cdot k>k^2+4\cdot k=k^2+2\cdot k+2\cdot k>k^2+2\cdot k+1=(k+\textcolor{magenta}{1})^2
+$$ Hieraus folgt also die Gültigkeit $2^n> n^2$ für alle natürlichen Zahlen $n>4$ und mit dem Induktionsanfang $$ 2^n\geq n^2\quad\forall\, n\geq 4 $$
+
+$\square$
+
+****************************************
+
+
+[^1]: bezüglich der Operationen Addition und Multiplikation
+
+[^2]: Null besitzt keinen Vorgänger.
+
+[^3]: Zur übersichtlichen Darstellung wird der Doppelindex in der Rechnung durch Komma getrennt.
+
+
+### Komplexe Zahlen
+
+
+Motivation
+===
+
+
+**Beispiel 1.** Quadratische Gleichungen in der reellen Variablen $x$ besitzen maximal zwei Lösungen: zum Beispiel $$
+  x^2-1=(x+1)\cdot(x-1)=0\quad\leftrightarrow\quad x_1=1\;\vee\;x_2=-1
+$$ andererseits $$
+  x^2-2\cdot x+1=(x-1)^2=0\quad\leftrightarrow\quad x=1
+$$ oder $$
+  x^2+1=0\quad\rightarrow\quad L=\emptyset
+$$ Die letztere Gleichung besitzt keine reelle Lösung, denn es gilt genau einer der folgenden Fälle:
+
+1. Für beliebige Werte $x\geq0$ gilt, dass $x^2\geq0$ und somit $x^2+1>0$ folgt.
+2. Für beliebige Werte $x<0$ folgt in gleicher Weise, dass mit $-x>0$ und $$
+  (-x)\cdot(-x)=(-1)^2\cdot x^2=x^2>0
+$$ schließlich $x^2+1>0$ folgt.
+
+Demnach gibt es kein $x\in\mathbb{R}$, dass die Gleichung $x^2+1=0$ löst.
+
+**Bemerkung 1.** Die Formel zur Lösung quadratischer Gleichungen $$
+  x^2+p\cdot x+q=0\quad\leftrightarrow\quad x_{1,2}=-\frac{p}{2}\pm\sqrt{\frac{p^2}{4}-q}
+$$ gestattet eine Fallunterscheidung zur Anzahl der reellen Lösungen in Abhängigkeit der reellen Koeffizienten der Gleichung.
+
+Für die Lösungen $x_1$ und $x_2$ gelten mit dem Radikanten[^2] $\frac{p^2}{4}-q=\frac{1}{4}\cdot(p^2-4\cdot q)$ der Wurzel $$
+ \left\{\begin{array}{lcl}
+         x_1\in\mathbb{R},\;x_2\in\mathbb{R}\;\text{mit}\; x_1\neq x_2 & \text{falls} & p^2-4\cdot q>0 \\
+         x_1\in\mathbb{R},\;x_2\in\mathbb{R}\;\text{mit}\; x_1= x_2 & \text{falls} & p^2-4\cdot q=0 \\
+         \not\exists\, x_{1,2}\in\mathbb{R} & \text{falls} & p^2-4\cdot q<0
+        \end{array}
+ \right.
+$$
+
+
+Konstruktion der komplexen Zahlen
+===
+
+
+>**Definition 1.** Die Zahl $i$ mit $i^2=-1$ heißt [imaginäre Einheit](https://de.wikipedia.org/wiki/Imagin%C3%A4re_Zahl).[^1]
+
+Die in Beispiel 1 betrachtete Gleichung $x^2+1$ ergibt mit dieser Definition $$
+  i^2+1=-1+1=0\quad\text{und}\quad
+  (-i)^2+1=(-1\cdot i)^2=(-1)^2\cdot i^2=1\cdot(-1)+1=0
+$$ nach Annahme der Gültigkeit der Potenzgesetze für die in Definition 1 erklärte imaginäre Einheit. Damit besitzt die Gleichung $x^2+1$ die beiden Lösungen $x_{1,2}=\pm i$.
+
+>**Definition 2.** Eine Zahl $b\cdot i=bi$ mit $b\in\mathbb{R}$ und $i^2=-1$ heißt *imaginäre Zahl*.
+
+Das Rechnen mit reellen Zahlen lässt sich auf imaginäre Zahlen übertragen.
+
+**Beispiel 2.** Es berechnen sich
+
+1. $3i+2i+ci=(5+c)\cdot i\;\text{für}\; c\in\mathbb{R}$
+2. $pi\cdot qi=pq\cdot i^2=-pq\;\text{für}\; p\in\mathbb{R}\,,\; q\in\mathbb{R}$
+3. $i^5=i^{2+2+1}=i^2\cdot i^2\cdot i=(-1)\cdot(-1)\cdot i=i$
+4. $i^{4n+1}=i^{4n}\cdot i^3=(i^2\cdot i^2)^n\cdot i^2\cdot i=1^n\cdot(-1)\cdot i=-1 \;\forall n\in\mathbb{N}$
+5. $$\frac{1}{i^3}=\frac{1}{i^2\cdot i}=-\frac{1}{i}=-\frac{i}{i^2}=-\frac{i}{(-1)}=i$$
+
+Unter Benutzung der Javascript-Bibliothek [Algebrite](http://algebrite.org/) können unter Verwendung des Bezeichners $i$ interaktiv reelle und imaginäre Zahlen verknüpft werden.
+
+```javascript
+i^2
+simplify(2*i+a*i)
+1/(i^3)
+```
+@Algebrite.eval
+
+Die uneingeschränkte Anwendung der Rechengesetze für reelle Zahlen auf imaginäre Zahlen führt auf die Definition einer komplexen Zahl.
+
+>**Definition 3.** Eine [komplexe Zahl](https://de.wikipedia.org/wiki/Komplexe_Zahl) ist ein Ausdruck der Form $$
+  z=a+ib\quad\text{mit}\quad a\in\mathbb{R}\,,\; b\in\mathbb{R}\,,\; i^2=-1
+$$ Die darin auftretende Zahl $a$ wird *Realteil* von $z$ genannt, während der Koeffizient $b$ von $i$ den *Imaginärteil* von $z$ bezeichnet. Man schreibt $$
+  a=\mathop{Re}{z}\,,\quad b=\mathop{Im}{z}
+$$ Die Menge aller komplexen Zahlen wird angegeben mit $$
+  \mathbb{C}=\left\{z=a+ib\,|\, (a\in\mathbb{R})\,\wedge\, (b\in\mathbb{R})\,\wedge\,(i^2=-1)\right\}
+$$ (engl.: ~~c~~omplex numbers).
+
+Die in der Javascript-Bibliothek [Algebrite](http://algebrite.org/) zur Verfügung stehenden Befehle `real(.)` beziehungsweise `imag(.)` geben den Real- beziehungsweise Imaginärteil einer komplexen Zahl zurück.
+
+```javascript
+z=2+5*i
+real(z)
+imag(z)
+```
+@Algebrite.eval
+
+Die reellen Zahlen sind in den komplexen Zahlen enthalten, d. h. es gilt $\mathbb{R}\subset \mathbb{C}$, da $$
+  (bi-bi=(b-b)\cdot i=0\cdot i=0)\quad\Rightarrow\quad (z=a+0i=a\,(\in\mathbb{R}))
+$$ Speziell ist $z=0+0i=0$. Damit folgt auch $\mathbb{N}\subset\mathbb{Z}\subset\mathbb{Q}\subset\mathbb{R}\subset\mathbb{C}$. Wie im Abschnitt [Mengen](#Mengen) vereinbaren wir $\mathbb{C}^\times=\mathbb{C}\setminus\{0\}$.
+
+
+
+[^1]: Achtung: In der Wechselstromtechnik wird der Bezeichner $i$ als Formelzeichen für die Wechselstromstärke verwendet.
+
+[^2]: Der Ausdruck $D:=\frac{p^2}-4\cdot q$ wird [Diskriminante](https://de.wikipedia.org/wiki/Diskriminante) der quadratischen Gleichung genannt.
 
 ### Algebraische Gleichungen
-
-### Fundamentalsatz der Algebra
 
 
 In Verallgemeinerung der aus der Schulmathematik bekannten linearen und quadratischen Gleichungen werden in diesem Abschnitt algebraische Gleichungen untersucht.
@@ -1451,8 +1811,8 @@ $$ worin die einzelnen Multiplikationen mit $x_0$ sowie die Additionen von $a_j$
 [^1]: Allgemeiner können Polynome aus einem Polynomring betrachtet werden.
 
 
-
 ## Lineare Algebra
+
 
 ## Analytische Geometrie
 
@@ -1460,31 +1820,33 @@ Die analytische Geometrie beschäftigt sich mit Eigenschaften ausgezeichneter Pu
 
 ### Affine Räume
 
->**Definition 1.** Ein affiner Raum $\mathcal{A}$ ist ein Tripel $(\mathcal{P},\mathcal{V},\alpha)$ bestehend aus einer nicht-leeren Menge $\mathcal{P}$, einem reellen Vektorraum $\mathcal{V}$ und einer Abbildung $\alpha: \mathcal{P}\times\mathcal{P}\longrightarrow \mathcal{V}$, so dass gilt:
+>**Definition 1.** Ein affiner Raum $\mathcal{A}$ ist ein Tripel $(\mathcal{P},\mathcal{V},\alpha)$, bestehend aus einer nichtleeren Menge $\mathcal{P}$, einem reellen Vektorraum $\mathcal{V}$ und einer Abbildung $$
+  \alpha: \mathcal{P}\times\mathcal{P}\longrightarrow \mathcal{V}
+$$ so dass gilt:
 >
 >1. Zu jedem Punkt $P\in\mathcal{P}$ und jedem Vektor  $v\in\mathcal{V}$ gibt es genau einen Punkt $Q\in\mathcal{P}$ mit $\alpha(P,Q)=v$.
->
->2. Für jeweils drei beliebige Punkte $P, Q, R\in\mathcal{P}$ gilt:<br>
->   $\alpha(P,Q)+\alpha(Q,R)=\alpha(P,R)$.
->
-> **Bemerkungen:**
->
-> * Die Elemente von $\mathcal{P}$ heißen Punkte des affinen Raumes $\mathcal{A}$.
-> * Die Dimension des affinen Raumes $\mathcal{A}$ ist definiert durch $\operatorname{dim}(\mathcal{A})=\operatorname{dim}(\mathcal{V})$.
-> * Für $\mathcal{P}=\mathcal{V}=\mathbb{R}^n$ schreiben wir auch $\overrightarrow{PQ}$ anstatt $\alpha(P,Q)$.
-
-Aus Definition 1 lassen sich zunächst zwei einfache Eigenschaften der Abbildung $\alpha$ ableiten:
-
-* Für $P=Q=R$ erhalten wir aus 2. sofort <br>
-  $\alpha(P,P)+\alpha(P,P)=2\cdot \alpha(P,P)=\alpha(P,P)$ und somit $\alpha(P,P)=\mathcal{o}$ (wobei $\mathcal{o}$ der Nullvektor in $\mathcal{V}$ ist).
-* Hingegen bekommen wir für $P=R$: <br>
-  $\alpha(P,Q)+\alpha(Q,P)=\alpha(P,P)=\mathcal{o}$ und daher
-  $\alpha(Q,P)=-\alpha(P,Q)$.
-
+>2. Für jeweils drei beliebige Punkte $P\in\mathcal{P}$, $Q\in\mathcal{P}$ und $R\in\mathcal{P}$ gilt $$
+  \alpha(P,Q)+\alpha(Q,R)=\alpha(P,R)$$
 
 **Bemerkung 1.**
 
-Zeichnen wir in einem affinen Raum $\mathcal{A}=(\mathcal{P},\mathcal{V},\alpha)$ einen Punkt $O\in\mathcal{P}$ aus, so erhalten wir mittels der Eigenschaft 1 aus Definition 1 eine (von $O$ abhängige) eineindeutige Zuordnung zwischen den Punkten in $\mathcal{P}$ und den Vektoren in $\mathcal{V}$. Diese Zuordnung kann durch die Abbildung $\beta:\mathcal{P}\longrightarrow\mathcal{V}$ mit $\beta(P)=\alpha(O,P)\in\mathcal{V}$ beschrieben werden.
+* Die Elemente von $\mathcal{P}$ heißen Punkte des affinen Raumes $\mathcal{A}$.
+* Die Dimension des affinen Raumes $\mathcal{A}$ ist definiert durch $\operatorname{dim}(\mathcal{A})=\operatorname{dim}(\mathcal{V})$.
+* Für $\mathcal{P}=\mathcal{V}=\mathbb{R}^n$ schreiben wir auch $\overrightarrow{PQ}$ anstelle von $\alpha(P,Q)$.
+
+Aus Definition 1 lassen sich zunächst zwei einfache Eigenschaften der Abbildung $\alpha$ ableiten:
+
+* Für $P=Q=R$ erhalten wir aus 2. sofort $$
+  \alpha(P,P)+\alpha(P,P)=2\cdot \alpha(P,P)=\alpha(P,P)
+$$ und somit $\alpha(P,P)=\mathcal{o}$, worin $\mathcal{o}$ der Nullvektor in $\mathcal{V}$ ist.
+* Hingegen bekommen wir für $P=R$ $$
+  \alpha(P,Q)+\alpha(Q,P)=\alpha(P,P)=\mathcal{o}
+$$ und daher $\alpha(Q,P)=-\alpha(P,Q)$.
+
+
+**Bemerkung 2.** Zeichnen wir in einem affinen Raum $\mathcal{A}=(\mathcal{P},\mathcal{V},\alpha)$ einen Punkt $O\in\mathcal{P}$ aus, so erhalten wir mittels der Eigenschaft 1 aus Definition 1 eine (von $O$ abhängige) eineindeutige Zuordnung zwischen den Punkten in $\mathcal{P}$ und den Vektoren in $\mathcal{V}$. Diese Zuordnung kann durch die Abbildung $$
+  \beta:\mathcal{P}\longrightarrow\mathcal{V}\quad\text{mit}\quad \beta(P)=\alpha(O,P)\in\mathcal{V}
+$$ beschrieben werden.
 
 >**Definition 2.**
 >Es sei $\mathcal{A}=(\mathcal{P},\mathcal{V},\alpha)$ ein affiner Raum, der Punkt $O\in\mathcal{P}$ beliebig aber fest gewählt und $\beta:\mathcal{P}\longrightarrow\mathcal{V}$ die Abbildung mit $\beta(P)=\alpha(O,P)\in\mathcal{V}$.
