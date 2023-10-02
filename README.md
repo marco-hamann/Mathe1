@@ -290,8 +290,8 @@ factor(74)
 ```
 @Algebrite.eval
 
-2. $q$ bezeichnet eine Aussage, die für jede natürliche Zahl $n\geq1$ wahr ist und [Gaußsche Summenformel](https://de.wikipedia.org/wiki/Gaußsche_Summenformel) genannt wird.
-3. $r$ bezeichnet eine falsche Aussage, da aus der Berechnung für die ersten natürlichen Zahlen $n$ folgt, dass $r$ nicht für alle natürlichen Zahlen erfüllt sein kann. Siehe nachstehende Tabelle.   
+2. $q$ bezeichnet eine Aussage, die für jede natürliche Zahl $n\geq1$ wahr ist und [Gaußsche Summenformel](https://de.wikipedia.org/wiki/Gaußsche_Summenformel) genannt wird. Der Beweis dieser Aussage wird im Abschnitt [Reelle Zahlen](#Reelle-Zahlen) mittels vollständiger Induktion geführt.
+3. $r$ bezeichnet eine falsche Aussage, da aus der Berechnung für die ersten natürlichen Zahlen $n$ folgt, dass $r$ nicht für alle natürlichen Zahlen erfüllt sein kann. Siehe nachstehende Tabelle. (Der Beweis dieser Aussage wird im Abschnitt [Reelle Zahlen](#Reelle-Zahlen) mittels vollständiger Induktion geführt.)
 
 <!-- data-type="none" -->
 | $n$ | $n^2$ | $2^n$ | $n^2\leq 2^n$ |
@@ -1062,7 +1062,9 @@ $$ Schließlich folgt hieraus unter Einbeziehung des Induktionsanfangs die Allge
 
 $\square$
 
----
+Das vorstehende Beispiel wird im folgenden Video noch einmal erläutert.
+
+!?[Gaußsche_Summenformel-2](https://www.youtube.com/watch?v=MD7U_vYaX58 "Daniel Jung, Beweis der Gaußschen Summenformel mithilfe des Beweisverfahrens der vollständigen Induktion.")
 
 **Beispiel 2.** Analog zum vorigen Beispiel lässt sich mittels vollständiger Induktion beweisen:
 
@@ -1085,6 +1087,10 @@ Zur übersichtlichen Darstellung von Summen bzw. Produkten reeller Zahlen werden
 >2. Demgegenüber bezeichnet $$ \prod_{i=m}^n{a_i}:=a_m\cdot a_{m+1}\cdot ...\cdot a_{n-1}\cdot a_n $$ das Produkt der reellen Zahlen $a_m$, $a_{m+1}$, ..., $a_{n-1}$ und $a_n$. Lies: "*Produkt aller Zahlen $a_i$ von $i$ gleich $m$ bis $n$*".
 >
 >Die Variable $i$ der Summen- / Produktdarstellung wird auch **Laufvariable** genannt.
+
+In den nachstehenden Videos wird die Verwendung des Summenzeichens zur Beschreibung endlicher Summen erläutert.
+
+!?[Summenzeichen-1](https://www.youtube.com/watch?v=bX3nIvXmr6E "Daniel Jung, Verwendung des Summenzeichen zur Beschreibung endlicher Summen.")
 
 **Beispiel 3.** Für die Summenformeln in den vorstehenden Beispielen kann somit geschrieben werden:
 
@@ -1192,6 +1198,28 @@ $$ Hieraus folgt also die Gültigkeit $2^n> n^2$ für alle natürlichen Zahlen $
 $\square$
 
 ****************************************
+
+**Frage 2.** Schreiben Sie Summe $$
+  1-\frac{1}{2}+\frac{1}{3}-\frac{1}{4}+-\ldots-\frac{1}{100} $$ unter Benutzung des Summenzeichens.
+
+[[ ]] $$ \sum_{k=1}^{100}{\left((-1)^{k}\cdot\frac{1}{k}\right)} $$
+[[X]] $$ \sum_{k=1}^{100}{\left((-1)^{k-1}\cdot\frac{1}{k}\right)} $$
+[[X]] $$ \sum_{k=0}^{99}{\left((-1)^{k}\cdot\frac{1}{k+1}\right)} $$
+[[ ]] $$ \sum_{k=1}^{100}{\left(\frac{1}{k}-\frac{1}{k+1}\right)} $$
+[[X]] $$ \sum_{k=1}^{50}{\left(\frac{1}{2\cdot k-1}-\frac{1}{2\cdot k}\right)} $$
+[[?]] Stellen Sie die in den Antwortoptionen dargestellten Summen unter Auslassung des Summenzeichens dar und vergleichen Sie mit der oben dargestellten Summe. Es ist möglich, dass mehrere Antwortoptionen korrekt sind.
+****************************************
+
+1. Für die erste Antwortoption ergibt sich $$ \sum_{k=1}^{100}{\left((-1)^{k}\cdot\frac{1}{k}\right)} = -1+\frac{1}{2}-\frac{1}{3}\pm...-\frac{1}{99}+\frac{1}{100} $$
+2. Demgegenüber ergibt die zweite Antwortoption $$ \sum_{k=1}^{100}{\left((-1)^{k-1}\cdot\frac{1}{k}\right)} = 1-\frac{1}{2}+\frac{1}{3}\mp...+\frac{1}{99}-\frac{1}{100} $$
+3. Die dritte Antwortoption liefert die gleiche Summe $$ \sum_{k=0}^{99}{\left((-1)^{k}\cdot\frac{1}{k+1}\right)} = 1-\frac{1}{2}+\frac{1}{3}\mp...+\frac{1}{99}-\frac{1}{100} $$
+4. Die vierte Antwortoption berechnet sich $$
+  \sum_{k=1}^{100}{\left(\frac{1}{k}-\frac{1}{k+1}\right)}=\left(1-\frac{1}{2}\right)+\left(\frac{1}{2}-\frac{1}{3}\right)+...+\left(\frac{1}{98}-\frac{1}{99}\right)+\left(\frac{1}{99}-\frac{1}{100}\right) = 1-\frac{1}{2}+\frac{1}{2}-\frac{1}{3}\pm...+\frac{1}{98}-\frac{1}{99}+\frac{1}{99}-\frac{1}{100}=1-\frac{1}{100}=0.99 $$
+5. Die fünfte Summe berechnet sich schrittweise unter Nutzung der Assoziativität $$ \sum_{k=1}^{50}{\left(\frac{1}{2\cdot k-1}-\frac{1}{2\cdot k}\right)}=\left(1-\frac{1}{2}\right)+\left(\frac{1}{3}-\frac{1}{4}\right)+...+\left(\frac{1}{99}-\frac{1}{100}\right) = 1-\frac{1}{2}+\frac{1}{3}-\frac{1}{4}\pm...+\frac{1}{99}-\frac{1}{100} $$
+
+
+****************************************
+
 
 
 [^1]: bezüglich der Operationen Addition und Multiplikation
