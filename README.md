@@ -1324,9 +1324,19 @@ $$ Speziell ist $z=0+0i=0$. Damit folgt auch $\mathbb{N}\subset\mathbb{Z}\subset
   z_j=a_j+i\cdot b_j\,,\quad a_j=\mathop{Re}{z_j}\,,\quad  b_j=\mathop{Im}{z_j}\,,\quad i^2=-1
 $$ zwei beliebige komplexe Zahlen. Die Zahlen $z_1$ und $z_2$ heißen **gleich**, kurz $z_1=z_2$, falls $a_1=a_2$ (Realteil) und $b_1=b_2$ (Imaginärteil) gelten.
 
+**Beispiel 3.** Gegeben sind zwei von Parametern $a\in\mathbb{R}$ und $b\in\mathbb{R}$ abhängige komplexe Zahlen $$
+  z_1=a^2+1-2a\cdot i\,,\quad z_2=-2a+i\cdot(b+a)\,,\quad i^2=-1
+$$ Es gilt $$
+  z_1=z_2\quad\leftrightarrow\quad \mathop{Re}{z_1}=\mathop{Re}{z_2}\;\wedge\;\mathop{Im}{z_1}=\mathop{Im}{z_2}
+$$ Hieraus ergibt sich das System von zwei Gleichungen in den Parametern $a$ und $b$ $$
+  \left.\begin{array}{ccc} a^2+1 & = & -2a \\ -2a & = & b+a \end{array}\right\}=
+  \left\{\begin{array}{ccc} a^2+2a+1 & = & (a+1)^2 \\ b & = & -3a \end{array}\right.
+$$
+
 >**Definition 5.** Zu einer Zahl $z\in\mathbb{C}$ mit $$
   z=a+i\cdot b\,,\quad a=\mathop{Re}{z}\,,\quad  b=\mathop{Im}{z}\,,\quad i^2=-1
-$$ heißt $\bar{z}=a+(-1)\cdot b\cdot i$ die zu $z$ [komplex konjugierte Zahl](https://de.wikipedia.org/wiki/Konjugation_(Mathematik).
+$$ heißt $\bar{z}=a+(-1)\cdot b\cdot i$ die zu $z$ [komplex konjugierte Zahl](https://de.wikipedia.org/wiki/Konjugation_(Mathematik)).
+
 
 
 [^1]: Achtung: In der Wechselstromtechnik wird der Bezeichner $i$ als Formelzeichen für die Wechselstromstärke verwendet.
