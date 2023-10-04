@@ -1320,6 +1320,13 @@ Die reellen Zahlen sind in den komplexen Zahlen enthalten, d. h. es gilt $\mathb
   (bi-bi=(b-b)\cdot i=0\cdot i=0)\quad\Rightarrow\quad (z=a+0i=a\,(\in\mathbb{R}))
 $$ Speziell ist $z=0+0i=0$. Damit folgt auch $\mathbb{N}\subset\mathbb{Z}\subset\mathbb{Q}\subset\mathbb{R}\subset\mathbb{C}$. Wie im Abschnitt [Mengen](#Mengen) vereinbaren wir $\mathbb{C}^\times=\mathbb{C}\setminus\{0\}$.
 
+>**Definition 4.** Es sind $z_1\in\mathbb{C}$ und $z_2\in\mathbb{C}$ mit $$
+  z_j=a_j+i\cdot b_j\,,\quad a_j=\mathop{Re}{z_j}\,,\quad  b_j=\mathop{Im}{z_j}\,,\quad i^2=-1
+$$ zwei beliebige komplexe Zahlen. Die Zahlen $z_1$ und $z_2$ heißen **gleich**, kurz $z_1=z_2$, falls $a_1=a_2$ (Realteil) und $b_1=b_2$ (Imaginärteil) gelten.
+
+>**Definition 5.** Zu einer Zahl $z\in\mathbb{C}$ mit $$
+  z=a+i\cdot b\,,\quad a=\mathop{Re}{z}\,,\quad  b=\mathop{Im}{z}\,,\quad i^2=-1
+$$ heißt $\bar{z}=a+(-1)\cdot b\cdot i$ die zu $z$ [komplex konjugierte Zahl](https://de.wikipedia.org/wiki/Konjugation_(Mathematik).
 
 
 [^1]: Achtung: In der Wechselstromtechnik wird der Bezeichner $i$ als Formelzeichen für die Wechselstromstärke verwendet.
