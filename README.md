@@ -1264,6 +1264,18 @@ Für die Lösungen $x_1$ und $x_2$ gelten mit dem Radikanten[^2] $\frac{p^2}{4}-
  \right.
 $$
 
+Unter Benutzung der Javascript-Bibliothek [Algebrite](http://algebrite.org/) lassen sich die Lösungen obiger Gleichungen interaktiv berechnen. Ausgaben, welche den Ausdruck $i$ enthalten, bezeichnen keine reelle Lösung.
+
+```javascript
+a=x^2-1
+b=x^2+1
+c=x^2+p*x+q
+roots(a)
+roots(b)
+roots(c)
+```
+@Algebrite.eval
+
 
 Konstruktion der komplexen Zahlen
 ===
@@ -1320,9 +1332,14 @@ Die reellen Zahlen sind in den komplexen Zahlen enthalten, d. h. es gilt $\mathb
   (bi-bi=(b-b)\cdot i=0\cdot i=0)\quad\Rightarrow\quad (z=a+0i=a\,(\in\mathbb{R}))
 $$ Speziell ist $z=0+0i=0$. Damit folgt auch $\mathbb{N}\subset\mathbb{Z}\subset\mathbb{Q}\subset\mathbb{R}\subset\mathbb{C}$. Wie im Abschnitt [Mengen](#Mengen) vereinbaren wir $\mathbb{C}^\times=\mathbb{C}\setminus\{0\}$.
 
+Die Begriffe 'imaginäre Einheit', 'imaginäre Zahl' und 'komplexe Zahl' werden im nachstehenden Video im Kontext der Lösung quadratischer Gleichungen an einem Beispiel erläutert.
+
+!?[komplexe Zahl](https://www.youtube.com/watch?v=XQblFqzoMYo&list=PLLTAHuUj-zHgrAfietLRb01pO1mtji8qn&index=2 "Daniel Jung, Komplexe Zahlen, Einführung, imaginäre Einheit")
+
 >**Definition 4.** Es sind $z_1\in\mathbb{C}$ und $z_2\in\mathbb{C}$ mit $$
   z_j=a_j+i\cdot b_j\,,\quad a_j=\mathop{Re}{z_j}\,,\quad  b_j=\mathop{Im}{z_j}\,,\quad i^2=-1
-$$ zwei beliebige komplexe Zahlen. Die Zahlen $z_1$ und $z_2$ heißen **gleich**, kurz $z_1=z_2$, falls $a_1=a_2$ (Realteil) und $b_1=b_2$ (Imaginärteil) gelten.
+$$ zwei beliebige komplexe Zahlen. Die Zahlen $z_1$ und $z_2$ heißen **gleich**, kurz $z_1=z_2$, falls $$ a_1=a_2\quad\text{und}\quad b_1=b_2
+$$ für die Real- und Imaginärteile gelten.
 
 **Beispiel 3.** Gegeben sind zwei von Parametern $a\in\mathbb{R}$ und $b\in\mathbb{R}$ abhängige komplexe Zahlen $$
   z_1=a^2+1-2a\cdot i\,,\quad z_2=-2a+i\cdot(b+a)\,,\quad i^2=-1
@@ -1330,13 +1347,185 @@ $$ Es gilt $$
   z_1=z_2\quad\leftrightarrow\quad \mathop{Re}{z_1}=\mathop{Re}{z_2}\;\wedge\;\mathop{Im}{z_1}=\mathop{Im}{z_2}
 $$ Hieraus ergibt sich das System von zwei Gleichungen in den Parametern $a$ und $b$ $$
   \left.\begin{array}{ccc} a^2+1 & = & -2a \\ -2a & = & b+a \end{array}\right\}=
-  \left\{\begin{array}{ccc} a^2+2a+1 & = & (a+1)^2 \\ b & = & -3a \end{array}\right.
-$$
+  \left\{\begin{array}{ccc} (a+1)^2 & = & 0 \\ b & = & -3a \end{array}\right.
+$$ mit den Lösungen $a_1=a_2=-1$ und $b=3$. Es ergibt sich nach Einsetzen $z_1=z_2=2+2i$.
 
 >**Definition 5.** Zu einer Zahl $z\in\mathbb{C}$ mit $$
   z=a+i\cdot b\,,\quad a=\mathop{Re}{z}\,,\quad  b=\mathop{Im}{z}\,,\quad i^2=-1
-$$ heißt $\bar{z}=a+(-1)\cdot b\cdot i$ die zu $z$ [komplex konjugierte Zahl](https://de.wikipedia.org/wiki/Konjugation_(Mathematik)).
+$$ heißt $\bar{z}=a+(-1)\cdot b\cdot i$ die zu $z$ [komplex konjugierte Zahl](https://de.wikipedia.org/wiki/Konjugation).
 
+**Beispiel 4.** Zu bestimmen sind jeweils die komplex konjugierten Zahlen. Es gilt wie zuvor $i^2=-1$.
+
+1. $z_1=3+2i$. Hieraus lassen sich $\mathop{Re}{z_1}=3$ und $\mathop{Im}{z_1}=2$ ablesen. Für die komplex konjugierte Zahl folgt nach obiger Definition $\bar{z}_1=3+(-1)\cdot 2i=3-2i$.
+2. $z_2=-i$. Es sind $\mathop{Re}{z_2}=0$ und $\mathop{Im}{z_2}=-1$ und somit $\bar{z}_2=0+(-1)\cdot (-i)=i$.
+3. $z_3=7.1$ Es sind $\mathop{Re}{z_3}=7.1$ und $\mathop{Im}{z_2}=0$ und somit $\bar{z}_3=z_3=7.1$.
+4. $z_4=a^2+1-2a\cdot i$ mit $a\in\mathbb{R}$. Hier sind in Abhängigkeit des Parameters $\mathop{Re}{z_4}=a^2+1$ und $\mathop{Im}{z_4}=-2a$, woraus sich die komplex konjugierte Zahl $\bar{z}_4=a^2+1+2a\cdot i$ ergibt.
+
+In der Javascript-Bibliothek [Algebrite](http://algebrite.org/) steht zur Bildung der komplex konjugierten Zahl der Befehl `conj(.)` zur Verfügung. Testen Sie diesen Befehl an den Zahlen aus Beispiel 4.
+
+```javascript
+z=3+2*i
+zc=conj(z)
+zc
+x=real(z)
+y=imag(z)
+w=x-y*i
+test(zc=w,wahr,falsch)
+```
+@Algebrite.eval
+
+**Bemerkung 2.** Aus dem vorstehenden Beispiel lassen sich unmittelbar für beliebige komplexe Zahlen $z\in\mathbb{C}$ ableiten:
+
+1. Für Zahlen $z\in\mathbb{C}$ mit $\mathop{Im}{z}=0$ folgt $\bar{z}=z$ und umgekehrt.
+2. Für Zahlen $z\in\mathbb{C}$ mit $\mathop{Re}{z}=0$ folgt $\bar{z}=-z$ und umgekehrt.
+3. Der Realteil einer komplexen Zahl $z$ lässt sich bestimmen über $$
+  \mathop{Re}{z}=\frac{1}{2}\cdot\left(z+\bar{z}\right)
+$$
+4. Der Imaginärteil einer komplexen Zahl $z$ lässt sich bestimmen über $$
+  \mathop{Re}{z}=\frac{1}{2}\cdot\left(z-\bar{z}\right)
+$$
+
+Der Nachweis dieser Aussagen ist eine Übungsaufgabe.
+
+
+Darstellungen komplexer Zahlen
+===
+
+
+Komplexe Zahlen $z\in\mathbb{C}$ mit der Darstellung $$
+  z=a+b\cdot i\,,\quad \mathop{Re}{z}=a\,,\quad \mathop{Im}{z}=b\,,\quad i^2=-1
+$$ stellen geordnete Paare reeller Zahlen dar, d. h. $$
+  z=a+b\cdot i\quad\leftrightarrow\quad (a,b)\in\mathbb{R}^2
+$$ Sie lassen sich somit als kartesische Koordinaten von Punkten in einer Ebene umkehrbar eindeutig identifizieren. In dieser Zuordnung entsprechen
+
+1. die erste Koordinatenachse der reellen Zahlgeraden. Diese wird nachfolgend **reelle Achse** genannt. An dieser werden die Realteile komplexer Zahl (als Koordinaten) abgetragen.
+2. die Punkte auf der zweiten Koordinatenachse den imaginären Zahlen. Diese Achse wird daher als **imaginäre Achse** bezeichnet. An dieser werden die Imaginärteile komplexer Zahl (als Koordinaten) abgetragen.
+
+Die Darstellung komplexer Zahlen als Punkte in beschriebenen Koordinatensystem wird [Gaußsche Zahlenebene](https://mathepedia.de/Gauszsche_Zahlenebene.html) genannt. Die reelle Zahlengerade wird geometrisch durch eine zusätzliche Dimension zur "komplexen Zahlgerade" erweitert.
+
+![Gaußsche Zahlenebene](img/mat-bild-11.png "_Fig._ Darstellung einer komplexen Zahl $z$ als Punkt / Koordinatenpaar in der Gaußschen Zahlenebene. Der zu $z$ gehörende Zeiger zeigt vom Koordinatenursprung nach $z$.")<!-- style="display: block; margin-left: auto; margin-right: auto; max-width: 900px;" -->
+
+**Beispiel 5.** In der Gaußschen Zahlenebene ist ein regelmäßiges Sechseck ('Zirkelmuster') mit Eckpunkten auf dem Umkreis mit Mittelpunkt $O(0,0)$ und Radius $r=4$ gegeben. Ein Eckpunkt liegt auf der reellen Achse.
+
+Zu bestimmen ist die kartesische Form der zu den Eckpunkten gehörenden komplexen Zahlen.
+
+![Gaußsche Zahlenebene 1](img/mat-bild-13.png "_Fig._ Regelmäßiges Sechseck in der Gaußschen Zahlenebene.")<!-- style="display: block; margin-left: auto; margin-right: auto; max-width: 900px;" -->
+
+Die Zeiger durch die Eckpunkte schließen mit der positiv orientierten reellen Achse Winkel der Größen $$
+  \alpha\in\{0^\circ,60^\circ,120^\circ,180^\circ,240^\circ,300^\circ\}
+$$ ein. Aus dem eingetragenen rechtwinkligen Dreieck lassen sich hiermit die kartesischen Koordinaten $(4\cdot\cos{\alpha},4\cdot\sin{\alpha})$ der Eckpunkte bestimmen. Zu diesen gehören somit die komplexen Zahlen
+
+* $z_1=4\cdot\cos{0^\circ}+4\cdot\sin{0^\circ}\cdot i=4$
+* $z_2=4\cdot\cos{60^\circ}+4\cdot\sin{60^\circ}\cdot i=2+2\sqrt{3}\cdot i$
+* $z_3=4\cdot\cos{120^\circ}+4\cdot\sin{120^\circ}\cdot i=-2+2\sqrt{3}\cdot i$
+* $z_4=4\cdot\cos{180^\circ}+4\cdot\sin{180^\circ}\cdot i=-4$
+* $z_5=4\cdot\cos{240^\circ}+4\cdot\sin{240^\circ}\cdot i=-2-2\sqrt{3}\cdot i$
+* $z_6=4\cdot\cos{300^\circ}+4\cdot\sin{300^\circ}\cdot i=2-2\sqrt{3}\cdot i$
+
+**Bemerkung 3.** Die Ordnungsrelationen 'kleiner als', 'größer als' in der Menge der reellen Zahlen lassen sich nicht auf $\mathbb{C}$ übertragen. Insbesondere gibt es keine positiven oder negativen komplexen Zahlen.
+
+Mit den vorstehenden Abbildungen lässt sich jedem Punkt / jeder Zahl $z\in\mathbb{C}^\times$ in der Gaußschen Zahlenebene umkehrbar eindeutig zuordnen:
+
+1. das geordnete Paar kartesischer Koordinaten $(a,b)\in\mathbb{R}^2$ mit $a=\mathop{Re}{z}$ und $b=\mathop{Im}{z}$. Die Darstellung $z=a+i\cdot b$ aus Definition 3 wird **kartesische Form** der komplexen Zahl genannt.
+2. das Paar $(r,\varphi)\in(0,\infty)\times (-\pi,\pi]$ mit Abstand $r$ von $z$ zum Koordinatenursprung sowie dem Winkel $\varphi$, den der Zeiger zu $z$ mit der positiv orientierten reellen Achse im Grundintervall einschließt.
+3. Der Zahl $z=0$ entsprechen umkehrbar eindeutig die kartesischen Koordinaten $(a,b)=(0,0)$, jedoch ist für $r=0$ der Winkel $\varphi$ in der Polarform nicht eindeutig bestimmt.
+
+>**Definition 6.** Die Koordinaten $(r,\varphi)$ eines vom Koordinatenursprung verschiedenen Punktes in der Gaußschen Zahlenebene werden [Polarkoordinaten](https://de.wikipedia.org/wiki/Polarkoordinaten) genannt. Die Darstellung $$
+  z=r\cdot(\cos{\varphi}+i\cdot\sin{\varphi})\,,\quad r\in(0,\infty)\,,\quad \varphi\in(-\pi,\pi]\,,\quad i^2=-1
+$$ wird als trigonometrische beziehungsweise **Polarfom** von $z\in\mathbb{C}^\times$ bezeichnet. Darin heißt $r$ **Betrag** und $\varphi$ **Argument** von $z$.
+
+Für die Umrechnung zwischen kartesischen und Polarkoordinaten nutzt man das in den vorstehenden Abbildungen eingetragene Koordinatendreieck.
+
+1. Es sei $z$ in der kartesischen Form gegeben, d. h. $z=a+i\cdot b$ gemäß Definition 3. Des Weiteren wird $a^2+b^2\not=0$ vorausgesetzt. Dann berechnen sich dessen Polarkoorinaten vermöge $$
+  |z|=r=\sqrt{a^2+b^2}\quad\text{und weiter}\quad
+  \varphi=\left\{\begin{array}{rcc} \arccos{\left(\frac{a}{r}\right)} & \text{für} & b\geq0 \\ -\arccos{\left(\frac{a}{r}\right)} & \text{für} & b<0\end{array}\right.
+$$ woraus sich die Polarform von $z$ ableiten lässt.
+2. Es sei umgekehrt $z$ in Polarform gegeben, d. h. $z=r\cdot(\cos{\varphi}+i\cdot\sin{\varphi})$ gemäß Definition 6. Hieraus folgen durch Ausmultiplizieren $$
+  a=r\cdot\cos{\varphi}\quad\text{und}\quad b=r\cdot\sin{\varphi}
+$$ für den Real- bzw. Imaginärteil in der kartesischen Form von $z$.
+
+In der Javascript-Bibliothek [Algebrite](http://algebrite.org/) kann die kartesische Darstellungsform einer komplexen Zahl $z$ mit dem Befehl `rect(z)` berechnet werden. Zur Berechnung des Betrages und des Argumentes von $z$ werden die Befehle `abs(z)` bzw. `arg(z)` zur Verfügung gestellt. Letzterer verwendet zur Berechnung des Argumentes in $\varphi\in(-\pi,\pi]$ anstelle des 'Arcuskosinus' den 'Arcustangens' mit $$
+  \varphi=\left\{
+    \begin{array}{lclclcl}
+    \arctan{\left(\frac{b}{a}\right)} & \text{für} & a>0 \\
+    \arctan{\left(\frac{b}{a}\right)}+\pi & \text{für} & a<0 & \text{und} & b\geq 0 \\
+    \arctan{\left(\frac{b}{a}\right)}-\pi & \text{für} & a<0 & \text{und} & b<0 \\
+    \frac{\pi}{2} & \text{für} & a=0 & \text{und} & b>0 \\
+    -\frac{\pi}{2} & \text{für} & a=0 & \text{und} & b<0 \\
+    n. d. & \text{für} & a=0 & \text{und} & b=0
+    \end{array}\right.
+$$ für jedes $z\in\mathbb{C}$ mit $a\not=0$.
+
+```javascript
+z=3/2*(cos(pi/6)+i*sin(pi/6))
+rect(z)
+w=-3-2*i
+abs(w)
+arg(w)
+```
+@Algebrite.eval
+
+**Bemerkung 4.** Das Argument ist zumeist im *Bogenmaß* anzugeben oder wird im Bogenmaß berechnet. Dies ist eine reelle Zahl. Hierbei gilt die folgende Umrechnung zwischen Bogen- und Gradmaß: $$
+  \frac{b_\varphi}{2\pi}=\frac{\varphi}{360^\circ}\quad\leftrightarrow\quad
+  b_\varphi==\frac{\varphi}{360^\circ}\cdot 2\pi\quad\leftrightarrow\quad
+  \varphi=\frac{b_\varphi}{2\pi}\cdot 360^\circ
+$$ wenn $b_\varphi$ den Winkel im Boden- und $\varphi$ den Winkel im Gradmaß bezeichnen.
+
+Werden im Gegensatz zu Definition 6 Winkel $\varphi\in\mathbb{R}$ zugelassen, so legen $(r,\varphi)$ und $(r,\varphi+2k\pi)$ mit $k\in\mathbb{Z}$ dieselbe komplexe zahl $z$ fest, da nach [Additionstheoremen](https://de.wikipedia.org/wiki/Formelsammlung_Trigonometrie#Additionstheoreme) für Sinus und Kosinus $$
+  \sin{(\varphi+2k\pi)}=\cos{\varphi}\cdot\sin{(2k\pi)}+\sin{\varphi}\cdot\cos{(2k\pi)}=\sin{\varphi}\quad\text{und}\quad
+  \cos{(\varphi+2k\pi)}=\cos{\varphi}\cdot\cos{(2k\pi)}-\sin{\varphi}\cdot\sin{(2k\pi)}=\cos{\varphi}
+$$ Der Winkel $\varphi$ mit $\varphi\in(-\pi,\pi]$ wird *Hauptwert* des Arguments von $z$ genannt.
+
+
+
+
+Sicher gewusst
+===
+
+
+Testen Sie Ihr Wissen in diesem Abschnitt und Beantworten Sie die folgenden Fragen.
+
+**Frage 1.** Stellen Sie die folgenden komplexen Zahlen durch Punkte in der Gaußschen Zahlenebene dar.
+
+![Gaußsche Zahlenebene 2](img/mat-bild-12.png "_Fig._ Darstellung komplexer Zahlen $z$ in der Gaußschen Zahlenebene. Jede Zahl $z$ wird durch einen vom Koordinatenursprung nach $z$ weisenden Zeiger dargestellt.")<!-- style="display: block; margin-left: auto; margin-right: auto; max-width: 900px;" -->
+
+[[$a$] [$b$] [$c$] [$d$] [$e$] [$f$] [$g$] [$h$]]
+[( ) ( ) ( ) ( ) ( ) ( ) ( ) (X)] $3-4\cdot i$
+[( ) ( ) (X) ( ) ( ) ( ) ( ) ( )] $-4+3\cdot i$
+[( ) ( ) ( ) ( ) (X) ( ) ( ) ( )] $3\cdot i$
+[( ) ( ) ( ) ( ) ( ) (X) ( ) ( )] $3+4\cdot i$
+[( ) ( ) ( ) ( ) ( ) ( ) (X) ( )] $-\frac{3}{2}\cdot i$
+[( ) (X) ( ) ( ) ( ) ( ) ( ) ( )] $\frac{3}{2}\left(\cos{\left(\frac{3}{4}\pi\right)}+\sin{\left(\frac{3}{4}\pi\right)}\cdot i\right)$
+[( ) ( ) ( ) (X) ( ) ( ) ( ) ( )] $\cos{\left(\frac{1}{3}\pi\right)}-\sin{\left(\frac{1}{3}\pi\right)}\cdot i$
+[(X) ( ) ( ) ( ) ( ) ( ) ( ) ( )] $\sin{\left(\frac{2}{3}\pi\right)}+\cos{\left(\frac{2}{3}\pi\right)}\cdot i$
+[[?]] Bestimmen Sie Real- und Imaginärteil der komplexen Zahlen und interpretieren Sie diese als kartesische Koordinaten dieser Zahl in der Gaußschen Zahlenebene. Vergleichen Sie ggf. mit der Polardarstellung (trigonometrischen -) der komplexen Zahl.
+****************************************
+
+Die komplexen Zahlen sind in der vorstehenden Abbildung dargestellt.
+
+1. Die ersten fünf komplexen Zahlen liegen in kartesischer Form vor. Es ergeben sich die nachstehenden Koordinatenpaare $$
+  3-4\cdot i\;\leftrightarrow\; (3,-4)\,,\quad
+  -4+3\cdot i\;\leftrightarrow\; (-4,3)\,,\quad
+  3\cdot i\;\leftrightarrow\; (0,3)\,,\quad
+  3+4\cdot i\;\leftrightarrow\; (3,4)\quad\text{und}\quad
+  -\frac{3}{2}\cdot i\;\leftrightarrow\; \left(0,-\frac{3}{2}\right)
+$$
+2. Die sechste Zahl ist in Polardarstellung gegeben $$ \frac{3}{2}\left(\cos{\left(\frac{3}{4}\pi\right)}+\sin{\left(\frac{3}{4}\pi\right)}\cdot i\right) $$ Der zur komplexen Zahl gehörende Zeiger schließt mit der reellen Achse einen Winkel $3/4\cdot\pi=135^\circ$ ein und besitzt die Länge $\frac{3}{2}$.
+3. Beachten Sie, dass die komplexe Zahl unter Benutzung der Symmetrie für Sinus bzw. Kosinus $$
+  \cos{\left(\frac{1}{3}\pi\right)}-\sin{\left(\frac{1}{3}\pi\right)}\cdot i=\cos{\left(-\frac{1}{3}\pi\right)}+\sin{\left(-\frac{1}{3}\pi\right)}\cdot i
+$$ in der Polarform angegeben werden kann: Argument und Betrag lassen sich hieraus direkt ablesen $$
+  \varphi=-\frac{1}{3}\cdot \pi\,,\quad r=|z|=1
+$$
+4. Analog lässt sich unter Beachtung der Quadrantenbeziehungen für Sinus und Kosinus $$
+  \begin{split}
+  \sin{\left(\frac{2}{3}\pi\right)}+\cos{\left(\frac{2}{3}\pi\right)}\cdot i  \\
+  & =\cos{\left(\frac{2}{3}\pi-\frac{1}{2}\pi\right)}-\sin{\left(\frac{2}{3}\pi-\frac{1}{2}\pi\right)}\cdot i  \\
+  & =\cos{\left(\frac{1}{6}\pi\right)}-\sin{\left(\frac{1}{6}\pi\right)}\cdot i  \\
+  & =\cos{\left(-\frac{1}{6}\pi\right)}+\sin{\left(-\frac{1}{6}\pi\right)}\cdot i
+  \end{split}
+$$ in Polardarstellung überführen. Alternativ lässt sich die letzte Zahl mit $-i$ multiplizieren, was einer Drehung dieser Zahl um den Koordinatenursprung mit Drehwinkel $-\frac{\pi}{2}$ entspricht.
+
+****************************************
 
 
 [^1]: Achtung: In der Wechselstromtechnik wird der Bezeichner $i$ als Formelzeichen für die Wechselstromstärke verwendet.
