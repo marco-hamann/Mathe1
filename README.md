@@ -974,7 +974,9 @@ Lernziele
 
 
 * Sie können die Gesetze für die Grundrechenarten zur Berechnung von Summen und Produkten endlich vieler reeller Zahlen anwenden.
-* ...
+* Sie kennen das Beweisverfahren der vollständigen Induktion und dessen Zusammhang zum Aufbau des Zahlbereichs der natürlichen Zahlen.
+* Sie nutzen Summen- und Produktzeichen zur Darstellung endlicher Summen und Produkte und können Rechengesetze zur Umformung anwenden.
+* ..
 
 
 ### Reelle Zahlen
@@ -998,7 +1000,7 @@ Im Folgenden sollen noch einmal Operationen reeller Zahlen in den Blick genommen
 >
 >Es gelten darüber hinaus:
 >
->1. *Assoziativität*[^1] $$ \left(p+q\right)+r=p+\left(q+r\right) \quad\text{sowie}\quad \left(p\cdot q\right)\cdot w=p\cdot \left(q\cdot r\right) $$
+>1. *Assoziativität*[^1] $$ \left(p+q\right)+r=p+\left(q+r\right) \quad\text{sowie}\quad \left(p\cdot q\right)\cdot r=p\cdot \left(q\cdot r\right) $$
 >2. *Kommutativität*[^1] $$ p+q=p+q\quad \text{sowie}\quad p\cdot q=q\cdot p $$
 >3. *Distributivität*[^1] $$ \left(p+q\right)\cdot r=p\cdot r+q\cdot r $$
 >3. *Neutrales Element*[^1] $$ p+0=p\quad\text{sowie}\quad q\cdot 1=q $$
@@ -1044,13 +1046,13 @@ An der dritten Forderung orientiert sich ein Beweisverfahren für Allaussagen $a
   a(n)=1+2+3+...+n=\frac{n\cdot(n+1)}{2}
 $$ für beliebige natürliche Zahlen $n\geq 1$ gilt. Im nachstehenden Video erfolgt der Nachweis für die Summe der ersten einhundert natürlichen Zahlen, d. h. $$
   1+2+3+...+99+100=\frac{100\cdot 101}{2}=50\cdot 101=5050 $$
-unter Nutzung von Assoziativ- und Kommutativgesetz bezüglich der Addition natürlicher Zahlen.
+unter Nutzung von Assoziativ- und Kommutativgesetz bezüglich der Addition natürlicher Zahlen. Vergleiche auch mit einer der Reflexionsfragen im Abschnitt [Aussageformen]('Aussageformen').
 
 !?[Gauss](https://www.youtube.com/watch?v=n2E_lfc2Bvc "Gaußsche Summenformel, Ausschnitt aus dem Film *Vermessung der Welt* nach dem gleichnamigen Roman von Daniel Kehlmann.")
 
-Hier soll nun der Nachweis für beliebige Werte $n\in\mathbb{N}^\times$ mittels vollständiger Induktion geführt werden.
+Hier soll nun der Nachweis für beliebige Werte $n\in\mathbb{N}^\times$ mittels *vollständiger Induktion* geführt werden.
 
-Induktionsanfang. Für $n=1$ gilt $1=\frac{1\cdot 2}{2}=0$.
+Induktionsanfang. Für $n=1$ gilt $1=\frac{1\cdot 2}{2}=1$.
 
 Induktionsschluss. Für ein $n=k\geq 1$ gelte $$
   a(k)=1+2+3+...+k=\frac{k\cdot(k+1)}{2}
@@ -1073,6 +1075,8 @@ Das vorstehende Beispiel wird im folgenden Video noch einmal erläutert.
 {1-3}{*Induktionsanfang.* Für $n=1$ gilt nach Einsetzen in die vorstehende Formel: $1=1^2$ (wahre Aussage).}
 
 {2-3}{*Induktionsschluss.* Für $n=k$ mit $k\geq 1$ gelte: $$ 1+3+5+...+2\cdot k-1=k^2 $$ Hieraus folgt durch Addition von $2\cdot(k+1)-1$ zu beiden Seiten der Gleichung $$ (1+3+5+...+2\cdot k-1)+\textcolor{magenta}{2\cdot(k+1)-1}=k^2+\textcolor{magenta}{2\cdot(k+1)-1}=k^2+2\cdot k+1=(k+1)^2 $$ Mit dem Induktionsanfang folgt die Gültigkeit obiger Aussage für alle $n\in\mathbb{N}^\times$. $\quad\square$}
+
+Benutzen Sie rechte und linke Cursortaste, um sich die einzelnen Beweisschritte anzuzeigen.
 
 
 Endliche Summen und Produkte
@@ -1109,6 +1113,18 @@ In den beiden letzten Beispielen hängen die zu summierenden Zahlen nicht von de
 1. Das Produkt der ersten $n$ natürlichen Zahlen $$ \prod_{i=1}^n{i}=1\cdot 2\cdot ...\cdot n=:n! $$ wird *Fakultät von $n$* genannt. Per Definition ist $0!=1$, darüber hinaus gelten $$ (n+1)!=n!\cdot (n+1) \quad\text{sowie}\quad \prod_{i=m}^n{i}=\frac{n!}{(m-1)!} $$
 2. Das Produkt von Potenzen zur Basis $2$ unter Benutzung eines Potenzgesetzes $$\prod_{i=1}^n{(2^i)}=2^1\cdot 2^2\cdot ...\cdot 2^n=2^{1+2+...+n}=2^{\frac{n\cdot(n+1)}{2}}$$ worin ebenso die Gaußsche Summenformel (Beispiel 1) Anwendung findet.
 3. Analog berechnet sich das Produkt unter Benutzung eines weiteren Potenzgesetzes $$\prod_{i=1}^n{(2^k)}=2^k\cdot 2^k\cdot ... \cdot 2^k=\left(2^k\right)^n=2^{k\cdot n}$$ Der auftretende Faktor hängt hier nicht von der Laufvariable ab.
+
+Unter Benutzung der Javascript-Bibliothek [Algebrite](http://algebrite.org/) lassen sich Summen und Produkte interaktiv berechnen. So berechnet der Befehl `sum(a(j),j,m,n)` die Summe über alle Termwerte des von der Laufvariable $j$ abhängigen Terms $a(j)$ für jede Belegung $j\in\{m,m+1,m+2,...,n\}$. Zu beachten ist, dass der Bezeichner $i$ für die imaginäre Einheit verwendet wird und nicht als Laufvariable benutzt werden kann. Überlegen Sie, welches mathematische Objekt durch den in der letzten Zeile aufgeführten Befehl berechnet werden kann.
+
+```javascript
+m=1
+n=3
+a=1/(2^j)
+sum(a,j,m,n)
+product(j,j,1,n)/(product(j,j,1,m)*product(j,j,1,n-m))
+```
+@Algebrite.eval
+
 
 >**Satz 1.** Für endlich viele Summanden gelten die nachstehenden Rechenregeln.
 >
@@ -1220,6 +1236,38 @@ $\square$
 
 ****************************************
 
+**Frage 3.** Der Binomialkoeffizient zweier natürlicher Zahlen $n$ und $k$ mit $n\geq k$ ist definiert $$
+  \binom{n}{k}=\frac{n!}{k!\cdot(n-k)!}
+$$ worin $k!=1\cdot 2\cdot ...\cdot k$ und $0!=1$ selbst definiert sind.
+
+Berechnen Sie unter Benutzung obiger Formel $$\binom{7}{2}+\binom{7}{3}$$.
+
+[( )] $21$
+[( )] $35$
+[(X)] $56$
+[[?]] Nutzen Sie zur Kontrolle Ihrer Rechnung, dass gilt $$
+  \binom{n}{k}+\binom{n}{k+1}=\binom{n+1}{k+1}
+$$ Mit Hilfe dieser Formel lassen sich die [Binomialkoeffizienten]( https://de.wikipedia.org/wiki/Binomialkoeffizient) rekursiv bestimmen.
+****************************************
+
+Es berechnen sich $$
+  \binom{7}{2}=\frac{7!}{2!\cdot 5!}=\frac{7\cdot 6}{1\cdot 2}=21\,,\quad
+  \binom{7}{2}=\frac{7!}{3!\cdot 4!}=\frac{7\cdot 6\cdot 5}{1\cdot 2\cdot 3}=35\,,\quad
+  \binom{7}{2}+\binom{7}{3}=56
+$$ Dieser Wert entspricht $$
+  \binom{8}{3}=\frac{8!}{3!\cdot 5!}=\frac{8\cdot 7\cdot 6}{1\cdot 2\cdot 3}=56
+$$ Allgemein gilt $$
+  \begin{split}
+    \binom{n}{k}+\binom{n}{k+1} & = \frac{n!}{k!\cdot(n-k)!}+\frac{n!}{(k+1)!\cdot(n-k-1)!} \\
+    & = \frac{n!\cdot\textcolor{red}{(k+1)}}{k!\cdot(n-k)!\cdot\textcolor{red}{(k+1)}}+\frac{n!\cdot\textcolor{purple}{(n-k)}}{(k+1)!\cdot(n-k-1)!\cdot\textcolor{purple}{(n-k)}} \\
+    & = \frac{n!\cdot (k+1)}{(k+1)!\cdot(n-k)!}+\frac{n!\cdot(n-k)}{(k+1)!\cdot(n-k)!} \\
+    & = \frac{n!\cdot (k+1)+n!\cdot(n-k)}{(k+1)!\cdot(n-k)!} \\
+    & = \frac{n!\cdot ((k+1)+(n-k))}{(k+1)!\cdot(n-k)!} \\
+    & = \frac{(n+1)!}{(k+1)!\cdot(n-k)!} =\binom{n+1}{k+1}
+  \end{split}
+$$
+
+****************************************
 
 
 [^1]: bezüglich der Operationen Addition und Multiplikation
