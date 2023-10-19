@@ -1735,9 +1735,9 @@ $$ wobei das Produkt auf der rechten Seite $n$-mal den Faktor $n$ enthält.
 Allgemein gilt: $$
   i^n=\left\{\begin{array}{rcl}
   1 & \text{für} & n=4\cdot k\,,\; k\in\mathbb{N}^\times \\
-  i & \text{für} & n=4\cdot k+1\,,\; k\in\mathbb{N}^\times \\
-  -1 & \text{für} & n=4\cdot k+2\,,\; k\in\mathbb{N}^\times \\
-  -i & \text{für} & n=4\cdot k+3\,,\; k\in\mathbb{N}^\times
+  i & \text{für} & n=4\cdot k+1\,,\; k\in\mathbb{N} \\
+  -1 & \text{für} & n=4\cdot k+2\,,\; k\in\mathbb{N} \\
+  -i & \text{für} & n=4\cdot k+3\,,\; k\in\mathbb{N}
   \end{array}\right.
 $$ Die Allgemeingültigkeit der Aussage erfolgt in zwei Schritten:
 
@@ -1799,7 +1799,7 @@ $$ ist für jeden Indexwert $k\in\{0,1,...,n-1\}$ eine komplexe $n$-te Wurzel vo
 
 **Beweis.** Für jedes $k$ gilt nach dem Gesetz zum Potenzieren eines Produktes sowie Satz 3 $$
   \begin{split}
-  (w_k)^n & =\sqrt[n]{r}\cdot\left(\cos{\left(\frac{\varphi+2\cdot k\cdot\pi}{n}\right)}+i\cdot\sin{\left(\frac{\varphi+2\cdot k\cdot\pi}{n}\right)}\right) = \left(\sqrt[n]{r}\right)^n\cdot\left(\cos{\left(\frac{\varphi+2\cdot k\cdot\pi}{n}\right)}+i\cdot\sin{\left(\frac{\varphi+2\cdot k\cdot\pi}{n}\right)}\right)^n \\
+  (w_k)^n & =\left[\sqrt[n]{r}\cdot\left(\cos{\left(\frac{\varphi+2\cdot k\cdot\pi}{n}\right)}+i\cdot\sin{\left(\frac{\varphi+2\cdot k\cdot\pi}{n}\right)}\right)\right]^n = \left(\sqrt[n]{r}\right)^n\cdot\left(\cos{\left(\frac{\varphi+2\cdot k\cdot\pi}{n}\right)}+i\cdot\sin{\left(\frac{\varphi+2\cdot k\cdot\pi}{n}\right)}\right)^n \\
   & = r\cdot \left(\cos{\left(n\cdot\frac{\varphi+2\cdot k\cdot\pi}{n}\right)}+i\cdot\sin{\left(n\cdot\frac{\varphi+2\cdot k\cdot\pi}{n}\right)}\right) \\
   & = r\cdot \left(\cos{\left(\varphi+2\cdot k\cdot\pi\right)}+i\cdot\sin{\left(\varphi+2\cdot k\cdot\pi\right)}\right)
   \end{split}
@@ -2501,7 +2501,7 @@ Rechenoperationen
 ===
 
 
-Es seien zwei Quaernionen $Q_m=a_m+b_m\,{i}+c_m\,{j}+d_m\,{k}\in\mathbb{H}$ mit $m\in\{1,2\}$ gemäß Definition 1 gegeben. Es sind die folgenden Operationen erklärt:
+Es seien zwei Quaternionen $Q_m=a_m+b_m\,{i}+c_m\,{j}+d_m\,{k}\in\mathbb{H}$ mit $m\in\{1,2\}$ gemäß Definition 1 gegeben. Es sind die folgenden Operationen erklärt:
 
 1. Die **Summe** von $Q_1$ und $Q_2$ erfolgt komponentenweise mit $$
   Q_1+Q_2=(a_1+a_2)+(b_1+b_2){i}+(c_1+c_2){j}+(d_1+d_2){k}
@@ -2513,15 +2513,2664 @@ $$
   \end{split}
 $$ Dieses Produkt erhält man durch Ausmultiplizieren der Klammern unter Benutzung der Produktregeln in Definition 1.
 
-**Beispiel 1.** 
+**Beispiel 1.**
 
 **Bemerkung 1.** Werden $c_m=d_m=0$ gesetzt, so ergeben sich die Rechenregeln in $\mathbb{C}$.
 
 **Bemerkung 2.**
 
 
-
 ## Lineare Algebra
+
+
+Ziel dieses Kapitels ist eine Einführung in den Themenbereich der linearen Algebra.
+
+...
+
+Schwerpunkte sind u. a. eine Vertiefung der aus der Schulmathematik bekannten Begriffe "Vektor" und "lineare Gleichungssysteme".
+
+Darüber hinaus werden allgemeinere algebraische Strukturen wie Vektorräume, Matrizen und Determinanten betrachtet. Eine Verbindung zur analytischen Geometrie der Ebene und des dreidimensionalen Raumes wird ebenso gezogen.
+
+
+### Vektoren
+
+
+Vektorraum
+=====
+
+
+Aus technischen und physikalischen Anwendungen sind *skalare* versus *vektorielle* Größen bekannt.
+
+Während skalare Größen durch eine Maßzahl und Einheit gekennzeichnet sind, besitzen bei [vektoriellen Größen](https://de.wikipedia.org/wiki/Vektorielle_Gr%C3%B6%C3%9Fe) auch Richtung und Richtungssinn eine Bedeutung. Die Richtung und der Richtungssinn einer vektoriellen Größe werden im Ingenieurwesen üblicherweise durch einen Pfeil dargestellt, dessen Länge ist ein Maß für den Betrag der Größe.
+
+**Beispiel 1.** Es werden die vektoriellen Größen 'Geschwindigkeit' und 'Beschleunigung' einer gleichförmigen Kreisbewegung eines Massepunktes der Masse $m$ betrachtet. Siehe nachstehende Abbildung (oder folgenden [Comic](https://xkcd.com/1366/) ;)
+
+1. Obwohl der Betrag der Geschwindigkeit zu jedem Zeitpunkt der Bewegung konstant ist, verändert sich die Richtung der Geschwindigkleit zu jedem Zeitpunkt der Bewegung. Der Geschwindigkeitsvektor $\vec{v}$ ist tangential zur Bahnkurve im jeweiligen Kurvenpunkt.
+2. Die zum Mittelpunkt $D$ der Bahnkurve gerichtete Beschleunigung $\vec{a}$ von $m$ sorgt für eine kontinuierliche Richtungsänderung des Bewegungsvorgangs.
+
+![Gleichförmige Kreisbewegung](img/mat-bild-16.png "_Fig._ Schematische Darstellung einer gleichförmigen Kreisbewegung eines Massepunktes der Masse $m$ um den Punkt $D$ mit Geschwindigkeitsvektor $\vec{v}$ und Vektor der Radialbeschleunigung $\vec{a}$ in einem Punkt der Bahnkurve.")
+
+Einige weitere Beispiel skalarer beziehungsweise vektorieller Größen finden sich in nachstehender Tabelle, zusammen mit den Maßzahlen und ${\rm SI}$-Einheiten.
+
+<!-- data-title="Beispiele skalarer versus vektorieller physikalischer Größen" -->
+| Skalare Größen | Vektorielle Größen |
+| :--------- | :--------- |
+| Masse: $m=1{\rm kg}$ | Kraft: $\vec{F}=1{\rm N}$ |
+| Weglänge: $s=1{\rm m}$ | elektrische Feldstärke: $\vec{E}=1{\rm \frac{V}{m}}$ |
+| Zeit: $t=1{\rm s}$ | magnetische Flußdichte: $\vec{B}=1{\rm T}$ |
+
+Bekannte Beispiele für Vektoren in der Mathematik sind u. a.
+
+1. Die Menge der geordneten Paare reeller Zahlen $$
+  \mathbb{R}^2:=\mathbb{R}\times\mathbb{R}=\left\{(x_1,x_2)\,|\; x_1\in\mathbb{R}\;\wedge\;x_2\in\mathbb{R}\right\}
+$$ Jedes Element dieser Menge heißt ein Vektor und wird hier als Spalte geschrieben $$
+  x=\begin{pmatrix} x_1 \\ x_2 \end{pmatrix} \quad\text{bzw.}\quad
+  y=\begin{pmatrix} y_1 \\ y_2 \end{pmatrix}
+$$ Die Einträge eines Vektors werden dessen **Komponenten** genannt. Besteht keine Gefahr der Verwechslung, so kann hier - im Gegensatz zu vektoriellen Größen in Technik und Physik - auf die Pfeildarstellung für Vektoren verzichtet werden.
+2. Die Menge der geordneten Tripel reeller Zahlen $$
+  \mathbb{R}^3:=\mathbb{R}\times\mathbb{R}\times\mathbb{R}=\left\{(x_1,x_2,x_3)\,|\; x_1\in\mathbb{R}\;\wedge\;x_2\in\mathbb{R}\;\wedge\;x_3\in\mathbb{R}\right\}
+$$ Jedes Element dieser Menge wird in gleicher Weise als Spalte geschrieben $$
+  x=\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}
+$$
+
+Diese Beispiele werden in der analytischen Geometrie zur Beschreibung ebener und räumlicher Problemstellungen verwendet.
+
+Eine Vorstellung von Vektoren als 'Verschiebung' der (Punkte einer) Ebene ist im folgenden Video an einem Beispiel erläutert, in einem zweiten die Verwendung von Vektoren zur Beschreibung von Orten / Punkten in der analytischen Geometrie.
+
+!?[Vektor](https://www.youtube.com/watch?v=9C1OOlLng2Q)
+
+!?[Ortsvektor](https://www.youtube.com/watch?v=i27oqDASdUs)
+
+>**Definition 1.** Für Vektoren $x\in\mathbb{R}^n$ und $y\in\mathbb{R}^n$, $n\in\mathbb{N}\setminus\{0\}$, und Skalar $\lambda\in\mathbb{R}$ lassen sich zwei Operationen erklären.
+>
+> 1. **Addition**. Die Abbildung $\mathbb{R}^n\times\mathbb{R}^n\to\mathbb{R}^n$ bildet je zwei Vektoren $x$ und $y$ vermöge $$
+  (x,y)\mapsto x+y=\begin{pmatrix} x_1 \\ \vdots \\ x_n \end{pmatrix}+\begin{pmatrix} y_1 \\ \vdots \\ y_n \end{pmatrix}=
+  \begin{pmatrix} x_1+y_1 \\ \vdots \\ x_n+y_n \end{pmatrix}
+$$ die Summe $x+y$ zu.[^1] Dies ist wieder ein Vektor aus $\mathbb{R}^n$.
+>2. **Skalarvielfachbildung.** Die Abbildung $\mathbb{R}^n\times\mathbb{R}\to\mathbb{R}^n$ bildet je einen Vektor $x$ und einen Skalar $\lambda$ vermöge $$
+  (x,\lambda)\mapsto \lambda\cdot x=\lambda\cdot\begin{pmatrix} x_1 \\ \vdots \\ x_n \end{pmatrix}=
+  \begin{pmatrix} \lambda\cdot x_1 \\ \vdots \\ \lambda\cdot x_n \end{pmatrix}
+$$ das $\lambda$-fache $\lambda\cdot x$ zu.[^2] Dies ist wieder ein Vektor aus $\mathbb{R}^n$.
+
+**Beispiel 2.** Gegeben sind die Vektoren $$
+  x=\begin{pmatrix}  2 \\ -3 \end{pmatrix} \quad\text{und}\quad
+  y=\begin{pmatrix} -1 \\  5 \end{pmatrix}
+$$ sowie der Skalar $\lambda=\sqrt{3}$.
+
+1. Der Summenvektor berechnet sich zu $$
+  x+y=\begin{pmatrix}  2 \\ -3 \end{pmatrix}+\begin{pmatrix} -1 \\  5 \end{pmatrix}=
+  \begin{pmatrix} 2+(-1) \\  -3+5 \end{pmatrix}=
+  \begin{pmatrix} 1 \\  2 \end{pmatrix}
+$$
+2. Das $\sqrt{3}$-fache des Vektor $x$ berechnet sich zu $$
+  \lambda\cdot x=\lambda\cdot\begin{pmatrix}  2 \\ -3 \end{pmatrix}=
+  \begin{pmatrix} \lambda\cdot 2 \\ \lambda\cdot(-3) \end{pmatrix}=
+  \begin{pmatrix}  2\cdot\sqrt{3} \\ (-3)\cdot\sqrt{3} \end{pmatrix}
+$$
+
+Im nachstehenden Video werden die Rechenoperationen für Vektoren des $\mathbb{R}^3$ an Beispielen ausgeführt.
+
+!?[Operationen](https://www.youtube.com/watch?v=XKr6Qe9_trY)
+
+**Bemerkung 1.** Die erklärten Operationen in $\mathbb{R}^n$ lassen sich graphisch visualisieren.
+
+1. Werden zwei beliebige Vektoren $x$ und $y$ im Ursprung $O$ eines Koordinatensystems angetragen, so dass diese benachbarte Seiten eines Parallelogrammes aufspannen, so bildet der Summenvektor $x+y$ die von $O$ ausgehende Diagonale im aufgespannten Parallelogramm. Siehe nachstehende Abbildung.
+2. Ein Vektor $$
+  x\not=\begin{pmatrix} 0 \\ \vdots \\ 0 \end{pmatrix}
+$$ und dessen Skalarvielfaches $\lambda\cdot x$ besitzen für $\lambda\not=0$ die gleiche Richtung, so dass letzterer als mit dem Faktor $\lambda$ gestreckter Vektor interpretiert werden kann.
+
+Für die Operationen der Addition und Skalarvielfachbildung im $\mathbb{R}^n$ gelten die nachstehenden Rechenoperationen, die im Satz 1 zusammengefasst sind.
+
+![Vektoraddition](img/mat-bild-17.png "_Fig._ Zwei ein Parallelogramm aufspannende Vektoren $x$, $y$ und die Vektorsumme $x+y$, dargestellt als Ortsvektoren bezogen auf den Ursprung eines Koordinatensystems mit den Komponenten $x_i$, $y_i$ beziehungsweise $x_i+y_i$.")
+
+> **Satz 1.** Es gelten die folgenden Rechenregeln [^3]
+>
+> * Kommutativität $x+y=y+x$
+> * Assoziativität $x+(y+z)=(x+y)+z$
+> * Neutrales Element $o$ mit $x+o=x$
+> * Inverses Element $-{x}$ mit ${x}+(-{x})={o}$
+> * Distributivität $\lambda\cdot({x}+{y})=\lambda\cdot{x}+\lambda\cdot{y}$
+> * Distributivität $(\lambda+\mu)\cdot{x}=\lambda\cdot{x}+\mu\cdot{x}$
+> * Assoziativität für Vielfachbildung $(\lambda\cdot\mu)\cdot{x}=\lambda\cdot(\mu\cdot{x})$
+>
+> für beliebige $\{x,y,z\}\subset\mathbb{R}^n$ und $\{\lambda,\mu\}\subset\mathbb{R}$.
+
+**Beweisidee.** Beide Operationen für Vektoren in $\mathbb{R}^n$, Addition und Skalarvielfachbildung, sind komponentenweise erklärt, so dass es ausreicht, die Rechenregeln aus Satz 1 im Körper der reellen Zahlen zu prüfen. Diese sind erfüllt.
+
+Mit Hilfe der Javascript Bibliothek [Algebrite](http://algebrite.org/) können die Eigenschaften für das Rechnen mit Vektoren nachgerechnet werden. Hier dargestellt ist die Rechnung zur Prüfung der Kommutativität.
+
+``` javascript
+x = [[a],[b]]
+y = [[c],[d]]
+x + y
+y + x
+x + y - (y + x)
+```
+@Algebrite.eval
+
+>**Definition 2.** Seien $V$ eine Menge von Elementen und $K$ ein Zahlkörper.
+>
+>1. Sind in $V$ sinngemäß zu Definition 1 eine Addition und Vielfachbildung mit Zahlen aus $K$ erklärt ~~und~~
+>2. gelten alle Rechenregeln aus Satz 1 sinngemäß für das Rechnen in $V$
+>
+>so heißt $V$ ein [Vektorraum](https://de.wikipedia.org/wiki/Vektorraum) über $K$ und jedes Element $x\in V$ ein Vektor aus $V$.
+
+**Beispiel 3.**
+
+1. Die Menge geordneter $n$-Tupel reeller Zahlen $$
+  \mathbb{R}^n:=\left\{\left.\begin{pmatrix} x_1 \\ \vdots \\ x_n\end{pmatrix}\right|\; x_j\in\mathbb{R}\,,\;j\in\{1,...,n\}\right\}
+$$ mit festem $n\in\mathbb{N}$ und $n>0$ bilden bezüglich der in Definition 1 eingeführten Operationen einen reellen Vektorraum (Vektorraum über $\mathbb{R}$). Im Speziellen bilden die reellen Zahlen $\mathbb{R}$, die geordneten Paare reeller Zahlen $\mathbb{R}^2$ und die geordneten Tripel reeller Zahlen $\mathbb{R}^3$ jeweils einen reellen Vektorraum.
+
+2. Auf der Menge aller geordneten Paare komplexer Zahlen $$
+  \mathbb{C}^2:=\left\{\left.\begin{pmatrix} z_1 \\ z_2 \end{pmatrix}\right|\; z_1\in\mathbb{C}\,,\;z_2\in\mathbb{C}\right\}
+$$ beziehungsweise - unter Verwendung der kartesischen Darstellung von $z_1$, $z_2$ $$
+  \mathbb{C}^2=\left\{\left.\begin{pmatrix} a_1+i\cdot b_1 \\ a_2+i\cdot b_2 \end{pmatrix}\right|\; a_j\in\mathbb{R}\,,b_j\in\mathbb{R}\,,\;j\in\{1,2\}\right\}
+$$ mit imaginärer Einheit $i$, $i^2=-1$, kann sinngemäß zu Definition 1 *komponentenweise* eine Addition und Skalarvielfachbildung in $\mathbb{C}^2$ erklärt werden. Nach Definition 2 bilden diese einen komplexen Vektorraum (Vektorraum über $\mathbb{C}$) da sich alle Rechengesetze aus Satz 1 sinngemäß von $\mathbb{R}^2$ auf $\mathbb{C}^2$ übertragen lassen.
+3. Gegeben ist die Menge aller reellen Polynomfunktionen $f$ vom Grad $\deg{f}\leq2$ $$
+  V=\left\{ f:\mathbb{R}\to\mathbb{R}|\;y=f(x)=a\cdot x^2+b\cdot x+c\,,\;a\in\mathbb{R}\,,\;b\in\mathbb{R}\,,\;c\in\mathbb{R}\right\}
+$$ Auf $V$ sind eine Addition $$
+  V\times V\to V\quad\text{mit}\quad (f_1,f_2)(x)\mapsto (f_1+f_2)(x)=f_1(x)+f_2(x)\quad \forall\; x\in\mathbb{R}
+$$ und $$
+  f_1(x)+f_2(x)=(a_1\cdot x^2+b_1\cdot x+c_1)+(a_2\cdot x^2+b_2\cdot x+c_2)=
+  (a_1+a_2)\cdot x^2+(b_1+b_2)\cdot x+(c_1+c_2)
+$$ sowie eine Skalarvielfachbildung $$
+  \mathbb{R}\times V\to V\quad\text{mit}\quad (\lambda,f)(x)\mapsto (\lambda\cdot f)(x)=\lambda\cdot f(x)\quad \forall\; x\in\mathbb{R}
+$$ und $$
+  \lambda\cdot f(x)=\lambda\cdot (a\cdot x^2+b\cdot x+c)=
+  (\lambda\cdot a)\cdot x^2+(\lambda\cdot b)\cdot x+(\lambda\cdot c)
+$$ erklärt. D. h. Summe und Skalarvielfaches von Polynomfunktion $f$ mit Grad $\deg{f}\leq2$ sind wieder Polynomfunktionen. Die Rechenregeln aus Satz 2 lassen sich unmittelbar nachrechnen: Beispielsweise bildet die 'Nullfunktion' $$
+  o:x\mapsto y=o(x)=0\cdot x^2+0\cdot x+0=0\,,\quad x\in\mathbb{R}
+$$ das neutrale Element und $$
+  y=(-f)(x)=(-1)\cdot(a\cdot x^2+b\cdot x+c)=-a\cdot x^2-b\cdot x-c
+$$ das zu $f$ inverse Element bezüglich der erklärten Addition. Die Menge $V$ der Polynomfunktionen bildet zusammen mit den erklärten Operationen einen Vektorraum über $\mathbb{R}$.
+
+In nachstehenden Video wird das Prüfen der Rechenregeln für die Vektoroperationem an je einem der in 'Beispiel 3' aufgegriffenen Beispiele erläutert.
+
+!?[Vektorraum3](https://www.youtube.com/watch?v=wKP53tZPHKU)
+
+!?[Vektorraum4](https://www.youtube.com/watch?v=8UKQhjekmEg)
+
+Mit den vorgenannten Beispielen wird deutlich, dass die Frage "*Was ist ein Vektor?*" zur graphischen Vorstellung hinter die Frage "*Welche Operationen sind erklärt und welche Regeln gelten für das Rechen mit Vektoren?*" zurücktritt.
+
+
+Lineare Unabhängigkeit von Vektoren
+=====
+
+
+Aus den in einem Vektorraum erklärten Operationen 'Addition' und 'Skalarvielfachbildung' lässt sich die Bildung 'neuer' Vektoren ableiten.
+
+>**Definition 3.** Für Vektoren $v_i\in V$ mit $i\in\{1,2,\ldots,n\}$ und Skalare $\lambda_i\in K$ heißt
+>$$
+  \sum_{i=1}^n{\left(\lambda_i\cdot v_i\right)}\in V
+$$ eine **Linearkombination** der Vektoren $v_i$. Diese ist also wieder ein Vektor. Die Skalare $\lambda_i$ heißen Koeffizienten der Linearkombination.
+
+**Beispiel 4.** Gegeben sind drei Vektoren des $\mathbb{R}^2$, die als Ortsvektoren der Eckpunkte zweier gleichseitiger Dreiecke der Kantenlänge 'Eins' in der nachstehenden Abbildung dargestellt sind.
+
+![Linearkombination](img/mat-bild-18.png "_Fig._ Drei Vektoren $a$, $b$ und $c$ (blau), die zwei gleichseitige Dreiecke aufspannen. Dargestellt ist ebenso die Linearkombination $2\cdot a+3\cdot b-3\cdot c$ (schwarz) sowie alle Orte zur vom reellen Parameter $\lambda$ abhängigen Linearkombination $\lambda\cdot a+(1-\lambda)\cdot c$ (grün).")
+
+Zu berechnen sind unter Benutzung der Rechenregeln für Vektoren in Satz 1:
+
+1. die Linearkombination $a+b-c$ $$
+  a+b-c=(a+b)-c=c-c=o
+$$ worin $o$ den Nullvektor in $\mathbb{R}^2$ bezeichnet.
+2. die Linearkombination $2\cdot a+3\cdot b-3\cdot c$ $$
+  2\cdot a+3\cdot b-3\cdot c=-a+3\cdot\left(a+b-c\right)\stackrel{1.}{=}-a+o=-a
+$$ unter Nutzung des vorherigen Ergebnisses.
+3. die vom Parameter $\lambda$ abhängige Linearkombination $\lambda\cdot a+(1-\lambda)\cdot c$ $$
+  \lambda\cdot a+(1-\lambda)\cdot c=c+\lambda\cdot(a-c)\stackrel{1.}{=}c-\lambda\cdot b
+$$
+
+Ein zentraler Begriff im Kontext der Vektorräume ist der der linearen Unabhängigkeit von Vektoren.
+
+>**Definition 4.** Die Vektoren $v_i\in V$ mit $i\in\{1,2,\ldots,n\}$ heißen **linear unabhängig**, falls
+>$$
+  \sum_{i=0}^n{\left(\lambda_i\cdot v_i\right)}=o\;\rightarrow\;(\lambda_0,\lambda_1,\ldots,\lambda_n)=(0,0,\ldots,0)
+$$ worin $o$ den Nullvektor in $V$ bezeichnet. Andernfalls wird die Menge $\{v_1,...,v_n\}$ linear abhängig genannt.
+
+**Bemerkung 2.** Die vorstehende Definition besteht aus einer Implikation: Der Vordersatz ist eine vektorwertige, lineare Gleichung in den unbekannten Koeffizienten $\lambda_i$, deren rechte Seite der Nullvektor in $V$ ist. Der Nachsatz umfasst die Aussage, dass alle Koeffizienten als Lösungen dieser Gleichung 'Null' sind.
+
+Das heißt, die lineare Unabhängigkeit der Vektoren $v_i$ ist daran gekoppelt, dass die vektorvertige, lineare Gleichung in Definition 4 ~~nur~~ für das Nulltupel $$
+  (\lambda_0,\lambda_1,\ldots,\lambda_n)=(0,0,\ldots,0)
+$$ lösbar ist. Diese wird auch *triviale Lösung* genannt. Existiert andernfalls ~~daneben~~ ein $$
+  (\lambda_0,\lambda_1,\ldots,\lambda_n)\not=(0,0,\ldots,0)
+$$ als Lösungstupel dieser Gleichung, so heißt die Menge der Vektoren $\left\{v_i|\, i\in\{1,2,...,n\}\right\}$ linear abhängig.
+
+**Beispiel 5.** Es wird der Vektorraum $V=\mathbb{R}^2$ betrachtet.
+
+1. Für die Vektoren $$
+  v_1=\begin{pmatrix} 2 \\ 1 \end{pmatrix}\quad\text{und}\quad
+  v_2=\begin{pmatrix} 1 \\ -1 \end{pmatrix}
+$$ ist die Menge $\{v_1,v_2\}$ linear unabhängig, da gilt $$
+  \lambda_1\cdot v_1+\lambda_2\cdot v_2=
+  \lambda_1\cdot\begin{pmatrix} 2 \\ 1 \end{pmatrix}+\lambda_2\cdot\begin{pmatrix} 1 \\ -1 \end{pmatrix}=
+  \begin{pmatrix} 2\cdot\lambda_1+\lambda_2 \\ \lambda_1-\lambda_2 \end{pmatrix}=
+  \begin{pmatrix} 0 \\ 0 \end{pmatrix}=o\quad\leftrightarrow\quad (\lambda_1,\lambda_2)=(0,0)
+$$ Es existiert nur das Paar von Koeffizienten $(\lambda_1,\lambda_2)=(0,0)$ als Lösung der linearen Gleichung.
+2. Für die Vektoren $$
+  u_1=\begin{pmatrix} 2 \\ 1 \end{pmatrix}\quad\text{und}\quad
+  u_2=\begin{pmatrix} 0 \\ 0 \end{pmatrix}
+$$ ist die Menge $\{u_1,u_2\}$ linear abhängig, da zum Beispiel gilt $$
+  0\cdot u_1+7\cdot u_2=
+  0\cdot\begin{pmatrix} 2 \\ 1 \end{pmatrix}+7\cdot\begin{pmatrix} 0 \\ 0 \end{pmatrix}=
+  \begin{pmatrix} 0 \\ 0 \end{pmatrix}=o
+$$ Es existiert ein Paar von Koeffizienten $(\lambda_1,\lambda_2)=(0,7)\not=(0,0)$ als Lösung dieser linearen Gleichung. Mit selbigem Ansatz folgt, dass die einelementige Menge $\{u_1\}$ linear unabhängig ist, währenddessen $\{u_2\}$ linear abhängig ist.[^4]
+3. Für die Vektoren $$
+  w_1=\begin{pmatrix} 2 \\ 1 \end{pmatrix}\,,\quad
+  w_2=\begin{pmatrix} 1 \\ 1 \end{pmatrix}\quad\text{und}\quad
+  w_3=\begin{pmatrix} -1 \\ 2 \end{pmatrix}
+$$ besteht die Menge $\{w_1,w_2,w_3\}$ aus linear abhängigen Vektoren, da gilt $$
+  -3\cdot w_1+5\cdot w_2-w_3=o
+$$ Bitte nachrechnen!
+
+>**Proposition 2.** Vektoren $v_i$ mit $i\in\{1,2,...,n\}$ und $n\in\mathbb{N}$, $n>1$ sind genau dann linear abhängig, wenn (mindestens) einer der Vektoren $v_i$ als Linearkombination der anderen dargestellt werden kann.
+
+**Beweis.** Nach Definition 4 sind die Vektoren $v_i$ linear abhängig, falls ein Koeffizient $\lambda_i$ in der Gleichung $$
+  \sum_{i=0}^n{\left(\lambda_i\cdot v_i\right)}=o
+$$ verschieden von 'Null' gewählt werden kann. O. B. d. A. ist $\lambda_1\not=0$ (ggf. nach Umordnen). Es folgt umkehrbar $$
+  \sum_{i=0}^n{\left(\lambda_i\cdot v_i\right)}=o\quad\stackrel{\lambda_1\not=0}{\longleftrightarrow}\quad
+  v_1=-\frac{1}{\lambda_1}\cdot\left(\lambda_2\cdot v_2+...+\lambda_n\cdot v_n\right)=
+  \sum_{k=2}^n{\left(-\frac{\lambda_k}{\lambda_1}\cdot v_k\right)}
+$$ mit Koeffizienten $\mu_k:=-\frac{\lambda_k}{\lambda_1}$.
+
+$\square$
+
+**Beispiel 6.** Die Menge aller auf $\mathbb{R}$ stetigen, reellen Funktionen bildet bezüglich einer - formal wie in Beispiel 3 (3.) erklärten - 'punktweisen' Addition und Skalarvielfachbildung einen Funktionenvektorraum ([Funktionenraum](https://de.wikipedia.org/wiki/Funktionenraum)).
+
+1. Gegeben sind die beiden stetigen, reellen Funktionen $$
+  f:x\mapsto y=f(x)=\exp{x}\quad\text{und}\quad
+  g:x\mapsto y=g(x)=\exp{(2\cdot x)}
+$$ mit gemeinsamem Definitionsbereich $D=\mathbb{R}$. Die Funktionen $f$ und $g$ sind linear unabhängig, da kein reeller Skalar $\lambda$ existiert mit $$
+  g(x)=\exp{(2\cdot x)}=\exp{x}\cdot\exp{x}=\lambda\cdot\exp{x}=\lambda\cdot f(x)
+$$ für alle $x\in D$.
+2. Je endlich viele, verschiedene der Funktionen $$
+  f_i:x\mapsto y=f_i(x)=x^i\quad (i\in\mathbb{N}\,, i>0)\,,\quad f_0:x\mapsto y=f_0(x)=1
+$$ mit gemeinsamem Definitionsbereich $D=\mathbb{R}$ sind linear unabhängig, denn für eine endliche Indexmenge $J\subset\mathbb{N}$ gilt nach Definition 4 $$
+  \sum_{j\in J}{(\lambda_j\cdot f_j(x))}=0\quad\forall\; x\in\mathbb{R}\quad\rightarrow\quad
+  \forall j\in J\;(\lambda_j=0)
+$$
+
+Aus dem letzten Beispiel lässt sich eine Methode zum Vergleich von reellen Polynomfunktionen entwickeln. Gegeben sind zwei Polynomfunktionen $n$-ten Grades durch die Polynome $$
+    p(x)=\sum_{j=0}^n{\left(a_j\cdot x^j\right)}\quad\text{und}\quad
+    q(x)=\sum_{j=0}^n{\left(b_j\cdot x^j\right)}
+$$ mit $x\in\mathbb{R}$. Die Polynomfunktionen sind gleich $$
+  p(x)=q(x)\;\;\forall x\in\mathbb{R}\quad\leftrightarrow\quad
+  p(x)-q(x)=0\;\;\forall x\in\mathbb{R}\quad\leftrightarrow\quad
+  \forall j\in\{0,1,...,n\}\;(a_j-b_j=0)
+$$ d. h. falls die zum gleichen Indexwert gehörenden Koeffizienten gleich sind. Die Methode wird deshalb auch Methode des **Koeffizientenvergleichs** genannt.
+
+**Beispiel 7.** Die Polynomfunktion $f:[0,1]\to\mathbb{R}$ mit $$
+  f(t)=2\cdot t^3-t^2+t-1
+$$ ist als Linearkombination $$
+  f(t)=\sum_{j=0}^3{\left(\lambda_j\cdot B_j^3(t)\right)}
+$$ der Bernstein-Polynome $$
+  B_j^3(t)=\binom{3}{j}\cdot(1-t)^{3-j}\cdot t^j\,,\quad j\in{0,1,2,3}
+$$ darzustellen (und ist damit von diesen linear abhängig).
+
+1. Die Bernstein-Polynome zur Ordnung $3$ berechnen sich unter Festsetzung $t^0=1$ und $(1-t)^0=1$ für alle $t$ $$
+  B_0^3(t)=\binom{3}{0}\cdot(1-t)^{3}=1-3\cdot t+3\cdot t^2-t^3
+$$ beziehungsweise $$
+  B_1^3(t)=\binom{3}{1}\cdot(1-t)^{2}\cdot t=3\cdot t-6\cdot t^2+3\cdot t^3
+$$ beziehungsweise $$
+  B_2^3(t)=\binom{3}{2}\cdot(1-t)^{1}\cdot t^2=3\cdot t^2-3\cdot t^3
+$$ beziehungsweise $$
+  B_3^3(t)=\binom{3}{3}\cdot t^3=t^3
+$$
+2. Die Linearkombination der Bernstein-Polynome mit Koeffizienten $\lambda_j$ ergibt nach Ausmultiplizieren, Zusammenfassen und Ordnen $$
+  \sum_{j=0}^3{\left(\lambda_j\cdot B_j^3(t)\right)}=
+  \lambda_0\cdot 1+
+  (-3\cdot\lambda_0+3\cdot\lambda_1)\cdot t+
+  (3\cdot\lambda_0-6\cdot\lambda_1+3\cdot\lambda_2)\cdot t^2+
+  (-\lambda_0+3\cdot\lambda_1-3\cdot\lambda_2+\lambda_3)\cdot t^3
+$$
+3. Der Vergleich der Koeffizienten von $f(t)$ mit denen der Linearkombination $\sum_{j=0}^3{\left(\lambda_j\cdot B_j^3(t)\right)}$ ergibt ein System von vier linearen Gleichungen in den zu bestimmenden Koeffizienten $\lambda_j$ $$
+  \lambda_0+1=0\,,\quad
+  -3\cdot\lambda_0+3\cdot\lambda_1-1=0\,,\quad
+  3\cdot\lambda_0-6\cdot\lambda_1+3\cdot\lambda_2+1=0\quad\text{und}\quad
+  -\lambda_0+3\cdot\lambda_1-3\cdot\lambda_2+\lambda_3-2=0
+$$ Diese kann schrittweise 'von oben nach unten' gelöst werden und besitzt die eindeutige Lösung $$
+  \lambda_0=-1\,,\quad
+  \lambda_1=-\frac{2}{3}\,,\quad
+  \lambda_2=-\frac{2}{3}\quad\text{und}\quad
+  \lambda_3=1
+$$ Damit ist $$
+  f(t)=(-1)\cdot B_0^3(t)-\frac{2}{3}\cdot B_1^3(t)-\frac{2}{3}\cdot B_2^3(t)+B_3^3(t)
+$$
+
+
+Basen in Vektorräumen
+=====
+
+
+In diesem Abschnitt ergänzen wir den Begriff der Basis eines Vektorraums .
+
+>**Definition 5.** Sind in einem Vektorraum $V$ $n$ Vektoren linear unabhängig und stets $n+1$ Vektoren linear abhängig, so heißt $V$ endlich-dimensional. Die natürliche Zahl $n=\dim{V}$ mit $n\geq1$ wird **Dimension** des Vektorraums $V$ genannt.
+
+>**Definition 6.** In einem Vektorraum $V$ der Dimension $\dim{V}=n$ heißt jede Menge von $n$ linear unabhängigen Vektoren eine **Basis** $B$ von $V$. $$
+  B=\left\{x_1,x_2,...,x_n\right\}\subset V
+$$ Darin wird $x_j\in V$, $j\in \{1,2,...,n\}$ Basisvektor zum Index $j$ genannt.
+
+**Beispiel 8.** Die Vektoren $$
+  e_1=\begin{pmatrix} 1 \\ 0 \end{pmatrix}\quad\text{und}\quad
+  e_2=\begin{pmatrix} 0 \\ 1 \end{pmatrix}
+$$ bilden eine Basis des Vektorraums $V=\mathbb{R}^2$. Diese Vektoren sind linear unabhängig, denn es folgt für die Linearkombination $$
+  \lambda_1\cdot e_1+\lambda_2\cdot e_2 =
+  \begin{pmatrix} \lambda_1 \\ \lambda_2 \end{pmatrix}=
+  \begin{pmatrix} 0 \\ 0 \end{pmatrix}\quad\rightarrow\quad \lambda_1=\lambda_2=0
+$$ Darüberhinaus kann jeder weitere Vektor $v$ als Linearkombination dieser Vektoren dargestellt werden. $$
+  v=\lambda_1\cdot e_1+\lambda_2\cdot e_2\quad \leadsto\quad v=\begin{pmatrix} \lambda_1 \\ \lambda_2 \end{pmatrix}
+$$ woraus die lineare Abhängigkeit von $\{v,e_1,e_2\}$ nach Proposition 2 folgt. Der Vektorraum $\mathbb{R}^2$ besitzt die Dimension $2$ $$
+  B=\{e_1,e_2\}
+$$ heißt *kanonische Basis* in $\mathbb{R}^2$.
+
+Das Bildungsprinzip lässt sich auf Vektorräume $V=\mathbb{R}^n$ mit $n\in\mathbb{N}$ und $n>0$ übertragen: Die Menge $$
+  B=\{e_1,e_2,...,e_n\}\quad\text{mit Basisvektoren}\quad e_j=\begin{pmatrix} \delta_{1j} \\ \delta_{2j} \\ \vdots \\ \delta_{nj} \end{pmatrix}\,, j\in\{1,2,...,n\}
+$$ unter Nutzung des [Kronecker-Symbols](https://de.wikipedia.org/wiki/Kronecker-Delta) $$
+  \delta_{ij}:=\left\{\begin{array}{rcl} 0 & \text{für} & i\not=j \\ 1 & \text{für} & i=j \end{array}\right.
+$$ bildet die kanonische Basis des Vektorraums $V=\mathbb{R}^n$.
+
+**Beispiel 9.** Die Menge $B$ der reellen Potenzfunktionen $$
+  f_i:x\mapsto y=f_i(x)=x^i\quad (i\in\{1,2,...,n\}\,,n>0)\,,\quad f_0:x\mapsto y=f_0(x)=1
+$$ mit gemeinsamem Definitionsbereich $D=\mathbb{R}$ bildet eine Basis im Vektorraum der reellen Polynomfunktionen vom Grad $k\leq n$ $$
+  V=\left\{f:\mathbb{R}\to\mathbb{R}\left|\; f(x)=\sum_{j=0}^n{(a_j\cdot x^j)}\,, a_j\in\mathbb{R}\right.\right\}
+$$ Die lineare Unabhängigkeit der Funktionen $f_i$ ist bereits im Beispiel 6 (2.) gezeigt worden. Es folgt $\dim{V}=n+1$.
+
+>**Satz 3.** Zu jedem Vektor $v\in V$ eines endlich-dimensionalen Vektorraums $V$ mit Dimension $\dim{V}=n$ über einem Zahlkörper $K$ existiert zu einer gegebenem Basis $$
+  B=\{x_1,x_2,...,x_n\}
+$$ von Vektoren aus $V$ genau ein Tupel $$
+  (\lambda_1,\lambda_2,...,\lambda_n)\in K^n
+$$ von Koeffizienten, so dass sich $v$ eindeutig als Linearkombination in den Basisvektoren darstellen lässt $$
+  v=\sum_{j=1}^n{(\lambda_j\cdot x_j)}
+$$ Die Koeffizienten $\lambda_j$ werden **Koordinaten** von $v$ bezüglich $B$ genannt; der Vektor $$
+  \begin{pmatrix} \lambda_1 \\ \lambda_2 \\ \vdots \\ \lambda_n \end{pmatrix}\in K^n
+$$ heißt ** Koordinatenvektor** von $v$ bezüglich $B$.
+
+**Beweis.** Die Existenz der Koeffizienten $\lambda_j$ folgt aus Definition 6 und Proposition 2.
+
+Der Nachweis der Eindeutigkeit der Koeffizienten $\lambda_j$ in der Linearkombination bezüglich $B$ wird hier indirekt geführt: Angenommen, es gäbe zwei unterschiedliche Linearkombination zur Darstellung von $v$, d. h. zwei verschiedene Koordinatenvektoren $$
+  \begin{pmatrix} \lambda_1 \\ \lambda_2 \\ \vdots \\ \lambda_n \end{pmatrix}\not=
+  \begin{pmatrix} \mu_1 \\ \mu_2 \\ \vdots \\ \mu_n \end{pmatrix}
+$$ so folgt aus den zugehörigen Linearkombinationen unter Verwendung der Rechenregeln für Vektoren $$
+  v=\sum_{j=1}^n{(\lambda_j\cdot x_j)}=
+  \sum_{j=1}^n{(\mu_j\cdot x_j)}\quad\rightarrow\quad
+  \sum_{j=1}^n{(\lambda_j\cdot x_j)}-\sum_{j=1}^n{(\mu_j\cdot x_j)}=
+  \sum_{j=1}^n{((\lambda_j-\mu)\cdot x_j)}=o
+$$ Aufgrund der linearen Unabhängigkeit der Vektoren $x_j$ folgt hieraus, dass alle Koeffizienten $\lambda_j-\mu_j$ 'verschwinden' müssen, d. h. $$
+  \lambda_j-\mu_j=0\quad\leftrightarrow\quad\lambda_j=\mu_j
+$$ für alle $j\in\{1,2,...,n\}$.
+
+$\square$
+
+**Beispiel 10.** Es werden die Koordinatenvektoren für Vektoren in verschiedenen reellen Vektorräumen $V$ berechnet. Im letzten Punkt wird deutlich, dass $\mathbb{R}^n$ als Standardmodell für reelle Vektorräume genutzt werden kann.
+
+1. Gegeben ist der Vektorraum $V=\mathbb{R}^3$. Bezogen auf die kanonische Basis $B=\{e_1,e_2,e_3\}$ (vergleiche Beispiel 8) ist der Koordinatenvektor zum Vektor $$
+  v=\begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}
+$$ zu berechnen. $$
+  v=\sum_{j=1}^3{(\lambda_j\cdot e_j)}=
+  \lambda_1\cdot\begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}+
+  \lambda_2\cdot\begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix}+
+  \lambda_3\cdot\begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix}=
+  \begin{pmatrix} \lambda_1 \\ \lambda_2 \\ \lambda_3 \end{pmatrix}\quad\leadsto\quad
+  \begin{pmatrix} \lambda_1 \\ \lambda_2 \\ \lambda_3 \end{pmatrix}=
+  \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}
+$$ Der Vektor $v$ gleicht seinem zugehörigen Koordinatenvektor bezogen auf die kanonische Basis $B$.
+2. Gegeben ist der Vektorraum $V=\mathbb{R}^2$. Bezogen auf die Basis $$
+  B=\{b_1,b_2\}:=\left\{
+    \begin{pmatrix} 2 \\ 1 \end{pmatrix}\,,\begin{pmatrix} 1 \\ 2 \end{pmatrix}
+  \right\}
+$$ (für den Nachweis der Basiseigenschaft vergleiche Beispiel 8) ist der Koordinatenvektor zum Vektor $$
+  v=\begin{pmatrix} 3 \\ 3 \end{pmatrix}
+$$ zu berechnen. $$
+  v=\sum_{j=1}^2{(\lambda_j\cdot b_j)}=
+  \lambda_1\cdot\begin{pmatrix} 2 \\ 1 \end{pmatrix}+
+  \lambda_2\cdot\begin{pmatrix} 1 \\ 2 \end{pmatrix}=
+  \begin{pmatrix} 2\cdot\lambda_1+\lambda_2 \\ \lambda_1+2\cdot\lambda_2 \end{pmatrix}\quad\leadsto\quad
+  \begin{pmatrix} \lambda_1 \\ \lambda_2 \end{pmatrix}=
+  \begin{pmatrix} 1 \\ 1 \end{pmatrix}
+$$ Der Vektor $v$ besitzt bezogen auf die Basis $B$ den zugehörigen Koordinatenvektor $$
+  \begin{pmatrix} \lambda_1 \\ \lambda_2 \end{pmatrix}=
+  \begin{pmatrix} 1 \\ 1 \end{pmatrix}
+$$
+3. *Fortführung von Beispiel 9* für den Parameterwert $n=2$. Bezogen auf die Basis $$
+  B=\{f_0,f_1,f_2\}
+$$ mit den Basisfunktionen $$
+  f_0:x\mapsto y=f_0(x)=1\,,\quad
+  f_1:x\mapsto y=f_1(x)=x^1\quad\text{und}\quad
+  f_2:x\mapsto y=f_2(x)=x^2
+$$ ist der Koordinatenvektor zur Funktion $$
+  g:x\mapsto y=g(x)=3\cdot x^2-5\cdot x+7\,,\quad x\in\mathbb{R}
+$$ zu berechnen. $$
+  g(x)=\sum_{j=0}^2{(\lambda_j\cdot f_j(x))}=
+  \lambda_0\cdot 1+\lambda_1\cdot x+\lambda_2\cdot x^2=
+  \quad\leadsto\quad
+  \begin{pmatrix} \lambda_0 \\ \lambda_1 \\ \lambda_2 \end{pmatrix}=
+  \begin{pmatrix} 7 \\ -5 \\ 3 \end{pmatrix}
+$$ Der Funktion $f$ wird bezogen auf die Basis $B$ der reelle Koordinatenvektor $$
+  \begin{pmatrix} \lambda_0 \\ \lambda_1 \\ \lambda_2 \end{pmatrix}=
+  \begin{pmatrix} 7 \\ -5 \\ 3 \end{pmatrix}
+$$ zugeordnet. Dieser enthält die Koeffizienten des Polynoms als Komponenten. In gleicher Weise werden den Basisfunktionen die Vektoren der natürlichen Basis des $\mathbb{R}^3$ als Koordinatenvektoren zugeordnet $$
+  f_0\mapsto\begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}\,,\quad
+  f_1\mapsto\begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix}\,,\quad
+  f_2\mapsto\begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix}
+$$
+
+Eine Zusammenstellung der Aussagen zur linearen Unabhängigkeit findet sich im nachstehenden Video. Darin enthalten sind nicht nur eine praktische Anleitung zum Prüfen der Basiseigenschaft, die an Beispielen ausgeführt wird. Es wird auch eine Einordnung des Begriffs 'Basis' in den allgemeineren Begriffskontext eines 'Erzeugendensystems' gegeben.
+
+!?[Erzeugendensystem](https://www.youtube.com/watch?v=Ot9Y24Xcsu8)
+
+
+Untervektorraum
+=====
+
+In diesem Abschnitt wird der Begriff 'Untervektorraum' eines Vektorraums eingeführt. Dies treten beispielsweise als Lösungsmengen von Systemen homogener, linearer Gleichungen auf - vergleiche Abschnitt [Lineare Gleichungssysteme](#Lineare-Gleichungssysteme). Ebenso als Lösungsmengen von speziellen Differentialgleichungen, die in technischem Kontext beispielsweise zur Beschreibung von Schwingungsvorgängen verwendet werden - siehe [Fundamentalsystem einer Schwingungsgleichung](https://de.wikipedia.org/wiki/Schwingung).
+
+>**Definition 7.** Eine Teilmenge $M \subseteq V$ heißt [Untervektorraum](https://de.wikipedia.org/wiki/Untervektorraum) des Vektorraums $V$ über dem Körper $K$ genau dann, wenn die folgenden Bedingungen erfüllt sind.
+>
+>1. $M\not=\emptyset$ ~~und~~
+>2. $(\lambda_1\cdot v_1+\lambda_2\cdot v_2)\in M$ für beliebige Vektoren $v_1\in M$ und $v_2\in M$ sowie für beliebige Skalare $\lambda_1\in K$ uund $\lambda_2\in K$
+
+**Bemerkung 3.** Jeder Untervektorraum $M$ eines Vektorraums $V$ ist selbst ein Vektorraum. Warum?
+
+**Beispiel 11.**
+
+1. Das nach Definition 2 in jedem Vektorraum enthaltene Nullelement $o\in V$ bildet einen Untervektorraum $U=\{o\}$ in $V$. Prüfen Sie die beiden Bedingungen aus Definition 7 zum Nachweis der Eigenschaft, Untervektorraum zu sein. Der Untervektorraum $U\subseteq V$ besitzt die Dimension $\dim{U}=0$. Umgekehrt enthält jeder Untervektorraum das Nullelement $o\in V$.
+2. Jedes vom Nullelement $o\in V$ verschiedene Element $v\in V$ spannt einen eindimensionalen Untervektorraum $$
+  U=\{\lambda\cdot v|\;\lambda\in K\}\,,\quad\dim{U}=1
+$$ auf, worin $K$ den Skalarkörper zu V bezeichnet.
+3. Die linear unabhängigen Vektoren $$
+  e_1=\begin{pmatrix} 1 \\ 0 \end{pmatrix}\in\mathbb{R}^2\quad\text{und}\quad
+  e_2=\begin{pmatrix} 0 \\ 1 \end{pmatrix}\in\mathbb{R}^2
+$$ spannen den zweidimensionalen Untervektorraum $$
+  W=\{\lambda_1\cdot e_1+\lambda_2\cdot e_2|\;\lambda_j\in \mathbb{R}\,,j\in\{1,2\}\}\,,\quad\dim{W}=2
+$$ Es gilt sogar $W=V$, d. h. das Paar $(e_1,e_2)$ bildet eine Basis in $W$ und $V=\mathbb{R}^2$. Vergleiche 'kanonische Basis' in Beispiel 8.
+
+Unter Nutzen von Mengenoperationen lassen sich nun Untervektorräume eines Vektorraumes verknüpfen. Dabei stellt sich die Frage, ob die Struktur eines Untervektorraumes erhalten bleibt.
+
+>**Definition 8.** Der Durchschnitt zweier Untervektorräume $U_1\subseteq V$ und $U_2\subseteq V$ ist die Menge aller Elemente $$
+  U_1\cap U_2=\{v\in V|\; v\in U_1\;\wedge\;v\in U_2\}
+$$ d. h. alle Elemente $v\in V$, für die gleichzeitig $v\in U_1$ und $v\in U_2$ gelten.
+
+>**Proposition 4.** Für je zwei Untervektorräume $U_1\subseteq V$ und $U_2\subseteq V$ eines Vektorraums $V$ ist der Durchschnitt $U_1\cap U_2$ ein Untervektorraum von $V$.
+
+**Beweis.** Jeder Untervektorraum enthält offensichtlich das Nullelement $o\in V$, wonach $o\in (U_1\cap U_2)$ folgt. Vergleiche Beispiel 11 (1).
+
+Enthalten die Unterräume $U_1\subseteq V$ und $U_2\subseteq V$ jeweils Vektoren in $\{v_1,...,v_k\}$ mit $k\geq1$, so folgt nach Definition 7 unmittelbar $$
+   \{v_1,...,v_k\}\subset U_1\cap U_2
+$$ Nach Definition 7 (2) sind auch alle Linearkombinationen der Vektoren $\{v_1,...,v_k\}$ jeweils in $U_1\subseteq V$ und $U_2\subseteq V$ enthalten, woraus $$
+  (\lambda_1\cdot v_1+...+\lambda_k\cdot v_k)\in(U_1\cap U_2)
+$$ für beliebige Skalare $\lambda_j$ mit $j\in\{1,...,k\}$ folgt.
+
+$\square$
+
+**Bemerkung 4.** Im Gegensatz zum Durchschnitt ist die *Vereinigung* zweier Untervektorräume $U_1\subseteq V$ und $U_2\subseteq V$ $$
+  U_1\cup U_2=\{v\in V|\; v\in U_1\;\vee\;v\in U_2\}
+$$ im Allgemeinen ~~kein~~ Untervektorraum. Denn, sind beispielsweise - bezogen auf die Vektoren $e_1\in\mathbb{R}^2$ und $e_2\in\mathbb{R}^2$ in Beispiel 11 (3) - die Untervektorräume $$
+  U_1=\{\lambda_1\cdot e_1|\;\lambda_1\in \mathbb{R}\}\,,\quad\dim{U_1}=1\quad\text{sowie}\quad
+  U_2=\{\lambda_2\cdot e_2|\;\lambda_2\in \mathbb{R}\}\,,\quad\dim{U_2}=1
+$$ gegeben, so gilt mit Definition 8 $$
+  (2\cdot e_1)\in(U_1\cup U_2) \quad\wedge\quad ((-1)\cdot e_2)\in(U_1\cup U_2)
+$$ jedoch ist die Linearkombination $$
+  (2\cdot e_1+(-1)\cdot e_2)\not\in(U_1\cup U_2)
+$$ Nach Definition 7 (2) ist die Vereinigungsmenge $U_1\cup U_2$ kein Untervektorraum.
+
+Im Anliegen der Verknüpfung von Untervektorräumen kann mit der vorstehenden Bemerkung definiert werden:
+
+>**Definition 9.** Die [Summe](https://de.wikipedia.org/wiki/Untervektorraum#Summe) zweier Untervektorräume $U_1$ und $U_2$ eines Vektorraumes $V$ über dem Körper $K$ ist der Untervektorraum $$
+  W=U_1+U_2:=\{\lambda_1\cdot v_1+\lambda_2\cdot v_2|\;\lambda_j\in K\,,\;v_j\in U_j,j\in\{1,2\}\}
+$$ Gilt $U_1\cap U_2=\{o\}$ (aus Nullelement bestehender Untervektorraum), so heißt $U_1+U_2$ **direkte Summe** und wird mit $U_1\oplus U_2$ gekennzeichnet.
+
+>**Satz 5.** ([Dimensionssatz](https://de.wikipedia.org/wiki/Untervektorraum#Summe)) Für beliebige Untervektorräume $U_1$ und $U_2$ eines Vektorraumes $V$ über dem Körper $K$ gilt $$
+  \dim{U_1}+\dim{U_2}=\dim{(U_1\cap U_2)}+\dim{(U_1+U_2)}
+$$ (*ohne Beweis*)
+
+**Beispiel 12.** Gegeben sind die beiden Untervektorräume des $\mathbb{R}^2$ $$
+  U_1=\left\{\lambda_1\cdot \begin{pmatrix} 1 \\ 0 \end{pmatrix}|\;\lambda_1\in \mathbb{R}\right\}\,,\quad\dim{U_1}=1\quad\text{sowie}\quad
+  U_2=\left\{\lambda_2\cdot \begin{pmatrix} 1 \\ 1 \end{pmatrix}|\;\lambda_2\in \mathbb{R}\right\}\,,\quad\dim{U_2}=1
+$$ Es gilt einerseits für den Durchschnitt $$
+  \lambda_1\cdot \begin{pmatrix} 1 \\ 0 \end{pmatrix}=
+  \lambda_2\cdot \begin{pmatrix} 1 \\ 1 \end{pmatrix}\quad\leftrightarrow\quad
+  \begin{cases} \lambda_1=\lambda_2 \\ 0=\lambda_2 \end{cases}\quad\leftrightarrow\quad
+  \begin{cases} \lambda_1=0 \\ \lambda_2=0 \end{cases}\quad\leadsto \quad
+  U_1\cap U_2=\{o\}\,,\quad\dim{(U_1\cap U_2)}=0
+$$ andererseits für die Summe (bitte nachrechnen) $$
+  U_1+U_2=U_1\oplus U_2=\left\{\left.\lambda_1\cdot \begin{pmatrix} 1 \\ 0 \end{pmatrix}+
+  \lambda_2\cdot \begin{pmatrix} 1 \\ 1 \end{pmatrix}\right|\;\lambda_1\in\mathbb{R}\,,\;\lambda_2\in\mathbb{R}\right\}=\mathbb{R}^2\,,\quad\dim{(U_1+U_2)}=2
+$$ In diesem Beispiel zeigt sich der Dimensionssatz $$
+  \dim{U_1}+\dim{U_2}=1+1=0+2=\dim{(U_1\cap U_2)}+\dim{(U_1+U_2)}
+$$
+
+
+Sicher gewusst?
+=====
+
+Nutzen Sie die folgenden Fragen, um ihre über Vektoren erworbenen Kenntnisse zu prüfen.
+
+**Frage 1.** Für welches der folgenden Objekte ergibt die Aussage einen Sinn, "es sei linear abhängig" bzw. "linear unabhängig"?
+
+[( )] Ein $n$-Tupel $(v_1,...,v_n)$ von reellen Vektorräumen.
+[(X)] Ein $n$-Tupel $(v_1,...,v_n)$ von Elementen eines Vektorraumes.
+[( )] Eine Linearkombination $\lambda_1\cdot v_1+...+\lambda_n\cdot v_n$
+[[?]] Vergleiche Definition 4 in diesem Abschnitt zur linearen Unabhängigkeit.
+
+**Frage 2.** Welche der folgenden Aussagen bedeutet die lineare Unabhängigkeit des $n$-Tupels von Elementen aus $V$? Das Element $o$ kennzeichnet in allen drei Aussagen den Nullvektor in $V$.
+
+[( )] Wenn $\lambda_1=...=\lambda_n=0$ dann $\lambda_1\cdot v_1+...+\lambda_n\cdot v_n=o$
+[( )] $\lambda_1\cdot v_1+...+\lambda_n\cdot v_n=o$ für alle $(\lambda_1,...,\lambda_n)$ in $K^n$
+[(X)] $\lambda_1\cdot v_1+...+\lambda_n\cdot v_n=o$ nur, wenn $\lambda_1=...=\lambda_n=0$
+[[?]] Vergleiche Definition 4 in diesem Abschnitt zur linearen Unabhängigkeit.
+****************************************
+
+---
+
+Die erste Aussage ist ~~nicht~~ korrekt, da für $n=2$ z. B. gilt $$
+  0\cdot\begin{pmatrix} 1 \\ 0 \end{pmatrix}+ 0\cdot\begin{pmatrix} 0 \\ 0 \end{pmatrix}=
+  \begin{pmatrix} 0 \\ 0 \end{pmatrix}
+$$ jedoch die Vektoren $$
+  v_1=\begin{pmatrix} 1 \\ 0 \end{pmatrix}\quad\text{und}\quad
+  v_2=\begin{pmatrix} 0 \\ 0 \end{pmatrix}
+$$ linear abhängig sind. Vergleiche Beispiel 5 (2.): Gehört der Nullvektor zur Menge von Elementen aus $V$, so ist diese Menge linear abhängig.
+
+Die zweite Aussage ist ebenso ~~nicht~~ korrekt, da z. B. für $n=1$ gilt $$
+  \lambda\cdot v=\begin{pmatrix} 0 \\ 0 \end{pmatrix}\;\forall\; \lambda\in\mathbb{R}\quad\leftrightarrow\quad
+  v=\begin{pmatrix} 0 \\ 0 \end{pmatrix}
+$$ letzterer ist der Nullvektor (beispielsweise in $\mathbb{R}^2$).
+
+Die dritte Aussage entspricht der in Definition 4 genutzten Implikation. Hiernach ist ein System von Elementen aus $V$ dann linear abhängig, wenn eine Linearkombination dieser alleinig für das Koeffiziententupel $(\lambda_1,...,\lambda_n)=(0,...,0)$ den Nullvektor erzeugt. Andernfalls heißen die Elemente aus $V$ linear abhängig.
+
+****************************************
+
+**Frage 3.** Die kanonische Basis von $(e_1,...,e_n)\subset\mathbb{R}^n$ ist definiert durch
+
+[( )] $$ (e_1,...,e_n)=(1,...,1) $$
+[(X)] $$ e_j=(0,...,0,\stackrel{j\text{-te Stelle}}{1},0,...,0) $$
+[( )] $$ e_j=(1,...,1,\stackrel{j\text{-te Stelle}}{0},1,...,1) $$
+[[?]] Vergleiche Definition 6 zum Begriff einer Basis und Beispiel 8 zur kanonischen Basis.
+
+
+
+[^1]: Die Vektoraddition erfolgt *komponentenweise*: d. h. dass die Summe der Komponenten an den $j$-ten Stellen beider Vektoren die $j$-te Komponente der Summe ergibt, $j\in\{1,...,n\}$.
+
+[^2]: Die Skalarvielfachbildung erfolgt *komponentenweise*: d. h. dass das Produkt der $j$-ten Komponente des Vektors mit dem Skalar $\lambda$ die $j$-te Komponente des $\lambda$-Fachen ergibt, $j\in\{1,...,n\}$.
+
+[^3]: Die Rechenregeln werden zur axiomatischen Festlegung eines Vektorraumes genutzt. Hier ist zusätzlich $1\cdot x=x$ zu fordern.
+
+[^4]: Enthält eine Menge von Vektoren aus $V$ den Nullvektor, so ist diese linear abhängig.
+
+
+### Matrizen
+
+
+Definition und Eigenschaften
+============================
+
+
+>**Definition 1.** Ein rechteckiges Zahlenschema der Form $$
+  A=\begin{pmatrix}
+    a_{11} & a_{12} & ... & a_{1n} \\
+    a_{21} & a_{22} & ... & a_{2n} \\
+    \vdots & \vdots & & \vdots \\
+    a_{m1} & a_{m2} & ... & a_{mn}
+  \end{pmatrix}=\left(a_{ij}\right)_{i=1,...,m,\; j=1,...,n}\quad (m,n)\in\left(\mathbb{N}^\times\right)^2
+$$ mit Zahlen $a_{ij}\in\mathbb{R}$ (bzw. Körper $K$) heißt reelle **Matrix** vom Typ $(m,n)$.
+>
+>Die Menge aller reellen Matrizen vom gleichen Typ $(m,n)$ wird mit $R^{m,n}$ bezeichnet.
+
+Hierin werden folgende Bezeichnungen vereinbart.
+
+1. Die Matrix $A$ aus Definition 1 besitzt $m$ Zeilen und $n$ Spalten.
+2. Der Index $i$ an ~~erster~~ Stelle der Indizierung bezeichnet die Zeilennummer und wird Zeilenindex genannt.
+3. Der Index $j$ an ~~zweiter~~ Stelle der Indizierung bezeichnet die Spaltennummer und wird Spaltenindex genannt.
+4. $a_{ij}$ bezeichnet die Komponente in der $i$-ten Zeile und in der $j$-ten Spalte der Matrix $A$.
+
+**Bemerkung 1.** Vektoren aus dem Vektorraum $\mathbb{R}^m$ sind als Matrizen vom Typ $(m,1)$ ($1$ Spalte) beziehungsweise $(1,m)$ ($1$ Zeile) interpretierbar / darstellbar.
+
+Umgekehrt lassen sich Matrizen vom Typ $(m,n)$ durch ihre $n$ Spaltenvektoren darstellen $$
+  A=(a_1,a_2,...,a_n)\quad\text{mit}\quad a_j\in\mathbb{R}^m\;\forall\; j\in\{1,2,...,n\}
+$$ die *Spaltenvektordarstellung* von $A$ genannt wird.
+
+**Beispiel 1.** Die reelle Matrix
+
+1. $$
+  O=\begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix}
+$$ heißt *Nullmatrix* vom Typ $(2,3)$.
+2. $$  
+  A=\begin{pmatrix} 1 \\ 4 \\ 0 \\ 3 \end{pmatrix}
+$$ heißt *Spaltenmatrix* vom Typ $(4,1)$.
+3. $$
+  M=(s_1,s_2)\quad\text{mit}\quad s_1=\begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}\in\mathbb{R}^3 \quad\text{und}\quad s_2=\begin{pmatrix} -1 \\ 0 \\ 1 \end{pmatrix}
+$$ heißt *Spaltenvektordarstellung* einer Matrix vom Typ $(3,2)$.
+4. $$
+  D= \begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & 2 & 0 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 7 \end{pmatrix}=:\mathrm{diag}(1,2,0,7)
+$$ wird *Diagonalmatrix* vom Typ $(4,4)$ genannt.
+
+>**Definition 2.**
+>
+>1. Eine Matrix $A$ vom Typ $(m,m)$, d. h. für $m=n$, heißt **quadratisch** vom Typ $m$.
+>2. Eine quadratische Matrix $$
+  D=\left(a_{ij}\right)_{i=1,...,m,j=1,...,m}
+$$ mit $a_{ij}=0$ für alle $i\neq j$ und mindestens einem $a_{ii}\neq0$ heißt **Diagonalmatrix** vom Typ $(m,m)$ beziehungsweise $m$-reihig $$
+  D=\begin{pmatrix}
+      a_{11} & 0 & 0 & \ldots & 0 & 0 \\ 0 & a_{22} & 0 & \ldots & 0 & 0 \\
+      \vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
+      0 & 0 & 0 & \ldots & 0 & a_{mm}
+  \end{pmatrix}=
+  \mathrm{diag}{\left(a_{11},a_{22},\ldots,a_{mm}\right)}
+$$ Das $m$-Tupel $\left(a_{11},a_{22},\ldots,a_{mm}\right)$ bildet die Hauptdiagonale von $D$.
+>3. Die $m$-reihige Diagonalmatrix $\mathrm{diag}{\left(1,1,\ldots,1\right)}$ heißt **Einheitsmatrix** vom Typ $m$.
+>4. Eine reelle quadratische $m$-reihige Matrix der Form $$
+  \begin{pmatrix}
+    a_{11} & a_{12} & \ldots & a_{1m} \\
+    0 & a_{22} & \ldots & a_{2m} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    0 & 0 & \ldots & a_{mm}
+  \end{pmatrix}\,,\quad
+  \begin{pmatrix}
+    a_{11} & 0 & \ldots & 0 \\
+    a_{21} & a_{22} & \ldots & 0 \\
+    \vdots & \vdots & \ddots & \vdots \\
+    a_{m1} & a_{m2} & \ldots & a_{mm}
+   \end{pmatrix}
+$$ wird **obere** beziehungsweise **untere Dreiecksmatrix** genannt.[^1]
+
+>**Definition 3.** Werden bei einer Matrix $A$ Zeilen und Spalten vertauscht, entsteht die *Transponierte* $A^\top$ der Matrix $A$. Die Abbildung $$
+  A\to A^\top
+$$ heißt *Transposition*.
+
+**Beispiel 2.** Durch Transposition gehen ineinander über die reellen Matrizen
+
+1. $$
+  A=\begin{pmatrix} 1 & 3 \\ 4 & 2 \\ 0 & -8 \end{pmatrix}\quad\leftrightarrow\quad
+  A^\top=\begin{pmatrix} 1 & 4 & 0 \\ 3 & 2 & -8 \end{pmatrix}
+$$ $A$ ist vom Typ $(3,2)$, deren Transponierte $A^\top$ hingegen vom Typ $(2,3)$.
+2. $$
+  B=\begin{pmatrix} 1 \\ 2 \\ 9 \end{pmatrix}\quad\leftrightarrow\quad
+  B^\top=\begin{pmatrix} 1 & 2 & 9 \end{pmatrix}
+$$ Die Matrix $B$ ist vom Typ $(3,1)$ (Spaltenvektor), deren transponierte Matrix $B^\top$ hingegen vom Typ $(1,3)$ (Zeilenvektor).
+
+Die Rechnung kann unter Benutzung der Javascript Bibliothek [Algebrite](http://algebrite.org/) nachvollzogen werden.
+
+```javascript
+A=[[a,b],[c,d],[e,f]]
+B=transpose(A)
+shape(A)
+shape(B)
+transpose(transpose(A))
+```
+@Algebrite.eval
+
+Allgemein kann festgehalten werden
+
+>**Proposition 1.** Durch Transposition wird der Typ $(m,n)$ der Matrix $A$ in den Typ $(n,m)$ der transponierten Matrix $A^\top$ übergeführt. Des Weiteren gilt $$
+  A\quad\stackrel{\top}{\to}\quad A^\top\quad\stackrel{\top}{\to}\quad A
+$$ für die Transposition einer Matrix. $A$.
+
+Außerdem lässt sich für die Gleichheit von Matrizen festlegen:
+
+>**Definition 4.** Zwei Matrizen $$
+  A=(a_{ij})_{i=1,...,m,\; j=1,...,n}\quad\text{und}\quad B=(b_{kl})_{k=1,...,p\; l=1,...,r}
+$$ heißen **gleich**, falls folgende Bedingungen erfüllt sind.
+>
+>1. Die Matrizen $A$ und $B$ besitzen den gleichen Typ, d. h. falls $m=p$ und $n=r$ gelten.
+>2. Es gilt $$
+  a_{ij}=b_{ij}\quad\forall\; i\in\{1,...,m\}\;\forall\; j\in\{1,...,n\}
+$$ für die Komponenten der Matrizen $A$ und $B$.
+
+
+Matrizen als Vektoren
+=====================
+
+Für Matrizen vom Typ $(m,n)$ über einem Körper $K$ lassen sich in gleicher wie für Vektoren aus $K^m$ zwei Operationen erklären: Addition und Vielfachbildung mit einem Skalar.
+
+>**Definition 5.** Für beliebige Matrizen $$
+  A=(a_{ij})_{i=1,...,m,\; j=1,...,n}\in K^{m,n}\,,\quad B=(b_{ij})_{i=1,...,m,\; j=1,...,n}\in K^{m,n}
+$$ und Skalare $\lambda\in K$ sind erklärt
+>
+>1. *Addition* $$
+  +:K^{m,n}\times K^{m,n}\to K^{m,n},(A,B)\mapsto C=A+B
+$$ mit Summe $C=(c_{ij})_{i=1,...,m,\; j=1,...,n}$ und $$
+  c_{ij}=a_{ij}+b_{ij}\quad\forall\; i\in\{1,...,m\}\quad\forall\; j\in\{1,...,n\}
+$$ d. h. die Matrizen $A$ und $B$ werden ~~komponentenweise~~ addiert.
+>2. *Vielfachbildung mit einem Skalar* $$
+  \cdot:K\times K^{m,n}\to K^{m,n},(\lambda,B)\mapsto F=\lambda\cdot B
+$$ mit Skalarvielfachem $F=(f_{ij})_{i=1,...,m,\; j=1,...,n}$ und $$
+  f_{ij}=\lambda\cdot b_{ij}\quad\forall\; i\in\{1,...,m\}\quad\forall\; j\in\{1,...,n\}
+$$ d. h. die Matrix $B$ wird ~~komponentenweise~~ mit $\lambda$ multipliziert.
+
+**Beispiel 3.** Zu berechnen sind:
+
+1. Die Summe vermöge $$
+  \begin{pmatrix} 2 & -3 & 4 \\ 0 & 1 & -2 \end{pmatrix}+
+  \begin{pmatrix} -2 & 2 & -3 \\ 1 & 2 & 2 \end{pmatrix}=
+  \begin{pmatrix} 0 & -1 & 1 \\ 1 & 3 & 0 \end{pmatrix}
+$$ Im Unterschied hierzu ist die Summe $$
+  \begin{pmatrix} 2 & -3 & 4 \\ 0 & 1 & -2 \end{pmatrix}+
+  \begin{pmatrix} -2 & 2 \\ 1 & 2 \end{pmatrix}
+$$ nach der vorangestellten Definition nicht erklärt.
+2. Das Skalarfache vermöge $$
+  (-2)\cdot
+  \begin{pmatrix} -1 & 0 \\ 0 & 1 \\ 2 & \frac{1}{2} \end{pmatrix}=
+  \begin{pmatrix} 2 & 0 \\ 0 & -2 \\ -4 & -1 \end{pmatrix}
+$$ Im Unterschied hierzu ist das Produkt $$
+  \begin{pmatrix} 1 & -2 \end{pmatrix}\cdot
+  \begin{pmatrix} -1 & 0 \\ 0 & 1 \\ 2 & \frac{1}{2} \end{pmatrix}
+$$ zweier Matrizen nach der vorangestellten Definition nicht erklärt.[^2]
+
+>**Satz 2.** Die Menge aller Matrizen aus $K^{m,n}$ bildet mit den in Definition 5 eingeführten Operationen einen Vektorraum über $K$.
+
+**Beweisidee.** Es sind die Vektorraumaxiome zu überprüfen.
+
+Bezeichnen $A$, $B$ und $C$ drei beliebige Matrizen aus $K^{m,n}$ sowie $\lambda$ und $\mu$ zwei beliebige Skalare aus $K$, so sind die folgenden Rechenregeln nachzuweisen.
+
+1. $A+B=B+A$ Kommutativität bezüglich der Addition
+2. $A+(B+C)=(A+B)+C$ Assoziativität bezüglich der Addition
+3. Es gibt ein bezüglich der Addition neutrales Element $O\in K^{m,n}$ mit $$
+  A+O=A
+$$ Die Matrix $O$ ist die Nullmatrix vom Typ $(m,n)$.
+4. Zu jedem $A$ existiert genau ein $(-A)\in K^{m,n}$ mit $A+(-A)=O$.[^3] Die bezüglich der Addition inverse Matrix ist $$
+  -A=\left((-1)\cdot a_{ij}\right)_{i=1,...,m,\; j=1,...,n}
+$$
+5. $\lambda\cdot(A+B)=\lambda\cdot A+\lambda\cdot B$
+6. $(\lambda+\mu)\cdot A=\lambda\cdot A+\mu\cdot A$
+7. $(\lambda\cdot\mu)\cdot A=\lambda\cdot(\mu\cdot A)$
+8. $1\cdot A=A$
+
+Da die Addition und Skalarvielfachbildung komponentenweise erklärt ist und - bezogen auf jede Komponente - in $K$ die genannten Eigenschaften gelten, übertragen sich die vorstehenden Rechenregeln auf das Rechnen mit Matritzen in $K^{m,n}$.
+
+**Bemerkung 2.** Mit dem vorstehenden Satz lassen sich aus der Vektorrechnung bekannte Begriffe wie
+
+1. Linearkombination von Vektoren
+2. Lineare Unabhängigkeit / - Abhängigkeit von Vektoren
+3. Basis eines Vektorraumes
+4. Dimension eines Vektorraumes
+
+auf den Vektorraum $K^{m,n}$ aller Matrizen anwenden.
+
+Zum Beispiel lassen Linearkombinationen typgleicher Matrizen konstruieren. Unter Benutzung der Javascript Bibliothek [Algebrite](http://algebrite.org/) lässt sich analog zu Beispiel 3 bilden.
+
+```javascript
+A=[[2,-3,4],[0,1,-2]]
+B=[[-2,2,-3],[1,2,2]]
+r=3
+s=-1
+r*A+s*B
+```
+@Algebrite.eval
+
+**Beispiel 4.** Im Vektorraum der reellen Matrizen vom Typ $(2,2)$ können die Matrizen $$
+  E_{11}=\begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix}\,,\quad
+  E_{12}=\begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}\,,\quad
+  E_{21}=\begin{pmatrix} 0 & 0 \\ 1 & 0 \end{pmatrix}\quad\text{und}\quad
+  E_{22}=\begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix}
+$$ verwendet werden, um jede reelle Matrix vom gleichen Typ als Linearkombination eindeutig darzustellen: Es gilt $$
+  A=\begin{pmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{pmatrix}=
+  \sum_{i,j}{(a_{ij}\cdot E_{ij})}
+$$ Die Matrizen $\{E_{11},E_{12},E_{21},E_{22}\}$ sind linear unabhängig, da gilt $$
+  \lambda_{11}\cdot E_{11}+
+  \lambda_{12}\cdot E_{12}+
+  \lambda_{21}\cdot E_{21}+
+  \lambda_{22}\cdot E_{22}=\begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix}\quad\leftrightarrow\quad
+  \lambda_{ij}=0\quad\forall\; ij\in\{11,12,21,22\}
+$$ (Bitte nachrechnen!) Auf der linken Seite dieser Äquivalenz bildet die Nullmatrix vom Typ $(2,2)$ das neutrale Element.
+
+Die Matrizen $E_{11}$, $E_{12}$, $E_{21}$ und $E_{22}$ bilden die natürliche Basis des Vektorraumes $\mathbb{R}^{2,2}$ aller reellen Matritzen vom Typ $(2,2)$, wonach $\mathbb{R}^{2,2}$ die reelle Dimension $\dim{\mathbb{R}^{2,2}}=4$ besitzt.
+
+
+Matrixmultiplikation
+====================
+
+>**Definition 6.** Seien Matrizen $$
+  A=(a_{ij})_{i=1,...,m,\; j=1,...,n}\quad
+  B=(b_{jl})_{j=1,...,n,\; l=1,...,p}
+$$ gegeben. Dann ist ein Matrixprodukt erklärt, $C=A\cdot B$ mit $$
+  C=(c_{il})_{i=1,...,m,\; l=1,...,p}\quad\text{und}\quad
+  c_{il}=\sum_{j=1}^n{(a_{ij}\cdot b_{jl})}
+$$ *Kurz*: "$i$-te Zeile von $A$ 'mal' $l$-te Spalte von $B$"
+
+Die Definition kann unter Benutzung der Javascript Bibliothek [Algebrite](http://algebrite.org/) nachvollzogen werden.
+
+```javascript
+A=[[a,b],[c,d]]
+B=[[m,n,p],[q,r,s]]
+C=inner(A,B)
+C[2][1]
+inner(A[2],transpose(B)[1])
+```
+@Algebrite.eval
+
+**Bemerkung 3.** Zur übersichtlichen Berechnung des Matrixproduktes kann das [Falksche Schema](https://de.wikipedia.org/wiki/Falksches_Schema) verwendet werden.
+
+**Beispiel 5.** Zu berechnen sind die nachstehenden Matrixprodukte
+
+1. $$
+  \begin{pmatrix} 1 & 4 & 2 \\ 4 & 0 & -3 \end{pmatrix}\cdot
+  \begin{pmatrix} 1 & 1 & 0 \\ -2 & 3 & 5 \\ 0 & 1 & 4 \end{pmatrix}=
+  \begin{pmatrix} -7 & 15 & 28 \\ 4 & 1 & -12 \end{pmatrix}
+$$ Linker bzw. rechter Faktor sind Matrizen vom Typ $(2,3)$ bzw. $(3,3)$, während das Produkt den Typ $(2,3)$ besitzt.
+2. Das Produkt $$
+  a\cdot b^\top=\begin{pmatrix} 1 \\ 2 \end{pmatrix}\cdot
+  \begin{pmatrix} -3 & 2 \end{pmatrix}=
+  \begin{pmatrix} -3 & 2 \\ -6 & 4 \end{pmatrix}
+$$ Linker bzw. rechter Faktor sind Matrizen vom Typ $(2,1)$ bzw. $(1,2)$, während das Produkt den Typ $(2,2)$ besitzt.
+3. $$
+  \begin{pmatrix} a & b \\ c & d \end{pmatrix}\cdot
+  \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}=
+  \begin{pmatrix} a & b \\ c & d \end{pmatrix}
+$$ Der rechte Faktor verhält sich im Matrixprodukt wie die Eins beim Multiplizieren reeller Zahlen: daher der Name zweireihige Einheitsmatrix $E$. Vergleiche Definition 2.
+
+**Beispiel 6.** Unter Benutzung spezieller Matrixprodukte lassen sich Drehungen der Ebene um den Koordinatenursprung eines kartesischen Koordinatensystems darstellen.
+
+1. Die Drehung eines Punktes $$
+  P(x,y)\mapsto P^\prime\left(x^\prime,y^\prime\right)
+$$ um den Koordinatenursprung $O(0,0)$ ist beschrieben durch das Matrixprodukt in $$
+  \begin{pmatrix} x^\prime \\ y^\prime \end{pmatrix}=
+  \begin{pmatrix}
+    \textcolor{magenta}{\cos{\varphi}} & \textcolor{magenta}{-\sin{\varphi}} \\ \textcolor{magenta}{\sin{\varphi}} & \textcolor{magenta}{\cos{\varphi}}
+  \end{pmatrix}\cdot
+  \begin{pmatrix}
+    \textcolor{blue}{x} \\ \textcolor{blue}{y}
+  \end{pmatrix}=
+  \begin{pmatrix}
+    \textcolor{magenta}{\cos{\varphi}}\cdot \textcolor{blue}{x} - \textcolor{magenta}{\sin{\varphi}}\cdot \textcolor{blue}{y} \\ \textcolor{magenta}{\sin{\varphi}}\cdot \textcolor{blue}{x} + \textcolor{magenta}{\cos{\varphi}}\cdot \textcolor{blue}{y}
+  \end{pmatrix}
+$$ worin $\varphi$ den Drehwinkel bezeichnet.
+2. Für die Hintereinanderausführung zweier Drehungen um $O$ mit Drehwinkeln $\varphi$ bzw. $\psi$ gelten $$
+  \begin{pmatrix}
+    \textcolor{magenta}{\cos{\varphi}} & \textcolor{magenta}{-\sin{\varphi}} \\ \textcolor{magenta}{\sin{\varphi}} & \textcolor{magenta}{\cos{\varphi}}
+  \end{pmatrix}\cdot
+  \begin{pmatrix}
+    \textcolor{blue}{\cos{\psi}} & \textcolor{blue}{-\sin{\psi}} \\ \textcolor{blue}{\sin{\psi}} & \textcolor{blue}{\cos{\psi}}
+  \end{pmatrix}=
+  \begin{pmatrix}
+    \textcolor{magenta}{\cos{\varphi}}\cdot\textcolor{blue}{\cos{\psi}}-\textcolor{magenta}{\sin{\varphi}}\cdot\textcolor{blue}{\sin{\psi}} &
+    -\textcolor{magenta}{\sin{\varphi}}\cdot\textcolor{blue}{\cos{\psi}}-\textcolor{magenta}{\cos{\varphi}}\cdot\textcolor{blue}{\sin{\psi}} \\
+    \textcolor{magenta}{\sin{\varphi}}\cdot\textcolor{blue}{\cos{\psi}}+\textcolor{magenta}{\cos{\varphi}}\cdot\textcolor{blue}{\sin{\psi}} &
+    \textcolor{magenta}{\cos{\varphi}}\cdot\textcolor{blue}{\cos{\psi}}-\textcolor{magenta}{\sin{\varphi}}\cdot\textcolor{blue}{\sin{\psi}}
+  \end{pmatrix}
+$$ wobei mit Hilfe der Additionstheoreme für Sinus und Kosinus gilt $$
+  \begin{pmatrix}
+    \textcolor{magenta}{\cos{\varphi}}\cdot\textcolor{blue}{\cos{\psi}}-\textcolor{magenta}{\sin{\varphi}}\cdot\textcolor{blue}{\sin{\psi}} &
+    -\textcolor{magenta}{\sin{\varphi}}\cdot\textcolor{blue}{\cos{\psi}}-\textcolor{magenta}{\cos{\varphi}}\cdot\textcolor{blue}{\sin{\psi}} \\
+    \textcolor{magenta}{\sin{\varphi}}\cdot\textcolor{blue}{\cos{\psi}}+\textcolor{magenta}{\cos{\varphi}}\cdot\textcolor{blue}{\sin{\psi}} &
+    \textcolor{magenta}{\cos{\varphi}}\cdot\textcolor{blue}{\cos{\psi}}-\textcolor{magenta}{\sin{\varphi}}\cdot\textcolor{blue}{\sin{\psi}}
+  \end{pmatrix}=
+  \begin{pmatrix}
+    \cos{\left(\varphi+\psi\right)} & -\sin{\left(\varphi+\psi\right)} \\ \sin{\left(\varphi+\psi\right)} & \cos{\left(\varphi+\psi\right)}
+  \end{pmatrix}
+$$ d. h. das Matrixprodukt ist erneut eine Matrix von gleicher Bauart zum Parameter $\varphi+\psi$.
+
+Die Rechnung kann unter Benutzung der Javascript Bibliothek [Algebrite](http://algebrite.org/) nachvollzogen werden.
+
+```javascript
+D=[[cos(t),-sin(t)],[sin(t),cos(t)]]
+D1=subst(u,t,D)
+D2=subst(v,t,D)
+inner(D1,D2)
+```
+@Algebrite.eval
+
+Für die Matrixmultiplikation gelten die folgenden Rechenregeln.
+
+>**Satz 3.** Es bezeichnen ${A}$ bzw. ${B}$ bzw. ${C}$ Matrizen vom Typ $$
+  (m,n)\quad\text{bzw.}\quad (n,p)\quad\text{bzw.}\quad (p,r)
+$$ Außerdem ist $\lambda\in\mathbb{R}$. Dann gelten die  folgenden Rechenregeln.
+>
+>1. $A\cdot(B\cdot C)=(A\cdot B)\cdot C$, d. h. die Matrixmultiplikation ist assoziativ.
+>2. $\lambda\cdot\left(A\cdot B\right)=\left(\lambda\cdot A\right)\cdot B= A\cdot\left(\lambda\cdot B \right)$
+>3. $\left(A\cdot B\right)^\top= B^\top\cdot A^\top$[^4]
+>
+>Ist ${A}$ speziell eine quadratische Matrix vom Typ $(n,n)$, so gelten außerdem:
+>
+>4. ${A}\cdot{E}={E}\cdot{A}={A}$ für die $n$-reihige Einheitsmatrix ${E}$
+>5. ${A}\cdot{O}={O}\cdot{A}={O}$ für die $n$-reihige Nullmatrix ${O}$
+>
+>Außerdem gelten die Distributivregeln
+>
+>6. ${A}\cdot\left({B}+{C}\right)={A}\cdot{B}+{A}\cdot{C}$ falls gleicher Typ $(n,p)=(p,r)$
+>7. $\left({A}+{B}\right)\cdot{C}={A}\cdot{C}+{B}\cdot{C}$ falls gleicher Typ $(m,n)=(n,p)$
+
+
+Sicher gewusst?
+===============
+
+Sie können Ihr Wissen gern bei der Beantwortung der nachstehenden Fragen testen.
+
+**Frage 1.** Gegeben ist eine reelle Matrix $A$ vom Typ $(m,n)$.
+
+[(X)] $A$ hat $m$ Zeilen und $n$ Spalten.
+[( )] $A$ hat $n$ Zeilen und $m$ Spalten.
+[( )] Die Zeile von $A$ haben die Länge $m$ und die Spalten von $A$ haben die Länge $n$.
+****************************************
+
+Die gegebene Matrix $A$ hat $m$ Zeilen und $n$ Spalten. Jeder Spaltenvektor ist ein Vektor aus $\mathbb{R}^m$, besitzt also die Länge $m$. Umgekehrt ist jeder Zeilenvektor ein Vektor aus $\mathbb{R}^n$, besitzt also die Länge $n$.
+
+****************************************
+
+**Frage 2.** Es bezeichne $E$ die $n$-reihige reelle Einheitsmatrix. Dann ergibt sich die transponierte Matrix $E^\top$
+
+[( )] $$ \begin{pmatrix} & & 1 \\ & .^{.^.} & \\ 1 & & \end{pmatrix} $$
+[(X)] $$ \begin{pmatrix} \rm T & & \\ & \ddots & \\ & & \rm T \end{pmatrix} $$
+[(X)] $$ \begin{pmatrix} 1 & & \\ & \ddots & \\ & & 1 \end{pmatrix} $$
+
+
+**Frage 3.** Welche der folgenden Eigenschaften besitzt die Matrixmultiplikation ~~nicht~~?
+
+[( )] Assoziativität
+[(X)] Kommutativität
+[( )] Distributivität
+[[?]] Matrixmultiplikation und -addition sind nicht für beliebige Paare von Matrizen definiert: Das Matrixprodukt zweier Matrizen ist erklärt, wenn die Spaltenzahl des linken Faktors mit der Zeilenzahl des rechten Faktors übereinstimmt. Die Summe zweier Matrizen ist für typgleiche Matrizen erklärt.
+****************************************
+
+Werden beispielsweise $$
+  A=\begin{pmatrix} 1 & 1 \\ 0 & 0 \end{pmatrix}\quad\text{und}\quad
+  B=\begin{pmatrix} 1 & 0 \\ 1 & 0 \end{pmatrix}
+$$ gewählt, so berechnen sich $$
+  A\cdot B=\begin{pmatrix} 1 & 1 \\ 0 & 0 \end{pmatrix}\cdot
+  \begin{pmatrix} 1 & 0 \\ 1 & 0 \end{pmatrix}=
+  \begin{pmatrix} 2 & 0 \\ 0 & 0 \end{pmatrix}
+$$ währenddessen $$
+  B\cdot A=\begin{pmatrix} 1 & 0 \\ 1 & 0 \end{pmatrix}\cdot \begin{pmatrix} 1 & 1 \\ 0 & 0 \end{pmatrix}=
+  \begin{pmatrix} 1 & 1 \\ 1 & 1 \end{pmatrix}
+$$ Das Matrixprodukt ist für quadratische Matrizen gleichen Typs in der Form $A\cdot B$ und $B\cdot A$ erklärt, jedoch gilt ~~nicht immer~~ $A\cdot B=B\cdot A$.
+
+****************************************
+
+[^1]: Alle Elemente unterhalb beziehungsweise oberhalb der Hauptdiagonalen sind gleich Null und mindestens eines der anderen verschieden von Null.
+
+[^2]: Die Multiplikation zweier Matrizen ist hiervon unberührt.
+
+[^3]: Statt $A+(-B)$ schreibt man kurz $A-B$.
+
+[^4]: Zu beachten ist, dass auf der rechten Seite der Gleichung sich die Reihenfolge der Faktoren ändert.
+
+
+### Determinanten
+
+Jede quadratische Matrix $A$ über einem Körper $K$ besitzt eine Determinante $\det{A}\in K$. Der Begriff wird hier zunächst im Zusammenhang der Lösung [linearer Gleichungssysteme](#Lineare-Gleichungssysteme) eingeführt und entwickelt.
+
+
+Determinanten zweiter Ordnung
+=============================
+
+Begriff
+-------
+
+**Beispiel 1.** Zu berechnen sind die gemeinsamen Punkte zweier Geraden $g_1$ und $g_2$.
+
+1. Die Geraden besitzen die Gleichungen $$
+  \left.\begin{array}{rrrrr}
+    2\cdot x & + & y & = & 5 \\ -x & + & 2\cdot y & = & -5
+  \end{array}\right\}\quad\stackrel{\textcolor{magenta}{Z_2-2\cdot Z_1\to Z_2}}{\longleftrightarrow}\quad
+  \left\{\begin{array}{rrrrr}
+    2\cdot x & + & y & = & 5 \\ \textcolor{magenta}{-5\cdot x} & \textcolor{magenta}{+} & & \textcolor{magenta}{=} & \textcolor{magenta}{-15}
+  \end{array}\right.
+$$ Das System linearer Gleichungen besitzt die eindeutige Lösung $$
+  L=\{x=3\;\wedge\; y=-1\}
+$$
+2. Abweichend besitzen die Geraden die Gleichungen $$
+\left.\begin{array}{rrrrr}
+  2\cdot x & + & y & = & 5 \\ 4\cdot x & + & 2\cdot y & = & 20
+\end{array}\right\}\quad\stackrel{\textcolor{magenta}{Z_2-2\cdot Z_1\to Z_2}}{\longrightarrow}\quad
+\left\{\begin{array}{rrrrr}
+  2\cdot x & + & y & = & 5 \\ & & \textcolor{magenta}{0} & \textcolor{magenta}{=} & \textcolor{magenta}{10}
+\end{array}\right.
+$$ Das System linearer Gleichungen besitzt demnach die keine Lösung $$
+  L=\emptyset
+$$
+3. Abweichend besitzen die Geraden die Gleichungen $$
+\left.\begin{array}{rrrrr}
+  2\cdot x & + & y & = & 5 \\ 4\cdot x & + & 2\cdot y & = & 10
+\end{array}\right\}\quad\stackrel{\textcolor{magenta}{Z_2-2\cdot Z_1\to Z_2}}{\longleftrightarrow}\quad
+\left\{\begin{array}{rrrrr}
+  2\cdot x & + & y & = & 5 \\ & & \textcolor{magenta}{0} & \textcolor{magenta}{=} & \textcolor{magenta}{0}
+\end{array}\right.
+$$ Das System linearer Gleichungen besitzt demnach eine einparametrige Lösung $$
+  L=\left\{\begin{pmatrix} x \\ y \end{pmatrix}=\begin{pmatrix} 0 \\ 5 \end{pmatrix}+\lambda\cdot\begin{pmatrix} 1 \\ -2 \end{pmatrix}\;\wedge\;\lambda\in\mathbb{R}\right\}
+$$
+
+Die Verschiedenheit der Lösungsmengen $L$ lässt sich unmittelbar geometrisch mithilfe der relativen Lagen der Geraden $g_1$ und $g_2$ unter Benutzung der [Normalenform](https://de.wikipedia.org/wiki/Normalenform) der Gleichungen begründen.
+
+1. Beide Geraden sind zueinander nicht parallel und schneiden sich im Punkt $S(3,-1)$.
+2. Beide Geraden sind zueinander parallel und nicht identisch, besitzen demnach keine gemeinsamen Punkte.
+3. Beide Geraden sind zueinander parallel und identisch. Jeder Punkt der Geraden ist ein gemeinsamer Punkt.
+
+Die Systeme linearer Gleichungen lassen sich unter Benutzung des [Matrixproduktes](#Matrizen) darstellen.
+
+1. $$ \begin{pmatrix} 2 & 1 \\ -1 & 2 \end{pmatrix}\cdot\begin{pmatrix} x \\ y \end{pmatrix}=\begin{pmatrix} 5 \\ -5\end{pmatrix}
+$$
+2. $$ \begin{pmatrix} 2 & 1 \\ 4 & 2 \end{pmatrix}\cdot\begin{pmatrix} x \\ y \end{pmatrix}=\begin{pmatrix} 5 \\ 20\end{pmatrix}
+$$
+3. $$ \begin{pmatrix} 2 & 1 \\ 4 & 2 \end{pmatrix}\cdot\begin{pmatrix} x \\ y \end{pmatrix}=\begin{pmatrix} 5 \\ 10\end{pmatrix}
+$$
+
+**Bemerkung 1.** Die Koeffizientenmatrix in den Matrixdarstellungen besteht im ersten Beispiel aus linear unabhängigen Zeilen bzw. Spalten, im zweiten und dritten Beispiel nicht. Ziel wird es sein, das Lösungsverhalten eines Systems linearer Gleichungen anhand u. a. der zugehörigen Koeffizientenmatrix zu untersuchen.
+
+**Beispiel 2.** Gegeben ist ein allgemeines System $A\cdot x=b$ zweier linearer Gleichungen in den beiden Unbekannten $x_1$ und $x_2$, worin $$
+  A=\begin{pmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{pmatrix}\in\mathbb{R}^{2,2}\,,\quad
+  x=\begin{pmatrix} x_1 \\ x_2 \end{pmatrix}\in\mathbb{R}^{2}\quad\text{bzw.}\quad
+  b=\begin{pmatrix} b_1 \\ b_2 \end{pmatrix}\in\mathbb{R}^{2}
+$$ die reelle *Koeffizientenmatrix*, den *Lösungsvektor* beziehungsweise den Vektor der *Absolutglieder* bezeichnen. $A\cdot x=b$ wird Matrixdarstellung des Gleichungssystems genannt.
+
+Die Lösung des Gleichungssystems kann - dort, wo möglich (!) - durch Multiplikation linker und rechter Seite mit der Matrix $$
+  B=\frac{1}{a_{11}\cdot a_{22}-a_{12}\cdot a_{21}}\cdot\begin{pmatrix} a_{22} & -a_{12} \\ -a_{21} & a_{11} \end{pmatrix}
+$$ von links erfolgen, denn $$
+  x=E\cdot x=(\textcolor{magenta}{B}\cdot A)\cdot x=\textcolor{magenta}{B}\cdot (A\cdot x)= \textcolor{magenta}{B}\cdot b
+$$ worin $E$ die zweireihige Einheitsmatrix bezeichnet.[^1]
+
+>**Definition 1.** Für eine quadratische Matrix $A\in K^{2,2}$ mit Komponenten $a_{ij}\in K$ heißt $$
+  \det{A}=\det{\begin{pmatrix} \textcolor{magenta}{a_{11}} & \textcolor{blue}{a_{12}} \\ \textcolor{blue}{a_{21}} & \textcolor{magenta}{a_{22}}  \end{pmatrix}}=\textcolor{magenta}{a_{11}\cdot a_{22}}-\textcolor{blue}{a_{12}\cdot a_{21}}\in K
+$$ die **Determinante** von $A$ (zweiter Ordnung).
+
+Neben der Schreibweise $\det{A}$ sind auch $$
+  D\,,\quad |A|\,,\quad\left|(a_{ij})_{i=1,2\,,\,j=1,2}\right|
+$$ übliche Schreibweisen für die Determinante einer Matrix $A$, letzte auch als $\left|(a_{ij})\right|$, falls sich Spalten-/Zeilenzahl aus dem Kontext ablesen lassen.
+
+Die Komponenten $\textcolor{magenta}{a_{ii}}$ bilden die Hauptdiagonale, $\textcolor{blue}{a_{ij}}$ mit $i\not=j$ die Nebendiagonale der Matrix $A$. Entsprechend bildet sich die Determinante von $A$ durch Differenz des Produktes der Nebendiagonalelemente vom Produkt der Hauptdiagonalelemente.
+
+>**Satz 1.** Sei $A\in K^{2,2}$ eine quadratische Matrix in Spaltenvektordarstellung $$
+  A=(s_1,s_2)\quad\text{mit}\quad
+  s_1=\begin{pmatrix} a_{11} \\ a_{21} \end{pmatrix}\quad\text{und}\quad
+  s_2=\begin{pmatrix} a_{12} \\ a_{22} \end{pmatrix}
+$$ Dann gilt $$
+  \det{A}=0\quad\leftrightarrow\quad \{s_1,s_2\} \;\text{linear abhängig}
+$$
+
+**Beweis.** Für den Nachweis der Äquivalenz sind beide Implikationen nachzuweisen.
+
+1. $(\leftarrow)$ Sind $\{s_1,s_2\}$ linear abhängig, so existiert ein Paar $(\lambda_1,\lambda_2)\not=(0,0)$ mit $$
+  \lambda_1\cdot s_1+\lambda_2\cdot s_2=o
+$$ dem Nullvektor als Linearkombination. Ist $\lambda_1\not=0$, so folgt $$
+  s_1=-\frac{\lambda_2}{\lambda_1}\cdot s_2=:\lambda\cdot s_2\quad\leftrightarrow\quad\left\{\begin{array}{ll} a_{11}=\lambda\cdot a_{12} \\ a_{21}=\lambda\cdot a_{22} \end{array}\right.
+$$ andernfalls unter der Annahme $\lambda_2\not=0$ $$
+  s_2=-\frac{\lambda_1}{\lambda_2}\cdot s_1=\lambda^{-1}\cdot s_1\quad\leftrightarrow\quad\left\{\begin{array}{ll} a_{12}=\lambda^{-1}\cdot a_{11} \\ a_{22}=\lambda^{-1}\cdot a_{21} \end{array}\right.
+$$ Somit ist $$
+  \det{A}=\lambda\cdot a_{12}\cdot a_{22}-a_{12}\cdot\lambda\cdot a_{22}=0
+$$ beziehungsweise $$
+  \det{A}=a_{11}\cdot\lambda^{-1}\cdot a_{21}-\lambda^{-1}\cdot a_{11}\cdot a_{21}=0
+$$
+2. $(\rightarrow)$ Aus $\det{A}=0$ folgt unmittelbar $$
+  a_{11}\cdot a_{22}=a_{12}\cdot a_{21}
+$$ Sind linke (und damit rechte) Seite ungleich Null, so folgt hieraus $$
+  \frac{a_{11}}{a_{12}}=\frac{a_{21}}{a_{22}}=\mu\in\mathbb{R}\setminus0\quad\leftrightarrow\quad s_1=\mu\cdot s_2
+$$ d. h. die Spaltenvektoren $\{s_1,s_2\}$ sind linear abhängig. Analog ist die lineare Abhängigkeit im Fall 'gleich Null' zu diskutieren.  $\square$
+
+**Bemerkung 2.** Satz 1 lässt sich in gleicher Weise unter Benutzung der Zeilenvektoren der Matrix $$
+  A=\left(a_{ij}\right)_{i=1,2\;,\;j=1,2}
+$$ das heißt unter Verwendung von $$
+  z_1=\begin{pmatrix} a_{11} & a_{12} \end{pmatrix}\quad\text{und}\quad
+  z_2=\begin{pmatrix} a_{21} & a_{22} \end{pmatrix}
+$$ formulieren und beweisen: Es gilt $$
+    \det{A}=0\quad\leftrightarrow\quad \{z_1,z_2\} \;\text{linear abhängig}
+$$
+
+**Beispiel 3.** Unter Benutzung von Satz 1 ist zu begründen:
+
+1. $$ \det{\begin{pmatrix} 1 & 5 \\ 0 & 0 \end{pmatrix}}=0 $$ da für die Zeilen- bzw. Spaltenvektoren gelten: $$
+  \left\{\begin{pmatrix} 1 & 5 \end{pmatrix}, \begin{pmatrix} 0 & 0 \end{pmatrix}\right\}\quad\text{bzw.}\quad
+  \left\{\begin{pmatrix} 1 \\ 0 \end{pmatrix}, \begin{pmatrix} 5 \\ 0 \end{pmatrix}\right\}
+$$ sind jeweils linear abhängig.
+2. $$ \det{\begin{pmatrix} 4 & 2 \\ 8 & 4 \end{pmatrix}}=0 $$ da für die Zeilen- bzw. Spaltenvektoren gelten: $$
+  \left\{\begin{pmatrix} 4 & 2 \end{pmatrix}, \begin{pmatrix} 8 & 4 \end{pmatrix}\right\}\quad\text{bzw.}\quad
+  \left\{\begin{pmatrix} 4 \\ 8 \end{pmatrix}, \begin{pmatrix} 2 \\ 4 \end{pmatrix}\right\}
+$$ sind jeweils linear abhängig.
+3. $$ \det{\begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix}}=0 $$ da für die Zeilen- bzw. Spaltenvektoren gelten: $$
+  \left\{\begin{pmatrix} 1 & 0 \end{pmatrix}, \begin{pmatrix} 0 & 0 \end{pmatrix}\right\}\quad\text{bzw.}\quad
+  \left\{\begin{pmatrix} 1 \\ 0 \end{pmatrix}, \begin{pmatrix} 0 \\ 0 \end{pmatrix}\right\}
+$$ sind jeweils linear abhängig (Einer der beiden Vektoren ist jeweils der Nullvektor).
+
+
+Rechenregeln
+------------
+
+>**Satz 2.** Es bezeichne $$  
+  A=\begin{pmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{pmatrix}=
+  \begin{pmatrix} s_{1} & s_{2} \end{pmatrix}\in K^{2,2}
+$$ eine zweireihige Matrix über $K$ mit den Spaltenvektoren $s_1$, $s_2$. Dann gelten die folgenden Rechenregeln:
+>
+>1. $$ \det{A}=\det{A^\top} $$
+>2. Durch einmaliges Tauschen beider Spalten wird die Determinante mit dem Faktor 'Minus Eins' multipliziert $$
+  \det{A}=-\det{B} \quad\text{mit}\quad B=\begin{pmatrix} s_{2} & s_{1} \end{pmatrix}
+$$
+>3. Wird eine der Spaltenvektoren der Matrix $A$ mit dem Faktor $\lambda\in K$ multipliziert, so ändert sich die Determinante mit dem Faktor $\lambda$ $$
+  \lambda\cdot\det{A}=\det{C}\quad\text{mit}\quad C=\begin{pmatrix} \lambda\cdot s_{1} & s_{2} \end{pmatrix}\quad\text{bzw.}\quad C=\begin{pmatrix} s_{1} & \lambda\cdot s_{2} \end{pmatrix}
+$$
+>4. Wird zu einem der Spaltenvektoren der Matrix $A$ ein Vielfaches des anderen Spaltenvektors von $A$ addiert, so ändert sich die Determinante von $A$ nicht, d. h. $$
+  \det{A}=\det{D}\quad\text{mit}\quad D=\begin{pmatrix} s_{1}+\mu\cdot s_2 & s_{2} \end{pmatrix}\quad\text{bzw.}\quad D=\begin{pmatrix} s_{1} & s_{2}+\mu\cdot s_1  \end{pmatrix}
+$$ für beliebige Skalare $\mu\in K$.
+
+Der Beweis der vorstehenden Aussagen kann leicht unter Benutzung der Definition der Determinante zweiter Ordnung einer zweireihigen Matrix geführt werden. Das direkte 'Nachrechnen' ist eine Übungsaufgabe.
+
+Eine Kontrolle der Aussagen kann nachfolgend unter Verwendung der Javascript Bibliothek [Algebrite](http://algebrite.org/) vorgenommen werden.
+
+```javascript
+A=[[a,b],[c,d]]
+det(A)-det(transpose(A))
+B=[A[2],A[1]]
+det(B)+det(A)
+C=[lambda*A[1],A[2]]
+simplify(det(C)/det(A))
+D=[A[1]+mu*A[2],A[2]]
+det(D)-det(A)
+```
+@Algebrite.eval
+
+**Bemerkung 3.** Mit der ersten Aussage des vorstehenden Satzes gelten die für Spaltenvektoren formulierten Aussagen sinngemäß auch für Zeilenvektoren in $$  
+  A=\begin{pmatrix} z_{1} & z_{2} \end{pmatrix}^\top\in K^{2,2}\quad\text{mit}\quad
+  z_1=\begin{pmatrix} a_{11} \\ a_{12} \end{pmatrix}\,,\quad
+  z_2=\begin{pmatrix} a_{21} \\ a_{22} \end{pmatrix}
+$$
+
+>**Satz 3.** Für beliebige Matrizen $A\in K^{2,2}$ und $B\in K^{2,2}$ gilt $$
+  \det{A}\cdot\det{B}=\det{(A\cdot B)}
+$$ Diese Aussage wird **Multiplikationssatz** für Determinanten (zweiter Ordnung) genannt.
+
+Der Multiplikationssatz kann nachfolgend unter Verwendung der Javascript Bibliothek [Algebrite](http://algebrite.org/) verifiziert werden.
+
+```javascript
+A=[[a11,a12],[a21,a22]]
+B=[[b11,b12],[b21,b22]]
+C=inner(A,B)
+det(C)-det(A)*det(B)
+```
+@Algebrite.eval
+
+**Beweis.** Für zwei Matrizen $A\in K^{2,2}$ und $B\in K^{2,2}$ mit $$
+  A=\begin{pmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{pmatrix}\quad\text{und}\quad
+  B=\begin{pmatrix} b_{11} & b_{12} \\ b_{21} & b_{22} \end{pmatrix}
+$$ berechnen sich einerseits die Determinanten unmittelbar zu $$
+  \det{A}=a_{11}\cdot a_{22}-a_{21}\cdot a_{12}\quad\text{und}\quad
+  \det{B}=b_{11}\cdot b_{22}-b_{21}\cdot b_{12}
+$$ Andererseits berechnet sich die Produktmatrix $$
+  C=A\cdot B=\begin{pmatrix}
+      a_{11}\cdot b_{11}+a_{12}\cdot b_{21} &
+      a_{11}\cdot b_{12}+a_{12}\cdot b_{22} \\
+      a_{21}\cdot b_{11}+a_{22}\cdot b_{21} &
+      a_{21}\cdot b_{12}+a_{22}\cdot b_{22} \\
+     \end{pmatrix}
+$$ und mithin die Determinante $$
+\begin{array}{rl}
+  \det{C} & =\left(a_{11}\cdot b_{11}+a_{12}\cdot b_{21}\right)\cdot
+  \left(a_{21}\cdot b_{12}+a_{22}\cdot b_{22}\right) \\
+  & -\left(a_{21}\cdot b_{11}+a_{22}\cdot b_{21}\right)\cdot\left(a_{11}\cdot b_{12}+a_{12}\cdot b_{22}\right)\\
+  & = a_{11}\cdot a_{22}\cdot\left(b_{11}\cdot b_{22}-b_{21}\cdot b_{12}\right) + a_{12}\cdot a_{21}\cdot\left(b_{21}\cdot b_{12}-b_{11}\cdot b_{22}\right) \\
+  & + a_{11}\cdot a_{21}\cdot\left(b_{11}\cdot b_{12}-b_{11}\cdot b_{12}\right) + a_{12}\cdot a_{22}\cdot\left(b_{21}\cdot b_{22}-b_{21}\cdot b_{22}\right) \\
+  & = \det{A}\cdot\det{B}
+\end{array}
+$$ $\square$
+
+**Beispiel 4.** Für die beiden reellen Matrizen $$
+  A=\begin{pmatrix} 1 & 4 \\ 5 & -2 \end{pmatrix}\quad\text{und}\quad
+  B=\begin{pmatrix} -2 & -3 \\ 4 & 1 \end{pmatrix}
+$$ ist die Determinante $\det{A\cdot B}$ zu berechnen.
+
+1. Es berechnen sich schrittweise $$
+  \det{A}=1\cdot(-2)-5\cdot 4=-22\quad\text{und}\quad
+  \det{B}=(-2)\cdot 1-(-3)\cdot 4=10
+$$ Unter Benutzung des Multiplikationssatzes für Determinanten ergibt sich schließlich $$
+  \det{(A\cdot B)}=\det{A}\cdot\det{B}=-220
+$$
+2. Alternativ lässt sich zunächst das Produkt $$
+  A\cdot B=
+  \begin{pmatrix} 1 & 4 \\ 5 & -2 \end{pmatrix}\cdot\begin{pmatrix} -2 & -3 \\ 4 & 1 \end{pmatrix}=\begin{pmatrix} 14 & 1 \\ -18 & -17 \end{pmatrix}
+$$ berechnen. Hiermit berechnet sich die Determinante $$
+  \det{(A\cdot B)}=14\cdot (-17)-(-18)\cdot 1=-220
+$$
+
+
+Determinanten dritter Ordnung
+=============================
+
+Im Zusammenhang der Untersuchung der Lösbarkeit von Systemen linearer Gleichungen der Form $A\cdot x=b$ mit $$
+  A=\begin{pmatrix} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33} \end{pmatrix}\in\mathbb{R}^{3,3}\,,\quad
+  x=\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}\in\mathbb{R}^{3}\quad\text{bzw.}\quad
+  b=\begin{pmatrix} b_1 \\ b_2 \\ b_3 \end{pmatrix}\in\mathbb{R}^{3}
+$$ soll analog zu Beispiel 2 eine Matrix $B\in\mathbb{R}^{3,3}$ ermittelt werden, die $$
+  x=E\cdot x=(\textcolor{magenta}{B}\cdot A)\cdot x=\textcolor{magenta}{B}\cdot (A\cdot x)= \textcolor{magenta}{B}\cdot b
+$$ erfüllt, worin $E$ die dreireihige Einheitsmatrix bezeichnet. Der Lösungsvektor $x=B\cdot b$ kann - falls die Matrix $B$ existiert - eindeutig als Matrixprodukt berechnet werden.
+
+```javascript
+A=[[a11,a12,a13],[a21,a22,a23],[a31,a32,a33]]
+B=inv(A)
+inner(A,B)
+B[1][1]
+denominator(B[1][1])
+det(A)-denominator(B[1][1])
+```
+@Algebrite.eval
+
+>**Definition 2.** Für eine Matrix $A\in\mathbb{K}^{3,3}$ mit der Komponentendarstellung $$
+  A=\left(a_{ij}\right)_{i=1,...,3\,,\; j=1,...,3}
+$$ heißt $\det{A}\in K$ mit $$
+  \begin{array}{rcl}
+    \det{A} & = &
+      a_{11}\cdot a_{22}\cdot a_{33}
+      +a_{12}\cdot a_{23}\cdot a_{31}
+      +a_{13}\cdot a_{21}\cdot a_{32} \\
+      & - & a_{13}\cdot a_{22}\cdot a_{31}
+      -a_{11}\cdot a_{23}\cdot a_{32}
+      -a_{12}\cdot a_{21}\cdot a_{33}
+  \end{array}
+$$ **Determinante** von $A$ (dritter Ordnung).
+
+Das **Rechenschema von Sarrus** bietet eine visuelle Unterstützung, die Determinante einer dreireihigen Matrix zu  berechnen.
+
+1. Die ersten drei Summanden zur Berechnung der Determinante $$
+  \begin{array}{rcl}
+    \det{A} & = &
+      \textcolor{magenta}{a_{11}\cdot a_{22}\cdot a_{33}}
+      +\textcolor{pink}{a_{12}\cdot a_{23}\cdot a_{31}}
+      +\textcolor{blue}{a_{13}\cdot a_{21}\cdot a_{32}} \\
+      & - & a_{13}\cdot a_{22}\cdot a_{31}
+      -a_{11}\cdot a_{23}\cdot a_{32}
+      -a_{12}\cdot a_{21}\cdot a_{33}
+  \end{array}
+$$ entsprechen den Produkten in dem rechteckig erweiterten Schema der Komponenten der Matrix $A$ $$
+  \begin{array}{|rrr|rr}
+    \textcolor{magenta}{a_{11}} & \textcolor{pink}{a_{12}} & \textcolor{blue}{a_{13}} & a_{11} & a_{12} \\
+    a_{21} & \textcolor{magenta}{a_{22}} & \textcolor{pink}{a_{23}} & \textcolor{blue}{a_{21}} & a_{22} \\
+    a_{31} & a_{32} & \textcolor{magenta}{a_{33}} & \textcolor{pink}{a_{31}} & \textcolor{blue}{a_{32}}
+  \end{array}
+$$
+2. Die letzten drei Subtrahenden zur Berechnung der Determinante $$
+  \begin{array}{rcl}
+    \det{A} & = &
+      a_{11}\cdot a_{22}\cdot a_{33}
+      +a_{12}\cdot a_{23}\cdot a_{31}
+      +a_{13}\cdot a_{21}\cdot a_{32} \\
+      & - & \textcolor{brown}{a_{13}\cdot a_{22}\cdot a_{31}}
+      -\textcolor{orange}{a_{11}\cdot a_{23}\cdot a_{32}}
+      -\textcolor{red}{a_{12}\cdot a_{21}\cdot a_{33}}
+  \end{array}
+$$ entsprechen den Produkten in dem rechteckig erweiterten Schema der Komponenten der Matrix $A$ $$
+  \begin{array}{|rrr|rr}
+    a_{11} & a_{12} & \textcolor{brown}{a_{13}} & \textcolor{orange}{a_{11}} & \textcolor{red}{a_{12}} \\
+    a_{21} & \textcolor{brown}{a_{22}} & \textcolor{orange}{a_{23}} & \textcolor{red}{a_{21}} & a_{22} \\
+    \textcolor{brown}{a_{31}} & \textcolor{orange}{a_{32}} & \textcolor{red}{a_{33}} & a_{31} & a_{32}
+  \end{array}
+$$
+
+**Beispiel 5.** Betrachtet wird die nachstehende Gleichung in den Unbekannten $x$ und $y$ $$
+  \det{
+    \left(\begin{array}{rrr}
+      x & y & 1 \\ x_1 & y_1 & 1 \\ x_2 & y_2 & 1
+    \end{array}\right)
+  }=x\cdot(y_1-y_2)+y\cdot(x_2-x_1)+(x_1\cdot y_2-x_2\cdot y_1)=0
+$$ worin $x_i\in\mathbb{R}$ und $y_i\in\mathbb{R}$ mit $i\in\{1,2\}$ und $$
+  (x_1-x_2)^2+(y_1-y_2)^2\not=0
+$$ reelle Parameter bezeichnen. Werden $(x_i,y_i)$ als kartesische Koordinaten zweier verschiedener (!) Punkte interpretiert, so lassen die Lösungen $(x,y)$ der vorstehenden Gleichung sich als geometrischer Ort interpretieren.
+
+1. Die Gleichung ist linear in den Unbekannten $(x,y)$, beschreibt demnach eine Gerade $g$ in der Ebene.
+2. Die lineare Gleichung ist erfüllt für $$
+  (x,y)=(x_1,y_1)\quad\text{und}\quad (x,y)=(x_2,y_2)
+$$ da nach Substitution die Matrix in obiger Gleichung jeweils zwei identische (und somit linear abhängige) Zeilen besitzt, demnach die Determinante Null besitzt. Hieraus folgt, dass die Gerade $g$ die Punkte $P_1(x_1,y_1)$ und $P_2(x_2,y_2)$ enthält, sie wird also als deren Verbindungsgerade erkannt.
+
+Ist $x_2-x_1\not=0$, kann die Gleichung äquivalent umgeformt werden in die Form $$
+  y=m\cdot x+n:=\frac{y_2-y_1}{x_2-x_1}\cdot x-\frac{x_1\cdot y_2-x_2\cdot y_1}{x_2-x_1}
+$$ Der Anstieg $m$ und das Absolutglied $$
+  n=-\frac{x_1\cdot y_2-x_2\cdot y_1}{x_2-x_1}\quad\leftrightarrow\quad
+  \frac{n-y_1}{n-y_2}=\frac{x_1}{x_2}\quad\text{bzw.}\quad
+  \frac{n-y_2}{n-y_1}=\frac{x_2}{x_1}
+$$ lassen sich in der nachstehenden Abbildung ablesen.
+
+![Gerade](img/mat-bild-19.png "_Fig._ Verbindungsgerade $g=P_1P_2$ zweier Punkte mit Anstiegsdreieck und Strahlensatzfigur zur Bestimmung des Absolutgliedes $n$.")
+
+Ebenso lassen sich Ebenen als Verbindungsebenen dreier Punkte durch Determinantengleichungen beschreiben.
+
+>**Satz 4.** Die Sätze 1, 2 und 3 gelten sinngemäß auch für Determinanten dritter Ordnung.
+
+>**Definition 3.** Gegeben sei eine Matrix $A\in K^{3,3}$ mit Komponentendarstellung $$
+  A=\left(a_{ij}\right)_{i=1,...,3\,,\; j=1,...,3}
+$$ mit der Determinante dritter Ordnung $\det{A}\in K$.
+>
+>Dann bezeichnet $D_{ij}$ die gebildete *Unterdeterminante* zweiter Ordnung der aus $A$ durch Streichen der $i$-ten Zeile und der $j$-ten Spalte resultierenden Matrix.
+>
+> Der Ausdruck $$
+  A_{ij}=(-1)^{i+j}\cdot D_{ij}
+$$ heißt *algebraisches Komplement* von $a_{ij}$.
+
+Es können insgesamt neun Unterdeterminanten zweiter Ordnung einer Matrix $A\in K^{3,3}$ gebildet werden. $$
+  D_{11}\sim a_{11}\,,\quad D_{12}\sim a_{12}\,,\quad\ldots\quad, D_{33}\sim a_{33}
+$$ Beispielsweise berechnen sich $$
+  D_{23}=\det{\left(\begin{array}{rr} a_{11} & a_{12} \\ a_{31} & a_{32} \end{array}\right)}\quad\leftrightarrow\quad
+  \begin{pmatrix} a_{11} & a_{12} & \textcolor{magenta}{a_{13}} \\ \textcolor{magenta}{a_{21}} & \textcolor{magenta}{a_{22}} & \textcolor{magenta}{a_{23}} \\ a_{31} & a_{32} & \textcolor{magenta}{a_{33}} \end{pmatrix}\quad\sim\quad a_{23}
+$$ und somit $$
+  A_{23}=(-1)^{2+3}\cdot D_{23}=-\det{\left(\begin{array}{rr} a_{11} & a_{12} \\ a_{31} & a_{32} \end{array}\right)}
+$$
+
+Die Determinante $\det{A}$ lässt sich durch algebraische Komplemente darstellen, beispielsweise $$
+  \begin{array}{rcl}
+    \det{A} & = &
+      a_{11}\cdot (a_{22}\cdot a_{33}-a_{23}\cdot a_{32})+
+      a_{12}\cdot (a_{23}\cdot a_{31}-a_{21}\cdot a_{33})+
+      a_{13}\cdot (a_{21}\cdot a_{32}-a_{22}\cdot a_{31}) \\
+      & = & a_{11}\cdot A_{11}+a_{12}\cdot A_{12}+a_{13}\cdot A_{13}
+  \end{array}
+$$ Man sagt, die Determinante ist entwickelt nach (den Komponenten) der ersten Zeile.
+
+>**Satz 5.** Sei $A\in K^{3,3}$ mit Komponentendarstellung $$
+  A=\begin{pmatrix} a_{ij} \end{pmatrix}_{i=1,...,3\,,\;j=1,...,3}
+$$ und Determinante $\det{A}\in K$.
+>
+> Dann berechnet sich
+>
+>1. $$ \det{A}=\sum_{i=1}^3{(a_{ik}\cdot A_{ik})}\,,\quad k\in\{1,2,3\} $$ durch Entwicklung nach der $k$-ten Spalte.
+>2. $$ \det{A}=\sum_{k=1}^3{(a_{ik}\cdot A_{ik})}\,,\quad i\in\{1,2,3\} $$ durch Entwicklung nach der $i$-ten Zeile.
+>
+>Diese Aussage wird **Entwicklungssatz von Laplace** genannt. (Ohne Nachweis.)
+
+**Beispiel 6.** Gegeben ist die Matrix $$
+  A=\begin{pmatrix} 1 & -5 & 3 \\ 4 & 0 & 2 \\ 3 & 6 & -7 \end{pmatrix}
+$$
+Durch Entwicklung von $\det{A}$ nach der ersten Zeile ergibt sich $$
+  \begin{array}{rcl}
+  \det{A} & = &
+  1\cdot(-1)^{1+1}\cdot \det{\begin{pmatrix} 0 & 2 \\ 6 & -7 \end{pmatrix}}+
+  (-5)\cdot(-1)^{1+2}\cdot \det{\begin{pmatrix} 4 & 2 \\ 3 & -7 \end{pmatrix}}+
+  3\cdot(-1)^{1+3}\cdot \det{\begin{pmatrix} 4 & 0 \\ 3 & 6 \end{pmatrix}} \\ & = &
+  -12+5\cdot(-34)+3\cdot 24 \\
+  & = & -110
+  \end{array}
+$$ Wird hingegen beispielsweise nach der zweiten Spalte entwickelt, sind ~~nur~~ zwei Unterdeterminanten zweiter Ordnung von $A$ zu berechnen. $$
+  \begin{array}{rcl}
+  \det{A} & = &
+  (-5)\cdot(-1)^{1+2}\cdot \det{\begin{pmatrix} 4 & 2 \\ 3 & -7 \end{pmatrix}} +
+  0\cdot(-1)^{2+2}\cdot \det{\begin{pmatrix} 1 & 3 \\ 3 & -7 \end{pmatrix}} + 6\cdot(-1)^{3+2}\cdot \det{\begin{pmatrix} 1 & 3 \\ 4 & 2 \end{pmatrix}} \\ & = &
+  5\cdot(-34)+0-6\cdot (-10) \\
+& = & -110
+\end{array}
+$$
+
+Eine Kontrolle des Ergebnisses kann unter Verwendung der Javascript Bibliothek [Algebrite](http://algebrite.org/) vorgenommen werden.
+
+```javascript
+A=[[1,-5,3],[4,0,2],[3,6,-7]]
+det(A)
+```
+@Algebrite.eval
+
+
+Determinanten $n$-ter Ordnung
+=============================
+
+Gegeben ist eine $n$-reihige Matrix $A\in K^{n,n}$ mit der Komponentendarstellung $$
+ A=\left(
+  \begin{array}{ccc} a_{11} & \ldots & a_{1n} \\ \vdots & \ddots & \vdots \\ a_{n1} & \ldots & a_{nn} \end{array}
+ \right) = \left( a_{ij} \right)_{i=1,...,n\,,\; j=1,...,n}\quad\text{mit}\quad n\in\mathbb{N}\setminus\{0\}
+$$ Es lässt sich rekursiv der Wert der Determinante $n$-ter Ordnung $\det{A}$ berechnen $$
+  \det{A} =\sum_{j=1}^n{a_{1j}\cdot A_{1j}}=a_{11}\cdot A_{11}+a_{12}\cdot A_{12}+\ldots +a_{1n}\cdot A_{1n}
+$$ worin $$
+  A_{1j}=(-1)^{1+j}\cdot D_{1j}
+$$  das algebraische Komplement zu $a_{1j}$ und $D_{1j}$ Unterdeterminante $(n-1)$-ter Ordnung sind.
+
+**Beispiel 7.** Zu berechnen ist die nachstehende Determinante der Matrix $A$. $$
+\det{\left(
+  \begin{array}{rrrr}
+   \textcolor{blue}{2} & \textcolor{blue}{1} & \textcolor{blue}{3} & \textcolor{blue}{0} \\ 1 & -1 & 4 & 4 \\ 4 & 2 & 4 & -2 \\ -1 & 3 & 1 & -1
+  \end{array}
+  \right)}
+$$ Unter Anwendung des Laplaceschen Entwicklungssatzes bezogen auf die erste Zeile[^3] berechnet sich die Determinante $$
+  \begin{array}{rcl}
+  \det{A} & = & \textcolor{blue}{2}\cdot(-1)^{1+1}\cdot \det{\left(\begin{array}{rrr} -1 & 4 & 4 \\ 2 & 4 & -2 \\ 3 & 1 & -1\end{array}\right)}
+  + \quad\textcolor{blue}{1}\cdot(-1)^{1+2}\cdot \det{\left(\begin{array}{rrr} 1 & 4 & 4 \\ 4 & 4 & -2 \\ -1 & 1 & -1\end{array}\right)} \\
+  & + & \quad\textcolor{blue}{3}\cdot(-1)^{1+3}\cdot \det{\left(\begin{array}{rrr} 1 & -1 & 4 \\ 4 & 2 & -2 \\ -1 & 3 & -1\end{array}\right)}
+  + \quad\textcolor{blue}{0}\cdot(-1)^{1+4}\cdot \det{\left(\begin{array}{rrr} 1 & -1 & 4 \\ 4 & 2 & 4 \\ -1 & 3 & 1\end{array}\right)} \\
+  & = & -108-54+162 = 0
+\end{array}
+$$ Dieses Ergebnis bestätigt sich unter der Beobachtung dass für die Spaltenvektordarstellung von $$
+  A=\begin{pmatrix} s_1 & s_2 & s_3 & s_4 \end{pmatrix}
+$$ gilt $s_1+s_2-s_3+s_4=o$ (Nullvektor), die Spalten mithin linear abhängig sind.
+
+
+Rechenregeln
+------------
+
+Für Determinanten $n$-ter Ordnung lassen sich die für $n=2$ und $n=3$ bekannten Rechenregeln beweisen.
+
+>**Satz 6.** Gegeben sind eine $n$-reihige Matrix $A\in K^{n,n}$ mit der Spaltenvektordarstellung $$
+  A=\left(
+ \ldots \textcolor{magenta}{s_i}\ldots \textcolor{blue}{s_j}\ldots\,
+ \right)\quad\text{wobei}\quad {s_i},{s_j}\in\mathbb{R}^n\quad\forall i,j\in\{1,\ldots,n\}
+$$ sowie $\lambda,\nu\in K$. Es gelten:
+>
+>1. Die *Transposition* der Matrix $A\rightarrow A^\top$ transformiert die Determinante gemäß $$
+  \det{A}=\det{A^\top}
+$$
+>2. Das *Vertauschen zweier Spalten* $$
+  A\rightarrow\left(\ldots \textcolor{blue}{s_j}\ldots \textcolor{magenta}{s_i}\ldots\right)=:B
+$$ transformiert die Determinante gemäß $$
+  \det{A}=-\det{B}
+$$
+>3. Das *Addieren des Vielfachen einer anderen Spalte* $$
+  A\rightarrow\left(\ldots \textcolor{magenta}{s_i}+\nu\cdot \textcolor{blue}{s_j}\ldots \textcolor{blue}{s_j}\ldots\right)=:C
+$$ transformiert die Determinante gemäß $$
+  \det{A}=\det{C}
+$$
+>4. Die *Vielfachbildung* einer Spalte $$
+  A\rightarrow\left(\ldots \lambda\cdot\textcolor{magenta}{s_i}\ldots \textcolor{blue}{s_j}\ldots\right)=:D
+$$ transformiert die Determinante gemäß $$
+  \det{A}=\lambda\cdot\det{D}
+$$
+>5. Für die Matrix $A$ und jede weitere Matrix $B\in K^{n,n}$ gilt stets der Multiplikationssatz $$
+  \det{(A\cdot B)}=\det{A}\cdot\det{B}
+$$
+
+
+Sicher gewusst?
+===============
+
+Sie können Ihr Wissen gern bei der Beantwortung der nachstehenden Fragen testen.
+
+**Frage 1.** Entscheiden Sie möglichst ohne direkte Berechnung, welche der nachstehenden Determinanten zweiter Ordnung Null beziehungsweise von Null verschieden ist.[^2]
+
+[[$\det{A}=0$] [$\det{A}\not=0$]]
+[( ) (X)]  $$ A=\begin{pmatrix} 2 & 1 \\ -1 & 2 \end{pmatrix} $$
+[(X) ( )]  $$ A=\begin{pmatrix} 2 & 1 \\ 4 & 2 \end{pmatrix} $$
+[[?]] Nutzen Sie zur Entscheidung Satz 1 sowie Beispiel 3.
+****************************************
+
+1. $$ \det{\begin{pmatrix} 2 & 1 \\ -1 & 2 \end{pmatrix}}\not=0 $$ da für die Zeilen- bzw. Spaltenvektoren gelten: $$
+  \left\{\begin{pmatrix} 2 & 1 \end{pmatrix}, \begin{pmatrix} -1 & 2 \end{pmatrix}\right\}\quad\text{bzw.}\quad
+  \left\{\begin{pmatrix} 2 \\ -1 \end{pmatrix}, \begin{pmatrix} 1 \\ 2 \end{pmatrix}\right\}
+$$ sind jeweils linear unabhängig.
+2. $$ \det{\begin{pmatrix} 2 & 1 \\ 4 & 2 \end{pmatrix}}=0 $$ da für die Zeilen- bzw. Spaltenvektoren gelten: $$
+  \left\{\begin{pmatrix} 2 & 1 \end{pmatrix}, \begin{pmatrix} 4 & 2 \end{pmatrix}\right\}\quad\text{bzw.}\quad
+  \left\{\begin{pmatrix} 2 \\ 4 \end{pmatrix}, \begin{pmatrix} 1 \\ 2 \end{pmatrix}\right\}
+$$ sind jeweils linear abhängig.
+
+****************************************
+
+**Frage 2.** Gegeben sind die reellen zweireihigen Matrizen $A$, $B$ und $C$ sowie der Skalar $\lambda\in\mathbb{R}$ .
+
+Entscheiden Sie, welche der folgenden Aussage korrekt bzw. falsch sind.
+
+[[Wahr] [Falsch]]
+[(X) ( )]  $$ \det{(\lambda\cdot A)}=\lambda^2\cdot \det{A} $$
+[( ) (X)]  $$ \det{(\lambda\cdot A)}=\lambda\cdot \det{A} $$
+[( ) (X)]  $$ \det{(A+B)}=\det{A}+\det{B} $$
+[(X) ( )]  $$ \det{((A\cdot B)\cdot C)}=\det{A}\cdot\det{B}\cdot\det{C} $$
+[[?]] Nutzen Sie die Regeln für das Rechnen mit Determinanten. Durch ein Gegenbeispiel kann nachgewiesen werden, dass eine Aussage falsch ist.
+****************************************
+
+Für die Gültigkeit der ersten Aussage kann die Spaltenvektordarstellung der Matrix $A$ genutzt werden $$
+  \det{(\lambda\cdot A)}=\det{\begin{pmatrix} \lambda\cdot s_1 & \lambda\cdot s_2\end{pmatrix}}
+  =\lambda\cdot\det{\begin{pmatrix} s_1 & \lambda\cdot s_2\end{pmatrix}}
+  =\lambda^2\cdot\det{\begin{pmatrix} s_1 & s_2\end{pmatrix}}
+  =\lambda^2\cdot\det{A}
+$$ Die Determinante des $\lambda$-fachen einer ~~zweireihigen~~ Matrix ist gleich dem $\lambda^2$-fachen der Determinante von $A$. Die zweite Aussage ist in diesem Kontext also falsch für alle Parameter $\lambda\not\in\{0,1\}$. Siehe Satz 2 (3.) in diesem Abschnitt.
+
+Die dritte Aussage ist falsch, wie man sofort erkennt für $A=E$ und $B=-E$ mit zweireihiger Einheitsmatrix $E$, denn $$
+  0=\det{O}=\det{(E+(-E))}\not=\det{E}+\det{((-1)\cdot E)}=\det{E}+(-1)^2\cdot\det{E}=2
+$$
+
+Die Gültigkeit der letzten Aussage folgt sofort aus dem Multiplikationssatz für Determinanten unter Benutzung der Assoziativität des Matrixproduktes. Siehe Satz 3 in diesem Abschnitt.
+
+****************************************
+
+**Frage 3.** Berechnen Sie $$
+  \det{\begin{pmatrix} \lambda & \lambda & \lambda \\ \lambda & \lambda & \lambda \\ \lambda & \lambda & \lambda \end{pmatrix}}
+$$ in Abhängigkeit von $\lambda\in\mathbb{R}$.
+
+[(X)] $0$
+[( )] $\lambda$
+[( )] $\lambda^2$
+[[?]] Für die Matrix gilt nach Anwendung einer der Rechenregeln aus Satz 4 in diesem Abschnitt $$
+  L=\begin{pmatrix} \lambda & \lambda & \lambda \\ \lambda & \lambda & \lambda \\ \lambda & \lambda & \lambda \end{pmatrix}=
+  \lambda\cdot\begin{pmatrix} 1 & 1 & 1 \\ 1 & 1 & 1 \\ 1 & 1 & 1 \end{pmatrix}
+$$
+****************************************
+
+---
+
+Für die Matrix gilt nach Anwendung der Rechenregeln aus Satz 4 in diesem Abschnitt $$
+  L=\begin{pmatrix} \lambda & \lambda & \lambda \\ \lambda & \lambda & \lambda \\ \lambda & \lambda & \lambda \end{pmatrix}=
+  \lambda\cdot\begin{pmatrix} 1 & 1 & 1 \\ 1 & 1 & 1 \\ 1 & 1 & 1 \end{pmatrix}\quad\leadsto\quad
+  \det{L}=\lambda^3\cdot\det{\begin{pmatrix} 1 & 1 & 1 \\ 1 & 1 & 1 \\ 1 & 1 & 1 \end{pmatrix}}=0\;\;\forall\;\lambda\in\mathbb{R}
+$$ da die Spalten / Zeilen der Matrix identisch, und damit linear abhängig sind.
+
+****************************************
+
+[^1]: Bitte die Produkte $E=B\cdot A$ und $B\cdot b$ berechnen. Die Matrix $B$ wird im Fall ihrer Existenz zu $A$ *invers* genannt.
+
+[^2]: Vergleiche Beispiel 1.
+
+[^3]: Der Wert der Determinante ändert sich nicht, falls anstelle  der ersten Zeile nach $i$-ter Zeile bzw. $j$-ter Spalte entwickelt wird.
+
+
+### Lineare Gleichungssysteme
+
+In diesem Abschnitt werden Systeme von linearen Gleichungen der Form $$
+  \begin{array}{rrrrrrrrr}
+    a_{11}\cdot x_1 & + & a_{12}\cdot x_2 & + & ... & + & a_{1n}\cdot x_n & = & b_1 \\
+    a_{21}\cdot x_1 & + & a_{22}\cdot x_2 & + & ... & + & a_{2n}\cdot x_n & = & b_2 \\
+    & & & & & & & \vdots & \\
+    a_{m1}\cdot x_1 & + & a_{m2}\cdot x_2 & + & ... & + & a_{mn}\cdot x_n & = & b_m
+  \end{array}
+$$ in den Unbekannten $x_1$, $x_2$, ..., $x_n$ untersucht. Für die Koeffizienten gelten $a_{ij}\in\mathbb{R}$ sowie $b_i\in\mathbb{R}$ für jede Wahl von $i\in\{1,2,...,m\}$ und $j\in\{1,2,...,n\}$. Die natürlichen Zahlen $m$ beziehungsweise $n$ bezeichnen die Anzahl der Gleichungen beziehungsweise die Anzahl der Unbekannten des Gleichungssystems, $(m,n)$ wird dessen Typ genannt.
+
+Die grundlegenden, aus der Schulmathematik bekannten Begriffe werde kurz in nachstehendem Video erklärt.
+
+!?[Gleichungssystem](https://www.youtube.com/watch?v=6H8WVGIc2Qs)
+
+Das vorstehende System von Gleichungen lässt sich unter Benutzung eines Matrixproduktes in *Matrixform* darstellen $$
+  \begin{pmatrix} a_{11} & ... & a_{1n} \\ \vdots & & \vdots \\ a_{m1} & ... & a_{mn} \end{pmatrix}\cdot
+  \begin{pmatrix} x_1 \\ \vdots \\ x_n \end{pmatrix}=
+  \begin{pmatrix} b_1 \\ \vdots \\ b_m \end{pmatrix}
+$$ worin $$
+  A=\begin{pmatrix} a_{11} & ... & a_{1n} \\ \vdots & & \vdots \\ a_{m1} & ... & a_{mn} \end{pmatrix}\in\mathbb{R}^{m,n}\,,\quad
+  x=\begin{pmatrix} x_1 \\ \vdots \\ x_n \end{pmatrix}\in\mathbb{R}^{n,1}\,,\quad
+  b=\begin{pmatrix} b_1 \\ \vdots \\ b_m \end{pmatrix}\in\mathbb{R}^{m,1}
+$$ Koeffizientenmatrix beziehungsweise Lösungsvektor beziehungsweise Vektor der Absolutglieder bezeichnen. Für die Untersuchung des Gleichungssystems und der Berechnung der Lösung wird die Matrix $$
+  (A|b)=\begin{pmatrix} a_{11} & ... & a_{1n} & \textcolor{magenta}{b_1} \\ \vdots & & \vdots \\ a_{m1} & ... & a_{mn} & \textcolor{magenta}{b_m} \end{pmatrix}\in\mathbb{R}^{m,n+1}
+$$ verwendet, die *erweiterte Koeffizientenmatrix* genannt wird.
+
+>**Definition 1.** Das reelle System linearer Gleichungen $A\cdot x=b$ heißt
+>
+>1. *homogen*, falls $b=o$ (Nullvektor)
+>2. *inhomogen*, falls $b\not=o$ ist.
+
+Die Unterscheidung zwischen homogenen und inhomogenen linearen Gleichungssystemen ist in nachfolgendem Video anhand von Beispielen erläutert.
+
+!?[Homogen versus inhomogen](https://www.youtube.com/watch?v=oIQ_V8nfmi4)
+
+
+Gleichungssysteme vom Typ $(n,n)$
+=================================
+
+>**Definition 2.** Existiert zu einer Matrix $A\in K^{n,n}$ eine Matrix $A^{-1}$ mit $$
+  A^{-1}\cdot A=A\cdot A^{-1}=E
+$$ ($n$-reihige Einheitsmatrix), so heißt $A^{-1}$ *inverse Matrix* zu $A$.
+
+>**Satz 1.** Existiert die inverse Matrix $A^{-1}$ zu $A\in K^{n,n}$, so berechnet sich $$
+  A^{-1}=\frac{1}{\det{A}}\cdot\begin{pmatrix} A_{11} & ... & A_{1n} \\ \vdots & \ddots & \vdots \\ A_{n1} & ... & A_{nn} \end{pmatrix}^\top
+$$ mit algebraischen Komplementen $A_{ij}$ zu den Komponenten $a_{ij}$ von $A$.
+
+Am Faktor $(\det{A})^{-1}$ in Satz 1 ist zu erkennen, dass die inverse Matrix zu einer gegebenen Matrix $A\in K^{n,n}$ dann und nur dann existiert, wenn $\det{A}\not=0$.
+
+>**Definition 3.** Eine Matrix $A\in K^{n,n}$ heißt *regulär*, falls $\det{A}\not=0$, für $\det{A}=0$ hingegen *singulär*.
+
+**Beispiel 1.** Gegeben sind die reellen Matrizen $$
+  A=\begin{pmatrix} 1 & -5 & 3 \\ 4 & 0 & 2 \\ 3 & 6 & -7 \end{pmatrix}\quad\text{und}\quad
+  B=\begin{pmatrix} 1 & -5 & 3 \\ 4 & 0 & -7 \\ 3 & 5 & -10 \end{pmatrix}
+$$ Die Determinanten der Matrizen berechnen sich $$
+  \det{A}=-110\quad\text{und}\quad \det{B}=0
+$$ Matrix $A$ ist also regulär und besitzt eine inverse Matrix $A^{-1}$, Matrix $B$ ist hingegen singulär: ihre inverse Matrix existiert nicht.
+
+Die algebraischen Komplemente $A_{ij}$ zu den Komponenten $a_{ij}$ von $A$ berechnen sich einzeln $$
+  A_{11}=(-1)^{1+1}\cdot\det{\begin{pmatrix} 0 & 2 \\ 6 & -7 \end{pmatrix}}=-12\,,\quad
+  A_{12}=(-1)^{1+2}\cdot\det{\begin{pmatrix} 4 & 2 \\ 3 & -7 \end{pmatrix}}=34\,,\quad
+  A_{13}=(-1)^{1+3}\cdot\det{\begin{pmatrix} 4 & 0 \\ 3 & 6 \end{pmatrix}}=24
+$$ für den Zeilenindex $i=1$ sowie $$
+  A_{21}=(-1)^{2+1}\cdot\det{\begin{pmatrix} -5 & 3 \\ 6 & -7 \end{pmatrix}}=-17\,,\quad
+  A_{22}=(-1)^{2+2}\cdot\det{\begin{pmatrix} 1 & 3 \\ 3 & -7 \end{pmatrix}}=-16\,,\quad
+  A_{23}=(-1)^{2+3}\cdot\det{\begin{pmatrix} 1 & -5 \\ 3 & 6 \end{pmatrix}}=-21
+$$ für den Zeilenindex $i=2$ und schließlich $$
+  A_{31}=(-1)^{3+1}\cdot\det{\begin{pmatrix} -5 & 3 \\ 0 & 2 \end{pmatrix}}=-10\,,\quad
+  A_{32}=(-1)^{3+2}\cdot\det{\begin{pmatrix} 1 & 3 \\ 4 & 2 \end{pmatrix}}=10\,,\quad
+  A_{33}=(-1)^{3+3}\cdot\det{\begin{pmatrix} 1 & -5 \\ 4 & 0 \end{pmatrix}}=20
+$$ Die inverse Matrix $A^{-1}$ berechnet sich damit $$
+  A^{-1}=\frac{1}{-110}\cdot
+  \begin{pmatrix}
+    -12 & 34 & 24 \\ -17 & -16 & -21 \\ -10 & 10 & 20
+  \end{pmatrix}^\top=
+  \frac{1}{-110}\cdot\left(
+  \begin{array}{rrr}
+    -12 & -17 & -10 \\ 34 & -16 & 10 \\ 24 & -21 & 20
+  \end{array}\right)
+$$
+
+Eine Berechnung der inversen Matrix $A^{-1}$ kann unter Verwendung der Javascript Bibliothek [Algebrite](http://algebrite.org/) vorgenommen werden.
+
+```javascript
+A=[[1,-5,3],[4,0,2],[3,6,-7]]
+det(A)
+adj(A)
+cofactor(A,1,2)
+1/det(A)*adj(A)[1][1]
+inv(A)-1/det(A)*adj(A)
+```
+@Algebrite.eval
+
+>**Satz 2.** Gegeben ist ein System linearer Gleichungen $A\cdot x=b$ vom Typ $(n,n)$ mit dem Lösungsvektor $x\in K^{n,1}$.
+>
+>Ist die Koeffizientenmatrix $A$ regulär, so besitzt des Gleichungssystem genau die Lösung $x=A^{-1}\cdot b$.
+
+Ist die Koeffizientenmatrix $A$ singulär, so besitzt das Gleichungssystem entweder keine oder unendlich viele Lösungen. Siehe Beispiel 1 im Abschnitt [Determinanten](#Determinanten). (Nachweis später)
+
+**Beweis.** Ist die Koeffizientenmatrix $A$ regulär, so existiert die zu $A$ inverse Matrix $A^{-1}$. Damit berechnet sich der Lösungsvektor gemäß $$
+  x=\textcolor{magenta}{A^{-1}}\cdot A\cdot x=\textcolor{magenta}{A^{-1}}\cdot b
+$$ ist also eindeutig bestimmt. $\square$
+
+**Beispiel 2.** Gegeben ist ein System linearer Gleichungen $A\cdot x=b$ vom Typ $(4,4)$ mit $$
+  A=\begin{pmatrix} 1 & -2 & 0 & -1 \\ 4 & 1 & 1 & 1 \\ 1 & -2 & 1 & 3 \\ 0 & -1 & 4 & 4 \end{pmatrix}\,,\quad
+  x=\begin{pmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{pmatrix}\,,\quad
+  b=\begin{pmatrix} 107 \\ 214 \\ 0 \\ 321 \end{pmatrix}
+$$ Zu berechnen ist die Menge aller Lösungen dieses Gleichungssystems.
+
+1. Die Determinante der Koeffizientenmatrix $A$ berechnet sich $\det{A}=-107$, $A$ ist also regulär und besitzt eine inverse Matrix. Diese berechnet sich $$
+  A^{-1}=-\frac{1}{107}\cdot\begin{pmatrix} 10 & 23 & 5 & -7 \\ -32 & 12 & -16 & 1 \\ 25 & 4 & -41 & 36 \\ -33 & -1 & 37 & -9 \end{pmatrix}
+$$ Bitte nachrechnen.
+2. Das System linearer Gleichungen besitzt nach Satz 2 die eindeutige Lösung $$
+  x=A^{-1}\cdot b= -\frac{1}{107}\cdot\begin{pmatrix} 10 & 23 & 5 & -7 \\ -32 & 12 & -16 & 1 \\ 25 & 4 & -41 & 36 \\ -33 & -1 & 37 & -9 \end{pmatrix}\cdot \begin{pmatrix} 107 \\ 214 \\ 0 \\ 321 \end{pmatrix}=
+  \begin{pmatrix} 35 \\ -5 \\ 141 \\ -62 \end{pmatrix}
+$$ kann also durch ein Matrixprodukt berechnet werden.
+
+Eine Berechnung der Lösung des Gleichungssystems kann unter Verwendung der Javascript Bibliothek [Algebrite](http://algebrite.org/) vorgenommen werden.
+
+```javascript
+A=[[1,-2,0,-1],[4,1,1,1],[1,-2,1,3],[0,-1,4,4]]
+b=[107,214,0,321]
+det(A)
+B=inv(A)
+inner(B,b)
+```
+@Algebrite.eval
+
+**Beispiel 3.** Zu berechnen sind die elektrischen Stromstärken $I_1$, $I_2$, $I_3$ in einer kombinierten Reihen- und Parallelschaltung: Die Bauelemente $2$ und $3$ sind untereinander parallel und zum Bauelement $1$ in Reihe geschaltet.[^1]
+
+Es bezeichnen mit $i\in\{1,2,3\}$:
+
+1. $R_i$ den elektrischen Widerstand der Bauelemente.
+2. $U_i$ die elektrische Spannung am jeweiligen Bauelement
+3. $I_i$ die elektrische Stromstärke durch das Bauelement
+
+
+Es gelten nach dem Ohmschen Gesetzt $$
+  U_i=R_i\cdot I_i\,,\quad i\in\{1,2,3\}
+$$
+
+Die Berechnung der elektrischen Stromstärken kann nach den folgenden Schritten erfolgen:
+
+1. Aufstellen eines Systems linearer Gleichungen. $$
+  \begin{array}{lllllll}
+    I_1 & - & I_2 & - & I_3 & = & 0 \\
+    R_1\cdot I_1 & + & R_2\cdot I_2 & & & = & U \\
+    & & R_2\cdot I_2 & - & R_3\cdot I_3 & = & 0
+  \end{array}
+$$ Die sind drei lineare Gleichungen in den Unbekannten $I_1$, $I_2$ und $I_3$.
+2. Schreibe das Gleichungssystem in Matrixform $A\cdot x= b$ mit $$
+  A=\left(\begin{array}{lll}
+    1 & -1 & -1 \\ R_1 & R_2 & 0 \\ 0 & R_2 & -R_3
+  \end{array}\right)\,,\quad
+  x=\left(\begin{array}{c}
+    I_1 \\ I_2 \\ I_3
+  \end{array}\right)\,,\quad
+  b=\left(\begin{array}{r}
+    0 \\ U \\ 0
+  \end{array}\right)
+$$
+3. Berechne die inverse Matrix $ A^{-1}$ der Koeffizientenmatrix $A$ $$
+  A^{-1}=\frac{1}{\lambda}\left(\begin{array}{ccc}
+  -R_2\cdot R_3 & -(R_2+R_3) & R_2 \\ R_1\cdot R_3 & -R_3 & -R_1 \\ R_1\cdot R_2 & -R_2 & R_1+R_2
+  \end{array}\right)
+$$ mit $$ \lambda=-(R_1\cdot R_2+R_2\cdot R_3+R_1\cdot R_3)=\det{A} $$
+4. Für $\det A\not=0$ ist dann $$
+  x=\left(\begin{array}{c}
+    I_1 \\ I_2 \\ I_3
+  \end{array}\right)=
+  A^{-1} b=-\frac{1}{R_1\cdot R_2+R_2\cdot R_3+R_1\cdot R_3}\cdot
+  \left(\begin{array}{c}
+    -(R_2+R_3)\cdot U \\ -R_3\cdot U \\ -R_2\cdot U
+  \end{array}\right)
+$$ die einzige Lösung von $A\cdot x= b$.
+
+
+Gleichungssysteme vom Typ $(m,n)$
+=================================
+
+Da die Koeffizientenmatrix $A$ eines Systems linearer Gleichungen vom Typ $(m,n)$ für $m\not=n$ nicht invertierbar ist, ist hier ein anderes Lösungsverfahren zu entwickeln, dass sich auf den allgemeinen Fall $(m,n)$ anwenden lässt: Im Folgenden wird das nach Carl Friedrich Gauß benannte [Gaußsche Eliminationsverfahren[^2]](https://de.wikipedia.org/wiki/Gau%C3%9Fsches_Eliminationsverfahren) eingeführt.
+
+Ziel des Verfahrens ist es, ein Gleichungssystem der Form $A\cdot x=b$ in ein Gleichungssystem $A^\star\cdot x=b^\star$ überzuführen, ohne die Lösungsmenge zu ändern. Die Umformungsschritte werden so gewählen, dass die Koeffizientenmatrix eine sogenannte *Stufenform* besitzt $$
+  A^\star=\begin{pmatrix}
+  a_{11}^\star & a_{12}^\star & ... & a_{1n}^\star \\
+  0 & a_{22}^\star & ... & a_{2n}^\star \\
+  \vdots & \ddots & \ddots & \vdots \\
+  0 & 0 & ... & a_{nn}^\star
+  \end{pmatrix}\in K^{n,n}\quad\text{bzw.}\quad
+  A^\star=\begin{pmatrix}
+  a_{11}^\star & a_{12}^\star & & ... & a_{1n}^\star \\
+  0 & \ddots & & ... & \vdots \\
+  0 & \ddots & a_{rr}^\star & ... & a_{rn}^\star \\
+  0 & ... & 0 & ... & 0 \\
+  \vdots & & \vdots & & \vdots \\
+  0 & ... & 0 & ... & 0
+  \end{pmatrix}\in K^{m,n}
+$$ d. h. eine (obere) Dreiecksmatrix ist oder Trapezform besitzt. Für die Komponenten ist $a_{ii}\not=0$ für alle $i\in\{1,...,n\}$ im Fall der Dreiecksmatrix beziehungsweise für alle $i\in\{1,...,r\}$ im Fall der Trapezform zu fordern.
+
+<!-- style="background-color: lightgray;"-->
+>Elementare Umformungsschritte sind nachstehend aufgeführt. Diese ändern einsichtig nicht die Lösungsmenge eines Systems linearer Gleichungen, führen also zu äquivalenten Umformungen.
+>
+>1. *Vertauschen zweier Gleichungen*. Hierdurch vertauschen sich die entsprechenden Zeilen der Koeffizientenmatrix $A$ $$
+  A=\begin{pmatrix} ... & \textcolor{blue}{z_k} & ... & \textcolor{magenta}{z_l} & ... \end{pmatrix}^\top\quad\to\quad
+  A'=\begin{pmatrix} ... & \textcolor{magenta}{z_l} & ... & \textcolor{blue}{z_k} & ... \end{pmatrix}^\top
+$$ und in gleicher Weise der erweiterten Koeffizientenmatrix $(A|b)$.
+>2. *Multiplizieren einer Gleichung mit einem Skalar* $\lambda\in K\setminus\{0\}$. Hierdurch werden die Komponenten der entsprechenden Zeile von $A$ mit dem Faktor $\lambda$ multipliziert. $$
+  A=\begin{pmatrix} ... & \textcolor{blue}{z_k} & ... \end{pmatrix}^\top\quad\to\quad
+  A'=\begin{pmatrix} ... & \textcolor{blue}{\lambda\cdot z_k} & ... \end{pmatrix}^\top
+$$ und in gleicher Weise für die erweiterte Koeffizientenmatrix $(A|b)$ .
+>3. *Addieren des $\lambda$-fachen einer anderen Gleichung*. Hierdurch werden die Komponenten der Zeile und die $\lambda$-fachen der entsprechenden Komponenten der (anderen!) Zeile addiert. $$
+  A=\begin{pmatrix} ... & \textcolor{blue}{z_k} & ... & \textcolor{magenta}{z_l} & ... \end{pmatrix}^\top\quad\to\quad
+  A'=\begin{pmatrix} ... & \textcolor{blue}{z_k}+\textcolor{magenta}{\lambda\cdot z_l} & ... & \textcolor{magenta}{z_l} & ... \end{pmatrix}^\top
+$$
+>
+>Die aufgeführten Umformungen der Gleichungen lassen sich also als Zeilenumformungen der Koeffizientenmatrix $A$ und erweiterten Koeffizientenmatrix $(A|b)$ darstellen und werden aus diesem Blick heraus auch **elementare Zeilenumformungen** genannt.
+
+In der gestuften Form kann das Gleichungssystem schrittweise "von unten noch oben" nach den Variablen $x_r$, $x_{r-1}$, ..., $x_1$ gelöst werden.
+
+**Beispiel 4.** Mit Hilfe des Gauß-Verfahrens ist die Lösungsmenge des nachstehenden Systems linearer Gleichungen $A\cdot x=b$ zu berechnen, worin $$
+  A=\begin{pmatrix} 1 & 2 & -2 \\ 2 & 3 & 0 \\ 2 & 1 & 8 \end{pmatrix}\,,\quad
+  x=\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}\,,\quad
+  b=\begin{pmatrix} 7 \\ 0 \\ -28 \end{pmatrix}
+$$ Dies ist ein inhomogenes Gleichungssystem.
+
+1. Die Determinante der Koeffizientenmatrix $A$ berechnet sich unter Benutzung der Rechenregeln für Determinanten und des Entwicklungssatzes nach Laplace (angewendet auf die dritte Spalte) $$
+  \det{\begin{pmatrix} 1 & 2 & -2 \\ 2 & 3 & 0 \\ 2 & 1 & 8 \end{pmatrix}}\stackrel{Z_3+4\cdot Z_1\to Z_3}{=}
+  \det{\begin{pmatrix} 1 & 2 & -2 \\ 2 & 3 & 0 \\ 6 & 9 & 0 \end{pmatrix}}=(-2)\cdot(-1)^{1+3}\det{\begin{pmatrix} 2 & 3 \\ 6 & 9 \end{pmatrix}}=0
+$$ d. h. $A$ ist singulär.
+2. Unter Benutzung der erweiterten Koeffizientenmatrix wird das Gauß-Verfahren zur Berechnung der Lösung des Gleichungssystems angewendet. $$
+  (A|\textcolor{magenta}{b})=
+  \begin{pmatrix} 1 & 2 & -2 & \textcolor{magenta}{7} \\ 2 & 3 & 0 & \textcolor{magenta}{0} \\ 2 & 1 & 8 & \textcolor{magenta}{-28} \end{pmatrix}\stackrel{Z_2-2\cdot Z_1\to Z_2}{\to}
+  \begin{pmatrix} 1 & 2 & -2 & \textcolor{magenta}{7} \\ 0 & -1 & 4 & \textcolor{magenta}{-14} \\ 2 & 1 & 8 & \textcolor{magenta}{-28} \end{pmatrix}\stackrel{Z_3-2\cdot Z_1\to Z_3}{\to}
+  \begin{pmatrix} 1 & 2 & -2 & \textcolor{magenta}{7} \\ 0 & -1 & 4 & \textcolor{magenta}{-14} \\ 0 & -3 & 12 & \textcolor{magenta}{-42} \end{pmatrix}\stackrel{Z_3-3\cdot Z_2\to Z_3}{\to}
+  \begin{pmatrix} 1 & 2 & -2 & \textcolor{magenta}{7} \\ 0 & -1 & 4 & \textcolor{magenta}{-14} \\ 0 & 0 & 0 & \textcolor{magenta}{0} \end{pmatrix}=(A^\star|\textcolor{magenta}{b^\star})
+$$
+3. Die Stufenform der erweiterten Koeffizientenmatrix gestattet das schrittweise Lösen nach den Lösungsvariablen. Die Gleichung zur zweiten Zeile (die dritte Zeile ist eine Nullzeile) besitzt das *Pivot* $a_{22}^\star=-1$ und kann somit nach $x_2$ gelöst werden $$
+  x_2=\frac{1}{-1}\cdot(-14-4\cdot x_3)=14+4\cdot x_3
+$$ Die Lösung ist abhängig von $x_3$. Die erste Gleichung besitzt das Pivot $a_{11}^\star=1$ und lässt sich nach $x_1$ lösen. Hierfür ist die Lösung $x_2$ einzusetzen. $$
+  x_1=7-2\cdot x_2+2\cdot x_3=7-2\cdot(14+4\cdot x_3)+2\cdot x_3=-21-6\cdot x_3
+$$ In den Lösungen $x_1$ und $x_2$ kann $x_3$ beliebig (aber gleich!) gewählt werden. Wird $x_3=\lambda\in\mathbb{R}$ als reeller Lösungsparameter verwendet, lässt sich die Lösung angeben gemäß $$
+  \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}=
+  \begin{pmatrix} -21 \\ 14 \\ 0 \end{pmatrix}+\lambda\cdot
+  \begin{pmatrix} -6 \\ 4 \\ 1 \end{pmatrix}
+$$ Die Lösung entspricht also der Punktmenge einer Geraden in $\mathbb{R}^3$. Die Lösung enthält einen freien reellen Lösungsparameter $\lambda$.
+
+An einfachen Beispielen ist in folgenden Videos die Berechnung der Lösungsmenge eines linearen Gleichungssystems mithilfe des Gauß-Verfahrens vorgeführt. Genutzt werden elementare Gleichungsumformungen.
+
+!?[Gauß1](https://www.youtube.com/watch?v=1IBuhdLyCdA)
+
+!?[Gauß2](https://www.youtube.com/watch?v=8Uut7RAnqEI)
+
+In den folgenden Videos wird das Gauß-Verfahren unter Nutzung der erweiterten Koeffizientenmatrix durchgeführt.
+
+!?[Gauß3](https://www.youtube.com/watch?v=c8ofg4ZxnVM)
+
+!?[Gauß4](https://www.youtube.com/watch?v=yJ2LHr5YPYM)
+
+
+Gauß-Jordan-Verfahren
+=====================
+
+Das Gauß-Verfahren kann - in erweiterter Form - zur Berechnung der inversen Matrix zu einer gegebenen Matrix $A$ verwendet werden. Hierfür ist das Gleichungssystem durch einen zusätzlichen Umformungsschritt auf die reduzierte Stufenform zu transformieren (Komponenten "oberhalb" der Elemente $a_{ii}\not=0$ zu Null umformen). Dieses Verfahren wird **Gauß-Jordan-Verfahren** genannt. $$
+  A\cdot X=E\quad A\in K^{n,n}\,,\; X\in K^{n,n}\,,\; E\in K^{n,n}
+$$ worin $A$ die zu invertierende Matrix, $X$ die Lösungsmatrix und $E$ die $n$-reihige Einheitsmatrix bezeichnen. Durch Multiplikation von links mit $A^{-1}$ berechnet sich daraus $$
+  X=\textcolor{magenta}{A^{-1}}\cdot A\cdot X=\textcolor{magenta}{A^{-1}}\cdot E\quad\leftrightarrow\quad
+  E\cdot X=A^{-1}
+$$ Die zugehörigen erweiterten Koeffizientenmatrizen sind $$
+  (A|E)\quad\leftrightarrow\quad (E|A^{-1})
+$$
+
+Hieraus ergibt sich folgendes Verfahren:
+
+1. Bilde die Matrix $\left({A}\vert{E}\right)$ vom Typ $(n,2n)$ mit $$
+  \left({A}\vert\textcolor{blue}{{E}}\right)=\left(
+  \begin{array}{rrrr|rrrr}
+      a_{11} & a_{12} & \ldots & a_{1n} & \textcolor{blue}{1} & \textcolor{blue}{0} & \textcolor{blue}{\ldots} & \textcolor{blue}{0} \\
+      a_{21} & a_{22} & \ldots & a_{2n} & \textcolor{blue}{0} & \textcolor{blue}{1} & \textcolor{blue}{\ldots} & \textcolor{blue}{0} \\
+      \vdots & \vdots & \ddots & \vdots & \textcolor{blue}{\vdots} & \textcolor{blue}{\vdots} & \textcolor{blue}{\ddots} & \textcolor{blue}{\vdots} \\
+      a_{n1} & a_{n2} & \ldots & a_{nn} & \textcolor{blue}{0} & \textcolor{blue}{0} & \textcolor{blue}{\ldots} & \textcolor{blue}{1}
+  \end{array}\right)
+$$
+2. Durch elementare Zeilenumformungen in $\left({A}\vert{E}\right)$ wird diese schrittweise auf die Form $\left({E}\vert{B}\right)$ umgeformt. Die Matrix[^3] am ursprünglichen Platz von ${E}$ ist ${B}={A}^{-1}$. Umformungsschritte sind:
+
+* Vertauschen zweier Zeilen der Matrix
+* Multiplikation einer Zeile mit $\lambda\in\mathbb{R}^\star$
+* Addieren eines reellen Vielfachen einer Zeile zu einer anderen Zeile
+
+**Beispiel 5.** Die inverse Matrix zu $$
+  A=\begin{pmatrix} 1 & 1 & 2 \\ 1 & 0 & -1 \\ 1 & 0 & -2 \end{pmatrix}
+$$ ist unter Nutzung des Gauss-Jordan-Verfahrens zu berechnen.
+
+1. Forme ${\left(A|E\right)}$ schrittweise um, so dass erste Spalte zu $\left(\begin{array}{rrr} 1 & 0 & 0 \end{array}\right)^\top$ wird $$
+  \left(\begin{array}{rrr|rrr}
+    1 & 1 & 2 & 1 & 0 & 0 \\ 1 & 0 & -1 & 0 & 1 & 0 \\ 1 & 0 & -2 & 0 & 0 & 1
+  \end{array}\right)\xrightarrow{\tiny{(Z_2-Z_1)\rightarrow Z_2}}
+  \left(\begin{array}{rrr|rrr}
+    1 & 1 & 2 & 1 & 0 & 0 \\ 0 & -1 & -3 & -1 & 1 & 0 \\ 1 & 0 & -2 & 0 & 0 & 1
+  \end{array}\right)\xrightarrow{\tiny{(Z_3-Z_1)\rightarrow Z_3}}
+  \left(\begin{array}{rrr|rrr}
+    \textcolor{blue}{1} & 1 & 2 & 1 & 0 & 0 \\ \textcolor{blue}{0} & -1 & -3 & -1 & 1 & 0 \\ \textcolor{blue}{0} & -1 & -4 & -1 & 0 & 1
+  \end{array}\right)
+$$
+2. Zusätzlich die zweite Spalte zu $\left(\begin{array}{rrr} 0 & 1 & 0 \end{array}\right)^\top$ $$
+  \left(\begin{array}{rrr|rrr}
+    \textcolor{blue}{1} & 1 & 2 & 1 & 0 & 0 \\ \textcolor{blue}{0} & -1 & -3 & -1 & 1 & 0 \\ \textcolor{blue}{0} & -1 & -4 & -1 & 0 & 1
+  \end{array}\right)\xrightarrow{\tiny{\begin{array}{r}(Z_1+Z_2)\rightarrow Z_1\\ (Z_3-Z_2)\rightarrow Z_3\\ (-1)\cdot Z_2\rightarrow Z_2 \end{array}}}
+  \left(\begin{array}{rrr|rrr}
+    \textcolor{blue}{1} & \textcolor{red}{0} & -1 & 0 & 1 & 0 \\ \textcolor{blue}{0} & \textcolor{red}{1} & 3 & 1 & -1 & 0 \\ \textcolor{blue}{0} & \textcolor{red}{0} & -1 & 0 & -1 & 1
+  \end{array}\right)
+$$
+3. Zusätzlich die dritte Spalte zu $\left(\begin{array}{rrr} 0 & 0 & 1 \end{array}\right)^\top$. $$
+  \left(\begin{array}{rrr|rrr}
+    \textcolor{blue}{1} & \textcolor{red}{0} & -1 & 0 & 1 & 0 \\ \textcolor{blue}{0} & \textcolor{red}{1} & 3 & 1 & -1 & 0 \\ \textcolor{blue}{0} & \textcolor{red}{0} & -1 & 0 & -1 & 1
+  \end{array}\right)\xrightarrow{\tiny \begin{array}{r} (Z_1-Z_3)\rightarrow Z_1\\ (Z_2+3\cdot Z_3)\rightarrow Z_2\\ (-1)Z_3\rightarrow Z_3 \end{array}}
+  \left(\begin{array}{rrr|rrr}
+    \textcolor{blue}{1} & \textcolor{red}{0} & \textcolor{cyan}{0} & 0 & 2 & -1 \\ \textcolor{blue}{0} & \textcolor{red}{1} & \textcolor{cyan}{0} & 1 & -4 & 3 \\ \textcolor{blue}{0} & \textcolor{red}{0} & \textcolor{cyan}{1} & 0 & 1 & -1
+  \end{array}\right)
+$$  Die inverse Matrix ${A}^{-1}$ ergibt sich als Untermatrix in ${\left(E|A^{-1}\right)}$.
+
+**Beispiel 6.** Das Gauß-Jordan-Verfahren zur Bestimmung der inversen Matrix führt bei einer singulären Matrix nicht zum Ziel, da für diese Matrix keine inverse Matrix existiert.
+
+Für die Matrix $$
+  A=\begin{pmatrix} 1 & 1 & 2 \\ 1 & 0 & -1 \\ 2 & 1 & 1 \end{pmatrix}
+$$ ist $\det{A}=0$, d. h. $A$ ist singulär.
+
+1. Forme ${\left(A|E\right)}$ schrittweise um, so dass erste Spalte zu $\left(\begin{array}{rrr} 1 & 0 & 0 \end{array}\right)^\top$ wird $$
+  \left(\begin{array}{rrr|rrr}
+    1 & 1 & 2 & 1 & 0 & 0 \\ 1 & 0 & -1 & 0 & 1 & 0 \\ 2 & 1 & 1 & 0 & 0 & 1
+  \end{array}\right)\xrightarrow{\tiny{(Z_2-Z_1)\rightarrow Z_2}}
+  \left(\begin{array}{rrr|rrr}
+    1 & 1 & 2 & 1 & 0 & 0 \\ 0 & -1 & -3 & -1 & 1 & 0 \\ 2 & 1 & 1 & 0 & 0 & 1
+  \end{array}\right)\xrightarrow{(Z_3-2\cdot Z_1)\rightarrow Z_3}
+  \left(\begin{array}{rrr|rrr}
+    \textcolor{blue}{1} & 1 & 2 & 1 & 0 & 0 \\ \textcolor{blue}{0} & -1 & -3 & -1 & 1 & 0 \\ \textcolor{blue}{0} & -1 & -3 & -2 & 0 & 1
+  \end{array}\right)
+$$
+2. Zusätzlich die zweite Spalte zu $\left(\begin{array}{rrr} 0 & 1 & 0 \end{array}\right)^\top$ $$
+  \left(\begin{array}{rrr|rrr}
+    \textcolor{blue}{1} & 1 & 2 & 1 & 0 & 0 \\ \textcolor{blue}{0} & -1 & -3 & -1 & 1 & 0 \\ \textcolor{blue}{0} & -1 & -3 & -2 & 0 & 1
+  \end{array}\right)\xrightarrow{\tiny{\begin{array}{r} (Z_1+Z_2)\rightarrow Z_1\\ (Z_3-Z_2)\rightarrow Z_3\\ (-1)\cdot Z_2\rightarrow Z_2 \end{array}}}
+  \left(\begin{array}{rrr|rrr}
+    \textcolor{blue}{1} & \textcolor{magenta}{0} & -1 & 0 & 1 & 0 \\ \textcolor{blue}{0} & \textcolor{magenta}{1} & 3 & 1 & -1 & 0 \\ \textcolor{blue}{0} & \textcolor{magenta}{0} & \textcolor{red}{0} & -1 & -1 & 1
+  \end{array}\right)
+$$
+3. ~~Aber~~: Mittels Zeilenumformungen lässt sich dritte Spalte nicht zusätzlich zu $$
+  \left(\begin{array}{rrr} 0 & 0 & 1 \end{array}\right)^\top
+$$ umformen, d. h. ${A}$ lässt sich nicht vollständig zu $\mathrm{diag}(1,1,1)$ umformen.
+
+~~Damit~~: Das Gauß-Jordan-Verfahren führt nicht zum Ziel: ${A}^{-1}$ zu ${A}$ existiert nicht.
+
+Ein weiteres Beispiel zur Nutzung des Gauß-Jordan-Verfahrens zur Berechnung der Inversen einer Matrix ist im nachtehenden Video erläutert.
+
+!?[Inverse1](https://www.youtube.com/watch?v=YGnCxuE2LKg)
+
+Die Berechnung der inversen Matrix einer regulären Matrix vom Typ $(2,2)$ als Lösung eines linearen Gleichungssystems vom Typ $(4,4)$ ist im nachfolgenden Video durchgeführt.
+
+!?[Inverse2](https://www.youtube.com/watch?v=AFKJmlZ8kTQ)
+
+
+Lösungsverhalten eines linearen Gleichungssystems
+=================================================
+
+Für die Untersuchung des Lösungsverhaltens wird ein allgemeines System linearer Gleichungen $A\cdot x=b$ vom Typ $(m,n)$ vorausgesetzt, dass durch Anwendung etwa des Gaußschen Eliminationsverfahrens in gestufter Form $(\star)$ vorliegt. Die erweiterte Koeffizientenmatrix $(A|b)$ des Gleichungssystems besitz die nachstehende Gestalt $$
+  \left(A^\star\vert\textcolor{blue}{b^\star}\right)=
+  \left(
+    \begin{array}{cccc|ccc|c}
+      \textcolor{magenta}{a_{11}^\star} & a_{12}^\star & \ldots & a_{1r}^\star & a_{1,r+1}^\star & \ldots & a_{1n}^\star & \textcolor{blue}{b_{1}^\star} \\
+      0 & \textcolor{magenta}{a_{22}^\star} & \ldots & a_{2r}^\star & a_{2,r+1}^\star & \ldots & a_{2n}^\star & \textcolor{blue}{b_{2}^\star} \\
+      \vdots & \ddots & \ddots & \vdots & \vdots & & \vdots & \textcolor{blue}{\vdots} \\
+      0 & \ldots & 0 & \textcolor{magenta}{a_{rr}^\star} & a_{r,r+1}^\star & \ldots & a_{rn}^\star & \textcolor{blue}{b_{r}^\star} \\
+      \hline
+      0 & 0 & \ldots & 0 & 0 & \ldots & 0 & \textcolor{blue}{b_{r+1}^\star} \\
+      \vdots & \vdots & & \vdots & \vdots & & \vdots & \textcolor{blue}{\vdots} \\
+      0 & 0 & \ldots & 0 & 0 & \ldots & 0 & \textcolor{blue}{b_{m}^\star} \\
+    \end{array}\right)
+$$ wobei $$
+  \textcolor{magenta}{a_{ii}^\star\neq 0\quad \forall i\in\{1,2,\ldots,r\}}
+$$ Zur Überführung in die gestaffelte Form sind gegebenenfalls
+
+1. elementare Zeilenumformungen auszuführen
+2. Spalten von $A$ zu tauschen
+
+Für die Untersuchung des Lösungsverhaltens ist folgende Definition hilfreich.
+
+>**Definition 4.** Der Rang einer Matrix $A\in K^{m,n}$ ist die Maximalzahl linear unabhängiger Zeilenvektoren in $A$. Kurz: $\mathrm{rg}{A}$.
+
+Unter Betrachtung der elementaren Zeilenumformungen folgen unmittelbar $$
+  \mathrm{rg}{A}=\mathrm{rg}{A^\star}\quad\text{und}\quad
+  \mathrm{rg}{(A|b)}=\mathrm{rg}{(A^\star|b^\star)}
+$$ Damit gilt offenbar $$
+  r:=\mathrm{rg}{A}\leq\mathrm{rg}{(A|b)}
+$$ abgelesen an der Anzahl der nichtverschwindenden Zeilen in $A^\star$ beziehungsweise $(A^\star|b^\star)$.
+
+>**Satz 3.** Sei $A\cdot x=b$ ein System linearer Gleichungen vom Typ $(m,n)$ mit den Darstellungen $$
+  A\in \mathbb{R}^{m,n}\,,\quad x\in \mathbb{R}^{n,1}\,,\quad b\in \mathbb{R}^{m,1}
+$$ der Koeffizientenmatrix, des Lösungsvektors beziehungsweise des Vektors der Absolutglieder.
+>
+>Das Gleichungssystem ist dann und nur dann lösbar, wenn $$
+  r=\mathrm{rg}{A}=\mathrm{rg}{(A|b)}
+$$ Es ergeben sich die folgenden Fälle.
+>
+>1. Keine Lösung, falls $$
+  \mathrm{rg}{A}<\mathrm{rg}{(A|b)} $$
+>2. Genau eine Lösung, falls $$
+  \mathrm{rg}{A}=\mathrm{rg}{(A|b)}\quad\text{mit}\quad r=n $$
+>3. Unendlich viele Lösungen, falls $$
+  \mathrm{rg}{A}=\mathrm{rg}{(A|b)}\quad\text{mit}\quad r<n
+$$ In diesem Fall sind die Lösungsvariablen $x_{r+1}$, ..., $x_n$ frei wählbar und können als Lösungsparameter verwendet werden.
+>
+>Allgemein gilt in den Fällen 2 und 3 für die Dimension des Lösungsraumes $L$ $$
+  \dim{L}=n-\mathrm{rg}{A}
+$$
+
+**Bemerkung 1.** Für die Untersuchung der Lösbarkeit eines linearen Gleichungssystems mit rationalen Koeffizienten sowie die Berechnung dessen Lösungsmenge kann die Website [Gauß-Verfahren](https://bildungsportal.sachsen.de/opal/auth/RepositoryEntry/13723271171/CourseNode/95364212454741?5) genutzt werden. Gleichungssysteme können unter Wahl des Typs und Angabe der rationalen Koeffizienten und Absolutglieder interaktiv gestellt und automatisch berechnet werden.
+
+**Bemerkung 2.** Für eine System linearer Gleichungen $A\cdot x=b$ vom Typ $(n,n)$ gilt $$
+  \mathrm{rg}{A}=\mathrm{rg}{(A|b)}=n\quad\leftrightarrow\quad \det{A}\not=0
+$$ Ist also die Koeffizientenmatrix $A$ regulär, besitzt das System linearer Gleichungen die eindeutige Lösung $x=A^{-1}\cdot b$. Ist zusätzlich $b=o$ der Nullvektor - das Gleichungssystem mithin homogen -, so ist die triviale Lösung die einzige Lösung.
+
+**Beispiel 7.** Gegeben ist ein lineares Gleichungssystem $A\cdot x=b$ mit $$
+  A=\begin{pmatrix} 3 & -4 \\ -1 & 5 \\ 5 & 2 \end{pmatrix}\,,\quad
+  x=\begin{pmatrix} x_1 \\ x_2 \end{pmatrix}\quad\text{und}\quad
+  b=\begin{pmatrix} 2 \\ 4 \\ 12 \end{pmatrix}
+$$ d. h. vom Typ $(3,2)$.
+
+der Rang der Koeffizientenmatrix $A$ ist 2, $\mathrm{rg}{A}=2$, da $$
+  27\cdot Z_1+26\cdot Z_2=11\cdot Z_3
+$$ für die Zeilen von $A$ gilt, diese also linear abhängig (jedoch je zwei der zeilen linear unabhängig) sind. Für die erweiterte Koeffizientenmatrix $(A|b)$ gilt diese Linearkombination nicht. Es ist $\mathrm{rg}{(A|b)}=3$. Das lineare Gleichungssystem besitzt nach Fall 1 in Satz 3 keine Lösung, da $$
+  \mathrm{rg}{A}<\mathrm{rg}{(A|b)} $$
+
+Wird im vorstehenden Gleichungssystem der anstelle des Vektors $b$ der Nullvektor $b=o$ angesetzt, so gilt $$
+  \mathrm{rg}{A}=\mathrm{rg}{(A|b)}=2
+$$ Mit $n=\mathrm{rg}{A}=2$ existiert genau eine Lösung, nämlich $x=\begin{pmatrix} 0 & 0 \end{pmatrix}^\top$. Diese bildet die *triviale Lösung* eines homogenen linearen Gleichungssystems (existiert immer!).
+
+
+Lineare Unabhängigkeit von Vektoren
+====================================
+
+Systeme linearer Gleichungen lassen sich zur Untersuchung der linearen Unabhängigkeit von Vektoren nutzen. Für die folgenden Betrachtungen wird ein System von Vektoren aus $\mathbb{R}^m$ $$
+  \left\{ a_1,a_2,...,a_n\right\}
+$$ betrachtet. Das System ist linear unabhängig, falls die Äquivalenz $$
+  \sum_{i=1}^n{\lambda_i\cdot a_i}=o\quad\leftrightarrow\quad
+  \lambda_1=\lambda_2=...=\lambda_n=0
+$$ gilt. Der Vektor $o\in\mathbb{R}^m$ bezeichnet darin den $m$-dimensionalen Nullvektor.
+
+Die verschwindende Linearkombination der linken Seite der vorstehenden Äquivalenz bildet ein System von $m$ homogenen, linearen Gleichungen in den Komponenten der Vektoren $a_i$. Dieses gestattet eine Darstellung in Matrixform $A\cdot x=b$ mit $$
+  A=\begin{pmatrix} a_1 & a_2 & ... & a_n \end{pmatrix}\in\mathbb{R}^{m,n}\,,\quad
+  x=\begin{pmatrix} \lambda_1 & \lambda_2 & ... & \lambda_n \end{pmatrix}^\top\in\mathbb{R}^{n,1}\,,\quad
+  b=\begin{pmatrix} 0 & ... & 0 \end{pmatrix}^\top=o\in\mathbb{R}^{m,1}
+$$ Wie in Beispiel 7 folgt, dass $$
+  \mathrm{rg}{A}=\mathrm{rg}{(A|b)}
+$$ d. h. dass das Gleichungssystem eine Lösung besitzt. Folgende Fälle sind zu unterscheiden:
+
+1. Der Rang der Koeffizientenmatrix $A$ entspricht der Anzahl der Vektoren $a_i$, d. h. $\mathrm{rg}{A}=r=n$. Unter Nutzung der unterschiedenen Fälle in Satz 3 folgt, dass $A\cdot x=o$ nur die triviale Lösung $x=o$ besitzt. Demnach sind $$
+  \left\{ a_1,a_2,...,a_n\right\}
+$$ linear unabhängig.
+2. Der Rang der Koeffizientenmatrix $A$ ist kleiner als die Anzahl der Vektoren $a_i$, d. h. $\mathrm{rg}{A}=r<n$. Es folgt, dass $A\cdot x=o$ unendlich viele Lösungen besitzt: neben der trivialen Lösung $x=o$ existieren $\lambda_i\not=0$ und somit Lösungsvektoren $x\not=o$. Die Vektoren in $$
+  \left\{ a_1,a_2,...,a_n\right\}
+$$ linear abhängig.
+
+Hieraus folgt unmittelbar der folgende Satz.
+
+>**Satz 4.** Das System von Vektoren $$
+  \left\{ a_1,a_2,...,a_n\right\}\subset{\mathbb{R}^m}
+$$ ist genau dann linear unabhängig, wenn für die in Spaltenvektordarstellung gegebene Matrix $$
+  A=\begin{pmatrix} a_1 & a_2 & ... & a_n \end{pmatrix}\in\mathbb{R}^{m,n}
+$$ gilt $r=\mathrm{rg}{A}=n$.
+
+**Beispiel 8.** Gegeben ist das System dreier Vektoren aus $\mathbb{R}^4$ mit $$
+  \begin{pmatrix} a_1 & a_2 & a_3 \end{pmatrix}=
+  \left(\begin{array}{rrr}
+     1 & 0 & 3 \\ 1 & 2 & -1 \\ 1 & 1 & 1 \\ 1 & 0 & 3
+  \end{array}\right)\xrightarrow{\tiny{\begin{array}{r}
+    (Z_2-Z_1)\rightarrow Z_2 \\
+    (Z_3-Z_1)\rightarrow Z_3 \\
+    (Z_4-Z_1)\rightarrow Z_4 \end{array}}}
+  \left(\begin{array}{rrr}
+    1 & 0 & 3 \\ 0 & 2 & -4 \\ 0 & 1 & -2 \\ 0 & 0 & 0
+  \end{array}\right)\xrightarrow{\tiny{
+    (Z_3-\frac{1}{2}\cdot Z_2)\rightarrow Z_3 }}
+  \left(\begin{array}{rrr}
+    1 & 0 & 3 \\ 0 & 2 & -4 \\ 0 & 0 & 0 \\ 0 & 0 & 0
+  \end{array}\right)
+$$ Es folgt hieraus $\mathrm{rg}{A}=2$ und somit $\mathrm{rg}{A}<3$, d. h. die Vektoren $$
+  \left\{
+      \begin{pmatrix} 1 \\ 1 \\ 1 \\ 1 \end{pmatrix}\,,\;
+      \begin{pmatrix} 0 \\ 2 \\ 1 \\ 0 \end{pmatrix}\,,\;
+      \begin{pmatrix} 3 \\ -1 \\ 1 \\ 3  \end{pmatrix}
+  \right\}
+$$ sind linear abhängig. Es gilt $a_3=3\cdot a_1-2\cdot a_2$.
+
+>**Folgerung 5.** Gilt für ein System von Vektoren $$
+  \{a_1,...,a_n\}\subset\mathbb{R}^m
+$$ die Ungleichung $m<n$, so folgt die lineare Abhängigkeit der Vektoren.
+
+**Beweis.** Mit Satz 4 folgt für $\mathrm{rg}{A}=r$ die Relation $r\leq m$. Aus $m<n$ folgt damit $r<n$. Die Vektoren sind also linear abhängig. $\square$
+
+**Bemerkung 3.** Ist die Anzahl der Vektoren eines Systems größer als die Dimension des sie enthaltenden Vektorraumes, so folgt die lineare Abhängigkeit der Vektoren. Sie spannen einen Untervektorraum der Dimension $r=\mathrm{rg}{A}$ auf.
+
+**Beispiel 9.** Für $n$ reelle, hinreichend oft differenzierbare Funktionen
+$$
+  f_i:D\rightarrow\mathbb{R},\quad i\in\{1,2,\ldots,n\}
+$$
+einer reellen Variablen $x\in D\subseteq\mathbb{R}$ ist die [Wronski-Determinante](https://de.wikipedia.org/wiki/Wronski-Determinante) definiert durch $$
+  W(f_1,f_2,\ldots,f_n)(x):=
+  \det{\left(\begin{array}{cccc}
+  f_1(x) & f_2(x) & \ldots & f_n(x) \\ f^\prime_1(x) & f^\prime_2(x) & \ldots & f^\prime_n(x) \\
+  \vdots & \vdots & \ddots & \vdots \\ f^{(n-1)}_1(x) & f^{(n-1)}_2(x) & \ldots & f^{(n-1)}_n(x)
+  \end{array}\right)}
+$$ worin $f^{(j)}_i(x)$ mit $j\in\{1,2,\ldots,n-1\}$ die $j$-te gewöhnliche Ableitung der Funktion $f_i$ (insbesondere $f^\prime_i$ deren erste Ableitung) bezeichnet.
+
+Speziell sind hier drei über den reellen Zahlen definierte Funktionen $$
+  f_1:x\mapsto x,\quad f_2:x\mapsto \sin{x} \quad\text{und}\quad f_3:x\mapsto \cos{x}
+$$ gegeben.
+
+1. Für diese Funktionen ist zunächst die Wronski-Determinante zu berechnen. Für $f_1$, $f_2$ und $f_3$ sind $$
+  f_1^{\prime}(x)=1,\quad
+  f_2^{\prime}(x)=\cos{x} \quad\text{und}\quad
+  f_3^{\prime}(x)=-\sin{x}
+$$ sowie $$
+  f_1^{\prime\prime}(x)=0,\quad
+  f_2^{\prime\prime}(x)=-\sin{x} \quad\text{und}\quad
+  f_3^{\prime\prime}(x)=-\cos{x}
+$$ und somit $$
+  W(f_1,f_2,f_3)(x)=\det{\left(
+    \begin{array}{rrr}
+      x & \sin{x} & \cos{x} \\ 1 & \cos{x} & -\sin{x} \\ 0 & -\sin{x} & -\cos{x}
+    \end{array}
+  \right)}=
+  x\cdot\left(-(\cos{x})^2-(\sin{x})^2\right)=-x
+$$
+2. Für die Untersuchung der linearen Unabhängigkeit ist zunächst zu prüfen, ob es Koeffizienten $\lambda_1\in\mathbb{R}$, $\lambda_2\in\mathbb{R}$ und $\lambda_3\in\mathbb{R}$ mit $$
+  \lambda_1\cdot f_1(x)+\lambda_2\cdot f_2(x)+\lambda_3\cdot f_3(x)= 0\quad\forall x\in\mathbb{R}
+$$ und $(\lambda_1,\lambda_2,\lambda_3)\not=(0,0,0)$ gibt. Linke und rechte Seite der vorstehenden Gleichung können hierfür ein- bzw. zweimal nach der Variablen $x$ differenziert werden, wonach sich das folgende System linearer Gleichungen $A\cdot x=b$ ergibt. $$
+  A=\begin{pmatrix} x & \sin{x} & \cos{x} \\ 1 & \cos{x} & -\sin{x} \\ 0 & -\sin{x} & -\cos{x} \end{pmatrix}\,,\quad
+  x=\begin{pmatrix} \lambda_1 \\ \lambda_2 \\ \lambda_3 \end{pmatrix}\quad\text{und}\quad
+  b=\begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}
+$$ Dies ist ein homogenes Gleichungssystem, welches die alleinige Lösung $$
+  x=\begin{pmatrix} \lambda_1 \\ \lambda_2 \\ \lambda_3 \end{pmatrix}=\begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}
+$$ besitzt, da für die Determinante der Koeffizientenmatrix gilt $$
+  W=\det{A}=-x\not=0\quad\forall\;x\in\mathbb{R}\setminus\{0\}
+$$ Es existieren somit Argumente $x_0\in D$, für die $$
+  W(f_1,f_2,f_3)(x_0)\not=0\quad
+  \rightarrow\quad (\lambda_1,\lambda_2,\lambda_3)=(0,0,0)
+$$ folgt. Die Funktionen sind also linear unabhängig auf $D\subseteq\mathbb{R}$.
+
+Sicher gewusst?
+===============
+
+Sie können Ihr Wissen gern bei der Beantwortung der nachstehenden Fragen testen.
+
+**Frage 1.**[^4] Entscheiden Sie, welches der nachstehenden Systeme von Gleichungen ein System linearer Gleichungen ist. In allen drei Systemen wird $$
+  a_{ij}\in K\quad\text{bzw.}\quad b_i\in K
+$$ für die Koeffizienten beziehungsweise Absolutglieder angenommen.
+
+[[X]] $$ \begin{array}{ccccccc} a_{11}\cdot x_1 & + & ... & + & a_{1n}\cdot x_1 & = & b_1 \\ \vdots & & & & \vdots & = & \vdots \\ a_{n1}\cdot x_n & + & ... & + & a_{nn}\cdot x_n & = & b_n \end{array} $$
+[[X]] $$ \begin{array}{ccccccc} a_{11}\cdot x_{11} & + & ... & + & a_{1n}\cdot x_{1n} & = & b_1 \\ \vdots & & & & \vdots & = & \vdots \\ a_{n1}\cdot x_{n1} & + & ... & + & a_{nn}\cdot x_{nn} & = & b_n \end{array} $$
+[[X]] $$ \begin{array}{ccccccc} a_{11}\cdot x_1 & + & ... & + & a_{1n}\cdot x_n & = & b_1 \\ \vdots & & & & \vdots & = & \vdots \\ a_{n1}\cdot x_1 & + & ... & + & a_{nn}\cdot x_n & = & b_n \end{array} $$
+[[?]] Untersuchen Sie zeilenweise die Lösungsvariablen. Geben Sie, falls möglich, den Typ des Systems linearer Gleichungen an.
+****************************************
+
+Das erste Gleichungssystem besteht aus linearen Gleichungen, jedoch hängt jede der Gleichungen nur von genau einer Variablen $x_i$ ab. Werden in den linken Seiten $x_i$ ausgeklammert, so erkennt man, dass die Koeffizientenmatrix eine Diagonalmatrix mit den Komponenten $$
+  \sum_{j=1}^n{a_{ij}}\quad i\in\{1,...,n\}
+$$ ist. Das Gleichungssystem ist vom Typ $(n,n)$.
+
+Das zweite Gleichungssystem besteht aus linearen Gleichungen, jedoch hängt jede der Gleichungen nur von genau $n$ Variablen $x_{ij}$ ab, worin der Index $i$ die Nummer der Gleichung bezeichnet. Das Gleichungssystem ist vom Typ $\left(n,n^2\right)$, besitzt also deutlich mehr Unbekannte als Gleichungen.
+
+Das dritte Gleichungssystem entspricht der üblichen allgemeinen Darstellung linearer Gleichungssysteme vom Typ $(n,n)$.
+
+****************************************
+
+**Frage 2.**[^4] Gegeben ist die Matrix $A\in K^{n,n}$ mit $\det{A}=0$. Dann ist das lineare Gleichungssystem $A\cdot x=b$ mit $x\in K^{n,1}$
+
+[( )] Nur lösbar für $b=o$.
+[(X)] Lösbar nur für manche Vektoren $b$, jedoch für keines der Vektoren $b$ eindeutig lösbar.
+[( )] Lösbar für alle Vektoren $b$, jedoch nicht unbedingt eindeutig lösbar.
+[[?]] Für den Nachweis der Ungültigkeit einer Aussage reicht es aus, ein Gegenbeispiel (d. h. hier ein lineares Gleichungssystem, das nicht der Aussage entspricht) anzugeben.
+****************************************
+
+Für den Nachweis der Gültigkeit der zweiten Aussage ist zu beachten, dass aus $\det{A}$ die Aussage $\mathrm{rg}{A}<n$ folgt. Nach Satz 3 ist das Gleichungssystem dann und nur dann lösbar, wenn $\mathrm{rg}{A}=\mathrm{rg}{(A|b)}$ gilt. Für den Lösungsraum gilt in diesem Fall $\dim{L}=n-\mathrm{rg}{A}>0$.
+
+Zur Widerlegung der anderen Aussagen reicht es, ein Gegenbeispiel anzugeben. Hierfür können zwei lineare Gleichungssysteme mit der gemeinsamen Koeffizientenmatrix $$
+  A=\begin{pmatrix} 1 & 0 \\ 1 & 0 \end{pmatrix}
+$$ und dem Vektor $b=\begin{pmatrix} 1 \\ 1 \end{pmatrix}$ im Fall 1 beziehungsweise mit dem Vektor $b=\begin{pmatrix} 1 \\ 0 \end{pmatrix}$ im Fall 3 betrachtet werden.
+
+****************************************
+
+**Frage 3.**[^4] Es sei $A$ eine quadratische Matrix. Was bedeutet es, wenn beim Gauß-Verfahren zur Lösung eines linearen Gleichungssystems $A\cdot x=b$ schon der erste Schritt nicht ausführbar ist?
+
+[( )] $A$ ist die Nullmatrix.
+[( )] Die erste Zeile von $A$ ist eine Nullzeile.
+[(X)] Die erste Spalte von $A$ ist eine Nullspalte.
+[[?]] Im ersten Schritt des Gauss-Verfahrens wird die erste Spalte der Koeffizientenmatrix $A$ mittels elementarer Zeilenumformungen in die Form $$
+  s_1^\star=\begin{pmatrix} a_{11}^\star & 0 & ... & 0 \end{pmatrix}^\top
+$$ gebracht, worin $a_{11}^\star\not=0$.
+****************************************
+
+Offensichtlich kann die Nullmatrix $A=O$ nicht in Stufenform übergeführt werden. Umgekehrt folgt $A=O$ nicht unmittelbar aus der Nichtausführbarkeit des ersten Schrittes des Gauß-Verfahrens zur Lösung von $A\cdot x=b$.
+
+Die erste Spalte kann dann nicht in $$
+  s_1^\star=\begin{pmatrix} a_{11}^\star & 0 & ... & 0 \end{pmatrix}^\top
+$$ übergeführt werden, wenn $$
+  s_1=s_1^\star=\begin{pmatrix} 0 & ... & 0 \end{pmatrix}^\top
+$$
+
+****************************************
+
+[^1]: Quelle: Lothar Papula, Mathematik für Ingenieure und Naturwissenschaftler, Band 2, Seite 5.
+
+[^2]: Kurz auch *Gauß-Verfahren* genannt.
+
+[^3]: Sofern die Matrix $\left({E}\vert{B}\right)$ erzeugt werden kann.
+
+[^4]: Quelle: Klaus Jänich, Lineare Algebra, Seite 166 f.
+
+
+### Euklidische Vektorräume
+
+Skalarprodukt
+=============
+
+Im Folgenden werden reelle Vektorräume $\mathbb{R}^n$ mit $n\in\mathbb{N}\setminus\{0\}$ betrachtet. Diese werden mit einer zusätzlichen Struktur versehen, die es gestattet, Längen und Winkel zu berechnen. Der zentrale Begriff ist dabei das Skalarprodukt zweier Vektoren, das in nachstehender Definition festgelegt wird.
+
+>**Definition 1.** Sei $V$ ein reeller Vektorraum. Eine Abbildung $$
+  V\times V\to\mathbb{R}, (x,y)\mapsto x\cdot y\;(\in\mathbb{R})
+$$ mit den Eigenschaften
+>
+>1. $$x\cdot y=y\cdot x$$
+>2. $$x\cdot(y+z)=x\cdot y+x\cdot z$$
+>3. $$x\cdot(\lambda\cdot y)=\lambda\cdot(x\cdot y)$$
+>4. $$x\cdot x>0\quad\forall\;x\not=o$$
+>
+> für alle $x\in V$, $y\in V$ und $z\in V$ sowie $\lambda\in\mathbb{R}$ heißt [Skalarprodukt](https://de.wikipedia.org/wiki/Skalarprodukt) auf $V$.[^1]
+
+Hiermit lässt sich der Begriff eines euklidischen Vektorraumes festlegen
+
+>**Definition 2.** Ein *euklidischer Vektorraum* ist ein Paar $(V,\cdot)$, bestehend aus einem reellen Vektorraum und einem Skalarprodukt für Vektoren aus $V$.
+
+**Beispiel 1.** Für je zwei Vektoren aus $\mathbb{R}^n$ $$
+  a=\begin{pmatrix} a_1 & a_2 & ... & a_n \end{pmatrix}^\top\,,\quad
+  b=\begin{pmatrix} b_1 & b_2 & ... & b_n \end{pmatrix}^\top
+$$ heißt $$
+  a\cdot b=\sum_{i=1}^n{a_i\cdot b_i}=a_1\cdot b_1+...+a_n\cdot b_n\;(\in\mathbb{R})
+$$ das kanonische Skalarprodukt der Vektoren $a$ und $b$.
+
+Das kanonische Skalarprodukt kann unter Benutzung der Javascript Bibliothek [Algebrite](http://algebrite.org/) berechnet und die Eigenschaften 1. bis 4. an Beispielen nachvollzogen werden.
+
+```javascript
+a=[a1,a2,a3]
+b=[b1,b2,b3]
+c=[c1,c2,c3]
+dot(a,b)
+dot(a,b+c)-(dot(a,b)+dot(a,c))
+```
+@Algebrite.eval
+
+Das Skalarprodukt zweier Vektoren im $\mathbb{R}^3$ ist im folgenden Video an einem Beispiel erläutert.
+
+!?[Skalarprodukt](https://www.youtube.com/watch?v=gzwfDNF26eA)
+
+**Beispiel 2.** Für stetige Funktionen $$
+  f:[-1,1]\to\mathbb{R}\,,\quad
+  g:[-1,1]\to\mathbb{R}
+$$ ist durch $$
+  f\cdot g:=\int_{-1}^1{\left(f(x)\cdot g(x)\right)}\,\mathrm{d}x
+$$ ein Skalarprodukt erklärt. Die Eigenschaften aus Definition 1 lassen sich unmittelbar unter Nutzung der allgemeinen Rechenregeln für bestimmte Integrale nachweisen.
+
+>**Definition 3.** Ist $(V,\cdot)$ ein euklidischer Vektorraum, so heißt für ein $x\in V$ die reelle Zahl $$
+  |x|:=\sqrt{x\cdot x}\geq 0
+$$ die *Norm* von $x$. Besitzt ein Vektor $x\in V$ die Norm $|x|=1$, so wird er [Einheitsvektor](https://de.wikipedia.org/wiki/Einheitsvektor) genannt.
+
+Die durch das kanonische Skalarprodukt erklärte Norm kann unter Benutzung der Javascript Bibliothek [Algebrite](http://algebrite.org/) berechnet werden.
+
+```javascript
+a=[a1,a2,a3]
+b=[1,2,3]
+abs(a)
+abs(b)-(1^2+2^2+3^2)^(1/2)
+```
+@Algebrite.eval
+
+**Beispiel 3.** Es wird $n\geq 2$ angenommen. Des Weiteren $a\in\mathbb{R}^n$ und $b\in\mathbb{R}^n$ als Ortsvektoren zweier Punkte $A$ bzw. $B$ bezüglich eines Bezugspunktes $O$. Bezüglich der kanonischen Basis $$
+  B=[e_1,\,...\,,e_n]=\left[
+    \begin{pmatrix} 1 \\ 0 \\ \vdots \\ 0 \end{pmatrix},\;...\;,
+    \begin{pmatrix} 0 \\ \vdots \\ 0 \\ 1 \end{pmatrix}
+  \right]
+$$ lassen sich $a$ und $b$ eindeutig darstellen als $$
+  a=\sum_{i=1}^n{(a_i\cdot e_i)}\quad\text{bzw.}\quad
+  b=\sum_{i=1}^n{(b_i\cdot e_i)}
+$$ mit den Koordinaten $a_i$ beziehungsweise $b_i$. Für den Abstand von $A$ zu $O$ beziehungsweise $B$ zu $O$ gilt dann $$
+  \overline{OA}^2=\sum_{i=1}^n{(a_i)^2}=|a|^2\quad\text{bzw.}\quad
+  \overline{OB}^2=\sum_{i=1}^n{(b_i)^2}=|b|^2
+$$
+
+**Beispiel 4.** Berechnet werden die Normen von Vektoren.
+
+1. Der Vektor $b=\begin{pmatrix} 1 & 2 & 3 \end{pmatrix}^\top$ besitzt die Norm $$
+  |b|=\sqrt{1^2+2^2+3^2}=\sqrt{14}
+$$
+2. Für die Vektoren der kanonischen Basis in $\mathbb{R}^n$, $n\in\mathbb{N}\setminus\{0\}$, siehe Beispiel 3, berechnen sich $$
+  |e_i|=\sqrt{0^2+...+0^2+1^2+0^2+...+0^2}=1\quad\forall\;i\in\{1,...,n\}
+$$ worin der $i$-te Summand $1^2$ im Radikanten der einzige von Null verschiedene Summand ist.
+3. Für die Funktion $f$ mit $$
+  f:[-1,1]\to \mathbb{R},\; x\mapsto y=f(x)=x^2
+$$ berechnet sich die durch das in Beispiel 2 eingeführte Skalarprodukt bestimmte Norm $$
+  \sqrt{\int_{-1}^1{\left(f(x)\cdot f(x)\right)}\,\mathrm{d}x}=
+  \sqrt{\int_{-1}^1{x^4}\,\mathrm{d}x}=
+  \sqrt{\left[\frac{1}{5}\cdot x^5\right]_{-1}^1}=
+  \sqrt{\frac{2}{5}}
+$$
+
+**Bemerkung 1.** Zu jedem Vektor $x\not= o$ eines euklidischen Vektorraumes $(V,\cdot)$ berechnen sich die zu $x$ linear abhängigen Einheitsvektoren mittels $$
+  y=\pm\frac{1}{|x|}\cdot x
+$$ Für die Norm $|y|$ gilt nämlich $$
+  |y|^2=\sqrt{y\cdot y}^2=\left(\pm\frac{1}{|x|}\cdot x\right)\cdot\left(\pm\frac{1}{|x|}\cdot x\right)=\frac{1}{|x|^2}\cdot |x|^2=1
+$$ Jeder der Vektoren $y$ heißt zu $x$ *normierter Vektor*. In vielen technischen Zusammenhängen wird $y=\frac{1}{|x|}\cdot x$ als zu $x$ normierter Vektor verwendet. (Das Vorzeichen $-$ wird weggelassen.)
+
+Die Berechnung eines normierten Vektors, das ist das Skalarvielfache eines Vektors mit dem Reziproken seiner Norm, ist im folgenden Video an Beispielen von Vektoren aus $\mathbb{R}^2$ und $\mathbb{R}^3$ erläutert.
+
+!?[Einheitsvektor](https://www.youtube.com/watch?v=seNKS6-m5Vg)
+
+>**Satz 1.** Ist $(V,\cdot)$ ein euklidischer Vektorraum, so besitzt die durch das erklärte Skalarprodukt bestimmte Norm die nachstehenden Eigenschaften.
+>
+>1. Für alle $x\in V$ gilt $$ |x|\geq0 $$
+>2. Es gilt die Äquivalenz $$ |x|=0\quad\leftrightarrow\quad x=o $$
+>3. Für alle $x\in V$ und für alle $\lambda\in\mathbb{R}$ gilt $$ |\lambda\cdot x|=|\lambda|\cdot|x| $$
+>4. Für alle $x\in V$ und für alle $y\in V$ gilt $$ |x\cdot y|\leq|x|\cdot|y|
+$$ (Cauchy-Schwarzsche Ungleichung)
+>5. Für alle $x\in V$ und für alle $y\in V$ gilt $$ |x+y|\leq|x|+|y|
+$$ (Dreiecksungleichung)
+
+**Beweis.** Die Eigenschaften 1. bis 3. folgen direkt aus der Definition der Norm (Definition 3) beziehungsweise des Skalarproduktes (Definition 1).
+
+Zum Nachweis der Dreiecksungleichung wird betrachtet $$
+  |x+y|^2=(x+y)\cdot(x+y)=|x|^2+|y|^2+2\cdot(x\cdot y)\leq |x|^2+|y|^2+2\cdot|x\cdot y|
+$$ Unter Nutzung der Cauchy-Schwarzschen Ungleichung folgt hieraus unmittelbar $$
+  |x|^2+|y|^2+2\cdot|x\cdot y|\leq |x|^2+|y|^2+2\cdot|x|\cdot |y|=(|x|+|y|)^2
+$$ und hieraus mit der strengen Monotonie der reellen Quadratwurzelfunktion $$
+  |x+y|\leq|x|+|y|
+$$ Auf den Nachweis der Cauchy-Schwarzschen Ungleichung wird hier verzichtet.[^2] $\square$
+
+>**Definition 4.** Für zwei Vektoren $x\not=o$ und $y\not=o$ eines euklidischen Vektorraumes wird der *Öffnungswinkel* $\varphi(x,y)=\measuredangle{(x,y)}$ definiert durch $$
+  \cos{\varphi}=\frac{x\cdot y}{|x|\cdot|y|}\,,\quad 0\leq\varphi(x,y)\leq\pi
+$$
+
+Gilt in Definition 4 speziell $x\cdot y=0$, so ist $\varphi(x,y)=\frac{\pi}{2}$. Die Vektoren $x$ und $y$ heißen in diesem Fall **orthogonal**. Schreibweise $x\perp y$.
+
+**Beispiel 5.** Bezeichnet $(\mathbb{R}^3,\cdot)$ den reellen dreidimensionalen Vektorraum mit dem kanonischen Skalarprodukt, so gelten für die Vektoren $e_i$ der kanonischen Basis $$
+  B=\left[
+    \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix},\,
+    \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix},\,
+    \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix}
+  \right]
+$$ die Beziehungen $$
+  e_i\cdot e_j=\left\{\begin{array}{rll} 1 & \text{für} & i=j \\  0 & \text{für} & i\not=j \end{array}\right.
+$$ Die Vektoren aus $B$ sind demnach paarweise orthogonal und normiert. Sie legen in $\mathbb{R}^3$ (als Punktraum) ein kartesisches Koordinatensystem fest.
+
+
+Orthogonale Vektoren
+====================
+
+>**Definition 5.** Ist $(V,\cdot)$ ein euklidischer Vektorraum und $M\not=\emptyset$ eine Teilmenge von Vektoren. Dann heißt $$
+  M^\perp=\left\{x\in V\;(x\cdot y=0\;\,\forall\, y\in M)\right\}
+$$ das orthogonale Komplement von $M$.
+
+**Beispiel 6.** Gegeben ist der euklidische Vektorraum $\mathbb{R}^3$ mit dem kanonischen Skalarprodukt auf $\mathbb{R}^3$.
+
+1. Sei $M=\left\{\begin{pmatrix} 1 & 2 & 3 \end{pmatrix}^\top\right\}$. Dann berechnet sich das orthogonale Komplement $$
+  M^\perp=\left\{x\in\mathbb{R}^3\;\,(x_1+2\cdot x_2+3\cdot x_3=0)\right\}
+$$ Die beschreibende Gleichung entspricht einem verschwindendem Skalarprodukt, d. h. $M^\perp$ enthält neben dem Nullvektor alle Vektoren, die orthogonal zum Vektor $$
+  m=\begin{pmatrix} 1 & 2 & 3 \end{pmatrix}^\top
+$$ sind. Dies entspricht einer Ebene in $\mathbb{R}^3$ (als Punktraum) zum Normalenvektor $m$.
+2. Gegeben ist die zweielementige Menge $$
+  N=\left\{\begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix},\,
+  \begin{pmatrix} -1 \\ 0 \\ 1 \end{pmatrix}\right\}
+$$ Das orthogonale Komplement ergibt sich $$
+  N^\perp=\left\{x\in\mathbb{R}^3\;\,(x_1+2\cdot x_2+3\cdot x_3=0\;\wedge\; -x_1+x_3=0)\right\}
+$$ Die beschreibenden Gleichungen bilden ein System zweier linearer Gleichungen vom Typ $(2,3)$ mit der Lösung $$
+  x=\lambda\cdot\begin{pmatrix} 1 \\ -2 \\ 1 \end{pmatrix}\,,\quad \lambda\in\mathbb{R}
+$$ (Bitte nachrechnen.) Der Vektor $x$ ist orthogonal zu jedem der Vektoren aus $N$, steht also senkrecht auf jeder Linearkombination beider Vektoren.
+
+**Bemerkung 2.** Das orthogonale Komplement $M^\perp$ einer Menge $M$ ist ein Untervektorraum von $V$, da
+
+1. $M^\perp\not=\emptyset$ wegen $M^\perp\ni o$.
+2. Sind $x\in M^\perp$ und $y\in M^\perp$, so folgt aus Eigenschaft 2 bzw. 3 von Definition 1, dass $(x+y)\in M^\perp$ bzw. $\lambda\cdot x\in M^\perp$ für alle $\lambda\in\mathbb{R}$ orthogonal zu $M$ sind.
+
+Die Berechnung des Vektorproduktes zweier Vektoren aus $\mathbb{R}^3$ ist im nachstehenden Video an einem Beispiel erklärt. Des Weiteren werden einige Anwendungen des Vektorproduktes genannt.
+
+!?[Vektorprodukt1](https://www.youtube.com/watch?v=63FWetdwNb8)
+
+!?[Vektorprodukt2](https://www.youtube.com/watch?v=YpbW8uuunXI)
+
+Eine Kennzeichnung des Spatproduktes dreier Vektoren aus $\mathbb{R}^3$ ist im nachstehenden Video erklärt. Die Bezugnahme zum Volumen des von den Vektoren aufgespannten Spates ist ebenso genannt.
+
+!?[Spatprodukt](https://www.youtube.com/watch?v=plM5HpVjycE)
+
+
+Sicher gewusst?
+===============
+
+Sie können Ihr Wissen gern bei der Beantwortung der nachstehenden Fragen testen.
+
+**Frage 1.**[^3] Entscheiden Sie: Ein Skalarprodukt auf einem reellen Vektorraum $V$ ist eine Abbildung
+
+[(X)] $$ \cdot:V\times V\to\mathbb{R} $$
+[( )] $$ \cdot:V\times V\to V $$
+[( )] $$ \cdot:V\times\mathbb{R}\to V $$
+[[?]] Unterscheiden Sie das Skalarprodukt gegenüber anderen Produktbildungen durch Kennzeichnung der beteiligten Faktoren und des Produktes.
+****************************************
+
+Bei einem Skalarprodukt auf $V$ handelt es sich um eine Abbildung, die je zwei Vektoren aus $V$ eine reelle Zahl zuordnet, also die Abbildung in Antwortoption 1.
+
+Die zweite Abbildung (Antwortoption 2) stellt ein Vektorprodukt dar: je zwei Vektoren aus $V$ wird ein Vektor aus $V$ zugeordnet.
+
+Die dritte Abbildung (Antwortoption 3) beschreibt das Skalarfache eines Vektors.
+
+****************************************
+
+
+[^1]: Zu beachten ist, dass die Produktzeichen in Definition 1 verschiedene Produkte bezeichnen: Zu unterscheiden ist das Skalarprodukt zweier Vektoren vom Skalarvielfachen eines Vektors.
+
+[^2]: Der Nachweis der Cauchy-Schwarzschen Ungleichung in euklidischen Vektorräumen kann beispielsweise im Buch 'Lineare Algebra' von Klaus Jänich, Seite 180, nachgelesen werden.
+
+[^3]: Quelle: Klaus Jänich, Lineare Algebra, Seite 192 f.
+
+
+### Eigenwerte und -Vektoren
+
+Definition
+=====
+
+In diesem Abschnitt werden sogenannte [Eigenwertprobleme](https://de.wikipedia.org/wiki/Eigenwertproblem) betrachtet. An einem Beispiel sollen zunächst das grundlegende Konzept anschaulich eingeführt und anschließend zentrale Begriffe definiert werden. Danach werden exemplarisch Anwendungen von Eigenwertproblemen innerhalb und außerhalb der Mathematik betrachtet.
+
+**Beispiel 1.** Es soll die Abbildung der Ebene beschrieben werden, welche die Punkte der Ebene an der $x$-Achse eines kartesischen Koordinatensystems spiegelt.
+
+Werden die Koordinaten des Urbildpunktes beziehungsweise Bildpunktes unter dieser Achsenspiegelung mit $x=(x_1,x_2)^\top$ beziehungsweise $x'=(x_1',x_2')^\top$ bezeichnet, so kann die Abbildung $$
+  \sigma:\mathbb{R}^2\to\mathbb{R}^2\quad\text{mit}\quad
+  \begin{pmatrix} x_1 \\ x_2 \end{pmatrix}\mapsto
+  \begin{pmatrix} x_1' \\ x_2' \end{pmatrix}=
+  \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}\cdot
+  \begin{pmatrix} x_1 \\ x_2 \end{pmatrix}=
+  \begin{pmatrix} x_1 \\ -x_2 \end{pmatrix}
+$$ in Abhängigkeit der Koordinaten des Urbildes angegeben werden. Siehe nachstehende Abbildung.
+
+![Spiegelung](img/mat-bild-20.png "_Fig._ Spiegelung $\sigma$ an der $1$-ten Achse des kartesischen Koordinatensystems, zu spiegelnder Punkt $X$ und sein Bild $X'$ unter $\sigma$: Die Strecke $[X,X']$ verläuft orthogonal zur Spiegelachse und wird durch diese im Punkt $L$ halbiert.")
+
+Ohne zunächst das geometrische Motiv in den Vordergrund zu stellen, wird nach denjenigen Ortsvektoren $x$ zu Punkten $X$ gefragt, die unter der Abbildung $\sigma$ auf linear abhängigen Vektor $x'=\lambda\cdot x$ abgebildet werden. Lösungen aus dieser Fragestellung werden zur geometrischen Kennzeichnung der Geradenspiegelung genutzt.
+
+1. Der Nullvektor wird unter $\sigma$ auf sich abgebildet, da gilt $$
+  o=\begin{pmatrix} 0 \\ 0 \end{pmatrix}=
+  \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}\cdot
+  \begin{pmatrix} 0 \\ 0 \end{pmatrix}
+$$ Diese Lösung wird als *triviale Lösung* bezeichnet.
+2. Allgemein werden Ortsvektoren $x$ gesucht, für die gilt $$
+  \lambda\cdot\begin{pmatrix} x_1 \\ x_2 \end{pmatrix}=
+  \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}\cdot
+  \begin{pmatrix} x_1 \\ x_1 \end{pmatrix}
+$$ d. h. die auf ein $\lambda$-Faches abbgebildet werden. Wird die Abbildungsmatrix mit $A$ bezeichnet, so stellt sich der Ansatz dar $$
+  x'=\lambda\cdot x=A\cdot x\quad\leftrightarrow\quad
+  (A-\lambda\cdot E)\cdot x=o
+$$ worin $E=\mathrm{diag}{(1,1)}$ die zweireihige Einheitsmatrix bezeichnet. Die rechte Seite der vorstehenden Äquivalenz ist ein System zweier linearer homogener Gleichungen in den Unbekannten $(x_1,x_2)$ $$
+  (A-\lambda\cdot E)\cdot x=\begin{pmatrix} 1-\lambda & 0 \\ 0 & -1-\lambda \end{pmatrix}\cdot\begin{pmatrix} x_1 \\ x_2 \end{pmatrix}=\begin{pmatrix} 0 \\ 0 \end{pmatrix}=o
+$$ dessen Koeffizientenmatrix $(A-\lambda\cdot E)$ vom Parameter $\lambda$ abhängt. Das Gleichungssystem besitzt neben der trivialen genau dann weitere Lösungen, falls der Rang der Koeffizientenmatrix kleiner $2$ ist $$
+  \mathrm{rang}{(A-\lambda\cdot E)}<2\quad\leftrightarrow\quad
+  \det{(A-\lambda\cdot E)}=\lambda^2-1=0
+$$ Letzteres ist eine quadratische Gleichung im Parameter $\lambda$ mit den beiden Lösungen $\lambda_1=1$ und $\lambda_2=-1$. Im Fall der Lösung $\lambda_1$ nimmt das Gleichungssystem die Form $$
+  \begin{pmatrix} 0 & 0 \\ 0 & -2 \end{pmatrix}\cdot\begin{pmatrix} x_1 \\ x_2 \end{pmatrix}=\begin{pmatrix} 0 \\ 0 \end{pmatrix}\quad\leadsto\quad
+  \begin{pmatrix} x_1 \\ x_2 \end{pmatrix}=\mu\cdot\begin{pmatrix} 1 \\ 0 \end{pmatrix}
+$$ Die Lösungen sind Ortsvektoren der Punkte der Spiegelachse, besitzen demnach eine geometrische Interpretation.[^1] Im Fall der Lösung $\lambda_2$ nimmt das Gleichungssystem die Form $$
+  \begin{pmatrix} 2 & 0 \\ 0 & 0 \end{pmatrix}\cdot\begin{pmatrix} x_1 \\ x_2 \end{pmatrix}=\begin{pmatrix} 0 \\ 0 \end{pmatrix}\quad\leadsto\quad
+  \begin{pmatrix} x_1 \\ x_2 \end{pmatrix}=\nu\cdot\begin{pmatrix} 0 \\ 1 \end{pmatrix}
+$$ Die Lösungen sind Ortsvektoren der Punkte, die auf das $(-1)$-Fache abgebildet werden. Das sind die Punkte der zweiten Koordinatenachse, die die Spiegelrichtung kennzeichnet. Auch diese Vektoren besitzen demnach eine geometrische Interpretation.
+
+>**Definition 1.** Sei ${A}\in\mathbb{R}^{n,n}$ eine $n$-reihige Matrix mit $n\in\mathbb{N}$ und $n\geq2$. Dann heißt die Matrixgleichung $$
+  {A\cdot x}=\lambda\cdot{x}\quad\Longleftrightarrow \quad\left({A-\lambda\cdot E}\right){x}={o}
+$$ mit $n$-reihiger Einheitsmatrix ${E}$ und Nullvektor ${o}$ die *Eigenwertaufgabe* zur Matrix ${A}$. In der Gleichung bezeichnen:
+>
+> 1. ${A-\lambda\cdot E}$ die charakteristische Matrix
+> 2. $\det{\left({A-\lambda\cdot E}\right)}$ das charakteristische Polynom und $\det{\left({A-\lambda\cdot E}\right)}=0$ die charakteristische Gleichung
+> 3. jede Lösung $\lambda\in\mathbb{C}$ obiger Gleichung einen Eigenwert
+> 4. jeder Vektor ${x}\in\mathbb{C}^{n\times1}\setminus\{o\}$  einen zum Eigenwert $\lambda$ gehörenden Eigenvektor
+>
+> zur Matrix ${A}$.
+
+Die Begriffe 'Eigenwert', 'Eigenvektor', 'charakteristisches Polynom' einer quadratischen Matrix wird im nachstehendem Video kurz zusammengefasst.
+
+!?[Eigenwert](https://www.youtube.com/watch?v=xPMoJ8Mu67w&list=PLLTAHuUj-zHgMbsnuYFI4faJVawyKOM97&index=3)
+
+
+Bestimmung der Eigenwerte und -Vektoren
+======
+
+
+1. Berechne die Eigenwerte $\lambda_i$ als Lösungen der charakteristischen Gleichung $$
+   \det{\left({A-\lambda\cdot E}\right)}=0
+$$ Dies ist eine reelle algebraische Gleichung $n$-ten Grades mit Lösungen $$
+  \lambda_1\in\mathbb{C}\,,\quad\lambda_2\in\mathbb{C}\,,\quad\ldots\,,\quad\lambda_n\in\mathbb{C}
+$$
+2. Setze die Eigenwerte $\lambda_i$ nacheinander in die Eigenwertaufgabe ein. Es ergibt sich ein System linearer, homogener Gleichungen in den Komponenten der zu $\lambda_i$ gehörenden Eigenvektoren ${x}$. Für $\lambda_i\in\mathbb{R}$ ist die Lösungsmenge ein $k_i$-dimensionaler Untervektorraum in $\mathbb{R}^n$, worin $$
+  k_i=n-\mathrm{Rang}\left(A-\lambda_i\cdot E\right)
+$$ Die Menge aller Eigenvektoren $x$ zu einem Eigenwert $\lambda_i$ wird Eigenraum zu $\lambda_i$ genannt. Siehe Satz 1.
+
+**Beispiel 2.** Betrachtet wird die Transformation $\kappa:\mathbb{R}^2\to\mathbb{R}^2$ mit $$
+  \kappa: x\mapsto x'=A\cdot x
+$$ mit der Transformationsmatrix $$
+  A(\varphi)=\begin{pmatrix} \cos{\varphi} & -\sin{\varphi} \\ \sin{\varphi} & \cos{\varphi} \end{pmatrix}
+$$ worin $\varphi\in[0,2\pi)$. Speziell ergeben sich für die Parameterwerte $\varphi=0$ bzw. $\varphi=\pi$ die Matrizen $$
+  A(0)=\begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}\quad\text{bzw.}\quad
+  A(\pi)=\begin{pmatrix} -1 & 0 \\ 0 & -1 \end{pmatrix}
+$$ die Transformation beschreibt die identische Abbildung bzw. die Spiegelung am Koordinatenursprung $O(0,0)$.
+
+Generell beschreibt $\kappa$ eine Drehung der Ebene um $O$ mit dem Drehwinkel $\varphi$. Bezeichnen nämlich $x=(x_1,x_2)^\top$ bzw. $x'=(u_1,u_2)^\top$ die Ortsvektoren eines frei wählbaren Punktes beziehungsweise dessen gedrehtes Bild unter der Drehung, so gilt für die Bildpunktkoordinaten $$
+  \begin{pmatrix} u_1 \\ u_2 \end{pmatrix}=
+  r\cdot\begin{pmatrix} \cos{(\alpha+\varphi)} \\ \sin{(\alpha+\varphi)} \end{pmatrix}=
+  r\cdot\begin{pmatrix} \cos{\varphi}\cdot\cos{\alpha}-\sin{\varphi}\cdot\sin{\alpha} \\ \sin{\varphi}\cdot\cos{\alpha}+\cos{\varphi}\cdot\sin{\alpha} \end{pmatrix}=
+  A(\varphi)\cdot\begin{pmatrix} x_1 \\ x_2 \end{pmatrix}
+$$ worin $(\alpha,r)$ die Polarkoordinaten von des Punktes $X$ zum Ortsvektor $x$ bezeichnen.
+
+![Drehung](img/mat-bild-21.png "_Fig._ Drehung eines - frei wählbaren - Punktes $X$ um den Ursprung $O$ des kartesischen Koordinatensystems um den Winkel $\varphi$. Der Bildpunkt unter der Drehung ist $X'$.")
+
+1. Die charakteristische Gleichung zur Matrix $A(\varphi)$ berechnet sich zu $$
+  \det{\left({A-\lambda\cdot E}\right)}=
+  \det{\left(\begin{array}{ll} \cos{\varphi}-\lambda & -\sin{\varphi} \\ \sin{\varphi} & \cos{\varphi}-\lambda\end{array}\right)}=
+  \left(\cos{\varphi}-\lambda\right)^2+\left(\sin{\varphi}\right)^2=0
+$$ Unter Anwendung der binomischen Formel und des trigonometrischen Pythagoras ergibt sich daraus äquivalent die Gleichung $$
+  0=\lambda^2-2\cdot \lambda\cdot\cos{\varphi}+1
+$$ Dies ist eine algebraische Gleichung vom Grad $2$ in der Unbekannten $\lambda$. Da für deren Diskriminante gilt $$
+  D=4\cdot\left(\cos{\varphi}\right)^2-4<0\quad\leftrightarrow\quad \varphi\not\in\{0,\pi\}
+$$ sind in diesen Fällen die Lösungen komplex nicht reell und ergeben sich mithilfe des Ansatzes $$
+  \lambda^2-2\cdot \lambda\cdot\cos{\varphi}+1=(\lambda-\lambda_1)\cdot(\lambda-\bar{\lambda}_1)
+$$ unter Benutzung des [Satzes von Vieta](https://de.wikipedia.org/wiki/Satz_von_Vieta) $$
+  \lambda_{1}=\cos{\varphi}+i\cdot\sin{\varphi}\,,\quad \lambda_2=\bar{\lambda}_1
+$$ worin $i$ mit $i^2=-1$ die imaginäre Einheit und $\lambda_2$ die zu $\lambda_1$ komplex konjugierte Zahl bezeichnen. Für $\varphi=0$ ergeben sich die doppelten, reellen Lösungen $\lambda_1=\lambda_2=1$, für $\varphi=\pi$ dagegen $\lambda_1=\lambda_2=-1$ (doppelte Eigenwerte).
+2. Nun lassen sich die zu den Eigenwerten gehörenden Eigenvektoren berechnen. Zunächst soll für $\varphi=\pi$ der Eigenraum zum einzigen Eigenwert $\lambda_1=\lambda_2=-1$ berechnet werden. Das Gleichungssystem ergibt nach Einsetzen von $\varphi$ und $\lambda$ in die Eigenwertaufgabe $$
+  \begin{pmatrix} -1-(-1) & 0 \\ 0 & -1-(-1) \end{pmatrix}\cdot\begin{pmatrix} x_1 \\ x_2 \end{pmatrix}=
+  \begin{pmatrix} 0 \\ 0 \end{pmatrix}\quad\leadsto\quad
+  \begin{pmatrix} x_1 \\ x_2 \end{pmatrix}=\begin{pmatrix} \mu \\ \nu \end{pmatrix}
+$$ mit $(\mu,\nu)\in\mathbb{R}^2$. Jeder Vektor $x\in\mathbb{R}^2$ erfüllt die Eigenwertaufgabe und ist somit Eigenvektor zu $\lambda_1$, der Vektorraum $\mathbb{R}^2$ ist Eigenraum zu $\lambda_1$. Für den Fall $\varphi=0$ folgt ein analoges Resultat. Für $\varphi\not\in\{0,\pi\}$ ergeben sich Systeme nichtreeller Gleichungen, deren Lösungen sich nicht in $\mathbb{R}^2$ interpretieren lassen. Es berechnen sich die Eigenräume für $\lambda_1$ $$
+  \begin{pmatrix} \cos{\varphi}-(\cos{\varphi}+i\cdot\sin{\varphi}) & -\sin{\varphi} \\ \sin{\varphi} & \cos{\varphi}-(\cos{\varphi}+i\cdot\sin{\varphi}) \end{pmatrix}\cdot
+  \begin{pmatrix} x_1 \\ x_2 \end{pmatrix}=\sin{\varphi}\cdot
+  \begin{pmatrix} i & -1 \\ 1 & i \end{pmatrix}\cdot\begin{pmatrix} x_1 \\ x_2 \end{pmatrix}=
+  \begin{pmatrix} 0 \\ 0 \end{pmatrix}\quad\leftrightarrow\quad i\cdot x_1=x_2
+$$ und somit der komplexe Untervektorraum aller Vektoren $$
+  \begin{pmatrix} x_1 \\ x_2 \end{pmatrix}=\mu\cdot\begin{pmatrix} 1 \\ i \end{pmatrix}
+$$ Analog ergibt sich für $\lambda_2$ der Eigenraum als komplexer Untervektorraum aller Vektoren $$
+  \begin{pmatrix} x_1 \\ x_2 \end{pmatrix}=\nu\cdot\begin{pmatrix} 1 \\ -i \end{pmatrix}
+$$
+
+Die Berechnung des charakteristischen Polynoms sowie der Eigenwerte und -Vektoren einer reellen Matrix wird in den nachstehenden Videos an Beispielen zwei bzw. dreireihiger Matrizen erläutert.
+
+!?[Eigenwert-Beispiel-1](https://www.youtube.com/watch?v=e_EE0EIuyJk&list=PLLTAHuUj-zHgMbsnuYFI4faJVawyKOM97&index=5)
+
+!?[Eigenwert-Beispiel-2](https://www.youtube.com/watch?v=ATA9zVMVmDY&list=PLLTAHuUj-zHgMbsnuYFI4faJVawyKOM97&index=4)
+
+Die Berechnung der Eigenwerte und Eigenvektoren lässt sich im nachfolgenden Berechnungsfenster unter Verwendung der Javascript-Bibliothek [Algebrite](http://algebrite.org) für symmetrische Matrizen $m$ mit numerischen Komponenten vornehmen.
+
+1. Der Befehl `eigen(m)` berechnet Eigenwerte und Eigenvektoren und speichert diese (ohne Ausgabe) als Hauptdiagonalelemente in der Diagonalmatrix $D$ bzw. als Zeilenvektoren in der Matrix $Q$.
+2. Die Befehle `eigenval(m)` beziehungsweise `eigenvec(m)` berechnen die Eigenwerte beziehungsweise Eigenvektoren der Matrix $m$.
+
+```javascript
+m=[[1,3],[3,2]]
+eigenval(m)
+eigenvec(m)
+eigen(m)
+lambda=D[1][1]
+x=Q[1]
+dot(m,x)-lambda*x
+```
+@Algebrite.eval
+
+
+Eigenschaften
+=====
+
+
+Aus der Definition von Eigenwerten und Eigenvektoren einer Matrix lassen sich die folgenden Eigenschaften ableiten.
+
+>**Satz 1.** Für eine reelle, $n$-reihige Matrix $A$ gelten die folgenden Eigenschaften:
+>
+>1. Die Determinante der Matrix $A$ ist das Produkt aller Eigenwerte[^2] $$
+  \det{A}=\lambda_1\cdot\lambda_2\cdot\ldots\cdot\lambda_n
+$$
+>2. Die Zahl 'Null' ist genau dann ein Eigenwert der Matrix $A$, wenn $A$ singulär ist, d. h. für $\det{A}=0$.
+>3. Die Menge aller Eigenvektoren zu einem Eigenwert $\lambda$ bildet einen Untervektorraum $U_\lambda$, den zu $\lambda$ gehörenden *Eigenraum*.
+>4. Die Eigenräume zu verschiedenen Eigenwerten sind bis auf den Nullvektor $o$ verschieden., d. h. $$
+  \lambda_i\not=\lambda_j\quad\to\quad U_{\lambda_i}\cap U_{\lambda_j}=\{o\}
+$$
+
+**Beweis.**
+
+1. Das charakteristische Polynom von $A$ ist ein reelles Polynom $p_n(\lambda)$ und lässt unter Benutzung des Hauptsatzes der Algebra als Produkt von Linearfaktoren $(\lambda_j-\lambda)$ darstellen, worin $\lambda_j$ einen Eigenwert von $A$ bezeichnet. $$
+  \det{(A-\lambda\cdot E)}=\prod_{j=1}^n{\left(\lambda_j-\lambda\right)}=
+  (-1)^n\cdot\lambda^n+a_{n-1}\cdot\lambda^{n-1}+a_{n-2}\cdot\lambda^{n-2}+...+a_1\cdot\lambda+a_0=:p_n(\lambda)
+$$ Das Absolutglied $a_0$ berechnet sich dabei aus der Produktdarstellung zu $$
+  a_0=\prod_{j=1}^n{\lambda_j}=\lambda_1\cdot\lambda_2\cdot\ldots\cdot\lambda_n
+$$ Anderseits gilt $$
+  \det{A}=\det{(A-0\cdot E)}=p_n(0)=(-1)^n\cdot 0^n+a_{n-1}\cdot 0^{n-1}+a_{n-2}\cdot 0^{n-2}+...+a_1\cdot 0+a_0=a_0
+$$
+2. Die Zahl 'Null' ist ein Eigenwert der Matrix $A$ genau dann, wenn $$
+  \det{(A-0\cdot E)}=\det{A}=0
+$$ d. h. wenn die Matrix $A$ singulär ist.
+3. Diese Eigenschaft folgt sofort aus der Berechnung der Eigenvektoren als Lösungen eines Systems linearer, homogener Gleichungen.
+4. Ist $x$ ein Eigenvektor zu den Eigenwerten $\lambda_i$ und $\lambda_j$, d. h. gilt $x\in U_{\lambda_i}\cap U_{\lambda_j}$, so folgen $$
+  A\cdot x=\lambda_i\cdot x\quad\text{und}\quad A\cdot x=\lambda_j\cdot x
+$$ woraus unter der Annahme $\lambda_i\not=\lambda_j$ $$
+  o=\lambda_i\cdot x-\lambda_j\cdot x=(\lambda_i-\lambda_j)\cdot x\quad\leadsto\quad x=o
+$$ folgt.
+
+$\square$
+
+**Bemerkung 1.** Gilt für die Vielfachheit eines Eigenwertes $\lambda$ der Matrix $k>1$, d. h. tritt dieser Eigenwert mehrfach als Lösung der charakteristischen Gleichung auf, so ist die Dimension des zugehörigen Eigenraums höchstens $k$.
+
+**Beispiel 3.** Zur reellen Matrix $$
+  A=\begin{pmatrix} -1 & 2 & 2 \\ 2 & 2 & 2 \\ -3 & -6 & -6 \end{pmatrix}
+$$ sind zu berechnen:
+
+1. das charakteristische Polynom
+2. die Eigenwerte $\lambda_j$
+3. jeweils der zu $\lambda_j$ gehörende Eigenraum $U_{\lambda_j}$
+
+---
+
+1. Das charakteristische Polynom von $A$ berechnet sich beispielsweise mit der Regel von Sarrus zu $$
+  \det{(A-\lambda\cdot E)}=(-1-\lambda)\cdot(2-\lambda)\cdot(-6-\lambda)-12-24+6\cdot(2-\lambda)+12\cdot(-1-\lambda)-4\cdot(-6-\lambda)=-\lambda^3-5\cdot\lambda^2-6\cdot\lambda
+$$
+2. Das charakteristische Polynom von $A$ besitzt das Absolutglied 'Null', woraus mit Satz 1 $\det{A}=0$ geschlossen werden kann. Hieraus folgt weiter, dass 'Null' ein Eigenwert der Matrix $A$ ist. Die Berechnung der Lösungen der charakteristischen Gleichung ergibt nach Ausklammern von $(-\lambda)$ $$
+  -\lambda^3-5\cdot\lambda^2-6\cdot\lambda=-\lambda\cdot(\lambda^2+5\cdot\lambda+6)=0\quad\leftrightarrow\quad
+  \lambda_1=0\;\vee\;\lambda_2=-2\;\vee\;\lambda_3=-3
+$$
+3. Für den Eigenwert $\lambda_1=0$ berechnen sich die Eigenvektoren aus dem homogenen, linearen Gleichungssystem $$
+  (A-\lambda_1\cdot E)\cdot x=
+  \begin{pmatrix} -1-0 & 2 & 2 \\ 2 & 2-0 & 2 \\ -3 & -6 & -6-0 \end{pmatrix}\cdot
+  \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}=\begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}
+  \quad\leadsto\quad
+  \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}=\alpha\cdot\begin{pmatrix} 0 \\ 1 \\ -1 \end{pmatrix}
+$$ worin für den auftretenden Parameter $\alpha\in\mathbb{R}$ gilt. Der Eigenraum $U_0$ ist der eindimensionale Untervektorraum[^3] $$
+  U_0=\left\{\left.\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}=\alpha\cdot\begin{pmatrix} 0 \\ 1 \\ -1 \end{pmatrix}\right|\;\alpha\in\mathbb{R}\right\}
+$$ Für jeden Vektor $x\in U_0$ gilt $A\cdot x=\lambda_1\cdot x=o$. (Bitte nachrechnen!) Für den Eigenwert $\lambda_2=-2$ berechnen sich die Eigenvektoren aus dem homogenen, linearen Gleichungssystem $$
+  (A-\lambda_2\cdot E)\cdot x=
+  \begin{pmatrix} -1-(-2) & 2 & 2 \\ 2 & 2-(-2) & 2 \\ -3 & -6 & -6-(-2) \end{pmatrix}\cdot
+  \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}=\begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}
+  \quad\leadsto\quad
+  \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}=\beta\cdot\begin{pmatrix} -2 \\ 1 \\ 0 \end{pmatrix}
+$$ worin für den auftretenden Parameter $\beta\in\mathbb{R}$ gilt. Der Eigenraum $U_{-2}$ ist der eindimensionale Untervektorraum[^3] $$
+  U_{-2}=\left\{\left.\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}=\beta\cdot\begin{pmatrix} -2 \\ 1 \\ 0 \end{pmatrix}\right|\;\beta\in\mathbb{R}\right\}
+$$ Für jeden Vektor $x\in U_{-2}$ gilt $A\cdot x=\lambda_2\cdot x=o$. (Bitte nachrechnen!) Für den Eigenwert $\lambda_3=-3$ berechnen sich die Eigenvektoren aus dem homogenen, linearen Gleichungssystem $$
+  (A-\lambda_3\cdot E)\cdot x=
+  \begin{pmatrix} -1-(-3) & 2 & 2 \\ 2 & 2-(-3) & 2 \\ -3 & -6 & -6-(-3) \end{pmatrix}\cdot
+  \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}=\begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}
+  \quad\leadsto\quad
+  \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}=\gamma\cdot\begin{pmatrix} -1 \\ 0 \\ 1 \end{pmatrix}
+$$ worin für den auftretenden Parameter $\gamma\in\mathbb{R}$ gilt. Der Eigenraum $U_{-3}$ ist der eindimensionale Untervektorraum[^3] $$
+  U_{-3}=\left\{\left.\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}=\gamma\cdot\begin{pmatrix} -1 \\ 0 \\ 1 \end{pmatrix}\right|\;\gamma\in\mathbb{R}\right\}
+$$ Für jeden Vektor $x\in U_{-3}$ gilt $A\cdot x=\lambda_3\cdot x=o$. (Bitte nachrechnen!)
+
+
+Sicher gewußt?
+=====
+
+
+Hier können Sie Ihr Wissen über Eigenwerte und -Vektoren testen.
+
+**Frage 1.** Gegeben ist die reelle Matrix $$
+  A=\begin{pmatrix} 3 & 2 & 4 \\ 2 & 0 & 2 \\ 4 & 2 & 3 \end{pmatrix}
+$$ Entscheiden Sie, welcher der nachstehenden Vektoren ein Eigenvektor der Matrix $A$ ist.
+
+[[ ]] $$x_1=\begin{pmatrix} 1 \\ -1 \\ 1 \end{pmatrix}$$
+[[X]] $$x_2=\begin{pmatrix} 1 \\ -4 \\ 1 \end{pmatrix}$$
+[[X]] $$x_3=\begin{pmatrix} 1 \\ 0 \\ -1 \end{pmatrix}$$
+[[ ]] $$x_4=\begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}$$
+[[?]] Ein Vektor $x\not=o$ heißt Eigenvektor zur Matrix $A$, wenn er für ein bestimmtes $\lambda$ die Eigenwertaufgabe $A\cdot x=\lambda\cdot x$ erfüllt. Siehe Definition 1.
+****************************************
+
+Wird der Vektor $x_1$ in die Eigenwertaufgabe eingesetzt, so ergibt sich $$
+  A\cdot x_1=\begin{pmatrix} 5 \\ 4 \\ 5 \end{pmatrix}\not=\lambda\cdot\begin{pmatrix} 1 \\ -1 \\ 1 \end{pmatrix}
+$$ für jede Wahl $\lambda\in\mathbb{R}$. Der Vektor $x_4=o$ ist per Definition kein Eigenvektor der Matrix $A$, obwohl $$
+  A\cdot x_4=\begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}=\lambda\cdot\begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}\quad\forall\;\lambda\in\mathbb{R}
+$$ Für die übrigen beiden Vektoren gilt jeweils $$
+  A\cdot x_2=\begin{pmatrix} -1 \\ 4 \\ -1 \end{pmatrix}=\lambda\cdot\begin{pmatrix} 1 \\ -4 \\ 1 \end{pmatrix}\quad\text{sowie}\quad
+  A\cdot x_3=\begin{pmatrix} -1 \\ 0 \\ 1 \end{pmatrix}=\lambda\cdot\begin{pmatrix} 1 \\ 0 \\ -1 \end{pmatrix}
+$$ Diese Gleichungen sind jeweils für $\lambda=-1$ erfüllt, so dass $x_2$ und $x_3$ Eigenvektoren zum Eigenwert $\lambda=-1$ sind. Jede Linearkombination aus beiden Vektoren ist außerdem Eigenvektor zum gleichen Eigenwert, da $$
+  A\cdot(\alpha\cdot x_2+\beta\cdot x_3)=\alpha\cdot (A\cdot x_2)+\beta\cdot(A\cdot x_3)=\alpha\cdot(-x_2)+\beta\cdot(-x_3)=(-1)\cdot(\alpha\cdot x_2+\beta\cdot x_3)
+$$ gilt.
+
+****************************************
+
+Für die nachfolgenden beiden Fragen ist die reelle Matrix $$
+  B=\begin{pmatrix} 3 & 1 & -1 \\ 2 & 2 & -1 \\ 2 & 2 & 0\end{pmatrix}
+$$ gegeben.
+
+**Frage 2.** Berechnen Sie alle Eigenwerte der Matrix $B$.
+
+[(X)] $$(\lambda_1,\lambda_2,\lambda_3)=(1,2,2)$$
+[( )] $$(\lambda_1,\lambda_2)=(1,2)$$
+[( )] $$(\lambda_1,\lambda_2,\lambda_3)=(1,1,2)$$
+[[?]] Berechnen Sie die charakteristische Gleichung $\det{(A-\lambda\cdot E)}=0$ und bestimmen darin die Lösungen $\lambda$.
+****************************************
+
+Die Matrix $B$ ist eine dreireihige Matrix mit dem charakteristischen Polynom $$
+  \det{(A-\lambda\cdot E)}=
+  \det{\begin{pmatrix} 3-\lambda & 1 & -1 \\ 2 & 2-\lambda & -1 \\ 2 & 2 & -\lambda\end{pmatrix}}=
+  -\lambda^3+5\cdot\lambda^2-8\cdot\lambda+4=(1-\lambda)\cdot(2-\lambda)^2
+$$ Hieraus lassen sich die Lösungen der zugehörigen charakteristischen Gleichung $\lambda_1=1$ (einfach) und $\lambda_2=\lambda_3=2$ (doppelt) ablesen.
+
+****************************************
+
+**Frage 3.** Berechnen Sie zur Matrix $B$ den Eigenraum $U_2$ zum Eigenwert $\lambda=2$.
+
+[( )] $$ U_{2}=\left\{\left.\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}=\alpha\cdot\begin{pmatrix} 1 \\ 0 \\ 2 \end{pmatrix}+\beta\cdot\begin{pmatrix} 1 \\ 1 \\ 2 \end{pmatrix}\right|\;\alpha\in\mathbb{R}\,,\; \beta\in\mathbb{R}\right\} $$
+[( )] $$ U_{2}=\left\{\left.\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}=\gamma\cdot\begin{pmatrix} 1 \\ 0 \\ 2 \end{pmatrix}\right|\;\gamma\in\mathbb{R}\right\} $$
+[(X)] $$ U_{2}=\left\{\left.\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}=\delta\cdot\begin{pmatrix} 1 \\ 1 \\ 2 \end{pmatrix}\right|\;\delta\in\mathbb{R}\right\} $$
+[[?]] Setzen Sie zur Berechnung den Eigenwert $\lambda=2$ in die Eigenwertaufgabe $(B-\lambda\cdot E)\cdot x=o$ ein und berechnen Sie die Lösung des Gleichungssystems.
+****************************************
+
+Nach Einsetzen des Eigenwertes $\lambda=2$ in die Eigenwertaufgabe wird das homogene, lineare Gleichungssystem erhalten $$
+  \begin{pmatrix} 3-2 & 1 & -1 \\ 2 & 2-2 & -1 \\ 2 & 2 & -2\end{pmatrix}\cdot
+  \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}=
+  \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}
+$$ Dessen Lösung berechnet sich zu $$
+  \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}=\delta\cdot\begin{pmatrix} 1 \\ 1 \\ 2 \end{pmatrix}\,,\quad \delta\in\mathbb{R}
+$$ Dies lässt sich durch Einsetzen in die Eigenwertaufgabe prüfen $$
+  \begin{pmatrix} 3 & 1 & -1 \\ 2 & 2 & -1 \\ 2 & 2 & 0\end{pmatrix}\cdot
+  \begin{pmatrix} 1 \\ 1 \\ 2 \end{pmatrix}=
+  \begin{pmatrix} 2 \\ 2 \\ 4 \end{pmatrix}=
+  2\cdot\begin{pmatrix} 1 \\ 1 \\ 2 \end{pmatrix}
+$$ Der Eigenraum besitzt hier die Dimension $3-2=1$, da der Rang der Koeffizientenmatrix zwei ist. (Die Zeilen eins und drei der Koeffizientenmatrix des Gleichungssystems sind identisch.
+
+****************************************
+
+
+[^1]: Die Punkte der Spiegelachse sind Fixpunkte unter Geradenspiegelung. Für deren Ortsvektoren gelten also $x'=1\cdot x$.
+
+[^2]: Tritt ein Eigenwert $\lambda_j$ mehrfach auf, so ist dieser entsprechend seiner Vielfachheit zu berücksichtigen.
+
+[^3]: Nach Definition ist der Nullvektor $o$ kein Eigenvektor einer Matrix $A$, so dass dieser streng genommen aus $U_0$ zu entfernen ist.
 
 
 ## Analytische Geometrie
