@@ -978,6 +978,9 @@ Lernziele
 * Sie nutzen Summen- und Produktzeichen zur Darstellung endlicher Summen und Produkte und können Rechengesetze zur Umformung anwenden.
 * Sie konstruieren komplexe Zahlen aus Paaren reeller Zahlen und können diese in kartesischer - und Polarform angeben. Sie identifizieren eine komplexe Zahl mit einem Punkt in der Gaußsche_Zahlenebene.
 * Sie beherrschen das Rechnen mit komplexen Zahlen wie Addieren, Subtrahieren, Multiplizieren und Dividieren. Sie können den Betrag einer komplexen Zahl berechnen, ebenso deren $n$-te Potenz beziehungsweise deren $n$-te komplexe Wurzeln.
+* Sie kennen den Begriff einer algebraischen Gleichung vom Grad $n$ in einer Variablen.
+* Auf der Grundlage des Fundamentalsatzes der Algebra können Sie eine Aussage zur Anzahl der Lösungen in Abhängigkeit des Grades der Gleichung treffen. Die Vielfachheit einer Lösung sowie das paarweise Auftreten nichtreeller Lösungen kennzeichnet dabei die Lösungsmenge.
+* Sie wenden Methoden wie Koeffizientenvergleich, Polynomdivision und das Horner-Schema an, um die Lösungsmenge einer algebraischen Gleichung zu ermitteln.
 
 
 ### Reelle Zahlen
@@ -2065,9 +2068,9 @@ $$
 
 Im nachstehenden Video wird die Berechnung der Zerlegung eines Polynoms in Linearfaktoren im Zusammenhang der Nullstellenberechnung ganzrationaler Funktionen erläutert. Im darauf folgenden Video wird unter Voraussetzung nur reeller Nullstellen die Produktdarstellung in Linearfaktoren abgeleitet.
 
-!?[Linearfaktoren](https://www.youtube.com/watch?v=rXMLZmKoNck)
+!?[Linearfaktoren-1](https://www.youtube.com/watch?v=wRc6AtV7HmY)
 
-!?[Linearfaktoren](https://www.youtube.com/watch?v=wRc6AtV7HmY)
+!?[Linearfaktoren-2](https://www.youtube.com/watch?v=rXMLZmKoNck)
 
 >**Folgerung 2.** ([Satz von Vieta](https://de.wikipedia.org/wiki/Satz_von_Vieta)) Für eine beliebige algebraische Gleichung $p(x)=0$ vom Grad $n$ mit $$
   p(x)=\sum_{i=0}^n{\left(a_i\cdot x^i\right)}
@@ -2123,9 +2126,24 @@ $$ Für $n=m$ folgt für die Koeffizienten $b_{(m+1)-l}$ der Monome $x^{(m+1)-l}
 $$ mit $x_{k_1}\in\{x_1,\ldots,x_{m+1}\}$, $x_{k_2}\in\{x_1,\ldots,x_{m+1}\}$ bis $x_{k_l}\in\{x_1,\ldots,x_{m+1}\}$, beziehungsweise $$
  b_0=\textcolor{magenta}{-x_{m+1}\,}\cdot a_{0}=(-1)^{m+1}\cdot\prod_{i=1}^{m+1}{x_i}
 $$
+
 $\square$
 
-Aus dem vorstehenden Beispiel lässt sich folgender Satz motivieren.
+**Beispiel 4.**
+
+1. Gegeben ist die quadratische Gleichung $x^2+x-6=0$. Mit Hilfe der Lösungsformel für quadratische Gleichungen lassen sich die beiden Lösungen $x_1=2$ und $x_2=-3$ berechnen. Damit ergibt sich nach dem vorstehenden Satz 2 (Satz von Vieta) der Zusammenhang zu den Koeffizienten $$
+  -(x_1+x_2)=1=a_1\quad\text{sowie}\quad x_1\cdot x_2=-6=a_0
+$$
+2. Für die kubische Gleichung $x^3-7\cdot x+6=0$ lässt sich die Lösung $x_1=1$ unmittelbar angeben. (Setzen Sie $x_1$ für $x$ in die Gleichung ein.) Nach dem Satz von Vieta gelten für die Koeffizienten die nachstehenden (nichtlinearen) Gleichungen $$
+  \left.\begin{array}{rcl}
+    x_1\cdot x_2\cdot x_3 =-a_0 & \leadsto & x_2\cdot x_3=-6 \\
+    x_1\cdot x_2+x_1\cdot x_3+x_2\cdot x_3=a_1 & \leadsto & x_2+x_3+x_2\cdot x_3=-7 \\
+    x_1+x_2+x_3=-a_2\; & \leadsto & 1+x_2+x_3=0
+  \end{array}\right\}\quad\longleftrightarrow\quad
+  \left\{\begin{array}{rcl} x_2\cdot x_3 & = & -6 \\ x_2+x_3 & = & -1 \end{array}\right.
+$$ woraus sich die Lösungen $x_2=2$ und $x_3=-3$ berechnen lassen.
+
+Aus Beispiel 3 lässt sich folgender Satz motivieren.
 
 >**Satz 3.** Ist die komplexe Zahl $$
   z_0=|z_0|\cdot(\cos{\varphi_0}+i\cdot\sin{\varphi_0})\quad\text{mit}\quad |z_0|\in[0,\infty)\,,\quad \varphi_0\in\mathbb{R}
@@ -2170,7 +2188,7 @@ $$ worin $\mathrm{Re}{\,x_j}\in\mathbb{R}$ den Realteil und $|x_j|^2\in[0,\infty
   p(x)=a_n\cdot\left(x^2-2\cdot\mathrm{Re}{\,x_j}\cdot x+|x_j|^2\right)\cdot q(x)
 $$ worin $a_n$ der Koeffizient von $x^n$ in $p(x)$ und $q(x)$ ein Polynom vom Grad $n-2$ ist.
 
-**Beispiel 4.** Gegeben ist eine algebraische Gleichung $$
+**Beispiel 5.** Gegeben ist eine algebraische Gleichung $$
   p(x)=3\cdot x^3-6\cdot x^2+6\cdot x=0
 $$ Das Polynom $p(x)$ lässt sich durch Ausklammern von $x$ als Produkt eines linearen Terms und eines quadratischen Terms schreiben. Es berechnet sich $$
   p(x)=3\cdot x\cdot\left(x^2-2\cdot x+2\right)
@@ -2182,13 +2200,16 @@ $$ wobei der quadratische Faktor das Produkt der beiden komplexen Linearfactoren
   x^2-2\cdot x+2=(x-(1+i))\cdot(x-(1-i))=(x-1-i)\cdot(x-1+i)
 $$ ist.
 
-Unter Benutzung der Javascript-Bibliothek [Algebrite](http://algebrite.org/) kann ein reelles Polynom $p$, das eine Zerlegung in - nicht notwendig lineare - Faktoren mit (jeweils) ganzzahligen Koeffizienten gestattet, in diese zerlegt werden. Eine natürliche Zahl wird als Produkt ihrer Primfaktoren dargestellt.
+Unter Benutzung der Javascript-Bibliothek [Algebrite](http://algebrite.org/) kann für reelle Polynome $p$, welche sich in (nicht notwendig lineare) Faktoren mit jeweils ganzzahligen Koeffizienten zerlegen lassen, unter Nutzung des Befehls `factor(p)` diese Zerlegung angegeben werden. Aus diesen Faktoren lassen sich unter Benutzung des Satzes von Vieta die Lösungen der zugehörigen algebraischen Gleichung ermitteln.
+
+Angewendet auf eine natürliche Zahl $n$, berechnet der Befehl `factor(n)` das Produkt ihrer Primfaktoren.
 
 ```javascript
-n=1275
-p=x^4-a^4
-factor(n)
+p=3*x^3-6*x^2+6*x
 factor(p,x)
+roots(p)
+n=1275
+factor(n)
 ```
 @Algebrite.eval
 
@@ -2262,7 +2283,7 @@ Der [Koeffizientenvergleich](https://de.wikipedia.org/wiki/Koeffizientenvergleic
   \sum_{i=0}^n{b_i\cdot x^i}
 $$ sind genau dann gleich, wenn deren Koeffizienten übereinstimmen, d. h. wenn $a_i=b_i$ für alle $i\in\{0,...,n\}$ gelten.
 
-1. Nach dem [Fundamentalsatz der Algebra](#Fundamentalsatz-der-Algebra) kann ein reelles Polynom $p(x)$ vom Grad $n$ als Produkt darstellen $$
+1. Nach dem Fundamentalsatz der Algebra (siehe Abschnitt [Algebraische Gleichungen](#Algebraische-Gleichungen)) kann man ein reelles Polynom $p(x)$ vom Grad $n$ als Produkt darstellen $$
   p(x)=\sum_{i=0}^n{a_i\cdot x^i}=a_n\cdot\prod_{j=1}^n{(x-x_j)}
 $$ worin $x_j\in\mathbb{C}$ die Lösungen der algebraischen Gleichung $p(x)=0$ bezeichnen.
 2. Ist eine reelle Lösung $x_j$ bekannt, o. B. d. A. $x_1\in\mathbb{R}$, so kann $p(x)$ als Produkt zweier reeller Polynome dargestellt werden $$
@@ -2280,7 +2301,7 @@ $$ woraus sich durch Vergleich der Koeffizienten das nachstehende System lineare
   & - & b_i\cdot x_1 & \text{für} & i=0
   \end{array}\right.
 $$ in dem sich die gesuchten Größen $b_i$ schrittweise bestimmt lassen. (Der Nachweis zur Existenz und Eindeutigkeit der Lösungen erfolgt später.)
-3. Ist eine nichtreelle Lösung $x_j$ bekannt, o. B. d. A. $x_1\in\mathbb{C}\setminus\mathbb{R}$, so ist nach Satz 3 im Abschnitt [Fundamentalsatz der Algebra](#Fundamentalsatz-der-Algebra) auch die zu $x_1$ komplex konjugerte Zahl $\bar{x}_1$ eine Lösung von $p(x)=0$. Das Polynom $p(x)$ kann entsprechend als Produkt zweier reeller Polynome dargestellt werden $$
+3. Ist eine nichtreelle Lösung $x_j$ bekannt, o. B. d. A. $x_1\in\mathbb{C}\setminus\mathbb{R}$, so ist nach Satz 3 im Abschnitt [Algebraische Gleichungen](#Algebraische-Gleichungen) auch die zu $x_1$ komplex konjugerte Zahl $\bar{x}_1$ eine Lösung von $p(x)=0$. Das Polynom $p(x)$ kann entsprechend als Produkt zweier reeller Polynome dargestellt werden $$
   p(x)=\left((x-x_1)\cdot(x-\bar{x}_1)\right)\cdot q(x)=\left(x^2-2\cdot\mathrm{Re}{\,x_1}\cdot x-|x_1|^2\right)\cdot\left(\sum_{k=0}^{n-2}{b_k\cdot x^k}\right)
 $$ Werden die Substitutionen $c=-2\cdot\mathrm{Re}{x_1}$ und $d=-|x_1|^2$ gewählt, berechnen sich die Koeffizienten aus dem Vergleich mit denen des Produktes $$
   \left(x^2+c\cdot x+d\right)\cdot\left(\sum_{k=0}^{n-2}{b_k\cdot x^k}\right)
@@ -2296,7 +2317,7 @@ $$ (Der Nachweis zur Existenz und Eindeutigkeit der Lösungen erfolgt später.)
 
 **Beispiel 1.** Zur algebraischen Gleichung $p(x)=0$ sei die Lösung $x_1=1$ bekannt. Es gilt $$
   p(1)=1^3-2\cdot 1^2-5\cdot x+6=0
-$$ Von $p(x)$ lässt sich somit der Linearfaktor $(x-x_1)=(x-1)$ abspalten und es ist nach dem [Fundamentalsatz der Algebra](#Fundamentalsatz-der-Algebra) $$
+$$ Von $p(x)$ lässt sich somit der Linearfaktor $(x-x_1)=(x-1)$ abspalten und es ist nach dem Fundamentalsatz der Algebra (sieh Abschnitt [Algebraische Gleichungen](#Algebraische-Gleichungen)) $$
   p(x)=(x-1)\cdot(x^2+p\cdot x+q)
 $$ mit einem noch zu bestimmenden quadratischen Polynom $x^2+p\cdot x+q$ und Koeffizienten $p\in\mathbb{R}$ und $q\in\mathbb{R}$. Da der Koeffizient des Monoms $x^3$ Eins ist, also $a_3=1$, kann das quadratische Polynom normiert angesetzt werden. Durch Multiplikation der Faktoren wird $$
   p(x)=x^3-2\cdot x^2-5\cdot x+6=x^3+x^2\cdot(p-1)+x\cdot(q-p)-q
@@ -2475,7 +2496,7 @@ Definition
 
 Komplexe Zahlen bilden die Grundlage zur Beschreibung ebener Bewegungsvorgänge, die beispielsweise in ebenen [Koppelgetrieben](https://de.wikipedia.org/wiki/Koppelgetriebe) entstehen und Gegenstand der ebenen Kinematik beziehungsweise Robotik sind.
 
-Auf der Suche, Bewegungen des dreidimensionalen Raumes elegant beschreiben zu können, entdeckte [Sir William Rowan Hamilton](https://de.wikipedia.org/wiki/William_Rowan_Hamilton) im Jahre 1843 die nach ihm benannten Quaternionen. Sie entstehen aus den reellen Zahlen durch Hinzufügen dreier neuer Zahlen, in Anlehnung an die imaginäre Einheit bei den komplexen Zahlen $i$, $j$ und $k$. Vergleiche Abschnitt [Komplexe Zahlen](#Komplexe-Zahlen).
+Auf der Suche, Bewegungen des dreidimensionalen Raumes elegant beschreiben zu können, entdeckte [Sir William Rowan Hamilton](https://de.wikipedia.org/wiki/William_Rowan_Hamilton) im Jahre 1843 die nach ihm benannten Quaternionen. Sie entstehen aus den reellen Zahlen durch Hinzufügen dreier neuer Zahlen, in Anlehnung an die imaginäre Einheit bei den komplexen Zahlen $i$, $j$ und $k$ genannt. Vergleiche Abschnitt [Komplexe Zahlen](#Komplexe-Zahlen).
 
 Hier soll ein kurzer - in weiten Teilen unvollständiger - Einblick in diesen Zahlbereich gegeben werden, dessen alleiniger Fokus auf der Beschreibung von Drehungen und Schiebungen des dreidimensionalen Raumes liegt.
 
@@ -2490,34 +2511,164 @@ $$ mit reellen Koeffizienten $a$, $b$, $c$ und $d$ und den Multiplikationsregeln
 >| $j$  | $-k$ | $-1$ | $i$ |
 >| $k$  | $j$ | $-i$ | $-1$ |
 >
-> Die darin auftretende Zahl $a$ wird als *Realteil* von $Q$ bezeichnet, während die anderen Koeffizienten $(b,c,d)$ den *Imaginärteil* von $Q$ bilden.
+> Die darin auftretende Zahl $a$ wird als *Realteil* von $Q$ bezeichnet, während die anderen Koeffizienten $(b,c,d)$ den *Imaginärraum* von $Q$ bilden.
 >
-> Die Menge aller Quaternionen wird angegeben mit $$
-  \mathbb{H}=\left\{a+i\cdot b+j\cdot c+k\cdot d\,|\, (a,b,c,d)\in\mathbb{R}^4\,\wedge\,i^2=j^2=k^2=-1\,\wedge\,i\cdot j=k\,\wedge\,j\cdot k=i\,\wedge\,k\cdot i=j\right\}
-$$
+> Die Menge aller Quaternionen wird mit $$
+  \mathbb{H}=\left\{a+i\cdot b+j\cdot c+k\cdot d\,|\, (a,b,c,d)\in\mathbb{R}^4\,\wedge\,i^2=j^2=k^2=-1\;\wedge\;i\cdot j\cdot k=-1\right\}
+$$ angegeben.[^1]
 
 
 Rechenoperationen
 ===
 
 
-Es seien zwei Quaternionen $Q_m=a_m+b_m\,{i}+c_m\,{j}+d_m\,{k}\in\mathbb{H}$ mit $m\in\{1,2\}$ gemäß Definition 1 gegeben. Es sind die folgenden Operationen erklärt:
+Die Multiplikation der quaternionalen Einheiten $i$, $j$ und $k$ ist assoziativ. Hieraus folgt z. B. $$
+  i\cdot j\cdot k=-1\quad\leftrightarrow\quad \textcolor{purple}{i}\cdot(i\cdot j\cdot k)=(i^2)\cdot j\cdot k=-j\cdot k=-\textcolor{purple}{i}
+$$ ebenso die restlichen Multiplikationsregeln aus Definition 1.
 
-1. Die **Summe** von $Q_1$ und $Q_2$ erfolgt komponentenweise mit $$
+<!-- style="background-color: lightgray;"-->
+>Es seien zwei Quaternionen $Q_m=a_m+b_m\,{i}+c_m\,{j}+d_m\,{k}\in\mathbb{H}$ mit $m\in\{1,2\}$ gemäß Definition 1 gegeben. Es sind die folgenden Operationen erklärt:
+>
+>1. Die **Addition** von $Q_1$ und $Q_2$ erfolgt komponentenweise mit $$
   Q_1+Q_2=(a_1+a_2)+(b_1+b_2){i}+(c_1+c_2){j}+(d_1+d_2){k}
 $$
-2. Das **Produkt** von $Q_1$ und $Q_2$ ist erklärt durch $$
+>2. Die **Multiplikation** von $Q_1$ und $Q_2$ ist erklärt durch $$
   \begin{split}
     Q_1\cdot Q_2 & =\left(a_1a_2-b_1b_2-c_1c_2-d_1d_2\right) + \left(a_1b_2+b_1a_2+c_1d_2-d_1c_2\right){i} \\
     & + \left(a_1c_2+c_1a_2+d_1b_2-b_1d_2\right){j} + \left(a_1d_2+d_1a_2+b_1c_2-c_1b_2\right){k} \\
   \end{split}
 $$ Dieses Produkt erhält man durch Ausmultiplizieren der Klammern unter Benutzung der Produktregeln in Definition 1.
 
-**Beispiel 1.**
+**Beispiel 1.** Gegeben sind die Quaternionen $Q_1=1+j$ und $Q_2=1+i$. Dann berechnen sich die Produkte $$
+  Q_1\cdot Q_2=(1+j)\cdot(1+i)=1+i+j-k\quad\text{sowie}\quad
+  Q_2\cdot Q_1=(1+i)\cdot(1+j)=1+i+j+k
+$$
 
-**Bemerkung 1.** Werden $c_m=d_m=0$ gesetzt, so ergeben sich die Rechenregeln in $\mathbb{C}$.
+**Bemerkung 1.** Aus Definition 1 und Beispiel 1 ist erkennbar, dass zwar die Addition von Quaternionen kommutativ ist, d. h. dass die Reihenfolge der Summanden vertauschbar ist, jedoch ist die Multiplikation zweier beliebiger Quaternionen im Allgemeinen nicht kommutativ: Das Produkt zweier Quaternionen liefert je nach Reihenfolge der Faktoren unterschiedliche Ergebnisse.
 
-**Bemerkung 2.**
+Werden in Definition 1 $(c_m,d_m)=(0,0)$ beziehungsweise $(b_m,d_m)=(0,0)$ beziehungsweise $(b_m,c_m)=(0,0)$ gesetzt, so ergeben sich die Rechenregeln in $\mathbb{C}$.
+
+>**Definition 2.** Sei $Q\in\mathbb{H}$ mit $Q=a+i\cdot b+j\cdot c+k\cdot d$ eine beliebige Quaternion gemäß Definition 1. Dann heißt $$
+  \tilde{Q}=a-i\cdot b-j\cdot c-k\cdot d=a-(i\cdot b+j\cdot c+k\cdot d)
+$$ die zu $Q$ **quaternional konjugierte Zahl**.
+
+Analog zu $\mathbb{C}$ lässt sich nun bilden:
+
+<!-- style="background-color: lightgray;"-->
+> Der **Betrag** einer Quaternion $Q=a+i\cdot b+j\cdot c+k\cdot d$ mit reellen Koeffizienten $(a,b,c,d)\in\mathbb{R}^4$ ist definiert als $$
+  |Q|=\sqrt{Q\cdot\tilde{Q}}=\sqrt{a^2+b^2+c^2+d^2}\;\in[0,\infty)
+$$ Somit gilt $|Q|=0\;\leftrightarrow\; Q=0+0\cdot i+0\cdot j+0\cdot k=0$
+
+**Nachweis.** Für das Produkt  $Q\cdot\tilde{Q}$ folgt unter Benutzung der Multiplikationregel $$
+\begin{split}
+  Q\cdot\tilde{Q} & =
+  (Q=a+i\cdot b+j\cdot c+k\cdot d)\cdot (a-i\cdot b-j\cdot c-k\cdot d) \\
+  & = \left(a^2+b^2+c^2+d^2\right) + \left(-a\cdot b+b\cdot a-c\cdot d+d\cdot c\right){i} + \left(-a\cdot c+c\cdot a-d\cdot b+b\cdot d\right){j} + \left(-a\cdot d+d\cdot a-b\cdot c+c\cdot b\right){k} \\
+  & = \left(a^2+b^2+c^2+d^2\right)
+\end{split}
+$$ Der Ausdruck ist reell und für jede Wagl der Parameter $a$, $b$, $c$ und $d$ nicht negativ, wonach $|Q|$ wohldefiniert ist.
+
+$\square$
+
+
+Drehungen des dreidimensionalen Raums
+===
+
+
+Drehungen des dreidimensionalen Raumes um eine Gerade durch den Koordinatenursprung $O(0,0,0)$ lassen sich in Analogie zu den komplexen Zahlen unter Benutzung der Multiplikation von Quaternionen darstellen. Siehe Abschnitt [Komplexe Zahlen](#Komplexe-Zahlen).
+
+1. Die kartesischen Koordinaten $(x,y,z)$ eines Punktes werden umkehrbar eindeutig als imaginäre Quaternion dargestellt $$
+  (x,y,z)\in\mathbb{R}^3\quad\leftrightarrow\quad Q=x\cdot i+y\cdot j+z\cdot k\;(\in\mathbb{H})
+$$ Der Realteil der Quaternion $Q$ ist somit Null.
+2. Die Richtung und Orientierung einer Drehachse $e$ durch $O$ kann unter Verwendung "geographischer Koordinaten" $(\lambda,\mu)\in[0,2\pi)\times\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$ angegeben werden. Sie berechnet sich $$
+  e=\left(\begin{array}{r} b \\ c \\ d \end{array}\right)=\left(\begin{array}{r} \cos{\lambda}\cdot\cos{\mu} \\ \sin{\lambda}\cdot\cos{\mu} \\ \sin{\mu} \end{array}\right)
+$$ Hierbei gilt $b^2+c^2+d^2=1$ für alle Paare $(\lambda,\mu)$, was der Länge des Richtungsvektors $e$ entspricht.
+3. Wird ein beliebiger Punkt um die Drehachse mit Drehwinkel $\varphi\in[0,2\pi)$ gedreht, so berechnen sich die kartesischen Koordinaten des Bildes des Punktes vermöge $$
+  (x',y',z')\quad\leftrightarrow\quad Q'=x'\cdot i+y'\cdot j+z'\cdot k
+$$ mit $$
+  Q'=Q_\varphi\cdot Q\cdot\tilde{Q}_\varphi\quad\text{und}\quad Q_\varphi=\cos{\left(\frac{\varphi}{2}\right)}+\sin{\left(\frac{\varphi}{2}\right)}\cdot\left(b\cdot i+c\cdot j+d\cdot k\right)
+$$ Wie bei komplexen Zahlen wie $z_\varphi\in\mathbb{C}$ mit $|z_\varphi|=1$ zur Beschreibung von Drehungen der Ebene gilt auch hier $$
+  |Q_\varphi|^2=Q_\varphi\cdot\tilde{Q}_\varphi=\left(\cos{\left(\frac{\varphi}{2}\right)}\right)^2+\left(\sin{\left(\frac{\varphi}{2}\right)}\right)^2\cdot\left(b^2+c^2+d^2\right)=1\quad\leftarrow\quad b^2+c^2+d^2=1
+$$ Die aus der Konstruktion der Drehachsenrichtung erhaltene Eigenschaft der Länge Eins (2.) ist für die Konstruktion des Bildes $Q'$ notwendig.
+
+**Beispiel 2.** Die Drehung des dreidimensionalen Raums um die $x$-Achse des Koordinatensystems mit einem Drehwinkel $60^\circ$ soll unter Benutzung des Quaternionenkalküls beschrieben werden.
+
+1. Die kartesischen Koordinaten $(x,y,z)$ eines Punktes in allgemeiner Lage werden umkehrbar eindeutig als imaginäre Quaternion dargestellt $$
+  (x,y,z)\in\mathbb{R}^3\quad\leftrightarrow\quad Q=x\cdot i+y\cdot j+z\cdot k\;(\in\mathbb{H})
+$$
+2. Für die Drehachsenrichtung ergibt sich der Vektor $$
+  e=\left(\begin{array}{r} 1 \\ 0 \\ 0 \end{array}\right)=\left(\begin{array}{r} \cos{0}\cdot\cos{0} \\ \sin{0}\cdot\cos{0} \\ \sin{0} \end{array}\right)
+$$ Unter Berücksichtigung des Drehwinkels $\varphi=\frac{\pi}{3}$ ergibt sich die Quaternion $Q_\varphi$ zur Bechreibung der Drehung $$
+  Q_\varphi=\cos{\left(\frac{\pi}{6}\right)}+\sin{\left(\frac{\pi}{6}\right)}\cdot\left(1\cdot i+0\cdot j+0\cdot k\right)=\cos{\left(\frac{\pi}{6}\right)}+\sin{\left(\frac{\pi}{6}\right)}\cdot i=\frac{1}{2}\cdot\sqrt{3}+\frac{1}{2}\cdot i
+$$
+3. Für das Bild $Q'$ von $Q$ unter der Drehung ergibt sich somit unter Nutzung der Multiplikationsregeln und der Assoziativität $$
+  \begin{split}
+    Q' & =Q_\varphi\cdot Q\cdot\tilde{Q}_\varphi \\
+    & = \left(\frac{1}{2}\cdot\sqrt{3}+\frac{1}{2}\cdot i\right)\cdot(x\cdot i+y\cdot j+z\cdot k)\cdot\left(\frac{1}{2}\cdot\sqrt{3}-\frac{1}{2}\cdot i\right) \\
+    & = \left[-\frac{x}{2}+i\cdot\frac{1}{2}\cdot\sqrt{3}\cdot x+j\cdot\left(\frac{1}{2}\cdot\sqrt{3}\cdot y-\frac{z}{2}\right)+k\cdot\left(\frac{1}{2}\cdot\sqrt{3}\cdot z+\frac{y}{2}\right)\right]\cdot\left(\frac{1}{2}\cdot\sqrt{3}-\frac{1}{2}\cdot i\right) \\
+    & = -\frac{1}{4}\cdot\sqrt{3}\cdot x+i\cdot\frac{3}{4}\cdot x+j\cdot\left(\frac{3}{4}\cdot y-\frac{1}{4}\cdot\sqrt{3}\cdot z\right)+k\cdot\left(\frac{3}{4}\cdot z+\frac{1}{4}\cdot\sqrt{3}\cdot y\right)+i\cdot \frac{x}{4}+\frac{1}{4}\cdot\sqrt{3}\cdot x +k\cdot\left(\frac{1}{4}\cdot\sqrt{3}\cdot\cdot y-\frac{z}{4}\right)-j\cdot\left(\frac{1}{4}\cdot\sqrt{3}\cdot z+\frac{y}{4}\right) \\
+    & = i\cdot x+ j\cdot\left(\frac{1}{2}\cdot y-\frac{1}{2}\cdot\sqrt{3}\cdot z\right)+k\cdot\left(\frac{1}{2}\cdot\sqrt{3}\cdot y+\frac{1}{2}\cdot z\right)
+  \end{split}
+$$ Der Bildpunkt besitzt somit die kartesischen Koordinaten $$
+  Q\left[x,
+  \left(\frac{1}{2}\cdot y-\frac{1}{2}\cdot\sqrt{3}\cdot z\right),
+  \left(\frac{1}{2}\cdot\sqrt{3}\cdot y+\frac{1}{2}\cdot z\right)
+\right]
+$$
+
+
+Sicher gewusst
+===
+
+**Frage 1.** Gegeben sind die Quaternionen $Q_1=4j-2k$ und $Q_2=1-i$ gegeben. Berechnen Sie die nachstehenden Ausdrücke.
+
+[[$Q_1\cdot Q_2$] [$$Q_2\cdot Q_1$$]]
+[( ) (X)]  $2j-6k$
+[(X) ( )]  $6j+2k$
+[[?]] Nutzen Sie zur Berechnung der Produkte die Multiplikationstafel in Definition 1.
+****************************************
+
+Die Produkte berechnen sich schrittweise $$
+  Q_1\cdot Q_2=(4j-2k)\cdot(1-i)=4j-4ji-2k+2ki=4j+4k-2k+2j=6j+2k
+$$ sowie $$
+  Q_2\cdot Q_1=(1-i)\cdot(4j-2k)=4j-2k-4ij+2ik=4j-2k-4k-2j=2j-6k\;\neq Q_1\cdot Q_2
+$$
+
+****************************************
+
+**Frage 2.** Eine Drehung des dreidimensionalen Raumes soll um die Gerade $$
+  x=0\;\wedge\; z=y
+$$ erfolgen. Der Drehwinkel ist $90^\circ$ angegeben.
+
+Berechnen Sie die Quaternion $Q_\varphi$ im Ansatz  $Q'=Q_\varphi\cdot Q\cdot \tilde{Q}_\varphi$ zur Beschreibung der Drehung.
+
+[[ ]] $$ \frac{1}{2}\cdot\sqrt{2}\cdot j+\frac{1}{2}\cdot\sqrt{2}\cdot k $$
+[[X]] $$ \frac{1}{2}\cdot\sqrt{2}+\frac{1}{2}\cdot j+\frac{1}{2}\cdot k $$
+[[X]] $$ \frac{1}{2}\cdot\sqrt{2}-\frac{1}{2}\cdot j-\frac{1}{2}\cdot k $$
+[[ ]] $$ \frac{1}{2}\cdot\sqrt{2}+\frac{1}{2}\cdot\sqrt{2}\cdot j+\frac{1}{2}\cdot\sqrt{2}\cdot k $$
+[[?]] Bestimmen Sie die Richtung der Drehachse und normieren Sie diesen Vektor. Setzen Sie dann in den Ansatz $$
+  Q_\varphi=\cos{\left(\frac{\varphi}{2}\right)}+\sin{\left(\frac{\varphi}{2}\right)}\cdot\left(b\cdot i+c\cdot j+d\cdot k\right)
+$$ ein, worin $(b,c,d)$ die Drehachsenrichtung und $\varphi$ den Drehwinkel bezeichnen.
+****************************************
+
+Für den Drehwinkel gilt $\frac{\varphi}{2}=45^\circ$ und damit $$
+  \cos{\left(\frac{\varphi}{2}\right)}=\sin{\left(\frac{\varphi}{2}\right)}=\frac{1}{2}\cdot\sqrt{2}
+$$ Für die Drehachsenrichtung ergeben sich die 'geographischen' Koordinaten $\lambda=\frac{\pi}{2}$ und $\mu=\frac{\pi}{4}$, also $$
+  e=\left(\begin{array}{r} \cos{\left(\frac{\pi}{2}\right)}\cdot\cos{\left(\frac{\pi}{4}\right)} \\ \sin{\left(\frac{\pi}{2}\right)}\cdot\cos{\left(\frac{\pi}{4}\right)} \\ \sin{\left(\frac{\pi}{4}\right)} \end{array}\right)=
+  \left(\begin{array}{r} 0 \\ \frac{1}{2}\cdot\sqrt{2} \\ \frac{1}{2}\cdot\sqrt{2} \end{array}\right)
+$$ Alternativ berechnet sich $e$ über Stauchung des Vektors mit dem Parameter $\alpha$ $$
+  e=\left(\begin{array}{r} 0 \\ \alpha \\ \alpha \end{array}\right)
+$$ so dass $0^2+\alpha^2+\alpha^2=2\cdot\alpha^2=1$ gilt: Dies ist für $\alpha=\pm\frac{1}{2}\cdot\sqrt{2}$ erfüllt. Schließlich ergibt sich daraus $$
+  Q_\varphi=\cos{\left(\frac{\pi}{4}\right)}+\sin{\left(\frac{\pi}{4}\right)}\cdot\left(\pm\frac{1}{2}\cdot\sqrt{2}\cdot j\pm\frac{1}{2}\cdot\sqrt{2}\cdot k\right)=\frac{1}{2}\cdot\sqrt{2}\pm\frac{1}{2}\cdot j\pm\frac{1}{2}\cdot k
+$$ worin genau eines der Operationszeichen zu wählen ist.[^2]
+
+Hingegen entfällt die erste Antwortoption, da dort nicht $\frac{\varphi}{2}$, sondern $\varphi$ verwendet wurde. Bei der letzten Antwortoption ist wurde vergessen, den Vektor $e$ zu normieren.
+
+****************************************
+
+[^1]: Die bei der Angabe von $\mathbb{H}$ abweichenden Multiplikationsregeln sind aus Gründen der Lesbarkeit gewählt und werden im folgenden Abschnitt erklärt.
+
+[^2]: Bei Angabe der Quaternion $Q_\varphi$ ist nicht nur die Drehachse anzugeben, sondern auf deren Richtungssinn festzulegen. Der Drehwinkel wird bezüglich des gewählten Richtungssinns angegeben - 'plus' beziehungsweise 'minus'.
 
 
 ## Lineare Algebra
