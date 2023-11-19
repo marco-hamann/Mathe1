@@ -5404,7 +5404,7 @@ Denn die Menge $\mathcal{V}=\left\{x\in\mathbb{R}^n\;\middle |\; Ax=\mathcal{o}\
 $$ d. h. $\alpha(x,y)=y-x\in\mathcal{V}$.
 
 
-### Punkte und Geraden in der Ebene
+### Punkte und Geraden in $\mathbb{R}^2$
 
 1. **Punkte**
 
@@ -5437,7 +5437,7 @@ $$n\cdot \overrightarrow{AB}=\left(\begin{array}{c}3\\2\end{array}\right)\cdot \
 
 
 
-### Dreidimensionaler Raum
+### Punkte, Geraden und Ebenen in $\mathbb{R}^3$
 
 Punkte, Geraden und Ebenen in $\mathbb{R}^3$ sind genau die $0$-, $1$- und $2$-dimensionalen affinen Unterräume des affinen Raumes $\mathbb{R}^3$ (siehe auch den Abschnitt [Affine Räume](#Affine-Räume)).
 
