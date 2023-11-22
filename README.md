@@ -5496,6 +5496,14 @@ Für zwei Geraden $g$ und $h$ in $\mathbb{R}^2$ sind die folgenden Lagebeziehung
 * $g$ und $h$ schneiden sich in genau einem Punkt
 * $g$ und $h$ sind parallel
 
+**Beispiel 1**:
+Gegeben seien die Punkte $P=(1,2)^\top$, $Q(-9,1)^\top$ und die Gerade $g$ durch die Parameterdarstellung
+
+ $\left(\begin{array}{cc}x\\y\end{array}\right)=\left(\begin{array}{cc}-1\\3\end{array}\right)+\lambda\cdot \left(\begin{array}{cc}4\\1\end{array}\right)$
+mit $\lambda\in\mathbb{R}$.
+
+
+
 
 ## Differentialrechnung
 
