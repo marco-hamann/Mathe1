@@ -5572,6 +5572,17 @@ Sind $E$ und $G$ Ebenen in $\mathbb{R}^3$, so können genau drei Fälle untersch
 * $E$ und $G$ schneiden sich in einer Geraden
 
 
+**Schnittwinkel zwischen einer Gerade und einer Ebene**
+
+Es sei $g$ eine Gerade mit Richtungsvektor $b\in\mathbb{R}^3$ und $E$ eine Ebene mit Normalenvektor $n\in\mathbb{R}^3$ und $g$ und $E$ schneiden sich in genau einem Punkt. Dann kann der Schnittwinkel $\alpha$ zwischen $g$ und $E$ durch
+$$\cos(\alpha)=\frac{|n\cdot b|}{||n||\cdot ||b||}$$ berechnet werden.
+
+
+**Schnittwinkel zwischen zwei Ebenen**
+
+Es seien $E$ und $G$ Ebene welche sich in einer Geraden schneiden. Ein Normalenvektor von $E$ sei $n$ und ein Normalenvektor von $G$ sei $m$. Dann kann der Schnittwinkel $\alpha$ zwischen $E$ und $G$ durch
+$$\sin(\alpha)=\frac{|n\cdot m|}{||n||\cdot ||m||}$$ berechnet werden.
+
 
 ## Differentialrechnung
 
