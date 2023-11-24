@@ -5426,7 +5426,7 @@ $$ gilt $$
 $$ d. h. $\alpha(x,y)=y-x\in\mathcal{V}$.
 
 
-### Punkte und Geraden in der Ebene
+### Punkte und Geraden in $\mathbb{R}^2$
 
 
 In diesem Abschnitt wird die Darstellung von Grundelementen des affinen Raumes $\mathbb{R}^2$ betrachtet.
@@ -5468,7 +5468,12 @@ Des Weiteren ist der Vektor $n=\left(\begin{array}{c}3\\2\end{array}\right)$ ort
 $$n\cdot \overrightarrow{AB}=\left(\begin{array}{c}3\\2\end{array}\right)\cdot \left(\begin{array}{c}2\\-3\end{array}\right)=3\cdot 2+2\cdot (-3)=0.$$ Damit ist $n$ ein Normalenvektor von $g$ und die Gerade kann durch die Normalengleichung $$n\cdot (X-A)=\left(\begin{array}{c}3\\2\end{array}\right)\cdot \left(\begin{array}{c}x-1\\y-2\end{array}\right)=0$$ beschrieben werden.
 
 
+<<<<<<< HEAD
 ### Dreidimensionaler Raum
+=======
+
+### Punkte, Geraden und Ebenen in $\mathbb{R}^3$
+>>>>>>> 7ab6713892504892ab509b57ef59fcb88d56a478
 
 
 Punkte, Geraden und Ebenen in $\mathbb{R}^3$ sind genau die $0$-, $1$- und $2$-dimensionalen affinen Unterräume des affinen Raumes $\mathbb{R}^3$. Siehe auch den Abschnitt [Affine Räume](#Affine-Räume).
@@ -5542,6 +5547,93 @@ Für zwei Geraden $g$ und $h$ in $\mathbb{R}^2$ sind die folgenden Lagebeziehung
 * $g$ und $h$ sind identisch
 * $g$ und $h$ schneiden sich in genau einem Punkt
 * $g$ und $h$ sind parallel
+
+**Abstand paralleler Geraden**:
+
+Sind $g$ und $h$ parallele Geraden, so gilt für den Abstand $d(g,h)$ von $g$ zu $h$ die Gleichung
+
+$$d(g,h)=\frac{\overrightarrow{PQ}\cdot n}{||n||},$$ wobei $P$ ein beliebiger Punkt auf $g$, $Q$ ein beliebiger Punkt auf $h$ und $n$ ein Normalenvektor von $g$ (und damit auch von $h$) ist.
+
+Diese Gleichung kann auch zur Berechnung des Abstandes eines Punktes von einer Geraden benutzt werden.
+
+
+**Schnittwinkel sich schneidender Geraden**:
+Der Schnittwinkel zweier sich schneidender Geraden ist der Winkel zwischen zwei Richtungsvektoren der Geraden, welche einen Winkel zwischen $0^\circ$ und $90^\circ$ einschließen.
+
+**Beispiel 1**:
+Gegeben seien die Punkte $P=(1,2)^\top$, $Q(-9,1)^\top$ und die Gerade $g$ durch die Parameterdarstellung
+
+ $\left(\begin{array}{cc}x\\y\end{array}\right)=\left(\begin{array}{cc}-1\\3\end{array}\right)+\lambda\cdot \left(\begin{array}{cc}4\\1\end{array}\right)$
+mit $\lambda\in\mathbb{R}$.
+
+Wegen $\left(\begin{array}{cc}-1\\3\end{array}\right)+\lambda\cdot \left(\begin{array}{cc}4\\1\end{array}\right) = \left(\begin{array}{cc}1\\2\end{array}\right)$ genau dann, wenn
+$(-1+4 \lambda =1 \land 3+\lambda =2)$ $\Longleftrightarrow$ $(\lambda = \frac{1}{2} \land \lambda=-1)$, liegt der Punkt $P$ nicht auf der Gerade $g$.
+
+Andererseits gilt für den Punkt $Q$:
+
+$\left(\begin{array}{cc}-1\\3\end{array}\right)+\lambda\cdot \left(\begin{array}{cc}4\\1\end{array}\right) = \left(\begin{array}{cc}-9\\1\end{array}\right)$ genau dann, wenn
+$(-1+4 \lambda =-9 \land 3+\lambda =1)$ $\Longleftrightarrow$ $\lambda=-2$. Somit liegt $Q$ auf $g$.
+
+Anstatt mit einer Parameterdarstellung von $g$ zu rechnen, können wir die Parameterdarstellung von $g$ in eine Gleichung (lineare Gleichung in $x$ und $y$) umwandeln:
+
+Wegen  $x=-1+4\lambda$ und $y=3+\lambda$ erhalten wir $x-4\cdot y = -1+4\lambda-4\cdot (3+\lambda)=-1+4\lambda -12-4\lambda = -13$. D.h. die Gerade $g$ wird beschrieben durch die Gleichung $x-4y+13=0$.
+
+**Beispiel 2**:
+Gegeben sei die Geraden $g$ durch $\left(\begin{array}{cc}x\\y\end{array}\right)=\left(\begin{array}{cc}-1\\3\end{array}\right)+\lambda\cdot \left(\begin{array}{cc}4\\1\end{array}\right)$
+mit $\lambda\in\mathbb{R}$ und $h$ durch $\left(\begin{array}{cc}x\\y\end{array}\right)=\left(\begin{array}{cc}-1\\2\end{array}\right)+\mu\cdot \left(\begin{array}{cc}8\\2\end{array}\right)$
+mit $\mu\in\mathbb{R}.$
+
+Es gilt $\left(\begin{array}{cc}-1\\3\end{array}\right)+\lambda\cdot \left(\begin{array}{cc}4\\1\end{array}\right)=\left(\begin{array}{cc}-1\\2\end{array}\right)+\mu\cdot \left(\begin{array}{cc}8\\2\end{array}\right)$ $\Longleftrightarrow$ $(-1+4\lambda=-1+8\mu \land 3+\lambda = 2+2\mu)$ $\Longleftrightarrow$ $0=-1$. Daher sind $g$ und $h$ parallel.
+
+**Beispiel 3**:
+Gegeben sei die Geraden $g$ durch $\left(\begin{array}{cc}x\\y\end{array}\right)=\left(\begin{array}{cc}-1\\3\end{array}\right)+\lambda\cdot \left(\begin{array}{cc}4\\1\end{array}\right)$
+mit $\lambda\in\mathbb{R}$ und $h$ durch $\left(\begin{array}{cc}x\\y\end{array}\right)=\left(\begin{array}{cc}-1\\2\end{array}\right)+\mu\cdot \left(\begin{array}{cc}4\\2\end{array}\right)$
+mit $\mu\in\mathbb{R}.$
+
+Es gilt $\left(\begin{array}{cc}-1\\3\end{array}\right)+\lambda\cdot \left(\begin{array}{cc}4\\1\end{array}\right)=\left(\begin{array}{cc}-1\\2\end{array}\right)+\mu\cdot \left(\begin{array}{cc}4\\2\end{array}\right)$ $\Longleftrightarrow$ $(-1+4\lambda=-1+4\mu \land 3+\lambda = 2+2\mu)$ $\Longleftrightarrow$ $\lambda =\mu=\lambda =1$. Daher schneiden sich $g$ und $h$ in genau einem Punkt $S=(3,4)^\top$.
+
+
+
+
+
+### Lagebeziehungen im Raum
+
+1. **Gerade - Gerade**
+
+Sind $g$ und $h$ Geraden in $\mathbb{R}^3$, so können genau vier Fälle unterschieden werden:
+
+* $g$ und $h$ sind identisch
+* $g$ und $h$ schneiden sich in genau einem Punkte
+* $g$ und $h$ sind parallel
+* $g$ und $h$ sind windschief
+
+2. **Gerade - Ebene**
+
+Ist $g$ eine Gerade und $E$ eine Ebene in $\mathbb{R}^3$, so können genau drei Fälle unterschieden werden:
+
+* $g$ liegt in $E$
+* $g$ ist parallel zu $E$
+* $g$ schneidet $E$ in genau einem Punkt
+
+3. **Ebene - Ebene**
+
+Sind $E$ und $G$ Ebenen in $\mathbb{R}^3$, so können genau drei Fälle unterschieden werden:
+
+* $E$ und $G$ sind identisch
+* $E$ und $G$ sind parallel
+* $E$ und $G$ schneiden sich in einer Geraden
+
+
+**Schnittwinkel zwischen einer Gerade und einer Ebene**
+
+Es sei $g$ eine Gerade mit Richtungsvektor $b\in\mathbb{R}^3$ und $E$ eine Ebene mit Normalenvektor $n\in\mathbb{R}^3$ und $g$ und $E$ schneiden sich in genau einem Punkt. Dann kann der Schnittwinkel $\alpha$ zwischen $g$ und $E$ durch
+$$\cos(\alpha)=\frac{|n\cdot b|}{||n||\cdot ||b||}$$ berechnet werden.
+
+
+**Schnittwinkel zwischen zwei Ebenen**
+
+Es seien $E$ und $G$ Ebene welche sich in einer Geraden schneiden. Ein Normalenvektor von $E$ sei $n$ und ein Normalenvektor von $G$ sei $m$. Dann kann der Schnittwinkel $\alpha$ zwischen $E$ und $G$ durch
+$$\sin(\alpha)=\frac{|n\cdot m|}{||n||\cdot ||m||}$$ berechnet werden.
 
 
 ## Differentialrechnung
