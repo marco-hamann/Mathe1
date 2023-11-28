@@ -5614,6 +5614,32 @@ Sind $g$ und $h$ zwei Geraden in $\mathbb{R}^3$, so sind genau vier Fälle ihrer
 * $g$ und $h$ sind windschief (und besitzen somit keinen gemeinsamen Punkt)
 
 
+<!-- style="background-color: lightgray;"-->
+>**Abstand windschiefer Geraden.** Der Abstand zweier windschiefer Geraden ist der Abstand der Lotfußpunkte auf dem gemeinsamen Lot der Geraden.
+>
+>Sind $g_1$ bzw. $g_2$ die Verbindungsgeraden der Punkte $P_1$ und $Q_1$ bzw. $P_2$ und $Q_2$ (wobei $P_1, P_2, Q_1, Q_2\in\mathbb{R}^3$) und die Richuntgsvektoren $b_1=\overrightarrow{P_1Q_1}$ und $b_2=\overrightarrow{P_2Q_2}$ dieser Geraden linear unabhängig, so gilt:
+>
+>Der Abstand $d(g_1,g_2)$ der beiden Geraden $g_1$ und $g_2$ ist gegeben durch
+>$$d(g_1,g_2)=\frac{|(b_1\times b_2)\cdot\overrightarrow{P_1P_2}|}{\left\|b_1\times b_2\right\|}.$$
+
+**Beweis:**
+
+Da die Richtungsvektoren $b_1$ und $b_2$ linear unabhängig sind, sind auch die Vektoren $b_1, b_2, b_1\times b_2$ linear unabhängig. Daher gibt es eindeutig bestimmte reelle Zahlen $\lambda_1, \lambda_2$ und $\alpha$, so dass $$P_1+\lambda_1\cdot b_1+\alpha\cdot (b_1\times b_2)+\lambda_2\cdot b_2-P_2=0,$$ mit dem Nullvektor $0\in\mathbb{R}^3$.
+
+Aus $$\lambda_1\cdot b_1+\alpha\cdot (b_1\times b_2)+\lambda_2\cdot b_2=\overrightarrow{P_1P_2}$$ folgt unmittelbar
+$$\operatorname{det}(\overrightarrow{P_1P_2},b_2,b_1\times b_2) = \lambda_1\cdot \operatorname{det}(b_1,b_2,b_1\times b_2)$$ und daher $$\lambda_1 = \frac{\operatorname{det}(\overrightarrow{P_1P_2},b_2,b_1\times b_2)}{\operatorname{det}(b_1,b_2,b_1\times b_2)}.$$ Analog erhält man $$\lambda_2 = \frac{\operatorname{det}(b_1,\overrightarrow{P_1P_2},b_1\times b_2)}{\operatorname{det}(b_1,b_2,b_1\times b_2)}$$ und $$\alpha = \frac{\operatorname{det}(b_1, b_2,\overrightarrow{P_1P_2})}{\operatorname{det}(b_1,b_2,b_1\times b_2)}.$$
+Der Abstand der Lotfußpunkte ergibt sich damit zu
+
+$$\begin{array}{rrr}
+  d(g_1,g_2) & = & \left\|\alpha\cdot (b_1\times b_2)\right\| \\
+             & = & |\alpha|\cdot\left\|b_1\times b_2\right\|  \\
+             & = & \displaystyle\frac{|(b_1\times b_2)\cdot \overrightarrow{P_1P_2}|}{\left\|b_1\times b_2\right\|}.
+\end{array}$$
+
+Wobei im letzten Schritt die Darstellung der Determinanten in $\alpha$ als Spatprodukte verwendet wurde.
+
+An dieser Darstellung erkennt man auch, dass der Abstand die Länge (Norm) der Orthogonalprojektion den Vektors $\overrightarrow{P_1P_2}$ auf den Vektor $b_1\times b_2$ ist.
+
 Gerade und Ebene
 ===
 
