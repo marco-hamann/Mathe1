@@ -5638,7 +5638,7 @@ $$\begin{array}{rrr}
 
 Wobei im letzten Schritt die Darstellung der Determinanten in $\alpha$ als Spatprodukte verwendet wurde.
 
-An dieser Darstellung erkennt man auch, dass der Abstand die Länge (Norm) der Orthogonalprojektion den Vektors $\overrightarrow{P_1P_2}$ auf den Vektor $b_1\times b_2$ ist.
+An dieser Darstellung erkennt man auch, dass der Abstand die Länge (Norm) der Orthogonalprojektion des Vektors $\overrightarrow{P_1P_2}$ auf den Vektor $b_1\times b_2$ ist.
 
 Gerade und Ebene
 ===
