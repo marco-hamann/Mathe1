@@ -895,7 +895,7 @@ $$ wird $n$-faches kartesisches Produkt genannt. Die Elemente dieser Produktmeng
 * $n=2$ geordnetes Paar
 * $n=3$ geordnetes Tripel
 
-Sicher gewusst?
+Sicher gewusst
 =====
 
 
@@ -3202,7 +3202,7 @@ $$ In diesem Beispiel zeigt sich der Dimensionssatz $$
 $$
 
 
-Sicher gewusst?
+Sicher gewusst
 =====
 
 Nutzen Sie die folgenden Fragen, um ihre über Vektoren erworbenen Kenntnisse zu prüfen.
@@ -3591,7 +3591,7 @@ $$ Außerdem ist $\lambda\in\mathbb{R}$. Dann gelten die  folgenden Rechenregeln
 >7. $\left({A}+{B}\right)\cdot{C}={A}\cdot{C}+{B}\cdot{C}$ falls gleicher Typ $(m,n)=(n,p)$
 
 
-Sicher gewusst?
+Sicher gewusst
 ===============
 
 Sie können Ihr Wissen gern bei der Beantwortung der nachstehenden Fragen testen.
@@ -4116,7 +4116,7 @@ $$
 $$
 
 
-Sicher gewusst?
+Sicher gewusst
 ===============
 
 Sie können Ihr Wissen gern bei der Beantwortung der nachstehenden Fragen testen.
@@ -4745,7 +4745,7 @@ $$ Es existieren somit Argumente $x_0\in D$, für die $$
   \rightarrow\quad (\lambda_1,\lambda_2,\lambda_3)=(0,0,0)
 $$ folgt. Die Funktionen sind also linear unabhängig auf $D\subseteq\mathbb{R}$.
 
-Sicher gewusst?
+Sicher gewusst
 ===============
 
 Sie können Ihr Wissen gern bei der Beantwortung der nachstehenden Fragen testen.
@@ -4996,7 +4996,7 @@ Eine Kennzeichnung des Spatproduktes dreier Vektoren aus $\mathbb{R}^3$ ist im n
 !?[Spatprodukt](https://www.youtube.com/watch?v=plM5HpVjycE)
 
 
-Sicher gewusst?
+Sicher gewusst
 ===============
 
 Sie können Ihr Wissen gern bei der Beantwortung der nachstehenden Fragen testen.
@@ -5255,7 +5255,7 @@ $$ worin für den auftretenden Parameter $\gamma\in\mathbb{R}$ gilt. Der Eigenra
 $$ Für jeden Vektor $x\in U_{-3}$ gilt $A\cdot x=\lambda_3\cdot x=o$. (Bitte nachrechnen!)
 
 
-Sicher gewußt?
+Sicher gewusst
 =====
 
 
@@ -5669,6 +5669,239 @@ $$ berechnet werden.
 
 ## Differentialrechnung
 
-## Differentialgleichungen
+### Funktionsbegriff
+
+Definition und Grundbegriffe
+===
+
+
+In diesem Abschnitt werden Funktionen und ihre Darstellungsformen betrachtet. Ein Ziel ist, den Funktionsbegriff an verschiedenen im weiteren Verlauf zu behandelnden Klassen von Funktionen kenntlich zu machen.
+
+>**Definition 1.** Eine [Funktion](https://de.wikipedia.org/wiki/Funktion_%28Mathematik%29#Definition) einer Menge $D$ in die Menge $Z$ ist eine Menge $f$ mit den nachstehenden Eigenschaften:
+>
+>1. $f$ ist Teilmenge des kartesischen Produktes $D\times Z$, d. h. $f\subset D\times Z$
+>2. Für jedes Element $x\in D$ existiert ein $y\in Z$, so dass $(x,y)\in f$, d. h. $f$ ist *definal*.
+>3. Für alle $x\in D$ und für alle $y_1\in Z$ und $y_2\in Z$ gilt die Implikation $$
+  \left[(x,y_1)\in f\;\land\;(x,y_2)\in f\right]\quad\rightarrow\quad y_1=y_2
+$$ d. h. $f$ ist *rechtseindeutig* bzw. *funktional*.
+
+**Bemerkung 1.**
+
+1. Nach der vorstehenden Definition ordnet eine Funktion $f$ jedem Element $x\in D$ genau ein Element $y\in Z$ zu. Man schreibt daher $$
+  f:D\to W\,,\;x\mapsto y=f(x)
+$$ für die Funktion $f$.
+2. Die Menge $D$ wird Definitionsmenge von $f$, jedes Element $x\in D$ Argument genannt. Die Menge $Z$ wird Zielmenge von $f$ genannt, jedes Element $y=f(x)$ ein Funktionswert der Funktion. Die Menge aller Funktionswerte $$
+  W_f:=f(D)=\left\{y\in Z| y=f(x)\;\land\; x\in D\right\}
+$$ wird Wertemenge oder Wertebereich beziehungsweise  **Bild** der Funktion $f$ genannt. Die Menge $$
+  G_f:=\left\{(x,y)\in D\times Z|x\in D\;\land\; y=f(x)\right\}
+$$ heißt **Funktionsgraph** von $f$. Aus diesem sind Definitionsmenge und Wertemenge der Funktion rekonstruierbar.
+
+Speziell betrachten wir im weiteren Verlauf der Vorlesung u. a. Klassen von Funktionen mit den folgenden Definitions- und Zielmengen.
+
+**Beispiel 1.**
+
+1. Es sind $D\subseteq\mathbb{R}$ und $Z=\mathbb{R}$, zum Beispiel bei der Funktion $$
+  f:[0,\infty)\to\mathbb{R},x\mapsto y=f(x)=x^2
+$$ Der Funktionsgraph einer solchen Funktion $f$ lässt sich als Punktmenge in der Ebene darstellen. Ist $f$ wie im Beispiel eine stetige Funktion über einem Intervall, so bildet der Funktionsgraph zu $f$ eine zusammenhängende Kurve, d. h. eine zusammenhängende Punktmenge. Das Koordinatenpaar $(x,y)$ aus Abszisse und Ordinate eines Kurvenpunktes sind Argument $x$ und zugehörender Funktionswert $y=f(x)$. Funktionen diesen Typs werden **reelle Funktionen einer reellen Variablen** genannt.
+2. Es sind $D\subseteq\mathbb{R}^m$ und $Z=\mathbb{R}$, d. h. die Argumente sind geordnete Tupel reeller Zahlen, denen unter $f$ eine reelle Zahl eindeutig zugeordnet wird. Zum Beispiel beschreibt die Funktion $$
+  f:D\to\mathbb{R},(x,y)\mapsto z=f(x,y)=\sqrt{25-x^2-y^2}\,,\quad D=\left\{(x,y)\in\mathbb{R}^2|x^2+y^2\leq 25\right\}
+$$ eine Zuordnung von zwei unabhängigen reellen Variablen $(x,y)$ zu einer reellen Variablen $z$. Die Wertemenge ist das Intervall $$
+  W_f=\left\{z\in\mathbb{R}|z=f(x,y)=\sqrt{25-x^2-y^2}\;\land\;(x,y)\in D\right\}=[0,5]
+$$ während der Funktionsgraph zu $f$ $$
+  G_f=\left\{(x,y,z)\mathbb{R}^3|z=f(x,y)=\sqrt{25-x^2-y^2}\;\land\;(x,y)\in D\right\}
+$$ die obere Hälfte einer Kugelschale mit Mittelpunkt im Koordinatenursprung und Radius $5$ beschreibt. Funktionen diesen Typs werden **reelle Funktionen in m reellen Variablen** genannt.
+3. Für $D\subseteq\mathbb{R}$ und $Z=\mathbb{R}^k$ ist $f:D\to\mathbb{R}^k$. Die 'Funktionswerte' sind in diesem Fall Vektoren / geordnete $k$-Tupel reeller Zahlen. Die Funktionen dieser Klasse werden auch **vektorwertige Funktionen einer reellen Variablen** genannt. Beispiele sind etwa [Bézier-Kurven](https://de.wikipedia.org/wiki/B%C3%A9zierkurve) im $k$-dimensionalen Raum. $$
+  f:[0,1]\to y=f(t)=\sum_{j=0}^n{\left[\binom{n}{j}\cdot(1-t)^{1-j}\cdot t^j\cdot p_j\right]}
+$$ worin $p_j\in\mathbb{R}^k$ die Stützpunkte der Bézier-Kurve genannt werden.
+4. Für $D\subseteq\mathbb{R}$ und $Z=\mathbb{C}$ ist $f:D\to\mathbb{C}$. Die 'Funktionswerte' sind in diesem Fall komplexe Zahlen, die einem reellen Argument eindeutig zugeordnet sind. Funktionen dieser Klasse werden **komplexe Funktionen einer reellen Variablen** genannt. Zum Beispiel $$
+  f:[0,2\pi)\to y=f(t)=\exp{(i\cdot t)}\quad\text{mit}\quad i^2=-1
+$$ die Eulerdarstellung einer komplexen Zahl. Der Wertebereich dieser Funktion beschreibt einen Kreis in der Gaußschen Zahlenebene um den Koordinatenursprung des Koordinatensystems mit Radius 'Eins'.
+5. Sind $D\subseteq\mathbb{N}$ und $Z=\mathbb{R}$, so wird $f:D\to\mathbb{R},n\mapsto y=f(n)$ eine reelle Funktion einer natürlichen Variablen genannt. Zum Beispiel ist $$
+  f:n\mapsto y=f(n)=\frac{1}{n}\quad\text{mit}\quad D=\mathbb{N}^\times
+$$ Werden die Funktionswerte vom kleinsten Argument beginnend berechnet, so ergibt sich die unendliche Folge $$
+  f(1)=1\,,\;f(2)=\frac{1}{2}\,,\;f(3)=\frac{1}{3}\,,\;...
+$$ die kürzer geschrieben werden kann als $$
+  \left(f(n)\right)_{n\in\mathbb{N}^\times}=1\,,\;\frac{1}{2}\,,\;\frac{1}{3}\,,\;...
+$$ und **reelle Zahlenfolge** genannt wird. Wertebereich und Funktionsgraph sind in einem topologischen Verständnis diskrete Mengen.
+
+**Bemerkung 2.** Wird eine Funktion $f:D\to Z\,,\;x\mapsto y=f(x)$ nur auf einer Teilmenge $D'\subset D$ der Definitionsmenge betrachtet, so heißt $$
+  f|_{D'}:D'\to Z\,,\;x\mapsto y=f(x)
+$$ *Einschränkung* von $f$ auf $D'$. Der Funktionsgraph der auf $D'$ eingeschränkten Funktion $f_{D'}$ ist eine Teilmenge des Funktionsgraphen $f$ auf $D$ $$
+  G_{f_{D'}}:=\left\{(x,y)|y=f(x)\;\land\;x\in D'\right\}\subset G_f
+$$
+
+Im vorangestellten Beispiel ist die Funktion $f:\mathbb{N}^\times\to\mathbb{R},x\mapsto y=f(x)$ mit $f(x)=1/x$ sogar auf der Definitionsmenge $\mathbb{R}^\times$ definierbar.
+
+![Zahlenfolge](img/mat-bild-22.png "_Fig._ Funktionsgraphen der reellen Funktion $f:\mathbb{R}^\times\to\mathbb{R}$ mit der Zuordnungsvorschrift $y=f(x)=1/x$ (Hyperbel) und ihrer Einschränkung $f_{\mathbb{N}^\times}$. Der Funktionsgraph dieser Einschränkung besteht aus Punkten auf der Hyperbel mit natürlichen Abszissen.")
+
+**Beispiel 2.** Eine Funktion lässt sich *stückweise* definieren. Zum Beispiel $f:\mathbb{R}\to\mathbb{R}$ mit $$
+  f(x)=\left\{\begin{array}{rrr} 0 & \text{für} & x<0 \\ x^2 & \text{für} & x\in[0,1) \\ 2-x & \text{für} & x\geq 1 \end{array}\right.
+$$ Die Definitionsmenge $D=\mathbb{R}$ ist hierbei zerlegt in $$
+  \mathbb{R}=(-\infty,0)\cup[0,1)\cup[1,\infty)
+$$ auf den Teilintervallen bestehen die Funktionen $$
+  x\mapsto 0\,,\;x\in(-\infty,0)\quad\text{sowie}\quad x\mapsto x^2\,,\;x\in[0,1)\quad\text{und}\quad x\mapsto 2-x\,,\;x\in[1,\infty)
+$$ Der Definitionsbereich der Funktion $f$ ist $\mathbb{R}$, der Wertebereich lässt als Vereinigung der Wertebereiche der drei Teilfunktionen bestimmen $$
+  W=\left\{0\right\}\cup[0,1)\cup(\infty,1)=(\infty,1)
+$$
+
+Stückweise oder auch achsenabschnittsweise definierte Funktionen einer reellen Variablen werden im nachstehenden Video an einem Beispiel erläutert.
+
+!?[stückweise definierte Funktion](https://www.youtube.com/watch?v=e5mgC1Wa7C4&list=PLLTAHuUj-zHj8RYKLbm4INxaAP4nrSApU&index=30 "_Fig._ Funktionen, stückweise, achsenabschnittsweise definierte Funktionen, Daniel Jung.")
+
+
+Allgemeine Eigenschaften
+===
+
+
+>**Definition 2.** Eine Funktion $f:D\to Z$ heißt
+>
+>* [injektiv](https://de.wikipedia.org/wiki/Injektive_Funktion), wenn zu jedem Element der Zielmenge $Z$ ~~höchstens~~ ein Element der Definitionsmenge $D$ existiert, das diesem zugeordnet ist, d. h. $$
+  (f(x_1)=f(x_2))\;\to\; (x_1=x_2)
+$$ für $x_1\in D$ und $x_2\in D$.
+>* [surjektiv](https://de.wikipedia.org/wiki/Surjektive_Funktion), wenn zu jedem Element der Zielmenge $Z$ ~~mindestens~~ ein Element der Definitionsmenge $D$ existiert, das diesem zugeordnet ist, d. h. $$
+  \forall y\in Z\;\;\exists x\in D:\;y=f(x)
+$$
+>* [bijektiv](https://de.wikipedia.org/wiki/Bijektive_Funktion), wenn sie injektiv und surjektiv ist, d. h. wenn zu jedem Element der Zielmenge $Z$ ~~genau~~ ein Element der Definitionsmenge $D$ existiert, das diesem zugeordnet ist $$
+  \forall y\in Z\;\;{\exists!} x\in D:\;y=f(x)
+$$ Hierin bedeutet das Symbol $\,\exists!\,$ den Existenzquantor "es existiert genau ein", vergleiche Abschnitt [Aussageformen](#Aussageformen).
+
+Die Begriffe 'injektive -', 'surjektive -' und 'bijektive Funktion' werden im nachstehenden Video am Beispiel der Zuordnungsvorschrift $x\mapsto x^2$ erläutert.
+
+!?[injektiv, surjektiv, bijektiv](https://www.youtube.com/watch?v=23jng4oAwI8 "_Fig._ Injektiv, surjektiv, bijektiv, Schaubild mit Funktion, Daniel Jung.")
+
+**Beispiel 3.** Die quadratische Zuordnungsvorschrift $x\mapsto x^2$ wird zur Konstruktion der nachstehenden Funktionen genutzt. $$
+  f_1:\mathbb{N}\to\mathbb{N}\,,\quad f_2:[0,\infty)\to[0,\infty)\,,\quad f_3:\mathbb{R}\to\mathbb{R}\quad\text{und}\quad f_4:\mathbb{C}\to\mathbb{C}
+$$
+
+* Die Funktionen $f_1$ und $f_2$ sind *injektiv*, da für beliebige Elemente des Definitionsbereichs $D=\mathbb{N}$ beziehungsweise $D=[0,\infty)$ gilt $$
+  \left(x_1^2=x_2^2\right)\quad\stackrel{x\in D}{\longrightarrow}\quad (x_1=x_2)
+$$  Die Funktionen $f_3$ und $f_4$ sind nicht injektiv, denn für diese gilt beispielsweise $(-1)^2=1^2$ beziehungsweise im Fall von $f_4$ auch $i^2=(-i)^2=-1$ für die imaginäre Einheit.
+* Die Funktion $f_2$ ist *surjektiv*, da jede nichtnegative reelle Zahl der Zielmenge Quadrat einer nichtnegativen reellen Zahl ist. Ebenso ist die Funktion $f_4$ surjektiv, da für jedes Element $y\in\mathbb{C}$ der Zielmenge gilt $y=x^2$. Nach dem Hauptsatz der Algebra besitzt jede solche Gleichung genau zwei Lösungen $x_1\in\mathbb{C}$ und $x_2\in\mathbb{C}$.  Die Funktionen $f_1$ und $f_3$ sind nicht *surjektiv*, da im Fall $f_1$ natürliche Zahlen aus der Zielmenge nur dann ein Urbild besitzen, falls sie eine Quadratzahl darstellen. Im Fall von $f_3$ besitzen alle negativen reellen Zahlen der Zielmenge kein reelles Urbild.
+* Nach Definition 2 ist unter den hier betrachteten Funktionen nur die Funktion $f_2$ *bijektiv*, da diese sowohl injektiv als auch surjektiv ist.
+
+
+Umkehrfunktion
+===
+
+
+Eine Funktion $f:D\to Z$ ordnet jedem Argument $x\in D$ eindeutig ein Element $y=f(x)\in W\subseteq Z$ zu. In diesem Fall heißt $x$ ein Urbild von $y$ unter $f$. Ein beliebiges Element $y\in Z$ der Zielmenge kann
+
+* keinem Funktionswert von $f$ entsprechen, d. h. es existiert kein $x\in D$ mit $f(x)=y$[^1]
+* genau ein Urbild $x\in D$ besitzen, d. h. $y=f(x)$, oder
+* mehrere Urbilder unter $f$ besitzen, d. h. es existieren $x_1\in D$ und $x_2\in D$ mit $y=f(x_1)=f(x_2)$
+
+>**Definition 3.** Besitzt jedes Element $y\in Z$ der Zielmenge einer Funktion $f:D\to Z$ genau ein Urbild, d. h. existieren für alle $y\in Z$ jeweils genau ein $x\in D$ mit $y=f(x)$, so nennt man $f$ **invertierbar**. Die Funktion $$
+  f^{-1}:Z\to D\,,\;y\mapsto x=f^{-1}(y)
+$$ welche jedem Element von $y\in Z$ ihr eindeutig zugeordnetes Urbild unter $f$ zuordnet, wird [Umkehrfunktion](https://de.wikipedia.org/wiki/Umkehrfunktion) von $f$ genannt.
+
+>**Satz 1.** Zu jeder bijektiven Funktion $f:D\mapsto Z$ gibt es eine Umkehrfunktion $$
+  f^{-1}:Z\to D\,,\;y\mapsto x=f^{-1}(y)
+$$ worin $x=f^{-1}(y)\in D$ das eindeutig bestimmte Argument von $f$ ist, dem $y$ zugeordnet ist, $y=f(x)$.
+
+**Beweisidee.** Bijektive Funktion $f$ sind surjektiv, d. h. Ziel- und Wertemenge sind mengengleich, d. h. $Z=W_f$ beziehungsweise $f(D)=Z$. Damit besitzt jedes Element der Zielmenge mindestens ein Urbild unter $f$. Daneben ist eine bijektive Funktion nach Definition 2 auch injektiv, d. h. jedes Element der Zielmenge ist Funktionswert höchstens eines Argumentes $x\in D$ $$
+    (f(x_1)=f(x_2))\;\to\; (x_1=x_2)
+$$ Damit ist jedes Element $y\in Z$ Funktionswert genau eines Argumentes $x\in D$, $y=f(x)$ und $x$ umkehrbar eindeutig $y$ zugeordnet.
+
+$\square$
+
+**Beispiel 4.** Gegeben und die unendliche Menge der Primzahlen $$
+  \mathcal{P}=\left\{2,3,5,7,11,13,17,19,23,...\right\}
+$$ sowie eine Funktion $f:\mathcal{P}\to\mathbb{N}^\times$, die jeder Primzahl ihre Position in der unendlichen Ungleichungskette $$
+  2<3<5<7<11<13<17<19<23<...
+$$ der Primzahlen zuweist (natürliche Ordnung). Zum Beispiel ist $f(73)=21$, d. h. die [Primzahl $73$](https://www.youtube.com/watch?v=33pH6ELDEeI) ist die 21-te Primzahl. Mit der Unendlichkeit der Menge der Primzahlen folgt, dass $f$ bijektiv ist. Mit Hilfe von Satz 1 lässt sich die Existenz der Umkehrfunktion $f^{-1}$ ableiten mit $$
+  f^{-1}:\mathbb{N}^\times\to\mathcal{P}
+$$ mit $f^{-1}(n)=$ "die $n$-te Primzahl in der Ungleichungskette". Hier sind z. B. $f^{-1}(21)=73$ und ebenso $f^{-1}(12)=37$.
+
+**Bemerkung 3.** Für bijektive reelle Funktionen $f:D\to Z$ mit $D\subseteq\mathbb{R}$ entsteht der Graph der Umkehrfunktion $f^{-1}$ durch Spiegelung des Graphen $f$ an der Geraden zur Gleichung $y = x$. Siehe nachstehende Abbildung.
+
+![Umkehrfunktion](img/mat-bild-23.png "_Fig._ Graphen einer invertierbaren reellen Funktion $f$ einer reellen Variablen und deren Umkehrfunktion $f^{-1}$: beide Graphen sind spiegelsymmetrisch bezogen auf die Gerade zur Gleichung $y=x$ (Winkelsymmetrale des ersten und dritten Quadranten).")
+
+
+Verketten von Funktionen
+===
+
+
+Gegeben sind zwei Funktionen $f:A\to B$ und $g:C\to D$ mit $f(A)\subseteq C$, d. h. das Bild $f(A)$ ist eine Teilmenge von $C$. Dann ist $$
+  (g\circ f):A\to D\,,\;x\mapsto(g\circ f)(x):=g(f(x))\quad \forall x\in A
+$$ wieder eine Funktion, die [Verkettung](https://de.wikipedia.org/wiki/Komposition_%28Mathematik%29) bzw. Hintereinanderausführung bzw. Komposition der Funktionen $f$ und $g$. Hierbei wird zunächst auf ein Element $x\in A$ die Funktion $f$ angewandt, auf das Bild $f(x)$ anschließend die Funktion $g$ $$
+  x\stackrel{f}{\mapsto} f(x)\stackrel{g}{\mapsto} g(f(x))\quad \forall x\in A
+$$ Die Funktion $f$ wird hierbei auch "innere" Funktion und die Funktion $g$ "äußere" Funktion genannt.
+
+**Beispiel 5.** Gegeben sind die reellen Funktionen $$
+  f:\mathbb{R}\to\mathbb{R}\,,\;x\to y=f(x)=(x+1)^2\quad\text{und}\quad
+  g:[0,\infty)\to\mathbb{R}\,,\;x\to y=g(x)=\sqrt[3]{x}
+$$ Die Bilder der beiden Funktionen ergeben $f(\mathbb{R})=[0,\infty)$ beziehungsweise $g([0,\infty))=[0,\infty)$ und sind somit Teilmengen der Definitionsmenge der jeweils anderen Funktion. Damit ergeben sich die beiden Verkettungen $$
+  (g\circ f):\mathbb{R}\to \mathbb{R}\,,\;x\mapsto(g\circ f)(x):=\sqrt[3]{(x+1)^2}\quad \forall x\in\mathbb{R}
+$$ beziehungsweise $$
+  (f\circ g):[0,\infty)\to \mathbb{R}\,,\;x\mapsto(f\circ g)(x):=(\sqrt[3]{x}+1)^2\quad \forall x\in[0,\infty)
+$$
+
+Wie im letzten Beispiel ersichtlich, sind Verkettungen von Funktionen im Allgemeinen nicht kommutativ. Ausnahmen bilden beispielsweise $$
+  f(x)=\lambda\cdot x^n\,,\quad g(x)=\mu\cdot x^m\quad\leadsto\quad (g\circ f)(x)=(f\circ g)(x)=\lambda\cdot\mu\cdot x^{m+n}
+$$ mit dem gemeinsamen Definitionsbereich $D=\mathbb{R}$ und Parametern $\lambda\in\mathbb{R}$, $\mu\in\mathbb{R}$ sowie $m\in\mathbb{N}$, $n\in\mathbb{N}$.
+
+
+Sicher gewusst
+===
+
+
+Testen Sie Ihr Wissen zu diesem Abschnitt bei der Beantwortung der nachstehenden Fragen.
+
+
+**Frage 1.** Die reelle Sinusfunktion $\sin:\mathbb{R}\to\mathbb{R}$ ist weder injektiv noch surjektiv. Entscheiden Sie, welche der nachfolgenden Funktionen mit der gemeinsamen Zuordnungsvorschrift $x\mapsto y=\sin{x}$ injektiv bzw. surjektiv sind.
+
+[[$f_1:\left[0,\frac{\pi}{2}\right]\to[-1,1]$] [$f_2:\left[0,\frac{\pi}{2}\right]\to[0,1]$] [$f_3:\left[0,\pi\right]\to[0,1]$]]
+[[X] [X] [ ]]  injektiv
+[[ ] [X] [X]]  surjektiv
+[[?]] Nutzen Sie zur Prüfung der Eigenschaften auch die Funktion $$
+  \arcsin:[-1,1]\to \left[-\frac{\pi}{2},\frac{\pi}{2}\right]
+$$ die *Arcussin-Funktion* genannt wird. Es gilt $x=\arcsin{(\sin{x})}$ für alle $x\in\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$. Die Funktion $\arcsin$ ist Umkehrfunktion von $$
+  \sin:\left[-\frac{\pi}{2},\frac{\pi}{2}\right]\to[-1,1]
+$$
+****************************************
+
+1. Die Funktion $f_1$ besitzt nur nichtnegative Funktionswerte, ihr Bild ist $$
+  f_1\left(\left[0,\frac{\pi}{2}\right]\right)=[0,1]\subset[-1,1]=Z_{f_1}
+$$ Damit ist $f_1$ nicht surjektiv. Jedoch ist die Funktion injektiv, da zu jedem $y\in [0,1]$ genau ein $x=\arcsin{y}$ im Definitionsbereich von $f_1$ existiert.
+2. Die Funktion $f_2$ besitzt dengleichen Definitionsbereich wie $f_1$, damit ergibt sich $$
+  f_2\left(\left[0,\frac{\pi}{2}\right]\right)=f_1\left(\left[0,\frac{\pi}{2}\right]\right)=[0,1]=W_{f_2}
+$$ Damit ist $f_2$ surjektiv. Die Funktion injektiv, da zu jedem $y\in W_{f_2}$ genau ein $x=\arcsin{y}$ im Definitionsbereich von $f_2$ existiert.
+3. Die Funktion $f_3$ ist mit gleicher Begründung wie für $f_2$ surjektiv. Jedoch ist sie nicht injektiv, da zum Beispiel $$
+  \frac{1}{2}=\sin{\left(\frac{\pi}{6}\right)}=\sin{\left(\frac{5}{6}\cdot\pi\right)}
+$$
+
+****************************************
+
+**Frage 2.** Gegeben ist eine quadratische Funktion $f$ mit $$
+  f:[b,\infty)\to[e,\infty)\,,\;x\mapsto y=f(x)=(x-b)^2+e
+$$ die von den reellen Parametern $b$ und $e$ mit $b\not=e$ abhängt.
+
+Geben Sie, falls möglich, die Umkehrfunktion $f^{-1}$ zu $f$ an.
+
+[( )] $$ f^{-1}:[e,\infty)\to [b,\infty)\,,\;x\mapsto y=f^{-1}(x)=\sqrt{x-b}+e $$
+[( )] $$ f^{-1}:[b,\infty)\to [e,\infty)\,,\;x\mapsto y=f^{-1}(x)=\sqrt{x-e}+b $$
+[( )] $$ f^{-1}:[b,\infty)\to [e,\infty)\,,\;x\mapsto y=f^{-1}(x)=-\sqrt{x-e}+b $$
+[(X)] $$ f^{-1}:[e,\infty)\to [b,\infty)\,,\;x\mapsto y=f^{-1}(x)=\sqrt{x-e}+b $$
+[( )] Die Funktion $f$ ist nicht invertierbar, besitzt demnach keine Umkehrfunktion.
+[[?]] Lässt sich die explizite Bildungsvorschrift $y=f(x)$ einer invertierbaren Funktion $f:x\mapsto y=f(x)$ nach $x$ auflösen, so lässt sich die Zuordnungsvorschrift $x=f^{-1}(y)$ bestimmen. Nach einem Tausch der Variablenbezeichnungen, lassen sich $y=f^{-1}(x)$ und $f$ zusammen in einem Koordinatensystem darstellen.
+****************************************
+
+Es gilt $$
+  y=f(x)=(x-b)^2+e\;\leftrightarrow\; y-e=(x-b)^2\;\leftrightarrow\;\sqrt{y-e}=|x-b|
+$$ worin $|x-b|=x-b$ wegen $x\in[b,\infty)$ gilt. Hieraus ergibt sich die Zuordnungsvorschrift für die Umkehrfunktion $$
+  y\mapsto x=f^{-1}(y)=\sqrt{y-e}+b
+$$ mit der bezüglich $f^{-1}$ unabhängigen Variablen $y\in[e,\infty)$ und der abhängigen Variablen $x\in[b,\infty)$. Dies ist äquivalent zu $$
+  f^{-1}:[e,\infty)\to [b,\infty)\,,\;x\mapsto y=f^{-1}(x)=\sqrt{x-e}+b
+$$
+
+****************************************
+
+
+[^1]: Existieren Elemente der Zielmenge einer Funktion mit dieser Eigenschaft, so ist die Funktion nicht surjektiv.
+
+
+
 
 ## Integralrechnung
+
+## Differentialgleichungen
