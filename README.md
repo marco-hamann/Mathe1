@@ -800,7 +800,7 @@ $$ Intervalle mit unbegrenzter Länge fest.[^2]
 >**Proposition 1.** Für Mengen $A$, $B$ und $C$ gelten:
 >
 >1. $(A\cap B)=(B\cap A)$, d. h. die Operation $\cap$ ist kommutativ.
->2. $(A\cap B)\cap C=A\cap (B\cap C)$, d. h. die Operation $\cap$ ist assoziatativ.
+>2. $(A\cap B)\cap C=A\cap (B\cap C)$, d. h. die Operation $\cap$ ist assoziativ.
 >3. $(A\cap B)\subseteq A$ und $(A\cap B)\subseteq B$
 >4. $A\cap\emptyset=\emptyset$ und $A\cap A=A$
 
@@ -848,7 +848,7 @@ Analog zu Proposition 1 gelten:
 >**Proposition 2.** Für Mengen $A$, $B$ und $C$ gelten:
 >
 >1. $(A\cup B)=(B\cup A)$, d. h. die Operation $\cup$ ist kommutativ.
->2. $(A\cup B)\cup C=A\cup (B\cup C)$, d. h. die Operation $\cup$ ist assoziatativ.
+>2. $(A\cup B)\cup C=A\cup (B\cup C)$, d. h. die Operation $\cup$ ist assoziativ.
 >3. $A\subseteq(A\cup B)$ und $B\subseteq(A\cup B)$
 >4. $A\cup\emptyset=A$ und $A\cup A=A$
 
@@ -5825,7 +5825,7 @@ Gegeben sind zwei Funktionen $f:A\to B$ und $g:C\to D$ mit $f(A)\subseteq C$, d.
   (g\circ f):A\to D\,,\;x\mapsto(g\circ f)(x):=g(f(x))\quad \forall x\in A
 $$ wieder eine Funktion, die [Verkettung](https://de.wikipedia.org/wiki/Komposition_%28Mathematik%29) bzw. Hintereinanderausführung bzw. Komposition der Funktionen $f$ und $g$. Hierbei wird zunächst auf ein Element $x\in A$ die Funktion $f$ angewandt, auf das Bild $f(x)$ anschließend die Funktion $g$ $$
   x\stackrel{f}{\mapsto} f(x)\stackrel{g}{\mapsto} g(f(x))\quad \forall x\in A
-$$ Die Funktion $f$ wird hierbei auch "innere" Funktion und die Funktion $g$ "äußere" Funktion genannt.
+$$ erkennbar daran, dass die Funktion $f$ 'innerhalb' der Klammer steht, die Funktion $g$ hingegen 'außerhalb'.[^2]
 
 **Beispiel 5.** Gegeben sind die reellen Funktionen $$
   f:\mathbb{R}\to\mathbb{R}\,,\;x\to y=f(x)=(x+1)^2\quad\text{und}\quad
@@ -5836,9 +5836,40 @@ $$ beziehungsweise $$
   (f\circ g):[0,\infty)\to \mathbb{R}\,,\;x\mapsto(f\circ g)(x):=(\sqrt[3]{x}+1)^2\quad \forall x\in[0,\infty)
 $$
 
-Wie im letzten Beispiel ersichtlich, sind Verkettungen von Funktionen im Allgemeinen nicht kommutativ. Ausnahmen bilden beispielsweise $$
+Wie im letzten Beispiel ersichtlich, sind Verkettungen von Funktionen im Allgemeinen *nicht kommutativ*. Ausnahmen bilden beispielsweise $$
   f(x)=\lambda\cdot x^n\,,\quad g(x)=\mu\cdot x^m\quad\leadsto\quad (g\circ f)(x)=(f\circ g)(x)=\lambda\cdot\mu\cdot x^{m+n}
 $$ mit dem gemeinsamen Definitionsbereich $D=\mathbb{R}$ und Parametern $\lambda\in\mathbb{R}$, $\mu\in\mathbb{R}$ sowie $m\in\mathbb{N}$, $n\in\mathbb{N}$.
+
+Die Verkettung von Funktionen ist *assoziativ*, d. h. für Funktionen $f:A\to B$, $g:B\to C$ und $h:C\to D$ definieren $$
+  (h\circ(g\circ f))(x)=h((g\circ f)(x))=h(g(f(x)))\quad\forall\,x\in A
+$$ und $$
+  ((h\circ g)\circ f)(x)=(h\circ g)(f(x))=h(g(f(x)))\quad\forall\,x\in A
+$$ dieselbe Funktion. Daher kann unter Weglassen der Klammern $$
+  h\circ g\circ f=h\circ(g\circ f)=(h\circ g)\circ f
+$$ geschrieben werden. Die Reihenfolge der einzelnen Funktionen ist jedoch im Allgemeinen beizubehalten.
+
+**Bemerkung 4.** Eine Funktion $f:A\to A$ kann mit sich selbst verkettet werden, es entsteht wieder eine Funktion $A\to A$. Mit der Assoziativität der Verkettung lässt sich nun iterativ fortsetzen $$
+  f^{\langle 0\rangle}:=\operatorname{id}_A\,,\quad f^{\langle 1\rangle}:=f\,,\quad f^{\langle 2\rangle}:=f\circ f\,,\quad f^{\langle n+1\rangle}:=f\circ f^{\langle n\rangle}
+$$ worin $\operatorname{id}_A:A\to a,\,x\mapsto x$ die identische Abbildung von $A$ auf sich bezeichnet. Die so definierte Funktion $f^{\langle n\rangle}$ mit $n\in\mathbb{N}$ wird **n-te Iterierte** von $f$ bezeichnet. Für die Funktion $$
+  f:\mathbb{R}^\times\to\mathbb{R}^\times,\, x\mapsto y=f(x)=\frac{x^2+2}{2\cdot x}
+$$ folgt für die Iterierten an der Stelle $x_0=1$ $$
+  f^{\langle 1\rangle}(1)=\frac{3}{2}=1.5\,,\quad
+  f^{\langle 2\rangle}(1)=\frac{17}{12}\approx 1.4166667\,,\quad
+  f^{\langle 3\rangle}(1)=\frac{577}{408}\approx 1.4142157\,,\quad
+  f^{\langle 4\rangle}(1)=\frac{665857}{470832}\approx 1.4142136\,,\quad ...
+$$ während an der Stelle $x_1=-3$ für die Iterierten folgt $$
+  f^{\langle 1\rangle}(-3)=-\frac{11}{6}\approx -1.8333333\,,\quad
+  f^{\langle 2\rangle}(-3)=-\frac{193}{132}\approx -1.4621212\,,\quad
+  f^{\langle 3\rangle}(-3)=-\frac{72097}{50952}\approx -1.4149984\,,\quad
+  f^{\langle 4\rangle}(-3)=-\frac{10390190017}{7346972688}\approx -1.4142138\,,\quad ...
+$$ Für ein allgemeines $x$ ergeben sich die Iterierten von $f$ mit $$
+  f^{\langle 1\rangle}(x)={{x^2+2}\over{2\,x}}\,,\quad
+  f^{\langle 2\rangle}(x)={{x^4+12\,x^2+4}\over{4\,x^3+8\,x}}\,,\quad
+  f^{\langle 3\rangle}(x)={{x^8+56\,x^6+280\,x^4+224\,x^2+16}\over{8\,x^7+112\,x^5+224\,x^3+64\,x}}\,,\quad
+  f^{\langle 4\rangle}(x)={{x^{16}+240\,x^{14}+7280\,x^{12}+64064\,x^{10}+205920\,x^8+256256\,x^6+116480\,x^4+15360\,x^2+256}\over{16\,x^{15}+1120\,x^{13}+17472\,x^{11}+91520\,x^9+183040\,x^7+139776\,x^5+35840\,x^3+2048\,x}}\,, ...
+$$ Der Funktionsgraph zu $f^{\langle 3\rangle}$ ist im Bereich $x\in[-5,5]$ in der nachstehenden Abbildung dargestellt.
+
+![Iteration](img/mat-bild-25.png "_Fig._ Funktionsgraphen der $n$-ten Iterierten $f^{\langle n\rangle}$ mit $n\in\{1,2,3\}$ zur Funktion $f:\mathbb{R}\to\mathbb{R}\,,\;x\mapsto(x^2+2)/(2\cdot x)$. Im dargestellten Intervall $[-5,5]$ sind beispielsweise $f^{\langle 3\rangle}(-3)\approx -1.4$ und $f^{\langle 3\rangle}(1)\approx 1.4$ ablesbar.")<!-- style="display: block; margin-left: auto; margin-right: auto; max-width: 1000px;" -->
 
 
 Sicher gewusst
@@ -5899,7 +5930,7 @@ $$
 
 [^1]: Existieren Elemente der Zielmenge einer Funktion mit dieser Eigenschaft, so ist die Funktion nicht surjektiv.
 
-
+[^2]: Die Reihenfolge der Berechnung der Funktionswerte ergibt sich daraus, dass Klammern von "innen nach außen" berechnet werden.
 
 
 ## Integralrechnung
