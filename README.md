@@ -5927,6 +5927,74 @@ $$
 
 ****************************************
 
+**Frage 3.** Entscheiden Sie, ob die nachstehenden Abbildungen funktional (rechtseindeutig) im Sinne von Definition 1 sind.
+
+1. Jeder reellen quadratischen Gleichung $x^2+p\cdot x+q=0$ ist ihre Lösung zugeordnet.
+2. Jeder reellen quadratischen Gleichung vom Typ $x^2+p\cdot x+\frac{p^2}{4}=0$ ist ihre Lösung zugeordnet.
+3. Jeder reellen kubischen Gleichung vom Typ $$
+  \left(x^2+a^2\right)\cdot(x-p)=x^3-p\cdot x^2+a^2\cdot x-a^2\cdot p=0
+$$ mit $a\not=0$ ist ihre reelle Lösung zugeordnet.
+
+[[funktional] [nicht funktional]]
+[( ) (X)]  1.
+[(X) ( )]  2.
+[(X) ( )]  3.
+[[?]] Die Eigenschaft "funktional" gilt genau dann, wenn jedem Element der Definitionsmenge - hier also jeder Gleichung vom entsprechendem Typ - genau ein Element der Zielmenge - also eine genau Lösung - zugeordnet ist. Überlegen Sie, welche Zielmengen in den Beispielen zu wählen sind.
+****************************************
+
+1. Nach dem Hauptsatz der Algebra besitzt die reelle quadratische Gleichung genau zwei komplexe Lösungen. Als Zielmenge der Abbildung ist demnach $Z=\mathbb{C}$ zu wählen. Die Lösungen berechnen sich $$
+  x_{1,2}=\left\{\begin{array}{rrr}
+    -\frac{p}{2}\pm\sqrt{\frac{p^2}{4}-q} & \text{falls} & p^2-4\cdot q\geq 0 \\
+    -\frac{p}{2}\pm i\cdot\sqrt{q-\frac{p^2}{4}} & \text{falls} & p^2-4\cdot q< 0
+  \end{array}\right.
+$$ worin $i$ mit $i^2=-1$ die imaginäre Einheit bezeichnet. Für $p^2-4\cdot q=0$ gilt speziell $x_1=x_2=-\frac{p}{2}$. Hieraus folgt, dass einer reellen quadratischen Gleichung des gegebenen Typs nur im Fall $x_1=x_2\in\mathbb{R}$ genau eine Lösung zugeordnet werden kann. Die Abbildung ist demnach nicht funktional.
+2. Als Zielmenge ist wie im Beispiel 1 sinnvoll die Menge der komplexen Zahlen zu wählen, $Z=\mathbb{C}$. Das quadratische Polynom der Gleichung lässt sich in Produktform darstellen $$
+  x^2+p\cdot x+\frac{p^2}{4}=\left(x-\frac{p}{2}\right)^2=0
+$$ woraus sich die beiden identischen reellen Lösungen $$
+  x_1=x_2=\frac{p}{2} \in\mathbb{R}
+$$ ablesen lassen. Die Wertemenge ist damit $W=\mathbb{R}$, die Zuordnung zu den Elementen der Wertemenge rechtseindeutig.
+3. Die Zielmenge ist laut Aufgabenstellung $Z=\mathbb{R}$. Aus der Produktdarstellung ist erkennbar, dass jede kubische Gleichung dieses Typs genau eine reelle Lösung $x_1=p$ und zwei nichtreelle, komplex konjugierte Lösungen $x_{2,3}=\pm |a|\cdot i$ mit $i^2=-1$ besitzt. Letztere sind für die Abbildung nicht relevant. Die Abbildung ist somit rechtseindeutig.
+
+Vergleichen Sie auch mit dem Vorgehen zum Lösen algebraischer Gleichungen, siehe Abschnitt [Algebraische Gleichungen](#Algebraische-Gleichungen).
+
+****************************************
+
+**Frage 4.** Gegeben ist eine natürliche Zahl $m>1$. Jede Zahl $n\in\mathbb{N}$ lässt sich eindeutig darstellen als $$
+  n=a\cdot m+r\quad\text{mit}\quad a\in\mathbb{N}\,,\;r\in\mathbb{N}\,,\; r<m
+$$ Betrachtet wir die Funktion $$
+  f_m:\mathbb{N}\to\mathbb{N}\,,\;n\mapsto r=f_m(n)
+$$
+
+Ist $f_m$ injektiv?
+
+[( )] Ja
+[(X)] Nein
+[[?]] Nach Definition 2 ist eine Funktion injektiv, wenn zu jedem Element der Wertemenge jeweils nur genau ein Urbild existiert.
+****************************************
+
+Für jedes gewählte $m$ ist $n+m=(a+1)\cdot m+r$ und somit $$
+  f_m(n)=f_m(n+m)=r\;\rightarrow\;n\not=n+m
+$$ Die zu beliebigem $m$ gehörende Funktion $f_m$ ist nicht injektiv.
+
+****************************************
+
+Bestimmen Sie die Wertemenge von $f_m$.
+
+[(X)] $W=\{0,1,2,...,m-1\}$
+[( )] $W=\{1,2,...,m\}$
+[( )] $W=\mathbb{N}$
+[[?]] Obige Gleichung beschreibt die Division einer natürlichen Zahl $n$ durch die natürliche Zahl $m>1$ mit Rest $r\in\mathbb{N}$.
+****************************************
+
+Für die (kleinste) natürliche Zahl $n=0$ gilt $f_m(n)=0$. Hieraus folgen unmittelbar $$
+  f_m(1)=1\,,\quad f_m(2)=2\,,\quad ...,\quad f_m(m-1)=m-1
+$$ Mit $f_m(n)=f_m(n+m)=r$ für alle $n\in\mathbb{N}$ folgt hieraus schließlich $$
+  f_m(a\cdot m+r)=r \quad\text{mit}\quad r\in\{0,1,2,...,m-1\}
+$$ für beliebige $a\in}mathbb{N}$.
+
+****************************************
+
+
 
 [^1]: Existieren Elemente der Zielmenge einer Funktion mit dieser Eigenschaft, so ist die Funktion nicht surjektiv.
 
