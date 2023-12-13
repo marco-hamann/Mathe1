@@ -1347,7 +1347,7 @@ Das Rechnen mit reellen Zahlen lässt sich auf imaginäre Zahlen übertragen.
 **Beispiel 2.** Es berechnen sich
 
 1. $3i+2i+ci=(5+c)\cdot i\;\text{für}\; c\in\mathbb{R}$
-2. $pi\cdot qi=pq\cdot i^2=-pq\;\text{für}\; p\in\mathbb{R}\,,\; q\in\mathbb{R}$
+2. $pi\cdot qi=pq\cdot i^2=-pq\;\text{für}\; p\in\mathbb{R},\; q\in\mathbb{R}$
 3. $i^5=i^{2+2+1}=i^2\cdot i^2\cdot i=(-1)\cdot(-1)\cdot i=i$
 4. $i^{4n+1}=i^{4n}\cdot i^3=(i^2\cdot i^2)^n\cdot i^2\cdot i=1^n\cdot(-1)\cdot i=-1 \;\forall n\in\mathbb{N}$
 5. $$\frac{1}{i^3}=\frac{1}{i^2\cdot i}=-\frac{1}{i}=-\frac{i}{i^2}=-\frac{i}{(-1)}=i$$
@@ -1364,7 +1364,7 @@ simplify(2*i+a*i)
 Die uneingeschränkte Anwendung der Rechengesetze für reelle Zahlen auf imaginäre Zahlen führt auf die Definition einer komplexen Zahl.
 
 >**Definition 3.** Eine [komplexe Zahl](https://de.wikipedia.org/wiki/Komplexe_Zahl) ist ein Ausdruck der Form $$
-  z=a+ib\quad\text{mit}\quad a\in\mathbb{R}\,,\; b\in\mathbb{R}\,,\; i^2=-1
+  z=a+ib\quad\text{mit}\quad a\in\mathbb{R},\; b\in\mathbb{R},\; i^2=-1
 $$ Die darin auftretende Zahl $a$ wird *Realteil* von $z$ genannt, während der Koeffizient $b$ von $i$ den *Imaginärteil* von $z$ bezeichnet. Man schreibt $$
   a=\operatorname{Re}{z}\,,\quad b=\operatorname{Im}{z}
 $$ Die Menge aller komplexen Zahlen wird angegeben mit $$
@@ -1737,10 +1737,10 @@ $$ wobei das Produkt auf der rechten Seite $n$-mal den Faktor $n$ enthält.
 
 Allgemein gilt: $$
   i^n=\left\{\begin{array}{rcl}
-  1 & \text{für} & n=4\cdot k\,,\; k\in\mathbb{N}^\times \\
-  i & \text{für} & n=4\cdot k+1\,,\; k\in\mathbb{N} \\
-  -1 & \text{für} & n=4\cdot k+2\,,\; k\in\mathbb{N} \\
-  -i & \text{für} & n=4\cdot k+3\,,\; k\in\mathbb{N}
+  1 & \text{für} & n=4\cdot k,\; k\in\mathbb{N}^\times \\
+  i & \text{für} & n=4\cdot k+1,\; k\in\mathbb{N} \\
+  -1 & \text{für} & n=4\cdot k+2,\; k\in\mathbb{N} \\
+  -i & \text{für} & n=4\cdot k+3,\; k\in\mathbb{N}
   \end{array}\right.
 $$ Die Allgemeingültigkeit der Aussage erfolgt in zwei Schritten:
 
@@ -1795,7 +1795,7 @@ Eine Umkehrung des Potenzierens ist das Radizieren: In einer Gleichung $w^n=z$ i
 >**Definition 8.** Es seien $z\in\mathbb{C}$ und $n\in\mathbb{N}$ mit $n\geq 2$ beliebig gegeben. Jede komplexe Zahl $w$ mit $w^n=z$ heißt eine [komplexe n-te Wurzel](https://de.wikipedia.org/wiki/Wurzel_%28Mathematik%29#Wurzeln_aus_komplexen_Zahlen) der Zahl $z$.[^4]
 
 >**Satz 5.** Es seien $z\in\mathbb{C}$ mit der Polardarstellung $$
-  z=r\cdot(\cos{\varphi}+i\cdot\sin{\varphi})\,,\quad r\in(0,\infty)\,,\;\varphi\in(-\pi,\pi]
+  z=r\cdot(\cos{\varphi}+i\cdot\sin{\varphi})\,,\quad r\in(0,\infty),\;\varphi\in(-\pi,\pi]
 $$ und $n\in\mathbb{N}$ mit $n\geq 2$ beliebig gegeben. Die komplexe Zahl $$
   w_k=\sqrt[n]{r}\cdot\left(\cos{\left(\frac{\varphi+2\cdot k\cdot\pi}{n}\right)}+i\cdot\sin{\left(\frac{\varphi+2\cdot k\cdot\pi}{n}\right)}\right)
 $$ ist für jeden Indexwert $k\in\{0,1,...,n-1\}$ eine komplexe $n$-te Wurzel von $z$. Der Ausdruck $\sqrt[n]{r}$ in der vorstehenden Formel bezeichnet die eindeutig bestimmte reelle $n$-te Wurzel von $r$.
@@ -1995,10 +1995,10 @@ roots(p,x)
   a\cdot x+b\cdot y+c=0\;\; \left(a^2+b^2\neq 0\right)\quad\longleftrightarrow\quad y=-\frac{a}{b}x-\frac{c}{b}\;\text{ (falls } b\neq0)
 $$ Die Lösungsmenge lässt sich als Gerade in der reellen Zahlenebene $\mathbb{R}^2$ darstellen. Analog beschreiben lineare Gleichungen in den Variablen $x\in\mathbb{R}$, $y\in\mathbb{R}$ und $z\in\mathbb{R}$ mit $$
   a\cdot x+b\cdot y+c\cdot z + d=0\quad
-  a\in\mathbb{R}\,,\;
-  b\in\mathbb{R}\,,\;
-  c\in\mathbb{R}\,,\;
-  d\in\mathbb{R}\,,\; a^2+b^2+c^2\neq0
+  a\in\mathbb{R},\;
+  b\in\mathbb{R},\;
+  c\in\mathbb{R},\;
+  d\in\mathbb{R},\; a^2+b^2+c^2\neq0
 $$ - genauer deren Lösungen - als Punktmengen Ebenen im dreidimensionalen Raum dar.
 
 **Beispiel 2.** Es bezeichnen $a$, $b$ und $c$ reelle Koeffizienten sowie $x$ die reelle Variable. Die [quadratische Gleichung](https://de.wikipedia.org/wiki/Quadratische_Gleichung) in der Variablen $x$ besitzt die Form $$
@@ -2821,16 +2821,16 @@ x + y - (y + x)
 **Beispiel 3.**
 
 1. Die Menge geordneter $n$-Tupel reeller Zahlen $$
-  \mathbb{R}^n:=\left\{\left.\begin{pmatrix} x_1 \\ \vdots \\ x_n\end{pmatrix}\right|\; x_j\in\mathbb{R}\,,\;j\in\{1,...,n\}\right\}
+  \mathbb{R}^n:=\left\{\left.\begin{pmatrix} x_1 \\ \vdots \\ x_n\end{pmatrix}\right|\; x_j\in\mathbb{R},\;j\in\{1,...,n\}\right\}
 $$ mit festem $n\in\mathbb{N}$ und $n>0$ bilden bezüglich der in Definition 1 eingeführten Operationen einen reellen Vektorraum (Vektorraum über $\mathbb{R}$). Im Speziellen bilden die reellen Zahlen $\mathbb{R}$, die geordneten Paare reeller Zahlen $\mathbb{R}^2$ und die geordneten Tripel reeller Zahlen $\mathbb{R}^3$ jeweils einen reellen Vektorraum.
 
 2. Auf der Menge aller geordneten Paare komplexer Zahlen $$
-  \mathbb{C}^2:=\left\{\left.\begin{pmatrix} z_1 \\ z_2 \end{pmatrix}\right|\; z_1\in\mathbb{C}\,,\;z_2\in\mathbb{C}\right\}
+  \mathbb{C}^2:=\left\{\left.\begin{pmatrix} z_1 \\ z_2 \end{pmatrix}\right|\; z_1\in\mathbb{C},\;z_2\in\mathbb{C}\right\}
 $$ beziehungsweise - unter Verwendung der kartesischen Darstellung von $z_1$, $z_2$ $$
-  \mathbb{C}^2=\left\{\left.\begin{pmatrix} a_1+i\cdot b_1 \\ a_2+i\cdot b_2 \end{pmatrix}\right|\; a_j\in\mathbb{R}\,,b_j\in\mathbb{R}\,,\;j\in\{1,2\}\right\}
+  \mathbb{C}^2=\left\{\left.\begin{pmatrix} a_1+i\cdot b_1 \\ a_2+i\cdot b_2 \end{pmatrix}\right|\; a_j\in\mathbb{R}\,,b_j\in\mathbb{R},\;j\in\{1,2\}\right\}
 $$ mit imaginärer Einheit $i$, $i^2=-1$, kann sinngemäß zu Definition 1 *komponentenweise* eine Addition und Skalarvielfachbildung in $\mathbb{C}^2$ erklärt werden. Nach Definition 2 bilden diese einen komplexen Vektorraum (Vektorraum über $\mathbb{C}$) da sich alle Rechengesetze aus Satz 1 sinngemäß von $\mathbb{R}^2$ auf $\mathbb{C}^2$ übertragen lassen.
 3. Gegeben ist die Menge aller reellen Polynomfunktionen $f$ vom Grad $\deg{f}\leq2$ $$
-  V=\left\{ f:\mathbb{R}\to\mathbb{R}|\;y=f(x)=a\cdot x^2+b\cdot x+c\,,\;a\in\mathbb{R}\,,\;b\in\mathbb{R}\,,\;c\in\mathbb{R}\right\}
+  V=\left\{ f:\mathbb{R}\to\mathbb{R}|\;y=f(x)=a\cdot x^2+b\cdot x+c,\;a\in\mathbb{R},\;b\in\mathbb{R},\;c\in\mathbb{R}\right\}
 $$ Auf $V$ sind eine Addition $$
   V\times V\to V\quad\text{mit}\quad (f_1,f_2)(x)\mapsto (f_1+f_2)(x)=f_1(x)+f_2(x)\quad \forall\; x\in\mathbb{R}
 $$ und $$
@@ -3178,7 +3178,7 @@ $$ Nach Definition 7 (2) ist die Vereinigungsmenge $U_1\cup U_2$ kein Untervekto
 Im Anliegen der Verknüpfung von Untervektorräumen kann mit der vorstehenden Bemerkung definiert werden:
 
 >**Definition 9.** Die [Summe](https://de.wikipedia.org/wiki/Untervektorraum#Summe) zweier Untervektorräume $U_1$ und $U_2$ eines Vektorraumes $V$ über dem Körper $K$ ist der Untervektorraum $$
-  W=U_1+U_2:=\{\lambda_1\cdot v_1+\lambda_2\cdot v_2|\;\lambda_j\in K\,,\;v_j\in U_j,j\in\{1,2\}\}
+  W=U_1+U_2:=\{\lambda_1\cdot v_1+\lambda_2\cdot v_2|\;\lambda_j\in K,\;v_j\in U_j,j\in\{1,2\}\}
 $$ Gilt $U_1\cap U_2=\{o\}$ (aus Nullelement bestehender Untervektorraum), so heißt $U_1+U_2$ **direkte Summe** und wird mit $U_1\oplus U_2$ gekennzeichnet.
 
 >**Satz 5.** ([Dimensionssatz](https://de.wikipedia.org/wiki/Untervektorraum#Summe)) Für beliebige Untervektorräume $U_1$ und $U_2$ eines Vektorraumes $V$ über dem Körper $K$ gilt $$
@@ -3196,7 +3196,7 @@ $$ Es gilt einerseits für den Durchschnitt $$
   U_1\cap U_2=\{o\}\,,\quad\dim{(U_1\cap U_2)}=0
 $$ andererseits für die Summe (bitte nachrechnen) $$
   U_1+U_2=U_1\oplus U_2=\left\{\left.\lambda_1\cdot \begin{pmatrix} 1 \\ 0 \end{pmatrix}+
-  \lambda_2\cdot \begin{pmatrix} 1 \\ 1 \end{pmatrix}\right|\;\lambda_1\in\mathbb{R}\,,\;\lambda_2\in\mathbb{R}\right\}=\mathbb{R}^2\,,\quad\dim{(U_1+U_2)}=2
+  \lambda_2\cdot \begin{pmatrix} 1 \\ 1 \end{pmatrix}\right|\;\lambda_1\in\mathbb{R},\;\lambda_2\in\mathbb{R}\right\}=\mathbb{R}^2\,,\quad\dim{(U_1+U_2)}=2
 $$ In diesem Beispiel zeigt sich der Dimensionssatz $$
   \dim{U_1}+\dim{U_2}=1+1=0+2=\dim{(U_1\cap U_2)}+\dim{(U_1+U_2)}
 $$
@@ -3900,7 +3900,7 @@ det(A)-denominator(B[1][1])
 @Algebrite.eval
 
 >**Definition 2.** Für eine Matrix $A\in\mathbb{K}^{3,3}$ mit der Komponentendarstellung $$
-  A=\left(a_{ij}\right)_{i=1,...,3\,,\; j=1,...,3}
+  A=\left(a_{ij}\right)_{i=1,...,3,\; j=1,...,3}
 $$ heißt $\det{A}\in K$ mit $$
   \begin{array}{rcl}
     \det{A} & = &
@@ -3980,7 +3980,7 @@ Ebenso lassen sich Ebenen als Verbindungsebenen dreier Punkte durch Determinante
 >**Satz 4.** Die Sätze 1, 2 und 3 gelten sinngemäß auch für Determinanten dritter Ordnung.
 
 >**Definition 3.** Gegeben sei eine Matrix $A\in K^{3,3}$ mit Komponentendarstellung $$
-  A=\left(a_{ij}\right)_{i=1,...,3\,,\; j=1,...,3}
+  A=\left(a_{ij}\right)_{i=1,...,3,\; j=1,...,3}
 $$ mit der Determinante dritter Ordnung $\det{A}\in K$.
 >
 >Dann bezeichnet $D_{ij}$ die gebildete *Unterdeterminante* zweiter Ordnung der aus $A$ durch Streichen der $i$-ten Zeile und der $j$-ten Spalte resultierenden Matrix.
@@ -4009,7 +4009,7 @@ Die Determinante $\det{A}$ lässt sich durch algebraische Komplemente darstellen
 $$ Man sagt, die Determinante ist entwickelt nach (den Komponenten) der ersten Zeile.
 
 >**Satz 5.** Sei $A\in K^{3,3}$ mit Komponentendarstellung $$
-  A=\begin{pmatrix} a_{ij} \end{pmatrix}_{i=1,...,3\,,\;j=1,...,3}
+  A=\begin{pmatrix} a_{ij} \end{pmatrix}_{i=1,...,3,\;j=1,...,3}
 $$ und Determinante $\det{A}\in K$.
 >
 > Dann berechnet sich
@@ -4056,7 +4056,7 @@ Determinanten $n$-ter Ordnung
 Gegeben ist eine $n$-reihige Matrix $A\in K^{n,n}$ mit der Komponentendarstellung $$
  A=\left(
   \begin{array}{ccc} a_{11} & \ldots & a_{1n} \\ \vdots & \ddots & \vdots \\ a_{n1} & \ldots & a_{nn} \end{array}
- \right) = \left( a_{ij} \right)_{i=1,...,n\,,\; j=1,...,n}\quad\text{mit}\quad n\in\mathbb{N}\setminus\{0\}
+ \right) = \left( a_{ij} \right)_{i=1,...,n,\; j=1,...,n}\quad\text{mit}\quad n\in\mathbb{N}\setminus\{0\}
 $$ Es lässt sich rekursiv der Wert der Determinante $n$-ter Ordnung $\det{A}$ berechnen $$
   \det{A} =\sum_{j=1}^n{a_{1j}\cdot A_{1j}}=a_{11}\cdot A_{11}+a_{12}\cdot A_{12}+\ldots +a_{1n}\cdot A_{1n}
 $$ worin $$
@@ -4461,7 +4461,7 @@ Gauß-Jordan-Verfahren
 =====================
 
 Das Gauß-Verfahren kann - in erweiterter Form - zur Berechnung der inversen Matrix zu einer gegebenen Matrix $A$ verwendet werden. Hierfür ist das Gleichungssystem durch einen zusätzlichen Umformungsschritt auf die reduzierte Stufenform zu transformieren (Komponenten "oberhalb" der Elemente $a_{ii}\not=0$ zu Null umformen). Dieses Verfahren wird **Gauß-Jordan-Verfahren** genannt. $$
-  A\cdot X=E\quad A\in K^{n,n}\,,\; X\in K^{n,n}\,,\; E\in K^{n,n}
+  A\cdot X=E\quad A\in K^{n,n},\; X\in K^{n,n},\; E\in K^{n,n}
 $$ worin $A$ die zu invertierende Matrix, $X$ die Lösungsmatrix und $E$ die $n$-reihige Einheitsmatrix bezeichnen. Durch Multiplikation von links mit $A^{-1}$ berechnet sich daraus $$
   X=\textcolor{magenta}{A^{-1}}\cdot A\cdot X=\textcolor{magenta}{A^{-1}}\cdot E\quad\leftrightarrow\quad
   E\cdot X=A^{-1}
@@ -4684,8 +4684,8 @@ $$ gilt $r=\mathrm{rg}{A}=n$.
   \end{array}\right)
 $$ Es folgt hieraus $\mathrm{rg}{A}=2$ und somit $\mathrm{rg}{A}<3$, d. h. die Vektoren $$
   \left\{
-      \begin{pmatrix} 1 \\ 1 \\ 1 \\ 1 \end{pmatrix}\,,\;
-      \begin{pmatrix} 0 \\ 2 \\ 1 \\ 0 \end{pmatrix}\,,\;
+      \begin{pmatrix} 1 \\ 1 \\ 1 \\ 1 \end{pmatrix},\;
+      \begin{pmatrix} 0 \\ 2 \\ 1 \\ 0 \end{pmatrix},\;
       \begin{pmatrix} 3 \\ -1 \\ 1 \\ 3  \end{pmatrix}
   \right\}
 $$ sind linear abhängig. Es gilt $a_3=3\cdot a_1-2\cdot a_2$.
@@ -5307,7 +5307,7 @@ $$ Hieraus lassen sich die Lösungen der zugehörigen charakteristischen Gleichu
 
 **Frage 3.** Berechnen Sie zur Matrix $B$ den Eigenraum $U_2$ zum Eigenwert $\lambda=2$.
 
-[( )] $$ U_{2}=\left\{\left.\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}=\alpha\cdot\begin{pmatrix} 1 \\ 0 \\ 2 \end{pmatrix}+\beta\cdot\begin{pmatrix} 1 \\ 1 \\ 2 \end{pmatrix}\right|\;\alpha\in\mathbb{R}\,,\; \beta\in\mathbb{R}\right\} $$
+[( )] $$ U_{2}=\left\{\left.\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}=\alpha\cdot\begin{pmatrix} 1 \\ 0 \\ 2 \end{pmatrix}+\beta\cdot\begin{pmatrix} 1 \\ 1 \\ 2 \end{pmatrix}\right|\;\alpha\in\mathbb{R},\; \beta\in\mathbb{R}\right\} $$
 [( )] $$ U_{2}=\left\{\left.\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}=\gamma\cdot\begin{pmatrix} 1 \\ 0 \\ 2 \end{pmatrix}\right|\;\gamma\in\mathbb{R}\right\} $$
 [(X)] $$ U_{2}=\left\{\left.\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}=\delta\cdot\begin{pmatrix} 1 \\ 1 \\ 2 \end{pmatrix}\right|\;\delta\in\mathbb{R}\right\} $$
 [[?]] Setzen Sie zur Berechnung den Eigenwert $\lambda=2$ in die Eigenwertaufgabe $(B-\lambda\cdot E)\cdot x=o$ ein und berechnen Sie die Lösung des Gleichungssystems.
@@ -5688,7 +5688,7 @@ $$ d. h. $f$ ist *rechtseindeutig* bzw. *funktional*.
 **Bemerkung 1.**
 
 1. Nach der vorstehenden Definition ordnet eine Funktion $f$ jedem Element $x\in D$ genau ein Element $y\in Z$ zu. Man schreibt daher $$
-  f:D\to W\,,\;x\mapsto y=f(x)
+  f:D\to W,\;x\mapsto y=f(x)
 $$ für die Funktion $f$.
 2. Die Menge $D$ wird Definitionsmenge von $f$, jedes Element $x\in D$ Argument genannt. Die Menge $Z$ wird Zielmenge von $f$ genannt, jedes Element $y=f(x)$ ein Funktionswert der Funktion. Die Menge aller Funktionswerte $$
   W_f:=f(D)=\left\{y\in Z| y=f(x)\;\land\; x\in D\right\}
@@ -5719,13 +5719,13 @@ $$ die Eulerdarstellung einer komplexen Zahl. Der Wertebereich dieser Funktion b
 5. Sind $D\subseteq\mathbb{N}$ und $Z=\mathbb{R}$, so wird $f:D\to\mathbb{R},n\mapsto y=f(n)$ eine reelle Funktion einer natürlichen Variablen genannt. Zum Beispiel ist $$
   f:n\mapsto y=f(n)=\frac{1}{n}\quad\text{mit}\quad D=\mathbb{N}^\times
 $$ Werden die Funktionswerte vom kleinsten Argument beginnend berechnet, so ergibt sich die unendliche Folge $$
-  f(1)=1\,,\;f(2)=\frac{1}{2}\,,\;f(3)=\frac{1}{3}\,,\;...
+  f(1)=1,\;f(2)=\frac{1}{2},\;f(3)=\frac{1}{3},\;...
 $$ die kürzer geschrieben werden kann als $$
-  \left(f(n)\right)_{n\in\mathbb{N}^\times}=1\,,\;\frac{1}{2}\,,\;\frac{1}{3}\,,\;...
+  \left(f(n)\right)_{n\in\mathbb{N}^\times}=1,\;\frac{1}{2},\;\frac{1}{3},\;...
 $$ und **reelle Zahlenfolge** genannt wird. Wertebereich und Funktionsgraph sind in einem topologischen Verständnis diskrete Mengen.
 
-**Bemerkung 2.** Wird eine Funktion $f:D\to Z\,,\;x\mapsto y=f(x)$ nur auf einer Teilmenge $D'\subset D$ der Definitionsmenge betrachtet, so heißt $$
-  f|_{D'}:D'\to Z\,,\;x\mapsto y=f(x)
+**Bemerkung 2.** Wird eine Funktion $f:D\to Z,\;x\mapsto y=f(x)$ nur auf einer Teilmenge $D'\subset D$ der Definitionsmenge betrachtet, so heißt $$
+  f|_{D'}:D'\to Z,\;x\mapsto y=f(x)
 $$ *Einschränkung* von $f$ auf $D'$. Der Funktionsgraph der auf $D'$ eingeschränkten Funktion $f_{D'}$ ist eine Teilmenge des Funktionsgraphen $f$ auf $D$ $$
   G_{f_{D'}}:=\left\{(x,y)|y=f(x)\;\land\;x\in D'\right\}\subset G_f
 $$
@@ -5739,7 +5739,7 @@ Im vorangestellten Beispiel ist die Funktion $f:\mathbb{N}^\times\to\mathbb{R},x
 $$ Die Definitionsmenge $D=\mathbb{R}$ ist hierbei zerlegt in $$
   \mathbb{R}=(-\infty,0)\cup[0,1)\cup[1,\infty)
 $$ auf den Teilintervallen bestehen die Funktionen $$
-  x\mapsto 0\,,\;x\in(-\infty,0)\quad\text{sowie}\quad x\mapsto x^2\,,\;x\in[0,1)\quad\text{und}\quad x\mapsto 2-x\,,\;x\in[1,\infty)
+  x\mapsto 0,\;x\in(-\infty,0)\quad\text{sowie}\quad x\mapsto x^2,\;x\in[0,1)\quad\text{und}\quad x\mapsto 2-x,\;x\in[1,\infty)
 $$ Der Definitionsbereich der Funktion $f$ ist $\mathbb{R}$, der Wertebereich lässt als Vereinigung der Wertebereiche der drei Teilfunktionen bestimmen $$
   W=\left\{0\right\}\cup[0,1)\cup(\infty,1)=(\infty,1)
 $$
@@ -5791,11 +5791,11 @@ Eine Funktion $f:D\to Z$ ordnet jedem Argument $x\in D$ eindeutig ein Element $y
 * mehrere Urbilder unter $f$ besitzen, d. h. es existieren $x_1\in D$ und $x_2\in D$ mit $y=f(x_1)=f(x_2)$
 
 >**Definition 3.** Besitzt jedes Element $y\in Z$ der Zielmenge einer Funktion $f:D\to Z$ genau ein Urbild, d. h. existieren für alle $y\in Z$ jeweils genau ein $x\in D$ mit $y=f(x)$, so nennt man $f$ **invertierbar**. Die Funktion $$
-  f^{-1}:Z\to D\,,\;y\mapsto x=f^{-1}(y)
+  f^{-1}:Z\to D,\;y\mapsto x=f^{-1}(y)
 $$ welche jedem Element von $y\in Z$ ihr eindeutig zugeordnetes Urbild unter $f$ zuordnet, wird [Umkehrfunktion](https://de.wikipedia.org/wiki/Umkehrfunktion) von $f$ genannt.
 
 >**Satz 1.** Zu jeder bijektiven Funktion $f:D\mapsto Z$ gibt es eine Umkehrfunktion $$
-  f^{-1}:Z\to D\,,\;y\mapsto x=f^{-1}(y)
+  f^{-1}:Z\to D,\;y\mapsto x=f^{-1}(y)
 $$ worin $x=f^{-1}(y)\in D$ das eindeutig bestimmte Argument von $f$ ist, dem $y$ zugeordnet ist, $y=f(x)$.
 
 **Beweisidee.** Bijektive Funktion $f$ sind surjektiv, d. h. Ziel- und Wertemenge sind mengengleich, d. h. $Z=W_f$ beziehungsweise $f(D)=Z$. Damit besitzt jedes Element der Zielmenge mindestens ein Urbild unter $f$. Daneben ist eine bijektive Funktion nach Definition 2 auch injektiv, d. h. jedes Element der Zielmenge ist Funktionswert höchstens eines Argumentes $x\in D$ $$
@@ -5822,18 +5822,18 @@ Verketten von Funktionen
 
 
 Gegeben sind zwei Funktionen $f:A\to B$ und $g:C\to D$ mit $f(A)\subseteq C$, d. h. das Bild $f(A)$ ist eine Teilmenge von $C$. Dann ist $$
-  (g\circ f):A\to D\,,\;x\mapsto(g\circ f)(x):=g(f(x))\quad \forall x\in A
+  (g\circ f):A\to D,\;x\mapsto(g\circ f)(x):=g(f(x))\quad \forall x\in A
 $$ wieder eine Funktion, die [Verkettung](https://de.wikipedia.org/wiki/Komposition_%28Mathematik%29) bzw. Hintereinanderausführung bzw. Komposition der Funktionen $f$ und $g$. Hierbei wird zunächst auf ein Element $x\in A$ die Funktion $f$ angewandt, auf das Bild $f(x)$ anschließend die Funktion $g$ $$
   x\stackrel{f}{\mapsto} f(x)\stackrel{g}{\mapsto} g(f(x))\quad \forall x\in A
 $$ erkennbar daran, dass die Funktion $f$ 'innerhalb' der Klammer steht, die Funktion $g$ hingegen 'außerhalb'.[^2]
 
 **Beispiel 5.** Gegeben sind die reellen Funktionen $$
-  f:\mathbb{R}\to\mathbb{R}\,,\;x\to y=f(x)=(x+1)^2\quad\text{und}\quad
-  g:[0,\infty)\to\mathbb{R}\,,\;x\to y=g(x)=\sqrt[3]{x}
+  f:\mathbb{R}\to\mathbb{R},\;x\to y=f(x)=(x+1)^2\quad\text{und}\quad
+  g:[0,\infty)\to\mathbb{R},\;x\to y=g(x)=\sqrt[3]{x}
 $$ Die Bilder der beiden Funktionen ergeben $f(\mathbb{R})=[0,\infty)$ beziehungsweise $g([0,\infty))=[0,\infty)$ und sind somit Teilmengen der Definitionsmenge der jeweils anderen Funktion. Damit ergeben sich die beiden Verkettungen $$
-  (g\circ f):\mathbb{R}\to \mathbb{R}\,,\;x\mapsto(g\circ f)(x):=\sqrt[3]{(x+1)^2}\quad \forall x\in\mathbb{R}
+  (g\circ f):\mathbb{R}\to \mathbb{R},\;x\mapsto(g\circ f)(x):=\sqrt[3]{(x+1)^2}\quad \forall x\in\mathbb{R}
 $$ beziehungsweise $$
-  (f\circ g):[0,\infty)\to \mathbb{R}\,,\;x\mapsto(f\circ g)(x):=(\sqrt[3]{x}+1)^2\quad \forall x\in[0,\infty)
+  (f\circ g):[0,\infty)\to \mathbb{R},\;x\mapsto(f\circ g)(x):=(\sqrt[3]{x}+1)^2\quad \forall x\in[0,\infty)
 $$
 
 Wie im letzten Beispiel ersichtlich, sind Verkettungen von Funktionen im Allgemeinen *nicht kommutativ*. Ausnahmen bilden beispielsweise $$
@@ -5869,7 +5869,7 @@ $$ Für ein allgemeines $x$ ergeben sich die Iterierten von $f$ mit $$
   f^{\langle 4\rangle}(x)={{x^{16}+240\,x^{14}+7280\,x^{12}+64064\,x^{10}+205920\,x^8+256256\,x^6+116480\,x^4+15360\,x^2+256}\over{16\,x^{15}+1120\,x^{13}+17472\,x^{11}+91520\,x^9+183040\,x^7+139776\,x^5+35840\,x^3+2048\,x}}\,, ...
 $$ Der Funktionsgraph zu $f^{\langle 3\rangle}$ ist im Bereich $x\in[-5,5]$ in der nachstehenden Abbildung dargestellt.
 
-![Iteration](img/mat-bild-25.png "_Fig._ Funktionsgraphen der $n$-ten Iterierten $f^{\langle n\rangle}$ mit $n\in\{1,2,3\}$ zur Funktion $f:\mathbb{R}\to\mathbb{R}\,,\;x\mapsto(x^2+2)/(2\cdot x)$. Im dargestellten Intervall $[-5,5]$ sind beispielsweise $f^{\langle 3\rangle}(-3)\approx -1.4$ und $f^{\langle 3\rangle}(1)\approx 1.4$ ablesbar.")<!-- style="display: block; margin-left: auto; margin-right: auto; max-width: 1000px;" -->
+![Iteration](img/mat-bild-25.png "_Fig._ Funktionsgraphen der $n$-ten Iterierten $f^{\langle n\rangle}$ mit $n\in\{1,2,3\}$ zur Funktion $f:\mathbb{R}\to\mathbb{R},\;x\mapsto(x^2+2)/(2\cdot x)$. Im dargestellten Intervall $[-5,5]$ sind beispielsweise $f^{\langle 3\rangle}(-3)\approx -1.4$ und $f^{\langle 3\rangle}(1)\approx 1.4$ ablesbar.")<!-- style="display: block; margin-left: auto; margin-right: auto; max-width: 1000px;" -->
 
 
 Sicher gewusst
@@ -5904,15 +5904,15 @@ $$
 ****************************************
 
 **Frage 2.** Gegeben ist eine quadratische Funktion $f$ mit $$
-  f:[b,\infty)\to[e,\infty)\,,\;x\mapsto y=f(x)=(x-b)^2+e
+  f:[b,\infty)\to[e,\infty),\;x\mapsto y=f(x)=(x-b)^2+e
 $$ die von den reellen Parametern $b$ und $e$ mit $b\not=e$ abhängt.
 
 Geben Sie, falls möglich, die Umkehrfunktion $f^{-1}$ zu $f$ an.
 
-[( )] $$ f^{-1}:[e,\infty)\to [b,\infty)\,,\;x\mapsto y=f^{-1}(x)=\sqrt{x-b}+e $$
-[( )] $$ f^{-1}:[b,\infty)\to [e,\infty)\,,\;x\mapsto y=f^{-1}(x)=\sqrt{x-e}+b $$
-[( )] $$ f^{-1}:[b,\infty)\to [e,\infty)\,,\;x\mapsto y=f^{-1}(x)=-\sqrt{x-e}+b $$
-[(X)] $$ f^{-1}:[e,\infty)\to [b,\infty)\,,\;x\mapsto y=f^{-1}(x)=\sqrt{x-e}+b $$
+[( )] $$ f^{-1}:[e,\infty)\to [b,\infty),\;x\mapsto y=f^{-1}(x)=\sqrt{x-b}+e $$
+[( )] $$ f^{-1}:[b,\infty)\to [e,\infty),\;x\mapsto y=f^{-1}(x)=\sqrt{x-e}+b $$
+[( )] $$ f^{-1}:[b,\infty)\to [e,\infty),\;x\mapsto y=f^{-1}(x)=-\sqrt{x-e}+b $$
+[(X)] $$ f^{-1}:[e,\infty)\to [b,\infty),\;x\mapsto y=f^{-1}(x)=\sqrt{x-e}+b $$
 [( )] Die Funktion $f$ ist nicht invertierbar, besitzt demnach keine Umkehrfunktion.
 [[?]] Lässt sich die explizite Bildungsvorschrift $y=f(x)$ einer invertierbaren Funktion $f:x\mapsto y=f(x)$ nach $x$ auflösen, so lässt sich die Zuordnungsvorschrift $x=f^{-1}(y)$ bestimmen. Nach einem Tausch der Variablenbezeichnungen, lassen sich $y=f^{-1}(x)$ und $f$ zusammen in einem Koordinatensystem darstellen.
 ****************************************
@@ -5922,7 +5922,7 @@ Es gilt $$
 $$ worin $|x-b|=x-b$ wegen $x\in[b,\infty)$ gilt. Hieraus ergibt sich die Zuordnungsvorschrift für die Umkehrfunktion $$
   y\mapsto x=f^{-1}(y)=\sqrt{y-e}+b
 $$ mit der bezüglich $f^{-1}$ unabhängigen Variablen $y\in[e,\infty)$ und der abhängigen Variablen $x\in[b,\infty)$. Dies ist äquivalent zu $$
-  f^{-1}:[e,\infty)\to [b,\infty)\,,\;x\mapsto y=f^{-1}(x)=\sqrt{x-e}+b
+  f^{-1}:[e,\infty)\to [b,\infty),\;x\mapsto y=f^{-1}(x)=\sqrt{x-e}+b
 $$
 
 ****************************************
@@ -5960,9 +5960,9 @@ Vergleichen Sie auch mit dem Vorgehen zum Lösen algebraischer Gleichungen, sieh
 ****************************************
 
 **Frage 4.** Gegeben ist eine natürliche Zahl $m>1$. Jede Zahl $n\in\mathbb{N}$ lässt sich eindeutig darstellen als $$
-  n=a\cdot m+r\quad\text{mit}\quad a\in\mathbb{N}\,,\;r\in\mathbb{N}\,,\; r<m
+  n=a\cdot m+r\quad\text{mit}\quad a\in\mathbb{N},\;r\in\mathbb{N},\; r<m
 $$ Betrachtet wir die Funktion $$
-  f_m:\mathbb{N}\to\mathbb{N}\,,\;n\mapsto r=f_m(n)
+  f_m:\mathbb{N}\to\mathbb{N},\;n\mapsto r=f_m(n)
 $$
 
 Ist $f_m$ injektiv?
@@ -5994,11 +5994,358 @@ $$ für beliebige $a\in}mathbb{N}$.
 
 ****************************************
 
-
-
 [^1]: Existieren Elemente der Zielmenge einer Funktion mit dieser Eigenschaft, so ist die Funktion nicht surjektiv.
 
 [^2]: Die Reihenfolge der Berechnung der Funktionswerte ergibt sich daraus, dass Klammern von "innen nach außen" berechnet werden.
+
+
+### Stetigkeit
+
+Im vorangehenden Abschnitt sind reelle Zahlenfolgen als spezielle Klasse reeller Funktionen mit natürlicher Definitionsmenge eingeführt worden. Hier werden unter Benutzung reeller Zahlenfolgen von Argumenten beziehungsweise zugeordneten Funktionswerten lokale Aussagen zu reellen Funktionen abgeleitet.
+
+
+Zahlenfolgen
+===
+
+
+Reelle Zahlenfolgen lassen sich in der folgenden Form darstellen $$
+  f:\mathbb{N}\to\mathbb{R},\;n\mapsto a_n:=f(n)\quad\sim\quad \left(a_n\right)_{n=0}^\infty=(a_0,\,a_1,\,a_2,\,a_3\,,\,\ldots)
+$$ Die Einträge in der Liste rechts sind Funktionswerte an den Stellen $n$ und werden n-tes [Glied](https://de.wikipedia.org/wiki/Folge_%28Mathematik%29) der Zahlenfolge genannt. Diese sind nach dem Argument $n$ der Funktion geordnet.
+
+**Beispiel 1.**
+
+1. Jedes geordnete $n$-Tupel reeller Zahlen bildet eine reelle endliche Zahlenfolge mit $n$-Gliedern. Zum Beispiel $$
+  (1,1,2,3,5,8)\quad\sim\quad a_1=1,\; a_2=1,\; a_3=2,\; a_4=3,\; a_5=5\;\text{und}\; a_6=8
+$$ Zu beachten ist, dass in der Darstellung eines geordneten $n$-Tupels zwar der Wertebereich der Funktion, nicht aber der Definitionsbereich angegeben ist. Die Zuordnung ist dadurch nicht (eindeutig) festgelegt.
+2. Betrachtet wird die unendliche reelle Zahlenfolge $(a_j)_{j=1}^\infty$ mit dem allgemeinen Glied $$
+  a_j=\frac{j}{j+1}=1-\frac{1}{j+1}\quad\leadsto\quad(a_j)_{j=1}^\infty=\left(\frac{1}{2},\;\frac{2}{3},\;\frac{3}{4},\;...\right)
+$$ Aus der Darstellung ist ablesbar, dass die Definitionsmenge $D=\mathbb{N}^\times$ ist, die ersten Zahlenfolgenglieder in der Liste sind $$
+  a_1=\frac{1}{2},\;a_2=\frac{2}{3},\;a_3=\frac{3}{4},\;...
+$$ Die Wertemenge umfasst alle gemeinen Brüche der Form $j/(j+1)$, d. h. $$
+  W=\left\{\frac{j}{j+1}|\; j\in D\right\}
+$$
+3. Das allgemeine Glied einer Zahlenfolge $(a_j)_{j=0}^\infty$ ist durch die Bildungsvorschrift $$
+  a_j=(-1)^j\cdot\frac{1}{1+j^2}
+$$ gegeben. Hierbei ist $D=\mathbb{N}$ gesetzt, die Zahlenfolge ist unendlich. Sie besitzt somit die Glieder $$
+  (a_j)_{j=0}^\infty=\left(1,-\frac{1}{2},\;\frac{1}{5},\;-\frac{1}{10},\;\frac{1}{17},\;...\right)
+$$ Benachbarte Glieder der Zahlenfolge besitzen verschiedene Vorzeichen, der Betrag der Glieder nimmt mit zunehmendem Argument ab. Der Graph der Zahlenfolge ist in der nachstehenden Abbildung in einem Ausschnitt dargestellt.
+
+![Zahlenfolge](img/mat-bild-26.png "_Fig._ Graph der reellen, unendlichen Zahlenfolge $(a_j)_{j=0}^\infty$. Benachbarte Glieder der Zahlenfolge besitzen unterschiedlichen Vorzeichen.")
+
+**Bemerkung 1.** Gilt für benachbarte Glieder der Zahlenfolge $a_j\cdot a_{j+1}<0$ für alle $j\in D\setminus\max{D}$, d. h. besitzen benachbarte Glieder der Zahlenfolge unterschiedliche Vorzeichen, so heißt die Zahlenfolge **alternierend**.
+
+Zahlenfolgen, deren allgemeines Glied (in Abhängigkeit des Argumentes) angegeben werden kann, sind explizit gegeben. Demgegenüber können Zahlenfolgen auch **rekursiv** gegeben sein: $$
+  a_\ell\;\text{mit}\;\ell=\min{(D)}\quad\wedge\quad \exists h:\; a_j=h(a_{j-1},\, a_{j-2},\, ..., \, a_\ell)
+$$ mit $\ell<...<j-2<j-1<j$.
+
+**Beispiel 2.**
+
+1. Eine (unendliche) reelle Zahlenfolge $(a_j)_{j\in D}$ mit der Bildungsvorschrift $$
+  a_\ell\;\wedge\; a_m=a_{m-1}+d\quad\text{mit}\quad d\in\mathbb{R},\; \ell\in\mathbb{N},\; m\in\mathbb{N},\; m>\ell
+$$ heißt [arithmetische Zahlenfolge](https://de.wikipedia.org/wiki/Folge_%28Mathematik%29#Arithmetische_Folgen_und_Reihen). Benachbarte Glieder der Zahlenfolge unterscheiden sich um den konstanten Summanden $d$. Für arithmetische Zahlenfolgen lässt sich aus der rekursiven Definition eine explizite Bildungsvorschrift ableiten. $$
+  \begin{split}
+    a_{\ell+1} & =a_\ell+d \\ a_{\ell+2} & =a_{\ell+1}+d=a_\ell+2\cdot d \\
+    a_{\ell+3} & =a_\ell+3\cdot d \\ & \vdots \\
+    a_{\ell+n} & =a_\ell+n\cdot d\quad\text{mit}\quad n\in\mathbb{N}
+  \end{split}
+$$
+2. Eine (unendliche) reelle Zahlenfolge $(a_j)_{j\in D}$ mit der Bildungsvorschrift $$
+  a_\ell\;\wedge\; a_m=a_{m-1}\cdot q\quad\text{mit}\quad q\in\mathbb{R},\; \ell\in\mathbb{N},\; m\in\mathbb{N},\; m>\ell
+$$ heißt [geometrische Zahlenfolge](https://de.wikipedia.org/wiki/Folge_%28Mathematik%29#Geometrische_Folgen). Benachbarte Glieder der Zahlenfolge unterscheiden sich um den konstanten Faktor $q$. Für geometrische Zahlenfolgen lässt sich aus der rekursiven Definition eine explizite Bildungsvorschrift ableiten. $$
+  \begin{split}
+    a_{\ell+1} & =a_\ell\cdot q \\ a_{\ell+2} & =a_{\ell+1}\cdot q=a_\ell\cdot q^2 \\
+    a_{\ell+3} & =a_\ell\cdot q^3 \\ & \vdots \\
+    a_{\ell+n} & =a_\ell\cdot q^n\quad\text{mit}\quad n\in\mathbb{N}
+  \end{split}
+$$
+
+Unendliche Folgen können gegen einen Grenzwert konvergieren: ein wichtiger Begriff für die Analysis, mit dem sich u. a. Grenzwerte von Funktionen oder aber die Differenzierbarkeit einer Funktion an einer Stelle ihres Definitionsbereiches untersuchen lassen.
+
+>**Definition 1.** Eine unendliche reelle Zahlenfolge $(a_j)_{j\in D}$ mit $D\subseteq\mathbb{N}$ [konvergiert](https://de.wikipedia.org/wiki/Grenzwert_%28Folge%29) gegen eine reelle Zahl $a$, falls für alle $\epsilon>0$ ein $N\in D$ existiert mit $$
+  |a_n-a|<\epsilon\quad\forall\;n>N
+$$ Die Zahl $a\in\mathbb{R}$ heißt in diesem Fall **Grenzwert** der Zahlenfolge $(a_j)_{j\in D}$. Eine nichtkonvergente Zahlenfolge heißt **divergent**.
+
+Konvergiert eine Zahlenfolge $(a_n)_{n\in D}$ mit $D\subseteq\mathbb{N}$ gegen ihren Grenzwert $a\in\mathbb{R}$, so schreibt man $$
+  \lim_{n\to\infty}{a_n}=a\quad\text{bzw.}\quad a_n\stackrel{n\to\infty}{\longrightarrow} a
+$$ sprich: "Limes von $a_n$ für $n$ gegen $\infty$".
+
+**Beispiel 3.** Für die unendliche reelle Zahlenfolge $(a_n)_{n=1}^\infty$ mit der Bildungsvorschrift $$
+  a_n=\frac{n}{n+1}=1-\frac{1}{n+1}
+$$ aus Beispiel 1 ergeben sich die Zahlenfolgenglieder $$
+  (a_n)_{n=1}^\infty=\left(\frac{1}{2},\;\frac{2}{3},\;\frac{3}{4},\;...\right)
+$$ Die Glieder nähern sich für große Werte $n$ der Zahl 'Eins' an, sind jedoch stets kleiner als diese. Für den Nachweis der Konvergenz wird $a=1$ gesetzt. Für ein beliebig kleines $\epsilon>0$ ist $$
+  \left| \frac{n}{n+1}-1\right|=\left| \frac{n}{n+1}-\frac{n+1}{n+1}\right|=\left| -\frac{1}{n+1}\right|=\frac{1}{n+1} <\epsilon \quad\leftrightarrow\quad n>\frac{1}{\epsilon}-1
+$$ Wird $N=\lfloor \frac{1}{\epsilon}-1 \rfloor$ gesetzt, so gilt für alle (nachfolgenden) $n>N$, dass der Abstand von $a_n$ zu $a$ kleiner als $\epsilon$ ist. Die Zahl $a=1$ ist Grenzwert der Zahlenfolge $(a_n)_{n=1}^\infty$.
+
+**Beispiel 4.** Für die unendliche, reelle, alternierende Zahlenfolge $(a_n)_{n=1}^\infty$ mit der Bildungsvorschrift $$
+  a_n=(-1)^n\cdot\frac{1}{1+n^2}
+$$ aus Beispiel 1 ergeben sich die Zahlenfolgenglieder $$
+  (a_n)_{n=1}^\infty=\left(1,\;-\frac{1}{2},\;\frac{1}{5},\;-\frac{1}{10},\;\frac{1}{17},\;...\right)
+$$ Die Glieder nähern sich für große Werte $n$ der Zahl 'Null' an. Für den Nachweis der Konvergenz wird $a=0$ gesetzt. Für ein beliebig kleines $\epsilon>0$ ist $$
+  \left| (-1)^n\cdot\frac{1}{1+n^2}-0\right|=\frac{1}{1+n^2} <\epsilon \quad\leftrightarrow\quad n>\sqrt{\frac{1}{\epsilon}-1}
+$$ worin $\epsilon\leq1$ vorausgesetzt wird. Für alle $n>\sqrt{\frac{1}{\epsilon}-1}$ ist der Abstand von $a_n$ zu $a$ kleiner als $\epsilon$. Die Zahl $a=0$ ist Grenzwert der Zahlenfolge $(a_n)_{n=1}^\infty$.
+
+**Bemerkung 2.** Konvergiert eine reelle unendliche Zahlenfolge gegen den Grenzwert 'Null', so wird die Zahlenfolge *Nullfolge* genannt.
+
+>**Satz 1.** Gegeben sind zwei Zahlenfolgen $(a_k)_{k\in\mathbb{N}}$ und $(b_k)_{k\in\mathbb{N}}$.
+>
+>1. Gelten $a_k\leq b_k$ für alle $k$ und $$
+  \lim_{k\rightarrow\infty}{(a_k)}=g_a,\quad \lim_{k\rightarrow\infty}{(b_k)}=g_b
+$$ dann folgt $g_a\leq g_b$ (*Vergleichssatz*).
+>2. Gelten $a_k\leq \textcolor{blue}{c_k}\leq b_k$ für alle $k$ und $$
+  \lim_{k\rightarrow\infty}{(a_k)}=\textcolor{red}{g_a},\quad \lim_{k\rightarrow\infty}{(b_k)}=\textcolor{red}{g_a}
+$$ dann folgt $\lim_{k\rightarrow\infty}{(\textcolor{blue}{c_k})}=\textcolor{red}{g_a}$ (*Einschürungssatz*).[^1]
+
+>**Satz 2.** Gegeben sind zwei konvergente Zahlenfolgen $(a_k)_{k\in\mathbb{N}}$ und $(b_k)_{k\in\mathbb{N}}$ mit $$
+  \lim_{k\rightarrow\infty}{(a_k)}=a,\quad \lim_{k\rightarrow\infty}{(b_k)}=b
+$$ Dann gelten für die Verknüpfungen :
+>
+>1. $$ \lim_{k\rightarrow\infty}{(a_k\pm b_k)}=a\pm b $$
+>2. $$ \lim_{k\rightarrow\infty}{(a_k\cdot b_k)}=a\cdot b $$
+>3. $$ \lim_{k\rightarrow\infty}{\left(\frac{a_k}{b_k}\right)}=\frac{a}{b} $$
+>
+> Letztere, falls der Nenner $b$ beziehungsweise $b_k$ der Quaotienten ungleich 'Null' sind.
+
+**Beweis.** Beispielsweise gilt für die erste Regel $$
+  |a_k-a|<\frac{\epsilon}{2}\;\land\; |b_k-b|<\frac{\epsilon}{2} \quad\forall k>N \;\text{mit}\; N=\max{(N_a,N_b)}
+$$ worin $N_a$ beziehungsweise $N_b$ die zu dem Wert $\frac{\epsilon}{2}>0$ bestimmten Argumente der Zahlenfolgen sind, ab der alle folgenden Zahlenfolgenglieder in den Umgebungen $\left(a-\frac{\epsilon}{2},a+\frac{\epsilon}{2}\right)$ beziehungsweise $\left(b-\frac{\epsilon}{2},b+\frac{\epsilon}{2}\right)$ liegen. Damit folgt schließlich $$
+  |(a_k+b_k)-(a+b)|\leq|a_k-a|+|b_k-b|<\frac{\epsilon}{2}+\frac{\epsilon}{2}=\epsilon
+$$
+
+$\square$
+
+**Beispiel 5.** Gegeben ist die unendliche Zahlenfolge $$
+  f:\mathbb{N}\to \mathbb{R},\; n\mapsto \frac{3\cdot n^2-4\cdot n+5}{4\cdot n^2-5\cdot n+6}
+$$ Für den Nenner gilt $$
+  4\cdot n^2-5\cdot n+6=4\cdot\left(n^2-\frac{5}{4}\cdot n+\frac{3}{2}\right)=0\quad\leftrightarrow\quad n_{1,2}=\frac{5}{8}\pm\sqrt{\frac{25}{64}-\frac{3}{2}}\;\not\in\mathbb{R}
+$$ Damit lässt sich unter Benutzung der Rechenregeln für Grenzwerte aus Satz 2 schrittweise berechnen $$
+  \begin{split}
+    \lim_{n\to\infty}{\left(\frac{3\cdot n^2-4\cdot n+5}{4\cdot n^2-5\cdot n+6}\right)} & = \lim_{n\to\infty}{\left(\frac{n^2\cdot\left(3-4\cdot \frac{1}{n}+5\cdot\frac{1}{n^2}\right)}{n^2\cdot\left(4-5\cdot\frac{1}{n}+6\cdot\frac{1}{n^2}\right)}\right)} \\
+    & = \frac{\lim_{n\to\infty}\left(3-4\cdot \frac{1}{n}+5\cdot\frac{1}{n^2}\right)}{\lim_{n\to\infty}\left(4-5\cdot\frac{1}{n}+6\cdot\frac{1}{n^2}\right)} \\
+    & = \frac{\lim_{n\to\infty}{(3)}-\lim_{n\to\infty}{(4)}\cdot \lim_{n\to\infty}{\left(\frac{1}{n}\right)}+\lim_{n\to\infty}{(5)}\cdot\lim_{n\to\infty}{\left(\frac{1}{n^2}\right)}}{\lim_{n\to\infty}{(4)}-\lim_{n\to\infty}{(5)}\cdot\lim_{n\to\infty}{\left(\frac{1}{n}\right)}+\lim_{n\to\infty}{(6)}\cdot\lim_{n\to\infty}{\left(\frac{1}{n^2}\right)}}
+  \end{split}
+$$ Die darin auftretenden Grenzwerte ergeben $$
+  \lim_{n\to\infty}{\left(\frac{1}{n}\right)}=0\,,\quad \lim_{n\to\infty}{\left(\frac{1}{n^2}\right)}=0
+$$ so dass sich für den Quotienten $$
+  \lim_{n\to\infty}{\left(\frac{3\cdot n^2-4\cdot n+5}{4\cdot n^2-5\cdot n+6}\right)}=\frac{3-4\cdot 0+5\cdot 0}{4-5\cdot 0++6\cdot 0}=\frac{3}{4}
+$$ ergibt. Das ist der Quotient der Koeffizienten zu $n^2$ aus Zähler und Nenner.
+
+**Bemerkung 3.** Das Vorgehen in Beispiel 5 ist auf beliebige gebrochenrationale Funktionsterme $f(n)=Z(n)/N(n)$ übertragbar:
+
+*Im Zählerpolynom $Z(n)$ und Nennerpolynom $N(n)$ wird jeweils die höchste in $N(n)$ auftretende Potenz von $n$ ausgeklammert.*
+
+Tritt die höchste auftretende Potenz von $n$
+
+1. im Nenner $N(n)$, jedoch nicht im Zähler $Z(n)$ von $f(n)$ auf, so gilt $\lim_{n\to\infty}{f(n)}=0$.
+2. im Zähler $Z(n)$, jedoch nicht im Nenner $Z(n)$ von $f(n)$ auf, so gilt $\lim_{n\to\infty}{f(n)}=\infty$.
+3. im Nenner $N(n)$ und Zähler $Z(n)$ von $f(n)$ auf, so ist der Grenzwert $\lim_{n\to\infty}{f(n)}$ gleich dem Quotienten der Koeffizienten zu dieser Potenz in Zähler und Nenner.
+
+Des Weiteren gilt der folgende Satz.
+
+>**Satz 3.** Mit dem [Vollständigkeitsaxiom](https://de.wikipedia.org/wiki/Supremumseigenschaft) für den Körper der reellen Zahlen folgt für unendliche, reelle Zahlenfolgen:
+>
+> 1. Jede nach oben beschränkte, monoton wachsende Zahlenfolge ist konvergent (gegen ihr Supremum).
+> 2. Jede nach unten beschränkte, monoton fallende Zahlenfolge ist konvergent (gegen ihr Infimum).
+
+
+Stetigkeit
+===
+
+
+>**Definition 2.** Für ein $\delta\in(0,\infty)$ heißen die Mengen $$
+  U_\delta(x_0)=\left\{x\in\mathbb{R}|\;|x-x_0|<\delta\right\}\quad\text{sowie}\quad U_\delta^0(x_0):=U_\delta(x_0)\setminus\{x_0\}
+$$ die *$\delta$-Umgebung* beziehungsweise *punktierte $\delta$-Umgebung* von $x_0\in\mathbb{R}$.
+
+>**Definition 3.** Seien $f:D\to\mathbb{R}$ mit $d\subseteq\mathbb{R}$ eine reellwertige Funktion der reellen Variablen $x$ und $U_\delta^0(x_0)\subset D$ für ein $x_0\in\mathbb{R}$. Existiert ein $g\in\mathbb{R}$ mit $$
+  \left(\lim_{n\to\infty}{x_n}=x_0\right)\quad\rightarrow\quad\left(\lim_{n\to\infty}{f(x_n)}=g\right)
+$$ für beliebige Zahlenfolgen von Argumenten $x_n$, so heißt $g$ [Funktionsgrenzwert](https://de.wikipedia.org/wiki/Grenzwert_%28Funktion%29) von $f$ für $x$ gegen $x_0$.
+>
+> Andernfalls divergiert $f$ für $x$ gegen $x_0$.
+
+Existiert der Funktionsgrenzwert $g$ einer Funktion $f$ an der Stelle $x_0$, so schreibt man $$
+  \lim_{x\to x_0}{f(x)}=g\quad\text{bzw.}\quad f(x)\stackrel{x\to x_0}{\longrightarrow}g
+$$
+
+**Bemerkung 4.** Wird in Definition 3 bezüglich beliebiger $\delta>0$ abweichend $x_n\in(x_0,x_0+\delta)$ für alle $n>N$ betrachtet, so heißt $\lim_{x\to x_0}{f(x)}=g$ *rechtsseitiger* Grenzwert von $f$, für $x_n\in(x_0-\delta,x_0)$ *linksseitiger* Grenzwert. Zwei gebräuchliche Schreibweisen sind in der nachstehenden Tabelle aufgeführt.
+
+| linksseitiger Grenzwert | rechtsseitiger Grenzwert |
+| :--------- | :--------- |
+| $\lim_{x\to x_0-0}{f(x)}=g$ | $\lim_{x\to x_0+0}{f(x)}=g$ |
+| $\lim_{x\nearrow x_0}{f(x)}=g$ | $\lim_{x\searrow x_0}{f(x)}=g$ |
+
+**Bemerkung 5.** Das Verhalten der Funktionswerte von $f$ für unbegrenzt wachsende / fallende Argumente lässt sich mittels (bestimmt) divergenter Folgen von Argumenten untersuchen.
+
+>**Satz 4.** Für Funktionen $f_i:x\mapsto y=f(x_i)$ mit $x\in D$ und $i\in\{1,2\}$ existieren die Funktionsgrenzwerte $$
+   \lim_{x\rightarrow x_0}{f_i(x)}=g_i
+$$ Dann folgen für Verknüpfungen dieser Funktionen:
+>
+>1. Summe: $\lim_{x\rightarrow x_0}{\left(f_1(x)\pm f_2(x)\right)}=\lim_{x\rightarrow x_0}{f_1(x)}\pm\lim_{x\rightarrow x_0}{f_2(x)}=g_1\pm g_2$
+>2. Produkt: $\lim_{x\rightarrow x_0}{\left(f_1(x)\cdot f_2(x)\right)}=\lim_{x\rightarrow x_0}{f_1(x)}\cdot\lim_{x\rightarrow x_0}{f_2(x)}=g_1\cdot g_2$
+>3. Quotient: Falls $g_2\neq 0$, so folgt $$
+     \lim_{x\rightarrow x_0}{\left(\frac{f_1(x)}{f_2(x)}\right)}=\frac{\lim_{x\rightarrow x_0}{f_1(x)}}{\lim_{x\rightarrow x_0}{f_2(x)}}=\frac{g_1}{g_2}
+$$
+>
+> Für die Verkettung zweier Funktionen $$
+  \left(f_2\circ f_1\right):x\mapsto y=f_2(f_1(x))\quad \text{mit}\quad x\in D_{f_1}\,,\; f_1(D)\subseteq D_{f_2}
+$$ gilt $$
+ \left(\lim_{x\rightarrow x_0}{f_1(x)}=\textcolor{blue}{g_1}\right)\;\wedge\;
+ \left(\lim_{x\rightarrow \textcolor{blue}{g_1}}{f_2(x)}=g_2\right)\quad\rightarrow\quad
+ \left(\lim_{x\rightarrow x_0}{f_2(f_1(x))}=g_2\right).
+$$
+
+**Beispiel 6.** Für die reelle Funktion $f$ seien $$
+  f(x)=\frac{x^3-x}{x-1}\;\text{und}\;D=\mathbb{R}\setminus\{1\}
+$$ gegeben. Mit Hilfe der Zerlegung des Zählers ergibt sich $$
+  f(x)=\frac{x^3-x}{x-1}=\frac{x\cdot(x-1)\cdot(x+1)}{x-1}\stackrel{x\not=1}{=}x^2+x=\left(x+\frac{1}{2}\right)^2-\frac{1}{4}
+$$ Dies ist der Funktionsterm einer quadratischen Funktion. Der Graph zu $f$ ist eine nach oben geöffnete Parabel mit Scheitelpunkt $S\left(-\frac{1}{2},-\frac{1}{4}\right)$, die allerdings im Punkt $(1,2)$ "geschlitzt" ist: Dieser gehört nicht zum Funktionsgraphen. Für den (links-/rechtsseitigen) Funktionsgrenzwert für $x\to 1$ gilt $$
+  \lim_{x\rightarrow 1\pm0}{f(x)}=\lim_{x\rightarrow 1\pm0}{(x^2+x)}=1\cdot 1+1=2
+$$ nach Anwendung von Satz 4.
+
+![Lücke](img/mat-bild-27.png "_Fig._ Graph der Funktion $f$ mit Definitionsbereich $D=\mathbb{R}\setminus\{1\}$. Die Parabel mit Scheitelpunkt $S$ ist im Punkt $(1,2)$ geschlitzt: Dieser gehört nicht zum Funktionsgraphen.")
+
+**Beispiel 7.** Gegeben ist die reelle Funktion $f:\mathbb{R}\to\mathbb{R}$ mit $$
+  x\mapsto y=f(x)=\operatorname{sgn}{(x-1)}:=\left\{\begin{array}{rrr} 1 & \text{für} & x>1 \\ 0 & \text{für} & x=1 \\ -1 & \text{für} & x<1 \end{array}\right.
+$$ d. h. es ist $W_f=\{-1,0,1\}$ die Wertemenge der Funktion $f$. Der Funktionsgraph von $f$ ist in der nachstehenden Abbildung graphisch dargestellt. Für die einseitigen Grenzwerte ergeben sich $$
+  \lim_{x\rightarrow 1-0}{f(x)}=\lim_{x\rightarrow 1-0}{-1}=-1\,,\quad
+  \lim_{x\rightarrow 1+0}{f(x)}=\lim_{x\rightarrow 1+0}{1}=1
+$$ d. h. linksseitiger und rechtsseitiger Grenzwert von $f$ für $x\to 1\pm0$ unterscheiden sich hier. Des Weiteren stimmen diese nicht mit dem Funktionswert $f(1)=0$ überein. Siehe nachstehende Abbildung.
+
+![Sprungstelle](img/mat-bild-28.png "_Fig._ Der Graph der Funktion $f$ mit Definitionsbereich $D=\mathbb{R}$ besteht aus zwei geradlinigen Anteilen zu $y=-1$ beziehungsweise $y=1$ sowie dem Punkt $(1,0)$, d. h. insbesondere $f(1)=0$.")
+
+>**Definition 4.** Eine Funktion $f:D\to\mathbb{R}$ mit $D\subseteq\mathbb{R}$ heißt [stetig](https://de.wikipedia.org/wiki/Stetige_Funktion#Definition) an der Stelle $x_0\in D$ genau dann, wenn
+>
+>1. eine $\delta$-Umgebung $U_\delta(x_0)\subset D$ existiert und
+>2. der Grenzwert $\lim_{x\to x_0}{f(x)}=g$ mit $g\in\mathbb{R}$ existiert und
+>3. $f(x_0)=g$ gilt
+>
+> Gilt wenigstens eine der drei Bedingungen nicht, so heißt $f$ in $x_0$ **nicht stetig**.
+
+**Bemerkung 6.** Ist $f$ an jeder Stelle $x_0\in D$ stetig, so heißt $f$ stetig. An Intervallgrenzen wird auf links- bzw. rechtsseitig steig untersucht.
+
+**Beispiel 8.**
+
+1. Gegeben ist die Funktion $f_1:\mathbb{R}\to\mathbb{R}$ mit $$
+  f_1(x)=\left\{\begin{array}{rrr} 1 & \text{für} & x\geq 1 \\ -1 & \text{für} & x<1 \end{array}\right.
+$$ Die Funktion ist auf $\mathbb{R}$ definiert und für beliebige $x<1$ und $x>1$ stetig ($f_1$ ist auf diesen Intervallen jeweils konstant). An der Stelle $x_0=1$ sind $f_1(1)=1$ sowie $$
+  \lim_{x\to 1-0}{f_1(x)}=\lim_{x\to 1-0}{(-1)}=-1\quad\text{und}\quad
+  \lim_{x\to 1+0}{f_1(x)}=\lim_{x\to 1+0}{(1)}=1
+$$ und somit ist $f$ rechtsseitig stetig in $x_0=1$, jedoch nicht linksseitig stetig in $x_0$.
+2. Wird stattdessen die Funktion $f_2:\mathbb{R}\to\mathbb{R}$ mit $$
+  f_2(x)=\left\{\begin{array}{rrr} 1 & \text{für} & x> 1 \\ -1 & \text{für} & x\leq 1 \end{array}\right.
+$$ betrachtet, so ist für beliebige $x<1$ und $x>1$ stetig ($f_2$ ist auf diesen Intervallen jeweils konstant). An der Stelle $x_0=1$ sind $f_2(1)=-1$ sowie $$
+  \lim_{x\to 1-0}{f_2(x)}=\lim_{x\to 1-0}{(-1)}=-1\quad\text{und}\quad
+  \lim_{x\to 1+0}{f_2(x)}=\lim_{x\to 1+0}{(1)}=1
+$$ und somit ist $f$ linksseitig stetig in $x_0=1$, jedoch nicht rechtsseitig stetig in $x_0$.
+3. Die reelle Funktion $f:D=\mathbb{R}\setminus\{1\}\to\mathbb{R}$ mit $$
+  f(x)=\frac{x^3-x}{x-1}=x^2+x
+$$ ist an jeder Stelle des Definitionsbereichs stetig. Für die beiden einseitigen Grenzwerte gilt $$
+  \lim_{x\to 1-0}{f(x)}=\lim_{x\to 1+0}{f(x)}=2
+$$ vergleiche Beispiel 6. Um $f$ zu einer auf $\mathbb{R}$ stetigen Funktion $g$ fortzusetzen, ist $g:\mathbb{R}\to\mathbb{R}$ mit $$
+  g(x)=\left\{\begin{array}{rrr} f(x) & \text{für} & x\not=1 \\ 2 & \text{für} & x=1 \end{array}\right.
+$$ zu wählen. Für die Funktion $g$ gilt $$
+  \lim_{x\to 1-0}{g(x)}=\lim_{x\to 1+0}{g(x)}=g(1)=2
+$$ somit ist $g$ in $x=1$ stetig.
+
+<!-- style="background-color: lightgray;"-->
+>Eine Funktion $f:D\to\mathbb{R}$ mit $d\subseteq\mathbb{R}$ ist an einer Stelle $x_0\in D$ **nicht stetig**, falls
+>
+>1. in $x_0$ eine *Lücke* besteht: links- und rechtsseitiger Grenzwert existieren und sind einander gleich, jedoch verschieden von $f(x_0)$  $$
+  \lim_{x\to x_0-0}{f(x)}=\lim_{x\to x_0+0}{f(x)}\not=f(x_0)
+$$
+>2. in $x_0$ eine *Sprungstelle endlicher Höhe* besteht: links- und rechtsseitiger Grenzwert existieren, sind jedoch verschieden $$
+  \lim_{x\to x_0-0}{f(x)}\not=\lim_{x\to x_0+0}{f(x)} \;(\in\mathbb{R})
+$$
+>3. wenigstens einer der beiden einseitigen Grenzwerte in $x_0$ nicht existiert.
+
+
+Sicher gewusst
+===
+
+Testen Sie Ihr Wissen bei der Beantwortung der nachstehenden Fragen.
+
+**Frage 1.** Gegeben ist eine geometrische Zahlenfolge $$
+  f:\mathbb{N}\to\mathbb{R},\; n\mapsto a_n=f(n)=q^n
+$$ worin $q$ ein reeller Parameter ist. Entscheiden Sie, für welche Wahl von $q$ die Zahlenfolge $f$ konvergiert beziehungsweise divergiert.
+
+[[konvergent] [divergent]]
+[( ) (X)]  $q<-1$
+[( ) (X)]  $q=-1$
+[(X) ( )]  $|q|<1$
+[(X) ( )]  $q=1$
+[( ) (X)]  $q>1$
+[[?]] Nutzen Sie zum Nachweis Definition 1 für die Festlegung von Konvergenz / Divergenz. Beachten Sie den Unterschied zwischen den Formulierungen "für alle $n\in\mathbb{N}$ mit $n>N$ gilt" und "für unendliche viele $n\in\mathbb{N}$ gilt" in den Allaussagen.
+****************************************
+
+1. Für $q<-1$ ist $f$ divergent. Die Vorzeichen von $a_n$ alternieren, ihr Betrag $\left|a_n\right|=\left|q^n\right|$ wächst über alle Schranken hinweg. Beispielsweise ist für $q=-2$ die Zahlenfolge $$
+  (a_n)_{n\in\mathbb{N}}=\left(1,\;-2,\;4,\;-8,\;16,\;-32,\; ...\right)
+$$ Für gerade beziehungsweise ungerade Argumente gibt es zwei divergente Teilfolgen $$
+  (a_{2n})_{n\in\mathbb{N}}=(1,\;4,\;16,\; ...)\quad\text{bzw.}\quad(a_{2n+1})_{n\in\mathbb{N}}=(-2,\;-8,\; -32,\;...)
+$$ mit mit $\lim_{n\to\infty}{(a_{2n})}=\infty$ beziehungsweise $\lim_{n\to\infty}{(a_{2n+1})}=-\infty$.
+2. Für $q=-1$ entsteht die alternierende Zahlenfolge $$
+  (a_n)_{n\in\mathbb{N}}=\left(1,\;-1,\;1,\;-1,\;1,\;-1,\; ...\right)
+$$ Nach der Definition der Konvergenz gibt es keine beliebig kleine Umgebung $(a-\epsilon,a+\epsilon)$, in der (ab einem $N\in\mathbb{N}$) alle folgenden Glieder $a_n$ der unendlichen Zahlenfolge mit $n>N$ liegen. Die Zahlenfolge ist somit divergent. Allerdings existieren für gerade beziehungsweise ungerade Argumente zwei konstante Teilfolgen $$
+  (a_{2n})_{n\in\mathbb{N}}=(1,\;1,\;1,\; ...)\quad\text{bzw.}\quad(a_{2n+1})_{n\in\mathbb{N}}=(-1,\;-1,\; -1,\;...)
+$$ mit mit $\lim_{n\to\infty}{(a_{2n})}=1$ beziehungsweise $\lim_{n\to\infty}{(a_{2n+1})}=-1$. Diese sind Häufungswerte der Zahlenfolge.
+3. Für ein beliebiges aber festes $q$ mit $|q|<1$ ist die Zahlenfolge konvergent mit Grenzwert $a=0$, denn $$
+  \left|q^n-0\right|<\epsilon\quad\leftrightarrow\quad n>\frac{\ln{\epsilon}}{\ln{|q|}}
+$$ Die Zahlenfolge ist eine Nullfolge.
+4. Für $q=1$ ist die Zahlenfolge eine konstante Folge $$
+  (a_n)_{n\in\mathbb{N}}=\left(1,\;1,\;1,\;1,\;1,\;1,\; ...\right)
+$$ mit dem Grenzwert 'Eins'. Alle Folgenglieder liegen für beliebige $\epsilon>0$ in der Umgebung $(1-\epsilon,1+\epsilon)$.
+5. Für $q>1$ ist $f$ divergent. Die Glieder $a_n=q^n$ der unendlichen Zahlenfolge wachsen über alle Schranken hinweg. Beispielsweise ist für $q=2$ die Zahlenfolge $$
+  (a_n)_{n\in\mathbb{N}}=\left(1,\;2,\;4,\;8,\;16,\;32,\; ...\right)
+$$ Man schreibt $\lim_{n\to\infty}{(a_{n})}=\infty$ und nennt die Zahlenfolge bestimmt divergent.
+
+****************************************
+
+**Frage 2.** Berechnen Sie - falls existent - den Grenzwert der nachstehenden unendlichen Zahlenfolge $(a_n)_{n\in\mathbb{N}}$ mit dem allgemeinen Glied $$
+  a_n=\frac{100+n}{1-n^2}
+$$
+
+[( )] $-1$
+[(X)] $0$
+[( )] $100$
+[( )] Der Grenzwert existiert nicht. Die Zahlenfolge ist divergent.
+[[?]] Um die Rechenregeln für Grenzwerte nutzen zu können, erweist es sich als günstig, in Zähler und Nenner von $a_n$ die höchste im Nenner auftretende Potenz von $n$ auszuklammern.
+****************************************
+
+$$\begin{split}
+    \lim_{n\to\infty}{\left(\frac{100+n}{1-n^2}\right)} & =
+    \lim_{n\to\infty}{\left(\frac{n^2\cdot\left(100\cdot \frac{1}{n^2}+\frac{1}{n}\right)}{n^2\cdot\left(\frac{1}{n^2}-1\right)}\right)} \\
+    & = \frac{\lim_{n\to\infty}\left(100\cdot \frac{1}{n^2}+\frac{1}{n}\right)}{\lim_{n\to\infty}\left(\frac{1}{n^2}-1\right)} \\
+    & = \frac{\lim_{n\to\infty}{(100)}\cdot \lim_{n\to\infty}{\left(\frac{1}{n^2}\right)}+\lim_{n\to\infty}{\left(\frac{1}{n}\right)}}{\lim_{n\to\infty}{\left(\frac{1}{n^2}\right)}-\lim_{n\to\infty}{(1)}} \\
+    & = \frac{100\cdot 0+0}{0-1}=0
+  \end{split}
+$$
+
+****************************************
+
+**Frage 3.** Gegeben sind die nachstehenden Funktionen $f:\mathbb{R}\to\mathbb{R}$. Entscheiden Sie, welche der Funktionen in $x_0=1$ stetig sind.
+
+[[stetig] [nicht stetig]]
+[(X) ( )]  $f(x)=|x-1|$
+[( ) (X)]  $f(x)=\left\{\begin{array}{lll}\frac{x+2}{x-1} & \text{für} & x\not=1 \\ 3 & \text{für} & x=1 \end{array}\right.$
+[( ) (X)]  $f(x)=\left\{\begin{array}{lll}\frac{x^3-x}{x-1} & \text{für} & x\not=1 \\ 1 & \text{für} & x=1 \end{array}\right.$
+[[?]] Nach Definition 4 sind der Funktionswert sowie links- und rechtsseitiger Grenzwert an der Stelle $x_0$ zu untersuchen.
+****************************************
+
+1. Die Funktion $f$ mit $f(x)=|x-1|$ ist stetig in $x_0=1$, da gilt $$
+  \lim_{x\rightarrow 1\pm0}{f(x)}=0=f(1)
+$$
+2. Die Funktion $f$ mit $$
+  f(x)=\left\{\begin{array}{lll}\frac{x+2}{x-1} & \text{für} & x\not=1 \\ 3 & \text{für} & x=1 \end{array}\right.
+$$ stetig in $D=\mathbb{R}\setminus\{1\}$, jedoch gilt in $x_0=1$ $$
+  \lim_{x\rightarrow 1\pm0}{\left(\frac{x+2}{x-1}\right)}=\pm\infty
+$$ d. h. keiner der beiden einseitigen Grenzwerte existiert, jedoch aber $f(1)=3$. Die Funktion ist an dieser Stelle nicht stetig.
+3. Die Funktion $f$ mit $$
+  f(x)=\left\{\begin{array}{lll}\frac{x^3-x}{x-1} & \text{für} & x\not=1 \\ 1 & \text{für} & x=1 \end{array}\right.
+$$ ist nicht stetig in $x_0=1$, da $$
+  \lim_{x\rightarrow 1\pm0}{\left(\frac{x^3-x}{x-1}\right)}=2
+$$ aber $f(1)=1$. D. h. beide einseitige Grenzwerte existieren, sind aber verschieden vom Funktionswert an dieser Stelle.
+
+****************************************
+
+[^1]: Die Zahlenfolge $c_k$ ist ebenso konvergent mit Grenzwert $g_a$.
 
 
 ## Integralrechnung
