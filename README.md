@@ -6247,14 +6247,14 @@ $$ zu wählen. Für die Funktion $g$ gilt $$
 $$ somit ist $g$ in $x=1$ stetig.
 
 <!-- style="background-color: lightgray;"-->
->Eine Funktion $f:D\to\mathbb{R}$ mit $d\subseteq\mathbb{R}$ ist an einer Stelle $x_0\in D$ **nicht stetig**, falls
+>Eine Funktion $f:D\to\mathbb{R}$ mit $d\subseteq\mathbb{R}$ ist an einer Stelle $x_0\in D$ **nicht stetig**, falls beispielsweise
 >
->1. in $x_0$ eine *Lücke* besteht: links- und rechtsseitiger Grenzwert existieren und sind einander gleich, jedoch verschieden von $f(x_0)$  $$
-  \lim_{x\to x_0-0}{f(x)}=\lim_{x\to x_0+0}{f(x)}\not=f(x_0)
-$$
->2. in $x_0$ eine *Sprungstelle endlicher Höhe* besteht: links- und rechtsseitiger Grenzwert existieren, sind jedoch verschieden $$
+>1. zwar links- und rechtsseitiger Grenzwert existieren und einander gleich sind, jedoch der Funktionswert $f(x_0)$ nicht existiert $$
+  \left(\lim_{x\to x_0-0}{f(x)}=\lim_{x\to x_0+0}{f(x)}\right)\quad\land\quad \left(\not\exists\, f(x_0)\right)
+$$ Solche Stellen $x_0$ werden **Lücke** genannt. Sie können beispielsweise bei gebrochen rationalen Funktionen auftreten, bei denen Zähler- und Nennerpolynom gemeinsame Wurzeln besitzen. Vergleiche das vorangestellte Beispiel.
+>2. links- und rechtsseitiger Grenzwert existieren, jedoch verschieden sind $$
   \lim_{x\to x_0-0}{f(x)}\not=\lim_{x\to x_0+0}{f(x)} \;(\in\mathbb{R})
-$$
+$$ Eine solche Stelle $x_0$ wird **Sprungstelle endlicher Höhe** genannt. Vergleiche das vorangestellte Beispiel.
 >3. wenigstens einer der beiden einseitigen Grenzwerte in $x_0$ nicht existiert.
 
 
