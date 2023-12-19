@@ -6347,6 +6347,7 @@ $$ aber $f(1)=1$. D. h. beide einseitige Grenzwerte existieren, sind aber versch
 
 [^1]: Die Zahlenfolge $c_k$ ist ebenso konvergent mit Grenzwert $g_a$.
 
+neu
 
 ## Integralrechnung
 
