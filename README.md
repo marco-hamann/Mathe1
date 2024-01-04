@@ -6249,13 +6249,55 @@ $$ somit ist $g$ in $x=1$ stetig.
 <!-- style="background-color: lightgray;"-->
 >Eine Funktion $f:D\to\mathbb{R}$ mit $d\subseteq\mathbb{R}$ ist an einer Stelle $x_0\in D$ **nicht stetig**, falls beispielsweise
 >
->1. zwar links- und rechtsseitiger Grenzwert existieren und einander gleich sind, jedoch der Funktionswert $f(x_0)$ nicht existiert $$
-  \left(\lim_{x\to x_0-0}{f(x)}=\lim_{x\to x_0+0}{f(x)}\right)\quad\land\quad \left(\not\exists\, f(x_0)\right)
-$$ Solche Stellen $x_0$ werden **Lücke** genannt. Sie können beispielsweise bei gebrochen rationalen Funktionen auftreten, bei denen Zähler- und Nennerpolynom gemeinsame Wurzeln besitzen. Vergleiche das vorangestellte Beispiel.
+>1. zwar links- und rechtsseitiger Grenzwert existieren und einander gleich sind, jedoch diese verschieden vom Funktionswert $f(x_0)$ sind $$
+  \lim_{x\to x_0-0}{f(x)}=\lim_{x\to x_0+0}{f(x)}\not=f(x_0)
+$$ Siehe Aufgabe 3 im vorangestellten Beispiel 8.
 >2. links- und rechtsseitiger Grenzwert existieren, jedoch verschieden sind $$
-  \lim_{x\to x_0-0}{f(x)}\not=\lim_{x\to x_0+0}{f(x)} \;(\in\mathbb{R})
-$$ Eine solche Stelle $x_0$ wird **Sprungstelle endlicher Höhe** genannt. Vergleiche das vorangestellte Beispiel.
+  \lim_{x\to x_0-0}{f(x)}\not=\lim_{x\to x_0+0}{f(x)}
+$$ Eine solche Stelle $x_0$ wird **Sprungstelle endlicher Höhe** genannt. Vergleiche die Aufgaben 1 und 2 im vorangestellten Beispiel 8.
 >3. wenigstens einer der beiden einseitigen Grenzwerte in $x_0$ nicht existiert.
+
+
+Eigenschaften stetiger Funktionen
+===
+
+Nachstehend sind ausgewählte Eigenschaften von stetigen, reellen Funktionen einer reellen Variablen zusammengestellt.
+
+1. Aus den Rechenregeln für Funktionsgrenzwerte folgt, dass Summe, Differenz, Produkt und Quotient stetiger Funktionen wieder stetig sind. Des Weiteren ist auch die Verkettung stetiger Funktionen wieder stetig.
+2. Jede auf einem abgeschlossenen Intervall $[a,b]\subset\mathbb{R}$ stetige Funktion $f$ ist dort beschränkt. Sie besitzt an einer Stelle $x_1\in[a,b]$ ihren minimalen Funktionswert $f(x_1)$, ebenso ihren maximalen Funktionswert $f(x_2)$ für ein $x_2\in[a,b]$. Es gilt $$
+  f(x_1)\leq f(x)\leq f(x_2) \quad\forall\; x\in[a,b]
+$$
+3. Sei $f$ eine auf einem abgeschlossenen Intervall $[a,b]$ definierte und dort stetige Funktion. Für eine beliebige Zahl $y$ zwischen $f(a)$ und $f(b)$ existiert mindestens ein $x\in(a,b)$ mit $f(x)=y$. Diese Aussage wird **Zwischenwertsatz** genannt. Siehe nachstehende Abbildung. ![Zwischenwertsatz](img/mat-bild-29.png "_Fig._ Graph einer auf $[a,b]$ stetigen, reellen Funktion mit Funktionswerten $f(a)$ und $f(b)$: Jeder Wert $y$ zwischen diesen Funktionswerten wird als Funktionswert an mindestens einer Stelle $x\in(a,b)$ angenommen.")
+
+Der Zwischenwertsatz ermöglicht es, eine Gleichungen $f(x)=0$ mit stetigem $f$ *näherungsweise* zu lösen. Sind $x_1$ und $x_2$ zwei Argumente mit $f(x_1)\cdot f(x_2)<0$ (die Funktionswerte haben verschiedene Vorzeichen), so besitzt die $(x_1,f(x_1))$ und $(x_2,f(x_2))$ verbindende Sekante die Gleichung $$
+  \frac{f(x_2)-f(x_1)}{x_2-x_1}=\frac{f(x_1)-y}{x_1-x}
+$$ Die Nullstelle $x_S$ der Sekante berechnet sich durch den Ansatz $y=0$ $$
+  \frac{f(x_2)-f(x_1)}{x_2-x_1}=\frac{f(x_1)-0}{x_1-x}\quad\rightarrow\quad x_S=x_1-f(x_1)\cdot \frac{x_2-x_1}{f(x_2)-f(x_1)}=\frac{x_1\cdot f(x_2)-x_2\cdot f(x_1)}{f(x_2)-f(x_1)}
+$$ Die Stelle $x_S$ liefert eine Näherungslösung für $f(x)=0$. Das Verfahren wird **Regula falsi** oder auch Sekantenverfahren genannt.
+
+**Bemerkung 7.** Gilt $f(x_S)=0$, so ist $x_S$ eine exakte Lösung der Gleichung $f(x)=0$. Andernfalls gilt $f(x_S)\not=0$ und somit entweder $f(x_S)\cdot f(x_1)<0$ oder $f(x_S)\cdot f(x_2)<0$. Die Regula falsi lässt sich somit für $(x_1,x_S)$ beziehungsweise $(x_S,x_2)$ wiederholen.
+
+Der $(k+1)$-te Iterationsschritt der [Regula-Falsi](https://de.wikipedia.org/wiki/Regula_falsi#Das_Regula-Falsi-Iterationsverfahren_%28Primitivform%29) ist nachstehend als Pseudocode dargestellt.
+
+```python
+Berechne c_[k+1]=(a_k*f(b_k)-b_k*f(a_k))/(f(b_k)-f(a_k))
+Falls f(c_[k+1])=0 dann Ende
+andernfalls wähle a_[k+1] und b_[k+1] wie folgt
+  Falls f(c_[k+1])*f(a_[k])<0 dann
+    a_[k+1]=a_[k]
+    b_[k+1]=c_[k+1]
+  Falls f(c_[k+1])*f(b_[k])<0 dann
+    a_[k+1]=c_[k+1]
+    b_[k+1]=b_[k]
+  Ende
+Ende
+```
+
+**Beispiel 9.** ..
+
+Das Iterationsverfahren Regula falsi zur Berechnung einer Näherungslösung $x_0$ mit $f(x_0)\approx0$ ist im nachstehenden Video erläutert.
+
+!?[Regula falsi](https://www.youtube.com/watch?v=j_1ARyn9oFI "Daniel Jung, Regula Falsi zum näherungsweisen Berechnen von Nullstellen.")
 
 
 Sicher gewusst
@@ -6336,7 +6378,13 @@ $$
   f(x)=\left\{\begin{array}{lll}\frac{x+2}{x-1} & \text{für} & x\not=1 \\ 3 & \text{für} & x=1 \end{array}\right.
 $$ stetig in $D=\mathbb{R}\setminus\{1\}$, jedoch gilt in $x_0=1$ $$
   \lim_{x\rightarrow 1\pm0}{\left(\frac{x+2}{x-1}\right)}=\pm\infty
-$$ d. h. keiner der beiden einseitigen Grenzwerte existiert, jedoch aber $f(1)=3$. Die Funktion ist an dieser Stelle nicht stetig.
+$$ d. h. keiner der beiden einseitigen Grenzwerte existiert, jedoch aber $f(1)=3$. Die Funktion ist an dieser Stelle nicht stetig. Für den Nachweis, dass die beiden einseitigen Grenzwerte nicht existieren - und mithin die Funktion $f$ an der Stelle $x_0=1$ nicht stetig ist - wählt man beispielsweise eine geeignete, gegen $x_0$ konvergente Zahlenfolge $(x_n)_{n\in\mathbb{N}^\times}$ von Argumenten mit $$
+  x_n=1-\frac{1}{n}\quad\leadsto\quad \lim_{n\to\infty}{x_n}=1
+$$ und $x_n<1$ für alle $n$. Damit folgt $$
+  \lim_{x\to 1-0}{f(x)}=\lim_{n\to\infty}{\left(\frac{\left(1-\frac{1}{n}\right)+2}{\left(1-\frac{1}{n}\right)-1}\right)}=
+  \lim_{n\to\infty}{\left(\frac{3-\frac{1}{n}}{-\frac{1}{n}}\right)}=
+  \lim_{n\to\infty}{\left(\frac{-3\cdot n+1}{1}\right)}=-\infty
+$$ Analog lässt sich unter Verwendung von $\tilde{x}_n=1+\frac{1}{n}$ die Aussage $\lim_{x\to1+0}{f(x)}=\infty$ nachweisen.
 3. Die Funktion $f$ mit $$
   f(x)=\left\{\begin{array}{lll}\frac{x^3-x}{x-1} & \text{für} & x\not=1 \\ 1 & \text{für} & x=1 \end{array}\right.
 $$ ist nicht stetig in $x_0=1$, da $$
