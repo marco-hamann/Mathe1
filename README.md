@@ -6293,11 +6293,46 @@ andernfalls wähle a_[k+1] und b_[k+1] wie folgt
 Ende
 ```
 
-**Beispiel 9.** ..
+**Beispiel 9.** Gegeben ist die Funktion $f:\mathbb{R}\to\mathbb{R}$ mit $$
+  f(x)=\frac{1}{5}\cdot x^5-x^4+x^3-\frac{1}{5}
+$$ siehe nachstehende Abbildung für deren Funktionsgraph.
+
+![Polynom reelle Nullstelle](img/mat-bild-30.png "_Fig._ Funktionsgraph $G_f$ der Funktion $f$ mit $f(x)=\frac{1}{5}\cdot x^5-x^4+x^3-\frac{1}{5}$. An der Stelle $x=1$ berührt $G_f$ die erste Achse, an einer weiteren Stelle $x\approx 3.6$ scheidet dieser die erste Achse.")
+
+Die Funktion $f$ besitzt die (doppelt zu zählende) Nullstelle $x_{1,2}=1$, und lässt sich darstellen $$
+  f(x)=\frac{1}{5}\cdot(x-1)^2\cdot(x^3-3\cdot x^2-2\cdot x-1)
+$$ Das Polynom $p(x)=x^3-3\cdot x^2-2\cdot x-1$ besitzt die Polynomwerte
+
+<!-- data-type="none" -->
+| $x$ | $p(x)$ |
+| :--- | :--- |
+| $2$ | $-9$ |
+| $3$ | $-7$ |
+| $4$ | $7$ |
+
+Wegen der Stetigkeit von $f$ auf ihrem Definitionsbereich $\mathbb{R}$ existiert nach dem Zwischenwertsatz im Intervall $(3,4)$ eine weitere Nullstelle $x_3$ von $f$. Diese lässt sich unter Benutzung des Iterationsverfahrens der Regula falsi näherungsweise berechnen. Siehe Bemerkung 7. Nach der Formel $$
+  c_{k+1}=\frac{a_k\cdot f(b_k)-b_k\cdot f(a_k)}{f(b_k)-f(a_k)}
+$$ erhält man einen Zwischenwert $c_{k+1}\in(a_k,b_k)$. Für $f(c_{k+1})\not=0$ setzt man $a_{k+1}$ und $b_{k+1}$ wie folgt:
+
+* $a_{k+1}=c_{k+1}$, $b_{k+1}=b_{k}$, falls $f(c_{k+1})$ und $f(b_k)$ verschiedene Vorzeichen haben bzw.
+* $a_{k+1}=a_{k}$, $b_{k+1}=c_{k+1}$, falls $f(c_{k+1})$ und $f(a_k)$ verschiedene Vorzeichen haben
+
+und geht in den nächsten Iterationsschritt. Die Rechnung für das vorliegende Beispiel ist in nachfolgender Tabelle dargestellt.
+
+<!-- data-type="none" -->
+| $k$ | $a_k$ | $c_{k+1}$ | $b_k$ | $p(a_k)$ | $p(c_{k+1})$ | $p(b_k)$ |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| $0$ | $3$ | $3.5$ | $4$ | $-7$ | $-1.875$ | $7$ |
+| $1$ | $3.5$ | $3.606$ | $4$ | $-1.875$ | $-0.338$ | $7$ |
+| $2$ | $3.606$ | $3.624$ | $4$ | $-0.338$ | $-0.055$ | $7$ |
+| $3$ | $3.624$ | $\textcolor{red}{3.627}$ | $4$ | $-0.055$ | $-0.009$ | $7$ |
+| $4$ | $3.627$ | $\textcolor{red}{3.627}$ | $4$ | $-0.055$ | $\textcolor{red}{-0.001}$ | $7$ |
+
+Die berechneten Zwischenwerte $c_{k+1}$ und $f(c_{k+1})$ sind auf drei Nachkommastellen gerundet dargestellt, als Abbruchbedingung wird $|c_{k+1}-c_{k}|<0.001$ gewählt. Hiermit ergibt sich der Näherungswert der gesuchten Nullstelle $x_3\approx c_5\approx 3.627$ mit $p(c_5)\approx-0.001$ beziehungsweise $f(c_5)\approx-0.001$.
 
 Das Iterationsverfahren Regula falsi zur Berechnung einer Näherungslösung $x_0$ mit $f(x_0)\approx0$ ist im nachstehenden Video erläutert.
 
-!?[Regula falsi](https://www.youtube.com/watch?v=j_1ARyn9oFI "Daniel Jung, Regula Falsi zum näherungsweisen Berechnen von Nullstellen.")
+!?[Regula falsi](https://www.youtube.com/watch?v=qCpcUS3N51I "Mathe Peter, Regula Falsi Verfahren, numerische Berechnung von Nullstellen.")
 
 
 Sicher gewusst
