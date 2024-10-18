@@ -252,9 +252,6 @@ Bedeuten beispielsweise $"1"$ Stromfluss und $"0"$ kein Stromfluss in einer elek
 | $$0$$   | $$1$$   | $$1$$   |
 | $$0$$   | $$0$$   | $$0$$   |
 
-
-Einfache interaktive Beispiele finden sich beispielsweise unter dem Link [Logikgatter](https://www.edumedia-sciences.com/de/media/146-logikgatter).
-
 Beispiel 4 (2) ist ebenso im nachstehenden Video besprochen.
 
 !?[Implikation auflösen](https://www.youtube.com/watch?v=cj0pmLs1c6Y "Christian Spannagel, Aussagenlogik (Teil 3)")
@@ -345,7 +342,7 @@ factor(74)
 ****************************************
 
 <!-- data-type="none" -->
-| $p$ | $q$ | $p\rightarrow q$ | $q\rightarrow p$ | $\neg{(p\rightarrow q)}$ | $\neg{(q\leftrightarrow p)}$ | $p\wedge\neg{q}$ |
+| $p$ | $q$ | $p\rightarrow q$ | $q\rightarrow p$ | $\neg{(p\rightarrow q)}$ | $\neg{(q\rightarrow p)}$ | $p\wedge\neg{q}$ |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | $1$ | $1$ | $1$ | $1$ | $\textcolor{red}{0}$ | $0$ | $\textcolor{red}{0}$ |
 | $0$ | $1$ | $1$ | $0$ | $\textcolor{red}{0}$ | $1$ | $\textcolor{red}{0}$ |
@@ -406,10 +403,6 @@ R=subst(c,z,z^2)
 test(L=R,wahr,falsch)
 ```
 @Algebrite.eval
-
-Eine Gegenüberstellung der Begriffe *Aussage* und *Aussageform* ist im folgenden Video erklärt.
-
-!?[Aussageform](https://www.youtube.com/watch?v=Xl_JFxXKRAg "Youtube-Kanal [Abi ohne Lernen](https://www.youtube.com/c/AbiOhneLernen)")
 
 **Bemerkung 2.** In der Mathematik werden Aussagen in *Sätzen*, *Propositionen*, *Folgerungen* formuliert und besitzen oft eine der Formen:
 
@@ -510,6 +503,7 @@ Aus dem Widerspruch, $n$ müsse gleichzeitig Gerade und ungerade sein, folgt, da
 
 **Bemerkung 3.** Direkter und indirekter Beweis sind logische Gesetze, so genannte [Tautologien](https://de.wikipedia.org/wiki/Tautologie). Das sind Aussageverbindungen, die immer wahr sind, unabhängig vom Wahrheitsgehalt der enthaltenen elementaren Aussagen. Weitere Beispiele sind:
 
+* [Satz vom ausgeschlossenen Dritten](https://de.wikipedia.org/wiki/Satz_vom_ausgeschlossenen_Dritten) $ a\vee \neg a $
 * [Kettenschluss](https://de.wikipedia.org/wiki/Kettenschluss) $ [(a\rightarrow b)\wedge(b\rightarrow c)]\rightarrow (a\rightarrow c) $
 * [Kontraposition](https://de.wikipedia.org/wiki/Kontraposition) $ (a\rightarrow b)\Leftrightarrow (\neg{b}\rightarrow \neg{a}) $
 * [Beweisverfahren der vollständigen Induktion](https://de.wikipedia.org/wiki/Vollständige_Induktion), siehe Abschnitt [Zahlen und Gleichungen](#Zahlen-und-Gleichungen)
@@ -722,7 +716,7 @@ Unter Benutzung von Quantoren schreibt sich die vorstehende Definition:
 1. $A$ ist Teilmenge von $B$, $\;A\subseteq B\;:\Leftrightarrow\; \forall x\in A\;\left( x\in B\right) $
 2. $A$ ist ~~keine~~ Teilmenge von $B$, $\;A\not\subseteq B\;:\Leftrightarrow\; \exists x\in A\;\left( x\not\in B\right) $
 
->**Definition 3.** Zwei Mengen $A$ und $B$ heißen **gleich**, kurz $A=B$, falls $A$ eine Teilmenge von $B$ ist und $B$ einen Teilmange von $A$. Unter Benutzung aussagenlogischer Verknüpfungen $$
+>**Definition 3.** Zwei Mengen $A$ und $B$ heißen **gleich**, kurz $A=B$, falls $A$ eine Teilmenge von $B$ ist und $B$ eine Teilmange von $A$. Unter Benutzung aussagenlogischer Verknüpfungen $$
   A= B\;:\Leftrightarrow (A\subseteq B)\wedge (B\subseteq A)
 $$
 
@@ -1349,7 +1343,7 @@ Das Rechnen mit reellen Zahlen lässt sich auf imaginäre Zahlen übertragen.
 1. $3i+2i+ci=(5+c)\cdot i\;\text{für}\; c\in\mathbb{R}$
 2. $pi\cdot qi=pq\cdot i^2=-pq\;\text{für}\; p\in\mathbb{R},\; q\in\mathbb{R}$
 3. $i^5=i^{2+2+1}=i^2\cdot i^2\cdot i=(-1)\cdot(-1)\cdot i=i$
-4. $i^{4n+1}=i^{4n}\cdot i^3=(i^2\cdot i^2)^n\cdot i^2\cdot i=1^n\cdot(-1)\cdot i=-1 \;\forall n\in\mathbb{N}$
+4. $i^{4n+3}=i^{4n}\cdot i^3=(i^2\cdot i^2)^n\cdot i^2\cdot i=1^n\cdot(-1)\cdot i=-1 \;\forall n\in\mathbb{N}$
 5. $$\frac{1}{i^3}=\frac{1}{i^2\cdot i}=-\frac{1}{i}=-\frac{i}{i^2}=-\frac{i}{(-1)}=i$$
 
 Unter Benutzung der Javascript-Bibliothek [Algebrite](http://algebrite.org/) können unter Verwendung des Bezeichners $i$ interaktiv reelle und imaginäre Zahlen verknüpft werden.
@@ -1434,7 +1428,7 @@ test(zc=w,wahr,falsch)
   \operatorname{Re}{z}=\frac{1}{2}\cdot\left(z+\bar{z}\right)
 $$
 4. Der Imaginärteil einer komplexen Zahl $z$ lässt sich bestimmen über $$
-  \operatorname{Re}{z}=\frac{1}{2}\cdot\left(z-\bar{z}\right)
+  \operatorname{Im}{z}=\frac{1}{2}\cdot\left(z-\bar{z}\right)
 $$
 
 Der Nachweis dieser Aussagen ist eine Übungsaufgabe.
@@ -1964,7 +1958,6 @@ In Verallgemeinerung der aus der Schulmathematik bekannten linearen und quadrati
 >**Definition 1.** Eine Gleichung $p(x)=0$ in der Unbekannten $x$ der Form $$
   p(x)=a_0+a_1\cdot x+a_2\cdot x^2+...+a_{n-1}\cdot x^{n-1}+a_n\cdot x^n=\sum_{k=0}^n{a_k}\cdot x^k
 $$ mit Koeffizienten $a_k\in\mathbb{R}$ für $k\in\{0,1,2,...,n\}$ und $a_n\not=0$ heißt **algebraische Gleichung** vom Grad $n$.
-
 
 Für bestimmte Grade sind auch andere Bezeichnungen gebräuchlich.
 
@@ -2864,7 +2857,7 @@ Aus den in einem Vektorraum erklärten Operationen 'Addition' und 'Skalarvielfac
 
 >**Definition 3.** Für Vektoren $v_i\in V$ mit $i\in\{1,2,\ldots,n\}$ und Skalare $\lambda_i\in K$ heißt
 >$$
-  \sum_{i=1}^n{\left(\lambda_i\cdot v_i\right)}\in V
+  \sum_{i=1}^n{\left(\lambda_i\cdot v_i\right)}=\lambda_1\cdot v_1+\lambda_2\cdot v_2+...+\lambda_n\cdot v_n\in V
 $$ eine **Linearkombination** der Vektoren $v_i$. Diese ist also wieder ein Vektor. Die Skalare $\lambda_i$ heißen Koeffizienten der Linearkombination.
 
 **Beispiel 4.** Gegeben sind drei Vektoren des $\mathbb{R}^2$, die als Ortsvektoren der Eckpunkte zweier gleichseitiger Dreiecke der Kantenlänge 'Eins' in der nachstehenden Abbildung dargestellt sind.
@@ -4985,6 +4978,131 @@ $$ (Bitte nachrechnen.) Der Vektor $x$ ist orthogonal zu jedem der Vektoren aus 
 1. $M^\perp\not=\emptyset$ wegen $M^\perp\ni o$.
 2. Sind $x\in M^\perp$ und $y\in M^\perp$, so folgt aus Eigenschaft 2 bzw. 3 von Definition 1, dass $(x+y)\in M^\perp$ bzw. $\lambda\cdot x\in M^\perp$ für alle $\lambda\in\mathbb{R}$ orthogonal zu $M$ sind.
 
+
+Projektion eines Vektors in orthogonale Unterräume
+===
+
+
+Bei der Analyse von Systemen von Kräften ist es mitunter notwendig, Kraftkomponenten entlang einer Richtung zu kennen: beispielsweise die Hangabtriebskraft und die Normalkraft aus der ursächlichen Gewichtskraft eines entlang eines Hangs hinabgleitenden Körpers. Siehe nachstehende Abbildung.
+
+![Kräftezerlegung](img/mat-bild-31.png "_Fig._ Zerlegung der Gewichtskraft $\vec{F}_G$ eines Körpers in Hangabtriebskraft $\vec{F}_H$ und Kraftkomponente $\vec{F}_N$ orthogonal zum geneigten Hang.")
+
+Wir leiten eine Formel für die Zerlegung eines Vektors in Komponenten in Richtung eines Untervektorraumes und seines orthogonalen Komplementes her. Hierfür bezeichne $x\in V$ den vom Nullvektor $o\in V$ verschiedenen Vektor und $M\subset V$ mit $$
+  M=\left\{\lambda\cdot a|\,a\in V\setminus\{o\},\lambda\in\mathbb{R}\right\}
+$$ einen eindimensionalen Untervektorraum in $V$, der durch einen beliebig, aber fest gewählten Vektor $a$ aufgespannt wird. Gesucht sind die eindeutig bestimmten Vektoren $y\in M$ sowie $h\in M^\perp$ der Zerlegung $x=y+h$.
+
+Bezeichnet $\varphi=\measuredangle{(x,a)}$ und wird benutzt, dass $(y,a)$ linear abhängig sind, so ergeben sich schrittweise:
+
+1. $$ \vert y\vert=\vert x\vert\cdot\cos{\varphi} $$
+2. $$ x\cdot a = \left\{\begin{array}{lcl} \vert x\vert\cdot\vert a\vert\cdot\cos{\varphi} & \text{für} & \mathrm{sgn}{(x\cdot a)}=1 \\ \vert x\vert\cdot\vert a\vert\cdot\cos{(\pi-\varphi)} & \text{für} & \mathrm{sgn}{(x\cdot a)}=-1 \end{array}\right. \quad\stackrel{1.}{\leadsto}\quad x\cdot a=\vert y\vert\cdot\vert a\vert\cdot\mathrm{sgn}(x\cdot a) $$
+3. $$ \frac{1}{|y|}\cdot y=\frac{1}{|a|}\cdot a\cdot\mathrm{sgn}{(x\cdot a)}\quad\leftrightarrow\quad y=\frac{|y|}{|a|}\cdot\mathrm{sgn}{(x\cdot a)}\cdot a\stackrel{2.}{=}\frac{x\cdot a}{a\cdot a}\cdot a $$ 
+4. $$ h=x-y=x-\frac{x\cdot a}{a\cdot a}\cdot a $$
+
+für $|y|\not=0$. Die Vektoren $y\not=o$ und $h\not=o$ sind orthogonal, $y\perp h$, denn es gilt $$ y\cdot h=\left(\frac{x\cdot a}{a\cdot a}\cdot a\right)\cdot\left(x-\frac{x\cdot a}{a\cdot a}\cdot a\right)=\frac{(x\cdot a)^2}{a\cdot a}-\frac{(x\cdot a)^2}{(a\cdot a)^2}\cdot(a\cdot a)=0 $$ 
+
+**Beispiel 7.** Zu gegebener Kraft $\vec{F}=\left(\begin{array}{ccc} 4 & 2 & 6 \end{array}\right)^\top({\rm 1N})$ und Richtung $\vec{s}=\left(\begin{array}{ccc} 2 & -1 & 2 \end{array}\right)^\top({\rm 1m})$ ist die Kraftkomponente $\vec{F}_s$ in Richtung des Weges $\vec{s}$ zu berechnen.
+
+Es gilt $$ \vec{F}\cdot\vec{s}=\left(\begin{array}{r} 4 \\ 2 \\ 6 \end{array}\right)\cdot\left(\begin{array}{r} 2 \\ -1 \\ 2 \end{array}\right)({\rm 1Nm}) = (8-2+12) {\rm Nm} =\underline{18 {\rm Nm}} $$ Für das Quadrat der Norm von $\vec{s}$ ergibt sich $$ \vert\vec{s}\vert^2 = \vec{s}\cdot\vec{s}=\left(\begin{array}{r} 2 \\ -1 \\ 2 \end{array}\right)\cdot\left(\begin{array}{r} 2 \\ -1 \\ 2 \end{array}\right)({\rm 1m^2})=\underline{9 {\rm m^2}} $$ Die Kraftkomponente $\vec{F}_s$ in Richtung $\vec{s}$ berechnet sich $$ \vec{F}_s=\frac{\vec{F}\cdot\vec{s}}{\vec{s}\cdot\vec{s}}\cdot\vec{s}=\frac{18 {\rm Nm}}{9 {\rm m^2}} \left(\begin{array}{r} 2 \\ -1 \\ 2 \end{array}\right) (1 {\rm m})=\underline{\left(\begin{array}{r} 4 \\ -2 \\ 4 \end{array}\right) (1 {\rm N})},\quad \vert\vec{F}_s\vert=\underline{6 {\rm N}} $$
+
+**Beispiel 8.** Zu gegebenem Vektor $x=\left(\begin{array}{ccc} \frac{3}{2} & 2 & \frac{3}{4} \end{array}\right)^\top\in\mathbb{R}^3$ sind bezüglich der kanonischen Basisvektoren $e_j\in\mathbb{R}^3$ mit $j\in\{1,2,3\}$ die Richtungskosinus von ${x}$ bezüglich $e_j$ zu berechnen.
+
+Die orthogonale Projektion von $x$ auf den durch $e_j$ aufgespannten Untervektorraum ergibt $$ \frac{x\cdot e_j}{\vert e_j\vert^2}\cdot e_j=\vert x\vert\cdot\cos{\varphi}_j\cdot e_j = \left\{\begin{array}{lcl} \frac{3}{2}\cdot e_1 & \text{für} & j=1 \\ 2\cdot e_2 & \text{für} & j=2 \\ \frac{3}{4}\cdot e_3 & \text{für} & j=3 \end{array} \right. $$ mit $\varphi_i=\measuredangle(x,e_j)$. Die Ausdrücke $\cos{\varphi_j}$ heißen **Richtungskosinus** von $x=\left(\begin{array}{ccc} x_1 & x_2 & x_3 \end{array}\right)^\top$ bezüglich der Basisvektoren ${e}_j$. Es gilt $$ (\cos{\varphi_1})^2+(\cos{\varphi_2})^2+(\cos{\varphi_3})^2=\frac{x_1^2}{\vert{x}\vert^2}+\frac{x_2^2}{\vert{x}\vert^2}+\frac{x_3^2}{\vert{x}\vert^2}=1 $$ d. h. $\varphi_1$, $\varphi_2$ und $\varphi_3$ sind nicht unabhängig voneinander.
+
+Das Prinzip der orthogonalen Projektion von Vektoren lässt sich nutzen, um zu einem gegebenen System $\{w_1,w_2,...,w_n\}$ von linear unabhängigen Vektoren ein System $\{v_1,v_2,...,v_n\}$ orthogonalen Vektoren zu erzeugen, die beide denselben Untervektorraum aufspannen.
+
+<!-- style="background-color: lightgray;"-->
+> [Orthogonalisierungsverfahren nach Gram-Schmidt](https://de.wikipedia.org/wiki/Gram-Schmidtsches_Orthogonalisierungsverfahren). Die Vektoren $v_j$ berechnen sich rekursiv gemäß
+>
+> $$ \begin{split} v_1 & =w_1 \\ v_2 & =w_2-\frac{w_2\cdot v_1}{v_1\cdot v_1}\cdot v_1 \\ v_3 & =w_3-\frac{w_3\cdot v_1}{v_1\cdot v_1}\cdot v_1-\frac{w_3\cdot v_2}{v_2\cdot v_2}\cdot v_2 \\ & \vdots \\ v_j & = w_j-\left(\sum_{k=1}^{j-1}{\frac{w_j\cdot v_k}{v_k\cdot v_k}\cdot v_k}\right)\,, \quad j\in\{2,3,...,n\} \\ & \vdots \\ v_n & = w_n-\left(\sum_{k=1}^{n-1}{\frac{w_n\cdot v_k}{v_k\cdot v_k}\cdot v_k}\right)\end{split} $$
+> worin die auftretenden Multiplikationszeichen das Skalarprodukt zweier Vektoren bzw. das Skalarfache eines Vektors bezeichnen.
+
+>**Satz 2.** Für jeden Vektor $v_j$ mit $j\in\{2,3,...,n\}$ gelten $$ v_j\cdot v_l=0\quad\forall l\in\{1,2,...,j-1\} $$ d. h. die Vektoren $\{v_1,v_2,...,v_n\}$ sind paarweise orthogonal.
+
+**Beweis.** Es lässt sich unmittelbar zeigen, dass $$ v_2\cdot v_1=\left(w_2-\frac{w_2\cdot v_1}{v_1\cdot v_1}\cdot v_1\right)\cdot v_1= w_2\cdot v_1-w_2\cdot v_1=0 $$ gilt. Mit der linearen Unabhängigkeit der Vektoren $w_j$ folgt des Weiteren, dass auch die beiden Vektoren in $\{v_1,v_2\}$ verschieden vom Nullvektor sind und somit $v_1\perp v_2$ gilt. 
+
+Ist ein gemäß obigem Orthogonalisierungsverfahren bestimmtes System von Vektoren $\{v_1,v_2,...,v_{j-1}\}$ orthogonal, so folgt für die Skalarprodukte mit dem dort nachfolgend berechneten Vektor $v_j$ mit $j\in\{2,3,...,n\}$ $$ v_j\cdot v_l = \left[w_j-\left(\sum_{k=1}^{j-1}{\frac{w_j\cdot v_k}{v_k\cdot v_k}\cdot v_k}\right)\right]\cdot v_l=w_j\cdot v_l-\left(\sum_{k=1}^{j-1}{\frac{w_j\cdot v_k}{v_k\cdot v_k}\cdot v_k}\right)\cdot v_l=w_j\cdot v_l-\frac{w_j\cdot v_l}{v_l\cdot v_l}\cdot(v_l\cdot v_l)=0\quad \forall l\in\{1,2,...,j-1\} $$ da $v_k\cdot v_l=0$ für alle $k\not=l$ des vorgenannten Systems gilt. Unter erneuter Benutzung der linearen Unabhängigkeit der Vektoren $w_j$ lässt sich analog die paarweise Orthogonalität der Vektoren in $\{v_1,v_2,...,v_{j}\}$ schließen, und zusammen  mit $v_1\perp v_2$ schließlich die Aussage des Satzes beweisen. 
+
+$\square$
+
+**Beispiel 9.** Gegeben sind die linear unabhängigen Vektoren im euklidischen Vektorraum $\left(\mathbb{R}^3,\cdot\right)$ $$ w_1=\begin{pmatrix} 1 \\ 2 \\ 0 \end{pmatrix}\,,\quad w_2=\begin{pmatrix} 3 \\ 0 \\ -1 \end{pmatrix}\quad\text{und}\quad w_3=\begin{pmatrix} 0 \\ 7 \\ 2 \end{pmatrix} $$ worin das Multiplikationszeichen das kanonische Skalarprodukt gemäß Beispiel 1 darstellt. Die lineare Unabhängigkeit der drei Vektoren ist unmittelbar einsichtig.
+
+Es berechnen sich unter Benutzung des Gram-Schmidtschen Orthogonalisierungsverfahrens schrittweise $$ \begin{split} v_1 & = \begin{pmatrix} 1 \\ 2 \\ 0 \end{pmatrix} \\ v_2 & = \begin{pmatrix} 3 \\ 0 \\ -1 \end{pmatrix}-\frac{3\cdot 1+0\cdot 2-1\cdot 0}{1^2+2^2+0^2}\cdot\begin{pmatrix} 1 \\ 2 \\ 0 \end{pmatrix}=\frac{1}{5}\cdot\begin{pmatrix} 12 \\ -6 \\ -5 \end{pmatrix} \\ v_3 & = \begin{pmatrix} 0 \\ 7 \\ 2 \end{pmatrix}-\frac{0\cdot 1+7\cdot 2+2\cdot 0}{1^2+2^2+0^2}\cdot\begin{pmatrix} 1 \\ 2 \\ 0 \end{pmatrix}-\frac{\frac{1}{5}\cdot\left(0\cdot 12-7\cdot 6-2\cdot 5\right)}{\frac{1}{25}\cdot\left(12^2+(-6)^2+(-5)^2\right)}\cdot\frac{1}{5}\cdot\begin{pmatrix} 12 \\ -6 \\ -5 \end{pmatrix}=\frac{5}{41}\cdot\begin{pmatrix} 2 \\ -1 \\ 6 \end{pmatrix} \end{split} $$ 
+
+Damit lassen sich direkt nachrechnen $$ v_1\cdot v_2 = \frac{1}{5}\cdot\begin{pmatrix} 1 \\ 2 \\ 0 \end{pmatrix}\cdot\begin{pmatrix} 12 \\ -6 \\ -5 \end{pmatrix}=0\,,\quad v_1\cdot v_3  = \frac{5}{41}\cdot\begin{pmatrix} 1 \\ 2 \\ 0 \end{pmatrix}\cdot\begin{pmatrix} 2 \\ -1 \\ 6 \end{pmatrix}=0 \,,\quad v_2\cdot v_3 = \frac{5}{5\cdot 41}\cdot\begin{pmatrix} 12 \\ -6 \\ -5 \end{pmatrix}\cdot\begin{pmatrix} 2 \\ -1 \\ 6 \end{pmatrix}=0 $$ d. h. die Vektoren in $\{v_1,v_2,v_3\}$ bilden ein System orthogonaler Vektoren.
+
+Das Orthogonalisierungsverfahren kann unter Benutzung der Javascript Bibliothek [Algebrite](http://algebrite.org/) interaktiv umgesetzt werden. Im Beispiel werden die Vektoren $\{v_1,v_2,v_3\}$ ausgegeben.
+
+```javascript
+w1=[1,2,0]
+w2=[3,0,-1]
+w3=[0,7,2]
+v1=w1
+v2=w2-dot(w2,v1)/dot(v1,v1)*v1
+v3=w3-dot(w3,v1)/dot(v1,v1)*v1-dot(w3,v2)/dot(v2,v2)*v2
+v1
+v2
+v3
+```
+@Algebrite.eval
+
+**Bemerkung 3.** Werden die Vektoren eines System orthogonaler Vektoren (im Anschluss) normiert, spricht man entsprechend von einem System *orthonormierter* Vektoren.
+
+
+Sicher gewusst
+===
+
+
+Testen Sie Ihr Wissen in diesem Abschnitt bei der Beantwortung der nachstehenden Fragen.
+
+**Frage 1.**[^3] Entscheiden Sie: Ein Skalarprodukt auf einem reellen Vektorraum $V$ ist eine Abbildung
+
+[(X)] die zwei Vektoren aus $V$ eine reelle Zahl (Skalar) zuordnet.
+[( )] die zwei Vektoren aus $V$ wieder einen Vektor aus $V$ zuordnet.
+[( )] die einem Paar, bestehend aus einem Vektor aus $V$ und reellem Skalar, wieder einen Vektor aus $V$ zuordnet.
+[[?]] Unterscheiden Sie das Skalarprodukt gegenüber anderen Produktbildungen durch Kennzeichnung der beteiligten Faktoren und des Produktes.
+****************************************
+
+Bei einem Skalarprodukt auf $V$ handelt es sich um eine Abbildung, die je zwei Vektoren aus $V$ eine reelle Zahl zuordnet, also die Abbildung in Antwortoption 1.
+
+Ein Beispiel für Antwortoption 2 ist das Vektorprodukt in $V=\mathbb{R}^3$. Hier wird je zwei Vektoren $a\in V$ und $b\in V$ eindeutig ein Vektor $c=a\times b\in V$ zugeordnet, für den gelten:
+
+* $c\cdot a=c\cdot b=0$
+* Für $a\not=o$ und $b\not=o$ gilt $\det(a,b,c)>0$, d. h. $(a,b,c)$ bilden ein Rechtssystem.
+* $|c|=|a|\cdot|b|\cdot\measuredangle{(a,b)}$
+
+Antwortoption 3 beschreibt zum Beispiel das Skalarfache eines Vektors.
+
+****************************************
+
+**Frage 2.**[^3] Gegeben ist der Vektorraum $V=\mathbb{R}^2$ mit dem kanonischen Skalarprodukt. Welche der folgenden Systeme von Vektoren bildet eine orthonormale Basis von $V$?
+
+[[ ]] $ \left(\begin{pmatrix} -1 \\ 1 \end{pmatrix},\begin{pmatrix} 1 \\ 1 \end{pmatrix}\right) $ 
+[[ ]] $ \left(\begin{pmatrix} -1 \\ 0 \end{pmatrix} \right) $
+[[X]] $ \left(\frac{1}{\sqrt{2}}\cdot\begin{pmatrix} -1 \\ 1 \end{pmatrix},\frac{1}{\sqrt{2}}\cdot\begin{pmatrix} 1 \\ 1 \end{pmatrix}\right) $
+[[X]] $ \left(\begin{pmatrix} -1 \\ 0 \end{pmatrix},\begin{pmatrix} 0 \\ -1 \end{pmatrix}\right) $ 
+[[ ]] $ \left(\begin{pmatrix} -1 \\ 0 \end{pmatrix},\begin{pmatrix} 0 \\ -1 \end{pmatrix},\frac{1}{\sqrt{2}}\cdot\begin{pmatrix} -1 \\ 1 \end{pmatrix}\right) $ 
+[[?]] Als *Basis* wird eine Menge linear unabhängiger Vektoren bezeichnet, die ein Erzeugendensystem des Vektorraumes $V$ bildet. Die Anzahl der Vektoren einer Basis heißt *Dimension* von $V$. Vergleiche Abschnitt [Vektoren](#Vektoren). Zwei Vektoren $a\in V$ und $b\in V$ heißen *orthonormal* falls $|a|=|b|=1$ und $a\cdot b=0$ gelten, siehe Bemerkung 3 in diesem Abschnitt.
+****************************************
+
+Für die Vektoren in den Antwortoptionen drei und vier gelten jeweils $|a|=|b|=1$ und $a\cdot b=0$, d. h. diese Vektoren sind jeweils orthonormal. Darüberhinaus erfüllen diese Vektoren jeweils die Basiseigenschaft. Es gilt nämlich für einen beliebigen Vektor aus $\mathbb{R}^2$ $$ \begin{pmatrix} x_1 \\ x_2 \end{pmatrix}=-x_1\cdot\begin{pmatrix} -1 \\ 0 \end{pmatrix}-x_2\cdot\begin{pmatrix} 0 \\ -1 \end{pmatrix} \quad\text{bzw.}\quad \begin{pmatrix} x_1 \\ x_2 \end{pmatrix}=\frac{1}{\sqrt{2}}(x_2-x_1)\cdot\frac{1}{\sqrt{2}}\begin{pmatrix} -1 \\ 1 \end{pmatrix}+\frac{1}{\sqrt{2}}(x_2+x_1)\cdot\frac{1}{\sqrt{2}}\cdot\begin{pmatrix} 1 \\ 1 \end{pmatrix} $$ worin die Koeffizienten eindeutig bestimmt sind.
+
+Die Vektoren in der ersten Antwortoption sind zwar orthogonal zueinander. Darüberhinaus bilden diese eine Basis des $\mathbb{R}^2$. Jedoch sind diese Vektoren nicht normiert. Vergleiche hierzu die dritte Antwortoption.
+
+Die zweite un die letzte Antwortoption sind falsch, da die Anzahl der Vektoren in diesen nicht der Dimension $\dim{V}=2$ von $V=\mathbb{R}^2$ entspricht.
+
+****************************************
+
+
+[^1]: Zu beachten ist, dass die Produktzeichen in Definition 1 verschiedene Produkte bezeichnen: Zu unterscheiden ist das Skalarprodukt zweier Vektoren vom Skalarvielfachen eines Vektors.
+
+[^2]: Der Nachweis der Cauchy-Schwarzschen Ungleichung in euklidischen Vektorräumen kann beispielsweise im Buch 'Lineare Algebra' von Klaus Jänich, Seite 180, nachgelesen werden.
+
+[^3]: Quelle: Klaus Jänich, Lineare Algebra, Seite 192 f.
+
+
+### Vektorprodukt und Spatprodukt
+
+
 Die Berechnung des Vektorproduktes zweier Vektoren aus $\mathbb{R}^3$ ist im nachstehenden Video an einem Beispiel erklärt. Des Weiteren werden einige Anwendungen des Vektorproduktes genannt.
 
 !?[Vektorprodukt1](https://www.youtube.com/watch?v=63FWetdwNb8)
@@ -5001,31 +5119,11 @@ Sicher gewusst
 
 Sie können Ihr Wissen gern bei der Beantwortung der nachstehenden Fragen testen.
 
-**Frage 1.**[^3] Entscheiden Sie: Ein Skalarprodukt auf einem reellen Vektorraum $V$ ist eine Abbildung
-
-[(X)] $$ \cdot:V\times V\to\mathbb{R} $$
-[( )] $$ \cdot:V\times V\to V $$
-[( )] $$ \cdot:V\times\mathbb{R}\to V $$
-[[?]] Unterscheiden Sie das Skalarprodukt gegenüber anderen Produktbildungen durch Kennzeichnung der beteiligten Faktoren und des Produktes.
-****************************************
-
-Bei einem Skalarprodukt auf $V$ handelt es sich um eine Abbildung, die je zwei Vektoren aus $V$ eine reelle Zahl zuordnet, also die Abbildung in Antwortoption 1.
-
-Die zweite Abbildung (Antwortoption 2) stellt ein Vektorprodukt dar: je zwei Vektoren aus $V$ wird ein Vektor aus $V$ zugeordnet.
-
-Die dritte Abbildung (Antwortoption 3) beschreibt das Skalarfache eines Vektors.
-
-****************************************
-
-
-[^1]: Zu beachten ist, dass die Produktzeichen in Definition 1 verschiedene Produkte bezeichnen: Zu unterscheiden ist das Skalarprodukt zweier Vektoren vom Skalarvielfachen eines Vektors.
-
-[^2]: Der Nachweis der Cauchy-Schwarzschen Ungleichung in euklidischen Vektorräumen kann beispielsweise im Buch 'Lineare Algebra' von Klaus Jänich, Seite 180, nachgelesen werden.
-
-[^3]: Quelle: Klaus Jänich, Lineare Algebra, Seite 192 f.
+**Frage 1.** ...
 
 
 ### Eigenwerte und -Vektoren
+
 
 Definition
 =====
