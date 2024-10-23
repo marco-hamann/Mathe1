@@ -70,7 +70,7 @@ Unter einer Aussage wird eine Äußerung verstanden, der man einen Wahrheitswert
 >**Definition 1.** Eine [Aussage](https://de.wikipedia.org/wiki/Aussage) $p$ ist ein sprachlich sinnvoller, konstatierender Satz. Hier werden ausschließlich zweiwertige Aussagen betrachtet, d. h. Aussagen, die entweder wahr oder falsch sind.
 >
 >  Der Wahrheitswert (engl. value) einer Aussage $p$ ist $$
-  v(p) \coloneqq
+  v(p) :=
   \begin{cases}
     1 & \text{falls}\;p\;\text{wahr} \\
     0 & \text{falls}\;p\;\text{falsch}
@@ -1028,7 +1028,7 @@ $$ erklärt werden. Hierbei werden gefordert:
   S(a)=S(b)\quad\rightarrow\quad a=b $$
 2. Die Null ist nicht Nachfolger einer natürlichen Zahl.[^2] D. h. $$
   0\not\in S(\mathbb{N})=\left\{m|m=S(n)\wedge n\in\mathbb{N}\right\} $$ $S(\mathbb{N})$ bezeichnet hier die Bildmenge der Nachfolgerfunktion, also die Menge aller Nachfolger $S(n)$ einer natürlichen Zahl $n$.
-3. Gilt $M\subseteq\mathbb{N}$ mit $O\in M$ und des Weiteren die Implikation $$
+3. Gilt $M\subseteq\mathbb{N}$ mit $0\in M$ und des Weiteren die Implikation $$
   n\in M\quad\rightarrow\quad S(n)\in M $$ so folgt $M=\mathbb{N}$.
 
 An der dritten Forderung orientiert sich ein Beweisverfahren für Allaussagen $a(n)$ für beliebige $n\in\mathbb{N}$.
@@ -4815,16 +4815,14 @@ Skalarprodukt
 
 Im Folgenden werden reelle Vektorräume $\mathbb{R}^n$ mit $n\in\mathbb{N}\setminus\{0\}$ betrachtet. Diese werden mit einer zusätzlichen Struktur versehen, die es gestattet, Längen und Winkel zu berechnen. Der zentrale Begriff ist dabei das Skalarprodukt zweier Vektoren, das in nachstehender Definition festgelegt wird.
 
->**Definition 1.** Sei $V$ ein reeller Vektorraum. Eine Abbildung $$
-  V\times V\to\mathbb{R}, (x,y)\mapsto x\cdot y\;(\in\mathbb{R})
-$$ mit den Eigenschaften
+>**Definition 1.** Sei $V$ ein reeller Vektorraum. Eine Abbildung $$ V\times V\to\mathbb{R}, (x,y)\mapsto x\cdot y\;(\in\mathbb{R}) $$ mit den Eigenschaften
 >
 >1. $$x\cdot y=y\cdot x$$
 >2. $$x\cdot(y+z)=x\cdot y+x\cdot z$$
 >3. $$x\cdot(\lambda\cdot y)=\lambda\cdot(x\cdot y)$$
 >4. $$x\cdot x>0\quad\forall\;x\not=o$$
 >
-> für alle $x\in V$, $y\in V$ und $z\in V$ sowie $\lambda\in\mathbb{R}$ heißt [Skalarprodukt](https://de.wikipedia.org/wiki/Skalarprodukt) auf $V$.[^1]
+> für alle $x\in V$, $y\in V$ und $z\in V$ sowie $\lambda\in\mathbb{R}$ heißt [Skalarprodukt](https://de.wikipedia.org/wiki/Skalarprodukt) auf $V$.[^1] Die Eigenschaft 4 besagt, dass das Skalarprodukt **positiv definit** ist.
 
 Hiermit lässt sich der Begriff eines euklidischen Vektorraumes festlegen
 
@@ -4861,7 +4859,7 @@ $$ ein Skalarprodukt erklärt. Die Eigenschaften aus Definition 1 lassen sich un
 
 >**Definition 3.** Ist $(V,\cdot)$ ein euklidischer Vektorraum, so heißt für ein $x\in V$ die reelle Zahl $$
   |x|:=\sqrt{x\cdot x}\geq 0
-$$ die *Norm* von $x$. Besitzt ein Vektor $x\in V$ die Norm $|x|=1$, so wird er [Einheitsvektor](https://de.wikipedia.org/wiki/Einheitsvektor) genannt.
+$$ die (durch das Skalarprodukt induzierte) [euklidische Norm](https://de.wikipedia.org/wiki/Norm_%28Mathematik%29#Euklidische_Norm) von $x$. Besitzt ein Vektor $x\in V$ die Norm $|x|=1$, so wird er [Einheitsvektor](https://de.wikipedia.org/wiki/Einheitsvektor) genannt.
 
 Die durch das kanonische Skalarprodukt erklärte Norm kann unter Benutzung der Javascript Bibliothek [Algebrite](http://algebrite.org/) berechnet werden.
 
@@ -5048,6 +5046,54 @@ v3
 **Bemerkung 3.** Werden die Vektoren eines System orthogonaler Vektoren (im Anschluss) normiert, spricht man entsprechend von einem System *orthonormierter* Vektoren.
 
 
+Vektorprodukt
+===
+
+Für Vektoren des euklidischen dreidimensionalen Vektorraumes $V=\mathbb{R}^3$ mit dem eingeführten (kanonischen) Skalarprodukt lässt sich das Vektorprodukt zweier Vekatoren $a\in\mathbb{R}^3$ und $b\in\mathbb{R}^3$ erklären.
+
+>**Definition 6.** Gegeben seien $a\in\mathbb{R}^3$ und $b\in\mathbb{R}^3$. Dann existiert ein eindeutig bestimmter Vektor $c\in\mathbb{R}^3$ mit
+>
+>1. $c\in M^\perp$ mit $M^\perp=\{a,b\}$
+>2. $|c|=|a|\cdot|b|\cdot\sin{\measuredangle(a,b)}$
+>3. Falls $\{a,b\}$ linear unabhängig sind, so bildet das System $[a,b,c]$ ein [Rechtssystem](https://de.wikipedia.org/wiki/Rechtssystem_%28Mathematik%29).
+>
+> Der Vektor $c$ heißt dann [Vektorprodukt](https://de.wikipedia.org/wiki/Kreuzprodukt) von $a$ und $b$, kurz: $c=a\times b$.
+
+**Bemerkung 4.** Die Eigenschaften aus der vorstehenden Definition legen Richtung, Richtungssinn und Länge des Vektors $c$ fest.
+
+>**Proposition 3.** Gegeben seinen die Vektoren $a\in\mathbb{R}^3$,$b\in\mathbb{R}^3$ und $c\in\mathbb{R}^3$ sowie der Skalar $\lambda\in\mathbb{R}$. Dann gelten für das Vektorprodukt:
+>
+>1. $a\times b=-b\times a$ (Anti-Kommutativität)
+>2. $a\times(b+c)=a\times b+a\times c$ (Distributivität)
+>3. $(a+b)\times c=a\times c+b\times c$ (Distributivität)
+>4. $\lambda\cdot(a\times b)=(\lambda\cdot a)\times b=a\times(\lambda\cdot b)$ (Skalarvielfaches)
+>5. $a\times b=o\;\Leftrightarrow\; a,b$ linear abhängig 
+>
+> Der Vektor $o$ bezeichnet darin den Nullvektor in $\mathbb{R}^3$.
+
+**Beweisidee.** Die Eigenschaften aus vorstehender Proposition lassen sich unter Zuhilfenahme von Definition 6 sowie geometrischer Überlegungen nachweisen.
+
+Für die Berechnung des Vektorproduktes werden die Faktoren $a$ und $b$ (eindeutig) als Linearkombination in der kanonischen Basis $\{e_1,e_2,e_3\}$ dargestellt $$ a=\sum_{i=1}^3{(a_i\cdot e_i)}\quad\text{und}\quad b=\sum_{i=1}^3{(b_i\cdot e_i)} $$ mit den Koordinaten $a_i$ bzw. $b_i$ bezüglich dieser Basis. Für das Vektorprodukt dieser Vektoren folgt dann unter Verwendung des Distributivgesetzes, sowie unter Nutzung von Antikommutativität und Eigenschaft 4 der vorstehenden Proposition $$ \begin{split} a\times b & = \left(\sum_{i=1}^3{(a_i\cdot e_i)}\right)\times\left(\sum_{i=1}^3{(b_i\cdot e_i)}\right) \\ & = a_1b_1\cdot(e_1\times e_1)+a_2b_2\cdot(e_2\times e_2)+a_3b_3\cdot(e_3\times e_3) \\ & +a_1b_2\cdot(e_1\times e_2)+a_2b_1\cdot(e_2\times e_1)+a_1b_3\cdot(e_1\times e_3)+a_3b_1\cdot(e_3\times e_1)+a_2b_3\cdot(e_2\times e_3)+a_3b_2\cdot(e_3\times e_2) \\ & = (a_2b_3-a_3b_2)\cdot(e_2\times e_3)+(a_3b_1-a_1b_3)\cdot(e_3\times e_1)+(a_1b_2-a_2b_1)\cdot(e_1\times e_2) \\ & = (a_2b_3-a_3b_2)\cdot e_1+(a_3b_1-a_1b_3)\cdot e_2+(a_1b_2-a_2b_1)\cdot e_3 \end{split} $$ Die erhaltene Multiplikationsregel für die Koordinaten des Vektorproduktes lässt sich schematisch ähnlich der Regel von Sarrus für dreireihige Determinanten formulieren. Siehe Abschnitt [Determinanten](#Determinanten). 
+
+1. Die ersten drei Summanden zur Berechnung des Vektorproduktes $$ c=\textcolor{magenta}{(a_{2}b_{3})\cdot e_1}+\textcolor{pink}{(a_{3}b_{1})\cdot e_2}+\textcolor{blue}{(a_{1}b_{2})\cdot e_3}-(a_{2}b_{1})\cdot e_3-(a_{3}b_{2})\cdot e_1-(a_{1}b_{3})\cdot e_2$$ entsprechen den Produkten in dem rechteckig erweiterten Schema der Komponenten der Matrix $$ \begin{array}{|rrr|rr} \textcolor{magenta}{e_{1}} & \textcolor{pink}{e_{2}} & \textcolor{blue}{e_{3}} & e_{1} & e_{2} \\\hdashline a_{1} & \textcolor{magenta}{a_{2}} & \textcolor{pink}{a_{3}} & \textcolor{blue}{a_{1}} & a_{2} \\ b_{1} & b_{2} & \textcolor{magenta}{b_{3}} & \textcolor{pink}{b_{1}} & \textcolor{blue}{b_{2}} \end{array} $$
+2. Die letzten drei Subtrahenden zur Berechnung des Vektorproduktes $$ c=(a_{2}b_{3})\cdot e_1+(a_{3}b_{1})\cdot e_2+(a_{1}b_{2})\cdot e_3-\textcolor{brown}{(a_{2}b_{1})\cdot e_3}-\textcolor{orange}{(a_{3}b_{2})\cdot e_1}-\textcolor{red}{(a_{1}b_{3})\cdot e_2}$$ entsprechen den Produkten in dem rechteckig erweiterten Schema der Komponenten der Matrix $$ \begin{array}{|rrr|rr} e_{1} & e_{2} & \textcolor{brown}{e_{3}} & \textcolor{orange}{e_{1}} & \textcolor{red}{e_{2}} \\\hdashline a_{1} & \textcolor{brown}{a_{2}} & \textcolor{orange}{a_{3}} & \textcolor{red}{a_{1}} & a_{2} \\ \textcolor{brown}{b_{1}} & \textcolor{orange}{b_{2}} & \textcolor{red}{b_{3}} & b_{1} & b_{2} \end{array} $$
+
+Die Berechnung des Vektorproduktes zweier Vektoren aus $\mathbb{R}^3$ ist im nachstehenden Video an einem Beispiel erklärt. Des Weiteren werden einige Anwendungen des Vektorproduktes genannt.
+
+!?[Vektorprodukt1](https://www.youtube.com/watch?v=63FWetdwNb8)
+
+!?[Vektorprodukt2](https://www.youtube.com/watch?v=YpbW8uuunXI)
+
+
+Spatprodukt
+===
+
+
+Eine Kennzeichnung des Spatproduktes dreier Vektoren aus $\mathbb{R}^3$ ist im nachstehenden Video erklärt. Die Bezugnahme zum Volumen des von den Vektoren aufgespannten Spates ist ebenso genannt.
+
+!?[Spatprodukt](https://www.youtube.com/watch?v=plM5HpVjycE)
+
+
 Sicher gewusst
 ===
 
@@ -5074,14 +5120,29 @@ Antwortoption 3 beschreibt zum Beispiel das Skalarfache eines Vektors.
 
 ****************************************
 
-**Frage 2.**[^3] Gegeben ist der Vektorraum $V=\mathbb{R}^2$ mit dem kanonischen Skalarprodukt. Welche der folgenden Systeme von Vektoren bildet eine orthonormale Basis von $V$?
+**Frage 2.**[^3] Das in diesem Abschnitt definierte Skalarprodukt in einem reellen euklidischen Vektorraum $(V,\cdot)$ besitzt die Eigenschaft, positiv definit zu sein. Was bedeutet dies für Vektoren $x\in V$?
+
+[( )] $x\cdot x>0$ für ein $x\in V$
+[(X)] $x\cdot x>0$ für alle $x\in V\setminus\{o\}$, worin $o$ den Nullvektor in $V$ bezeichnet
+[( )] $(x\cdot x=0)\;\rightarrow\;(x=o)$ (Nullvektor)
+[( )] $(x=o)$ (Nullvektor) $\;\rightarrow\;(x\cdot x=0)$
+[[?]] Siehe Definition des Skalarproduktes. Für eine Interpretation vermöge der durch das Skalarprodukt induzierten Norm nutzen Sie $x\cdot x=|x|^2$.
+****************************************
+
+Die korrekte (zweite) Antwort besagt, dass das Skalarprodukt jedes vom Nullvektor $o\in V$ verschiedenen Vektors $x\in V$, $x\not=o$, mit sich selbst eine positive reelle Zahl ergibt.
+
+Die erste Antwortoption fordert dies nur für einen - nicht notwendig für alle - Vektor/-en $x\in V$. Die dritte und vierte Antwortoption bilden die beiden Implikationen der Äquivalenz $x=o\;\leftrightarrow |x|=0$. Vergleiche Satz 1.
+
+****************************************
+
+**Frage 3.**[^3] Gegeben ist der Vektorraum $V=\mathbb{R}^2$ mit dem kanonischen Skalarprodukt. Welche der folgenden Systeme von Vektoren bildet eine orthonormale Basis von $V$?
 
 [[ ]] $ \left(\begin{pmatrix} -1 \\ 1 \end{pmatrix},\begin{pmatrix} 1 \\ 1 \end{pmatrix}\right) $ 
 [[ ]] $ \left(\begin{pmatrix} -1 \\ 0 \end{pmatrix} \right) $
 [[X]] $ \left(\frac{1}{\sqrt{2}}\cdot\begin{pmatrix} -1 \\ 1 \end{pmatrix},\frac{1}{\sqrt{2}}\cdot\begin{pmatrix} 1 \\ 1 \end{pmatrix}\right) $
 [[X]] $ \left(\begin{pmatrix} -1 \\ 0 \end{pmatrix},\begin{pmatrix} 0 \\ -1 \end{pmatrix}\right) $ 
 [[ ]] $ \left(\begin{pmatrix} -1 \\ 0 \end{pmatrix},\begin{pmatrix} 0 \\ -1 \end{pmatrix},\frac{1}{\sqrt{2}}\cdot\begin{pmatrix} -1 \\ 1 \end{pmatrix}\right) $ 
-[[?]] Als *Basis* wird eine Menge linear unabhängiger Vektoren bezeichnet, die ein Erzeugendensystem des Vektorraumes $V$ bildet. Die Anzahl der Vektoren einer Basis heißt *Dimension* von $V$. Vergleiche Abschnitt [Vektoren](#Vektoren). Zwei Vektoren $a\in V$ und $b\in V$ heißen *orthonormal* falls $|a|=|b|=1$ und $a\cdot b=0$ gelten, siehe Bemerkung 3 in diesem Abschnitt.
+[[?]] Als Basis wird eine Menge linear unabhängiger Vektoren bezeichnet, die ein Erzeugendensystem des Vektorraumes $V$ bildet. Die Anzahl der Vektoren einer Basis heißt Dimension von $V$. Vergleiche Abschnitt [Vektoren](#Vektoren). Zwei Vektoren $a\in V$ und $b\in V$ heißen *orthonormal* falls $|a|=|b|=1$ und $a\cdot b=0$ gelten, siehe Bemerkung 3 in diesem Abschnitt.
 ****************************************
 
 Für die Vektoren in den Antwortoptionen drei und vier gelten jeweils $|a|=|b|=1$ und $a\cdot b=0$, d. h. diese Vektoren sind jeweils orthonormal. Darüberhinaus erfüllen diese Vektoren jeweils die Basiseigenschaft. Es gilt nämlich für einen beliebigen Vektor aus $\mathbb{R}^2$ $$ \begin{pmatrix} x_1 \\ x_2 \end{pmatrix}=-x_1\cdot\begin{pmatrix} -1 \\ 0 \end{pmatrix}-x_2\cdot\begin{pmatrix} 0 \\ -1 \end{pmatrix} \quad\text{bzw.}\quad \begin{pmatrix} x_1 \\ x_2 \end{pmatrix}=\frac{1}{\sqrt{2}}(x_2-x_1)\cdot\frac{1}{\sqrt{2}}\begin{pmatrix} -1 \\ 1 \end{pmatrix}+\frac{1}{\sqrt{2}}(x_2+x_1)\cdot\frac{1}{\sqrt{2}}\cdot\begin{pmatrix} 1 \\ 1 \end{pmatrix} $$ worin die Koeffizienten eindeutig bestimmt sind.
@@ -5092,34 +5153,11 @@ Die zweite un die letzte Antwortoption sind falsch, da die Anzahl der Vektoren i
 
 ****************************************
 
-
-[^1]: Zu beachten ist, dass die Produktzeichen in Definition 1 verschiedene Produkte bezeichnen: Zu unterscheiden ist das Skalarprodukt zweier Vektoren vom Skalarvielfachen eines Vektors.
+[^1]: Zu beachten ist, dass die Produktzeichen in Definition 1 verschiedene Produkte bezeichnen: Zu unterscheiden ist das Skalarprodukt zweier Vektoren vom Skalarvielfachen eines Vektors. 
 
 [^2]: Der Nachweis der Cauchy-Schwarzschen Ungleichung in euklidischen Vektorräumen kann beispielsweise im Buch 'Lineare Algebra' von Klaus Jänich, Seite 180, nachgelesen werden.
 
 [^3]: Quelle: Klaus Jänich, Lineare Algebra, Seite 192 f.
-
-
-### Vektorprodukt und Spatprodukt
-
-
-Die Berechnung des Vektorproduktes zweier Vektoren aus $\mathbb{R}^3$ ist im nachstehenden Video an einem Beispiel erklärt. Des Weiteren werden einige Anwendungen des Vektorproduktes genannt.
-
-!?[Vektorprodukt1](https://www.youtube.com/watch?v=63FWetdwNb8)
-
-!?[Vektorprodukt2](https://www.youtube.com/watch?v=YpbW8uuunXI)
-
-Eine Kennzeichnung des Spatproduktes dreier Vektoren aus $\mathbb{R}^3$ ist im nachstehenden Video erklärt. Die Bezugnahme zum Volumen des von den Vektoren aufgespannten Spates ist ebenso genannt.
-
-!?[Spatprodukt](https://www.youtube.com/watch?v=plM5HpVjycE)
-
-
-Sicher gewusst
-===============
-
-Sie können Ihr Wissen gern bei der Beantwortung der nachstehenden Fragen testen.
-
-**Frage 1.** ...
 
 
 ### Eigenwerte und -Vektoren
