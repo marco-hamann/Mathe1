@@ -833,7 +833,7 @@ Im Folgenden wird für eingangs des Abschnitts betrachteten Mengen vereinbart:
 
 >**Definition 8.** Sind zwei Mengen $A$ und $B$ gegeben mit $B\subseteq A$, so heißt die Differenz $$
   B^c_A:=A\setminus B:=\{x|(x\in A)\wedge (x\not\in B)\}
-$$ Mengenkomplement von $B$ bwzüglich $A$.
+$$ Mengenkomplement von $B$ bezüglich $A$.
 
 ![Differenz](img/mat-bild-05.png "_Fig._ Graphische Darstellung des Mengenkomplements (schraffierter Bereich)  einer Menge $B$ bezüglich einer Menge $A$ mit $B\subseteq A$ in einem Mengendiagramm.")<!-- style="display: block; margin-left: auto; margin-right: auto; max-width: 450px;" -->
 
@@ -4859,7 +4859,7 @@ $$ ein Skalarprodukt erklärt. Die Eigenschaften aus Definition 1 lassen sich un
 
 >**Definition 3.** Ist $(V,\cdot)$ ein euklidischer Vektorraum, so heißt für ein $x\in V$ die reelle Zahl $$
   |x|:=\sqrt{x\cdot x}\geq 0
-$$ die (durch das Skalarprodukt induzierte) [euklidische Norm](https://de.wikipedia.org/wiki/Norm_%28Mathematik%29#Euklidische_Norm) von $x$. Besitzt ein Vektor $x\in V$ die Norm $|x|=1$, so wird er [Einheitsvektor](https://de.wikipedia.org/wiki/Einheitsvektor) genannt.
+$$ die durch das Skalarprodukt induzierte [euklidische Norm](https://de.wikipedia.org/wiki/Norm_%28Mathematik%29#Euklidische_Norm) von $x$. Besitzt ein Vektor $x\in V$ die Norm $|x|=1$, so wird er [Einheitsvektor](https://de.wikipedia.org/wiki/Einheitsvektor) genannt.
 
 Die durch das kanonische Skalarprodukt erklärte Norm kann unter Benutzung der Javascript Bibliothek [Algebrite](http://algebrite.org/) berechnet werden.
 
@@ -5049,6 +5049,7 @@ v3
 Vektorprodukt
 ===
 
+
 Für Vektoren des euklidischen dreidimensionalen Vektorraumes $V=\mathbb{R}^3$ mit dem eingeführten (kanonischen) Skalarprodukt lässt sich das Vektorprodukt zweier Vekatoren $a\in\mathbb{R}^3$ und $b\in\mathbb{R}^3$ erklären.
 
 >**Definition 6.** Gegeben seien $a\in\mathbb{R}^3$ und $b\in\mathbb{R}^3$. Dann existiert ein eindeutig bestimmter Vektor $c\in\mathbb{R}^3$ mit
@@ -5075,21 +5076,58 @@ Für Vektoren des euklidischen dreidimensionalen Vektorraumes $V=\mathbb{R}^3$ m
 
 Für die Berechnung des Vektorproduktes werden die Faktoren $a$ und $b$ (eindeutig) als Linearkombination in der kanonischen Basis $\{e_1,e_2,e_3\}$ dargestellt $$ a=\sum_{i=1}^3{(a_i\cdot e_i)}\quad\text{und}\quad b=\sum_{i=1}^3{(b_i\cdot e_i)} $$ mit den Koordinaten $a_i$ bzw. $b_i$ bezüglich dieser Basis. Für das Vektorprodukt dieser Vektoren folgt dann unter Verwendung des Distributivgesetzes, sowie unter Nutzung von Antikommutativität und Eigenschaft 4 der vorstehenden Proposition $$ \begin{split} a\times b & = \left(\sum_{i=1}^3{(a_i\cdot e_i)}\right)\times\left(\sum_{i=1}^3{(b_i\cdot e_i)}\right) \\ & = a_1b_1\cdot(e_1\times e_1)+a_2b_2\cdot(e_2\times e_2)+a_3b_3\cdot(e_3\times e_3) \\ & +a_1b_2\cdot(e_1\times e_2)+a_2b_1\cdot(e_2\times e_1)+a_1b_3\cdot(e_1\times e_3)+a_3b_1\cdot(e_3\times e_1)+a_2b_3\cdot(e_2\times e_3)+a_3b_2\cdot(e_3\times e_2) \\ & = (a_2b_3-a_3b_2)\cdot(e_2\times e_3)+(a_3b_1-a_1b_3)\cdot(e_3\times e_1)+(a_1b_2-a_2b_1)\cdot(e_1\times e_2) \\ & = (a_2b_3-a_3b_2)\cdot e_1+(a_3b_1-a_1b_3)\cdot e_2+(a_1b_2-a_2b_1)\cdot e_3 \end{split} $$ Die erhaltene Multiplikationsregel für die Koordinaten des Vektorproduktes lässt sich schematisch ähnlich der Regel von Sarrus für dreireihige Determinanten formulieren. Siehe Abschnitt [Determinanten](#Determinanten). 
 
-1. Die ersten drei Summanden zur Berechnung des Vektorproduktes $$ c=\textcolor{magenta}{(a_{2}b_{3})\cdot e_1}+\textcolor{pink}{(a_{3}b_{1})\cdot e_2}+\textcolor{blue}{(a_{1}b_{2})\cdot e_3}-(a_{2}b_{1})\cdot e_3-(a_{3}b_{2})\cdot e_1-(a_{1}b_{3})\cdot e_2$$ entsprechen den Produkten in dem rechteckig erweiterten Schema der Komponenten der Matrix $$ \begin{array}{|rrr|rr} \textcolor{magenta}{e_{1}} & \textcolor{pink}{e_{2}} & \textcolor{blue}{e_{3}} & e_{1} & e_{2} \\\hdashline a_{1} & \textcolor{magenta}{a_{2}} & \textcolor{pink}{a_{3}} & \textcolor{blue}{a_{1}} & a_{2} \\ b_{1} & b_{2} & \textcolor{magenta}{b_{3}} & \textcolor{pink}{b_{1}} & \textcolor{blue}{b_{2}} \end{array} $$
-2. Die letzten drei Subtrahenden zur Berechnung des Vektorproduktes $$ c=(a_{2}b_{3})\cdot e_1+(a_{3}b_{1})\cdot e_2+(a_{1}b_{2})\cdot e_3-\textcolor{brown}{(a_{2}b_{1})\cdot e_3}-\textcolor{orange}{(a_{3}b_{2})\cdot e_1}-\textcolor{red}{(a_{1}b_{3})\cdot e_2}$$ entsprechen den Produkten in dem rechteckig erweiterten Schema der Komponenten der Matrix $$ \begin{array}{|rrr|rr} e_{1} & e_{2} & \textcolor{brown}{e_{3}} & \textcolor{orange}{e_{1}} & \textcolor{red}{e_{2}} \\\hdashline a_{1} & \textcolor{brown}{a_{2}} & \textcolor{orange}{a_{3}} & \textcolor{red}{a_{1}} & a_{2} \\ \textcolor{brown}{b_{1}} & \textcolor{orange}{b_{2}} & \textcolor{red}{b_{3}} & b_{1} & b_{2} \end{array} $$
+1. Die ersten drei Summanden zur Berechnung des Vektorproduktes in der Darstellung $$ c=a\times b=\textcolor{magenta}{(a_{2}b_{3})\cdot e_1}+\textcolor{pink}{(a_{3}b_{1})\cdot e_2}+\textcolor{blue}{(a_{1}b_{2})\cdot e_3}-(a_{2}b_{1})\cdot e_3-(a_{3}b_{2})\cdot e_1-(a_{1}b_{3})\cdot e_2$$ entsprechen den Produkten in dem rechteckig erweiterten Schema der Komponenten der Matrix $$ \begin{array}{|rrr|rr} \textcolor{magenta}{e_{1}} & \textcolor{pink}{e_{2}} & \textcolor{blue}{e_{3}} & e_{1} & e_{2} \\\hdashline a_{1} & \textcolor{magenta}{a_{2}} & \textcolor{pink}{a_{3}} & \textcolor{blue}{a_{1}} & a_{2} \\ b_{1} & b_{2} & \textcolor{magenta}{b_{3}} & \textcolor{pink}{b_{1}} & \textcolor{blue}{b_{2}} \end{array} $$
+2. Die letzten drei Subtrahenden zur Berechnung des Vektorproduktes in der Darstellung $$ c=a\times b=(a_{2}b_{3})\cdot e_1+(a_{3}b_{1})\cdot e_2+(a_{1}b_{2})\cdot e_3-\textcolor{brown}{(a_{2}b_{1})\cdot e_3}-\textcolor{orange}{(a_{3}b_{2})\cdot e_1}-\textcolor{red}{(a_{1}b_{3})\cdot e_2}$$ entsprechen den Produkten in dem rechteckig erweiterten Schema der Komponenten der Matrix $$ \begin{array}{|rrr|rr} e_{1} & e_{2} & \textcolor{brown}{e_{3}} & \textcolor{orange}{e_{1}} & \textcolor{red}{e_{2}} \\\hdashline a_{1} & \textcolor{brown}{a_{2}} & \textcolor{orange}{a_{3}} & \textcolor{red}{a_{1}} & a_{2} \\ \textcolor{brown}{b_{1}} & \textcolor{orange}{b_{2}} & \textcolor{red}{b_{3}} & b_{1} & b_{2} \end{array} $$
 
-Die Berechnung des Vektorproduktes zweier Vektoren aus $\mathbb{R}^3$ ist im nachstehenden Video an einem Beispiel erklärt. Des Weiteren werden einige Anwendungen des Vektorproduktes genannt.
+Die Berechnung des Vektorproduktes zweier Vektoren aus $\mathbb{R}^3$ ist im nachstehenden Video erläutert sowie Eigenschaften aufgezeigt.
 
-!?[Vektorprodukt1](https://www.youtube.com/watch?v=63FWetdwNb8)
+!?[Vektorprodukt1](https://www.youtube.com/watch?v=63FWetdwNb8 "Vektorprodukt / Kreuzprodukt, Daniel Jung.")
 
-!?[Vektorprodukt2](https://www.youtube.com/watch?v=YpbW8uuunXI)
+Das Vektorprodukt zweier Vektoren lässt sich interaktiv unter Benutzung der Javascript-Bibliothek [Algebrite](http://algebrite.org/) berechnen. Entsprechend lassen sich Eigenschaften des Vektorproduktes aus Proposition 3 prüfen.
+
+```javascript
+u=[u1,u2,u3]
+v=[v1,v2,v3]
+cross(u,v)
+a=[1,2,3]
+b=[-1,1,0]
+cross(a,b)-cross(b,a)
+```
+@Algebrite.eval
+
+
+**Beispiel 10.** Die Wirkung einer Kraft beziehungsweise eines Systems von Kräften auf einen drehbaren Körper lässt sich mithilfe des [Drehmomentes](https://de.wikipedia.org/wiki/Drehmoment) $\vec{M}$ physikalisch beschreiben. Dieses berechnet sich $\vec{M}=\vec{r}\times\vec{F}$, worin $\vec{F}$ die wirkende (resultierende) Kraft und $\vec{r}$ den Verbindungsvektor vom Bezugspunkt des Drehmoments zum Angriffspunkt der Kraft bezeichnen. Für die vektorielle Größe $\vec{M}$ gelten hierbei
+
+1. $\vec{M}\perp\vec{r}$ und $\vec{M}\perp\vec{F}$ sowie $|\vec{M}|=|\vec{r}|\cdot|\vec{F}|\cdot\sin{\varphi}$ mit $\varphi=\measuredangle{(\vec{r},\vec{F})}$, vergleiche Definition des Vektorproduktes
+2. Greift $\vec{F}$ an einem (beliebigen) Punkt $Q$ entlang ihrer Wirkungslinie durch $P$ an, so gilt $\vec{r}_Q=\vec{r}+\overrightarrow{PQ}$ mit $\overrightarrow{PQ}=\vec{s}$. Die in $Q$ angreifende Kraft $\vec{F}$ erzeugt ein Drehmoment $$ \vec{M}_Q=\vec{r}_Q\times\vec{F}=(\vec{r}+\vec{s})\times\vec{F}=\vec{r}\times\vec{F}+\vec{s}\times\vec{F}=\vec{M} $$ d. h. das Drehmoment bleibt entlang der Wirkungslinie von $\vec{F}$ durch $P$ (bzw. $Q$) erhalten.
+
+![Drehmoment](img/mat-bild-32.png "_Fig._ Drehmoment $\vec{M}$ an einer drehbar gelagerten Scheibe durch Wirkung einer Kraft $\vec{F}$ in $P$. Die Scheibe ist um eine Gerade durch $D$ drehbar gelagert. Wird die Kraft entlang ihrer Wirkungslnie nach $Q$ verschoben, ändert sich das erzeugte Drehmoment nicht.")
+
+
+**Bemerkung 5.** Im Ingenieurwesen auftretende, vektorielle Größen, die entlang ihrer Wirkungslinie unverändert bleiben, heißen **linienflüchtig**. Demgegenüber werden auch [ortsgebundene](https://de.wikipedia.org/wiki/Gebundener_Vektor) - (fester Angriffspunkt) und *freien*, physikalischen Größen betrachtet.
+
+Im nachstehenden Video werden einzelne (mathematische) Anwendungsmöglichkeiten des Vektorproduktes erläutert.
+
+!?[Vektorprodukt2](https://www.youtube.com/watch?v=YpbW8uuunXI "Vektorprodukt / Kreuzprodukt, Anwendungsmöglichkeiten, Daniel Jung.")
 
 
 Spatprodukt
 ===
 
 
-Eine Kennzeichnung des Spatproduktes dreier Vektoren aus $\mathbb{R}^3$ ist im nachstehenden Video erklärt. Die Bezugnahme zum Volumen des von den Vektoren aufgespannten Spates ist ebenso genannt.
+>**Definition 7.** Für drei Vektoren $a\in\mathbb{R}^3$,$b\in\mathbb{R}^3$ und $c\in\mathbb{R}^3$ heißt die reelle Zahl $$ (a\times b)\cdot c=\left[\begin{pmatrix} a_1 \\ a_2 \\ a_3 \end{pmatrix}\times\begin{pmatrix} b_1 \\ b_2 \\ b_3 \end{pmatrix}\right]\cdot\begin{pmatrix} c_1 \\ c_2 \\ c_3 \end{pmatrix}=\begin{pmatrix} a_2b_3-a_3b_2 \\ a_3b_1-a_1b_3 \\ a_1b_2-a_2b_1 \end{pmatrix}\cdot\begin{pmatrix} c_1 \\ c_2 \\ c_3 \end{pmatrix}= (a_2b_3-a_3b_2)\cdot c_1+(a_3b_1-a_1b_3)\cdot c_2+(a_1b_2-a_2b_1)\cdot c_3 $$ das [Spatprodukt](https://de.wikipedia.org/wiki/Spatprodukt) der Vektoren $a$, $b$ und $c$.
+
+**Bemerkung 6.** Aus der vorstehenden Definition folgt unmittelbar $(a\times b)\cdot c=\det(a,b,c)$, d. h. das Spatprodukt lässt sich als Determinante einer dreireihigen Matrix darstellen, in deren Zeilen / Spalten die Komponenten der drei Faktoren $a$, $b$ und $c$ stehen. Vergleiche hierzu die Definition einer Determinante dritter Ordnung im Abschnitt [Determinanten](#Determinanten). Mit den Eigenschaften von Determinanten folgen aus dieser Darstellung wiederum die Gleichheiten $$ (a\times b)\cdot c=(b\times c)\cdot a=(c\times a)\cdot b $$ die durch zyklisches Vertauschen der einzelnen Faktoren entstehen. Das Spatprodukt ist jedoch **nicht kommutativ** (bei beliebigem Tauschen der Reihenfolge aller drei Faktoren.)
+
+Für eine geometrische Deutung des Spatproduktes von drei Vektoren $a\in\mathbb{R}^3$,$b\in\mathbb{R}^3$ und $c\in\mathbb{R}^3$ lässt sich im Fall ihrer linearen Unabhängigkeit ein [Spat](https://de.wikipedia.org/wiki/Parallelepiped) (Parallelepiped) vorstellen, dessen Kantenvektoren die gegebenen Vektoren darstellen. Für das Volumen dieses Spats ergibt sich durch direktes Nachrechnen $V=|(a\times b)\cdot c|$.
+
+**Beispiel 11.** Zu berechnen sind Volumen und Oberblächeninhalt des Parallelepipeds, dass durch die Vektoren $$ a=\begin{pmatrix} 5 \\ 1 \\ 2 \end{pmatrix}\,,\quad b=\begin{pmatrix} 1 \\ 6 \\ 3 \end{pmatrix}\quad\text{und}\quad c=\begin{pmatrix} 2 \\ -1 \\ 8 \end{pmatrix} $$ aufgespannt wird.
+
+1. Das Volumen berechnet sich mithilfe des Spatprodukts gemäß Bemerkung 6 $$ V=|\det(a,b,c)|=\left|\begin{pmatrix} 5 & 1 & 2 \\ 1 & 6 & -1 \\ 2 & 3 & 8 \end{pmatrix}\right|=227 $$
+2. Der Inhalt der Oberfläche des Parallelepipeds berechnet sich unter Benutzung des Vektorproduktes gemäß $$ A_0=2\cdot\left( |a\times b|+|a\times c|+|b\times c| \right) $$ worin die Normen der Vektorprodukte die Flächeninhalte der paarweise auftretenden Seitenflächen beschreiben. Mit den Produkten $$ a\times b=\begin{pmatrix} 5 \\ 1 \\ 2 \end{pmatrix}\times \begin{pmatrix} 1 \\ 6 \\ 3 \end{pmatrix}=\begin{pmatrix} -9 \\ -13 \\ 29 \end{pmatrix} \,,\quad  a\times c=\begin{pmatrix} 5 \\ 1 \\ 2 \end{pmatrix}\times \begin{pmatrix} 2 \\ -1 \\ 8 \end{pmatrix}=\begin{pmatrix} 10 \\ -36 \\ -7 \end{pmatrix} \quad\text{und}\quad b\times c=\begin{pmatrix} 1 \\ 6 \\ 3 \end{pmatrix}\times \begin{pmatrix} 2 \\ -1 \\ 8 \end{pmatrix}=\begin{pmatrix} 51 \\ -2 \\ -13 \end{pmatrix} $$ ergibt sich $$ A_0=2\cdot\left(\sqrt{81+169+841}+\sqrt{100+1296+49}+\sqrt{2601+4+169}\right)\approx 247.424 $$
+
+
+Eine Kennzeichnung des Spatproduktes dreier Vektoren aus $\mathbb{R}^3$ ist im nachstehenden Video erklärt. Die Bezugnahme zum Volumen des von den Vektoren aufgespannten Spates ist ebenso genannt. 
 
 !?[Spatprodukt](https://www.youtube.com/watch?v=plM5HpVjycE)
 
@@ -5152,6 +5190,18 @@ Die Vektoren in der ersten Antwortoption sind zwar orthogonal zueinander. Darüb
 Die zweite un die letzte Antwortoption sind falsch, da die Anzahl der Vektoren in diesen nicht der Dimension $\dim{V}=2$ von $V=\mathbb{R}^2$ entspricht.
 
 ****************************************
+
+**Frage 4.** Entscheiden Sie, ob die nachstehende Gleichheit für das Spatprodukt dreier Vektoren $a\in\mathbb{R}^3$,$b\in\mathbb{R}^3$ und $c\in\mathbb{R}^3$ gilt. $$ \det(a,b,c)=(a\times b)\cdot c=a\cdot(b\times c) $$
+
+[(X)] wahr
+[( )] falsch
+[[?]] Benutzen Sie für den Nachweis, dass das Skalarprodukt kommutativ ist. Des Weiteren die Gleichheiten des Spatproduktes unter zyklischem Tauschen der Faktoren.
+****************************************
+
+Durch zyklisches Tauschen der Faktoren gilt wie in Bewerkung 6 aufgeführt $$ (a\times b)\cdot c=(b\times c)\cdot a $$ Wird zusätzlich benutzt, dass das Skalarprodukt zweier Vektoren kommutativ ist, folgt hieraus $$ (a\times b)\cdot c=a\cdot(b\times c) $$
+
+****************************************
+
 
 [^1]: Zu beachten ist, dass die Produktzeichen in Definition 1 verschiedene Produkte bezeichnen: Zu unterscheiden ist das Skalarprodukt zweier Vektoren vom Skalarvielfachen eines Vektors. 
 
@@ -5708,7 +5758,7 @@ Sind abweichend beide Geraden durch eine Parameterdarstellung gegeben, so sind d
   \left(\begin{array}{cc}x\\y\end{array}\right)=\left(\begin{array}{cc}-1\\3\end{array}\right)+\lambda\cdot \left(\begin{array}{cc}4\\1\end{array}\right)\;\text{mit}\;\lambda\in\mathbb{R}
 $$ sowie die Gerade $h$ durch $$
   \left(\begin{array}{cc}x\\y\end{array}\right)=\left(\begin{array}{cc}-1\\2\end{array}\right)+\mu\cdot \left(\begin{array}{cc}8\\2\end{array}\right)\;\text{mit}\;\mu\in\mathbb{R}
-$$ Für die Berechung der gemeinsamen Punkte werden beide Parameterdarstellungen gleichgesetzt $$
+$$ Für die Berechnung der gemeinsamen Punkte werden beide Parameterdarstellungen gleichgesetzt $$
   \left(\begin{array}{cc}-1\\3\end{array}\right)+\lambda\cdot \left(\begin{array}{cc}4\\1\end{array}\right)=
   \left(\begin{array}{cc}-1\\2\end{array}\right)+\mu\cdot \left(\begin{array}{cc}8\\2\end{array}\right)\quad\leftrightarrow\quad
   (-1+4\cdot \lambda=-1+8\cdot\mu) \;\land\; (3+\lambda = 2+2\cdot \mu)\quad\leftrightarrow\quad 0=-1
@@ -5720,7 +5770,7 @@ Alternativ ließen sich die Richtungsvektoren von $g$ und $h$ betrachten. Offens
   \left(\begin{array}{cc}x\\y\end{array}\right)=\left(\begin{array}{cc}-1\\3\end{array}\right)+\lambda\cdot \left(\begin{array}{cc}4\\1\end{array}\right)\;\text{mit}\;\lambda\in\mathbb{R}
 $$ und die Gerade $h$ durch $$
   \left(\begin{array}{cc}x\\y\end{array}\right)=\left(\begin{array}{cc}-1\\2\end{array}\right)+\mu\cdot \left(\begin{array}{cc}4\\2\end{array}\right)\;\text{mit}\;\mu\in\mathbb{R}
-$$  Für die Berechung der gemeinsamen Punkte werden beide Parameterdarstellungen gleichgesetzt $$
+$$  Für die Berechnung der gemeinsamen Punkte werden beide Parameterdarstellungen gleichgesetzt $$
   \left(\begin{array}{cc}-1\\3\end{array}\right)+\lambda\cdot \left(\begin{array}{cc}4\\1\end{array}\right)=\left(\begin{array}{cc}-1\\2\end{array}\right)+\mu\cdot \left(\begin{array}{cc}4\\2\end{array}\right)\quad\leftrightarrow\quad(-1+4\cdot\lambda=-1+4\cdot\mu) \;\land\; (3+\lambda = 2+2\cdot\mu)\quad\leftrightarrow\quad\lambda =\mu=1
 $$ Daher schneiden sich $g$ und $h$ in genau einem Punkt $S=(3,4)^\top$.
 
