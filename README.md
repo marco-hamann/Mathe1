@@ -1669,6 +1669,20 @@ $$
   (\lambda\cdot\sin{\varphi}+\varphi\cdot r)+i\cdot \lambda\cdot\cos{\varphi}
 $$ Beide Teilbewegungen überlagern sich ungestört.[^3]
 
+**Bemerkung 7.** In $\mathbb{Q}\subset\mathbb{R}\subset\mathbb{C}$ sind jeweils die Operationen der Addition und Multiplikation erklärt. Für beliebige Zahlen $x$ bzw. $x_j$ gelten die nachstehenden Rechengesetze:
+
+1. $x_1+x_2=x_2+x_1$ (Kommutativität bezüglich $+$)
+2. $x_1\cdot x_2=x_2\cdot x_1$ (Kommutativität bezüglich $\cdot$)
+3. $x+0=0+x=x$ und $x\cdot 1=1\cdot x=x$ (neutrale Elemente bezüglich $+$ bzw. $\cdot$)
+4. $\forall x\;\exists -x:\; x+(-x)=0$ (inverses Element bezüglich $+$)
+5. $\forall x\not=0\;\exists x^{-1}:\; x\cdot(x^{-1})=1$  (inverses Element bezüglich $\cdot$)
+6. $x_1+(x_2+x_3)=(x_1+x_2)+x_3$  (Assoziativität bezüglich $+$)
+7. $x_1\cdot (x_2\cdot x_3)=(x_1\cdot x_2)\cdot x_3$ (Assoziativität bezüglich $\cdot$)
+8. $x_1\cdot (x_2+x_3)= x_1\cdot x_2 +x_1\cdot x_3$ (Distributivität)
+9. $0\not= 1$
+
+Zahlenmengen mit diesen Eigenschaften werden [Körper](https://de.wikipedia.org/wiki/K%C3%B6rper_%28Algebra%29) genannt. Vergleiche auch den Abschnitt [Quaternionen](#Quaternionen).
+
 
 Betrag einer komplexen Zahl
 ===
@@ -1856,7 +1870,7 @@ $$ mit Argument $\textcolor{blue}{\varphi}$ und Betrag $\textcolor{purple}{r}$.
 
 !?[Wurzel-komplex](https://www.youtube.com/watch?v=BKdqTn2iO4s "MathePeter, komplexe Zahlen radizieren.")
 
-**Bemerkung 7.** Im Gegensatz zur reellen $n$-ten Wurzel ist die komplexe $n$-te Wurzel nicht eindeutig bestimmt. Im Beispiel 12 wurden jeweils $n$ Wurzeln zum Wurzelexponenten $n$ berechnet. Wird $z$ in $(w_k)^n=z$ unter Verwendung des Hauptwertes des Argumentes $\varphi\in(-\pi,\pi]$ dargestellt, so heißt $w_0$ jeweils *Hauptwurzel* von $z$. Die Wurzelwerte $w_k$ mit $k\in\{1,2,...,n-1\}$ werden $k$-te *Nebenwurzel* von $z$ genannt.
+**Bemerkung 8.** Im Gegensatz zur reellen $n$-ten Wurzel ist die komplexe $n$-te Wurzel nicht eindeutig bestimmt. Im Beispiel 12 wurden jeweils $n$ Wurzeln zum Wurzelexponenten $n$ berechnet. Wird $z$ in $(w_k)^n=z$ unter Verwendung des Hauptwertes des Argumentes $\varphi\in(-\pi,\pi]$ dargestellt, so heißt $w_0$ jeweils *Hauptwurzel* von $z$. Die Wurzelwerte $w_k$ mit $k\in\{1,2,...,n-1\}$ werden $k$-te *Nebenwurzel* von $z$ genannt.
 
 **Satz 6.** Alle komplexen $n$-ten Wurzeln einer Zahl $z\in\mathbb{C}$ liegen in der Gaußschen Zahlenebene auf einem Kreis um den Ursprung des Koordinatensystems und bilden die Eckpunkte eines regelmäßigen $n$-Ecks.
 
@@ -1873,7 +1887,7 @@ $$ d. h. die Differenz der Argumente zweier 'benachbarter' Wurzeln ist unabhäng
 
 $\square$
 
-**Bemerkung 8.** Vergleiche Beispiel 5: Die komplexen Zahlen $z_1$ bis $z_6$ erfüllen die Gleichung $z^6=2^{12}=4^6$, sind also als komplexe $6$-te Wurzeln von $4096$ auffassbar. Sie bilden ein regelmäßiges Sechseck, dessen Umkreis den Koordinatenursprung als Mittelpunkt besitzt und den Radius $4$.
+**Bemerkung 9.** Vergleiche Beispiel 5: Die komplexen Zahlen $z_1$ bis $z_6$ erfüllen die Gleichung $z^6=2^{12}=4^6$, sind also als komplexe $6$-te Wurzeln von $4096$ auffassbar. Sie bilden ein regelmäßiges Sechseck, dessen Umkreis den Koordinatenursprung als Mittelpunkt besitzt und den Radius $4$.
 
 
 Sicher gewusst
@@ -2667,11 +2681,11 @@ Hingegen entfällt die erste Antwortoption, da dort nicht $\frac{\varphi}{2}$, s
 ## Lineare Algebra
 
 
-Ziel dieses Kapitels ist eine Einführung in den Themenbereich der linearen Algebra. Schwerpunkt ist unter anderem eine Vertiefung aus der Schulmathematik bekannter Begriffe "Vektor" und "lineare Gleichungssysteme". Darüber hinaus werden allgemeinere algebraische Strukturen wie Vektorräume, Matrizen und Determinanten betrachtet. Eine Verbindung zur analytischen Geometrie der Ebene und des dreidimensionalen Raumes wird ebenso gezogen.
+Ziel dieses Kapitels ist eine Einführung in den Themenbereich der linearen Algebra. Schwerpunkt ist unter anderem eine Vertiefung aus der Schulmathematik bekannter Begriffe "Vektor" und "lineare Gleichungssysteme". Darüber hinaus werden allgemeinere algebraische Strukturen wie Vektorräume, Matrizen und Determinanten betrachtet. Eine Verbindung zur analytischen Geometrie der Ebene und des dreidimensionalen Raumes wird nachfolgend gezogen.
 
 Für einen Überblick über die Themen dieses Kapitels sehen Sie in der nachstehenden Graphik einige zentrale Begriffe. Schlagen Sie diese in diesem Abschnitt nach.
 
-![Wordcloud Algebra](img/wc_algebra.png)<!-- style="display: block; margin-left: auto; margin-right: auto; max-width: 1000px;" -->
+![Wordcloud Algebra](img/wc_algebra-1.png)<!-- style="display: block; margin-left: auto; margin-right: auto; max-width: 1000px;" -->
 
 
 Lernziele
@@ -2682,10 +2696,13 @@ Lernziele
 * Sie können ein System von Vektoren eines Vektorraumes auf lineare Unabhängigkeit / - Abhängigkeit untersuchen und berechnen die eindeutige Darstellung eines Vektors bezüglich einer gegebenen Basis. Sie kennen den Zusammenhang zwischen der Dimension eines Vektorraums und der Anzahl der Vektoren einer gegebenen Basis.
 * Sie kennen die algebraische Struktur 'Untervektorraum' und können Durchschnitt und Summe von Untervektorräumen bilden sowie den Dimensionssatz für Untervektorräume anwenden.
 * Sie kennen den Begriff 'reelle Matrix' sowie wesentliche die kennzeichnende Grundbegriffe und zentrale Beispiele für Matrizen.
-* Sie beherrschen Operationen wie Transposition sowie die Addition und Skalarvielfachbildung von Matrizen und können zeigen, dass Matrizen gleichen Typs einen Vektorraum (über Zahlkörper) bilden. Sie können - dort, wo möglich - das Produkt von Matrizen bilden und die Rechenregeln beim Multiplizieren reeller Matrizen anwenden.
+* Sie beherrschen Operationen wie Transposition sowie die Addition und Skalarvielfachbildung von Matrizen und können zeigen, dass Matrizen gleichen Typs einen Vektorraum (über Körper) bilden. Sie können - dort, wo möglich - das Produkt von Matrizen bilden und die Rechenregeln beim Multiplizieren reeller Matrizen anwenden.
 * Sie kennen den Begriff 'Determinante' als Eigenschaft quadratischer (reeller) Matrizen und setzen diese im Kontext der Untersuchung / des Lösens von Systemen linearer Gleichungen ein. Sie kennen Eigenschaften wie Multiplikationssatz und setzen diese bei der Berechnung von Determinanten ein. Mit dem Laplace‘schen Entwicklungssatz lassen sich Determinanten höherer Ordnung rekursiv berechnen.
 * Sie können Systeme linearer Gleichungen mit Hilfe des Gaußschen Eliminationsverfahrens hinsichtlich der Lösbarkeit untersuchen bzw. die Lösungsmenge berechnen. Unter Verwendung von Koeffizientenmatrix und erweiterter Koeffizientenmatrix lässt sich die Berechnung effektiv darstellen. Sie können zur Untersuchung des Lösungsverhaltens eines allgemeinen Systems linearer Gleichungen den Begriff des 'Rang einer Matrix' benutzen.
 * Im Fall ihrer Existenz kann die inverse Matrix der Koeffizientenmatrix zur Berechnung der eindeutig bestimmten Lösung verwendet werden. Sie können die inverse Matrix mit Hilfe des Gauss-Jordan Verfahrens berechnen.
+* Sie kennen verschiedene Produkte mit Vektoren und können Eigenschaften dieser Produkte verwenden, um Terme in Rechnungen zu vereinfachen.
+* Mit dem Orthogonalisierungsverfahren nach Gram-Schmidt lässt sich zu einem System linear unabhängiger Vektoren ein System orthogonaler Vektoren berechnen, die denselben Untervektorraum aufspannen.
+* Sie können zu einer quadratischen Matrix die Eigenwertaufgabe aufstellen und sowohl Eigenwerte alsauch die zugehörenden Eigenräume berechnen. Sie kennen Anwendungen der Eigenwertaufgabe beispielsweise in der Kinematik.
 
 
 ### Vektoren
@@ -2804,7 +2821,7 @@ x + y - (y + x)
 ```
 @Algebrite.eval
 
->**Definition 2.** Seien $V$ eine Menge von Elementen und $K$ ein Zahlkörper.
+>**Definition 2.** Seien $V$ eine Menge von Elementen und $K$ ein Körper.
 >
 >1. Sind in $V$ sinngemäß zu Definition 1 eine Addition und Vielfachbildung mit Zahlen aus $K$ erklärt ~~und~~
 >2. gelten alle Rechenregeln aus Satz 1 sinngemäß für das Rechnen in $V$
@@ -3030,7 +3047,7 @@ $$ mit gemeinsamem Definitionsbereich $D=\mathbb{R}$ bildet eine Basis im Vektor
   V=\left\{f:\mathbb{R}\to\mathbb{R}\left|\; f(x)=\sum_{j=0}^n{(a_j\cdot x^j)}\,, a_j\in\mathbb{R}\right.\right\}
 $$ Die lineare Unabhängigkeit der Funktionen $f_i$ ist bereits im Beispiel 6 (2.) gezeigt worden. Es folgt $\dim{V}=n+1$.
 
->**Satz 3.** Zu jedem Vektor $v\in V$ eines endlich-dimensionalen Vektorraums $V$ mit Dimension $\dim{V}=n$ über einem Zahlkörper $K$ existiert zu einer gegebenem Basis $$
+>**Satz 3.** Zu jedem Vektor $v\in V$ eines endlich-dimensionalen Vektorraums $V$ mit Dimension $\dim{V}=n$ über einem Körper $K$ existiert zu einer gegebenem Basis $$
   B=\{x_1,x_2,...,x_n\}
 $$ von Vektoren aus $V$ genau ein Tupel $$
   (\lambda_1,\lambda_2,...,\lambda_n)\in K^n
@@ -5525,41 +5542,49 @@ $$ Der Eigenraum besitzt hier die Dimension $3-2=1$, da der Rang der Koeffizient
 ## Analytische Geometrie
 
 
-Die analytische Geometrie beschäftigt sich mit Eigenschaften ausgezeichneter Punktmengen in der Ebene oder im Raum und verwendet algebraische Methoden (vor allem der linearen Algebra) zur Beantwortung der sich daraus ergebenden Fragestellungen.
+Die analytische Geometrie beschäftigt sich mit Eigenschaften ausgezeichneter Punktmengen in der Ebene oder im dreidimensionalen Raum und verwendet algebraische Methoden - vor allem der linearen Algebra - zur Beantwortung von Fragen beispielsweise zur relativen Lage von Punkten, Geraden und Ebenen.
+
+Für einen Überblick über die Themen dieses Kapitels sehen Sie in der nachstehenden Graphik einige zentrale Begriffe. Schlagen Sie diese in diesem Abschnitt nach.
+
+![Wordcloud Algebra](img/wc_geometrie.png)<!-- style="display: block; margin-left: auto; margin-right: auto; max-width: 1000px;" -->
+
+
+Lernziele
+-----
+
+
+* Sie kennen ..
 
 
 ### Affine Räume
 
 
-Grundbegriffe
-====
+In diesem Abschnitt wird der überfällige Zusammenhang zwischen Punkten und Vektoren betrachtet.
 
-
->**Definition 1.** Ein [affiner Raum](https://de.wikipedia.org/wiki/Affiner_Raum) $\mathcal{A}$ ist ein Tripel $(\mathcal{P},\mathcal{V},\alpha)$, bestehend aus einer nichtleeren Menge $\mathcal{P}$, einem reellen Vektorraum $\mathcal{V}$ und einer Abbildung $$
+>**Definition 1.** Ein [affiner Raum](https://de.wikipedia.org/wiki/Affiner_Raum) $\mathcal{A}$ ist ein Tripel $(\mathcal{P}, \mathcal{V},\alpha)$, bestehend aus einer nichtleeren Menge $\mathcal{P}$, einem reellen Vektorraum $\mathcal{V}$ und einer Abbildung $$
   \alpha: \mathcal{P}\times\mathcal{P}\longrightarrow \mathcal{V}
 $$ so dass gilt:
 >
 >1. Zu jedem Punkt $P\in\mathcal{P}$ und jedem Vektor  $v\in\mathcal{V}$ gibt es genau einen Punkt $Q\in\mathcal{P}$ mit $\alpha(P,Q)=v$.
->2. Für jeweils drei beliebige Punkte $P\in\mathcal{P}$, $Q\in\mathcal{P}$ und $R\in\mathcal{P}$ gilt $$
-  \alpha(P,Q)+\alpha(Q,R)=\alpha(P,R)$$
+>2. Für jeweils drei beliebige Punkte $P\in\mathcal{P}$, $Q\in\mathcal{P}$ und $R\in\mathcal{P}$ gilt $$ \alpha(P,Q)+\alpha(Q,R)=\alpha(P,R)$$
+>
+> Die Elemente von $\mathcal{P}$ heißen **Punkte** des affinen Raumes $\mathcal{A}$.
+>
+> Die Dimension des affinen Raumes $\mathcal{A}$ ist definiert durch $$\operatorname{dim}(\mathcal{A})=\operatorname{dim}(\mathcal{V})$$ d. h. vermöge des zugehörenden Verkorraumes. 
 
-**Bemerkung 1.**
-
-* Die Elemente von $\mathcal{P}$ heißen Punkte des affinen Raumes $\mathcal{A}$.
-* Die Dimension des affinen Raumes $\mathcal{A}$ ist definiert durch $\operatorname{dim}(\mathcal{A})=\operatorname{dim}(\mathcal{V})$.
-* Für $\mathcal{P}=\mathcal{V}=\mathbb{R}^n$ schreiben wir auch $\overrightarrow{PQ}$ anstelle von $\alpha(P,Q)$.
+**Bemerkung 1.** Für $\mathcal{P}=\mathcal{V}=\mathbb{R}^n$ schreiben wir auch $\overrightarrow{PQ}$ anstelle von $\alpha(P,Q)$.
 
 Aus Definition 1 lassen sich zunächst zwei einfache Eigenschaften der Abbildung $\alpha$ ableiten:
 
-* Für $P=Q=R$ erhalten wir aus 2. sofort $$
+* Für $P=Q=R$ erhalten wir aus der Eigenschaft 2. sofort $$
   \alpha(P,P)+\alpha(P,P)=2\cdot \alpha(P,P)=\alpha(P,P)
-$$ und somit $\alpha(P,P)=\mathcal{o}$, worin $\mathcal{o}$ der Nullvektor in $\mathcal{V}$ ist.
+$$ und somit $\alpha(P,P)=\mathcal{o}$, worin $\mathcal{o}$ den Nullvektor in $\mathcal{V}$ bezeichnet.
 * Hingegen bekommen wir für $P=R$ $$
   \alpha(P,Q)+\alpha(Q,P)=\alpha(P,P)=\mathcal{o}
 $$ und daher $\alpha(Q,P)=-\alpha(P,Q)$.
 
 
-**Bemerkung 2.** Zeichnen wir in einem affinen Raum $\mathcal{A}=(\mathcal{P},\mathcal{V},\alpha)$ einen Punkt $O\in\mathcal{P}$ aus, so erhalten wir mittels der Eigenschaft 1 aus Definition 1 eine (von $O$ abhängige) eineindeutige Zuordnung zwischen den Punkten in $\mathcal{P}$ und den Vektoren in $\mathcal{V}$. Diese Zuordnung kann durch die Abbildung $$
+**Bemerkung 2.** Zeichnen wir in einem affinen Raum $\mathcal{A}=(\mathcal{P},\mathcal{V},\alpha)$ einen Punkt $O\in\mathcal{P}$ aus, so erhalten wir mittels der Eigenschaft 1 aus Definition 1 eine von $O$ abhängige, eineindeutige Zuordnung zwischen den Punkten in $\mathcal{P}$ und den Vektoren in $\mathcal{V}$. Diese Zuordnung kann durch die Abbildung $$
   \beta:\mathcal{P}\longrightarrow\mathcal{V}\quad\text{mit}\quad \beta(P)=\alpha(O,P)\in\mathcal{V}
 $$ beschrieben werden.
 
@@ -5571,12 +5596,12 @@ $$
 
 **Beispiel 1.** Wählen wir in der Definition 1 für die Punktmenge $\mathcal{P}$ die Menge $\mathbb{R}^3$, für den Vektorraum $\mathcal{V}$ den reellen Vektorraum $\mathbb{R}^3$  und $$
   \alpha(P,Q)=Q-P
-$$ für beliebige $P, Q\in\mathcal{P}=\mathbb{R}^3$, so ist $\mathcal{A}=(\mathcal{P},\mathcal{V},\alpha)$ ein $3$-dimensionaler affiner Raum, denn es gilt:
+$$ für beliebige $P, Q\in\mathcal{P}=\mathbb{R}^3$, so ist $\mathcal{A}=(\mathcal{P},\mathcal{V},\alpha)$ ein $3$-dimensionaler affiner Raum, denn es gilt mit Definition 1:
 
 1. Für einen beliebigen Punkt $P\in\mathbb{R}^3$ und einen beliebigen Vektor $v\in\mathbb{R}^3$ ist $Q=P+v\in\mathcal{P}$ und $\alpha(P,Q)=Q-P=P+v-P=v$.
 2. Für beliebige $P, Q, R\in\mathcal{P}$ ist $\alpha(P,Q)+\alpha(Q,R)=(Q-P) + (R-Q) = R-P=\alpha(P,R)$.
 
-**Bemerkung 3.** In diesem Beispiel kommen den Elementen der Menge $\mathbb{R}^3$ zwei unterschiedliche Bedeutungen zu: zum einen als Punkte des affinen Raumes, zum anderen als Verschiebungsvektoren, vermittelt durch die Abbildung $\alpha$.
+In diesem Beispiel kommen den Elementen der Menge $\mathbb{R}^3$ zwei unterschiedliche Bedeutungen zu: zum einen als Punkte des affinen Raumes, zum anderen als Verschiebungsvektoren, vermittelt durch die Abbildung $\alpha$.
 
 Zeichnen wir in $\mathbb{R}^3$ den Punkt $O=(0,0,0)^\top$ aus, so gilt für die Abbildung $\beta:\mathcal{P}\longrightarrow\mathcal{V}$ aus Definition 2: $$
   \beta(P)=\alpha(O,P)=P-O=P\quad\text{für alle}\quad P\in\mathcal{P}
@@ -5590,7 +5615,7 @@ $$ ein Untervektorraum von $\mathcal{V}$, so ist $$
   \mathcal{A}_0=(\mathcal{P}_0,\mathcal{V}_0,\alpha_0)\quad\text{mit}\quad\alpha_0(P,Q)=\alpha(P,Q)\quad\text{für}\quad P\in\mathcal{P}_0\,,Q\in\mathcal{P}_0
 $$ ein [affiner Unterraum](https://de.wikipedia.org/wiki/Affiner_Raum) von $\mathcal{A}$.
 
-**Beispiel 2.** Es sei $\mathcal{A}$ der affine Raum aus Beispiel 1. Für $a, b\in\mathbb{R}^3$ setzen wir $$
+**Beispiel 2.** Es sei $\mathcal{A}$ der affine Raum aus Beispiel 1. Für $a\in\mathbb{R}^3$ und $b\in\mathbb{R}^3$ setzen wir $$
   \mathcal{P}_0=\left\{a+\lambda\cdot b\,\middle |\; \lambda\in\mathbb{R}\right\}\subseteq\mathcal{P}
 $$ Dann ist $\mathcal{P}_0$ Punktmenge des affinen Unterraumes $\mathcal{A}_0=(\mathcal{P}_0,\mathcal{V}_0,\alpha_0)$ mit dem Untervektorraum $$
   \mathcal{V}_0=\left\{\alpha(P,Q)\;\middle |\; P,Q\in\mathcal{P}_0\right\}=\left\{\lambda\cdot b\;\middle |\;\lambda\in\mathbb{R}\right\}
@@ -5606,9 +5631,7 @@ $$ gilt. In diesem Fall ist die Lösungsmenge die Punktmenge eines affinen Unter
 
 Denn die Menge $\mathcal{V}=\left\{x\in\mathbb{R}^n\;\middle |\; Ax=\mathcal{o}\right\}\subseteq \mathbb{R}^n$ ist ein Untervektorraum der Dimension $n-\operatorname{Rang}(A)$ und für $$
   x, y\in \mathcal{P}=\left\{x\in\mathbb{R}^n\;\middle |\; Ax=b\right\}
-$$ gilt $$
-  Ay-Ax=b-b=\mathcal{o}=A(y-x)
-$$ d. h. $\alpha(x,y)=y-x\in\mathcal{V}$.
+$$ gilt $$ Ay-Ax=b-b=\mathcal{o}=A(y-x) $$ d. h. $\alpha(x,y)=y-x\in\mathcal{V}$.
 
 
 ### Grundelemente in der Ebene
@@ -5616,42 +5639,51 @@ $$ d. h. $\alpha(x,y)=y-x\in\mathcal{V}$.
 
 In diesem Abschnitt wird die Darstellung von Grundelementen des affinen Raumes $\mathbb{R}^2$ betrachtet.
 
-
-Punkte
-===
-
-
-Ein Punkt des affinen Raumes $\mathbb{R}^2$ ist ein Element der Menge $\mathbb{R}^2$, zum Beispiel $$
-  A=\left(\begin{array}{c}1\\2\end{array}\right)
-$$
-
-Geraden
-===
-
+Ein Punkt des affinen Raumes $\mathbb{R}^2$ ist ein Element der Menge $\mathbb{R}^2$, zum Beispiel $$ A=\left(\begin{array}{c}1\\2\end{array}\right) $$
 
 Durch je zwei verschiedene Punkte $A$ und $B$ in $\mathbb{R}^2$ wird eindeutig eine Gerade festgelegt. Umgekehrt ist jede Gerade durch zwei verschiedene auf ihr liegende Punkte eindeutig bestimmt.            
 
 <!-- style="background-color: lightgray;"-->
 >**Darstellung von Geraden**
 >
->* *Allgemeine Gleichung*. Jede Gerade in $\mathbb{R}^2$ kann durch eine lineare Gleichung der Form $$
-  a\cdot x + b\cdot y +c =0\quad\text{mit}\quad a, b, c\in\mathbb{R}\quad\text{und}\quad a^2+b^2\neq 0
-$$ beschrieben werden. Ein Punkt $P=(x_1,x_2)^\top\in\mathbb{R}^2$ liegt genau dann auf der Gerade, wenn die Gleichung $$
-  a\cdot x_1+b\cdot x_2+c=0
-$$ erfüllt ist.
->
+>* *Allgemeine Gleichung*. Jede Gerade in $\mathbb{R}^2$ kann durch eine lineare Gleichung der Form $$ a\cdot x + b\cdot y +c =0\quad\text{mit}\quad a, b, c\in\mathbb{R}\quad\text{und}\quad a^2+b^2\neq 0 $$ beschrieben werden. Ein Punkt $P=(x_1,x_2)^\top\in\mathbb{R}^2$ liegt genau dann auf der Gerade, wenn die Gleichung $$ a\cdot x_1+b\cdot x_2+c=0 $$ erfüllt ist.
 >* *Parameterdarstellung*. Sind $A, B\in\mathbb{R}^2$ mit $A\neq B$ zwei verschiedene Punkte und $g$ die eindeutig durch $A$ und $B$ festgelegte Gerade. Dann kann jeder Punkt $X$ von  $g$ durch die Gleichung $$
   X=A+\lambda\cdot (B-A)=A+\lambda\cdot \overrightarrow{AB}\quad\text{mit}\quad \lambda\in\mathbb{R}
 $$ beschrieben werden. Der Vektor $\overrightarrow{AB}$ ist dann ein **Richtungsvektor** von $g$.
 >* *Normalengleichung*. Jede Gerade $g$ kann durch einen Normalenvektor $n\in\mathbb{R}^2$ und einen auf ihr liegenden Punkt $A\in\mathbb{R}^2$ durch $$
   n\cdot (X-A)=n\cdot \overrightarrow{AX}=0
-$$ angegeben werden. Der Punkt $X\in\mathbb{R}^2$ liegt genau dann auf $g$, wenn die Gleichung erfüllt ist. Ist der Vektor $n$ normiert, d. h. $||n||=1$, so heißt diese Gleichung [Hessesche Normalform](https://de.wikipedia.org/wiki/Hessesche_Normalform) von $g$.
+$$ angegeben werden. Der Punkt $X\in\mathbb{R}^2$ liegt genau dann auf $g$, wenn die Gleichung erfüllt ist. Ist der Vektor $n$ normiert, d. h. $|n|=1$, so heißt diese Gleichung [Hessesche Normalform](https://de.wikipedia.org/wiki/Hessesche_Normalform) von $g$.
 
 
-**Beispiel 1.** Gegeben seien die beiden Punkte $A=(1,2)^\top$ und $B=(3,-1)^\top$ in $\mathbb{R}^2$ und $g$ die durch $A$ und $B$ eindeutig festgelegte Gerade.
-Dann ist $$3\cdot x+2\cdot y-7=0$$ eine Gleichung der Gerade $g$ und $$X=\left(\begin{array}{c}x\\y\end{array}\right)=\left(\begin{array}{c}1\\2\end{array}\right)+\lambda\cdot \left(\begin{array}{c}2\\-3\end{array}\right)$$ mit $\lambda\in\mathbb{R}$ eine mögliche Parameterdarstellung.
-Des Weiteren ist der Vektor $n=\left(\begin{array}{c}3\\2\end{array}\right)$ orthogonal zu jedem Richtungsvektor von $g$, denn:
-$$n\cdot \overrightarrow{AB}=\left(\begin{array}{c}3\\2\end{array}\right)\cdot \left(\begin{array}{c}2\\-3\end{array}\right)=3\cdot 2+2\cdot (-3)=0.$$ Damit ist $n$ ein Normalenvektor von $g$ und die Gerade kann durch die Normalengleichung $$n\cdot (X-A)=\left(\begin{array}{c}3\\2\end{array}\right)\cdot \left(\begin{array}{c}x-1\\y-2\end{array}\right)=0$$ beschrieben werden.
+**Beispiel 1.** Gegeben seien die beiden Punkte $A=(1,2)^\top$ und $B=(3,-1)^\top$ in $\mathbb{R}^2$ und $g$ die durch $A$ und $B$ eindeutig festgelegte Gerade. Hieraus berechnen sich: 
+
+1. Eine Gleichung der Geraden $g$ durch Einsetzen der Punktkoordinaten in die allgemeine Gleichung $a\cdot x+b\cdot y+c=0$ mit zu bestimmenden reellen Koeffizienten $a$, $b$ und $c$. $$ \left\{\begin{array}{rrr} a+2b+c & = & 0 \\ 3a-b+c & = & 0\end{array}\right.\quad\leftrightarrow\quad(a,b,c)=\lambda\cdot(3,2,-7)\quad\leadsto\quad 3\cdot x+2\cdot y-7=0 $$ worin $\lambda\in\mathbb{R}^\times$ jede von Null verschiedene, reelle Zahl sein darf. 
+2. Eine mögliche Parameterdarstellung von $g$ gemäß $$ X=\left(\begin{array}{c}x\\y\end{array}\right)=\left(\begin{array}{c}1\\2\end{array}\right)+\lambda\cdot \left(\begin{array}{c}2\\-3\end{array}\right)\quad\,,\;\lambda\in\mathbb{R} $$ worin $$ \left(\begin{array}{c}1\\2\end{array}\right)\quad\text{bzw.}\quad \left(\begin{array}{c}2\\-3\end{array}\right)=\left(\begin{array}{c}3\\-1\end{array}\right)-\left(\begin{array}{c}1\\2\end{array}\right) $$ mögliche Stütz- beziehungsweise Richtungsvektor von $g$ darstellen.
+3. Des Weiteren ist der Vektor $n=\left(\begin{array}{c}3\\2\end{array}\right)$ orthogonal zu jedem Richtungsvektor von $g$, denn: $$ n\cdot \overrightarrow{AB}=\left(\begin{array}{c}3\\2\end{array}\right)\cdot \left(\begin{array}{c}2\\-3\end{array}\right)=3\cdot 2+2\cdot (-3)=0 $$ Damit ist $n$ ein Normalenvektor von $g$ und die Gerade kann durch die Normalengleichung $$n\cdot (X-A)=\left(\begin{array}{c}3\\2\end{array}\right)\cdot \left(\begin{array}{c}x-1\\y-2\end{array}\right)=0$$ beschrieben werden.
+
+**Bemerkung 1.** Für $|n|=1$ bezeichnet das Absolutglied in der Geradengleichung (Hessesche Normalform) den orientierten Abstand der Geraden $g$ vom Koordinatenursprung.
+
+**Bemerkung 2.** Jede allgemeine Gleichung einer Geraden $g$, die nicht parallel zu einer der beiden Koordinatenachsen liegt, lässt sich in der Form $$ a\cdot x_1+b\cdot x_2+c=0 \quad\leftrightarrow\quad\frac{x}{\alpha}+\frac{y}{\beta}=1 $$ angeben, worin $\alpha=-\frac{c}{a}$ und $\beta=-\frac{c}{b}$ gelten. Die rechte Form wird **Achsenabschnittsform** genannt. Mithilfe der Koeffizienten $a$, $b$ und $c$ in der allgemeinen Gleichung lassen sich somit die Achsenabschnitte $\alpha$ und $\beta$ auf $x$- und $y$-Achse angeben.
+
+**Beispiel 2.** Die Gerade $h$ mit der allgemeinen Gleichung $x-2y+3=0$ besitzt die Achsenabschnittsform $$ \frac{x}{-3}+\frac{y}{\frac{3}{2}}=1 $$ Die Achsenabschnitte auf $x$- beziehungsweise $y$-Achse sind $\alpha=-3$ beziehungsweise $\beta=\frac{3}{2}$.
+
+
+Sicher gewusst
+===
+
+
+Hier können Sie Ihr Wissen zur Darstellung von Geraden testen.
+
+**Frage 1.** Zu zwei verschiedenen Punkten $P_1(x_1,y_1)$ und $P_2(x_2,y_2)$ lässt sich die Determinantengleichung $$ \det{\begin{pmatrix} 1 & x & y \\ 1 & x_1 & y_1 \\ 1 & x_2 & y_2 \end{pmatrix}}=0 $$ angeben, worin $(x,y)$ die Koordinaten eines allgemeinen Punktes bezeichnen. Die Lösungsmenge $$ \mathcal{L}=\left\{(x,y)\in\mathbb{R}^2:\det{\begin{pmatrix} 1 & x & y \\ 1 & x_1 & y_1 \\ 1 & x_2 & y_2 \end{pmatrix}}=0\right\} $$ der Gleichung beschreibt
+
+[(X)] die Gerade $h=P_1P_2$.
+[( )] die Punkte $P_1$ und $P_2$, jedoch keinen weiteren Punkt der Geraden $h=P_1P_2$.
+[[?]] Berechnen Sie die Determinante der obigen Gleichung.
+****************************************
+
+Werden die Koordinaten der Punkte in die Determinante 
+
+****************************************
 
 
 ### Grundelemente im  Raum
@@ -5709,7 +5741,7 @@ $$ mit $$n=(Q-P)\times (R-P)=\overrightarrow{PQ}\times\overrightarrow{PR}$$ besc
 [^1]: In $\mathbb{R}^3$ kann eine Gerade nicht, wie im Fall des $\mathbb{R}^2$, durch eine einzelne lineare Gleichung beschrieben werden.
 
 
-### Lagebeziehungen in der Ebene
+### Lage in der Ebene
 
 
 Punkt und Gerade
@@ -5785,7 +5817,7 @@ $$ wobei $P$ ein beliebiger Punkt auf $g$, der Punkt $Q$ beliebig auf $h$ gewäh
 >**Schnittwinkel sich schneidender Geraden.** Der Schnittwinkel zweier sich schneidender Geraden ist der Winkel zwischen zwei Richtungsvektoren der Geraden, welche einen Winkel zwischen $0^\circ$ und $90^\circ$ einschließen.
 
 
-### Lagebeziehungen im Raum
+### Lage im Raum
 
 
 Zwei Geraden
