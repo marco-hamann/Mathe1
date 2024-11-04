@@ -2262,11 +2262,7 @@ Berechnen Sie die das Polynom $p(z)$.
 Zu den Lösungen $z_j$, $j\in\{1,2,3,4\}$, können die Linearfaktoren $(z-z_j)$ gebildet werden. Da $z_1=\bar{z}_4$ sowie $z_2=\bar{z}_3$, können die reellen, quadratischen Faktoren $$
   (z-z_1)\cdot(z-z_4)=z^2-2\cdot z+2\quad\text{und}\quad
   (z-z_2)\cdot(z-z_3)=z^2+2\cdot z+2
-$$ berechnet werden. Deren Produkt ergibt $$
-  \left(z^2-2\cdot z+2\right)\cdot\left(z^2-2\cdot z+2\right)=x^4+4
-$$ Der Koeffizient dieses Produktes ist $a_4=1$, so dass $$
-  p(z)=x^4+1
-$$
+$$ berechnet werden. Deren Produkt ergibt unter Verwendung einer der binomischen Formeln $$ \left(z^2+2\cdot z+2\right)\cdot\left(z^2-2\cdot z+2\right)=(z^2+2)^2-(2z)^2=z^4+4 $$ Der Koeffizient dieses Produktes ist $a_4=1$, so dass $$ p(z)=z^4+1 $$
 
 ****************************************
 
@@ -5681,7 +5677,7 @@ Hier können Sie Ihr Wissen zur Darstellung von Geraden testen.
 [[?]] Berechnen Sie die Determinante der obigen Gleichung.
 ****************************************
 
-Werden die Koordinaten der Punkte in die Determinante 
+Werden die Koordinaten der Punkte $P_1$ beziehungsweise $P_2$ in die Matrix eingesetzt, entstehen linear abhängige Zeilen. Die Matrix ist somit singular, ihre Determinante besitzt den Wert Null. Mit den Rechenregeln für Determinanten folgt, dass für einen beliebigen Punkt $P_0\in h$ mit $$ P(x_0,y_0)\quad\sim\quad \begin{pmatrix} x_0 \\ y_0 \end{pmatrix}=\lambda\cdot\begin{pmatrix} x_1 \\ y_1 \end{pmatrix}+(1-\lambda)\cdot\begin{pmatrix} x_2 \\ y_2 \end{pmatrix} $$ folgt $$ \det{\begin{pmatrix} 1 & x_0 & y_0 \\ 1 & x_1 & y_1 \\ 1 & x_2 & y_2 \end{pmatrix}}=\det{\begin{pmatrix} \lambda+(1-\lambda) & \lambda\cdot x_1+(1-\lambda)\cdot x_2 & \lambda\cdot y_1+(1-\lambda)\cdot y_2 \\ 1 & x_1 & y_1 \\ 1 & x_2 & y_2 \end{pmatrix}}=\det{\begin{pmatrix} \lambda & \lambda\cdot x_1 & \lambda\cdot y_1 \\ 1 & x_1 & y_1 \\ 1 & x_2 & y_2 \end{pmatrix}}=\lambda\cdot\det{\begin{pmatrix} 1 & x_1 & y_1 \\ 1 & x_1 & y_1 \\ 1 & x_2 & y_2 \end{pmatrix}}=\lambda\cdot 0=0 $$
 
 ****************************************
 
@@ -5689,40 +5685,20 @@ Werden die Koordinaten der Punkte in die Determinante
 ### Grundelemente im  Raum
 
 
+In diesem Abschnitt wird die Darstellung von Grundelementen des affinen Raumes $\mathbb{R}^3$ betrachtet.
+
 Punkte, Geraden und Ebenen in $\mathbb{R}^3$ sind genau die $0$-, $1$- und $2$-dimensionalen affinen Unterräume des affinen Raumes $\mathbb{R}^3$. Siehe auch den Abschnitt [Affine Räume](#Affine-Räume).
 
-
-Punkte
-===
-
-
-Ein Punkt des affinen Raumes $\mathbb{R}^3$ ist ein Element der Menge $\mathbb{R}^2$, zum Beispiel $$
-  A=\left(\begin{array}{c}1\\2\\3\end{array}\right)$$
-
-
-Geraden
-===
-
+Ein Punkt des affinen Raumes $\mathbb{R}^3$ ist ein Element der Menge $\mathbb{R}^2$, zum Beispiel $$ A=\left(\begin{array}{c}1\\2\\3\end{array}\right) $$
 
 Durch je zwei verschiedene Punkte $A$ und $B$ in $\mathbb{R}^3$ wird eindeutig eine Gerade festgelegt. Umgekehrt ist jede Gerade durch zwei verschiedene auf ihr liegende Punkte eindeutig bestimmt.            
 
 <!-- style="background-color: lightgray;"-->
 > **Darstellung von Geraden**
 >
->* *Lösungsmenge zweier linearer Gleichungen.* Die Lösungsmenge zweier[^1] linearer Gleichungen $$
-  \left\{\begin{array}{rrr}
-    a_1\cdot x_1+b_1\cdot x_2+c_1\cdot x_3+d_1 & = & 0 \\
-    a_2\cdot x_1+b_2\cdot x_2+c_2\cdot x_3+d_2 & = & 0
-  \end{array}\right.
-$$ mit $a_i, b_i, c_i, d_i\in\mathbb{R}$ für $i\in\{1,2\}$ ist genau dann die Punktemenge einer Gerade in $\mathbb{R}^3$, wenn die beiden Vektoren $$
-  (a_1,b_1,c_1)^\top\quad\text{und}\quad (a_2,b_2,c_2)^\top
-$$ linear unabhängig sind. Umgekehrt lässt sich jede Gerade durch zwei lineare Gleichungen dieser Form beschreiben.
+>* *Lösungsmenge zweier linearer Gleichungen.* Die Lösungsmenge zweier[^1] linearer Gleichungen $$ \left\{\begin{array}{rrr} a_1\cdot x_1+b_1\cdot x_2+c_1\cdot x_3+d_1 & = & 0 \\ a_2\cdot x_1+b_2\cdot x_2+c_2\cdot x_3+d_2 & = & 0 \end{array}\right. $$ mit $a_i, b_i, c_i, d_i\in\mathbb{R}$ für $i\in\{1,2\}$ ist genau dann die Punktemenge einer Gerade in $\mathbb{R}^3$, wenn die beiden Vektoren $$ (a_1,b_1,c_1)^\top\quad\text{und}\quad (a_2,b_2,c_2)^\top $$ linear unabhängig sind. Umgekehrt lässt sich jede Gerade durch zwei lineare Gleichungen dieser Form beschreiben.
 >
 >* *Parameterdarstellung.* Sind $A$ und $B$ zwei verschiedene Punkte des $\mathbb{R}^3$, so kann jeder Punkt $X\in\mathbb{R}^3$ der durch $A$ und $B$ eindeutig festgelegten Geraden durch $$X=A+\lambda\cdot (B-A)=A+\lambda\cdot\overrightarrow{AB}$$ mit $\lambda\in\mathbb{R}$ berechnet werden.
-
-
-Ebenen
-===
 
 Durch je drei verschiedene Punkte $P$, $Q$ und $R$ in $\mathbb{R}^3$ wird eindeutig eine Ebene festgelegt, wenn die Punkte ein eigentliches Dreieck bilden. Umgekehrt ist jede Ebene durch drei nicht auf einer Geraden liegende Punkte eindeutig bestimmt.            
 
@@ -5734,9 +5710,7 @@ Durch je drei verschiedene Punkte $P$, $Q$ und $R$ in $\mathbb{R}^3$ wird eindeu
 $$ ist die Punktmenge einer Ebene $E$ in $\mathbb{R}^3$. Der Punkt $(x,y,z)^\top\in\mathbb{R}^3$ liegt genau dann in $E$, wenn seine Koordinaten die Gleichung lösen. Umgekehrt ist jede Ebene Lösungsmenge einer solchen Gleichung.
 >* *Parameterdarstellung.* Sind $P, Q, R\in\mathbb{R}^3$ drei Punkte einer Ebene $E$, welche nicht auf einer gemeinsamen Geraden liegen, so kann jeder Punkt $X$ der Ebene durch die Gleichung $$X=P+\lambda\cdot \left(Q-P\right)+\mu\cdot\left(R-P\right)=P+\lambda\cdot\overrightarrow{PQ}+\mu\cdot\overrightarrow{PR}$$ mit $\lambda, \mu\in\mathbb{R}$ angegeben werden. Der Punkt $P$ wird manchmal **Aufpunkt** von $E$ genannt und die beiden Vektoren $Q-P$ und $R-P$ sind **Richtungsvektoren** der Ebene.
 >
->* *Normalenform.* Sind $P, Q, R\in\mathbb{R}^3$ drei Punkte einer Ebene $E$, welche nicht auf einer gemeinsamen Geraden liegen, so kann jeder Punkt $X$ der Ebene durch die Gleichung $$
-  n\cdot\left(X-P\right)=n\cdot\overrightarrow{PX}=0
-$$ mit $$n=(Q-P)\times (R-P)=\overrightarrow{PQ}\times\overrightarrow{PR}$$ beschrieben werden. Hierbei ist $\times$ das Vektorprodukt in $\mathbb{R}^3$. Speziell für $||n||=1$ (mit $||n||$ der Norm/Länge von $n$) heißt diese Normalengleichung auch [Hessesche Normalform](https://de.wikipedia.org/wiki/Hessesche_Normalform) von $E$. Der Vektor $n$ ist dann ein **Einheitsnormalenvektor** der Ebene $E$.
+>* *Normalenform.* Sind $P, Q, R\in\mathbb{R}^3$ drei Punkte einer Ebene $E$, welche nicht auf einer gemeinsamen Geraden liegen, so kann jeder Punkt $X$ der Ebene durch die Gleichung $$ n\cdot\left(X-P\right)=n\cdot\overrightarrow{PX}=0 $$ mit $$n=(Q-P)\times (R-P)=\overrightarrow{PQ}\times\overrightarrow{PR}$$ beschrieben werden. Hierbei ist $\times$ das Vektorprodukt in $\mathbb{R}^3$. Speziell für Vektoren $n$ der Norm/Länge $|n|=1$ heißt diese Normalengleichung auch [Hessesche Normalform](https://de.wikipedia.org/wiki/Hessesche_Normalform) von $E$. Der Vektor $n$ ist dann ein **Einheitsnormalenvektor** der Ebene $E$.
 
 [^1]: In $\mathbb{R}^3$ kann eine Gerade nicht, wie im Fall des $\mathbb{R}^2$, durch eine einzelne lineare Gleichung beschrieben werden.
 
@@ -5744,32 +5718,18 @@ $$ mit $$n=(Q-P)\times (R-P)=\overrightarrow{PQ}\times\overrightarrow{PR}$$ besc
 ### Lage in der Ebene
 
 
+In diesem Abschnitt sollen nun die relative Lage von Grundelementen der Ebene und nachfolgend des dreidimensionalen Raumes betrachtet werden.
+
+
 Punkt und Gerade
 ===
 
 
-Ist $A$ ein Punkt und $g$ eine Gerade in $\mathbb{R}^2$, so werden genau zwei Fälle ihrer gegenseitigen Lage unterschieden:
+Ist $A$ ein Punkt und $g$ eine Gerade in $\mathbb{R}^2$, so werden genau zwei Fälle ihrer gegenseitigen Lage unterschieden: Entweder der Punkt $A$ liegt auf der Geraden $g$ oder $A$ liegt nicht auf $g$.
 
-* Der Punkt $A$ liegt auf der Geraden $g$.
-* Der Punkt $A$ liegt nicht auf der Geraden $g$.
+**Beispiel 1.** Gegeben seien die Punkte $P=(1,2)^\top$, $Q(-9,1)^\top$ und die Gerade $g$ durch die Parameterdarstellung $$ \left(\begin{array}{cc}x\\y\end{array}\right)=\left(\begin{array}{cc}-1\\3\end{array}\right)+\lambda\cdot \left(\begin{array}{cc}4\\1\end{array}\right) $$ mit mit dem Parameter $\lambda\in\mathbb{R}$. Der Punkt $P$ liegt auf $g$, falls ein Parameterwert $\lambda$ existiert, mit dem $P$ sich eindeutig in der Parameterdarstellung von $g$ berechnen lässt. Wegen $$ \left(\begin{array}{cc}-1\\3\end{array}\right)+\lambda\cdot \left(\begin{array}{cc}4\\1\end{array}\right) = \left(\begin{array}{cc}1\\2\end{array}\right)\quad\leftrightarrow\quad (-1+4\cdot \lambda =1) \;\land\; (3+\lambda =2) $$ nimmt der Parameter in den einzelnen Gleichungen die Werte $\frac{1}{2}$ beziehungsweise $-1$ an. Damit liegt der Punkt $P$ nicht auf der Geraden $g$. Andererseits gilt für den Punkt $Q$ $$ \left(\begin{array}{cc}-1\\3\end{array}\right)+\lambda\cdot \left(\begin{array}{cc}4\\1\end{array}\right) = \left(\begin{array}{cc}-9\\1\end{array}\right)\quad\leftrightarrow\quad (-1+4\cdot \lambda =-9) \;\land\; (3+\lambda =1)\quad\leftrightarrow\quad \lambda=-2 $$ Somit liegt $Q$ auf $g$.
 
-**Beispiel 1.** Gegeben seien die Punkte $P=(1,2)^\top$, $Q(-9,1)^\top$ und die Gerade $g$ durch die Parameterdarstellung $$
-  \left(\begin{array}{cc}x\\y\end{array}\right)=\left(\begin{array}{cc}-1\\3\end{array}\right)+\lambda\cdot \left(\begin{array}{cc}4\\1\end{array}\right)
-$$ mit $\lambda\in\mathbb{R}$. Wegen $$
-  \left(\begin{array}{cc}-1\\3\end{array}\right)+\lambda\cdot \left(\begin{array}{cc}4\\1\end{array}\right) = \left(\begin{array}{cc}1\\2\end{array}\right)\quad\leftrightarrow\quad
-  (-1+4\cdot \lambda =1) \;\land\; (3+\lambda =2)\quad\leftrightarrow\quad
-  \left(\lambda = \frac{1}{2}\right) \;\land\; (\lambda=-1)
-$$ liegt der Punkt $P$ nicht auf der Gerade $g$. Andererseits gilt für den Punkt $Q$ $$
-  \left(\begin{array}{cc}-1\\3\end{array}\right)+\lambda\cdot \left(\begin{array}{cc}4\\1\end{array}\right) = \left(\begin{array}{cc}-9\\1\end{array}\right)\quad\leftrightarrow\quad
-  (-1+4\cdot \lambda =-9) \;\land\; (3+\lambda =1)\quad\leftrightarrow\quad
-  \lambda=-2
-$$ Somit liegt $Q$ auf $g$.
-
-Alternativ lässt sich die Parameterdarstellung von $g$ in eine Gleichungsdarstellung, d. h. eine lineare Gleichung in den Unbekannten $x$ und $y$ umwandeln. Aus der Parameterdarstellung liest man deren Koordinatendarstellungen ab $$
-  x=-1+4\cdot \lambda \;\land\; y=3+\lambda
-$$ woraus sich der Parameter $\lambda$ beispielsweise mittels $$
-  x-4\cdot y = -1+4\lambda-4\cdot (3+\lambda)=-1+4\lambda -12-4\lambda = -13
-$$ eliminieren lässt, d. h. die Gerade $g$ wird beschrieben durch die Gleichung $x-4\cdot y+13=0$. Hiermit lassen sich zeigen $P\not\in g$, da $1-4\cdot 2+13=6\not=0$ sowie $Q\in g$, da $-9-4\cdot 1+13=0$.
+Alternativ lässt sich die Parameterdarstellung von $g$ in eine Gleichungsdarstellung, d. h. eine lineare Gleichung in den Unbekannten $x$ und $y$ umwandeln. Aus der Parameterdarstellung liest man deren Koordinatendarstellungen ab $$ x=-1+4\cdot \lambda \;\land\; y=3+\lambda $$ woraus sich der Parameter $\lambda$ beispielsweise mittels $$ x-4\cdot y = -1+4\lambda-4\cdot (3+\lambda)=-1+4\lambda -12-4\lambda = -13 $$ eliminieren lässt, d. h. die Gerade $g$ wird beschrieben durch die Gleichung $x-4\cdot y+13=0$. Hiermit lassen sich zeigen $P\not\in g$, da $1-4\cdot 2+13=6\not=0$ sowie $Q\in g$, da $-9-4\cdot 1+13=0$.
 
 
 Zwei Geraden
@@ -5786,30 +5746,16 @@ Die gegenseitige Lage zweier Geraden in $\mathbb{R}^2$ lässt sich somit anhand 
 
 Sind abweichend beide Geraden durch eine Parameterdarstellung gegeben, so sind die gemeinsamen Punkte durch Gleichsetzen der Parameterdarstellungen berechenbar.
 
-**Beispiel 2.** Gegeben seien die Gerade $g$ durch die Parameterdarstellung $$
-  \left(\begin{array}{cc}x\\y\end{array}\right)=\left(\begin{array}{cc}-1\\3\end{array}\right)+\lambda\cdot \left(\begin{array}{cc}4\\1\end{array}\right)\;\text{mit}\;\lambda\in\mathbb{R}
-$$ sowie die Gerade $h$ durch $$
-  \left(\begin{array}{cc}x\\y\end{array}\right)=\left(\begin{array}{cc}-1\\2\end{array}\right)+\mu\cdot \left(\begin{array}{cc}8\\2\end{array}\right)\;\text{mit}\;\mu\in\mathbb{R}
-$$ Für die Berechnung der gemeinsamen Punkte werden beide Parameterdarstellungen gleichgesetzt $$
-  \left(\begin{array}{cc}-1\\3\end{array}\right)+\lambda\cdot \left(\begin{array}{cc}4\\1\end{array}\right)=
-  \left(\begin{array}{cc}-1\\2\end{array}\right)+\mu\cdot \left(\begin{array}{cc}8\\2\end{array}\right)\quad\leftrightarrow\quad
-  (-1+4\cdot \lambda=-1+8\cdot\mu) \;\land\; (3+\lambda = 2+2\cdot \mu)\quad\leftrightarrow\quad 0=-1
-$$ Beide Geraden besitzen keinen gemeinsamen Punkt und sind daher *parallel*.
+**Beispiel 2.** Gegeben seien die Gerade $g$ durch die Parameterdarstellung $$ \left(\begin{array}{cc}x\\y\end{array}\right)=\left(\begin{array}{cc}-1\\3\end{array}\right)+\lambda\cdot \left(\begin{array}{cc}4\\1\end{array}\right)\;\text{mit}\;\lambda\in\mathbb{R} $$ sowie die Gerade $h$ durch $$ \left(\begin{array}{cc}x\\y\end{array}\right)=\left(\begin{array}{cc}-1\\2\end{array}\right)+\mu\cdot \left(\begin{array}{cc}8\\2\end{array}\right)\;\text{mit}\;\mu\in\mathbb{R} $$ Für die Berechnung der gemeinsamen Punkte werden beide Parameterdarstellungen gleichgesetzt $$ \left(\begin{array}{cc}-1\\3\end{array}\right)+\lambda\cdot \left(\begin{array}{cc}4\\1\end{array}\right)=\left(\begin{array}{cc}-1\\2\end{array}\right)+\mu\cdot \left(\begin{array}{cc}8\\2\end{array}\right)\quad\leftrightarrow\quad (-1+4\cdot \lambda=-1+8\cdot\mu) \;\land\; (3+\lambda = 2+2\cdot \mu)$$ Das entstandene System linearer Gleichungen in $(\lambda,\mu)$ besitzt keine Lösung, daher besitzen beide Geraden keinen gemeinsamen Punkt und sind *parallel*.
 
-Alternativ ließen sich die Richtungsvektoren von $g$ und $h$ betrachten. Offensichtlich sind diese linear abhängig, woraus die Parallelität der beiden Geraden folgt. Des Weiteren ist beispielsweise der gegebenen Stützpunkt von $h$ kein Punkt der Geraden $g$, woraus folgt, dass beide Geraden keine gemeinsamen Punkte besitzen.
+Alternativ ließen sich die Richtungsvektoren von $g$ und $h$ betrachten. Offensichtlich sind diese linear abhängig, woraus die Parallelität der beiden Geraden folgt. Des Weiteren ist beispielsweise der gegebene Stützpunkt von $h$ kein Punkt der Geraden $g$, woraus folgt, dass beide Geraden keine gemeinsamen Punkte besitzen.
 
-**Beispiel 3.** Gegeben seien die Gerade $g$ durch die Parameterdarstellung $$
-  \left(\begin{array}{cc}x\\y\end{array}\right)=\left(\begin{array}{cc}-1\\3\end{array}\right)+\lambda\cdot \left(\begin{array}{cc}4\\1\end{array}\right)\;\text{mit}\;\lambda\in\mathbb{R}
-$$ und die Gerade $h$ durch $$
-  \left(\begin{array}{cc}x\\y\end{array}\right)=\left(\begin{array}{cc}-1\\2\end{array}\right)+\mu\cdot \left(\begin{array}{cc}4\\2\end{array}\right)\;\text{mit}\;\mu\in\mathbb{R}
-$$  Für die Berechnung der gemeinsamen Punkte werden beide Parameterdarstellungen gleichgesetzt $$
-  \left(\begin{array}{cc}-1\\3\end{array}\right)+\lambda\cdot \left(\begin{array}{cc}4\\1\end{array}\right)=\left(\begin{array}{cc}-1\\2\end{array}\right)+\mu\cdot \left(\begin{array}{cc}4\\2\end{array}\right)\quad\leftrightarrow\quad(-1+4\cdot\lambda=-1+4\cdot\mu) \;\land\; (3+\lambda = 2+2\cdot\mu)\quad\leftrightarrow\quad\lambda =\mu=1
-$$ Daher schneiden sich $g$ und $h$ in genau einem Punkt $S=(3,4)^\top$.
+**Beispiel 3.** Gegeben seien die Gerade $g$ durch die Parameterdarstellung $$ \left(\begin{array}{cc}x\\y\end{array}\right)=\left(\begin{array}{cc}-1\\3\end{array}\right)+\lambda\cdot \left(\begin{array}{cc}4\\1\end{array}\right)\;\text{mit}\;\lambda\in\mathbb{R} $$ und die Gerade $h$ durch $$ \left(\begin{array}{cc}x\\y\end{array}\right)=\left(\begin{array}{cc}-1\\2\end{array}\right)+\mu\cdot \left(\begin{array}{cc}4\\2\end{array}\right)\;\text{mit}\;\mu\in\mathbb{R} $$  Für die Berechnung der gemeinsamen Punkte werden beide Parameterdarstellungen gleichgesetzt $$ \left(\begin{array}{cc}-1\\3\end{array}\right)+\lambda\cdot \left(\begin{array}{cc}4\\1\end{array}\right)=\left(\begin{array}{cc}-1\\2\end{array}\right)+\mu\cdot \left(\begin{array}{cc}4\\2\end{array}\right)\quad\leftrightarrow\quad(-1+4\cdot\lambda=-1+4\cdot\mu) \;\land\; (3+\lambda = 2+2\cdot\mu)$$ Das lineare Gleichungssystem besitzt die eindeutig bestimmte Lösung $\lambda =\mu=1$, daher schneiden sich $g$ und $h$ in genau einem Punkt $S=(3,4)^\top$.
+
+Für den Abstand zweier paralleler Geraden ergibt sich:
 
 <!-- style="background-color: lightgray;"-->
->**Abstand paralleler Geraden.** Sind $g$ und $h$ parallele Geraden, so gilt für den Abstand $\operatorname{dist}(g,h)$ von $g$ zu $h$ die Gleichung $$
-  d(g,h)=\frac{\overrightarrow{PQ}\cdot n}{||n||}
-$$ wobei $P$ ein beliebiger Punkt auf $g$, der Punkt $Q$ beliebig auf $h$ gewählt ist und $n$ ein Normalenvektor von $g$ (und damit auch von $h$) ist.
+>**Abstand paralleler Geraden.** Sind $g$ und $h$ parallele Geraden, so gilt für den Abstand $\operatorname{dist}(g,h)$ von $g$ zu $h$ die Gleichung $$ d(g,h)=\frac{\overrightarrow{PQ}\cdot n}{|n|} $$ wobei $P$ ein beliebiger Punkt auf $g$, der Punkt $Q$ beliebig auf $h$ gewählt ist und $n$ ein Normalenvektor von $g$ und damit von $h$ ist.
 
 **Bemerkung 1.** Diese Gleichung kann auch zur Berechnung des Abstandes eines Punktes von einer Geraden benutzt werden.
 
