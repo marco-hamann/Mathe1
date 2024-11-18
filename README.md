@@ -2321,15 +2321,15 @@ $$ (Der Nachweis zur Existenz und Eindeutigkeit der Lösungen erfolgt später.)
 **Beispiel 1.** Zur algebraischen Gleichung $p(x)=0$ sei die Lösung $x_1=1$ bekannt. Es gilt $$
   p(1)=1^3-2\cdot 1^2-5\cdot x+6=0
 $$ Von $p(x)$ lässt sich somit der Linearfaktor $(x-x_1)=(x-1)$ abspalten und es ist nach dem Fundamentalsatz der Algebra (sieh Abschnitt [Algebraische Gleichungen](#Algebraische-Gleichungen)) $$
-  p(x)=(x-1)\cdot(x^2+p\cdot x+q)
-$$ mit einem noch zu bestimmenden quadratischen Polynom $x^2+p\cdot x+q$ und Koeffizienten $p\in\mathbb{R}$ und $q\in\mathbb{R}$. Da der Koeffizient des Monoms $x^3$ Eins ist, also $a_3=1$, kann das quadratische Polynom normiert angesetzt werden. Durch Multiplikation der Faktoren wird $$
-  p(x)=x^3-2\cdot x^2-5\cdot x+6=x^3+x^2\cdot(p-1)+x\cdot(q-p)-q
+  p(x)=(x-1)\cdot(x^2+b_1\cdot x+b_0)
+$$ mit einem noch zu bestimmenden quadratischen Polynom $x^2+b_1\cdot x+b_0$ und Koeffizienten $b_1\in\mathbb{R}$ und $b_0\in\mathbb{R}$. Da der Koeffizient des Monoms $x^3$ Eins ist, also $a_3=1$, kann das quadratische Polynom normiert angesetzt werden. Durch Multiplikation der Faktoren wird $$
+  p(x)=x^3-2\cdot x^2-5\cdot x+6=x^3+x^2\cdot(b_1-1)+x\cdot(b_0-b_1)-b_0
 $$ erhalten. Da reelle Polynome dann identisch sind, wenn die Koeffizienten von $x^k$ für alle $k\in{0,1,...,n}$ einander gleichen, ergibt sich im Fall des Beispiels der folgende Koeffizientenvergleich $$
   1=1\quad\wedge\quad
-  -2=p-1\quad\wedge\quad
-  -5=q-p\quad\wedge\quad
-  6=-q
-$$ d. h. ein System von vier linearen Gleichungen in den gesuchten Koeffizienten $p$ und $q$, von denen die erste Gleichung für jede Wahl von $p$ und $q$ identisch erfüllt ist. Durch schrittweises Lösen / Überprüfen der übrigen drei Gleichungen ergeben sich $q=-6$ und $p=-1$, wonach sich $$
+  -2=b_1-1\quad\wedge\quad
+  -5=b_0-b_1\quad\wedge\quad
+  6=-b_0
+$$ d. h. ein System von vier linearen Gleichungen in den gesuchten Koeffizienten $b_1$ und $b_0$, von denen die erste Gleichung für jede Wahl von $b_1$ und $b_0$ identisch erfüllt ist. Durch schrittweises Lösen / Überprüfen der übrigen drei Gleichungen ergeben sich $b_0=-6$ und $b_1=-1$, wonach sich $$
   p(x)=x^3-2\cdot x^2-5\cdot x+6=(x-1)\cdot(x^2-x-6)
 $$ ergibt.
 
@@ -2918,19 +2918,13 @@ $$ Es existiert nur das Paar von Koeffizienten $(\lambda_1,\lambda_2)=(0,0)$ als
 2. Für die Vektoren $$
   u_1=\begin{pmatrix} 2 \\ 1 \end{pmatrix}\quad\text{und}\quad
   u_2=\begin{pmatrix} 0 \\ 0 \end{pmatrix}
-$$ ist die Menge $\{u_1,u_2\}$ linear abhängig, da zum Beispiel gilt $$
-  0\cdot u_1+7\cdot u_2=
-  0\cdot\begin{pmatrix} 2 \\ 1 \end{pmatrix}+7\cdot\begin{pmatrix} 0 \\ 0 \end{pmatrix}=
-  \begin{pmatrix} 0 \\ 0 \end{pmatrix}=o
-$$ Es existiert ein Paar von Koeffizienten $(\lambda_1,\lambda_2)=(0,7)\not=(0,0)$ als Lösung dieser linearen Gleichung. Mit selbigem Ansatz folgt, dass die einelementige Menge $\{u_1\}$ linear unabhängig ist, währenddessen $\{u_2\}$ linear abhängig ist.[^4]
+$$ ist die Menge $\{u_1,u_2\}$ linear abhängig, da zum Beispiel gilt $$ 0\cdot u_1+7\cdot u_2= 0\cdot\begin{pmatrix} 2 \\ 1 \end{pmatrix}+7\cdot\begin{pmatrix} 0 \\ 0 \end{pmatrix}= \begin{pmatrix} 0 \\ 0 \end{pmatrix}=o $$ Es existiert ein Paar von Koeffizienten $(\lambda_1,\lambda_2)=(0,7)\not=(0,0)$ als Lösung dieser linearen Gleichung. Mit selbigem Ansatz folgt, dass die einelementige Menge $\{u_1\}$ linear unabhängig ist, währenddessen $\{u_2\}$ linear abhängig ist.[^4]
 3. Für die Vektoren $$
   w_1=\begin{pmatrix} 2 \\ 1 \end{pmatrix}\,,\quad
   w_2=\begin{pmatrix} 1 \\ 1 \end{pmatrix}\quad\text{und}\quad
   w_3=\begin{pmatrix} -1 \\ 2 \end{pmatrix}
-$$ besteht die Menge $\{w_1,w_2,w_3\}$ aus linear abhängigen Vektoren, da gilt $$
-  -3\cdot w_1+5\cdot w_2-w_3=o
-$$ Bitte nachrechnen!
-
+$$ besteht die Menge $\{w_1,w_2,w_3\}$ aus linear abhängigen Vektoren, da gilt $$ -3\cdot w_1+5\cdot w_2-w_3=o $$ Bitte nachrechnen!
+4. Der Nullvektor $o\in\mathbb{R}^n$ mit $n\in\mathbb{N}^\times$ bildet eine einelementige Menge, die unmittelbar einsichtig linear abhängig ist. Hingegen bildet ein beliebiger Vektor $a\not= o$ eine einelementige Menge, die linear unabhängig ist.
 >**Proposition 2.** Vektoren $v_i$ mit $i\in\{1,2,...,n\}$ und $n\in\mathbb{N}$, $n>1$ sind genau dann linear abhängig, wenn (mindestens) einer der Vektoren $v_i$ als Linearkombination der anderen dargestellt werden kann.
 
 **Beweis.** Nach Definition 4 sind die Vektoren $v_i$ linear abhängig, falls ein Koeffizient $\lambda_i$ in der Gleichung $$
@@ -5651,10 +5645,10 @@ $$ beschrieben werden. Der Vektor $\overrightarrow{AB}$ ist dann ein **Richtungs
 $$ angegeben werden. Der Punkt $X\in\mathbb{R}^2$ liegt genau dann auf $g$, wenn die Gleichung erfüllt ist. Ist der Vektor $n$ normiert, d. h. $|n|=1$, so heißt diese Gleichung [Hessesche Normalform](https://de.wikipedia.org/wiki/Hessesche_Normalform) von $g$.
 
 
-**Beispiel 1.** Gegeben seien die beiden Punkte $A=(1,2)^\top$ und $B=(3,-1)^\top$ in $\mathbb{R}^2$ und $g$ die durch $A$ und $B$ eindeutig festgelegte Gerade. Hieraus berechnen sich: 
+**Beispiel 1.** Gegeben seien die beiden Punkte $A=(1,2)^\top$ und $B=(3,-1)^\top$ in $\mathbb{R}^2$ und $g$ die durch $A$ und $B$ eindeutig festgelegte Gerade. Hieraus lassen sich ableiten: 
 
-1. Eine Gleichung der Geraden $g$ durch Einsetzen der Punktkoordinaten in die allgemeine Gleichung $a\cdot x+b\cdot y+c=0$ mit zu bestimmenden reellen Koeffizienten $a$, $b$ und $c$. $$ \left\{\begin{array}{rrr} a+2b+c & = & 0 \\ 3a-b+c & = & 0\end{array}\right.\quad\leftrightarrow\quad(a,b,c)=\lambda\cdot(3,2,-7)\quad\leadsto\quad 3\cdot x+2\cdot y-7=0 $$ worin $\lambda\in\mathbb{R}^\times$ jede von Null verschiedene, reelle Zahl sein darf. 
-2. Eine mögliche Parameterdarstellung von $g$ gemäß $$ X=\left(\begin{array}{c}x\\y\end{array}\right)=\left(\begin{array}{c}1\\2\end{array}\right)+\lambda\cdot \left(\begin{array}{c}2\\-3\end{array}\right)\quad\,,\;\lambda\in\mathbb{R} $$ worin $$ \left(\begin{array}{c}1\\2\end{array}\right)\quad\text{bzw.}\quad \left(\begin{array}{c}2\\-3\end{array}\right)=\left(\begin{array}{c}3\\-1\end{array}\right)-\left(\begin{array}{c}1\\2\end{array}\right) $$ mögliche Stütz- beziehungsweise Richtungsvektor von $g$ darstellen.
+1. Eine Gleichung der Geraden $g$ berechnet sich durch Einsetzen der Punktkoordinaten in die allgemeine Gleichung $a\cdot x+b\cdot y+c=0$ mit zu bestimmenden reellen Koeffizienten $a$, $b$ und $c$ $$ \left\{\begin{array}{rrr} a+2b+c & = & 0 \\ 3a-b+c & = & 0\end{array}\right.\quad\leftrightarrow\quad(a,b,c)=\lambda\cdot(3,2,-7)\quad\leadsto\quad 3\cdot x+2\cdot y-7=0 $$ worin $\lambda\in\mathbb{R}^\times$ jede von Null verschiedene, reelle Zahl sein darf. 
+2. Eine mögliche Parameterdarstellung von $g$ berechnet sich gemäß $$ X=\left(\begin{array}{c}x\\y\end{array}\right)=\left(\begin{array}{c}1\\2\end{array}\right)+\lambda\cdot \left(\begin{array}{c}2\\-3\end{array}\right)\quad\,,\;\lambda\in\mathbb{R} $$ worin $$ \left(\begin{array}{c}1\\2\end{array}\right)\quad\text{bzw.}\quad \left(\begin{array}{c}2\\-3\end{array}\right)=\left(\begin{array}{c}3\\-1\end{array}\right)-\left(\begin{array}{c}1\\2\end{array}\right) $$ einen möglichen Stütz- beziehungsweise Richtungsvektor von $g$ darstellen.
 3. Des Weiteren ist der Vektor $n=\left(\begin{array}{c}3\\2\end{array}\right)$ orthogonal zu jedem Richtungsvektor von $g$, denn: $$ n\cdot \overrightarrow{AB}=\left(\begin{array}{c}3\\2\end{array}\right)\cdot \left(\begin{array}{c}2\\-3\end{array}\right)=3\cdot 2+2\cdot (-3)=0 $$ Damit ist $n$ ein Normalenvektor von $g$ und die Gerade kann durch die Normalengleichung $$n\cdot (X-A)=\left(\begin{array}{c}3\\2\end{array}\right)\cdot \left(\begin{array}{c}x-1\\y-2\end{array}\right)=0$$ beschrieben werden.
 
 **Bemerkung 1.** Für $|n|=1$ bezeichnet das Absolutglied in der Geradengleichung (Hessesche Normalform) den orientierten Abstand der Geraden $g$ vom Koordinatenursprung.
@@ -5681,8 +5675,37 @@ Werden die Koordinaten der Punkte $P_1$ beziehungsweise $P_2$ in die Matrix eing
 
 ****************************************
 
+**Frage 2.** Ermitteln Sie für die Gerade $g$ mit der Parameterdarstellung $$ \begin{pmatrix} x \\ y \end{pmatrix}=\begin{pmatrix} 3 \\ 4 \end{pmatrix}+\lambda\cdot\begin{pmatrix} 1 \\ 2 \end{pmatrix}\,,\quad\lambda\in\mathbb{R} $$ eine Gleichung in Koordinaten $x$ und $y$ eines allgemeinen Punktes $P\in g$.
+
+[[ ]] $x+2y-11=0$
+[[X]] $2x-y-2=0$
+[[X]] $2y+4=4x$
+[[?]] Unter Benutzung des Richtungsvektors der Geraden $g$ lässt sich ein Normalenvektor dieser Gerade berechnen. Unter Nutzung eines Punktes auf $g$ ist hieraus die Normalform der Geradengleichung abzuleiten.
+****************************************
+
+Der in der Parameterdarstellung verwendete Richtungsvektor der Geraden $g$ ist $r=(1,2)^\top$, woraus sich unmittelbar ein Normalenvektor $n$ vermittels $n\cdot r=0$ bilden lässt $$ n=\begin{pmatrix} 2 \\ -1 \end{pmatrix} $$ Die Komponenten dieses Vektors lassen sich als Koeffizienten von $x$ beziehungsweise $y$ in der allgemeinen, linearen Gleichung von $g$ verwenden $$ 2x-y+c=0 $$ Der hierin auftretende reelle Parameter ist noch zu bestimmen. Wird in diese Gleichung der in der Parameterdarstellung verwendete Stützpunkt $P(3,4)$ eingesetzt, lässt sich $c$ berechnen $$ 2\cdot 3-4+c=0\quad\leftrightarrow\quad d=-2 $$ Die hieraus bestimmte Gleichung beschreibt bis auf einen von Null verschiedenen Faktor die Gerade $g$ eindeutig.
+
+****************************************
+
+**Frage 3.** Gegeben ist eine Gerade $h$ mit der linearen Gleichung $x+2y-3=0$. Ermitteln Sie hieraus eine Parameterdarstellung von $h$ unter Nutzung des reellen Parameters $\lambda$.
+
+[[ ]] $\begin{pmatrix} x \\ y \end{pmatrix}=\begin{pmatrix} 3 \\ 1 \end{pmatrix}+\lambda\cdot\begin{pmatrix} 2 \\ -1 \end{pmatrix}$
+[[X]] $\begin{pmatrix} x \\ y \end{pmatrix}=\begin{pmatrix} 3 \\ 0 \end{pmatrix}+\lambda\cdot\begin{pmatrix} 2 \\ -1 \end{pmatrix}$
+[[X]] $\begin{pmatrix} x \\ y \end{pmatrix}=\begin{pmatrix} 0 \\ \frac{3}{2} \end{pmatrix}+\lambda\cdot\begin{pmatrix} -3 \\ \frac{3}{2} \end{pmatrix}$
+[[ ]] $\begin{pmatrix} x \\ y \end{pmatrix}=\begin{pmatrix} 3 \\ 0 \end{pmatrix}+\lambda\cdot\begin{pmatrix} -2 \\ -1 \end{pmatrix}$
+[[?]] Die in der Gleichung auftretenden Unbekannten bezeichnen die kartesischen Koordinaten eines allgemeinen Punktes $P$ auf $h$. Ein Punkt liegt auf der Geraden $h$, genau dann, wenn seine kartesischen Koordinaten die Geradengleichung lösen. Die Koeffizienten der Variablen $x$ und $y$ in der obigen Gleichung lassen sich als Komponenten eines Normalenvektors der Geraden interpretieren.
+****************************************
+
+Zwei markante Punkte auf $h$ sind ihre Schnittpunkte mit den beiden Koordinatenachsen. Durch Einsetzen von $x=0$ beziehungsweise $y=0$ in die obige Gleichung lassen sich die kartesischen Koordinaten der Schnittpunkte leicht berechnen $$ S_x(3,0) \quad\text{bzw.}\quad S_y\left(0,\frac{3}{2}\right) $$ Der Richtungsvektor von $h$ lässt sich beispielsweise als Differenzvektor $$ r=\overrightarrow{S_xS_y}=\begin{pmatrix} 0-3 \\\frac{3}{2}-0 \end{pmatrix}=\begin{pmatrix} -3 \\\frac{3}{2} \end{pmatrix}=\left(-\frac{3}{2}\right)\cdot\begin{pmatrix} 2 \\ -1 \end{pmatrix} $$ Hierbei ist $r$ orthogonal zum Normalenvektor $n$ der Ebene mit $r\cdot n=0$. Die beiden restlichen Antwortoptionen beschreiben nicht $h$, da der Stützpunkt beziehungsweise Richtungvektor nicht zur Gerade passen.
+
+****************************************
+
 
 ### Grundelemente im  Raum
+
+
+Begriffe
+===
 
 
 In diesem Abschnitt wird die Darstellung von Grundelementen des affinen Raumes $\mathbb{R}^3$ betrachtet.
@@ -5712,6 +5735,19 @@ $$ ist die Punktmenge einer Ebene $E$ in $\mathbb{R}^3$. Der Punkt $(x,y,z)^\top
 >
 >* *Normalenform.* Sind $P, Q, R\in\mathbb{R}^3$ drei Punkte einer Ebene $E$, welche nicht auf einer gemeinsamen Geraden liegen, so kann jeder Punkt $X$ der Ebene durch die Gleichung $$ n\cdot\left(X-P\right)=n\cdot\overrightarrow{PX}=0 $$ mit $$n=(Q-P)\times (R-P)=\overrightarrow{PQ}\times\overrightarrow{PR}$$ beschrieben werden. Hierbei ist $\times$ das Vektorprodukt in $\mathbb{R}^3$. Speziell für Vektoren $n$ der Norm/Länge $|n|=1$ heißt diese Normalengleichung auch [Hessesche Normalform](https://de.wikipedia.org/wiki/Hessesche_Normalform) von $E$. Der Vektor $n$ ist dann ein **Einheitsnormalenvektor** der Ebene $E$.
 
+
+Anwendungen
+===
+
+
+**Beispiel 1.** In der $xy$-Ebene befinde sich eine ovale Scheibe, die um eine Achse parallel zur $z$-Achse durch den Punkt $D$ drehbar gelagert ist, siehe nachstehende Abbildung. Es wirken Kräfte $\vec{F}_1$, $\vec{F}_2$ und $\vec{F}_3$ in den Punkten $P_1$, $P_2$ und $P_3$ entlang der Scheibe.
+
+1. Ermitteln Sie anhand der Abbildung die Kräfte $\vec{F}_1$, $\vec{F}_2$ und $\vec{F}_3$ und berechnen Sie deren Beträge (Einheit $1{\rm N}$).
+ \item Berechnen Sie die Drehmomente $\vec{M}_i=\vec{r}_i\times\vec{F}_i$ mit $i\in\{1,2\}$, worin $\vec{F}_i$ die (linienfl\"uchtige) Kraftwirkung und $\vec{r}_i$ (Einheit $1{\rm m}$) den Differenzvektor von $D$ zu einem beliebigen Punkt auf der Wirkungslinie von $\vec{F}_i$ bezeichnet. Begr\"unden Sie, warum $\vec{M}_3=\vec{o}$ (Nullvektor) gilt.
+ \item Berechnen Sie das aus den Anteilen $\vec{M}_1$ und $\vec{M}_2$ resultierende Drehmoment $\vec{M}=\vec{r}\times\vec{F}$.
+\end{enumerate}
+
+
 [^1]: In $\mathbb{R}^3$ kann eine Gerade nicht, wie im Fall des $\mathbb{R}^2$, durch eine einzelne lineare Gleichung beschrieben werden.
 
 
@@ -5719,6 +5755,13 @@ $$ ist die Punktmenge einer Ebene $E$ in $\mathbb{R}^3$. Der Punkt $(x,y,z)^\top
 
 
 In diesem Abschnitt sollen nun die relative Lage von Grundelementen der Ebene und nachfolgend des dreidimensionalen Raumes betrachtet werden.
+
+
+Zwei Punkte
+===
+
+
+Für zwei Punkte der Ebene lässt sich unter Benutzung des Satzes von Pythagoras der euklidische Abstand dieser Punkte berechnen. Bezeichnen $(x_j,y_j)$ die kartesischen Koordinaten der Punkte $P_j$, so berechnet sich $$ \overline{P_1P_2}=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2} $$
 
 
 Punkt und Gerade
@@ -5757,10 +5800,22 @@ Für den Abstand zweier paralleler Geraden ergibt sich:
 <!-- style="background-color: lightgray;"-->
 >**Abstand paralleler Geraden.** Sind $g$ und $h$ parallele Geraden, so gilt für den Abstand $\operatorname{dist}(g,h)$ von $g$ zu $h$ die Gleichung $$ d(g,h)=\frac{\overrightarrow{PQ}\cdot n}{|n|} $$ wobei $P$ ein beliebiger Punkt auf $g$, der Punkt $Q$ beliebig auf $h$ gewählt ist und $n$ ein Normalenvektor von $g$ und damit von $h$ ist.
 
+**Beispiel 4.** Für die parallelen Geraden in Beispiel 2 sind die Punkte $P(-1,3)$ auf der Geraden $g$ beziehungsweise $Q(-1,2)$ auf der Geraden $h$ gegeben. Des Weiteren ist $r=(4,1)^\top$ ein gemeinsamer Richtungsvektor beider Geraden. Hieraus lässt sich der gemeinsame Normalenvektor der Geraden ableiten $n=(-1,4)^\top$, so dass sich mit der vorgenannten Formel der Abstand beider Geraden berechnen lässt $$ d(g,h)=\frac{\overrightarrow{PQ}\cdot n}{|n|}=\frac{\begin{pmatrix} -1-(-1) \\ 2-3 \end{pmatrix}\cdot\begin{pmatrix} -1 \\ 4 \end{pmatrix}}{\sqrt{(-1)^2+4^2}}=\frac{-4}{\sqrt{17}}=-\frac{4}{17}\cdot\sqrt{17}\approx-0.970 $$ Der Abstand ist in Richtung des Normalenvektors $n$ zu interpretieren, ist also ein orientierter Abstand.
+
 **Bemerkung 1.** Diese Gleichung kann auch zur Berechnung des Abstandes eines Punktes von einer Geraden benutzt werden.
 
+Schneiden sich zwei Geraden der Ebene, so lässt sich der eingeschlossene Winkel zwischen beiden Geraden bestimmen.
+
 <!-- style="background-color: lightgray;"-->
->**Schnittwinkel sich schneidender Geraden.** Der Schnittwinkel zweier sich schneidender Geraden ist der Winkel zwischen zwei Richtungsvektoren der Geraden, welche einen Winkel zwischen $0^\circ$ und $90^\circ$ einschließen.
+>**Schnittwinkel.** Der Schnittwinkel zweier sich schneidender Geraden ist der Winkel zwischen zwei Richtungsvektoren der Geraden, welche einen Winkel zwischen $0^\circ$ und $90^\circ$ einschließen. Sind $g=AB$ und $h=CD$, so berechnet sich der Schnittwinkel $\varphi=\measuredangle(g,h)$ gemäß $$ \varphi=\arccos{\left(\frac{\left|\overrightarrow{AB}\cdot\overrightarrow{CD}\right|}{\left|\overrightarrow{AB}\right|\cdot\left|\overrightarrow{CD}\right|}\right)} $$ worin $\overrightarrow{AB}\cdot\overrightarrow{CD}$ das Skalarprodukt der Richuntgsvektoren beider Geraden bezeichnet, während im Nenner des gemeinen Bruchs das Produkt der Normen dieser Vektoren steht.
+
+
+Sicher gewusst
+===
+
+Testen Sie Ihr Wissen aus diesem Abschnitt bei der Beantwortung der nachstehenden Fragen.
+
+**Frage 1.** 
 
 
 ### Lage im Raum
