@@ -2532,14 +2532,8 @@ $$ ebenso die restlichen Multiplikationsregeln aus Definition 1.
 <!-- style="background-color: lightgray;"-->
 >Es seien zwei Quaternionen $Q_m=a_m+b_m\,{i}+c_m\,{j}+d_m\,{k}\in\mathbb{H}$ mit $m\in\{1,2\}$ gemäß Definition 1 gegeben. Es sind die folgenden Operationen erklärt:
 >
->1. Die **Addition** von $Q_1$ und $Q_2$ erfolgt komponentenweise mit $$
-  Q_1+Q_2=(a_1+a_2)+(b_1+b_2){i}+(c_1+c_2){j}+(d_1+d_2){k}
-$$
->2. Die **Multiplikation** von $Q_1$ und $Q_2$ ist erklärt durch $$
-  \begin{split}
-    Q_1\cdot Q_2 & =\left(a_1a_2-b_1b_2-c_1c_2-d_1d_2\right) + \left(a_1b_2+b_1a_2+c_1d_2-d_1c_2\right){i} \\
-    & + \left(a_1c_2+c_1a_2+d_1b_2-b_1d_2\right){j} + \left(a_1d_2+d_1a_2+b_1c_2-c_1b_2\right){k} \\
-  \end{split}
+>1. Die **Addition** von $Q_1$ und $Q_2$ erfolgt komponentenweise mit $$ Q_1+Q_2=(a_1+a_2)+(b_1+b_2){i}+(c_1+c_2){j}+(d_1+d_2){k} $$
+>2. Die **Multiplikation** von $Q_1$ und $Q_2$ ist erklärt durch $$ \begin{split} Q_1\cdot Q_2 & =\left(a_1a_2-b_1b_2-c_1c_2-d_1d_2\right) + \left(a_1b_2+b_1a_2+c_1d_2-d_1c_2\right){i} \\ & + \left(a_1c_2+c_1a_2+d_1b_2-b_1d_2\right){j} + \left(a_1d_2+d_1a_2+b_1c_2-c_1b_2\right){k} \\ \end{split}
 $$ Dieses Produkt erhält man durch Ausmultiplizieren der Klammern unter Benutzung der Produktregeln in Definition 1.
 
 **Beispiel 1.** Gegeben sind die Quaternionen $Q_1=1+j$ und $Q_2=1+i$. Dann berechnen sich die Produkte $$
@@ -3518,6 +3512,7 @@ $$ Linker bzw. rechter Faktor sind Matrizen vom Typ $(2,1)$ bzw. $(1,2)$, währe
   \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}=
   \begin{pmatrix} a & b \\ c & d \end{pmatrix}
 $$ Der rechte Faktor verhält sich im Matrixprodukt wie die Eins beim Multiplizieren reeller Zahlen: daher der Name zweireihige Einheitsmatrix $E$. Vergleiche Definition 2.
+4. Die Multiplikation komplexer Zahlen lässt sich als Matrixmultiplikation darstellen. Setzt man $z_j=a_j+i\cdot b_j$ mit Realteil $a_j=\operatorname{Re}{z_j}$ und Imaginärteil $b_j=\operatorname{Im}{z_j}$ sowie $i^2=-1$ als reellen Vektor bzw. reelle Matrix, so stellt sich das Produkt $z=z_1\cdot z_2$ vermöge $$ \begin{pmatrix} a \\ b \end{pmatrix}=\begin{pmatrix} a_1 & -b_1 \\ b_1 & a_1 \end{pmatrix}\cdot\begin{pmatrix} a_2 \\ b_2 \end{pmatrix}=\begin{pmatrix} a_1 & b_1 \end{pmatrix}\cdot\begin{pmatrix} a_2 & b_2 \\ -b_2 & a_1 \end{pmatrix} $$ für $z=a+i\cdot b$ dar.
 
 **Beispiel 6.** Unter Benutzung spezieller Matrixprodukte lassen sich Drehungen der Ebene um den Koordinatenursprung eines kartesischen Koordinatensystems darstellen.
 
@@ -3534,7 +3529,7 @@ $$ um den Koordinatenursprung $O(0,0)$ ist beschrieben durch das Matrixprodukt i
   \begin{pmatrix}
     \textcolor{magenta}{\cos{\varphi}}\cdot \textcolor{blue}{x} - \textcolor{magenta}{\sin{\varphi}}\cdot \textcolor{blue}{y} \\ \textcolor{magenta}{\sin{\varphi}}\cdot \textcolor{blue}{x} + \textcolor{magenta}{\cos{\varphi}}\cdot \textcolor{blue}{y}
   \end{pmatrix}
-$$ worin $\varphi$ den Drehwinkel bezeichnet.
+$$ worin $\varphi$ den Drehwinkel bezeichnet. Dies entspricht dem Vorgehen unter Verwendung komplexer Zahlen unter Nutzung der Matrixmultiplikation. Vergleiche Bemerkung 6 im Abschnitt [Komplexe Zahlen](#Komplexe-Zahlen).
 2. Für die Hintereinanderausführung zweier Drehungen um $O$ mit Drehwinkeln $\varphi$ bzw. $\psi$ gelten $$
   \begin{pmatrix}
     \textcolor{magenta}{\cos{\varphi}} & \textcolor{magenta}{-\sin{\varphi}} \\ \textcolor{magenta}{\sin{\varphi}} & \textcolor{magenta}{\cos{\varphi}}
@@ -5102,17 +5097,6 @@ cross(a,b)-cross(b,a)
 ```
 @Algebrite.eval
 
-
-**Beispiel 10.** Die Wirkung einer Kraft beziehungsweise eines Systems von Kräften auf einen drehbaren Körper lässt sich mithilfe des [Drehmomentes](https://de.wikipedia.org/wiki/Drehmoment) $\vec{M}$ physikalisch beschreiben. Dieses berechnet sich $\vec{M}=\vec{r}\times\vec{F}$, worin $\vec{F}$ die wirkende (resultierende) Kraft und $\vec{r}$ den Verbindungsvektor vom Bezugspunkt des Drehmoments zum Angriffspunkt der Kraft bezeichnen. Für die vektorielle Größe $\vec{M}$ gelten hierbei
-
-1. $\vec{M}\perp\vec{r}$ und $\vec{M}\perp\vec{F}$ sowie $|\vec{M}|=|\vec{r}|\cdot|\vec{F}|\cdot\sin{\varphi}$ mit $\varphi=\measuredangle{(\vec{r},\vec{F})}$, vergleiche Definition des Vektorproduktes
-2. Greift $\vec{F}$ an einem (beliebigen) Punkt $Q$ entlang ihrer Wirkungslinie durch $P$ an, so gilt $\vec{r}_Q=\vec{r}+\overrightarrow{PQ}$ mit $\overrightarrow{PQ}=\vec{s}$. Die in $Q$ angreifende Kraft $\vec{F}$ erzeugt ein Drehmoment $$ \vec{M}_Q=\vec{r}_Q\times\vec{F}=(\vec{r}+\vec{s})\times\vec{F}=\vec{r}\times\vec{F}+\vec{s}\times\vec{F}=\vec{M} $$ d. h. das Drehmoment bleibt entlang der Wirkungslinie von $\vec{F}$ durch $P$ (bzw. $Q$) erhalten.
-
-![Drehmoment](img/mat-bild-32.png "_Fig._ Drehmoment $\vec{M}$ an einer drehbar gelagerten Scheibe durch Wirkung einer Kraft $\vec{F}$ in $P$. Die Scheibe ist um eine Gerade durch $D$ drehbar gelagert. Wird die Kraft entlang ihrer Wirkungslnie nach $Q$ verschoben, ändert sich das erzeugte Drehmoment nicht.")
-
-
-**Bemerkung 5.** Im Ingenieurwesen auftretende, vektorielle Größen, die entlang ihrer Wirkungslinie unverändert bleiben, heißen **linienflüchtig**. Demgegenüber werden auch [ortsgebundene](https://de.wikipedia.org/wiki/Gebundener_Vektor) - (fester Angriffspunkt) und *freien*, physikalischen Größen betrachtet.
-
 Im nachstehenden Video werden einzelne (mathematische) Anwendungsmöglichkeiten des Vektorproduktes erläutert.
 
 !?[Vektorprodukt2](https://www.youtube.com/watch?v=YpbW8uuunXI "Vektorprodukt / Kreuzprodukt, Anwendungsmöglichkeiten, Daniel Jung.")
@@ -5124,11 +5108,11 @@ Spatprodukt
 
 >**Definition 7.** Für drei Vektoren $a\in\mathbb{R}^3$,$b\in\mathbb{R}^3$ und $c\in\mathbb{R}^3$ heißt die reelle Zahl $$ (a\times b)\cdot c=\left[\begin{pmatrix} a_1 \\ a_2 \\ a_3 \end{pmatrix}\times\begin{pmatrix} b_1 \\ b_2 \\ b_3 \end{pmatrix}\right]\cdot\begin{pmatrix} c_1 \\ c_2 \\ c_3 \end{pmatrix}=\begin{pmatrix} a_2b_3-a_3b_2 \\ a_3b_1-a_1b_3 \\ a_1b_2-a_2b_1 \end{pmatrix}\cdot\begin{pmatrix} c_1 \\ c_2 \\ c_3 \end{pmatrix}= (a_2b_3-a_3b_2)\cdot c_1+(a_3b_1-a_1b_3)\cdot c_2+(a_1b_2-a_2b_1)\cdot c_3 $$ das [Spatprodukt](https://de.wikipedia.org/wiki/Spatprodukt) der Vektoren $a$, $b$ und $c$.
 
-**Bemerkung 6.** Aus der vorstehenden Definition folgt unmittelbar $(a\times b)\cdot c=\det(a,b,c)$, d. h. das Spatprodukt lässt sich als Determinante einer dreireihigen Matrix darstellen, in deren Zeilen / Spalten die Komponenten der drei Faktoren $a$, $b$ und $c$ stehen. Vergleiche hierzu die Definition einer Determinante dritter Ordnung im Abschnitt [Determinanten](#Determinanten). Mit den Eigenschaften von Determinanten folgen aus dieser Darstellung wiederum die Gleichheiten $$ (a\times b)\cdot c=(b\times c)\cdot a=(c\times a)\cdot b $$ die durch zyklisches Vertauschen der einzelnen Faktoren entstehen. Das Spatprodukt ist jedoch **nicht kommutativ** (bei beliebigem Tauschen der Reihenfolge aller drei Faktoren.)
+**Bemerkung 5.** Aus der vorstehenden Definition folgt unmittelbar $(a\times b)\cdot c=\det(a,b,c)$, d. h. das Spatprodukt lässt sich als Determinante einer dreireihigen Matrix darstellen, in deren Zeilen / Spalten die Komponenten der drei Faktoren $a$, $b$ und $c$ stehen. Vergleiche hierzu die Definition einer Determinante dritter Ordnung im Abschnitt [Determinanten](#Determinanten). Mit den Eigenschaften von Determinanten folgen aus dieser Darstellung wiederum die Gleichheiten $$ (a\times b)\cdot c=(b\times c)\cdot a=(c\times a)\cdot b $$ die durch zyklisches Vertauschen der einzelnen Faktoren entstehen. Das Spatprodukt ist jedoch **nicht kommutativ** (bei beliebigem Tauschen der Reihenfolge aller drei Faktoren.)
 
 Für eine geometrische Deutung des Spatproduktes von drei Vektoren $a\in\mathbb{R}^3$,$b\in\mathbb{R}^3$ und $c\in\mathbb{R}^3$ lässt sich im Fall ihrer linearen Unabhängigkeit ein [Spat](https://de.wikipedia.org/wiki/Parallelepiped) (Parallelepiped) vorstellen, dessen Kantenvektoren die gegebenen Vektoren darstellen. Für das Volumen dieses Spats ergibt sich durch direktes Nachrechnen $V=|(a\times b)\cdot c|$.
 
-**Beispiel 11.** Zu berechnen sind Volumen und Oberblächeninhalt des Parallelepipeds, dass durch die Vektoren $$ a=\begin{pmatrix} 5 \\ 1 \\ 2 \end{pmatrix}\,,\quad b=\begin{pmatrix} 1 \\ 6 \\ 3 \end{pmatrix}\quad\text{und}\quad c=\begin{pmatrix} 2 \\ -1 \\ 8 \end{pmatrix} $$ aufgespannt wird.
+**Beispiel 10.** Zu berechnen sind Volumen und Oberblächeninhalt des Parallelepipeds, dass durch die Vektoren $$ a=\begin{pmatrix} 5 \\ 1 \\ 2 \end{pmatrix}\,,\quad b=\begin{pmatrix} 1 \\ 6 \\ 3 \end{pmatrix}\quad\text{und}\quad c=\begin{pmatrix} 2 \\ -1 \\ 8 \end{pmatrix} $$ aufgespannt wird.
 
 1. Das Volumen berechnet sich mithilfe des Spatprodukts gemäß Bemerkung 6 $$ V=|\det(a,b,c)|=\left|\begin{pmatrix} 5 & 1 & 2 \\ 1 & 6 & -1 \\ 2 & 3 & 8 \end{pmatrix}\right|=227 $$
 2. Der Inhalt der Oberfläche des Parallelepipeds berechnet sich unter Benutzung des Vektorproduktes gemäß $$ A_0=2\cdot\left( |a\times b|+|a\times c|+|b\times c| \right) $$ worin die Normen der Vektorprodukte die Flächeninhalte der paarweise auftretenden Seitenflächen beschreiben. Mit den Produkten $$ a\times b=\begin{pmatrix} 5 \\ 1 \\ 2 \end{pmatrix}\times \begin{pmatrix} 1 \\ 6 \\ 3 \end{pmatrix}=\begin{pmatrix} -9 \\ -13 \\ 29 \end{pmatrix} \,,\quad  a\times c=\begin{pmatrix} 5 \\ 1 \\ 2 \end{pmatrix}\times \begin{pmatrix} 2 \\ -1 \\ 8 \end{pmatrix}=\begin{pmatrix} 10 \\ -36 \\ -7 \end{pmatrix} \quad\text{und}\quad b\times c=\begin{pmatrix} 1 \\ 6 \\ 3 \end{pmatrix}\times \begin{pmatrix} 2 \\ -1 \\ 8 \end{pmatrix}=\begin{pmatrix} 51 \\ -2 \\ -13 \end{pmatrix} $$ ergibt sich $$ A_0=2\cdot\left(\sqrt{81+169+841}+\sqrt{100+1296+49}+\sqrt{2601+4+169}\right)\approx 247.424 $$
@@ -5740,12 +5724,21 @@ Anwendungen
 ===
 
 
-**Beispiel 1.** In der $xy$-Ebene befinde sich eine ovale Scheibe, die um eine Achse parallel zur $z$-Achse durch den Punkt $D$ drehbar gelagert ist, siehe nachstehende Abbildung. Es wirken Kräfte $\vec{F}_1$, $\vec{F}_2$ und $\vec{F}_3$ in den Punkten $P_1$, $P_2$ und $P_3$ entlang der Scheibe.
+Die Wirkung einer Kraft beziehungsweise eines Systems von Kräften auf einen drehbaren Körper lässt sich mithilfe des [Drehmomentes](https://de.wikipedia.org/wiki/Drehmoment) $\vec{M}$ physikalisch beschreiben. Dieses berechnet sich $\vec{M}=\vec{r}\times\vec{F}$, worin $\vec{F}$ die wirkende (resultierende) Kraft und $\vec{r}$ den Verbindungsvektor vom Bezugspunkt des Drehmoments zum Angriffspunkt der Kraft bezeichnen. Für die vektorielle Größe $\vec{M}$ gelten hierbei
 
-1. Ermitteln Sie anhand der Abbildung die Kräfte $\vec{F}_1$, $\vec{F}_2$ und $\vec{F}_3$ und berechnen Sie deren Beträge (Einheit $1{\rm N}$).
- \item Berechnen Sie die Drehmomente $\vec{M}_i=\vec{r}_i\times\vec{F}_i$ mit $i\in\{1,2\}$, worin $\vec{F}_i$ die (linienfl\"uchtige) Kraftwirkung und $\vec{r}_i$ (Einheit $1{\rm m}$) den Differenzvektor von $D$ zu einem beliebigen Punkt auf der Wirkungslinie von $\vec{F}_i$ bezeichnet. Begr\"unden Sie, warum $\vec{M}_3=\vec{o}$ (Nullvektor) gilt.
- \item Berechnen Sie das aus den Anteilen $\vec{M}_1$ und $\vec{M}_2$ resultierende Drehmoment $\vec{M}=\vec{r}\times\vec{F}$.
-\end{enumerate}
+1. $\vec{M}\perp\vec{r}$ und $\vec{M}\perp\vec{F}$ sowie $|\vec{M}|=|\vec{r}|\cdot|\vec{F}|\cdot\sin{\varphi}$ mit $\varphi=\measuredangle{(\vec{r},\vec{F})}$, vergleiche Definition des Vektorproduktes
+2. Greift $\vec{F}$ an einem (beliebigen) Punkt $Q$ entlang ihrer Wirkungslinie durch $P$ an, so gilt $\vec{r}_Q=\vec{r}+\overrightarrow{PQ}$ mit $\overrightarrow{PQ}=\vec{s}$. Die in $Q$ angreifende Kraft $\vec{F}$ erzeugt ein Drehmoment $$ \vec{M}_Q=\vec{r}_Q\times\vec{F}=(\vec{r}+\vec{s})\times\vec{F}=\vec{r}\times\vec{F}+\vec{s}\times\vec{F}=\vec{M} $$ d. h. das Drehmoment bleibt entlang der Wirkungslinie von $\vec{F}$ durch $P$ (bzw. $Q$) erhalten.
+
+![Drehmoment](img/mat-bild-32.png "_Fig._ Drehmoment $\vec{M}$ an einer drehbar gelagerten Scheibe durch Wirkung einer Kraft $\vec{F}$ in $P$. Die Scheibe ist um eine Gerade durch $D$ drehbar gelagert. Wird die Kraft entlang ihrer Wirkungslnie nach $Q$ verschoben, ändert sich das erzeugte Drehmoment nicht.")
+
+
+**Bemerkung 1.** Im Ingenieurwesen auftretende, vektorielle Größen, die entlang ihrer Wirkungslinie unverändert bleiben, heißen **linienflüchtig**. Demgegenüber werden auch [ortsgebundene](https://de.wikipedia.org/wiki/Gebundener_Vektor) - (fester Angriffspunkt) und *freien*, physikalischen Größen betrachtet.
+
+**Beispiel 1.** In der $xy$-Ebene des dreidimensionalen (affinen) Raumes befinde sich eine ovale Scheibe, die um eine Achse parallel zur $z$-Achse durch den Punkt $D$ drehbar gelagert ist, siehe nachstehende Abbildung. Es wirken Kräfte $\vec{F}_j$, $j\in\{1,2,3\}$, entlang der Scheibe in den Punkten $P_j$.
+
+1. Aus der Abbildung soll jeweils die Kraft $\vec{F}_j$ mit $j\in\{1,2,3\}$ ermittelt und deren Betrag (Einheit $1{\rm N}$) berechnet werden.
+2. Das Drehmoment berechnet sich gemäß $\vec{M}_i=\vec{r}_i\times\vec{F}_i$ mit $i\in\{1,2\}$, worin $\vec{F}_i$ die linienflüchtige Kraftwirkung und $\vec{r}_i$ (Einheit $1{\rm m}$) den Differenzvektor von $D$ zu einem beliebigen Punkt auf der Wirkungslinie von $\vec{F}_i$ bezeichnen. ... Hiermit lässt sich anschließend begründen, das $\vec{M}_3=\vec{o}$ der Nullvektor ist.
+3. Schließlich lässt sich aus den Anteilen $\vec{M}_1$ und $\vec{M}_2$ das resultierende Drehmoment $\vec{M}=\vec{r}\times\vec{F}$ berechnen.
 
 
 [^1]: In $\mathbb{R}^3$ kann eine Gerade nicht, wie im Fall des $\mathbb{R}^2$, durch eine einzelne lineare Gleichung beschrieben werden.
@@ -5754,7 +5747,7 @@ Anwendungen
 ### Lage in der Ebene
 
 
-In diesem Abschnitt sollen nun die relative Lage von Grundelementen der Ebene und nachfolgend des dreidimensionalen Raumes betrachtet werden.
+In diesem Abschnitt wird die relative Lage von Grundelementen der Ebene und nachfolgend des dreidimensionalen Raumes betrachtet.
 
 
 Zwei Punkte
@@ -5768,11 +5761,11 @@ Punkt und Gerade
 ===
 
 
-Ist $A$ ein Punkt und $g$ eine Gerade in $\mathbb{R}^2$, so werden genau zwei Fälle ihrer gegenseitigen Lage unterschieden: Entweder der Punkt $A$ liegt auf der Geraden $g$ oder $A$ liegt nicht auf $g$.
+Ist $A$ ein Punkt und $g$ eine Gerade in $\mathbb{R}^2$, so werden genau zwei Fälle ihrer gegenseitigen Lage unterschieden: Entweder der Punkt $A$ liegt auf der Geraden $g$ oder $A$ liegt nicht auf $g$. Zur Berechnung des Abstandes eines Punktes $A$ von einer Geraden $g$ in der Ebene lässt sich die Abstandsformel für den Fall zweier paralleler Geraden benutzen, vergleiche die folgende Bemerkung.
 
 **Beispiel 1.** Gegeben seien die Punkte $P=(1,2)^\top$, $Q(-9,1)^\top$ und die Gerade $g$ durch die Parameterdarstellung $$ \left(\begin{array}{cc}x\\y\end{array}\right)=\left(\begin{array}{cc}-1\\3\end{array}\right)+\lambda\cdot \left(\begin{array}{cc}4\\1\end{array}\right) $$ mit mit dem Parameter $\lambda\in\mathbb{R}$. Der Punkt $P$ liegt auf $g$, falls ein Parameterwert $\lambda$ existiert, mit dem $P$ sich eindeutig in der Parameterdarstellung von $g$ berechnen lässt. Wegen $$ \left(\begin{array}{cc}-1\\3\end{array}\right)+\lambda\cdot \left(\begin{array}{cc}4\\1\end{array}\right) = \left(\begin{array}{cc}1\\2\end{array}\right)\quad\leftrightarrow\quad (-1+4\cdot \lambda =1) \;\land\; (3+\lambda =2) $$ nimmt der Parameter in den einzelnen Gleichungen die Werte $\frac{1}{2}$ beziehungsweise $-1$ an. Damit liegt der Punkt $P$ nicht auf der Geraden $g$. Andererseits gilt für den Punkt $Q$ $$ \left(\begin{array}{cc}-1\\3\end{array}\right)+\lambda\cdot \left(\begin{array}{cc}4\\1\end{array}\right) = \left(\begin{array}{cc}-9\\1\end{array}\right)\quad\leftrightarrow\quad (-1+4\cdot \lambda =-9) \;\land\; (3+\lambda =1)\quad\leftrightarrow\quad \lambda=-2 $$ Somit liegt $Q$ auf $g$.
 
-Alternativ lässt sich die Parameterdarstellung von $g$ in eine Gleichungsdarstellung, d. h. eine lineare Gleichung in den Unbekannten $x$ und $y$ umwandeln. Aus der Parameterdarstellung liest man deren Koordinatendarstellungen ab $$ x=-1+4\cdot \lambda \;\land\; y=3+\lambda $$ woraus sich der Parameter $\lambda$ beispielsweise mittels $$ x-4\cdot y = -1+4\lambda-4\cdot (3+\lambda)=-1+4\lambda -12-4\lambda = -13 $$ eliminieren lässt, d. h. die Gerade $g$ wird beschrieben durch die Gleichung $x-4\cdot y+13=0$. Hiermit lassen sich zeigen $P\not\in g$, da $1-4\cdot 2+13=6\not=0$ sowie $Q\in g$, da $-9-4\cdot 1+13=0$.
+Alternativ lässt sich die Parameterdarstellung von $g$ in eine Gleichungsdarstellung, d. h. eine lineare Gleichung in den Unbekannten $x$ und $y$ umwandeln. Aus der Parameterdarstellung liest man deren Koordinatendarstellungen ab $$ x=-1+4\cdot \lambda \;\land\; y=3+\lambda $$ woraus sich der Parameter $\lambda$ beispielsweise mittels $$ x-4\cdot y = -1+4\lambda-4\cdot (3+\lambda)=-1+4\lambda -12-4\lambda = -13 $$ eliminieren lässt, d. h. die Gerade $g$ wird beschrieben durch die Gleichung $x-4\cdot y+13=0$. Hiermit lassen sich durch Einsetzen der Koordinaten der Punkte jeweils zeigen: $P\not\in g$, da $1-4\cdot 2+13=6\not=0$ sowie $Q\in g$, da $-9-4\cdot 1+13=0$.
 
 
 Zwei Geraden
@@ -5798,9 +5791,11 @@ Alternativ ließen sich die Richtungsvektoren von $g$ und $h$ betrachten. Offens
 Für den Abstand zweier paralleler Geraden ergibt sich:
 
 <!-- style="background-color: lightgray;"-->
->**Abstand paralleler Geraden.** Sind $g$ und $h$ parallele Geraden, so gilt für den Abstand $\operatorname{dist}(g,h)$ von $g$ zu $h$ die Gleichung $$ d(g,h)=\frac{\overrightarrow{PQ}\cdot n}{|n|} $$ wobei $P$ ein beliebiger Punkt auf $g$, der Punkt $Q$ beliebig auf $h$ gewählt ist und $n$ ein Normalenvektor von $g$ und damit von $h$ ist.
+>**Abstand paralleler Geraden.** Sind $g$ und $h$ parallele Geraden, so gilt für den Abstand $\operatorname{dist}(g,h)$ von $g$ zu $h$ die Gleichung $$ \operatorname{dist}(g,h)=\frac{\overrightarrow{PQ}\cdot n}{|n|} $$ wobei $P$ ein beliebiger Punkt auf $g$, der Punkt $Q$ beliebig auf $h$ gewählt ist und $n$ ein Normalenvektor von $g$ und damit von $h$ ist.
 
-**Beispiel 4.** Für die parallelen Geraden in Beispiel 2 sind die Punkte $P(-1,3)$ auf der Geraden $g$ beziehungsweise $Q(-1,2)$ auf der Geraden $h$ gegeben. Des Weiteren ist $r=(4,1)^\top$ ein gemeinsamer Richtungsvektor beider Geraden. Hieraus lässt sich der gemeinsame Normalenvektor der Geraden ableiten $n=(-1,4)^\top$, so dass sich mit der vorgenannten Formel der Abstand beider Geraden berechnen lässt $$ d(g,h)=\frac{\overrightarrow{PQ}\cdot n}{|n|}=\frac{\begin{pmatrix} -1-(-1) \\ 2-3 \end{pmatrix}\cdot\begin{pmatrix} -1 \\ 4 \end{pmatrix}}{\sqrt{(-1)^2+4^2}}=\frac{-4}{\sqrt{17}}=-\frac{4}{17}\cdot\sqrt{17}\approx-0.970 $$ Der Abstand ist in Richtung des Normalenvektors $n$ zu interpretieren, ist also ein orientierter Abstand.
+![Abstand paralleler Geraden](img/mat-bild-33.png "_Fig._ Abstand paralleler Geraden $g\parallel h$ als Skalarprodukt eines Einheitsnormalenvektors beider Geraden mit dem Differenzvektor $\overrightarrow{PQ}$ zwischen zwei beliebigen Punkten $P\in g$ und $Q\in h$ der Geraden.")
+
+**Beispiel 4.** Für die parallelen Geraden in Beispiel 2 sind die Punkte $P(-1,3)$ auf der Geraden $g$ beziehungsweise $Q(-1,2)$ auf der Geraden $h$ gegeben. Des Weiteren ist $r=(4,1)^\top$ ein gemeinsamer Richtungsvektor beider Geraden. Hieraus lässt sich der gemeinsame Normalenvektor der Geraden ableiten $n=(-1,4)^\top$, so dass sich mit der vorgenannten Formel der Abstand beider Geraden berechnen lässt $$ \operatorname{dist}(g,h)=\frac{\overrightarrow{PQ}\cdot n}{|n|}=\frac{\begin{pmatrix} -1-(-1) \\ 2-3 \end{pmatrix}\cdot\begin{pmatrix} -1 \\ 4 \end{pmatrix}}{\sqrt{(-1)^2+4^2}}=\frac{-4}{\sqrt{17}}=-\frac{4}{17}\cdot\sqrt{17}\approx-0.970 $$ Der Abstand ist in Richtung des Normalenvektors $n$ zu interpretieren, ist also ein orientierter Abstand.
 
 **Bemerkung 1.** Diese Gleichung kann auch zur Berechnung des Abstandes eines Punktes von einer Geraden benutzt werden.
 
@@ -5815,10 +5810,13 @@ Sicher gewusst
 
 Testen Sie Ihr Wissen aus diesem Abschnitt bei der Beantwortung der nachstehenden Fragen.
 
-**Frage 1.** 
+**Frage 1.** ..
 
 
 ### Lage im Raum
+
+
+In diesem Abschnitt wird die relative Lage von Grundelementen des dreidimensionalen Raumes betrachtet.
 
 
 Zwei Geraden
