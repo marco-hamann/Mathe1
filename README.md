@@ -95,7 +95,7 @@ $$} {1}{Zur Prüfung des Wahrheitswertes der Aussage $q$ erhält man nach Einset
 
 Die Aussage $q$ lässt sich mit Hilfe der Javascript-Bibliothek [Algebrite](http://algebrite.org) interaktiv prüfen. Berechnen Sie den Sinus für verschiedene Winkel $\alpha$. Verwenden Sie $\alpha$ im Bogenmaß.
 
-```javascript
+```algebrite
 alpha=30
 sin(alpha/180*pi)
 arcsin(1/2)/pi*180
@@ -179,7 +179,7 @@ Aus der vorstehenden Wahrheitstabelle ergibt sich u. a., dass eine Implikation g
 
 Unter Benutzung der Javascript-Bibliothek [Algebrite](http://algebrite.org/) einfache logische Verknüpfungen wie `and(.,.)` oder `or(.,.)` bzw. `not(.) `interaktiv verwendet werden In den Klammern sind die Wahrheitswerte $1$ bzw. $0$ - entsprechend der Stelligkeit der Operation - durch Komma getrennt einzugeben.
 
-```javascript
+```algebrite
 not(1)
 and(1,1)
 or(not(0),0)
@@ -281,7 +281,7 @@ Testen Sie Ihr erworbenes Wissen und beantworten Sie die nachstehenden Fragen.
 
 1. $p$ bezeichnet eine wahre Aussage, d. h. $73$ ist eine Primzahl. Für eine Prüfung lässt sich beispielsweise die Primfaktorzerlegung unter Nutzung der Javascript-Bibliothek [Algebrite](http://algebrite.org/) verwenden. Alternativ, siehe das [Sieb des Eratosthenes](https://de.wikipedia.org/wiki/Sieb_des_Eratosthenes).
 
-```javascript
+```algebrite
 factor(73)
 factor(74)
 ```
@@ -377,7 +377,7 @@ $$ eine Aussageform. Dann bezeichnet $p(5)$ eine wahre Aussage, während $p(10)$
 
 Unter Benutzung der Javascript-Bibliothek [Algebrite](http://algebrite.org/) lässt sich eine ganze Zahl $x$ als Produkt ihrer Primfaktoren schreiben. Nutzen Sie hierfür den Befehl `factor(.)`.
 
-```javascript
+```algebrite
 x=5
 factor(x)
 ```
@@ -394,7 +394,7 @@ Für jedes Tripel $(a,b,c)$ aus der Grundgesamtheit $X$ lässt durch Einsetzen i
 
 Unter Benutzung der Javascript-Bibliothek [Algebrite](http://algebrite.org/) lässt sich durch den Befehl `subst(a,x,q(x))` der Variablenwert $a$ für die Variable $x$ in den Term $q(x)$ einsetzen. Die Funktion `test(m,n,p)` gibt den Ausdruck $n$ zurück, wenn $m$ wahr ist, andernfalls $p$.
 
-```javascript
+```algebrite
 a=3
 b=4
 c=5
@@ -1114,7 +1114,7 @@ In den beiden letzten Beispielen hängen die zu summierenden Zahlen nicht von de
 
 Unter Benutzung der Javascript-Bibliothek [Algebrite](http://algebrite.org/) lassen sich Summen und Produkte interaktiv berechnen. So berechnet der Befehl `sum(a(j),j,m,n)` die Summe über alle Termwerte des von der Laufvariable $j$ abhängigen Terms $a(j)$ für jede Belegung $j\in\{m,m+1,m+2,...,n\}$. Zu beachten ist, dass der Bezeichner $i$ für die imaginäre Einheit verwendet wird und nicht als Laufvariable benutzt werden kann. Überlegen Sie, welches mathematische Objekt durch den in der letzten Zeile aufgeführten Befehl berechnet werden kann.
 
-```javascript
+```algebrite
 m=1
 n=3
 a=1/(2^j)
@@ -1312,7 +1312,7 @@ $$
 
 Unter Benutzung der Javascript-Bibliothek [Algebrite](http://algebrite.org/) lassen sich die Lösungen obiger Gleichungen interaktiv berechnen. Ausgaben, welche den Ausdruck $i$ enthalten, bezeichnen keine reelle Lösung.
 
-```javascript
+```algebrite
 a=x^2-1
 b=x^2+1
 c=x^2+p*x+q
@@ -1348,7 +1348,7 @@ Das Rechnen mit reellen Zahlen lässt sich auf imaginäre Zahlen übertragen.
 
 Unter Benutzung der Javascript-Bibliothek [Algebrite](http://algebrite.org/) können unter Verwendung des Bezeichners $i$ interaktiv reelle und imaginäre Zahlen verknüpft werden.
 
-```javascript
+```algebrite
 i^2
 simplify(2*i+a*i)
 1/(i^3)
@@ -1367,7 +1367,7 @@ $$ (engl.: ~~c~~omplex numbers).
 
 Die in der Javascript-Bibliothek [Algebrite](http://algebrite.org/) zur Verfügung stehenden Befehle `real(.)` beziehungsweise `imag(.)` geben den Real- beziehungsweise Imaginärteil einer komplexen Zahl zurück.
 
-```javascript
+```algebrite
 z=2+5*i
 real(z)
 imag(z)
@@ -1409,7 +1409,7 @@ $$ heißt $\bar{z}=a+(-1)\cdot b\cdot i$ die zu $z$ [komplex konjugierte Zahl](h
 
 In der Javascript-Bibliothek [Algebrite](http://algebrite.org/) steht zur Bildung der komplex konjugierten Zahl der Befehl `conj(.)` zur Verfügung. Testen Sie diesen Befehl an den Zahlen aus Beispiel 4.
 
-```javascript
+```algebrite
 z=3+2*i
 zc=conj(z)
 zc
@@ -1502,7 +1502,7 @@ In der Javascript-Bibliothek [Algebrite](http://algebrite.org/) kann die kartesi
     \end{array}\right.
 $$ für jedes $z\in\mathbb{C}$ mit $a\not=0$.
 
-```javascript
+```algebrite
 z=3/2*(cos(pi/6)+i*sin(pi/6))
 rect(z)
 w=-3-2*i
@@ -1628,7 +1628,7 @@ $$
 
 Mit Hilfe der Javascript-Bibliothek [Algebrite](http://algebrite.org/) lässt sich das Verfahren zur Bildung des Produktes zweier komplexer Zahlen interaktiv prüfen. Der Befehl `float(x)` gibt einen rationalen Näherungswert (Gleitkommazahl) einer reellen Zahl $x$ zurück.
 
-```javascript
+```algebrite
 z=3/2*(cos(pi/3)+i*sin(pi/3))
 w=2*(cos(pi/6)+i*sin(pi/6))
 abs(z*w)
@@ -1856,7 +1856,7 @@ Mit Hilfe der Javascript-Bibliothek [Algebrite](http://algebrite.org/) lassen si
   w^n=z\quad\leftrightarrow\quad p(w):=w^n-z=0
 $$ mit Hilfe des Befehls `roots(p(w),w)` beziehungsweise `nroots(p(w),w)` (numerisch) interaktiv berechnen. Das erste Argument zwischen den Klammern der Befehle gibt den Term $p(w)$ der impliziten Gleichungsdarstellung an, das zweite Argument die Variable, nach der die Gleichung gelöst werden soll.
 
-```javascript
+```algebrite
 z=-1
 n=2
 roots(w^n-z,w)
@@ -1990,7 +1990,7 @@ Die Lösung einer linearen Gleichung stellt genau einen Punkt auf der reeller Za
 
 Unter Benutzung der Javascript-Bibliothek [Algebrite](http://algebrite.org/) können lineare Gleichungen interaktiv dargestellt und berechnet werden. Probieren Sie es aus und wählen die Koeffizienten $a$ und $b$ speziell.
 
-```javascript
+```algebrite
 p=a*x+b
 coeff(p,x,1)
 coeff(p,x,0)
@@ -2037,7 +2037,7 @@ $$ worin $i$ mit $i^2=-1$ die imaginäre Einheit bezeichnet.
 
 Unter Benutzung der Javascript-Bibliothek [Algebrite](http://algebrite.org/) können lineare Gleichungen interaktiv dargestellt und berechnet werden. Probieren Sie es aus und ersetzen Sie die Koeffizienten $a$, $b$ und $c$ durch reelle Zahlen, dass die quadratische Gleichung zwei verschiedene reelle / eine reelle beziehungsweise zwei nichtreelle Lösungen besitzt.
 
-```javascript
+```algebrite
 p=a*x^2+b*x+c
 coeff(p,x,2)
 coeff(p,x,1)
@@ -2211,7 +2211,7 @@ Unter Benutzung der Javascript-Bibliothek [Algebrite](http://algebrite.org/) kan
 
 Angewendet auf eine natürliche Zahl $n$, berechnet der Befehl `factor(n)` das Produkt ihrer Primfaktoren.
 
-```javascript
+```algebrite
 p=3*x^3-6*x^2+6*x
 factor(p,x)
 roots(p)
@@ -3345,7 +3345,7 @@ $$ Die Matrix $B$ ist vom Typ $(3,1)$ (Spaltenvektor), deren transponierte Matri
 
 Die Rechnung kann unter Benutzung der Javascript Bibliothek [Algebrite](http://algebrite.org/) nachvollzogen werden.
 
-```javascript
+```algebrite
 A=[[a,b],[c,d],[e,f]]
 B=transpose(A)
 shape(A)
@@ -3443,7 +3443,7 @@ auf den Vektorraum $K^{m,n}$ aller Matrizen anwenden.
 
 Zum Beispiel lassen Linearkombinationen typgleicher Matrizen konstruieren. Unter Benutzung der Javascript Bibliothek [Algebrite](http://algebrite.org/) lässt sich analog zu Beispiel 3 bilden.
 
-```javascript
+```algebrite
 A=[[2,-3,4],[0,1,-2]]
 B=[[-2,2,-3],[1,2,2]]
 r=3
@@ -3484,7 +3484,7 @@ $$ *Kurz*: "$i$-te Zeile von $A$ 'mal' $l$-te Spalte von $B$"
 
 Die Definition kann unter Benutzung der Javascript Bibliothek [Algebrite](http://algebrite.org/) nachvollzogen werden.
 
-```javascript
+```algebrite
 A=[[a,b],[c,d]]
 B=[[m,n,p],[q,r,s]]
 C=inner(A,B)
@@ -3512,7 +3512,7 @@ $$ Linker bzw. rechter Faktor sind Matrizen vom Typ $(2,1)$ bzw. $(1,2)$, währe
   \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}=
   \begin{pmatrix} a & b \\ c & d \end{pmatrix}
 $$ Der rechte Faktor verhält sich im Matrixprodukt wie die Eins beim Multiplizieren reeller Zahlen: daher der Name zweireihige Einheitsmatrix $E$. Vergleiche Definition 2.
-4. Die Multiplikation komplexer Zahlen lässt sich als Produkt reeller Matrizen darstellen. Stellt man die komplexen Zahlen $z_j=a_j+i\cdot b_j$ mit Realteil $a_j=\operatorname{Re}{z_j}$ und Imaginärteil $b_j=\operatorname{Im}{z_j}$ sowie $i^2=-1$ als reellen Vektor bzw. reelle Matrix dar, so stellt sich das Produkt $z=z_1\cdot z_2$ vermöge $$ \begin{pmatrix} a \\ b \end{pmatrix}=\begin{pmatrix} a_1 & -b_1 \\ b_1 & a_1 \end{pmatrix}\cdot\begin{pmatrix} a_2 \\ b_2 \end{pmatrix}=\left[\begin{pmatrix} a_1 & b_1 \end{pmatrix}\cdot\begin{pmatrix} a_2 & b_2 \\ -b_2 & a_1 \end{pmatrix}\right]^\top $$ dar, worin $a=\operatorname{Re}{z}$ beziehungsweise $b=\operatorname{Im}{z}$ Real- beziehungsweise Imaginärteil des Produktes bezeichnen. (Real- und Imaginärteil des Produktes sind jeweils linear in denen der einzelnen Faktoren.)
+4. Die Multiplikation komplexer Zahlen lässt sich als Produkt reeller Matrizen darstellen. Stellt man die komplexen Zahlen $z_j=a_j+i\cdot b_j$ mit Realteil $a_j=\operatorname{Re}{z_j}$ und Imaginärteil $b_j=\operatorname{Im}{z_j}$ sowie $i^2=-1$ als reellen Vektor bzw. reelle Matrix dar, so stellt sich das Produkt $z=z_1\cdot z_2$ vermöge $$ \begin{pmatrix} a \\ b \end{pmatrix}=\begin{pmatrix} a_1 & -b_1 \\ b_1 & a_1 \end{pmatrix}\cdot\begin{pmatrix} a_2 \\ b_2 \end{pmatrix}=\left[\begin{pmatrix} a_1 & b_1 \end{pmatrix}\cdot\begin{pmatrix} a_2 & b_2 \\ -b_2 & a_2 \end{pmatrix}\right]^\top $$ dar, worin $a=\operatorname{Re}{z}$ beziehungsweise $b=\operatorname{Im}{z}$ Real- beziehungsweise Imaginärteil des Produktes bezeichnen. (Real- und Imaginärteil des Produktes sind jeweils linear in denen der einzelnen Faktoren.)
 5. Analog lässt sich die Multiplikation von Quaternionen als Produkt reeller Matrizen darstellen. Stellt man die Faktoren $Q_m=a_m+i\cdot b_m+j\cdot c_m+k\cdot d_m$ mit Realteil $a_m=\operatorname{Re}{Q_m}$ und Imaginärteil $(b_m,c_m,d_m)=\operatorname{Im}{Q_m}$ bezüglich der quaternionalen Einheiten $(i,j,k)$ als reellen Vektor bzw. reelle Matrix dar, so stellt sich das Produkt $Q=Q_1\cdot Q_2$ vermöge $$ \begin{pmatrix} a \\ b \\ c \\ d \end{pmatrix}=\begin{pmatrix} a_1 & -b_1 & -c_1 & -d_1 \\ b_1 & a_1 & -d_1 & c_1 \\ c_1 & d_1 & a_1 & -b_1 \\ d_1 & -c_1 & b_1 & a_1 \end{pmatrix}\cdot\begin{pmatrix} a_2 \\ b_2 \\ c_2 \\ d_2 \end{pmatrix}=\left[\begin{pmatrix} a_1 & b_1 & c_1 & d_1 \end{pmatrix}\cdot\begin{pmatrix} a_2 & b_2 & c_2 & d_2 \\ -b_2 & a_2 & -d_2 & c_2 \\ -c_2 & d_2 & a_2 & -b_2 \\ -d_2 & -c_2 & b_2 & a_2 \end{pmatrix}\right]^\top $$ dar, worin $a=\operatorname{Re}{Q}$ beziehungsweise $(b,c,d)=\operatorname{Im}{Q}$ Real- beziehungsweise Imaginärteil des Produktes bezeichnen. (Real- und Imaginärteil des Produktes sind jeweils linear in denen der einzelnen Faktoren.)
 
 **Beispiel 6.** Unter spezieller Wahl der Komponenten des Matrixproduktes im vorangegangenen Beispiel (Teil 4.) lassen sich Drehungen der Ebene um den Koordinatenursprung eines kartesischen Koordinatensystems darstellen.
@@ -3558,7 +3558,7 @@ $$ d. h. das Matrixprodukt ist erneut eine Matrix von gleicher Bauart zum Parame
 
 Die Rechnung kann unter Benutzung der Javascript Bibliothek [Algebrite](http://algebrite.org/) nachvollzogen werden.
 
-```javascript
+```algebrite
 D=[[cos(t),-sin(t)],[sin(t),cos(t)]]
 D1=subst(u,t,D)
 D2=subst(v,t,D)
@@ -3802,7 +3802,7 @@ Der Beweis der vorstehenden Aussagen kann leicht unter Benutzung der Definition 
 
 Eine Kontrolle der Aussagen kann nachfolgend unter Verwendung der Javascript Bibliothek [Algebrite](http://algebrite.org/) vorgenommen werden.
 
-```javascript
+```algebrite
 A=[[a,b],[c,d]]
 det(A)-det(transpose(A))
 B=[A[2],A[1]]
@@ -3826,7 +3826,7 @@ $$ Diese Aussage wird **Multiplikationssatz** für Determinanten (zweiter Ordnun
 
 Der Multiplikationssatz kann nachfolgend unter Verwendung der Javascript Bibliothek [Algebrite](http://algebrite.org/) verifiziert werden.
 
-```javascript
+```algebrite
 A=[[a11,a12],[a21,a22]]
 B=[[b11,b12],[b21,b22]]
 C=inner(A,B)
@@ -3888,7 +3888,7 @@ $$ soll analog zu Beispiel 2 eine Matrix $B\in\mathbb{R}^{3,3}$ ermittelt werden
   x=E\cdot x=(\textcolor{magenta}{B}\cdot A)\cdot x=\textcolor{magenta}{B}\cdot (A\cdot x)= \textcolor{magenta}{B}\cdot b
 $$ erfüllt, worin $E$ die dreireihige Einheitsmatrix bezeichnet. Der Lösungsvektor $x=B\cdot b$ kann - falls die Matrix $B$ existiert - eindeutig als Matrixprodukt berechnet werden.
 
-```javascript
+```algebrite
 A=[[a11,a12,a13],[a21,a22,a23],[a31,a32,a33]]
 B=inv(A)
 inner(A,B)
@@ -4042,7 +4042,7 @@ $$
 
 Eine Kontrolle des Ergebnisses kann unter Verwendung der Javascript Bibliothek [Algebrite](http://algebrite.org/) vorgenommen werden.
 
-```javascript
+```algebrite
 A=[[1,-5,3],[4,0,2],[3,6,-7]]
 det(A)
 ```
@@ -4280,7 +4280,7 @@ $$
 
 Eine Berechnung der inversen Matrix $A^{-1}$ kann unter Verwendung der Javascript Bibliothek [Algebrite](http://algebrite.org/) vorgenommen werden.
 
-```javascript
+```algebrite
 A=[[1,-5,3],[4,0,2],[3,6,-7]]
 det(A)
 adj(A)
@@ -4307,16 +4307,16 @@ $$ ist also eindeutig bestimmt. $\square$
 $$ Zu berechnen ist die Menge aller Lösungen dieses Gleichungssystems.
 
 1. Die Determinante der Koeffizientenmatrix $A$ berechnet sich $\det{A}=-107$, $A$ ist also regulär und besitzt eine inverse Matrix. Diese berechnet sich $$
-  A^{-1}=-\frac{1}{107}\cdot\begin{pmatrix} 10 & 23 & 5 & -7 \\ -32 & 12 & -16 & 1 \\ 25 & 4 & -41 & 36 \\ -33 & -1 & 37 & -9 \end{pmatrix}
+  A^{-1}=\frac{1}{107}\cdot\begin{pmatrix} 10 & 23 & 5 & -7 \\ -32 & 12 & -16 & 1 \\ 25 & 4 & -41 & 36 \\ -33 & -1 & 37 & -9 \end{pmatrix}
 $$ Bitte nachrechnen.
 2. Das System linearer Gleichungen besitzt nach Satz 2 die eindeutige Lösung $$
-  x=A^{-1}\cdot b= -\frac{1}{107}\cdot\begin{pmatrix} 10 & 23 & 5 & -7 \\ -32 & 12 & -16 & 1 \\ 25 & 4 & -41 & 36 \\ -33 & -1 & 37 & -9 \end{pmatrix}\cdot \begin{pmatrix} 107 \\ 214 \\ 0 \\ 321 \end{pmatrix}=
+  x=A^{-1}\cdot b= \frac{1}{107}\cdot\begin{pmatrix} 10 & 23 & 5 & -7 \\ -32 & 12 & -16 & 1 \\ 25 & 4 & -41 & 36 \\ -33 & -1 & 37 & -9 \end{pmatrix}\cdot \begin{pmatrix} 107 \\ 214 \\ 0 \\ 321 \end{pmatrix}=
   \begin{pmatrix} 35 \\ -5 \\ 141 \\ -62 \end{pmatrix}
 $$ kann also durch ein Matrixprodukt berechnet werden.
 
 Eine Berechnung der Lösung des Gleichungssystems kann unter Verwendung der Javascript Bibliothek [Algebrite](http://algebrite.org/) vorgenommen werden.
 
-```javascript
+```algebrite
 A=[[1,-2,0,-1],[4,1,1,1],[1,-2,1,3],[0,-1,4,4]]
 b=[107,214,0,321]
 det(A)
@@ -4372,6 +4372,22 @@ $$ mit $$ \lambda=-(R_1\cdot R_2+R_2\cdot R_3+R_1\cdot R_3)=\det{A} $$
     -(R_2+R_3)\cdot U \\ -R_3\cdot U \\ -R_2\cdot U
   \end{array}\right)
 $$ die einzige Lösung von $A\cdot x= b$.
+
+Eine symbolische Berechnung der Lösung des Gleichungssystems kann unter Verwendung der Javascript Bibliothek [Algebrite](http://algebrite.org/) vorgenommen werden. Unter Nutzung des Befehls `denominator(B[i,j])` wird der Nenner der entsprechenden Komponente $b_{ij}$ der zu $A$ inversen Matrix $B=(b_{ij})_{i=1,..,3;j=1,..3}$ berechnet. Der Test `test(d=n,wahr,falsch)` prüft, ob dieser Nenner mit dem Wert der zuvor berechneten Determinante von $A$ übereinstimmt.
+
+```algebrite
+A=[[1,-1,-1],[R1,R2,0],[0,R2,-R3]]
+b=[0,U,0]
+d=det(A)
+B=inv(A)
+B
+i=2
+j=1
+n=denominator(B[i,j])
+test(d=n,wahr,falsch)
+inner(B,b)
+```
+@Algebrite.eval
 
 
 Gleichungssysteme vom Typ $(m,n)$
@@ -4634,7 +4650,8 @@ $$ Mit $n=\mathrm{rg}{A}=2$ existiert genau eine Lösung, nämlich $x=\begin{pma
 
 
 Lineare Unabhängigkeit von Vektoren
-====================================
+===
+
 
 Systeme linearer Gleichungen lassen sich zur Untersuchung der linearen Unabhängigkeit von Vektoren nutzen. Für die folgenden Betrachtungen wird ein System von Vektoren aus $\mathbb{R}^m$ $$
   \left\{ a_1,a_2,...,a_n\right\}
@@ -4843,7 +4860,7 @@ $$ das kanonische Skalarprodukt der Vektoren $a$ und $b$.
 
 Das kanonische Skalarprodukt kann unter Benutzung der Javascript Bibliothek [Algebrite](http://algebrite.org/) berechnet und die Eigenschaften 1. bis 4. an Beispielen nachvollzogen werden.
 
-```javascript
+```algebrite
 a=[a1,a2,a3]
 b=[b1,b2,b3]
 c=[c1,c2,c3]
@@ -4869,7 +4886,7 @@ $$ die durch das Skalarprodukt induzierte [euklidische Norm](https://de.wikipedi
 
 Die durch das kanonische Skalarprodukt erklärte Norm kann unter Benutzung der Javascript Bibliothek [Algebrite](http://algebrite.org/) berechnet werden.
 
-```javascript
+```algebrite
 a=[a1,a2,a3]
 b=[1,2,3]
 abs(a)
@@ -5036,7 +5053,7 @@ Damit lassen sich direkt nachrechnen $$ v_1\cdot v_2 = \frac{1}{5}\cdot\begin{pm
 
 Das Orthogonalisierungsverfahren kann unter Benutzung der Javascript Bibliothek [Algebrite](http://algebrite.org/) interaktiv umgesetzt werden. Im Beispiel werden die Vektoren $\{v_1,v_2,v_3\}$ ausgegeben.
 
-```javascript
+```algebrite
 w1=[1,2,0]
 w2=[3,0,-1]
 w3=[0,7,2]
@@ -5091,7 +5108,7 @@ Die Berechnung des Vektorproduktes zweier Vektoren aus $\mathbb{R}^3$ ist im nac
 
 Das Vektorprodukt zweier Vektoren lässt sich interaktiv unter Benutzung der Javascript-Bibliothek [Algebrite](http://algebrite.org/) berechnen. Entsprechend lassen sich Eigenschaften des Vektorproduktes aus Proposition 3 prüfen.
 
-```javascript
+```algebrite
 u=[u1,u2,u3]
 v=[v1,v2,v3]
 cross(u,v)
@@ -5243,7 +5260,7 @@ $$ d. h. die auf ein $\lambda$-Faches abbgebildet werden. Wird die Abbildungsmat
 $$ worin $E=\mathrm{diag}{(1,1)}$ die zweireihige Einheitsmatrix bezeichnet. Die rechte Seite der vorstehenden Äquivalenz ist ein System zweier linearer homogener Gleichungen in den Unbekannten $(x_1,x_2)$ $$
   (A-\lambda\cdot E)\cdot x=\begin{pmatrix} 1-\lambda & 0 \\ 0 & -1-\lambda \end{pmatrix}\cdot\begin{pmatrix} x_1 \\ x_2 \end{pmatrix}=\begin{pmatrix} 0 \\ 0 \end{pmatrix}=o
 $$ dessen Koeffizientenmatrix $(A-\lambda\cdot E)$ vom Parameter $\lambda$ abhängt. Das Gleichungssystem besitzt neben der trivialen genau dann weitere Lösungen, falls der Rang der Koeffizientenmatrix kleiner $2$ ist $$
-  \mathrm{rang}{(A-\lambda\cdot E)}<2\quad\leftrightarrow\quad
+  \mathrm{rg}{(A-\lambda\cdot E)}<2\quad\leftrightarrow\quad
   \det{(A-\lambda\cdot E)}=\lambda^2-1=0
 $$ Letzteres ist eine quadratische Gleichung im Parameter $\lambda$ mit den beiden Lösungen $\lambda_1=1$ und $\lambda_2=-1$. Im Fall der Lösung $\lambda_1$ nimmt das Gleichungssystem die Form $$
   \begin{pmatrix} 0 & 0 \\ 0 & -2 \end{pmatrix}\cdot\begin{pmatrix} x_1 \\ x_2 \end{pmatrix}=\begin{pmatrix} 0 \\ 0 \end{pmatrix}\quad\leadsto\quad
@@ -5279,7 +5296,7 @@ $$ Dies ist eine reelle algebraische Gleichung $n$-ten Grades mit Lösungen $$
   \lambda_1\in\mathbb{C}\,,\quad\lambda_2\in\mathbb{C}\,,\quad\ldots\,,\quad\lambda_n\in\mathbb{C}
 $$
 2. Setze die Eigenwerte $\lambda_i$ nacheinander in die Eigenwertaufgabe ein. Es ergibt sich ein System linearer, homogener Gleichungen in den Komponenten der zu $\lambda_i$ gehörenden Eigenvektoren ${x}$. Für $\lambda_i\in\mathbb{R}$ ist die Lösungsmenge ein $k_i$-dimensionaler Untervektorraum in $\mathbb{R}^n$, worin $$
-  k_i=n-\mathrm{Rang}\left(A-\lambda_i\cdot E\right)
+  k_i=n-\mathrm{rg}\left(A-\lambda_i\cdot E\right)
 $$ Die Menge aller Eigenvektoren $x$ zu einem Eigenwert $\lambda_i$ wird Eigenraum zu $\lambda_i$ genannt. Siehe Satz 1.
 
 **Beispiel 2.** Betrachtet wird die Transformation $\kappa:\mathbb{R}^2\to\mathbb{R}^2$ mit $$
@@ -5339,7 +5356,7 @@ Die Berechnung der Eigenwerte und Eigenvektoren lässt sich im nachfolgenden Ber
 1. Der Befehl `eigen(m)` berechnet Eigenwerte und Eigenvektoren und speichert diese (ohne Ausgabe) als Hauptdiagonalelemente in der Diagonalmatrix $D$ bzw. als Zeilenvektoren in der Matrix $Q$.
 2. Die Befehle `eigenval(m)` beziehungsweise `eigenvec(m)` berechnen die Eigenwerte beziehungsweise Eigenvektoren der Matrix $m$.
 
-```javascript
+```algebrite
 m=[[1,3],[3,2]]
 eigenval(m)
 eigenvec(m)
@@ -5604,10 +5621,10 @@ Dabei gilt $$\operatorname{dim}(\mathcal{A}_0)=\left\{\begin{array}{ccc} 0 &,\te
 Für $\operatorname{dim}(\mathcal{A}_0)=0$ ist $\mathcal{P}_0=\{a\}$ und der affine Raum besteht aus einem einzelnen Punkt. Ist hingegen $\operatorname{dim}(\mathcal{A}_0)=1$, so beschreiben die Punkte eine Gerade in $\mathbb{R}^3$.
 
 **Beispiel 3.** Für $A\in\mathbb{R}^{m,n}$ und $b\in\mathbb{R}^n$ betrachten wir das lineare Gleichungssystem $Ax=b$. Dieses ist genau dann lösbar, wenn $$
-  \operatorname{Rang}(A)=\operatorname{Rang}(A|b)
-$$ gilt. In diesem Fall ist die Lösungsmenge die Punktmenge eines affinen Unterraumes $\mathcal{A}$ von $\mathbb{R}^n$ der Dimension $n-\operatorname{Rang}(A)$.
+  \operatorname{rg}(A)=\operatorname{rg}(A|b)
+$$ gilt. In diesem Fall ist die Lösungsmenge die Punktmenge eines affinen Unterraumes $\mathcal{A}$ von $\mathbb{R}^n$ der Dimension $n-\operatorname{rg}(A)$.
 
-Denn die Menge $\mathcal{V}=\left\{x\in\mathbb{R}^n\;\middle |\; Ax=\mathcal{o}\right\}\subseteq \mathbb{R}^n$ ist ein Untervektorraum der Dimension $n-\operatorname{Rang}(A)$ und für $$
+Denn die Menge $\mathcal{V}=\left\{x\in\mathbb{R}^n\;\middle |\; Ax=\mathcal{o}\right\}\subseteq \mathbb{R}^n$ ist ein Untervektorraum der Dimension $n-\operatorname{rg}(A)$ und für $$
   x, y\in \mathcal{P}=\left\{x\in\mathbb{R}^n\;\middle |\; Ax=b\right\}
 $$ gilt $$ Ay-Ax=b-b=\mathcal{o}=A(y-x) $$ d. h. $\alpha(x,y)=y-x\in\mathcal{V}$.
 
@@ -5736,7 +5753,7 @@ Die Wirkung einer Kraft beziehungsweise eines Systems von Kräften auf einen dre
 ![Drehmoment](img/mat-bild-32.png "_Fig._ Drehmoment $\vec{M}$ an einer drehbar gelagerten Scheibe durch Wirkung einer Kraft $\vec{F}$ in $P$. Die Scheibe ist um eine Gerade durch $D$ drehbar gelagert. Wird die Kraft entlang ihrer Wirkungslnie nach $Q$ verschoben, ändert sich das erzeugte Drehmoment nicht.")
 
 
-**Bemerkung 1.** Im Ingenieurwesen auftretende, vektorielle Größen, die entlang ihrer Wirkungslinie unverändert bleiben, heißen **linienflüchtig**. Demgegenüber werden auch [ortsgebundene](https://de.wikipedia.org/wiki/Gebundener_Vektor) - (fester Angriffspunkt) und *freien*, physikalischen Größen betrachtet.
+**Bemerkung 1.** Im Ingenieurwesen auftretende, vektorielle Größen, die entlang ihrer Wirkungslinie unverändert bleiben, heißen **linienflüchtig**. Demgegenüber werden auch [ortsgebundene](https://de.wikipedia.org/wiki/Gebundener_Vektor) - (fester Angriffspunkt) und **freien**, physikalischen Größen betrachtet.
 
 **Beispiel 1.** In der $xy$-Ebene des dreidimensionalen (affinen) Raumes befinde sich eine ovale Scheibe, die um eine Achse parallel zur $z$-Achse durch den Punkt $D$ drehbar gelagert ist, siehe nachstehende Abbildung. Es wirken Kräfte $\vec{F}_j$, $j\in\{1,2,3\}$, entlang der Scheibe in den Punkten $P_j$.
 
@@ -5809,52 +5826,74 @@ Schneiden sich zwei Geraden der Ebene, so lässt sich der eingeschlossene Winkel
 >**Schnittwinkel.** Der Schnittwinkel zweier sich schneidender Geraden ist der Winkel zwischen zwei Richtungsvektoren der Geraden, welche einen Winkel zwischen $0^\circ$ und $90^\circ$ einschließen. Sind $g=AB$ und $h=CD$, so berechnet sich der Schnittwinkel $\varphi=\measuredangle(g,h)$ gemäß $$ \varphi=\arccos{\left(\frac{\left|\overrightarrow{AB}\cdot\overrightarrow{CD}\right|}{\left|\overrightarrow{AB}\right|\cdot\left|\overrightarrow{CD}\right|}\right)} $$ worin $\overrightarrow{AB}\cdot\overrightarrow{CD}$ das Skalarprodukt der Richuntgsvektoren beider Geraden bezeichnet, während im Nenner des gemeinen Bruchs das Produkt der Normen dieser Vektoren steht.
 
 
-Sicher gewusst
-===
-
-Testen Sie Ihr Wissen aus diesem Abschnitt bei der Beantwortung der nachstehenden Fragen.
-
-**Frage 1.** ..
-
-
-### Lage im Raum
+### Lage im dreidimensionalen Raum
 
 
 In diesem Abschnitt wird die relative Lage von Grundelementen des dreidimensionalen Raumes betrachtet.
+
+Zwei Punkte
+===
+
+Für zwei Punkte des dreidimensionalen Raums lässt sich unter wiederholter Benutzung des Satzes von Pythagoras der euklidische Abstand dieser Punkte berechnen. Bezeichnen $(x_j,y_j,z_j)$ die kartesischen Koordinaten der Punkte $P_j$, so berechnet sich $$ \overline{P_1P_2}=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2} $$
+
+Punkt und Gerade
+===
+
+Ist $A$ ein Punkt und $g$ eine Gerade in $\mathbb{R}^3$, so werden genau zwei Fälle ihrer gegenseitigen Lage unterschieden: Entweder der Punkt $A$ liegt auf der Geraden $g$ oder $A$ liegt nicht auf $g$. Zur Berechnung des Abstandes eines Punktes $A$ von einer Geraden $g$ im dreidimensionalen Raum lässt sich das Vektorprodukt zweier linear unabhängiger Vektoren der durch $A$ und $g$ aufgespannten Ebene benutzen. Bezeichnet $r$ einen Richtungsvektor und $P$ einen Stützpunkt der Geraden $g$, so lässt sich der Abstand von $A$ zu $g$ berechnen gemäß $$ \operatorname{dist}(A,g):=\frac{\left|\overrightarrow{PA}\times r\right|}{|r|} $$ Die Norm des Kreuzproduktes im Zähler entspricht dem Flächeninhalt des von beiden Vektoren aufgespannten Parallelogrammes, der sich ebenso aus dem Produkt der Länge $|r|$ einer Seite und der Höhe $h$ des Parallelogramms auf dieser Seite berechnen lässt, vergleiche die nachstehende Abbildung.
+
+![Abstand Punkt Gerade](img/mat-bild-35.png "_Fig._ Abstand $h=\operatorname{dist}(A,g)$ eines Punktes $A$ von einer Geraden $g$.")
+
+**Beispiel 1.** Zu berechnen ist der Abstand des Punktes $A(-1,2,-1)$ von der Geraden $g=PQ$ durch die Punkte $P(2,0,1)$ und $Q(3,2,0)$. Mit obiger Formel ergibt sich unmittelbar $$ \operatorname{dist}(A,g):=\frac{\left|\overrightarrow{PA}\times r\right|}{|r|}=\frac{\left|\begin{pmatrix} -3 \\ 2 \\ -2 \end{pmatrix}\times\begin{pmatrix} 1 \\ 2 \\ -1 \end{pmatrix}\right|}{\left|\begin{pmatrix} 1 \\ 2 \\ -1 \end{pmatrix}\right|}=\frac{\left|\begin{pmatrix} 2 \\ -5 \\ -8 \end{pmatrix}\right|}{\left|\begin{pmatrix} 1 \\ 2 \\ -1 \end{pmatrix}\right|}=\frac{\sqrt{2^2+(-5)^2+(-8)^2}}{\sqrt{1^2+2^2+(-1)^2}}=\frac{\sqrt{31}}{\sqrt{2}}\approx3.9370 $$ Alternativ lässt sich unter Benutzung der Formel für die orthogonale Projektion eines Vektors auf einen Untervektorraum zunächst der Fußpunkt $L$ des Lotes von $A$ auf $g$ ermitteln $$ L=P +\frac{r\cdot\overrightarrow{PA}}{r\cdot r}\cdot r=\begin{pmatrix} 2 \\ 0 \\ 1 \end{pmatrix}+\frac{\begin{pmatrix} -3 \\ 2 \\ -2 \end{pmatrix}\cdot\begin{pmatrix} 1 \\ 2 \\ -1 \end{pmatrix}}{\left|\begin{pmatrix} 1 \\ 2 \\ -1 \end{pmatrix}\right|^2}\cdot\begin{pmatrix} 1 \\ 2 \\ -1 \end{pmatrix}=\frac{1}{2}\cdot\begin{pmatrix} 5 \\ 2 \\ 1 \end{pmatrix}$$ Für den Abstand $\overline{AL}$ gilt dann gemäß obiger Formel für den Abstand zweier Punkte $$ \overline{AL}^2=\left(\frac{5}{2}+1\right)^2+\left(1-2\right)^2+\left(\frac{1}{2}+1\right)^2=\frac{31}{2} $$ und somit $\overline{AL}=\operatorname{dist}(A,g)=\sqrt{31/2}\approx3.9370 $.
+
+Mit Hilfe der Javascript-Bibliothek [Algebrite](http://algebrite.org/) lässt sich der Abstand eines Punktes $A$ zur Gerade $g$ durch den Punkt $P$ mit Richtungsvektor $r$ interaktiv berechnen. Mit Hilfe des Befehls `cross(s,r)` wird das Vektorprodukt der Vektoren $r$ und $s$ bestimmt.
+
+```algebrite
+P=[2,0,1]
+Q=[3,2,0]
+A=[-1,2,-1]
+r=Q-P
+s=A-P
+float(abs(cross(s,r))/abs(r))
+```
+@Algebrite.eval
+
+
+Punkt und Ebene
+===
+
+Für die relative Lage eines Punktes $A$ und einer Ebene $E$ sind genau zwei Fälle möglich: entweder ist $A$ ein Punkte aus $E$, d. h. $A\in E$, oder es gilt $A\not\in E$. In beiden Fällen berechnet sich der Abstand von $A$ zu $E$ unter Benutzung der Hesse-Normalform von $E$ gemäß $$ \operatorname{dist}(A,E)=n\cdot\overrightarrow{PA}=n_1\cdot x_1+n_2\cdot x_2+n_3\cdot x_3-d $$ worin $n=(n_1,n_2,n_3)^\top$ ein Einheitsnormalenvektor von $E$ und $d=n\cdot P$ den orientierten Abstand (bezogen auf die Richtung $n$) von $E$ zum Ursprung des Koordinatensystems bestimmt. Vergleiche Abschnitt [Grundelemente im Raum](#Grundelemente-im-Raum). Für den Lotfußpunkt $L$ ergibt sich damit die Formel $$ L=A-\operatorname{dist}(A,E)\cdot n $$
+
+**Beispiel 2.** Gegeben ist die Ebene $E$ durch die Einheitspunkte $$ E_1(1,0,0)\,,\quad E_2(0,1,0)\quad\text{sowie}\quad E_3(0,0,1) $$ auf den Koordinatenachsen des dreidimensionalen kartesichen Koordinatensystems im $\mathbb{R}^3$. Es ergibt sich die Gleichung von $E$ in Achsenabschnittsform $x_1+x_2+x_3=1$, vergleiche Bemerkung 2 im Abschnitt [Grundelemente in der Ebene](#Grundelemente-in-der-Ebene). Der Normalenvektor $n=(1,1,1)^\top$ der Ebene besitzt die Norm $|n|=\sqrt{3}$, kann daher normiert werden zu $$ n=\frac{1}{\sqrt{3}}\cdot\begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix} $$ Hieraus ergibt sich die Hesse-Normalform von $E$ gemäß $$ \frac{1}{\sqrt{3}}\cdot x_1+\frac{1}{\sqrt{3}}\cdot x_2+\frac{1}{\sqrt{3}}\cdot x_3-\frac{1}{\sqrt{3}}=0 $$ Die Distanz eines beliebigen Punktes $A(x_1,x_2,x_3)$ von der Ebene berechnet sich gemäß $$ \operatorname{dist}(A,E)= \frac{1}{\sqrt{3}}\cdot x_1+\frac{1}{\sqrt{3}}\cdot x_2+\frac{1}{\sqrt{3}}\cdot x_3-\frac{1}{\sqrt{3}} $$ Für $A\in E$ ergibt sich insbesondere die Distanz Null.
+
+**Bemerkung 1.** Alternative geometrische Ideen zur Berechnung des Absatndes eines Punktes von einer Ebene im dreidimensionalen Punktraum werden graphisch diskutiert unter [Abstand Punkt von Ebene](https://www.geogebra.org/m/xurgsjh3#chapter/471443).
+
 
 
 Zwei Geraden
 ===
 
 
-Sind $g$ und $h$ zwei Geraden in $\mathbb{R}^3$, so sind genau vier Fälle ihrer gegenseitigen Lage zu unterschieden.
+Sind $g_1$ und $g_2$ zwei Geraden im dreidimensionalen affinen Raum $\mathbb{R}^3$, so lassen sich genau vier Fälle ihrer gegenseitigen Lage unterschieden.
 
-* $g$ und $h$ sind identisch (und damit zueinander parallel)
-* $g$ und $h$ schneiden sich in genau einem Punkte
-* $g$ und $h$ sind *echt* parallel (und besitzen somit keinen gemeinsamen Punkt)
-* $g$ und $h$ sind windschief (und besitzen somit keinen gemeinsamen Punkt)
+* $g_1$ und $g_2$ sind identisch (und damit zueinander parallel)
+* $g_1$ und $g_2$ schneiden sich in genau einem Punkte
+* $g_1$ und $g_2$ sind *echt* parallel (und besitzen somit keinen gemeinsamen Punkt)
+* $g_1$ und $g_2$ sind windschief (und besitzen somit keinen gemeinsamen Punkt)
 
+Die gegenseitige Lage zweier Geraden in $\mathbb{R}^3$ lässt sich somit nicht allein anhand der Menge der gemeinsamen Punkte kennzeichnen, vergleiche Abschnitt [Lage in der Ebene](Lage-in-der-Ebene). Zusätzlich wird die lineare Abhängigkeit der Richtungsvektoren zu betrachten sein, um windschiefe Geraden von der echt parallelen Lage zu unterscheiden. Die nachstehende Aussage greift speziell die winschiefe Lage zweier Geraden auf.
 
 <!-- style="background-color: lightgray;"-->
->**Abstand windschiefer Geraden.** Der Abstand zweier windschiefer Geraden ist der Abstand der Lotfußpunkte auf dem gemeinsamen Lot der Geraden.
+>**Abstand windschiefer Geraden**. Der Abstand zweier windschiefer Geraden ist der Abstand der Lotfußpunkte auf dem gemeinsamen Lot der Geraden.
 >
->Sind $g_1$ beziehungsweise $g_2$ die Verbindungsgeraden der Punkte $P_1$ und $Q_1$ beziehungsweise $P_2$ und $Q_2$ des dreidimensionalen affinen Raumes $\mathbb{R}^3$ und die Richuntgsvektoren $$
-  b_1=\overrightarrow{P_1Q_1}\quad\text{und}\quad b_2=\overrightarrow{P_2Q_2}
-$$ dieser Geraden linear unabhängig, so gilt für den Abstand $\operatorname{dist}(g_1,g_2)$ beider Geraden $g_1$ und $g_2$ $$
-  \operatorname{dist}(g_1,g_2)=\frac{|(b_1\times b_2)\cdot\overrightarrow{P_1P_2}|}{\left\|b_1\times b_2\right\|}
-$$
+>Sind $g_1$ beziehungsweise $g_2$ die Verbindungsgeraden der Punkte $P_1$ und $Q_1$ beziehungsweise $P_2$ und $Q_2$ des dreidimensionalen affinen Raumes $\mathbb{R}^3$ und die Richuntgsvektoren $$ b_1=\overrightarrow{P_1Q_1}\quad\text{und}\quad b_2=\overrightarrow{P_2Q_2} $$ dieser Geraden linear unabhängig, so gilt für den Abstand $\operatorname{dist}(g_1,g_2)$ beider Geraden $g_1$ und $g_2$ $$ \operatorname{dist}(g_1,g_2)=\frac{|(b_1\times b_2)\cdot\overrightarrow{P_1P_2}|}{\left|b_1\times b_2\right|} $$
 
-**Beweis.** Da die Richtungsvektoren $b_1$ und $b_2$ linear unabhängig sind, sind auch die Vektoren $b_1, b_2, b_1\times b_2$ linear unabhängig. Daher gibt es eindeutig bestimmte reelle Zahlen $\lambda_1, \lambda_2$ und $\alpha$, so dass $$P_1+\lambda_1\cdot b_1+\alpha\cdot (b_1\times b_2)+\lambda_2\cdot b_2-P_2=0,$$ mit dem Nullvektor $0\in\mathbb{R}^3$. Aus $$\lambda_1\cdot b_1+\alpha\cdot (b_1\times b_2)+\lambda_2\cdot b_2=\overrightarrow{P_1P_2}$$ folgt unmittelbar $$
-  \operatorname{det}(\overrightarrow{P_1P_2},b_2,b_1\times b_2) = \lambda_1\cdot \operatorname{det}(b_1,b_2,b_1\times b_2)
-$$ und daher $$
-  \lambda_1 = \frac{\operatorname{det}(\overrightarrow{P_1P_2},b_2,b_1\times b_2)}{\operatorname{det}(b_1,b_2,b_1\times b_2)}
-$$ Analog erhält man $$
-  \lambda_2 = \frac{\operatorname{det}(b_1,\overrightarrow{P_1P_2},b_1\times b_2)}{\operatorname{det}(b_1,b_2,b_1\times b_2)}\quad\text{sowie}\quad\alpha = \frac{\operatorname{det}(b_1, b_2,\overrightarrow{P_1P_2})}{\operatorname{det}(b_1,b_2,b_1\times b_2)}
-$$ Der Abstand der Lotfußpunkte ergibt sich damit zu $$
-  \operatorname{dist}{(g_1,g_2)} = \left\|\alpha\cdot (b_1\times b_2)\right\| = |\alpha|\cdot\left\|b_1\times b_2\right\| = \displaystyle\frac{|(b_1\times b_2)\cdot \overrightarrow{P_1P_2}|}{\left\|b_1\times b_2\right\|}
-$$ wobei im letzten Schritt die Darstellung der Determinanten in $\alpha$ als Spatprodukte verwendet wurde. An dieser Darstellung erkennt man auch, dass der Abstand die Länge (Norm) der Orthogonalprojektion des Vektors $\overrightarrow{P_1P_2}$ auf den Vektor $b_1\times b_2$ ist.
+**Nachweis.** Da die Richtungsvektoren $b_1$ und $b_2$ linear unabhängig sind, sind auch die Vektoren $b_1$, $b_2$, $b_1\times b_2$ linear unabhängig. Daher gibt es eindeutig bestimmte reelle Zahlen $\lambda_1, \lambda_2$ und $\alpha$ in der Linearkombination $$ P_1+\lambda_1\cdot b_1+\alpha\cdot (b_1\times b_2)+\lambda_2\cdot b_2-P_2=o$$ mit dem Nullvektor $o\in\mathbb{R}^3$. Siehe nachstehende Abbildung. Aus $$\lambda_1\cdot b_1+\alpha\cdot (b_1\times b_2)+\lambda_2\cdot b_2=\overrightarrow{P_1P_2}$$ folgt durch skalare Multiplikation von linker und rechter Seite mit $b_2\times(b_1\times b_2)$ unmittelbar $$ \operatorname{det}(\overrightarrow{P_1P_2},b_2,b_1\times b_2) = \lambda_1\cdot \operatorname{det}(b_1,b_2,b_1\times b_2) $$ und mit der linearen Unabhängigkeit der Vektoren $b_1$, $b_2$, $b_1\times b_2$, bzw. äquivalent $\operatorname{det}(b_1,b_2,b_1\times b_2)\not=0$ daraus $$ \lambda_1 = \frac{\operatorname{det}(\overrightarrow{P_1P_2},b_2,b_1\times b_2)}{\operatorname{det}(b_1,b_2,b_1\times b_2)} $$ Analog erhält man $$ \lambda_2 = \frac{\operatorname{det}(b_1,\overrightarrow{P_1P_2},b_1\times b_2)}{\operatorname{det}(b_1,b_2,b_1\times b_2)}\quad\text{sowie}\quad\alpha = \frac{\operatorname{det}(b_1, b_2,\overrightarrow{P_1P_2})}{\operatorname{det}(b_1,b_2,b_1\times b_2)} $$ Der Abstand der Lotfußpunkte ergibt sich damit zu $$ \operatorname{dist}{(g_1,g_2)} = \left|\alpha\cdot (b_1\times b_2)\right| = |\alpha|\cdot\left|b_1\times b_2\right| = \displaystyle\frac{|(b_1\times b_2)\cdot \overrightarrow{P_1P_2}|}{\left|b_1\times b_2\right|} $$ wobei im letzten Schritt die Darstellung der Determinanten in $\alpha$ als Spatprodukte verwendet wurde. An dieser Darstellung erkennt man auch, dass der Abstand die Länge (Norm) der Orthogonalprojektion des Vektors $\overrightarrow{P_1P_2}$ auf den Vektor $b_1\times b_2$ ist.
 
 $\square$
+
+![Abstand windschiefer Geraden](img/mat-bild-36.png "_Fig._ Zwei windschiefe Geraden $g_j$ mit den Richtungsvektoren $b_j=\overrightarrow{P_jQ_j}$ und $j\in\{1,2\}$. Die Lotfußtpunkte ergeben sich aus der Lösung des Gleichungssystems $P_1+\lambda_1\cdot b_1+\alpha\cdot (b_1\times b_2)+\lambda_2\cdot b_2-P_2=o$ als $L_j=P_j+\lambda_j\cdot b_j$. Für den Abstand beider Geraden gilt $\operatorname{dist}(g_1,g_2)=\overline{L_1L_2}$.")
+
+**Bemerkung 2.** Die berechneten Koeffizienten im vorstehenden Beweis lassen sich alternativ unter Benutzung der [Cramerschen Regel](https://de.wikipedia.org/wiki/Cramersche_Regel) berechnen. Die Lotfußpunkte $L_j$ auf den Geraden $g_j$ lassen sich unter Benutzung der Koeffizienten berechnen zu $L_j=P_j+\lambda_j\cdot b_j$.
 
 Gerade und Ebene
 ===
@@ -5867,9 +5906,7 @@ Ist $g$ eine Gerade und $E$ eine Ebene in $\mathbb{R}^3$, so sind genau drei Fä
 * $g$ schneidet $E$ in genau einem Punkt
 
 <!-- style="background-color: lightgray;"-->
->**Schnittwinkel zwischen einer Gerade und einer Ebene.** Es sei $g$ eine Gerade mit Richtungsvektor $b\in\mathbb{R}^3$ und $E$ eine Ebene mit Normalenvektor $n\in\mathbb{R}^3$ und $g$ und $E$ schneiden sich in genau einem Punkt. Dann kann der Schnittwinkel $\alpha$ zwischen $g$ und $E$ durch $$
-  \cos(\alpha)=\frac{|n\cdot b|}{||n||\cdot ||b||}
-$$ berechnet werden.
+>**Schnittwinkel zwischen einer Gerade und einer Ebene.** Es sei $g$ eine Gerade mit Richtungsvektor $b\in\mathbb{R}^3$ und $E$ eine Ebene mit Normalenvektor $n\in\mathbb{R}^3$ und $g$ und $E$ schneiden sich in genau einem Punkt. Dann kann der Schnittwinkel $\alpha$ zwischen $g$ und $E$ durch $$ \sin{\alpha}=\frac{|n\cdot b|}{|n|\cdot |b|} $$ berechnet werden.
 
 
 Zwei Ebenen
@@ -5883,9 +5920,7 @@ Sind $E$ und $G$ Ebenen in $\mathbb{R}^3$, so sind genau drei Fälle ihrer gegen
 * $E$ und $G$ schneiden sich in einer Geraden
 
 <!-- style="background-color: lightgray;"-->
->**Schnittwinkel zwischen zwei Ebenen.** Es seien $E$ und $G$ Ebene welche sich in einer Geraden schneiden. Ein Normalenvektor von $E$ sei $n$ und ein Normalenvektor von $G$ sei $m$. Dann kann der Schnittwinkel $\alpha$ zwischen $E$ und $G$ durch $$
-  \sin(\alpha)=\frac{|n\cdot m|}{||n||\cdot ||m||}
-$$ berechnet werden.
+>**Schnittwinkel zwischen zwei Ebenen.** Es seien $E$ und $G$ Ebene welche sich in einer Geraden schneiden. Ein Normalenvektor von $E$ sei $n$ und ein Normalenvektor von $G$ sei $m$. Dann kann der Schnittwinkel $\alpha$ zwischen $E$ und $G$ durch $$ \cos{\alpha}=\frac{|n\cdot m|}{|n|\cdot |m|} $$ berechnet werden.
 
 
 ## Differentialrechnung
@@ -6351,9 +6386,7 @@ $$ so dass sich für den Quotienten $$
   \lim_{n\to\infty}{\left(\frac{3\cdot n^2-4\cdot n+5}{4\cdot n^2-5\cdot n+6}\right)}=\frac{3-4\cdot 0+5\cdot 0}{4-5\cdot 0++6\cdot 0}=\frac{3}{4}
 $$ ergibt. Das ist der Quotient der Koeffizienten zu $n^2$ aus Zähler und Nenner.
 
-**Bemerkung 3.** Das Vorgehen in Beispiel 5 ist auf beliebige gebrochenrationale Funktionsterme $f(n)=Z(n)/N(n)$ übertragbar:
-
-*Im Zählerpolynom $Z(n)$ und Nennerpolynom $N(n)$ wird jeweils die höchste in $N(n)$ auftretende Potenz von $n$ ausgeklammert.*
+**Bemerkung 3.** Das Vorgehen in Beispiel 5 ist auf beliebige gebrochenrationale Funktionsterme $f(n)=Z(n)/N(n)$ übertragbar: "*Im Zählerpolynom $Z(n)$ und Nennerpolynom $N(n)$ wird jeweils die höchste in $N(n)$ auftretende Potenz von $n$ ausgeklammert.*"
 
 Tritt die höchste auftretende Potenz von $n$
 
@@ -6643,13 +6676,100 @@ $$ und $x_n<1$ für alle $n$. Damit folgt $$
 $$ Analog lässt sich unter Verwendung von $\tilde{x}_n=1+\frac{1}{n}$ die Aussage $\lim_{x\to1+0}{f(x)}=\infty$ nachweisen.
 3. Die Funktion $f$ mit $$
   f(x)=\left\{\begin{array}{lll}\frac{x^3-x}{x-1} & \text{für} & x\not=1 \\ 1 & \text{für} & x=1 \end{array}\right.
-$$ ist nicht stetig in $x_0=1$, da $$
-  \lim_{x\rightarrow 1\pm0}{\left(\frac{x^3-x}{x-1}\right)}=2
-$$ aber $f(1)=1$. D. h. beide einseitige Grenzwerte existieren, sind aber verschieden vom Funktionswert an dieser Stelle.
+$$ ist nicht stetig in $x_0=1$, da $$ \lim_{x\rightarrow 1\pm0}{\left(\frac{x^3-x}{x-1}\right)}=2 $$ aber $f(1)=1$. D. h. beide einseitige Grenzwerte existieren, sind aber verschieden vom Funktionswert an dieser Stelle.
 
 ****************************************
 
 [^1]: Die Zahlenfolge $c_k$ ist ebenso konvergent mit Grenzwert $g_a$.
+
+
+### Differenzierbarkeit
+
+
+Ziel dieses Abschnitts ist, lokale Aussagen über das Verhalten der Funktionswerte $y=f(x)$ einer Funktion $f$ in einer Umgebung $U(x_0)$ von $x_0\in D$ mit Definitionsbereich $D$ zu treffen. Unter der Voraussetzung $U(x_0)\subset D$ existiert zu jedem $x\in U(x_0)$ der Funktionswert $y=f(x)$.
+
+**Beispiel 1.** Der Graph einer linearen Funktion der Form $f:\mathbb{R}\to\mathbb{R}$ mit $f(x)=m\cdot x+n$ und reellen Koeffizienten $m$ und $n$ ist eine Gerade. Das Wachstum der Funktionswerte an einer beliebigen Stelle $x_0\in\mathbb{R}$ lässt sich mittels des Differenzenquotienten $$ \frac{\Delta y}{\Delta x}(h):=\frac{f(x_0+h)-f(x_0)}{h}=\frac{m}{1} $$ für ein beliebiges $h>0$ berechnen. Hierin bezeichnen $\Delta y$ beziehungsweise $\Delta x$ die Differenzen der Funktionswerte beziehungsweise Argumente zweier Punkte $P$ und $Q$ des Funktionsgraphen. Der Differenzenquotient ist in diesem Beispiel an allen Stellen $x_0$ gleich und unabhängig von $h$, siehe nachstehende Abbildung.
+
+![Differenzenquotient-konstant](img/mat-bild-34.png "_Fig._ Differenzenquotient zu einer linearen Funktion $f$. Die Funktion besitzt an jeder Stelle $x_0\in\mathbb{R}$ das gleiche Wachstumsverhalten.")
+
+**Beispiel 2.** Der Graph der kubischen Funktion der Form $g:\mathbb{R}\to\mathbb{R}$ mit $g(x)=x^3$ ist eine kubische Parabel. Das Wachstum der Funktionswerte an einer beliebigen Stelle $x_0\in\mathbb{R}$ lässt sich mittels des Differenzenquotienten $$ \frac{\Delta y}{\Delta x}(h):=\frac{g(x_0+h)-g(x_0)}{h}=\frac{(x_0+h)^3-x_0^3}{h}=\frac{x_0^3+3x_0^2h+3x_0h^2+h^3-x_0^3}{h}=3x_0^2+3x_0h+h^2 $$ Für sehr kleine Werte $h$ verhält sich $f$ annähernd wie eine lineare Funktion und es gilt im Grenzübergang $$ \lim_{h\to 0}{\left(\frac{\Delta y}{\Delta x}(h)\right)}=3x_0^2 $$
+
+**Beispiel 3.** Die stückweise definierte Funktion $h:\mathbb{R}\to\mathbb{R}$ mit $$ h(x)=\left\{\begin{array}{rcl} x^3 & \text{für} & x<0 \\ x & \text{für} & x\geq0 \end{array}\right. $$ verhält sich an der Stelle $x_0=0$ nicht wie eine lineare Funktion. Für den Differenzenquotienten gilt $$ \frac{\Delta y}{\Delta x}(h)=\left\{\begin{array}{rcl} h^2 & \text{für} & h<0 \\ 1 & \text{für} & h\geq0 \end{array}\right. $$ Vergleiche für die Berechnung die beiden vorstehenden Beispiele.
+
+Hiermit lässt sich allgemein festlegen:
+
+>**Definition 1.** Seien $f:D\to\mathbb{R}$ mit $D\subseteq\mathbb{R}$ eine reelle Funktion einer reellen Variablen sowie $x_0\in D$ mit $U_\delta(x_0)\subset D$ für ein $\delta>0$ gegeben. Existiert für eine ~~beliebige~~ konvergente Zahlenfolge $n\mapsto x_n\;(\in U_\delta(x_0))$ mit Grenzwert $\lim_{n\to\infty}{x_n}=x_0$ eine konvergente Folge von [Differenzenquotienten](https://de.wikipedia.org/wiki/Differenzenquotient) $$ \lim_{n\to\infty}{\frac{f(x_n)-f(x_0)}{x_n-x_0}}=g\;(\in\mathbb{R}) $$ so heißt $$ g=:\left.\frac{\operatorname{d}y}{\operatorname{d}x}\right|_{x=x_0} $$ [Differentialquotient](https://de.wikipedia.org/wiki/Differentialrechnung#Differenzierbarkeit) von $f$ an der Stelle $x_0$ und die Funktion an dieser Stelle **differenzierbar**.
+
+Die Bezeichnung für den Differentialquotienten von $f$ an einer differenzierbaren Stelle $x_0\in D$ variieren in der Literatur. So sind beispielsweise möglichauch die nachstehenden Schreibweisen $$ f'(x_0)\,,\quad \frac{\operatorname{d}f}{\operatorname{d}x}(x_0)\,,\quad  \left.\frac{\operatorname{d}f}{\operatorname{d}x}\right|_{x=x_0} $$ mit Bezug auf die Funktion $f$ üblich. Statt des Differentialquotienten spricht man im obigen Fall oft auch von der **ersten Ableitung** der Funktion $f$ an der Stelle $x_0$.
+
+**Bemerkung 1.** Ist $f$ in $x_0$ differenzierbar, d. h. existiert an dieser Stelle die erste Ableitung $f'(x_0)$, so ist $f$ dort noctwendig auch stetig, da  $$ \lim_{x\to x_0}\left(f(x)-f(x_0)\right)=\lim_{x\to x_0}\left({\frac{f(x)-f(x_0)}{x-x_0}\cdot(x-x_0)}\right)=f'(x_0)\cdot 0=0 $$ Die Stetigkeit einer Funktion an einer Stelle $x_0$ ist somit notwendig für die Differenzierbarkeit an dieser Stelle, jedoch nicht hinreichend, wie auch Beispiel 3 zeigt.
+
+**Bemerkung 2.** Ist eine Funktion $f$ für alle Argumente $x_0\in D'\subseteq D$ differenzierbar, so heißt $f$ auf $D'$ differenzierbar. Die Funktion $$ f:D'\to\mathbb{R} $$ wird dann erste Ableitung von $f$ bzw. Ableitungsfunktion genannt.
+
+Die erste Ableitung von differenzierbaren Funktionen lässt sich unter Verwendung der Javascript-Bibliothek [Algebrite](http://algebrite.org/) interaktiv berechnen. Der Befehl `d(f,x)` berechnet die erste Ableitung einer Funktion $f$ nach der unabhängigen Variablen $x$. Der Befehl `subst(2,x,f1)` wertet die erste Ableitung $f'$ einer differenzierbaren Funktion $f$ an der Stelle $x_0=2$ aus.
+
+```algebrite
+f=x^3
+f1=d(f,x)
+f1
+subst(2,x,f1)
+```
+@Algebrite.eval
+
+Die ersten Ableitungen einiger reeller Grundfunktionen $f$ in der reellen Variablen $x$ (mit größtmöglichem Definitionsbereich $D$) sind in der nachstehenden Tabelle angegeben.
+
+<!-- data-type="none" -->
+| Funktion   | Funktionsterm   | erste Ableitung   |
+| :--------- | :--------- | :--------- |
+| konstante Funktion     | $f(x)=c$     | $f'(x)=0$     |
+| Potenzfunktion     | $f(x)=x^a\; (a\in\mathbb{R})$     | $f'(x)=a\cdot x^{a-1},\; x\in D_a^\prime$     |
+| Sinusfunktion     | $f(x)=\sin{x}$     | $f'(x)=\cos{x}$     |
+| Kosinusfunktion     | $f(x)=\cos{x}$     | $f'(x)=-\sin{x}$     |
+| Tangensfunktion     | $f(x)=\tan{x}$     | $f'(x)=\frac{1}{\cos^2{x}},\; x\neq \frac{(2k+1)\pi}{2}$     |
+| natürliche Exponentialfunktion     | $f(x)=\exp{x}$     | $f'(x)=\exp{x}$     |
+| natürliche Logarithmusfunktion     | $f(x)=\ln{x}$     | $f'(x)=\frac{1}{x}$     |
+| Sinus hyperbolicus     | $f(x)=\sinh{x}$     | $f'(x)=\cosh{x}$     |
+| Kosinus hyperbolicus     | $f(x)=\cosh{x}$     | $f'(x)=\sinh{x}$     |
+| Tangens hyperbolicus     | $f(x)=\tanh{x}$     | $f'(x)=\frac{1}{\cosh^2{x}}$     |
+| Arcussinus     | $f(x)=\arcsin{x},\; x\in(-1,1)$     | $f'(x)=\frac{1}{\sqrt{1-x^2}},\; x\in(-1,1)$     |
+| Arcuskosinus     | $f(x)=\arccos{x},\; x\in(-1,1)$     | $f'(x)=\frac{-1}{\sqrt{1-x^2}},\; x\in(-1,1)$     |
+| Arcustangens     | $f(x)=\arctan{x}$     | $f'(x)=\frac{1}{1+x^2}$     |
+| [Areasinus hyperbolicus](https://de.wikipedia.org/wiki/Areasinus_hyperbolicus_und_Areakosinus_hyperbolicus)     | $f(x)=\operatorname{arsinh}{x}$     | $f'(x)=\frac{1}{\sqrt{1+x^2}}$     |
+| [Areakosinus hyperbolicus](https://de.wikipedia.org/wiki/Areasinus_hyperbolicus_und_Areakosinus_hyperbolicus)     | $f(x)=\operatorname{arcosh}{x},\; x>1$     | $f'(x)=\frac{1}{\sqrt{x^2-1}},\; x>1$     |
+| [Areatangens hyperbolicus](https://de.wikipedia.org/wiki/Areatangens_hyperbolicus_und_Areakotangens_hyperbolicus)     | $f(x)=\operatorname{artanh}{x},\; x\in(-1,1)$     | $f'(x)=\frac{1}{1-x^2},\; x\in(-1,1)$     |
+
+Allgemeine Ableitungsregeln für die Verkettung und Verknüpfung von Funktionen sind in den nachstehenden beiden Sätzen aufgeführt.
+
+>**Satz 1.** Seien $f:x\mapsto f(x)$ und $g:x\mapsto g(x)$ auf $D\subset\mathbb{R}$ definierte und in $x_0\in D$ differenzierbare Funktionen. Desweiteren seien $\alpha,\beta\in\mathbb{R}$ konstante Parameter.
+>
+>Die Differentiation nach der unabhängigen Variablen $x$ 
+>
+>1. einer **Linearkombination** von $f$ und $g$ an der Stelle $x_0$ ist $$\left(\alpha\cdot f(x_0)+\beta\cdot g(x_0)\right)^\prime=\alpha\cdot f^\prime(x_0)+\beta\cdot g^\prime(x_0),\quad \alpha,\beta\in\mathbb{R} $$
+>2. des **Produkts** von $f$ und $g$ an der Stelle $x_0$ ist $$ \left(f(x_0)\cdot g(x_0)\right)^\prime=f^\prime(x_0)\cdot g(x_0)+f(x_0)\cdot g^\prime(x_0) $$
+>3. des **Quotienten** von $f$ und $g$ an der Stelle $x_0$ ist $$\left(\frac{f(x_0)}{g(x_0)}\right)^\prime=\frac{f^\prime(x_0)\cdot g(x_0)-f(x_0)\cdot g^\prime(x_0)}{\left(g(x_0)\right)^2} $$
+>
+>Die erste Ableitungsregel wird *Linearität der Ableitung* genannt. 
+
+>**Satz 2.** Gegeben sind zwei Funktionen einer reellen Variablen $f:D\to\mathbb{R}$ und $g:B\to\mathbb{R}$, wobei $W_f\subset B$ für den Wertebereich $W_f$ gilt. 
+>
+>Ist $f$ an der Stelle $x_0\in D$ differenzierbar und ist $g$ an der Stelle $f(x_0)\in W_f$ differenzierbar, so ist auch $(g\circ f)$ an $x_0$ differenzierbar und es gilt dort $$ (g\circ f)(x_0):=\frac{\rm d}{\mathrm{d}x}g(f(x_0))=\frac{\rm d}{\mathrm{d}f}g(f(x_0))\cdot\frac{\rm d}{\mathrm{d}x}f(x_0) $$ d. h. die Ableitung der **Komposition** ergibt sich als Produkt der Ableitungen von "äußerer" und "innerer" Funktion.
+
+
+
+**Beispiel 4.** Mit Hilfe der Ableitungsregeln für die aufgeführten Grundfunktionen lassen sich erste Ableitungen weiterer Funktionen bilden.
+
+1. Die allgemeine Exponentialfunkion mit $f(x)=a^x$ zur Basis $a>0$ mit $x>0$ lässt sich unter Beutzung der Definition des Logarithmus darstellen als $$ a^x= \exp{(x\cdot\ln{a})} $$ Unter Benutzung der Kettenregel lässt sich die erste Ableitung von $f$ nach der unabhängigen Variablen $x$ berechnen $$ f'(x)=\exp{(x\cdot\ln{a})}\cdot\ln{a}=a^x\cdot\ln{a} $$
+2. Die allgemeine Logarithmusfunkion mit $f(x)=\log_{a}{x}$ zur Basis $a>0$ mit $x>0$ lässt sich unter Beutzung der Logarithmengesetzes darstellen als $$ \log_{a}{x}=\frac{\ln{x}}{\ln{a}} $$ worin $\ln{x}$ den natürlichen Logarithmus von $x$ beschreibt. Unter Benutzung der Linearität der ersten Ableitung folgt hieraus $$ f'(x)=\frac{1}{\ln{a}\cdot x} $$ 
+
+Das nachstehende Beispiel zeigt, dass die Ableitungsfunktion einer differenzierbaren Funktion nicht stetig sein muss.
+
+**Beispiel 5.** Gegeben sei die stückweise definierte Funktion $f:(-1,1)\to\mathbb{R}$ mit $$ f(x)=\left\{\begin{array}{ccc} x^2\cdot \sin\left(\frac{1}{x^2}\right) & \text{falls} & x\neq 0 \\ 0 & \text{falls} & x=0	\end{array}\right. $$
+
+1. Zunächst ist zu zeigen, dass die Funktion $f$ im gesamten Definitionsbereich stetig und differenzierbar ist. Die Ableitungsfunktion $f'$ ist zu berechnen. Die Funktion $f$ ist für alle $x\in (-1,1)$ mit $x\neq 0$ stetig, da sie dort die Komposition elementarer stetiger Funktionen ist. Es bleibt daher nur die Stetigkeit an der Stellle $x=0$ zu untersuchen: Dazu sei $(x_n)_{n\in\mathbb{N}}$ eine beliebige Nullfolge mit Gliedern $x_n\in (-1,1)$ und $x_n\neq 0$ für alle $n\in \mathbb{N}$. Dann ist $$ \lim_{n\rightarrow\infty} \left[x_n^2\cdot \sin\left(\frac{1}{x_n^2}\right)\right]=0=f(0)$$ da die Folge $\left(\sin\left(1/x_n^2\right)\right)_{n\in\mathbb{N}}$ beschränkt ist. Also ist $f$ im gesamten Definitionsbereich stetig. Für $x\neq 0$ ist $$ f'(x)=2x\cdot\sin\left(\frac{1}{x^2}\right)-\frac{2}{x}\cdot\cos\left(\frac{1}{x^2}\right) $$ mit Hilfe der obigen Ableitungsregeln. Für $x=0$ ergibt sich $$ f'(0) = \lim_{h\rightarrow 0}\left(\frac{f(0+h)-f(0)}{h}\right) = \lim_{h\rightarrow 0}\left(\frac{h^2\cdot \sin\left(\frac{1}{h^2}\right)}{h}\right) = 0 $$ Daher erhalten wir für die Ableitungsfunktion $f':(-1,1)\to\mathbb{R}$ $$ f'(x)=\left\{\begin{array}{ccc} 2x\cdot\sin\left(\frac{1}{x^2}\right)-\frac{2}{x}\cdot\cos\left(\frac{1}{x^2}\right) &\text{falls} & x\neq 0 \\ 0 &\text{falls}& x=0	\end{array}\right. $$
+2. Nun ist die Ableitungsfunktion $f'$ auf Stetigkeit zu untersuchen. Die Ableitungsfunktion $f'$ ist für alle $x\in (-1,1)$ mit $x\neq 0$ stetig (analoge Begründung wie schon bei $f$ selbst). Um $f'$ an der Stelle $x=0$ auf Stetigkeit zu untersuchen betrachten wir die Folge $(x_n)_{n\in\mathbb{N}^\times}$ mit $$ x_n=\frac{1}{\sqrt{\pi n}}>0 $$ Offenbar ist $(x_n)_{n\in\mathbb{N}^\times}$ eine Nullfolge und es gelten $$ \sin\left(\frac{1}{x_n^2}\right)=\sin(\pi n)=0\quad\text{sowie}\quad\cos\left(\frac{1}{x_n^2}\right)=\cos(\pi n)=(-1)^n $$ Also gilt $$ f'(x_n)=(-1)^{n+1}\cdot 2\sqrt{\pi n} $$ Die Folge $(f'(x_n))_{n\in\mathbb{N}^\times}$ konvergiert aber nicht, denn sie ist nicht beschränkt, womit $f'$ an der Stelle $x=0$ nicht stetig sein kann. 
+
+
+
 
 
 ## Integralrechnung
