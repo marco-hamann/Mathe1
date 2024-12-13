@@ -4895,7 +4895,7 @@ abs(b)-(1^2+2^2+3^2)^(1/2)
 @Algebrite.eval
 
 **Beispiel 3.** Es wird $n\geq 2$ angenommen. Des Weiteren $a\in\mathbb{R}^n$ und $b\in\mathbb{R}^n$ als Ortsvektoren zweier Punkte $A$ bzw. $B$ bezüglich eines Bezugspunktes $O$. Bezüglich der kanonischen Basis $$
-  B=[e_1,\,...\,,e_n]=\left[
+  [e_1,\,...\,,e_n]=\left[
     \begin{pmatrix} 1 \\ 0 \\ \vdots \\ 0 \end{pmatrix},\;...\;,
     \begin{pmatrix} 0 \\ \vdots \\ 0 \\ 1 \end{pmatrix}
   \right]
@@ -4992,7 +4992,7 @@ $$ Das orthogonale Komplement ergibt sich $$
   N^\perp=\left\{x\in\mathbb{R}^3\;\,(x_1+2\cdot x_2+3\cdot x_3=0\;\wedge\; -x_1+x_3=0)\right\}
 $$ Die beschreibenden Gleichungen bilden ein System zweier linearer Gleichungen vom Typ $(2,3)$ mit der Lösung $$
   x=\lambda\cdot\begin{pmatrix} 1 \\ -2 \\ 1 \end{pmatrix}\,,\quad \lambda\in\mathbb{R}
-$$ (Bitte nachrechnen.) Der Vektor $x$ ist orthogonal zu jedem der Vektoren aus $N$, steht also senkrecht auf jeder Linearkombination beider Vektoren.
+$$ (Bitte nachrechnen.) Der Vektor $x$ ist orthogonal zu jedem der Vektoren aus $N$, steht also senkrecht auf jeder vom Nullvektor verschiedenen Linearkombination beider Vektoren.
 
 **Bemerkung 2.** Das orthogonale Komplement $M^\perp$ einer Menge $M$ ist ein Untervektorraum von $V$, da
 
@@ -5077,7 +5077,7 @@ Für Vektoren des euklidischen dreidimensionalen Vektorraumes $V=\mathbb{R}^3$ m
 
 >**Definition 6.** Gegeben seien $a\in\mathbb{R}^3$ und $b\in\mathbb{R}^3$. Dann existiert ein eindeutig bestimmter Vektor $c\in\mathbb{R}^3$ mit
 >
->1. $c\in M^\perp$ mit $M^\perp=\{a,b\}$
+>1. $c\in M^\perp$ mit $M=\{a,b\}$
 >2. $|c|=|a|\cdot|b|\cdot\sin{\measuredangle(a,b)}$
 >3. Falls $\{a,b\}$ linear unabhängig sind, so bildet das System $[a,b,c]$ ein [Rechtssystem](https://de.wikipedia.org/wiki/Rechtssystem_%28Mathematik%29).
 >
@@ -5966,9 +5966,7 @@ $$ eine Zuordnung von zwei unabhängigen reellen Variablen $(x,y)$ zu einer reel
 $$ während der Funktionsgraph zu $f$ $$
   G_f=\left\{(x,y,z)\mathbb{R}^3|z=f(x,y)=\sqrt{25-x^2-y^2}\;\land\;(x,y)\in D\right\}
 $$ die obere Hälfte einer Kugelschale mit Mittelpunkt im Koordinatenursprung und Radius $5$ beschreibt. Funktionen diesen Typs werden **reelle Funktionen in m reellen Variablen** genannt.
-3. Für $D\subseteq\mathbb{R}$ und $Z=\mathbb{R}^k$ ist $f:D\to\mathbb{R}^k$. Die 'Funktionswerte' sind in diesem Fall Vektoren / geordnete $k$-Tupel reeller Zahlen. Die Funktionen dieser Klasse werden auch **vektorwertige Funktionen einer reellen Variablen** genannt. Beispiele sind etwa [Bézier-Kurven](https://de.wikipedia.org/wiki/B%C3%A9zierkurve) im $k$-dimensionalen Raum. $$
-  f:[0,1]\to y=f(t)=\sum_{j=0}^n{\left[\binom{n}{j}\cdot(1-t)^{1-j}\cdot t^j\cdot p_j\right]}
-$$ worin $p_j\in\mathbb{R}^k$ die Stützpunkte der Bézier-Kurve genannt werden.
+3. Für $D\subseteq\mathbb{R}$ und $Z=\mathbb{R}^k$ ist $f:D\to\mathbb{R}^k$. Die 'Funktionswerte' sind in diesem Fall Vektoren / geordnete $k$-Tupel reeller Zahlen. Die Funktionen dieser Klasse werden auch **vektorwertige Funktionen einer reellen Variablen** genannt. Beispiele sind etwa [Bézier-Kurven](https://de.wikipedia.org/wiki/B%C3%A9zierkurve) im $k$-dimensionalen Raum. $$ f:[0,1]\to y=f(t)=\sum_{j=0}^n{\left[\binom{n}{j}\cdot(1-t)^{n-j}\cdot t^j\cdot p_j\right]} $$ worin $p_j\in\mathbb{R}^k$ die Stützpunkte der Bézier-Kurve genannt werden.
 4. Für $D\subseteq\mathbb{R}$ und $Z=\mathbb{C}$ ist $f:D\to\mathbb{C}$. Die 'Funktionswerte' sind in diesem Fall komplexe Zahlen, die einem reellen Argument eindeutig zugeordnet sind. Funktionen dieser Klasse werden **komplexe Funktionen einer reellen Variablen** genannt. Zum Beispiel $$
   f:[0,2\pi)\to y=f(t)=\exp{(i\cdot t)}\quad\text{mit}\quad i^2=-1
 $$ die Eulerdarstellung einer komplexen Zahl. Der Wertebereich dieser Funktion beschreibt einen Kreis in der Gaußschen Zahlenebene um den Koordinatenursprung des Koordinatensystems mit Radius 'Eins'.
@@ -5997,7 +5995,7 @@ $$ Die Definitionsmenge $D=\mathbb{R}$ ist hierbei zerlegt in $$
 $$ auf den Teilintervallen bestehen die Funktionen $$
   x\mapsto 0,\;x\in(-\infty,0)\quad\text{sowie}\quad x\mapsto x^2,\;x\in[0,1)\quad\text{und}\quad x\mapsto 2-x,\;x\in[1,\infty)
 $$ Der Definitionsbereich der Funktion $f$ ist $\mathbb{R}$, der Wertebereich lässt als Vereinigung der Wertebereiche der drei Teilfunktionen bestimmen $$
-  W=\left\{0\right\}\cup[0,1)\cup(\infty,1)=(\infty,1)
+  W=\left\{0\right\}\cup[0,1)\cup(-\infty,1)=(-\infty,1)
 $$
 
 Stückweise oder auch achsenabschnittsweise definierte Funktionen einer reellen Variablen werden im nachstehenden Video an einem Beispiel erläutert.
@@ -6068,9 +6066,9 @@ $$ der Primzahlen zuweist (natürliche Ordnung). Zum Beispiel ist $f(73)=21$, d.
   f^{-1}:\mathbb{N}^\times\to\mathcal{P}
 $$ mit $f^{-1}(n)=$ "die $n$-te Primzahl in der Ungleichungskette". Hier sind z. B. $f^{-1}(21)=73$ und ebenso $f^{-1}(12)=37$.
 
-**Bemerkung 3.** Für bijektive reelle Funktionen $f:D\to Z$ mit $D\subseteq\mathbb{R}$ entsteht der Graph der Umkehrfunktion $f^{-1}$ durch Spiegelung des Graphen $f$ an der Geraden zur Gleichung $y = x$. Siehe nachstehende Abbildung.
+**Bemerkung 3.** Für bijektive reelle Funktionen $f:D\to Z$ mit $D\subseteq\mathbb{R}$ entsteht der Graph der Umkehrfunktion $f^{-1}$ durch Spiegelung des Graphen $f$ an der Geraden zur Gleichung $y = x$. Beispiele für diesen geometrischen Zusammenhang lassen sich unter [Umkehrfunktion](https://www.geogebra.org/m/FuHUNb2m) betrachten. Siehe auch die nachstehende Abbildung.
 
-![Umkehrfunktion](img/mat-bild-23.png "_Fig._ Graphen einer invertierbaren reellen Funktion $f$ einer reellen Variablen und deren Umkehrfunktion $f^{-1}$: beide Graphen sind spiegelsymmetrisch bezogen auf die Gerade zur Gleichung $y=x$ (Winkelsymmetrale des ersten und dritten Quadranten).")
+![Umkehrfunktion 1](img/mat-bild-23.png "_Fig._ Graphen einer invertierbaren reellen Funktion $f$ einer reellen Variablen und deren Umkehrfunktion $f^{-1}$: beide Graphen sind spiegelsymmetrisch bezogen auf die Gerade zur Gleichung $y=x$ (Winkelsymmetrale des ersten und dritten Quadranten).")
 
 
 Verketten von Funktionen
@@ -6122,11 +6120,22 @@ $$ Für ein allgemeines $x$ ergeben sich die Iterierten von $f$ mit $$
   f^{\langle 1\rangle}(x)={{x^2+2}\over{2\,x}}\,,\quad
   f^{\langle 2\rangle}(x)={{x^4+12\,x^2+4}\over{4\,x^3+8\,x}}\,,\quad
   f^{\langle 3\rangle}(x)={{x^8+56\,x^6+280\,x^4+224\,x^2+16}\over{8\,x^7+112\,x^5+224\,x^3+64\,x}}\,,\quad
-  f^{\langle 4\rangle}(x)={{x^{16}+240\,x^{14}+7280\,x^{12}+64064\,x^{10}+205920\,x^8+256256\,x^6+116480\,x^4+15360\,x^2+256}\over{16\,x^{15}+1120\,x^{13}+17472\,x^{11}+91520\,x^9+183040\,x^7+139776\,x^5+35840\,x^3+2048\,x}}\,, ...
-$$ Der Funktionsgraph zu $f^{\langle 3\rangle}$ ist im Bereich $x\in[-5,5]$ in der nachstehenden Abbildung dargestellt.
+  f^{\langle 4\rangle}(x)={{x^{16}+240\,x^{14}+7280\,x^{12}+64064\,x^{10}+205920\,x^8+256256\,x^6+116480\,x^4+15360\,x^2+256}\over{16\,x^{15}+1120\,x^{13}+17472\,x^{11}+91520\,x^9+183040\,x^7+139776\,x^5+35840\,x^3+2048\,x}}\,, ... $$ Der Funktionsgraph zu $f^{\langle 3\rangle}$ ist im Bereich $x\in[-5,5]$ in der nachstehenden Abbildung dargestellt.
 
 ![Iteration](img/mat-bild-25.png "_Fig._ Funktionsgraphen der $n$-ten Iterierten $f^{\langle n\rangle}$ mit $n\in\{1,2,3\}$ zur Funktion $f:\mathbb{R}\to\mathbb{R},\;x\mapsto(x^2+2)/(2\cdot x)$. Im dargestellten Intervall $[-5,5]$ sind beispielsweise $f^{\langle 3\rangle}(-3)\approx -1.4$ und $f^{\langle 3\rangle}(1)\approx 1.4$ ablesbar.")<!-- style="display: block; margin-left: auto; margin-right: auto; max-width: 1000px;" -->
 
+Die $n$-te Iterierte einer Funktion $f$ lässt sich unter Verwendung der Javascript-Biliothek [Algebrite](http://algebrite.org/) interaktiv berechnen. Der hierbei verwendete Befehl `rationalize(g)` wandelt - wo möglich - eine Summe $g$ von gebrochenrationalen Termen in einen Term mit gemeinsamem Nenner um. Der Befehl `for(do(.),k,1,n)` wertet wiederholt ($n$-mal) den in den Klammern von `do(.)` gesetzten Ausdruck aus: hier also die wiederholte Verkettung einer Funktion $g$ mit der Funktion $f$, welche anschließend wieder $g$ zugewiesen wird.
+
+```algebrite
+clearall
+f=(x^2+2)/(2*x)
+g=f
+n=2
+for(do(g=rationalize(subst(g,x,f))), k,1,n-1)
+g
+float(subst(1,x,g))
+```
+@Algebrite.eval
 
 Sicher gewusst
 ===
@@ -6685,6 +6694,9 @@ $$ ist nicht stetig in $x_0=1$, da $$ \lim_{x\rightarrow 1\pm0}{\left(\frac{x^3-
 
 ### Differenzierbarkeit
 
+Ableitung einer reellen Funktion
+===
+
 
 Ziel dieses Abschnitts ist, lokale Aussagen über das Verhalten der Funktionswerte $y=f(x)$ einer Funktion $f$ in einer Umgebung $U(x_0)$ von $x_0\in D$ mit Definitionsbereich $D$ zu treffen. Unter der Voraussetzung $U(x_0)\subset D$ existiert zu jedem $x\in U(x_0)$ der Funktionswert $y=f(x)$.
 
@@ -6768,6 +6780,70 @@ Das nachstehende Beispiel zeigt, dass die Ableitungsfunktion einer differenzierb
 1. Zunächst ist zu zeigen, dass die Funktion $f$ im gesamten Definitionsbereich stetig und differenzierbar ist. Die Ableitungsfunktion $f'$ ist zu berechnen. Die Funktion $f$ ist für alle $x\in (-1,1)$ mit $x\neq 0$ stetig, da sie dort die Komposition elementarer stetiger Funktionen ist. Es bleibt daher nur die Stetigkeit an der Stellle $x=0$ zu untersuchen: Dazu sei $(x_n)_{n\in\mathbb{N}}$ eine beliebige Nullfolge mit Gliedern $x_n\in (-1,1)$ und $x_n\neq 0$ für alle $n\in \mathbb{N}$. Dann ist $$ \lim_{n\rightarrow\infty} \left[x_n^2\cdot \sin\left(\frac{1}{x_n^2}\right)\right]=0=f(0)$$ da die Folge $\left(\sin\left(1/x_n^2\right)\right)_{n\in\mathbb{N}}$ beschränkt ist. Also ist $f$ im gesamten Definitionsbereich stetig. Für $x\neq 0$ ist $$ f'(x)=2x\cdot\sin\left(\frac{1}{x^2}\right)-\frac{2}{x}\cdot\cos\left(\frac{1}{x^2}\right) $$ mit Hilfe der obigen Ableitungsregeln. Für $x=0$ ergibt sich $$ f'(0) = \lim_{h\rightarrow 0}\left(\frac{f(0+h)-f(0)}{h}\right) = \lim_{h\rightarrow 0}\left(\frac{h^2\cdot \sin\left(\frac{1}{h^2}\right)}{h}\right) = 0 $$ Daher erhalten wir für die Ableitungsfunktion $f':(-1,1)\to\mathbb{R}$ $$ f'(x)=\left\{\begin{array}{ccc} 2x\cdot\sin\left(\frac{1}{x^2}\right)-\frac{2}{x}\cdot\cos\left(\frac{1}{x^2}\right) &\text{falls} & x\neq 0 \\ 0 &\text{falls}& x=0	\end{array}\right. $$
 2. Nun ist die Ableitungsfunktion $f'$ auf Stetigkeit zu untersuchen. Die Ableitungsfunktion $f'$ ist für alle $x\in (-1,1)$ mit $x\neq 0$ stetig (analoge Begründung wie schon bei $f$ selbst). Um $f'$ an der Stelle $x=0$ auf Stetigkeit zu untersuchen betrachten wir die Folge $(x_n)_{n\in\mathbb{N}^\times}$ mit $$ x_n=\frac{1}{\sqrt{\pi n}}>0 $$ Offenbar ist $(x_n)_{n\in\mathbb{N}^\times}$ eine Nullfolge und es gelten $$ \sin\left(\frac{1}{x_n^2}\right)=\sin(\pi n)=0\quad\text{sowie}\quad\cos\left(\frac{1}{x_n^2}\right)=\cos(\pi n)=(-1)^n $$ Also gilt $$ f'(x_n)=(-1)^{n+1}\cdot 2\sqrt{\pi n} $$ Die Folge $(f'(x_n))_{n\in\mathbb{N}^\times}$ konvergiert aber nicht, denn sie ist nicht beschränkt, womit $f'$ an der Stelle $x=0$ nicht stetig sein kann. 
 
+
+Ableitung der Umkehrfunktion
+===
+
+Betrachtet wird eine reelle Funktion $f:x\mapsto y=f(x)$ mit $x\in D\subseteq\mathbb{R}$, die in einer Umgebung $U(x_0)\subseteq D$ eines Argumentes $x_0$ umkehrbar ist. Die Funktion besitze die beiden nachstehenden Eigenschaften:
+
+1. $f$ ist differenzierbar in $x_0$ und $f^{-1}$ ist differenzierbar in $f(x_0)$
+2. $f'(x_0)\not=0$
+
+Für die Umkehrfunktion gilt in $f(x_0)$ $$f^{-1}\circ f=\operatorname{id}_D\quad\text{mit}\quad f^{-1}(f(x_0))=x_0 $$ Vergleiche Abschnitt [Funktionsbegriff](#Funktionsbegriff). Mit der Kettenregel gilt $$ 1=\left(f^{-1}\circ f\right)'(x)=\frac{\operatorname{d}}{\operatorname{d}y}f^{-1}\cdot\frac{\operatorname{d}}{\operatorname{d}x}f\quad\text{sowie}\quad 1=\left(f^{-1}\circ f\right)'(x_0)=\left.\frac{\operatorname{d}}{\operatorname{d}y}f^{-1}(y)\right|_{y=f(x_0)}\cdot\left.\frac{\operatorname{d}}{\operatorname{d}x}f(x)\right|_{x=x_0} $$ und damit $$ (f^{-1})(f(x_0))=\frac{1}{f'(x_0)} $$
+
+**Bemerkung 3.** Geometrisch lässt sich die erste Ableitung einer Funktion $f$ an einer Stelle $x_0\in D_f$ als Tangens des Anstiegswinkels $\alpha$ der Tangente an den Funktionsgraph in $P(x_0,f(x_0))$ auffassen, d. h. $$ f'(x_0)=\tan{\alpha} $$ Unter den hier getroffenen Voraussetzungen folgt dann unter Nutzung der Additionstheoreme für Sinus und Kosinus für die Ableitung der Umkehrfunktion $$ \left(f^{-1}\right)'(f(x_0))=\tan{\beta}=\tan{\left(\frac{\pi}{2}-\alpha\right)}=\frac{\sin{\left(\frac{\pi}{2}-\alpha\right)}}{\cos{\left(\frac{\pi}{2}-\alpha\right)}}=\frac{\cos{\alpha}}{\sin{\alpha}}=\frac{1}{\tan{\alpha}}=\frac{1}{f'(x_0)} $$ Vergleiche das verlinkte [Beispiel](https://www.geogebra.org/m/bpteh6eq) und Bemerkung 3 im Abschnitt [Funktionsbegriff](#Funktionsbegriff).
+
+
+Übertragen des Ableitungsbegriffs auf andere Funktionenklassen
+===
+
+
+Der Begriff des Differentialquotienten für differenzierbare reelle Funktionen einer reellen Variablen lässt sich auf andere Funktionenklassen übertragen. 
+
+1. Ist $f$ reelle Funktion in $k>1$ reellen Veränderlichen $$ f:(x_1,x_2,...,x_k)\mapsto y=f(x_1,x_2,...,x_k) \quad\text{mit}\quad (x_1,x_2,...,x_k)\in\mathbb{R}^k $$ so lassen sich an einer beliebigen (festen) Stelle $(x_1^\ast,x_2^\ast,...,x_k^\ast)\in D_f$ die Funktionen $$ g_j:\textcolor{red}{x_j}\mapsto y=g_j(\textcolor{red}{x_j})=f\left(x_1^\ast,...,x_{j-1}^\ast,\textcolor{red}{x_j},x_{j+1}^\ast,...,x_k^\ast\right) \quad\text{mit}\quad \textcolor{red}{x_j}\in\mathbb{R}\;\;\text{und}\;\;(x_1^\ast,...,x_{j-1}^\ast,\textcolor{red}{x_j},x_{j+1}^\ast,...,x_k^\ast)\in D $$ in jeweils einer reellen unabhängigen Variablen bilden. Sind die Funktionen $g_j$ in $x_j^\ast$ differenzierbar, d. h. existieren die Grenzwerte $$ \frac{\partial f}{\partial x_j}(x_1^\ast,...,x_{j-1}^\ast,\textcolor{red}{x_j^\ast},x_{j+1}^\ast,...,x_k^\ast):=\frac{\mathrm{d}g_j}{\mathrm{d}x_j}(\textcolor{red}{x_j^\ast})=\lim_{h_j\to 0}{\frac{f\left(x_1^\ast,...,x_{j-1}^\ast,\textcolor{red}{x_j^\ast+h_j},x_{j+1}^\ast,...,x_k^\ast\right)-f\left(x_1^\ast,...,x_{j-1}^\ast,\textcolor{red}{x_j^\ast},x_{j+1}^\ast,...,x_k^\ast\right)}{h_j}} $$ so heißen diese Ableitungen **partielle Ableitungen** der Funktion $f$ nach den unabhängigen Variablen $x_j$.
+2. Ist $f$ eine vektorwertige Funktion in der reellen Variablen $t$ $$ f:t\mapsto (x_1,x_2,...,x_k)=(f_1(t),f_2(t),...,f_k(t))\quad\text{mit}\quad t\in D\subseteq\mathbb{R} $$ so lassen sich die reellen Koordinatenfunktionen $f_j:t\mapsto x_j=f_j(t)$ betrachten. Sind diese jeweils differenzierbar an einer gemeinsamen Stelle $t^\ast\in D$ vorausgesetzt, so lassen sich dort die ersten Ableitungen $$ \dot{f}_1\left(t^\ast\right):=\frac{\mathrm{d}{f_1}}{\mathrm{d}{t}}\left(t^\ast\right)\,,\quad \dot{f}_2\left(t^\ast\right):=\frac{\mathrm{d}{f_2}}{\mathrm{d}{t}}\left(t^\ast\right)\,,\ldots\,,\quad \dot{f}_k\left(t^\ast\right):=\frac{\mathrm{d}{f_k}}{\mathrm{d}{t}}\left(t^\ast\right) $$ bilden. Die hieraus konstruierbare Funktion $$ \dot{f}:t\mapsto \left(\dot{f}_1(t),\dot{f}_2(t),...,\dot{f}_k(t)\right)\quad\text{mit}\quad t\in\bigcup_{j\in J}{D'_j}\;\;\text{und}\;\; J=\{1,2,...,k\}$$ worin $D_j'\subseteq D$ den jeweils größtmöglichen Definitionsbereich von $\dot{f}_j$ darstellt, wird **erste Ableitungsfunktion** von $f$  genannt.
+
+**Beispiel 6.** Das [Widerstandsmoment](https://de.wikipedia.org/wiki/Widerstandsmoment#Beispiele) $W$ eines Balkens mit rechteckigem Querschnitt lässt sich mithilfe der reellen Funktion $$ f:(0,\infty)^2\to\mathbb{R}\quad\text{mit}\quad(b,h)\mapsto W=f(b,h)=\frac{1}{6}\cdot b\cdot h^2 $$ berechnen, worin die unabhängigen Variablen $b$ die Breite des Profils (parallel zur $y$-Achse) sowie $h$ dessen Höhe bezeichnen. Die partiellen Ableitungen von $f$ nach $b$ bzw. $h$ lassen sich als gewöhnliche Ableitungen nach diesen Variablen berechnen, in dem die jeweils andere als (konstant gewählter) Parameter betrachtet wird $$ W_b:=\frac{\partial f}{\partial b}=\frac{1}{6}\cdot h^2\cdot 1=\frac{1}{6}\cdot h^2\quad\text{sowie}\quad W_h:=\frac{\partial f}{\partial h}=\frac{1}{6}\cdot 2\cdot h\cdot b=\frac{2}{3}\cdot h\cdot b $$ Wir werden diese partielle Ableitungen (später) bei der Berechnung der Abweichung einer Zielgröße in Abhängigkeit mehrerer unabhängige fehlerbehaftete Messgrößen verwenden ([Lineare Fehlerfortpflanzung](https://de.wikipedia.org/wiki/Fehlerfortpflanzung#Mehrere_fehlerbehaftete_Gr%C3%B6%C3%9Fen_2)). Im Beispiel werden wir vermöge der Formel $$ \delta W\approx\sqrt{\frac{\partial f}{\partial b}\cdot\delta b+\frac{\partial f}{\partial h}\cdot \delta h} $$ die Unsicherheit $\delta W$ des Widerstandsmoments aus den (bekannten) Unsicherheiten $\delta b$ und $\delta h$ der Messgrößen $(b,h)$ berechnen.
+
+Die partiellen ersten Ableitungen lassen sich unter Verwendung der Javascript-Bibliothek [Algebrite](http://algebrite.org/) interaktiv berechnen. Der Befehl `d(f,b)` berechnet die partielle erste Ableitung einer Funktion $f$ nach der unabhängigen Variablen $b$, `d(f,h)` entsprechend nach der unabhängigen Variablen $h$. Hängt eine Funktion nicht von einer Variablen ab, so ist der Funktionsterm als 'konstant' bezüglich dieser Variablen zu betrachten: die partielle Ableitung nach dieser Variablen liefert den Ausdruck Null.
+
+```algebrite
+f=1/6*b*h^2
+d(f,b)
+d(f,h)
+d(f,[b,h])
+d(f,x)
+```
+@Algebrite.eval
+
+**Beispiel 7.** ..
+
+Der Ableitungsvektor einer vektorwertigen Funktion $f:t\mapsto (x_1,x_2,...,x_k)(t)$ lässt sich unter Verwendung der Javascript-Bibliothek [Algebrite](http://algebrite.org/) interaktiv berechnen. Auch hierfür kann der Befehl `d(f,t)` verwendet werden. Dieser berechnet die Ableitungsfunktion jeder Komponente von $f$ und gibt den Ableitungsvektor von $f$ an.
+
+```algebrite
+f=[cos(t),sin(t)]
+d(f,t)
+```
+@Algebrite.eval
+
+
+Sicher gewusst
+===
+
+Testen Sie Ihr Wissen bei der Beantwortung der nachstehenden Fragen.
+
+**Frage 1.** Das Volumen $V$ eines geraden Kreiskegelstumpfes der Höhe $h$ mit den beiden Radien $r$ bzw. $R$ der 'kleinen' bzw. 'großen' Kreisfläche lässt sich mit Hilfe der Funktion $$ f:(0,\infty)^3\to(0,\infty)\quad\text{mit}\quad V=f(r,R,h)=\frac{\pi}{3}\cdot h\cdot\left(r^2+r\cdot R+R^2\right) $$ berechnen. Die Unsicherheit bei der Angabe von $V$ kann dabei unter Benutzung der partiellen Ableitungen dieser Funktion (näherungsweise) bestimmt werden. Berechnen Sie die hierfür benötigten partiellen ersten Ableitungen der Funktion $f$.
+
+[[$$\frac{\partial f}{\partial r}$$] [$$\frac{\partial f}{\partial R}$$] [$$\frac{\partial f}{\partial h}$$]]
+[( ) ( ) (X)]  $$ \frac{\pi}{3}\cdot\left(r^2+r\cdot R+R^2\right) $$
+[( ) (X) ( )]  $$ \frac{\pi}{3}\cdot h\cdot\left(r+2\cdot R\right) $$
+[(X) ( ) ( )]  $$ \frac{\pi}{3}\cdot h\cdot\left(2\cdot r+R\right) $$
+[[?]] Bilden Sie die partiellen ersten Ableitungen der Funktion $f$, in dem Sie nach der gewünschten unabhängigen Variablen gewöhnlich ableiten. Die anderen unabhängigen Variablen sind dabei als (konstante) Parameter zu betrachten.
+****************************************
+
+Der Funktionsterm lässt sich schreiben als $$ f(r,R,h)=\frac{\pi}{3}\cdot h\cdot\left(r^2+r\cdot R+R^2\right)=\frac{\pi}{3}\cdot h\cdot r^2+\frac{\pi}{3}\cdot h\cdot r\cdot R+\frac{\pi}{3}\cdot h\cdot R^2 $$ Unter Benutzung der Summenregel ergeben sich hieraus die partiellen ersten Ableitungen $$ \frac{\partial f}{\partial r}=\frac{\pi}{3}\cdot h\cdot\left(2\cdot r+R\right)\,,\quad \frac{\partial f}{\partial R}=\frac{\pi}{3}\cdot h\cdot\left(r+2\cdot R\right)\quad\text{und}\quad \frac{\partial f}{\partial h}=\frac{\pi}{3}\cdot\left(r^2+r\cdot R+R^2\right) $$
+
+****************************************
 
 
 
