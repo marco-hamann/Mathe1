@@ -6000,7 +6000,7 @@ $$
 
 Stückweise oder auch achsenabschnittsweise definierte Funktionen einer reellen Variablen werden im nachstehenden Video an einem Beispiel erläutert.
 
-!?[stückweise definierte Funktion](https://www.youtube.com/watch?v=e5mgC1Wa7C4&list=PLLTAHuUj-zHj8RYKLbm4INxaAP4nrSApU&index=30 "_Fig._ Funktionen, stückweise, achsenabschnittsweise definierte Funktionen, Daniel Jung.")
+!?[stückweise definierte Funktion](https://www.youtube.com/watch?v=e5mgC1Wa7C4&list=PLLTAHuUj-zHj8RYKLbm4INxaAP4nrSApU&index=30 "Funktionen, stückweise, achsenabschnittsweise definierte Funktionen, Daniel Jung.")
 
 
 Allgemeine Eigenschaften
@@ -6021,7 +6021,7 @@ $$ Hierin bedeutet das Symbol $\,\exists!\,$ den Existenzquantor "es existiert g
 
 Die Begriffe 'injektive -', 'surjektive -' und 'bijektive Funktion' werden im nachstehenden Video am Beispiel der Zuordnungsvorschrift $x\mapsto x^2$ erläutert.
 
-!?[injektiv, surjektiv, bijektiv](https://www.youtube.com/watch?v=23jng4oAwI8 "_Fig._ Injektiv, surjektiv, bijektiv, Schaubild mit Funktion, Daniel Jung.")
+!?[injektiv, surjektiv, bijektiv](https://www.youtube.com/watch?v=23jng4oAwI8 "Injektiv, surjektiv, bijektiv, Schaubild mit Funktion, Daniel Jung.")
 
 **Beispiel 3.** Die quadratische Zuordnungsvorschrift $x\mapsto x^2$ wird zur Konstruktion der nachstehenden Funktionen genutzt. $$
   f_1:\mathbb{N}\to\mathbb{N}\,,\quad f_2:[0,\infty)\to[0,\infty)\,,\quad f_3:\mathbb{R}\to\mathbb{R}\quad\text{und}\quad f_4:\mathbb{C}\to\mathbb{C}
@@ -6359,7 +6359,7 @@ $$ worin $\epsilon\leq1$ vorausgesetzt wird. Für alle $n>\sqrt{\frac{1}{\epsilo
 $$ dann folgt $g_a\leq g_b$ (*Vergleichssatz*).
 >2. Gelten $a_k\leq \textcolor{blue}{c_k}\leq b_k$ für alle $k$ und $$
   \lim_{k\rightarrow\infty}{(a_k)}=\textcolor{red}{g_a},\quad \lim_{k\rightarrow\infty}{(b_k)}=\textcolor{red}{g_a}
-$$ dann folgt $\lim_{k\rightarrow\infty}{(\textcolor{blue}{c_k})}=\textcolor{red}{g_a}$ (*Einschürungssatz*).[^1]
+$$ dann folgt $\lim_{k\rightarrow\infty}{(\textcolor{blue}{c_k})}=\textcolor{red}{g_a}$ (*Einschnürungssatz*).[^1]
 
 >**Satz 2.** Gegeben sind zwei konvergente Zahlenfolgen $(a_k)_{k\in\mathbb{N}}$ und $(b_k)_{k\in\mathbb{N}}$ mit $$
   \lim_{k\rightarrow\infty}{(a_k)}=a,\quad \lim_{k\rightarrow\infty}{(b_k)}=b
@@ -6805,7 +6805,7 @@ Der Begriff des Differentialquotienten für differenzierbare reelle Funktionen e
 
 **Beispiel 6.** Das [Widerstandsmoment](https://de.wikipedia.org/wiki/Widerstandsmoment#Beispiele) $W$ eines Balkens mit rechteckigem Querschnitt lässt sich mithilfe der reellen Funktion $$ f:(0,\infty)^2\to\mathbb{R}\quad\text{mit}\quad(b,h)\mapsto W=f(b,h)=\frac{1}{6}\cdot b\cdot h^2 $$ berechnen, worin die unabhängigen Variablen $b$ die Breite des Profils (parallel zur $y$-Achse) sowie $h$ dessen Höhe bezeichnen. Die partiellen Ableitungen von $f$ nach $b$ bzw. $h$ lassen sich als gewöhnliche Ableitungen nach diesen Variablen berechnen, in dem die jeweils andere als (konstant gewählter) Parameter betrachtet wird $$ W_b:=\frac{\partial f}{\partial b}=\frac{1}{6}\cdot h^2\cdot 1=\frac{1}{6}\cdot h^2\quad\text{sowie}\quad W_h:=\frac{\partial f}{\partial h}=\frac{1}{6}\cdot 2\cdot h\cdot b=\frac{2}{3}\cdot h\cdot b $$ Wir werden diese partielle Ableitungen (später) bei der Berechnung der Abweichung einer Zielgröße in Abhängigkeit mehrerer unabhängige fehlerbehaftete Messgrößen verwenden ([Lineare Fehlerfortpflanzung](https://de.wikipedia.org/wiki/Fehlerfortpflanzung#Mehrere_fehlerbehaftete_Gr%C3%B6%C3%9Fen_2)). Im Beispiel werden wir vermöge der Formel $$ \delta W\approx\sqrt{\frac{\partial f}{\partial b}\cdot\delta b+\frac{\partial f}{\partial h}\cdot \delta h} $$ die Unsicherheit $\delta W$ des Widerstandsmoments aus den (bekannten) Unsicherheiten $\delta b$ und $\delta h$ der Messgrößen $(b,h)$ berechnen.
 
-Die partiellen ersten Ableitungen lassen sich unter Verwendung der Javascript-Bibliothek [Algebrite](http://algebrite.org/) interaktiv berechnen. Der Befehl `d(f,b)` berechnet die partielle erste Ableitung einer Funktion $f$ nach der unabhängigen Variablen $b$, `d(f,h)` entsprechend nach der unabhängigen Variablen $h$. Hängt eine Funktion nicht von einer Variablen ab, so ist der Funktionsterm als 'konstant' bezüglich dieser Variablen zu betrachten: die partielle Ableitung nach dieser Variablen liefert den Ausdruck Null.
+Die partiellen ersten Ableitungen lassen sich unter Verwendung der Javascript-Bibliothek [Algebrite](http://algebrite.org/) interaktiv berechnen. Der Befehl `d(f,b)` berechnet die partielle erste Ableitung einer Funktion $f$ nach der unabhängigen Variablen $b$, `d(f,h)` entsprechend nach der unabhängigen Variablen $h$. Hängt eine Funktion nicht von einer Variablen $x$ ab, so ist der Funktionsterm als 'konstant' bezüglich dieser Variablen zu betrachten: die partielle Ableitung nach dieser Variablen liefert den Ausdruck Null.
 
 ```algebrite
 f=1/6*b*h^2
@@ -6816,13 +6816,86 @@ d(f,x)
 ```
 @Algebrite.eval
 
-**Beispiel 7.** ..
+**Beispiel 7.** Gegeben ist die vektorwertige Funktion $f$ mit $$ f:[0,2\pi)\to\mathbb{R}^2\,,\quad t\mapsto f(t)=\begin{pmatrix} f_1({t}) \\ f_2({t}) \end{pmatrix} = \begin{pmatrix} \cos{t} \\ \sin{t} \end{pmatrix} $$ Der Wertebereich dieser Funktion ist in $\mathbb{R}^2$ - als Punktmenge interpretiert - der Einheitskreis um den Koordinatenursprung. Der Ableitungsvektor $\dot{f}$ von $f$ ist die Funktion $$ \dot{f}:[0,2\pi)\to\mathbb{R}^2\,,\quad t\mapsto \dot{f}(t)=\begin{pmatrix} \dot{f}_1({t}) \\ \dot{f}_2({t}) \end{pmatrix} = \begin{pmatrix} -\sin{t} \\ \cos{t} \end{pmatrix} $$ Als freien Vektor interpretiert beschreibt $\dot{f}(t)$ einen Tangentenvektor an den Einheitskreis in $f(t)$. Kinematisch interpretiert lässt sich hierdurch die Geschwindigkeit von $P=f(t)$ auf der Bewegung auf dem Kreis beschreiben.
 
 Der Ableitungsvektor einer vektorwertigen Funktion $f:t\mapsto (x_1,x_2,...,x_k)(t)$ lässt sich unter Verwendung der Javascript-Bibliothek [Algebrite](http://algebrite.org/) interaktiv berechnen. Auch hierfür kann der Befehl `d(f,t)` verwendet werden. Dieser berechnet die Ableitungsfunktion jeder Komponente von $f$ und gibt den Ableitungsvektor von $f$ an.
 
 ```algebrite
 f=[cos(t),sin(t)]
 d(f,t)
+```
+@Algebrite.eval
+
+
+Logarithmische Differentiation
+===
+
+Ist eine differenzierbare Funktion $f:D\to\mathbb{R}\,,x\mapsto y=f(x)$ von der Gestalt $$ f(x)=[u(x)]^{v(x)} $$ mit reellen Funktionen $u$ beziehungsweise $v$ in Basis beziehungsweise Exponent der Potenz $f$ gegeben, so kann nicht mit den obigen Ableitungsregeln differenziert werden. Am Beispiel der Funktion $$ f(x)=x^{\sin{x}}\,,\quad x>0 $$ wird der Begriff der logarithmischen Ableitung erläutert.
+
+1. Das Logarithmieren von linker und rechter Seite der Bildungsvorschrift ergibt $$ \ln{(f(x))}=\ln{\left(x^{\sin{x}}\right)}=\sin{x}\cdot\ln{x} $$
+2. Nun werden beide Seiten der entstandenen, logarithmierten Gleichung nach der unabhängigen Variablen $x$ differenziert. Es ergibt sich unter Benutzung von Ketten- beziehungsweise Produktregel $$ \frac{1}{f(x)}\cdot f'(x)=\cos{x}\cdot\ln{x}+\sin{x}\cdot\frac{1}{x}\quad\leadsto\quad f'(x)=x^{\sin{x}}\cdot\left(\cos{x}\cdot\ln{x}+\sin{x}\cdot\frac{1}{x}\right) $$ woraus $f'(x)$ unmittelbar erhalten wird.
+
+Die beiden Schritte lassen sich zusammenfassen:
+
+<!-- style="background-color: lightgray;"-->
+> ** Logarithmische Ableitung.**
+>
+>1. Logarithmieren der expliziten Bildungsvorschrift (Funktionsgleichung).
+>2. Differenzen der logarithmierten Gleichung unter Benutzung der Kettenregel. Die Ableitung der linken Seite $$ \operatorname{L}(f):=\frac{\operatorname{d}}{\operatorname{d}x}{\left[\ln{(f(x))}\right]}=\frac{f'(x)}{f(x)} $$ wird [logarithmische Ableitung](https://de.wikipedia.org/wiki/logarithmische_Ableitung) von $f(x)$ genannt.
+
+**Bemerkung 4.** Die Bedeutung des Begriffs liegt in der Formel der logarithmischen Ableitung für ein Produkt $$ \operatorname{L}(f\cdot g)=\frac{\operatorname{d}}{\operatorname{d}x}{\left[\ln{(f(x)\cdot g(x))}\right]}=\frac{f'(x)\cdot g(x)+f(x)\cdot g'(x)}{f(x)\cdot g(x)}=\frac{f'(x)}{f(x)}+\frac{g'(x)}{g(x)}=\operatorname{L}(f)+\operatorname{L}(g) $$ d. h. die oogarithmische Ableung enes Produktes zweier differenzierbarer Funktonen ist gleich der Summe ihrer logarithmischen Ableitungen.
+
+**Beispiel 8.** Die Funktion $f_j:\mathbb{R}\to\mathbb{R}$ mit $f_1(x)=\sin{x}$ beziehungsweise $f_2(x)=\cot{x}$ besitzen die logarithmische Ableitungen $$ \operatorname{L}(\sin{x})=\frac{f'_1(x)}{f_1(x)}=\frac{\cos{x}}{\sin{x}}=\cot{x}\quad\text{bzw.}\quad \operatorname{L}(\cot{x})=\frac{f'_2(x)}{f_2(x)}=\frac{\frac{-(\sin{x})^2-(\cos{x})^2}{(\sin{x})^2}}{\cot{x}}=-\frac{1}{\sin{x}\cdot\cos{x}} $$ unter Verwendung der Javascript-Bibliothek [Algebrite](http://algebrite.org/) 
+
+```algebrite
+f=sin(x)
+f1=d(f,x)
+g=cos(x)/sin(x)
+g1=d(g,x)
+simplify(f1/f)
+simplify(g1/g)
+```
+@Algebrite.eval
+
+
+Implizite Differentiation
+===
+
+
+Nicht immer sind reelle differenzierbare Funktionen $f$ durch eine Zuordnungsvorschrift der Form $y=f(x)$ beschrieben.[^1] Die Differentiationsregeln lassen sich dann nicht unmittelbar anwenden. 
+
+Erfüllt eine differenzierbare Funktion $f:D\to\mathbb{R}$ mit $D\subseteq\mathbb{R}$ und $y=f(x)$ die Gleichung $F(x,f(x))=0$ für alle $x\in D$, so ist durch $$ x\mapsto F(x,f(x))=0 $$ die Nullfunktion beschrieben. Deren Ableitung muss daher ebenso Null sein. Sie berechnet sich gemäß $$ 0=\frac{\operatorname{d}}{\operatorname{d}x}{F(x,f(x))}=\frac{\partial F}{\partial x}(x,f(x))+\frac{\partial F}{\partial y}(x,f(x))\cdot f'(x)=0 $$ worin $\frac{\partial F}{\partial x}$ und $\frac{\partial F}{\partial y}$ die partiellen ersten Ableitungen von $F$ nach den Variablen $x$ un $y$ sowie $f'(x)$ die gewöhnliche Ableitung der Funktion $f$ nach der unabhängigen Variablen $x$ bezeichnen. (Die Variable $y$ ist von $x$ abhängig.) Ist die partielle Ableitung $\frac{\partial F}{\partial y}(x,f(x))$ an einer Stelle $(x_0,f(x_0))$ mit $x_0\in D$ verschieden von Null, so existiert ein Umgebung $U(x_0)$, in der sich die gewöhnliche Ableitung von $f$ gemäß $$ f'(x)=-\frac{\frac{\partial F}{\partial x}(x,f(x))}{\frac{\partial F}{\partial y}(x,f(x))}\,,\quad x\in U(x_0) $$ berechnen lässt.
+
+**Beispiel 9.** Gegeben ist die Normalenform $x^2+y^2=r^2$ der Gleichung des Kreises in der $xy$-Ebene um den Koordinatenursprung $O(0,0)$ mit Radius $r>0$. Oberer beziehungsweise unterer Halbkreis lassen sich als Graph einer Funktion $f:[-r,r]\to\mathbb{R}$ auffassen, so dass mit $y=f(x)$ gilt: $$ x^2+(f(x))^2=r^2\quad\leftrightarrow\quad F(x,f(x))=x^2+(f(x))^2-r^2=0 $$ Die Nullfunktion lässt sich implizit differenzieren zu $$ \frac{\operatorname{d}F}{\operatorname{d}x}(x,f(x))=2\cdot x+2\cdot f(x)\cdot f'(x)=0\quad\leftrightarrow\quad x+f(x)\cdot f'(x)=0 $$ Unter der Voraussetzung $f(x)\not=0$ lässt sich diese äquivalent umformen zu $$ f(x)=-\frac{x}{f(x)}=-\frac{x}{y} $$ Dies entspricht dem Anstieg der Tangente an die Kreislinie in einem ihrer Punkte $P(x,y)$, siehe nachstehende Abbildung.
+
+![implizite Ableitung](img/mat-bild-37.png "_Fig._ Kreis $k$ um den Koordinatenursprung zu gegebenem Radius. Die Tangente im Punkt $P(x,y)$ an $k$ besitzt die Steigung $-x/y$, wie sich unter Verwendung der kongruente Dreiecken aus der orthogonalen Lage des Radius und der Tangente in einem beliebigen Kreispunkt ergibt.")
+
+Eine entsprechende Rechnung für die Gleichung einer Ellipse $c$ $$ \frac{x^2}{a^2}+\frac{y^2}{b^2}=1\,,\quad a>0\,,\;b>0 $$ liefert die Steigung der Tangente an $c$ in einem ihrer Punkte $P(x,y)$ zu $$ f'(x)=-\frac{x}{y}\cdot\frac{b^2}{a^2} $$ worin $y=f(x)$ den oberen Halbbogen von $c\ni P$ als Graph der Funktion $f$ beschreibt. 
+
+Die Differentiation einer impliziten Gleichung ist im nachstehenden Video an einem Beispiel erläutert.
+
+!?[implizites Differenzieren](https://www.youtube.com/watch?v=-PqSWya_6Vw "Ableitung implizite Gleichung, Daniel Jung.")
+
+
+Höhere Ableitungen
+===
+
+
+Ist die Ableitungsfunktion einer differenzierbaren Funktion selbst wieder differenzierbar, so lässt sich die Ableitungsfunktion der Ableitungsfunktion bestimmen.
+
+>**Definition 2.** Existiert für eine reelle Funktion $f:D\to\mathbb{R}$ mit $D\subseteq\mathbb{R}$ die erste Ableitungsfunktion $$ f':x\mapsto y=f'(x)\,,\quad x\in D'\subseteq D $$ und ist $f'$ erneut differenzierbar auf $D''\subseteq D'\subseteq D$, dann heißt $f$ auf $D''$ **zweimal differenzierbar** und die Funktion $$ f'':x\mapsto y=f''(x)=(f'(x))'\,,\quad x\in D'' $$ die zweite Ableitungsfunktion von $f$.
+>
+>Analog höhere Ableitungen.
+
+Die zuvor genannten Ableitungen schreiben sich als Differentialquotienten $$ f''(x):=\frac{\operatorname{d}}{\operatorname{d}x}\left(\frac{\operatorname{d}f}{\operatorname{d}x}\right)=\frac{\operatorname{d}^2f}{\operatorname{d}x^2}\,,\quad\text{entsprechend}\quad f'''(x):=\frac{\operatorname{d}^3f}{\operatorname{d}x^3}\,,\quad...\quad,\;f^{(n)}(x):=\frac{\operatorname{d}^nf}{\operatorname{d}x^n} $$ Die letzte wird im Fall ihrer Existenz $n$-te Ableitung von $f$ genannt, die Funktion $f$ selbst $n$-mal differenzierbar.
+
+**Beispiel 10.** Gegeben ist die reelle Funktion $f:\mathbb{R}\to\mathbb{R}$ mit der Bildungsvorschrift $y=f(x)=\sin{x}\cdot\exp{(2\cdot x)}$. Die Funktion ist beliebig oft differenzierbar und es ergeben sich unter Benutzung von Ketten- und Produktregel $$ f'(x)=\exp{(2\cdot x)}\cdot\left(\cos{x}+2\cdot\sin{x}\right)\,,\quad f''(x)=\exp{(2\cdot x)}\cdot\left(4\cdot\cos{x}+3\cdot\sin{x}\right)\,,\quad f'''(x)=\exp{(2\cdot x)}\cdot\left(11\cdot\cos{x}+2\cdot\sin{x}\right)\,,\quad ... $$ mit $D'''=D''=D'=\mathbb{R}$.
+
+Mit Hilfe der Javascript-Bibliothek [Algebrite](http://algebrite.org) lassen sich $n$-te Ableitungen zu einer gegebenen $n$-mal differenzierbaren Funktion interaktiv berechnen. Das dritte Argument im Operator `d(f,x,3)` gibt die Ableitungsordnung an.
+
+```algebrite
+f=sin(x)*exp(2*x)
+simplify(d(f,x,3))
 ```
 @Algebrite.eval
 
@@ -6844,6 +6917,23 @@ Testen Sie Ihr Wissen bei der Beantwortung der nachstehenden Fragen.
 Der Funktionsterm lässt sich schreiben als $$ f(r,R,h)=\frac{\pi}{3}\cdot h\cdot\left(r^2+r\cdot R+R^2\right)=\frac{\pi}{3}\cdot h\cdot r^2+\frac{\pi}{3}\cdot h\cdot r\cdot R+\frac{\pi}{3}\cdot h\cdot R^2 $$ Unter Benutzung der Summenregel ergeben sich hieraus die partiellen ersten Ableitungen $$ \frac{\partial f}{\partial r}=\frac{\pi}{3}\cdot h\cdot\left(2\cdot r+R\right)\,,\quad \frac{\partial f}{\partial R}=\frac{\pi}{3}\cdot h\cdot\left(r+2\cdot R\right)\quad\text{und}\quad \frac{\partial f}{\partial h}=\frac{\pi}{3}\cdot\left(r^2+r\cdot R+R^2\right) $$
 
 ****************************************
+
+**Frage 2.** Eine Funktion $f:D\to\mathbb{R}$ mit $D\subseteq\mathbb{R}$ mit $$ f(x)=k\cdot (u(x))^3\cdot(v(x))^5\,,\quad k\in\mathbb{R} $$ besitzt die logarithmische Ableitung
+
+[( )] $$ \operatorname{L}(f)=3\cdot(\operatorname{L}(u))^2+5\cdot(\operatorname{L}(v))^4 $$
+[( )] $$ \operatorname{L}(f)=15\cdot\operatorname{L}(u)\cdot\operatorname{L}(v) $$
+[(X)] $$ \operatorname{L}(f)=3\cdot\operatorname{L}(u)+5\cdot\operatorname{L}(v) $$
+[( )] $$ \operatorname{L}(f)=k\cdot\left(3\cdot\operatorname{L}(u)+5\cdot\operatorname{L}(v)\right) $$
+[[?]] Der Funktionsterm $f(x)$ ist ein Produkt der (mehrfach auftretenden) Funktionen $k$ (konstant), $u$ und $v$. Nutzen Sie zur Berechnung der logarithmischen Ableitung Bemerkung 4 in diesem Abschnitt.
+****************************************
+
+Für den Funktionsterm von $f$ gilt unter Umformen der Potenzen in Produkte $$ f(x)=k\cdot u(x)\cdot u(x)\cdot u(x)\cdot v(x)\cdot v(x)\cdot v(x)\cdot v(x)\cdot v(x) $$ Mit Bemerkung 4 ergibt sich hieraus die Lösung. (Die logarithmische Ableitung der konstanten Funktion $x\mapsto k$ ist Null.)
+
+Allgemein lässt sich für eine differenzierbare Funktion $f$ mit $$ f(x) = k \cdot (u(x))^a \cdot (v(x))^b \cdot (w(x))^c \cdot \dots $$ in der unabhängigen Variablen $x\in D\subseteq\mathbb{R}$ mit $k\in\mathbb{R}$ und natürlichen Konstanten $a\in\mathbb{N}^\ast$, $b\in\mathbb{N}^\ast$, $c\in\mathbb{N}^\ast$ usw. die logarithmische Ableitung zu $$ \operatorname{L}(f) = \left(a\cdot\operatorname{L}(u) + b\cdot\operatorname{L}(v) + c\cdot\operatorname{L}(w) + \dots\right) $$ berechnen. Für verschiedene Parameter lassen sich hieraus unterschiedliche Rechenregeln ableiten: bei den Faktoren $k=1$, $a=1$, $b=1$ die Produktregel, bei den Faktoren $k=1$, $a=1$, $b=-1$ die Quotientenregel und mit $k=1$, $a=-1$ die Reziprokenregel. Siehe [Rechenregeln](https://de.wikipedia.org/wiki/Logarithmische_Ableitung#Rechenregeln).
+
+****************************************
+
+[^1]: Ist eine Funktion $f$ durch eine Bildungsvorschrift der Form $y=f(x)$ beschrieben, so nennt man diese Darstellung *explizite Darstellungsform*. Ist $f$ hingegen durch $F(x,f(x))=0$ beschrieben, so spricht man von einer *impliziten Darstellungsform*.
 
 
 
