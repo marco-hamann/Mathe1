@@ -5548,7 +5548,10 @@ Lernziele
 -----
 
 
-* Sie kennen ..
+* Sie kennen den Begriff eines affinen Raumes, der einen Vektorraum mit einem zuordenbaren Punktraum verbindet. Die Begriffe 'Ortsvektor' eines Punktes beziehungsweise 'affiner Unterraum' leiten sich aus dieser Beziehung ab.
+* Sie können Grundelemente Punkte und Geraden einer affinen Ebene durch analytische Hilfsmittel wie Gleichungen beziehungsweise Parameterdarstellungen beschreiben. Analog können Grundelemente eines affinen Raumes verschiedenlich analytisch dargestellt werden.
+* Die geometrische Bedeutung der Koeffizienten in der Hesseschen Normalform einer Geraden- / Ebenengleichung kann genutzt werden, um die relative Lagebeziehung von Grundelementen zu beschreiben. 
+* Daneben lassen sich unter Benutzung des Vektorkalküls Winkel bzw. Abstände zwischen Grundelementen berechnen.
 
 
 ### Affine Räume
@@ -6710,7 +6713,7 @@ Ziel dieses Abschnitts ist, lokale Aussagen über das Verhalten der Funktionswer
 
 Hiermit lässt sich allgemein festlegen:
 
->**Definition 1.** Seien $f:D\to\mathbb{R}$ mit $D\subseteq\mathbb{R}$ eine reelle Funktion einer reellen Variablen sowie $x_0\in D$ mit $U_\delta(x_0)\subset D$ für ein $\delta>0$ gegeben. Existiert für eine ~~beliebige~~ konvergente Zahlenfolge $n\mapsto x_n\;(\in U_\delta(x_0))$ mit Grenzwert $\lim_{n\to\infty}{x_n}=x_0$ eine konvergente Folge von [Differenzenquotienten](https://de.wikipedia.org/wiki/Differenzenquotient) $$ \lim_{n\to\infty}{\frac{f(x_n)-f(x_0)}{x_n-x_0}}=g\;(\in\mathbb{R}) $$ so heißt $$ g=:\left.\frac{\operatorname{d}y}{\operatorname{d}x}\right|_{x=x_0} $$ [Differentialquotient](https://de.wikipedia.org/wiki/Differentialrechnung#Differenzierbarkeit) von $f$ an der Stelle $x_0$ und die Funktion an dieser Stelle **differenzierbar**.
+>**Definition 1.** Seien $f:D\to\mathbb{R}$ mit $D\subseteq\mathbb{R}$ eine reelle Funktion einer reellen Variablen sowie $x_0\in D$ mit $U_\delta(x_0)\subset D$ für ein $\delta>0$ gegeben. Existiert für eine ~~beliebige~~ konvergente Zahlenfolge $n\mapsto x_n\;(\in U_\delta(x_0))$ mit Grenzwert $\lim_{n\to\infty}{x_n}=x_0$ eine konvergente Folge von [Differenzenquotienten](https://de.wikipedia.org/wiki/Differenzenquotient) $$ \lim_{n\to\infty}{\frac{f(x_n)-f(x_0)}{x_n-x_0}}=g\;(\in\mathbb{R}) $$ so heißt $$ g=:\left.\frac{\operatorname{d}y}{\operatorname{d}x}\right|_{x=x_0} $$ [Differentialquotient](https://de.wikipedia.org/wiki/Differentialrechnung#Differenzierbarkeit) von $f$ an der Stelle $x_0$ und die Funktion an dieser Stelle **differenzierbar**. Ist $f$ an jeder Stelle ihres Definitionsbereichs differenzierbar, so heißt $f$ kurz differenzierbar.
 
 Die Bezeichnung für den Differentialquotienten von $f$ an einer differenzierbaren Stelle $x_0\in D$ variieren in der Literatur. So sind beispielsweise möglichauch die nachstehenden Schreibweisen $$ f'(x_0)\,,\quad \frac{\operatorname{d}f}{\operatorname{d}x}(x_0)\,,\quad  \left.\frac{\operatorname{d}f}{\operatorname{d}x}\right|_{x=x_0} $$ mit Bezug auf die Funktion $f$ üblich. Statt des Differentialquotienten spricht man im obigen Fall oft auch von der **ersten Ableitung** der Funktion $f$ an der Stelle $x_0$.
 
@@ -6943,6 +6946,14 @@ Allgemein lässt sich für eine differenzierbare Funktion $f$ mit $$ f(x) = k \c
 [^1]: Ist eine Funktion $f$ durch eine Bildungsvorschrift der Form $y=f(x)$ beschrieben, so nennt man diese Darstellung *explizite Darstellungsform*. Ist $f$ hingegen durch $F(x,f(x))=0$ beschrieben, so spricht man von einer *impliziten Darstellungsform*.
 
 
+### Differential
+
+
+* Differential einer reellen Funktion einer reellen Variablen als linearer Zuwachs [Wiki](https://de.wikipedia.org/wiki/Differential_%28Mathematik%29#Das_Differential_als_linearisierter_Zuwachs)
+* Zusammenhang zur Tangente 
+* Anwendung: Linearisierung einer reellen Funktion, Fehlerrechnung
+* Tangentenverfahren nach Newton zum Lösen von Gleichungen
+* Taylorpolynom, Ersatzobjekte zweiter Ordnung, ggf. Krümmung
 
 
 ## Integralrechnung
