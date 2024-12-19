@@ -6510,7 +6510,7 @@ $$ zu wählen. Für die Funktion $g$ gilt $$
 $$ somit ist $g$ in $x=1$ stetig.
 
 <!-- style="background-color: lightgray;"-->
->Eine Funktion $f:D\to\mathbb{R}$ mit $d\subseteq\mathbb{R}$ ist an einer Stelle $x_0\in D$ **nicht stetig**, falls beispielsweise
+>Eine Funktion $f:D\to\mathbb{R}$ mit $D\subseteq\mathbb{R}$ ist an einer Stelle $x_0\in D$ **nicht stetig**, falls beispielsweise
 >
 >1. zwar links- und rechtsseitiger Grenzwert existieren und einander gleich sind, jedoch diese verschieden vom Funktionswert $f(x_0)$ sind $$
   \lim_{x\to x_0-0}{f(x)}=\lim_{x\to x_0+0}{f(x)}\not=f(x_0)
@@ -6898,6 +6898,13 @@ f=sin(x)*exp(2*x)
 simplify(d(f,x,3))
 ```
 @Algebrite.eval
+
+**Beispiel 11.** Betrachtet wird die Funktion $f:\mathbb{R}\to\mathbb{R}$ mit $f(x) = x\cdot \exp{x}$. Zunächst sind die Ableitungsfunktionen $f'$, $f''$ und $f'''$ von $f$ mit größtmöglichen Definitionsbereichen $D'''\subseteq D''\subseteq D'\subseteq D$ zu bestimmen. Mit der Produktregel gilt $$ f'(x)=\exp{x}+ x\cdot\exp{x} = \exp{x}\cdot (x+1)\,,\quad f''(x)=\exp{x}\cdot (x+1) + \exp{x} = \exp{x}\cdot (x+2)\quad\text{sowie}\quad f'''(x)=\exp{x}\cdot (x+2) + \exp{x} = \exp{x}\cdot (x+3) $$ Wir vermuten $$ f^{(n)}(x)=\exp{x}\cdot (x+n) $$ für die $n$-te Ableitung der Funktion $f$. Der Beweis erfolgt per vollständiger Induktion:
+
+1. Induktionsanfang: Für $n=0$ gilt $f^{(0)}(x) = f(x) = \exp{x}\cdot x$
+2. Induktionsschritt: Für den Übergang $n\to n+1$ nehmen wir an, dass die Vermutung für alle Wert $1,\dots,n$ gelte und fragen uns, ob hieraus auch ihre Gültigkeit für $n+1$ folgt. $$ f^{(n+1)}(x) = (f^{(n)})'(x) = (\exp{x}\cdot (x+n))' = \exp{x}\cdot (x+n) +\exp{x} = \exp{x}\cdot (x+(n+1)) $$ Damit ist der Induktionsschritt gezeigt.
+
+Die Ableitungsformel ist somit für beliebige natürliche Ordnungen $n>0$ beweisen. $\square$
 
 
 Sicher gewusst
