@@ -6948,14 +6948,159 @@ Allgemein lässt sich für eine differenzierbare Funktion $f$ mit $$ f(x) = k \c
 
 ### Differential
 
-
-* Differential einer reellen Funktion einer reellen Variablen als linearer Zuwachs [Wiki](https://de.wikipedia.org/wiki/Differential_%28Mathematik%29#Das_Differential_als_linearisierter_Zuwachs)
-* Zusammenhang zur Tangente 
-* Anwendung: Linearisierung einer reellen Funktion, Fehlerrechnung
-* Tangentenverfahren nach Newton zum Lösen von Gleichungen
-* Taylorpolynom, Ersatzobjekte zweiter Ordnung, ggf. Krümmung
+Definition
+===
 
 
-## Integralrechnung
+Dieser Abschnitt rückt das Differential einer reellen Funktion einer reellen Variablen $f:x\mapsto y$ als linearen Zuwachs der Ordinate $y$ an einer differenzierbaren Stelle $x\in D$ in den Blick. Das Differential stellt einen unmittelbaren Zusammenhang zur Tangente an dieser Stelle her, womit es sich geometrisch interpretieren lässt. Mögliche Anwendungen sind die Linearisierung einer reellen Funktion an einer differenzierbaren Stelle oder das Newtonsche Tangentenverfahren zur Lösung von Gleichungen in einer Variablen.
 
-## Differentialgleichungen
+In diesem Abschnitt bezeichne $f$ eine reelle Funktion in der reellen Variablen $x$ $$ f:D\to\mathbb{R}\,,\;x\mapsto y=f(x)\,,\; D\subseteq\mathbb{R} $$ Wir setzen $f$ in einer Umgebung $U(x_0)\subset D$ von $x_0$ differenzierbar voraus. Für zwei Punkte $P(x_0,f(x_0))$ und $Q(x_0+h,f(x_0+h))$ mit $0<h<\delta$ ergeben sich die Differenzen $$ \Delta x=(x_0+h)-x_0=h\quad\text{bzw.}\quad \Delta y=f(x_0+h)-f(x_0) $$ für die unabhängige - beziehungsweise abhängige Varaiable. Diese werden Abszissen- beziehungsweise Ordinatenänderung genannt. Vergleiche Beispiel 1 im Abschnitt [Differenzierbarkeit](#Differenzierbarkeit). Für den Anstieg der Tangente $t_P$ an den Graph der Funktion $f$ in $x_0$ ergibt sich $$ \tan{\alpha}=f'(x_0):=\left.\frac{\operatorname{d}y}{\operatorname{d}x}\right|_{x=x_0}=\lim_{h\to0}{\left(\frac{\Delta y}{\Delta x}\right)} $$ worin $\alpha$ den Anstiegswinkel bezeichnet. Bezeichnet man auf $t_P$ die entsprechende Koordinatenänderung ebenso mit $$ \operatorname{d}x=\Delta x\quad\text{bzw.}\quad \operatorname{d}y=f'(x_0)\cdot\operatorname{d}x $$ so ergibt sich die nachstehende Definition.
+
+>**Definition 1.** Das [Differential](https://de.wikipedia.org/wiki/Differential_%28Mathematik%29#Definition) $\operatorname{d}y=f'(x_0)\cdot\operatorname{d}x$ einer in $x_0\in D$ differenzierbaren Funktion $f$ ist der Ordinatenzuwachs auf der in $P$ errichteten Kurventangente bei Abszissenänderung von $x_0$ um $\operatorname{d}x=h$.
+
+Wird $\operatorname{d}y$ an der Stelle $x_0$ als lineare Funktion in $\operatorname{d}x$ betrachtet, so lassen sich die (unterschiedlichen) Ordinatenänderungen bezogen auf den Funktionsgraphen von $f$ beziehungsweise der Tangente an diesen in $P(x_0,f(x_0))$ durch die Differenz $$ \left.(\Delta y-\operatorname{d}y)\right|_{(x_0,h)}=(f(x_0+h)-f(x_0))-f'(x_0)\cdot h $$ angeben. Diese wird **Ordinatenabweichung** genannt.
+
+**Beispiel 1.** Zur gegebenen Funktion $f:\mathbb{R}\to\mathbb{R}$ mit $f(x)=x^3$ berechnet sich das Differential gemäß $$ \operatorname{d}y=3x^2\cdot\operatorname{d}x $$ worin $f'(x)=3x^2$ die erste Ableitung von $f(x)$ bezeichnet. An der (frei) gewählten Stelle $x_0=1$ berechnet sich das Differential speziell $\operatorname{d}y=3\cdot\operatorname{d}x$, d. h. der Ordinatenzuwachs $\operatorname{d}y$ entlang der Tangente ist an dieser Stelle das Dreifache der Abszissenänderung $\operatorname{d}x$. Hingegen berechnet sich die Ordinatenänderung in $x_0=1$ $$ \Delta y=f(1+h)-f(1)=(1+h)^3-1^3=(1^3+3h+3h^2+h^3)-1^3=3h+3h^2+h^3 $$ Die Ordinatenabweichung $$ \left.(\Delta y-\operatorname{d}y)\right|_{(x_0=1,h)} $$ ist für verschiedene (frei gewählte) Abszissenänderungen in der nachstehenden Tabelle angegeben. Aus der letzten Spalte kann gefolgert werden, dass sich der Funktionsgraph zu $f$ in einer hinreichend kleinen Umgebung von $x_0$ durch die Kurventangente an dieser Stelle annähern lässt. Diese Näherung an einer differenzierbaren Stelle wird **Linearisierung** der Funktion $f$ genannt.
+
+<!-- data-type="none" -->
+| $\operatorname{d}x$ | $\operatorname{d}y$ | $\Delta x$ | $\left|\Delta y-\operatorname{d}x\right|$ |
+| :--------- | :--------- | :--------- | :--------- |
+| $1$ | $3$ | $7$ | $4$ |
+| $\frac{1}{2}$ | $\frac{3}{2}$ | $\frac{19}{8}$ | $\frac{7}{8}$ |
+| $\frac{1}{10}$ | $\frac{3}{10}$ | $\frac{331}{1000}$ | $\frac{31}{1000}$ |
+| $\frac{1}{100}$ | $\frac{3}{100}$ | $\frac{30301}{1000000}$ | $\frac{301}{1000000}$ |
+
+Mit Hilfe der Javascript-Bibliothek [Algebrite](http://algebrite.org) lassen sich Ordinatenabweichungen einer differenzierbaren Funktion zu gegebenem Paar $(x_0,h)$ interaktiv berechnen.
+
+```algebrite
+f=x^3
+f1=d(f,x)
+x0=1
+h=0.1
+(subst(x0+h,x,f)-subst(x0,x,f))-subst(x0,x,f1)*h
+```
+@Algebrite.eval
+
+
+Anwendungen
+===
+
+
+<!-- style="background-color: lightgray;"-->
+>**Linearisierung einer Funktion.** Bezeichnet $f:D\to\mathbb{R}$ eine (nichtlineare) reelle Funktion in der reellen Variablen $x$ und sei $f$ differenzierbar in einer Umgebung $U(x_0)\subset D$ vorausgesetzt.
+>
+> Die Funktion $f$ lässt sich in $U(x_0)$ näherungsweise beschreiben durch das Differential $\operatorname{d}y=f'(x_0)\cdot\operatorname{d}x$. Werden die Differentiale als Differenzen $\operatorname{d}x=x-x_0$ und $\operatorname{d}y=y-y_0$ mit $y_0=f(x_0)$ betrachtet, so ergibt sich hieraus die in $x$ und $y$ lineare Gleichung $$ y-y_0=f'(x_0)\cdot(x-x_0)\quad\leftrightarrow\quad y=f'(x_0)\cdot x+\left(y_0-f'(x_0)\cdot x_0\right) $$ der Tangente an den Funktionsgraph von $f$ im Punkt $P(x_0,f(x_0))$.
+
+
+**Beispiel 2.** Für eine ungedämpfte elektromagnetische Schwingung gilt die Thomsonsche Schwingungsformel $$ T=2\pi\sqrt{L\cdot C} $$ worin $T$ die Schwingungsdauer, $L$ die Eigeninduktivität und $C$ die Kapazität der jeweiligen Bauelemente des Schwingkreis bezeichnen. Hier betrachten wir eine feste Eigeninduktivität von $L=0.1{\rm H}$. Die Schwingungsdauer $T$ ist dann eine Funktion der Kapazität $C$, kurz $T=f(C)$.
+
+1. Wir benutzen den Differenzenquotienten $\Delta T/\Delta C$  als Näherung des Differentialquotienten $\operatorname{d}T/\operatorname{d}C$ und betrachten näherungsweise die Ordinatenänderung $\Delta T$ von $f$ $$ \frac{\Delta T}{\Delta C}\approx\frac{{\rm d}T}{{\rm d}C} = \frac{{\rm d}}{{\rm d}C}(2\pi\sqrt{L\cdot C}) = 2\pi\sqrt{L}\cdot\frac{{\rm d}}{{\rm d}C}\sqrt{C}=\pi\sqrt{\frac{L}{C}} \quad\leftrightarrow\quad \Delta T\approx\pi\sqrt{\frac{L}{C}}\cdot\Delta C $$ in Abhängigkeit einer Stelle $C_0$ und einer angenommenen Unsicherheit $\Delta C$ an dieser Stelle.
+2. Für die frei gewählte Stelle $C_0=10{\rm \mu F}$ sowie mit einer angenommenen Unsicherheit $\Delta C=0.2{\rm \mu F}$ ergibt sich schließlich $$ \Delta T\approx \pi\sqrt{\frac{0.1}{10^{-5}}}\cdot 2\cdot 10^{-7} ({\rm s})=0.6\,({\rm ms}) $$ worin sich die Einheiten gemäß $1\mathrm{F}=1\mathrm{{As}/{V}}$ und $1\mathrm{H}=1\mathrm{{Vs}/{A}}$ umrechnen und darin $1\mathrm{s}$ die Zeiteinheit 'eine Sekunde' bezeichnet. D. h. bei einer Änderung der Kapazität $C_0$ um $\Delta C$ (und sich nicht ändernder Eigeninduktivität $L$) ändert sich $T$ näherungsweise um ca. $0.6$ Millisekunden.
+
+Werden die Änderungen einer Größe als Unsicherheiten beispielsweise während eines Messprozesses interpretiert, lassen sich Aussagen über die Fortpflanzung von Messunsicherheiten / Messfehlern bilden. Vergleiche den Ausblick zur Anwendung partieller Ableitungen im Abschnitt [Differenzierbarkeit](#Differenzierbarkeit).
+
+<!-- style="background-color: lightgray;"-->
+> **Grundbegriffe der Fehlerrechnung.** 
+>
+> Bezeichnet $x_0$ den wahren, aber oft unbekannten Wert einer zu messenden Größe und $x$ den gemessenen, aber fehlerbehafteten Wert dieser Größe, so bezeichnen die in nachstehender Tabelle aufgeführten Terme verschiedene Fehlergrößen.
+>
+><!-- data-type="none" -->
+>| Fehlergröße | Bezeichnung |
+>| :--------- | :--------- |
+>| $x-x_0$ | Messfehler |
+>| $|x-x_0|$ | *absoluter* Messfehler |
+>| $\frac{|x-x_0|}{|x|}$ | *relativer* Messfehler (einheitenlos) |
+>| $\frac{|x-x_0|}{|x|}\cdot 100\%$ | *prozentualer* Messfehler (Angabe in Prozent) |
+>
+> Im allgemeinen gilt die Abschätzung $|x-x_0|\leq\delta x$ für einen maximalen absoluten Fehler $\delta x$.
+>
+> Sei nun $y=f(x)$ eine (physikalische) Zielgröße, die funktional von einer (zu messenden) Einflussgröße $x$ abhängt. Für die funktionale Betrachtung werden die Größen als zunächst reell (d. h. ohne Maßeinheiten) betrachtet. Analog zu oben bezeichne $y_0=f(x_0)$ den wahren, aber unbekannten Wert der Zielgröße. Dann bezeichnen wie oben $y-y_0$ den Fehler - und $|y-y_0|$ | den absoluten Fehler der Zielgröße etc. 
+>
+> Kann $f$ zusätzlich differenzierbar in einer Umgebung $U(x_0)$ vorausgesetzt werden, so können dort für den maximalen absoluten Fehler der Zielgröße $\delta y$ mit $|y-y_0|\leq\delta y$ die nachstehenden Fehlergrößen berechnet werden.
+>
+><!-- data-type="none" -->
+>| Fehlergröße | Bezeichnung |
+>| :--------- | :--------- |
+>| $\delta y\approx |f'(x)|\cdot\delta x$ | linearer maximaler *absoluter* Fehler |
+>| ${\delta y}/{|y|}\approx {|f'(x)|}/{|f(x)|}\cdot\delta x$ | linearer maximaler *relativer* Fehler (einheitenlos) |
+>| ${\delta y}/{|y|}\cdot 100\%\approx {|f'(x)|}/{|f(x)|}\cdot 100\%\cdot\delta x$ | linearer maximaler *prozentualer* Fehler (Angabe in Prozent) |
+
+**Beispiel 3.** Das Volumen einer Kugel soll durch Messung ihres Durchmessers berechnet werden. Das Kugelvolumen berechnet sich nach der Formel $$ V=f(D)=\frac{\pi}{6}\cdot D^3 $$ worin $D$ den Durchmesser der Kugel bezeichnet. Gemessen wird der Wert $D=50.25 {\rm mm}$ bei einem angenommenen maximalen absoluten Fehler $\delta D=0.01{\rm mm}$, kurz: $D=(50.25\pm0.01){\rm mm}$. Hieraus wird zunächst der lineare Fehler für das Volumen $V$ berechnet.
+
+1. Das Differential der Funktion $f$ ergibt sich unmittelbar zu $$ \operatorname{d}f=\operatorname{d}V=\frac{1}{2}\pi D^2\cdot\operatorname{d}D $$
+2. Hiermit berechnen sich mit den zuvor gegebenen Größen das Volumen sowie der lineare maximale absolute Fehler näherungsweise zu $$ V=f(50.25)=\frac{\pi}{6}\cdot (50.25)^3\approx66436.512{\rm mm^3}\quad\text{sowie}\quad\delta V\approx\left|\frac{1}{2}\pi D^2\right|\cdot\delta D\approx 39.664{\rm mm^3} $$ woraus sich eine Fehlerschätzung über den linearen maximalen absoluten Fehler ergibt $$ V-\delta V\approx66396.846{\rm mm^3}\leq V_0\leq 66476.174{\rm mm^3}\approx V+\delta V $$ 
+3. Entsprechend lassen sich linearer maximaler relativer Fehler $$ \frac{\delta V}{|V|}\approx\frac{\left|\frac{1}{2}\pi D^2\right|}{\left|\frac{\pi}{6}\cdot D^3\right|}\cdot\delta D=3\cdot\frac{\delta D}{|D|}\approx 0.0006 $$ sowie der lineare maximale prozentuale Fehler $$ \frac{\delta V}{|V|}\cdot 100\%\approx\frac{\left|\frac{1}{2}\pi D^2\right|}{\left|\frac{\pi}{6}\cdot D^3\right|}\cdot\delta D\cdot 100\%=3\cdot\frac{\delta D}{|D|}\cdot 100\%\approx 0.06\%  $$ bestimmen. Diese können hier als Vielfaches des entsprechenden linearen maximalen Fehlers des gemessenen Durchmessers $D$ angegeben werden.
+4. Da die kubische Funktion $f$ monoton wachsend für alle $D>0$ ist, lässt sich hier vergleichend eine Fehlerschätzung auch vermöge $$ V_{min}=\frac{\pi}{6}\cdot(50.25-0.01)^3\approx 66396.856{\rm mm^3}\quad\text{sowie}\quad V_{max}=\frac{\pi}{6}\cdot(50.25+0.01)^3\approx 66476.183{\rm mm^3}$$ anstellen.  
+
+
+Tangentenverfahren nach Newton
+===
+
+
+Viele Gleichungen lassen sich mit dem Ansatz 'Differential einer Funktion' näherungsweise lösen. Hierfür wird die Gleichung in die Form $f(x)=0$ gebracht, worin $x$ eine reelle Variable bezeichnet, welche als Lösung von $f(x)=0$ Nullstelle einer Funktion $f$ ist. 
+
+Im Unterschied zum Ansatz *Regula falsi* im Abschnitt [Stetigkeit](#Stetigkeit) wird die Funktion $f$ in einer hinreichend großen Umgebung $U(x^\ast)$ einer Lösung $x^\ast$ mit $f(x^\ast)=0$ als differenzierbar vorausgesetzt. An einer geeigneten Startstelle $x_0\in U(x^\ast)$ wird die Tangente an den Graph der Funktion $f$ im Punkt $P_0(x_0,f(x_0))$ gebildet und an dessen Stelle mit der $x$-Achse geschnitten. Die Schnittstelle $x_1$ bildet den neuen Startwert, zu welchem in $P_1(x_1,f(x_1))$ erneut die Tangente gebildet und mit der $x$-Achse zum Schnitt gebracht wird, woraus sich die Schnittstelle $x_2$ ergibt usf. Im einzelnen berechnen sich:
+
+1. Zu einer Stelle $x_j\in U(x^\ast)$ berechnet sich die Gleichung der Tangente an den Graph im Kurvenpunkt $P_j(x_j,f(x_j))$ mithilfe des Differentials $$ \operatorname{d}y=f'(x_j)\cdot\operatorname{d}x\quad\leadsto\quad y=f'(x_j)\cdot x+f(x_j)-f'(x_j)\cdot x_j $$ worin $x_j$ den Startwert im $j$-ten Iterationsschritt bezeichnet. Speziell ist $x_0$ der geeignet zu wählende Startwert des Verfahrens.
+2. Der neue Startwert $x_{j+1}$ berechnet sich als Nullstelle der Tangente in $x_j$ gemäß $$ 0=f'(x_j)\cdot x+f(x_j)-f'(x_j)\cdot x_j \quad\leftrightarrow\quad x_{j+1}:=x=\frac{f'(x_j)\cdot x_j-f(x_j)}{f'(x_j)}=x_j-\frac{f(x_j)}{f'(x_j)} $$ vorausgesetzt, $f'(x_j)\not=0$.
+3. Werden mit dem neuen Startwert die Schritte 1. und 2. wiederholt, so entsteht eine Iterationsfolge von Argumenten $x_0,x_1,x_2,...$ mit $$ x_{j+1}=x_j-\frac{f(x_j)}{(f'(x_j))}\,,\;j\in\mathbb{N} $$ die sich rekursiv bestimmen lassen. Das Iterationsverfahren konvergiert, falls $$ \lim_{j\to\infty}{x_j}=x^\ast\,(\in\mathbb{R}) $$ d. h. falls $x^\ast$ als Lösung der Gleichung $f(x)=0$ Grenzwert dieser Zahlenfolge ist.
+
+![Tangentenverfahren Newton](img/mat-bild-39.png "_Fig._ Graphische Darstellung des Tangentenverfahrens nach Newton zur Berechnung einer Lösung einer Gleichung. Im Beispiel ist die Lösung von $3\cdot 1.5^x=4$ gesucht. Im Schaubild wird bei einem gewählten Startwert $x_0\approx 3.3$ der Näherungswert der Lösung $x_3\approx 0.7$ abgelesen.")
+
+**Beispiel 4.** Gegeben ist die algebraische Gleichung $$ \frac{1}{5}x^5-x^4+x^3=\frac{1}{5}\quad\leftrightarrow\quad f(x):=\frac{1}{5}x^5-x^4+x^3-\frac{1}{5}=0 $$ worin $f(x)$ als Zuordnungsvorschrift einer ganzrationalen Funktion $f:\mathbb{R}\to\mathbb{R}$ interpretiert werden kann. Diese ist auf ihrem gesamten Definitionsbereich differenzierbar. Die algebraische Gleichung besitzt die doppelt zu zählende Lösung $x_1=x_2=1$, womit sich die Faktorisierung - etwa mittels Polynomdivision - $$ \frac{1}{5}x^5-x^4+x^3-\frac{1}{5}=\frac{1}{5}\cdot\left(x-1\right)^2\cdot\left(x^3-3\,x^2-2\,x-1\right) $$ ergibt. Der kubische Faktor besitzt nur eine reelle nichtrationale Wurzel im Intervall $(3,4)$. Siehe die nachstehende Abbildung des Funktionsgraphen von $f$.
+
+![Tangentenverfahren Beispiel](img/mat-bild-38.png "_Fig._ Graph der Funktion $f$. Diese besitzt eine doppelt zu zählende Nullstelle $x_1=x_2=1$ sowie eine weitere Nullstelle $x_3\approx 3.6$.")
+
+Für die Anwendung des obigen Verfahrens werden $x_0=3.4$ als Startwert sowie $$ x_{j+1}=x_{j}-\frac{f(x_{j})}{f^\prime(x_{j})}=x_j-\frac{\frac{1}{5}x^5-x^4+x^3-\frac{1}{5}}{x^4-4x^3+3x^2} $$ worin $f^\prime(x)=x^4-4x^3+3x^2$ bestimmt wurde. Damit ergeben sich die in nachstehender Tabelle aufgeführten Näherungswerte der Zahlenfolge $(x_j)_{j\in\mathbb{N}}$. Als Abbruchbedingung wurde hier $\vert x_j-x_{j-1}\vert<10^{-6}$ gewählt.
+
+<!-- data-type="none" -->
+| $j$ | $x_j$ | $x_{j}-x_{j-1}$ |
+| :--- | :--- | :--- |
+| $0$ | $3.4$ | |
+| $1$ | $3.729689...$ | $<0.4$ |
+| $2$ | $3.638738...$ | $<0.1$ |
+| $3$ | $3.627526...$ | $<0.012$ |
+| $4$ | $3.627365...$ | $<0.0002$ | 
+| $5$ | $3.627365...$ | $<10^{-6}$ |
+
+Unter Verwendung der Javascript-Bibliothek [Algebrite](http://algebrite.org/) lässt sich das Newtonsche Tangentenvervahren an einem (selbst gewählten) Beispiel interaktiv durchführen. Für die Nutzung sind der (Funktions-) Term $f(x)$ der Gleichung $f(x)=0$, der gewählte Startwert $x_0$ sowie die Anzahl $n$ der durchzuführenden Iterationsschritte anzugeben. Das implementierte Verfahren stoppt, wenn $f'(x_j)=0$ (Division durch 'Null'). Testen Sie beispielsweise an Beispiel 4 den Startwert $x_0=0$. Begründen Sie anhand des Funktionsgraphen, warum das Verfahren nicht ausführbar ist.
+
+```algebrite
+f=1/5*x^5-x^4+x^3-1/5
+x0=3.4
+n=6
+f1=d(f,x)
+list=zero(n+1)
+list[1]=float(x0)
+for(do(
+	x0=subst(x0,x,x-f/f1),
+	list[j]=float(x0)
+),j,2,n+1)
+list
+```
+@Algebrite.eval
+
+**Bemerkung 1.** Es ist daneben zu beachten, dass das Verfahren nicht für alle Startwerte konvergieren muss. Eine Konvergenz des Newtonschen Tangentenverfahrens ist nur dann möglich, wenn der Startwert $x_0$ hinreichend nah an der Lösung ist. Ist dies nicht gegeben, sind eine Divergenz des Verfahrens oder Oszillation des Verfahrens möglich. Auch eine Konvergenz zu einer anderen Lösung ist möglich. Siehe beispielsweise [Nicht-Konvergenz](https://de.wikipedia.org/wiki/Newtonverfahren#Beispiele_f%C3%BCr_Nicht-Konvergenz). Benutzen Sie beispielsweise als Eingabe im obigen Code-Beispiel $f(x)=x^3-2x+2$ mit Startwert $x_0=0$. Erklären Sie die entstehende Zahlenfolge der $x_j$ anhand des Funktionsgraphen.
+
+
+Sicher gewusst
+===
+
+Testen Sie Ihr Wissen bei der Beantwortung der nachstehenden Fragen.
+
+**Frage 1.** Gegeben ist die Gleichung $f(x)=0$. Mit Hilfe des Newtonverfahrens wird zu einem Startwert $x_0$ die Folge der Argumente $x_0,x_1,x_2,...$ gebildet. Konvergiert das Verfahren zu den nachstehenden Startwerten $x_0$?
+
+[[Konvergenz] [Divergenz] [Oszillation]]
+[(X) ( ) ( )]  $f(x)=x^3-2x+2$, $x_0=-2$
+[( ) ( ) (X)]  $f(x)=x^3-2x+2$, $x_0=0$
+[( ) (X) ( )]  $f(x)=x^3-1$, $x_0=-\frac{1}{\sqrt[3]{2}}$
+[[?]] ......... Berechnen Sie zunächst mit Hilfe des Newtonverfahrens die nächsten Argumente $x_1$, $x_2$, ... der Zahlenfolge. Hierfür lässt sich auch das obige Code-Beispiel verwenden. Für einen Nachweis des an der Argumentenfolge beobachteten Verhaltens überlegen Sie bitte die einzelnen Schritte am Funktionsgraphen. (geometrische Vorstellung des Newtonverfahrens)
+****************************************
+
+Für die Funktion $f:\mathbb{R}\to\mathbb{R}$ mit $f(x)=x^3-2x+2$ existiert eine Nullstelle $x^\ast\in(-2,-1)$, da nach Mittelwertsatz $f(-2)\cdot f(-1)=(-2)\cdot 3=-6<0$.
+
+Oszillierendes Verhalten ergibt sich für das Polynom $f(x)=x^3-2x+2$ an der Stelle $x_0=0$. Mit $f(0)=0^3-2*0+2=2$ und der Ableitung $f'(0)=3*0^2-2=-2$ berechnen sich unmittelbar $x_1=0-2/(-1)=1$ sowie mit $f(1)=1$ und $f'(1)=1$ dann $x_2=0$. Die Newton-Iteration mit einem dieser Argumente als Startwert ergibt jeweils eine periodische Folge. Das Newtonverfahren oszilliert in beiden Fällen. Siehe nachstehende Abbildung.
+
+![Newton 2](img/mat-bild-40.png "_Fig._ Graph der Funktion $f$ mit den Tangenten an den Stellen $x_{2k}=0$ und $x_{2k+1}=1$. Diese sind jeweils Schnittstellen der jeweils anderen Tangente mit der $x$-Achse.")
+
+****************************************
