@@ -1872,7 +1872,7 @@ $$ mit Argument $\textcolor{blue}{\varphi}$ und Betrag $\textcolor{purple}{r}$.
 
 **Bemerkung 8.** Im Gegensatz zur reellen $n$-ten Wurzel ist die komplexe $n$-te Wurzel nicht eindeutig bestimmt. Im Beispiel 12 wurden jeweils $n$ Wurzeln zum Wurzelexponenten $n$ berechnet. Wird $z$ in $(w_k)^n=z$ unter Verwendung des Hauptwertes des Argumentes $\varphi\in(-\pi,\pi]$ dargestellt, so heißt $w_0$ jeweils *Hauptwurzel* von $z$. Die Wurzelwerte $w_k$ mit $k\in\{1,2,...,n-1\}$ werden $k$-te *Nebenwurzel* von $z$ genannt.
 
-**Satz 6.** Alle komplexen $n$-ten Wurzeln einer Zahl $z\in\mathbb{C}$ liegen in der Gaußschen Zahlenebene auf einem Kreis um den Ursprung des Koordinatensystems und bilden die Eckpunkte eines regelmäßigen $n$-Ecks.
+>**Satz 6.** Alle komplexen $n$-ten Wurzeln einer Zahl $z\in\mathbb{C}$ liegen in der Gaußschen Zahlenebene auf einem Kreis um den Ursprung des Koordinatensystems und bilden die Eckpunkte eines regelmäßigen $n$-Ecks.
 
 **Beweis.** Die beiden Eigenschaften lassen sich direkt aus den Argumenten und Beträgen der Zahlen $w_k$ schließen. Nach Satz 5 und Beispiel 12 sind diese in Polarform gegeben.
 
@@ -1887,7 +1887,31 @@ $$ d. h. die Differenz der Argumente zweier 'benachbarter' Wurzeln ist unabhäng
 
 $\square$
 
-**Bemerkung 9.** Vergleiche Beispiel 5: Die komplexen Zahlen $z_1$ bis $z_6$ erfüllen die Gleichung $z^6=2^{12}=4^6$, sind also als komplexe $6$-te Wurzeln von $4096$ auffassbar. Sie bilden ein regelmäßiges Sechseck, dessen Umkreis den Koordinatenursprung als Mittelpunkt besitzt und den Radius $4$.
+**Bemerkung 9.** Im Beispiel 5 in diesem Abschnitt erfüllen die komplexen Zahlen $z_j$ mit $j\in\{1,2,...,6\}$ die Gleichung $z^6=4^6$, sind also als komplexe $6$-te Wurzeln von $4096$ auffassbar. Sie bilden ein regelmäßiges Sechseck, dessen Umkreis den Koordinatenursprung als Mittelpunkt besitzt und den Radius $4$. 
+
+Ein interaktives Beispiel zur Bestimmung und Darstellung der $n$-ten komplexen Wurzeln einer komplexen Zahl in der Gaußschen Zahlenebene ist nachfolgend angegeben.
+
+<div style="width: 100%; max-width: 900px; margin: 0; padding: 0; box-sizing: border-box; display: block;">
+  <div style="position: relative; width: 100%; height: 0; padding-bottom: 61.1%; /* 550 / 900 ≈ 61.1% */">
+    <iframe
+      scrolling="no"
+      title="Kreisteilungsgleichung"
+      src="https://www.geogebra.org/material/iframe/id/pDTVH3Sb/width/900/height/550/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/true/ld/true/sdz/true/ctl/false"
+      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 1px solid #ccc; border-radius: 8px; display: block;"
+      allowfullscreen
+      loading="lazy"
+    ></iframe>
+  </div>
+</div>
+
+<p>
+  <strong>Interaktive Anwendung:</strong> 
+  <a href="https://www.geogebra.org/m/pDTVH3Sb">Kreisteilungsgleichung</a>  
+  von <a href="https://www.geogebra.org/u/lindner">Andreas Lindner</a>  
+  ist unter der Lizenz <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> verfügbar.
+</p>
+
+Für den Zusammenhang der komplexen $n$-ten Wurzeln einer komplexen Zahl mit ihrer Anordnung in der Gaußschen Zahlenebene siehe [Kreisteilungsgleichung](https://de.wikipedia.org/wiki/Kreisteilungsgleichung).
 
 
 Sicher gewusst
@@ -2543,7 +2567,7 @@ $$
 
 **Bemerkung 1.** Aus Definition 1 und Beispiel 1 ist erkennbar, dass zwar die Addition von Quaternionen kommutativ ist, d. h. dass die Reihenfolge der Summanden vertauschbar ist, jedoch ist die Multiplikation zweier beliebiger Quaternionen im Allgemeinen nicht kommutativ: Das Produkt zweier Quaternionen liefert je nach Reihenfolge der Faktoren unterschiedliche Ergebnisse.
 
-Werden in Definition 1 $(c_m,d_m)=(0,0)$ beziehungsweise $(b_m,d_m)=(0,0)$ beziehungsweise $(b_m,c_m)=(0,0)$ gesetzt, so ergeben sich die Rechenregeln in $\mathbb{C}$.
+Werden in Definition 1 je zwei der Koeffizienten $b_m$, $c_m$ oder $d_m$ mit jeweils $m=1,2$ Null gesetzt, so ergeben sich die Rechenregeln in $\mathbb{C}$.
 
 >**Definition 2.** Sei $Q\in\mathbb{H}$ mit $Q=a+i\cdot b+j\cdot c+k\cdot d$ eine beliebige Quaternion gemäß Definition 1. Dann heißt $$
   \tilde{Q}=a-i\cdot b-j\cdot c-k\cdot d=a-(i\cdot b+j\cdot c+k\cdot d)
@@ -2563,7 +2587,17 @@ $$ Somit gilt $|Q|=0\;\leftrightarrow\; Q=0+0\cdot i+0\cdot j+0\cdot k=0$
   & = \left(a^2+b^2+c^2+d^2\right) + \left(-a\cdot b+b\cdot a-c\cdot d+d\cdot c\right){i} + \left(-a\cdot c+c\cdot a-d\cdot b+b\cdot d\right){j} + \left(-a\cdot d+d\cdot a-b\cdot c+c\cdot b\right){k} \\
   & = \left(a^2+b^2+c^2+d^2\right)
 \end{split}
-$$ Der Ausdruck ist reell und für jede Wagl der Parameter $a$, $b$, $c$ und $d$ nicht negativ, wonach $|Q|$ wohldefiniert ist.
+$$ Der Ausdruck ist reell und für jede Wahl der Parameter $a$, $b$, $c$ und $d$ nicht negativ, wonach $|Q|$ wohldefiniert ist.
+
+$\square$
+
+>**Satz 1.** Für die quaternionale Konjugation gelten die nachstehenden Eigenschaften.
+>
+>1. $\widetilde{\tilde{Q}}=Q$. Diese Eigenschaft wird [involutorisch](https://de.wikipedia.org/wiki/Involution_%28Mathematik%29) genannt.
+>2. $\mathbb{R}$-[Linearität](https://de.wikipedia.org/wiki/Lineare_Abbildung): Es gelten $$\widetilde{Q_1+ Q_2}=\tilde{Q}_1+\tilde{Q}_2\quad\text{und}\quad\widetilde{\lambda\cdot Q}=\lambda\cdot\tilde{Q}\;\;\text{für alle}\;\lambda\in\mathbb{R} $$
+>3. $\widetilde{Q_1\cdot Q_2}=\tilde{Q}_2\cdot\tilde{Q}_1$.
+
+**Beweis.** Die Eigenschaft 1 folgt sofort aus der Definition der quaternionalen Konjugation (siehe Definition 2), ebenso Eigenschaft 2 unter Verwendung von Addition von Quaternionen und Multiplikation mit einer reellen Zahl.
 
 $\square$
 
@@ -2612,6 +2646,30 @@ $$ Der Bildpunkt besitzt somit die kartesischen Koordinaten $$
   \left(\frac{1}{2}\cdot\sqrt{3}\cdot y+\frac{1}{2}\cdot z\right)
 \right]
 $$
+
+...
+
+Ein interaktives Beispiel zur Hintereinanderausführung zweier Drehungen um Geraden durch den Koordinatenursprung ist nachfolgend dargestellt.
+
+<div style="width: 100%; max-width: 1335px; margin: 0; padding: 0; box-sizing: border-box; display: block;">
+  <div style="position: relative; width: 100%; height: 0; padding-bottom: 54.7%; /* 731 / 1335 ≈ 54.7% */">
+    <iframe
+      scrolling="no"
+      title="Quaternions and rotation"
+      src="https://www.geogebra.org/material/iframe/id/TTyU7wPy/width/1335/height/731/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false"
+      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 1px solid #ccc; border-radius: 8px; display: block;"
+      allowfullscreen
+      loading="lazy"
+    ></iframe>
+  </div>
+</div>
+
+<p>
+  <strong>Interaktive Anwendung:</strong> 
+  <a href="https://www.geogebra.org/m/TTyU7wPy">Quaternions and rotation</a>  
+  von <a href="https://www.geogebra.org/u/rwright">Roy Wright</a>  
+  ist unter der Lizenz <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> verfügbar.
+</p>
 
 
 Sicher gewusst
@@ -5557,14 +5615,14 @@ Lernziele
 ### Affine Räume
 
 
-In diesem Abschnitt wird der überfällige Zusammenhang zwischen Punkten und Vektoren betrachtet.
+In diesem Abschnitt wird der überfällige strukturelle Zusammenhang zwischen Punkten und Vektoren betrachtet.
 
 >**Definition 1.** Ein [affiner Raum](https://de.wikipedia.org/wiki/Affiner_Raum) $\mathcal{A}$ ist ein Tripel $(\mathcal{P}, \mathcal{V},\alpha)$, bestehend aus einer nichtleeren Menge $\mathcal{P}$, einem reellen Vektorraum $\mathcal{V}$ und einer Abbildung $$
   \alpha: \mathcal{P}\times\mathcal{P}\longrightarrow \mathcal{V}
 $$ so dass gilt:
 >
->1. Zu jedem Punkt $P\in\mathcal{P}$ und jedem Vektor  $v\in\mathcal{V}$ gibt es genau einen Punkt $Q\in\mathcal{P}$ mit $\alpha(P,Q)=v$.
->2. Für jeweils drei beliebige Punkte $P\in\mathcal{P}$, $Q\in\mathcal{P}$ und $R\in\mathcal{P}$ gilt $$ \alpha(P,Q)+\alpha(Q,R)=\alpha(P,R)$$
+>1. Zu jedem Element $P\in\mathcal{P}$ und jedem Vektor  $v\in\mathcal{V}$ gibt es genau ein Element $Q\in\mathcal{P}$ mit $\alpha(P,Q)=v$.
+>2. Für jeweils drei beliebige Elemente $P\in\mathcal{P}$, $Q\in\mathcal{P}$ und $R\in\mathcal{P}$ gilt $$ \alpha(P,Q)+\alpha(Q,R)=\alpha(P,R)$$
 >
 > Die Elemente von $\mathcal{P}$ heißen **Punkte** des affinen Raumes $\mathcal{A}$.
 >
@@ -5574,21 +5632,16 @@ $$ so dass gilt:
 
 Aus Definition 1 lassen sich zunächst zwei einfache Eigenschaften der Abbildung $\alpha$ ableiten:
 
-* Für $P=Q=R$ erhalten wir aus der Eigenschaft 2. sofort $$
-  \alpha(P,P)+\alpha(P,P)=2\cdot \alpha(P,P)=\alpha(P,P)
-$$ und somit $\alpha(P,P)=\mathcal{o}$, worin $\mathcal{o}$ den Nullvektor in $\mathcal{V}$ bezeichnet.
-* Hingegen bekommen wir für $P=R$ $$
-  \alpha(P,Q)+\alpha(Q,P)=\alpha(P,P)=\mathcal{o}
-$$ und daher $\alpha(Q,P)=-\alpha(P,Q)$.
+* Für $P=Q=R$ erhalten wir aus der Eigenschaft 2. sofort $$ \alpha(P,P)+\alpha(P,P)=2\cdot \alpha(P,P)=\alpha(P,P) $$ und somit $\alpha(P,P)=\mathcal{o}$, worin $\mathcal{o}$ den Nullvektor in $\mathcal{V}$ bezeichnet.
+* Hingegen bekommen wir für $P=R$ $$ \alpha(P,Q)+\alpha(Q,P)=\alpha(P,P)=\mathcal{o} $$ und daher $\alpha(Q,P)=-\alpha(P,Q)$ beziehungsweise $\overrightarrow{QP}=-\overrightarrow{PQ}$.
 
 
-**Bemerkung 2.** Zeichnen wir in einem affinen Raum $\mathcal{A}=(\mathcal{P},\mathcal{V},\alpha)$ einen Punkt $O\in\mathcal{P}$ aus, so erhalten wir mittels der Eigenschaft 1 aus Definition 1 eine von $O$ abhängige, eineindeutige Zuordnung zwischen den Punkten in $\mathcal{P}$ und den Vektoren in $\mathcal{V}$. Diese Zuordnung kann durch die Abbildung $$
+Zeichnen wir in einem affinen Raum $\mathcal{A}=(\mathcal{P},\mathcal{V},\alpha)$ einen Punkt $O\in\mathcal{P}$ aus, so erhalten wir mittels der Eigenschaft 1 aus Definition 1 eine von $O$ abhängige, eineindeutige Zuordnung zwischen den Punkten in $\mathcal{P}$ und den Vektoren in $\mathcal{V}$. Diese Zuordnung kann durch die Abbildung $$
   \beta:\mathcal{P}\longrightarrow\mathcal{V}\quad\text{mit}\quad \beta(P)=\alpha(O,P)\in\mathcal{V}
 $$ beschrieben werden.
 
 >**Definition 2.**
->Es sei $\mathcal{A}=(\mathcal{P},\mathcal{V},\alpha)$ ein affiner Raum, der Punkt $O\in\mathcal{P}$ beliebig aber fest gewählt sowie  die Abbildung $$
-  \beta:\mathcal{P}\longrightarrow\mathcal{V}\quad\text{mit}\quad\beta(P)=\alpha(O,P)\in\mathcal{V}
+>Es seien $\mathcal{A}=(\mathcal{P},\mathcal{V},\alpha)$ ein affiner Raum und der Punkt $O\in\mathcal{P}$ beliebig aber fest gewählt sowie die Abbildung $$ \beta:\mathcal{P}\longrightarrow\mathcal{V}\quad\text{mit}\quad\beta(P)=\alpha(O,P)\in\mathcal{V}
 $$
 >Dann heißt der Vektor $v=\beta(P)$ [Ortsvektor](https://de.wikipedia.org/wiki/Ortsvektor) des Punktes $P$.
 
@@ -5596,8 +5649,8 @@ $$
   \alpha(P,Q)=Q-P
 $$ für beliebige $P, Q\in\mathcal{P}=\mathbb{R}^3$, so ist $\mathcal{A}=(\mathcal{P},\mathcal{V},\alpha)$ ein $3$-dimensionaler affiner Raum, denn es gilt mit Definition 1:
 
-1. Für einen beliebigen Punkt $P\in\mathbb{R}^3$ und einen beliebigen Vektor $v\in\mathbb{R}^3$ ist $Q=P+v\in\mathcal{P}$ und $\alpha(P,Q)=Q-P=P+v-P=v$.
-2. Für beliebige $P, Q, R\in\mathcal{P}$ ist $\alpha(P,Q)+\alpha(Q,R)=(Q-P) + (R-Q) = R-P=\alpha(P,R)$.
+1. Für einen beliebigen Punkt $P\in\mathbb{R}^3$ und einen beliebigen Vektor $v\in\mathbb{R}^3$ ist $$ Q=(P+v)\in\mathcal{P}\quad\text{und}\quad\alpha(P,Q)=Q-P=P+v-P=v $$
+2. Für beliebige $P, Q, R\in\mathcal{P}$ ist $$ \alpha(P,Q)+\alpha(Q,R)=(Q-P) + (R-Q) = R-P=\alpha(P,R) $$
 
 In diesem Beispiel kommen den Elementen der Menge $\mathbb{R}^3$ zwei unterschiedliche Bedeutungen zu: zum einen als Punkte des affinen Raumes, zum anderen als Verschiebungsvektoren, vermittelt durch die Abbildung $\alpha$.
 
@@ -5607,17 +5660,13 @@ $$ Somit ist $\beta$ die Identität auf $\mathcal{P}$ und jeder Punkt stimmt gle
 
 Wir führen nun den Begriff eines affinen Unterraumes ein:
 
->**Definition 3.** Ist $\mathcal{A}=(\mathcal{P},\mathcal{V},\alpha)$ ein affiner Raum, $\mathcal{P}_0$ eine Teilmenge von $\mathcal{P}$ und die Menge $$
-  \mathcal{V}_0=\left\{\alpha(P,Q)\;\middle |\; P,Q\in\mathcal{P}_0\right\}\subseteq\mathcal{V}
-$$ ein Untervektorraum von $\mathcal{V}$, so ist $$
+>**Definition 3.** Ist $\mathcal{A}=(\mathcal{P},\mathcal{V},\alpha)$ ein affiner Raum, $\mathcal{P}_0$ eine Teilmenge von $\mathcal{P}$ und die Menge $$ \mathcal{V}_0=\left\{\alpha(P,Q)\;\middle |\; P\in\mathcal{P}_0, Q\in\mathcal{P}_0\right\}\subseteq\mathcal{V} $$ ein Untervektorraum von $\mathcal{V}$, so ist $$
   \mathcal{A}_0=(\mathcal{P}_0,\mathcal{V}_0,\alpha_0)\quad\text{mit}\quad\alpha_0(P,Q)=\alpha(P,Q)\quad\text{für}\quad P\in\mathcal{P}_0\,,Q\in\mathcal{P}_0
 $$ ein [affiner Unterraum](https://de.wikipedia.org/wiki/Affiner_Raum) von $\mathcal{A}$.
 
 **Beispiel 2.** Es sei $\mathcal{A}$ der affine Raum aus Beispiel 1. Für $a\in\mathbb{R}^3$ und $b\in\mathbb{R}^3$ setzen wir $$
   \mathcal{P}_0=\left\{a+\lambda\cdot b\,\middle |\; \lambda\in\mathbb{R}\right\}\subseteq\mathcal{P}
-$$ Dann ist $\mathcal{P}_0$ Punktmenge des affinen Unterraumes $\mathcal{A}_0=(\mathcal{P}_0,\mathcal{V}_0,\alpha_0)$ mit dem Untervektorraum $$
-  \mathcal{V}_0=\left\{\alpha(P,Q)\;\middle |\; P,Q\in\mathcal{P}_0\right\}=\left\{\lambda\cdot b\;\middle |\;\lambda\in\mathbb{R}\right\}
-$$ von $\mathcal{V}$ und $\alpha_0(P,Q)=\alpha(P,Q)=Q-P$ für $P, Q\in\mathcal{P}_0$.
+$$ Dann ist $\mathcal{P}_0$ Punktmenge des affinen Unterraumes $\mathcal{A}_0=(\mathcal{P}_0,\mathcal{V}_0,\alpha_0)$ mit dem Untervektorraum $$ \mathcal{V}_0=\left\{\alpha(P,Q)\;\middle |\; P\in\mathcal{P}_0, Q\in\mathcal{P}_0\right\}=\left\{\lambda\cdot b\;\middle |\;\lambda\in\mathbb{R}\right\} $$ von $\mathcal{V}$ und $\alpha_0(P,Q)=\alpha(P,Q)=Q-P$ für $P\in\mathcal{P}_0$ und $Q\in\mathcal{P}_0$.
 
 Dabei gilt $$\operatorname{dim}(\mathcal{A}_0)=\left\{\begin{array}{ccc} 0 &,\text{falls}& b=(0,0,0)^\top\\ 1 &,\text{falls}& b\neq (0,0,0)^\top \end{array}\right.$$
 
@@ -5731,6 +5780,8 @@ Durch je zwei verschiedene Punkte $A$ und $B$ in $\mathbb{R}^3$ wird eindeutig e
 >
 >* *Parameterdarstellung.* Sind $A$ und $B$ zwei verschiedene Punkte des $\mathbb{R}^3$, so kann jeder Punkt $X\in\mathbb{R}^3$ der durch $A$ und $B$ eindeutig festgelegten Geraden durch $$X=A+\lambda\cdot (B-A)=A+\lambda\cdot\overrightarrow{AB}$$ mit $\lambda\in\mathbb{R}$ berechnet werden.
 
+**Bemerkung 1.** Die Parameterdarstellung der Gerade $g=AB$ lässt sich als Linearkombination der Ortsvektoren der Punkte $A$ und $B$ darstellen, d. h. $$ X=(1-\lambda)\cdot A+\lambda\cdot B \quad\text{mit}\quad (1-\lambda)+\lambda=1\;\;\forall\; \lambda\in\mathbb{R} $$ worin die Summe der Koeffizienten für jede Wahl von $\lambda$ 'Eins' ergibt.
+
 Durch je drei verschiedene Punkte $P$, $Q$ und $R$ in $\mathbb{R}^3$ wird eindeutig eine Ebene festgelegt, wenn die Punkte ein eigentliches Dreieck bilden. Umgekehrt ist jede Ebene durch drei nicht auf einer Geraden liegende Punkte eindeutig bestimmt.            
 
 <!-- style="background-color: lightgray;"-->
@@ -5763,6 +5814,24 @@ Die Wirkung einer Kraft beziehungsweise eines Systems von Kräften auf einen dre
 1. Aus der Abbildung soll jeweils die Kraft $\vec{F}_j$ mit $j\in\{1,2,3\}$ ermittelt und deren Betrag (Einheit $1{\rm N}$) berechnet werden.
 2. Das Drehmoment berechnet sich gemäß $\vec{M}_i=\vec{r}_i\times\vec{F}_i$ mit $i\in\{1,2\}$, worin $\vec{F}_i$ die linienflüchtige Kraftwirkung und $\vec{r}_i$ (Einheit $1{\rm m}$) den Differenzvektor von $D$ zu einem beliebigen Punkt auf der Wirkungslinie von $\vec{F}_i$ bezeichnen. ... Hiermit lässt sich anschließend begründen, das $\vec{M}_3=\vec{o}$ der Nullvektor ist.
 3. Schließlich lässt sich aus den Anteilen $\vec{M}_1$ und $\vec{M}_2$ das resultierende Drehmoment $\vec{M}=\vec{r}\times\vec{F}$ berechnen.
+
+
+Sicher gewusst
+===
+
+
+Hier können Sie Ihr Wissen aus diesem Abschnitt testen.
+
+**Frage 1.** Zu drei verschiedenen Punkten $P_1(x_1,y_1,z_1)$, $P_2(x_2,y_2,z_2)$ und $P_3(x_3,y_3,z_3)$ lässt sich die Determinantengleichung $$ \det{\begin{pmatrix} 1 & x & y & z \\ 1 & x_1 & y_1 & z_1 \\ 1 & x_2 & y_2 & z_2 \\ 1 & x_3 & y_3 & z_3 \end{pmatrix}}=0 $$ angeben, worin $(x,y,z)$ die Koordinaten eines allgemeinen Punktes bezeichnen. Die Lösungsmenge $$ \mathcal{L}=\left\{(x,y,z)\in\mathbb{R}^3:\det{\begin{pmatrix}  1 & x & y & z \\ 1 & x_1 & y_1 & z_1 \\ 1 & x_2 & y_2 & z_2 \\ 1 & x_3 & y_3 & z_3 \end{pmatrix}}=0\right\} $$ der Gleichung beschreibt
+
+[( )] die Punkte $P_1$, $P_2$ und $P_3$, jedoch keinen weiteren Punkt der Ebene $\Sigma=P_1P_2P_3$.
+[(X)] die Ebene $\Sigma=P_1P_2P_3$.
+[[?]] Berechnen Sie die Determinante der obigen Gleichung.
+****************************************
+
+Werden die Koordinaten der Punkte $P_1$, $P_2$ beziehungsweise $P_3$ in die Matrix eingesetzt, entstehen linear abhängige Zeilen. Die Matrix ist somit singular, ihre Determinante besitzt den Wert Null. Mit den Rechenregeln für Determinanten folgt, dass für einen beliebigen Punkt $P_0\in \Sigma$ mit $$ P(x_0,y_0,z_0)\quad\sim\quad \begin{pmatrix} x_0 \\ y_0 \\ z_0\end{pmatrix}=(1-\lambda-\mu)\cdot\begin{pmatrix} x_1 \\ y_1 \\ z_1 \end{pmatrix}+\lambda\cdot\begin{pmatrix} x_2 \\ y_2 \\ z_2\end{pmatrix}+\mu\cdot\begin{pmatrix} x_3 \\ y_3 \\ z_3\end{pmatrix} $$ folgt $$ \begin{split} \det{\begin{pmatrix} 1 & x_0 & y_0 & z_0 \\ 1 & x_1 & y_1 & z_1 \\ 1 & x_2 & y_2 & z_2 \\ 1 & x_3 & y_3 & z_3 \end{pmatrix}} & =\det{\begin{pmatrix} (1-\lambda-\mu)+\lambda+\mu & (1-\lambda-\mu)\cdot x_1+\lambda\cdot x_2+\mu\cdot x_3 & (1-\lambda-\mu)\cdot y_1+\lambda\cdot y_2+\mu\cdot y_3 & (1-\lambda-\mu)\cdot z_1+\lambda\cdot z_2+\mu\cdot z_3 \\ 1 & x_1 & y_1 & z_1 \\ 1 & x_2 & y_2 & z_2 \\ 1 & x_3 & y_3 & z_3 \end{pmatrix}} \\ & = ... \\ & = (1-\lambda-\mu)\cdot\det{\begin{pmatrix} 1 & x_1 & y_1 & z_1 \\ 1 & x_1 & y_1 & z_1 \\ 1 & x_2 & y_2 & z_2 \\ 1 & x_3 & y_3 & z_3 \end{pmatrix}}=(1-\lambda-\mu)\cdot 0=0 \end{split} $$
+
+****************************************
 
 
 [^1]: In $\mathbb{R}^3$ kann eine Gerade nicht, wie im Fall des $\mathbb{R}^2$, durch eine einzelne lineare Gleichung beschrieben werden.
