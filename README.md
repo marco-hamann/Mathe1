@@ -957,6 +957,7 @@ In diesem Kapitel soll der Zahlbegriff betrachtet werden. Ein Fokus liegt dabei 
 * Zahlenbereichserweiterung zu den komplexen Zahlen
 * Rechnen mit komplexen Zahlen
 * Methoden zur Lösung algebraischer Gleichungen
+* Quaternionen im Kontext der räumlichen Kinematik
 
 Für einen Überblick über die Themen dieses Kapitels sehen Sie in der nachstehenden Graphik einige zentrale Begriffe. Schlagen Sie diese in diesem Abschnitt nach.
 
@@ -975,6 +976,8 @@ Lernziele
 * Sie kennen den Begriff einer algebraischen Gleichung vom Grad $n$ in einer Variablen.
 * Auf der Grundlage des Fundamentalsatzes der Algebra können Sie eine Aussage zur Anzahl der Lösungen in Abhängigkeit des Grades der Gleichung treffen. Die Vielfachheit einer Lösung sowie das paarweise Auftreten nichtreeller Lösungen kennzeichnet dabei die Lösungsmenge.
 * Sie wenden Methoden wie Koeffizientenvergleich, Polynomdivision und das Horner-Schema an, um die Lösungsmenge einer algebraischen Gleichung zu ermitteln.
+* Sie verstehen, dass Quaternionen Drehungen im Raum beschreiben.
+* Sie wissen, dass die Multiplikation von Quaternionen i. A. nicht kommutativ ist.
 
 
 ### Reelle Zahlen
@@ -2523,9 +2526,9 @@ Definition
 
 Komplexe Zahlen bilden die Grundlage zur Beschreibung ebener Bewegungsvorgänge, die beispielsweise in ebenen [Koppelgetrieben](https://de.wikipedia.org/wiki/Koppelgetriebe) entstehen und Gegenstand der ebenen Kinematik beziehungsweise Robotik sind.
 
-Auf der Suche, Bewegungen des dreidimensionalen Raumes elegant beschreiben zu können, entdeckte [Sir William Rowan Hamilton](https://de.wikipedia.org/wiki/William_Rowan_Hamilton) im Jahre 1843 die nach ihm benannten Quaternionen. Sie entstehen aus den reellen Zahlen durch Hinzufügen dreier neuer Zahlen, in Anlehnung an die imaginäre Einheit bei den komplexen Zahlen $i$, $j$ und $k$ genannt. Vergleiche Abschnitt [Komplexe Zahlen](#Komplexe-Zahlen).
+Auf der Suche, Bewegungen des dreidimensionalen Raumes elegant beschreiben zu können, entdeckte [Sir William Rowan Hamilton](https://de.wikipedia.org/wiki/William_Rowan_Hamilton) im Jahre 1843 die nach ihm benannten Quaternionen. Sie entstehen aus den reellen Zahlen durch Hinzufügen dreier neuer Zahlen, in Anlehnung an die imaginäre Einheit bei den komplexen Zahlen $i$, $j$ und $k$ genannt. Vergleiche Abschnitt [Komplexe Zahlen](#Komplexe-Zahlen). Quaternionen sind somit eine Erweiterung der komplexen Zahlen, die es ermöglichen, Drehungen im dreidimensionalen Raum kompakt zu beschreiben – besonders nützlich in der Robotik, Computergrafik und Maschinenbau.
 
-Hier soll ein kurzer - in weiten Teilen unvollständiger - Einblick in diesen Zahlbereich gegeben werden, dessen alleiniger Fokus auf der Beschreibung von Drehungen und Schiebungen des dreidimensionalen Raumes liegt.
+Hier soll eine kurze Einführung in die wesentlichen Aspekte in diesen Zahlbereich gegeben werden, dessen alleiniger Fokus auf der Beschreibung von Drehungen des dreidimensionalen Raumes liegt.
 
 >**Definition 1.** Eine [Quaternion](https://de.wikipedia.org/wiki/Quaternion) (engl.: quaternion) ist ein Ausdruck der Form $$
   Q=a+i\cdot b+j\cdot c+k\cdot d
@@ -2540,9 +2543,9 @@ $$ mit reellen Koeffizienten $a$, $b$, $c$ und $d$ und den Multiplikationsregeln
 >
 > Die darin auftretende Zahl $a$ wird als *Realteil* von $Q$ bezeichnet, während die anderen Koeffizienten $(b,c,d)$ den *Imaginärraum* von $Q$ bilden.
 >
-> Die Menge aller Quaternionen wird mit $$
+> Die Menge aller Quaternionen wird als $$
   \mathbb{H}=\left\{a+i\cdot b+j\cdot c+k\cdot d\,|\, (a,b,c,d)\in\mathbb{R}^4\,\wedge\,i^2=j^2=k^2=-1\;\wedge\;i\cdot j\cdot k=-1\right\}
-$$ angegeben.[^1]
+$$ definiert.[^1]
 
 
 Rechenoperationen
@@ -2565,7 +2568,9 @@ $$ Dieses Produkt erhält man durch Ausmultiplizieren der Klammern unter Benutzu
   Q_2\cdot Q_1=(1+i)\cdot(1+j)=1+i+j+k
 $$
 
-**Bemerkung 1.** Aus Definition 1 und Beispiel 1 ist erkennbar, dass zwar die Addition von Quaternionen kommutativ ist, d. h. dass die Reihenfolge der Summanden vertauschbar ist, jedoch ist die Multiplikation zweier beliebiger Quaternionen im Allgemeinen nicht kommutativ: Das Produkt zweier Quaternionen liefert je nach Reihenfolge der Faktoren unterschiedliche Ergebnisse.
+**Bemerkung 1.** Multiplikation und Addition von Quaternionen sind assoziativ. 
+
+Aus Definition 1 und Beispiel 1 ist erkennbar, dass zwar die Addition von Quaternionen kommutativ ist, d. h. dass die Reihenfolge der Summanden vertauschbar ist, jedoch ist die Multiplikation zweier beliebiger Quaternionen im Allgemeinen nicht kommutativ: Das Produkt zweier Quaternionen liefert je nach Reihenfolge der Faktoren unterschiedliche Ergebnisse.
 
 Werden in Definition 1 je zwei der Koeffizienten $b_m$, $c_m$ oder $d_m$ mit jeweils $m=1,2$ Null gesetzt, so ergeben sich die Rechenregeln in $\mathbb{C}$.
 
@@ -2591,13 +2596,31 @@ $$ Der Ausdruck ist reell und für jede Wahl der Parameter $a$, $b$, $c$ und $d$
 
 $\square$
 
->**Satz 1.** Für die quaternionale Konjugation gelten die nachstehenden Eigenschaften.
+<!-- style="background-color: lightgray;"-->
+>Zu jeder Quaternion $Q\not=0+0\cdot i+0\cdot j+0\cdot k=0$ existiert damit auch eine eindeutig bestimmte **multiplikativ inverse** Quaternion $Q^{-1}$ mit $$ Q^{-1}=\frac{1}{|Q|^2}\cdot\tilde{Q}\quad\text{mit}\quad Q\cdot Q^{-1}=Q\cdot\frac{1}{|Q|^2}\cdot\tilde{Q}=\frac{Q\cdot\tilde{Q}}{|Q|^2}=1 $$ Die Quaternion $E=1+0\cdot i+0\cdot j+0\cdot k=1$ wird entsprechend Bemerkung 7 im Abschnitt [Komplexe Zahlen](#Komplexe-Zahlen) **neutrales Element** der Multiplikation genannt.
+
+**Bemerkung 2.** Mit dem Nachweis auch anderer der in Bemerkung 7 ausfgeführten Eigenschaften lässt sich begründen, dass die Quaternionen zusammen mit den eingeführten Operationen eine - bis auf die fehlende Kommutativität bezüglich der Multiplikation - den komplexen wie auch reellen Zahlen ähnliche algebraische Struktur bilden, die [Schiefkörper](https://de.wikipedia.org/wiki/Schiefk%C3%B6rper) genannt wird. (Ein Schiefkörper ist wie ein Körper, nur dass die Multiplikation nicht notwendigerweise kommutativ ist.)
+
+>**Satz 1.** Die Inverse eines Produktes von Quaternionen $Q_k\not=0$ ist $$ (Q_1\cdot Q_2\cdot ... \cdot Q_n)^{-1}=Q_n^{-1}\cdot ... \cdot Q_2^{-1}\cdot Q_1^{-1}\,,\quad n\in\mathbb{N}\,, n\geq 2 $$ d. i. das Produkt der Inversen der Faktoren unter Umkehrung der Reihenfolge.
+
+**Beweis.** Der Nachweis erfolgt mittels vollständiger Induktion.
+
+1. Induktionsanfang: Für $n=2$ ist für beliebige Quaternionen $Q_k\not=0$ zu zeigen $(Q_1\cdot Q_2)^{-1}=Q_2^{-1}\cdot Q_1^{-1}$. Aus der Bildung der multiplikativ Inversen folgt unter Nutzung des Assoziativgesetzes der Multiplikation: $$ (Q_1\cdot Q_2)^{-1}\cdot(Q_1\cdot Q_2)=1\quad\leftrightarrow\quad (Q_1\cdot Q_2)^{-1}\cdot(Q_1\cdot Q_2)\cdot\textcolor{blue}{Q_2^{-1}}\cdot\textcolor{magenta}{Q_1^{-1}} = (Q_1\cdot Q_2)^{-1}\cdot \left(Q_1\cdot \left(Q_2\cdot\textcolor{blue}{Q_2^{-1}}\right)\cdot\textcolor{magenta}{Q_1^{-1}}\right) = 1\cdot\textcolor{blue}{Q_2^{-1}}\cdot\textcolor{magenta}{Q_1^{-1}} $$ woraus unmittelbar die Behauptung folgt.
+2. Induktionsschluss: Gilt für $n=m$ von Null verschiedene Quaternionen die Behauptung aus Satz 1, so folgt für jede hinzugenommene Quaternion $Q_{m+1}\not=0$ $$ (Q_1\cdot Q_2\cdot ... \cdot Q_m\cdot\textcolor{magenta}{Q_{m+1}})^{-1}=:(Q\cdot\textcolor{magenta}{Q_{m+1}})^{-1}=\textcolor{magenta}{Q_{m+1}^{-1}}\cdot Q^{-1}=\textcolor{magenta}{Q_{m+1}^{-1}}\cdot Q_n^{-1}\cdot ... \cdot Q_2^{-1}\cdot Q_1^{-1} $$
+
+Damit die Behauptung aus dem vorstehenden Satz für eine beliebige Anzahl $n\geq2$ von von Null verschiedenen Faktoren bewiesen.
+
+$\square$
+
+>**Satz 2.** Für die quaternionale Konjugation gelten die nachstehenden Eigenschaften.
 >
 >1. $\widetilde{\tilde{Q}}=Q$. Diese Eigenschaft wird [involutorisch](https://de.wikipedia.org/wiki/Involution_%28Mathematik%29) genannt.
 >2. $\mathbb{R}$-[Linearität](https://de.wikipedia.org/wiki/Lineare_Abbildung): Es gelten $$\widetilde{Q_1+ Q_2}=\tilde{Q}_1+\tilde{Q}_2\quad\text{und}\quad\widetilde{\lambda\cdot Q}=\lambda\cdot\tilde{Q}\;\;\text{für alle}\;\lambda\in\mathbb{R} $$
 >3. $\widetilde{Q_1\cdot Q_2}=\tilde{Q}_2\cdot\tilde{Q}_1$.
 
 **Beweis.** Die Eigenschaft 1 folgt sofort aus der Definition der quaternionalen Konjugation (siehe Definition 2), ebenso Eigenschaft 2 unter Verwendung von Addition von Quaternionen und Multiplikation mit einer reellen Zahl.
+
+Für die Eigenschaft 3 gilt unter Nutzung der Rechenregeln für (reelle) Beträge $$ \widetilde{Q_1\cdot Q_2}=|Q_1\cdot Q_2|^2\cdot (Q_1\cdot Q_2)^{-1}=|Q_1|^2\cdot|Q_2|^2\cdot Q_2^{-1}\cdot Q_1^{-1}=\tilde{Q}_2\cdot\tilde{Q}_1 $$
 
 $\square$
 
@@ -2641,15 +2664,19 @@ $$
     & = i\cdot x+ j\cdot\left(\frac{1}{2}\cdot y-\frac{1}{2}\cdot\sqrt{3}\cdot z\right)+k\cdot\left(\frac{1}{2}\cdot\sqrt{3}\cdot y+\frac{1}{2}\cdot z\right)
   \end{split}
 $$ Der Bildpunkt besitzt somit die kartesischen Koordinaten $$
-  Q\left[x,
+  Q'\left[x,
   \left(\frac{1}{2}\cdot y-\frac{1}{2}\cdot\sqrt{3}\cdot z\right),
   \left(\frac{1}{2}\cdot\sqrt{3}\cdot y+\frac{1}{2}\cdot z\right)
 \right]
-$$
+$$ 
 
-...
+~~Fazit~~: Die Drehung um die x-Achse um $60^\circ$ transformiert die $y$- und $z$-Koordinaten gemäß einer Drehmatrix – die Quaternionen liefern dasselbe Ergebnis, aber in einer kompakten Form. Vergleiche Abschitt [Matrizen](#Matrizen).
 
-Ein interaktives Beispiel zur Hintereinanderausführung zweier Drehungen um Geraden durch den Koordinatenursprung ist nachfolgend dargestellt.
+**Bemerkung 3.** Für die Hintereinanderausführung/Komposition von Drehungen lässt sich das auch als **Sandwich-Operator** bezeichnete Multiplikationsschema anpassen: Bezeichnen $Q_k$ die zur $k$-ten ausgeführten Drehung gehörende Quaternion, so berechnet sich das Bild $Q'$ eines beliebig gewählten Punktes $Q$ unter Nutzung von Satz 2 gemäß $$ Q'=(\textcolor{blue}{Q_m}\cdot \textcolor{purple}{Q_{m-1}}\cdot...\cdot \textcolor{magenta}{Q_2}\cdot \textcolor{red}{Q_1})\cdot Q\cdot (\textcolor{blue}{Q_m}\cdot \textcolor{purple}{Q_{m-1}}\cdot...\cdot \textcolor{magenta}{Q_2}\cdot \textcolor{red}{Q_1})^{-1}=\left(\textcolor{blue}{Q_m}\cdot\left(\textcolor{purple}{Q_{m-1}}\cdot...\cdot\left(\textcolor{magenta}{Q_2}\cdot \left(\textcolor{red}{Q_1}\cdot Q\cdot \textcolor{red}{Q_1^{-1}}\right)\cdot\textcolor{magenta}{Q_2^{-1}}\right)\cdot...\cdot\textcolor{purple}{Q_{m-1}^{-1}}\right)\cdot\textcolor{blue}{Q_m^{-1}}\right) $$ 
+
+~~Fazit~~: Die Multiplikation von Quaternionen entspricht der Hintereinanderausführung von Drehungen – die Reihenfolge ist entscheidend!
+
+Ein interaktives Beispiel zur Hintereinanderausführung zweier Drehungen um Geraden durch den Koordinatenursprung ist nachfolgend dargestellt. Verändere den Drehwinkel und die Achse. Beobachte, wie sich der Punkt im Raum dreht. Teste, ob die Reihenfolge der Drehungen (z. B. zuerst um $x$-, dann um $y$-Achse) das Ergebnis verändert – ein Hinweis auf die **Nicht-Kommutativität**!
 
 <div style="width: 100%; max-width: 1335px; margin: 0; padding: 0; box-sizing: border-box; display: block;">
   <div style="position: relative; width: 100%; height: 0; padding-bottom: 54.7%; /* 731 / 1335 ≈ 54.7% */">
@@ -2671,9 +2698,21 @@ Ein interaktives Beispiel zur Hintereinanderausführung zweier Drehungen um Gera
   ist unter der Lizenz <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> verfügbar.
 </p>
 
+**Beispiel 3.** Gegeben ist eine Quaternion $Q_\varphi = 0.866 + 0.5\,i + 0\,j + 0\,k$. Sie besitzt den Betrag $1$, da $$ |Q_\varphi| = \sqrt{0.866^2 + 0.5^2} \approx \sqrt{0.75 + 0.25} = \sqrt{1} = 1 $$ und lässt sich somit in der Form $$ Q_\varphi = \cos\left(\frac{\varphi}{2}\right) + \sin\left(\frac{\varphi}{2}\right) \cdot (b\,i + c\,j + d\,k) $$ darstellen. $Q$ beschreibt eine Drehung des dreidimensionalen Raumes. Zu berechnen sind aus der algebraischen Darstellung von $Q$ der Drehwinkel und die Drehachsenrichtung.
+
+1. Der Realteil ist $\operatorname{Re}{Q_\varphi} = \cos\left(\frac{\varphi}{2}\right) = 0.866 $, aus dem sich der halbe Drehwinkel gemäß $$ \frac{\varphi}{2} = \arccos(0.866) \approx 30^\circ = \frac{\pi}{6} \text{ rad} $$ berechnet. Daraus folgt unmittelbar $$ \varphi \approx 2 \cdot 30^\circ = 60^\circ $$
+2. Der Imaginärteil ist $\text{Im}(Q_\varphi) = 0.5\,i + 0\,j + 0\,k$. Der Betrag des Vektorteils ist $$ |\text{Im}{Q_\varphi}| = \sqrt{0.5^2 + 0^2 + 0^2} = 0.5 $$ Da $ \sin\left(\frac{\varphi}{2}\right) = 0.5 $, stimmt das mit dem vorherigen Ergebnis überein.
+3. Die Drehachse ist der Einheitsvektor in Richtung des Vektorteils, $$ \vec{e} = \frac{(b, c, d)}{\sqrt{b^2 + c^2 + d^2}} = \frac{(0.5, 0, 0)}{0.5} = (1, 0, 0) $$ Die Drehachse ist die $x$-Achse.
+  
+Die Quaternion $ Q_\varphi = 0.866 + 0.5\,i $ beschreibt somit eine Drehung um $ 60^\circ $ um die $x$-Achse.
+
 
 Sicher gewusst
 ===
+
+
+Testen Sie Ihr Wissen bei der Beantwortung der folgenden Fragen.
+
 
 **Frage 1.** Gegeben sind die Quaternionen $Q_1=4j-2k$ und $Q_2=1-i$ gegeben. Berechnen Sie die nachstehenden Ausdrücke.
 
@@ -2721,7 +2760,24 @@ Hingegen entfällt die erste Antwortoption, da dort nicht $\frac{\varphi}{2}$, s
 
 ****************************************
 
-[^1]: Die bei der Angabe von $\mathbb{H}$ abweichenden Multiplikationsregeln sind aus Gründen der Lesbarkeit gewählt und werden im folgenden Abschnitt erklärt.
+**Frage 3.** Gegeben ist die Quaternion $$ Q = 0.707 + 0.707\,i + 0\,j + 0\,k $$ mit Betrag 1. Welche Drehung beschreibt sie?
+
+[( )] $ 45^\circ $ um die $y$-Achse
+[(X)] $ 90^\circ $ um die $x$-Achse
+[( )] $ 180^\circ $ um die $z$-Achse
+[[?]] Der Realteil ist $ \cos(\varphi/2) $, der Vektorteil gibt die Achse an.
+****************************************
+
+Die Quaternion ist $ Q = \cos(\varphi/2) + \sin(\varphi/2)\,i $. Es berechnen sich schrittweise:
+
+* $ \cos(\varphi/2) = 0.707\quad\rightarrow\quad\varphi/2 = 45^\circ\quad\rightarrow\quad\varphi = 90^\circ $  
+* Der Vektorteil ist $ (0.707, 0, 0) $, beschreibt also die Richtung der (positiv gerichteten) $x$-Achse.  
+
+Die Quaternion beschreibt eine Drehung um $ 90^\circ $ um die $x$-Achse.
+
+****************************************
+
+[^1]: Die bei der Definition von $\mathbb{H}$ verwendeten Multiplikationsregeln sind aus Gründen einer besseren Lesbarkeit gewählt und werden im folgenden Abschnitt erklärt.
 
 [^2]: Bei Angabe der Quaternion $Q_\varphi$ ist nicht nur die Drehachse anzugeben, sondern auf deren Richtungssinn festzulegen. Der Drehwinkel wird bezüglich des gewählten Richtungssinns angegeben - 'plus' beziehungsweise 'minus'.
 
