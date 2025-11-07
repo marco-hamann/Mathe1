@@ -2706,6 +2706,13 @@ Ein interaktives Beispiel zur Hintereinanderausführung zweier Drehungen um Gera
   
 Die Quaternion $ Q_\varphi = 0.866 + 0.5\,i $ beschreibt somit eine Drehung um $ 60^\circ $ um die $x$-Achse.
 
+<!-- style="background-color: lightgray;"-->
+>**Ausblick.** [Duale Quaternionen](https://en.wikipedia.org/wiki/Dual_quaternion) für vollständige Bewegungen.
+>
+>Die bisherige Quaternion beschreibt nur Drehungen. In der Praxis bewegen sich Maschinen aber auch "durch den Raum" – z. B. ein Roboterarm, der sich bewegt und dabei dreht. Hier kommen **duale Quaternionen** ins Spiel: Sie erweitern klassische Quaternionen um eine Verschiebung (Translation) und ermöglichen die kompakte Beschreibung von Dreh- und Verschiebungsbewegungen in einem einzigen Objekt.
+>
+>Eine duale Quaternion hat die Form $$ \mathbf{Q} = Q_r + \varepsilon \cdot Q_d $$ mit $ \varepsilon^2 = 0 $. Sie können verwendet werden, um vollständige Bewegungen im Raum zu beschreiben – z. B. in der Robotik, CNC-Steuerung oder Animation.
+
 
 Sicher gewusst
 ===
