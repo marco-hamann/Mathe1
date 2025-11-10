@@ -4095,8 +4095,6 @@ $$ lassen sich in der nachstehenden Abbildung ablesen.
 
 ![Gerade](img/mat-bild-19.png "_Fig._ Verbindungsgerade $g=P_1P_2$ zweier Punkte mit Anstiegsdreieck und Strahlensatzfigur zur Bestimmung des Absolutgliedes $n$.")
 
-Ebenso lassen sich Ebenen als Verbindungsebenen dreier Punkte durch Determinantengleichungen beschreiben.
-
 >**Satz 4.** Die Sätze 1, 2 und 3 gelten sinngemäß auch für Determinanten dritter Ordnung.
 
 >**Definition 3.** Gegeben sei eine Matrix $A\in K^{3,3}$ mit Komponentendarstellung $$
@@ -4201,9 +4199,27 @@ $$ Dieses Ergebnis bestätigt sich unter der Beobachtung dass für die Spaltenve
   A=\begin{pmatrix} s_1 & s_2 & s_3 & s_4 \end{pmatrix}
 $$ gilt $s_1+s_2-s_3+s_4=o$ (Nullvektor), die Spalten mithin linear abhängig sind.
 
+**Beispiel 8.** Analog zu Beispiel 5 lassen sich Ebenen des dreidimensionalen Raumes als Verbindungsebenen dreier Punkte (eines ebenen Dreiecks) mit Hilfe einer Determinante der Form $$ D=\det{\left(\begin{array}{rrrr} x & y & z & 1 \\ x_1 & y_1 & z_1 & 1 \\ x_2 & y_2 & z_2 & 1 \\ x_3 & y_3 & z_3 & 1 \end{array}\right)}$$ beschreiben, worin $(x_j,y_j,z_j)$ mit $j\in\{1,2,3\}$ die (kartesischen) Koordinaten der drei gegebenen Punkte bezeichnen. Durch Entwicklung der Determinante nach der ersten Zeile lässt sich einsehen:
+
+1. Die Gleichung $D=0$ ist linear in den Unbekannten $(x,y,z)$, $$ D=\det{\left(\begin{array}{rrrr} x & y & z & 1 \\ x_1 & y_1 & z_1 & 1 \\ x_2 & y_2 & z_2 & 1 \\ x_3 & y_3 & z_3 & 1 \end{array}\right)}=x\cdot\det{\left(\begin{array}{rrr} y_1 & z_1 & 1 \\ y_2 & z_2 & 1 \\ y_3 & z_3 & 1 \end{array}\right)}-y\cdot\det{\left(\begin{array}{rrr} x_1 & z_1 & 1 \\ x_2 & z_2 & 1 \\ x_3 & z_3 & 1 \end{array}\right)}+z\cdot\det{\left(\begin{array}{rrr} x_1 & y_1 & 1 \\ x_2 & y_2 & 1 \\ x_3 & y_3 & 1 \end{array}\right)}-\det{\left(\begin{array}{rrr} x_1 & y_1 & z_1 \\ x_2 & y_2 & z_2 \\ x_3 & y_3 & z_3 \end{array}\right)}= 0 $$ beschreibt demnach eine Ebene $\Sigma$ - als geometrischen Ort eines Punktes $P(x,y,z)$ im dreidimensionalen Raum.
+2. Die lineare Gleichung ist erfüllt für $(x,y,z)=(x_j,y_j,z_j)$ für jede Wahl von $j$, da nach Substitution die Matrix in obiger Gleichung jeweils zwei identische (und somit linear abhängige) Zeilen und somit die Determinante Null besitzt. Hieraus folgt, dass die Ebene $\Sigma$ die Punkte $P_1(x_1,y_1,z_1)$, $P_2(x_2,y_2,z_2)$ und $P_3(x_3,y_3,z_3)$ enthält, sie wird also als deren Verbindungsebene erkannt. Voraussetzung ist hierfür, dass die Vektoren $(x_j,y_j,z_j)^\top$ nicht linear abhängig sind, mithin die Punkte $P_j$ nicht auf einer Geraden liegen.
+
+Mit Hilfe der Javascript-Bibliothek [Algebrite](http://algebrite.org/) lässt sich die Gleichung der Verbindungsebene dreier Punkte, die ein Dreieck bestimmen, interaktiv ermitteln.
+
+```algebrite
+P1=[x1,y1,z1];
+P2=[x2,y2,z2];
+P3=[x3,y3,z3];
+P=[x,y,z];
+D=[[P[1],P[2],P[3],1],[P1[1],P1[2],P1[3],1],[P2[1],P2[2],P2[3],1],[P3[1],P3[2],P3[3],1]];
+det(D)
+```
+@Algebrite.eval
+
 
 Rechenregeln
 ------------
+
 
 Für Determinanten $n$-ter Ordnung lassen sich die für $n=2$ und $n=3$ bekannten Rechenregeln beweisen.
 
@@ -5843,7 +5859,9 @@ Durch je zwei verschiedene Punkte $A$ und $B$ in $\mathbb{R}^3$ wird eindeutig e
 >
 >* *Parameterdarstellung.* Sind $A$ und $B$ zwei verschiedene Punkte des $\mathbb{R}^3$, so kann jeder Punkt $X\in\mathbb{R}^3$ der durch $A$ und $B$ eindeutig festgelegten Geraden durch $$X=A+\lambda\cdot (B-A)=A+\lambda\cdot\overrightarrow{AB}$$ mit $\lambda\in\mathbb{R}$ berechnet werden.
 
-**Bemerkung 1.** Die Parameterdarstellung der Gerade $g=AB$ lässt sich als Linearkombination der Ortsvektoren der Punkte $A$ und $B$ darstellen, d. h. $$ X=(1-\lambda)\cdot A+\lambda\cdot B \quad\text{mit}\quad (1-\lambda)+\lambda=1\;\;\forall\; \lambda\in\mathbb{R} $$ worin die Summe der Koeffizienten für jede Wahl von $\lambda$ 'Eins' ergibt.
+**Beispiel 1.** Gegeben sind zwei verschiedene Punkte $A=(1,2,0)^\top$ und $B=(3,0,-1)^\top$ in $\mathbb{R}^3$ und $g$ die durch $A$ und $B$ eindeutig festgelegte Gerade. Hieraus lässt sich unmittelbar eine Parameterdarstellung von $g$ ableiten mit $$ X=\left(\begin{array}{c}x\\y\\z\end{array}\right)=\left(\begin{array}{c}1\\2\\0\end{array}\right)+\lambda\cdot \left(\begin{array}{c}2\\-2\\-1\end{array}\right)\quad\,,\;\lambda\in\mathbb{R} $$ worin $$ \left(\begin{array}{c}1\\2\\0\end{array}\right)\quad\text{bzw.}\quad \left(\begin{array}{c}2\\-2\\-1\end{array}\right)=\left(\begin{array}{c}3\\0\\-1\end{array}\right)-\left(\begin{array}{c}1\\2\\0\end{array}\right) $$ einen möglichen Stütz- beziehungsweise Richtungsvektor von $g$ darstellen.
+
+**Bemerkung 1.** Die Parameterdarstellung der Gerade $g=AB$ lässt sich als Linearkombination der Ortsvektoren der Punkte $A$ und $B$ darstellen, d. h. $$ X=A+\lambda\cdot(B-A)=(1-\lambda)\cdot A+\lambda\cdot B \quad\text{mit}\quad (1-\lambda)+\lambda=1\;\;\forall\; \lambda\in\mathbb{R} $$ worin die Summe der Koeffizienten für jede Wahl von $\lambda$ 'Eins' ergibt.
 
 Durch je drei verschiedene Punkte $P$, $Q$ und $R$ in $\mathbb{R}^3$ wird eindeutig eine Ebene festgelegt, wenn die Punkte ein eigentliches Dreieck bilden. Umgekehrt ist jede Ebene durch drei nicht auf einer Geraden liegende Punkte eindeutig bestimmt.            
 
@@ -5857,6 +5875,7 @@ $$ ist die Punktmenge einer Ebene $E$ in $\mathbb{R}^3$. Der Punkt $(x,y,z)^\top
 >
 >* *Normalenform.* Sind $P, Q, R\in\mathbb{R}^3$ drei Punkte einer Ebene $E$, welche nicht auf einer gemeinsamen Geraden liegen, so kann jeder Punkt $X$ der Ebene durch die Gleichung $$ n\cdot\left(X-P\right)=n\cdot\overrightarrow{PX}=0 $$ mit $$n=(Q-P)\times (R-P)=\overrightarrow{PQ}\times\overrightarrow{PR}$$ beschrieben werden. Hierbei ist $\times$ das Vektorprodukt in $\mathbb{R}^3$. Speziell für Vektoren $n$ der Norm/Länge $|n|=1$ heißt diese Normalengleichung auch [Hessesche Normalform](https://de.wikipedia.org/wiki/Hessesche_Normalform) von $E$. Der Vektor $n$ ist dann ein **Einheitsnormalenvektor** der Ebene $E$.
 
+**Beispiel 2.** Die Gerade $g$ aus dem vorangegangenen Beispiel enthält weder den Koordinatenursprung $O=(0,0,0)^\top$ noch den Punkt $C=(1,0,0)^\top$. Werden diese Punkte jeweils zu $A$ und $B$ hinzugefügt, so entsteht jeweils eine Ebene $ABO$ beziehungsweise $ABC$. Die Gleichungen dieser beiden Ebenen berechnen sich gemäß $$...$$
 
 Anwendungen
 ===
