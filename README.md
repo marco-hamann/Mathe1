@@ -4204,15 +4204,18 @@ $$ gilt $s_1+s_2-s_3+s_4=o$ (Nullvektor), die Spalten mithin linear abhängig si
 1. Die Gleichung $D=0$ ist linear in den Unbekannten $(x,y,z)$, $$ D=\det{\left(\begin{array}{rrrr} x & y & z & 1 \\ x_1 & y_1 & z_1 & 1 \\ x_2 & y_2 & z_2 & 1 \\ x_3 & y_3 & z_3 & 1 \end{array}\right)}=x\cdot\det{\left(\begin{array}{rrr} y_1 & z_1 & 1 \\ y_2 & z_2 & 1 \\ y_3 & z_3 & 1 \end{array}\right)}-y\cdot\det{\left(\begin{array}{rrr} x_1 & z_1 & 1 \\ x_2 & z_2 & 1 \\ x_3 & z_3 & 1 \end{array}\right)}+z\cdot\det{\left(\begin{array}{rrr} x_1 & y_1 & 1 \\ x_2 & y_2 & 1 \\ x_3 & y_3 & 1 \end{array}\right)}-\det{\left(\begin{array}{rrr} x_1 & y_1 & z_1 \\ x_2 & y_2 & z_2 \\ x_3 & y_3 & z_3 \end{array}\right)}= 0 $$ beschreibt demnach eine Ebene $\Sigma$ - als geometrischen Ort eines Punktes $P(x,y,z)$ im dreidimensionalen Raum.
 2. Die lineare Gleichung ist erfüllt für $(x,y,z)=(x_j,y_j,z_j)$ für jede Wahl von $j$, da nach Substitution die Matrix in obiger Gleichung jeweils zwei identische (und somit linear abhängige) Zeilen und somit die Determinante Null besitzt. Hieraus folgt, dass die Ebene $\Sigma$ die Punkte $P_1(x_1,y_1,z_1)$, $P_2(x_2,y_2,z_2)$ und $P_3(x_3,y_3,z_3)$ enthält, sie wird also als deren Verbindungsebene erkannt. Voraussetzung ist hierfür, dass die Vektoren $(x_j,y_j,z_j)^\top$ nicht linear abhängig sind, mithin die Punkte $P_j$ nicht auf einer Geraden liegen.
 
-Mit Hilfe der Javascript-Bibliothek [Algebrite](http://algebrite.org/) lässt sich die Gleichung der Verbindungsebene dreier Punkte, die ein Dreieck bestimmen, interaktiv ermitteln.
+Mit Hilfe der Javascript-Bibliothek [Algebrite](http://algebrite.org/) lässt sich die Gleichung der Verbindungsebene dreier Punkte interaktiv ermitteln. Der Befehl `cofactor(M,j,k)` berechnet das algebraische Komplement $A_{jk}=(-1)^{j+k}\cdot a_{jk}\cdot D_{jk}$ zum Element $a_{jk}$ von $M$.
 
 ```algebrite
-P1=[x1,y1,z1];
-P2=[x2,y2,z2];
-P3=[x3,y3,z3];
-P=[x,y,z];
-D=[[P[1],P[2],P[3],1],[P1[1],P1[2],P1[3],1],[P2[1],P2[2],P2[3],1],[P3[1],P3[2],P3[3],1]];
-det(D)
+P1=[x1,y1,z1]
+P2=[x2,y2,z2]
+P3=[x3,y3,z3]
+P=[x,y,z]
+M=[[P[1],P[2],P[3],1],[P1[1],P1[2],P1[3],1],[P2[1],P2[2],P2[3],1],[P3[1],P3[2],P3[3],1]]
+cofactor(M,1,1)
+cofactor(M,1,2)
+cofactor(M,1,3)
+cofactor(M,1,1)-coeff(det(M),x,1)
 ```
 @Algebrite.eval
 
@@ -4734,7 +4737,9 @@ $$ Zur Überführung in die gestaffelte Form sind gegebenenfalls
 2. Spalten von $A$ zu tauschen
 
 Für die Untersuchung des Lösungsverhaltens ist folgende Definition hilfreich.
+Hier können Sie Ihr Wissen aus diesem Abschnitt testen.
 
+Frage 1. Zu drei verschieden
 >**Definition 4.** Der Rang einer Matrix $A\in K^{m,n}$ ist die Maximalzahl linear unabhängiger Zeilenvektoren in $A$. Kurz: $\mathrm{rg}{A}$.
 
 Unter Betrachtung der elementaren Zeilenumformungen folgen unmittelbar $$
@@ -5875,28 +5880,45 @@ $$ ist die Punktmenge einer Ebene $E$ in $\mathbb{R}^3$. Der Punkt $(x,y,z)^\top
 >
 >* *Normalenform.* Sind $P, Q, R\in\mathbb{R}^3$ drei Punkte einer Ebene $E$, welche nicht auf einer gemeinsamen Geraden liegen, so kann jeder Punkt $X$ der Ebene durch die Gleichung $$ n\cdot\left(X-P\right)=n\cdot\overrightarrow{PX}=0 $$ mit $$n=(Q-P)\times (R-P)=\overrightarrow{PQ}\times\overrightarrow{PR}$$ beschrieben werden. Hierbei ist $\times$ das Vektorprodukt in $\mathbb{R}^3$. Speziell für Vektoren $n$ der Norm/Länge $|n|=1$ heißt diese Normalengleichung auch [Hessesche Normalform](https://de.wikipedia.org/wiki/Hessesche_Normalform) von $E$. Der Vektor $n$ ist dann ein **Einheitsnormalenvektor** der Ebene $E$.
 
-**Beispiel 2.** Die Gerade $g$ aus dem vorangegangenen Beispiel enthält weder den Koordinatenursprung $O=(0,0,0)^\top$ noch den Punkt $C=(1,0,0)^\top$. Werden diese Punkte jeweils zu $A$ und $B$ hinzugefügt, so entsteht jeweils eine Ebene $ABO$ beziehungsweise $ABC$. Die Gleichungen dieser beiden Ebenen berechnen sich gemäß $$...$$
+**Beispiel 2.** Die Gerade $g$ aus dem vorangegangenen Beispiel enthält weder den Koordinatenursprung $O=(0,0,0)^\top$ noch den Punkt $C=(1,0,0)^\top$. Werden diese Punkte jeweils zu $A$ und $B$ hinzugefügt, so entsteht jeweils eine Ebene $ABO$ beziehungsweise $ABC$. Die Gleichungen dieser beiden Ebenen berechnen sich gemäß Beispiel 8 im Abschnitt [Determinanten](#Determinanten) $$ \det{\left(\begin{array}{rrr} x & y & z & 1 \\ 1 & 2 & 0 & 1 \\ 3 & 0 & -1 & 1 \\ 0 & 0 & 0 & 1\end{array}\right)}=-2\cdot x+y-6\cdot z=0 \quad\text{bzw.}\quad \det{\left(\begin{array}{rrr} x & y & z & 1 \\ 1 & 2 & 0 & 1 \\ 3 & 0 & -1 & 1 \\ 1 & 0 & 0 & 1\end{array}\right)}=-2\cdot x-4\cdot z+2=0  $$ Die Gerade $g$ lässt sich somit in Ergänzung zum vorangegangenen Beispiel auch als gemeinsame Gerade (Schnittgerade) der beiden Ebenen festlegen. 
+
+Die Rechnung lässt sich unter Nutzung der Javascript-Bibliothek [Algebrite](algebrite.com) interaktiv prüfen.
+
+```algebrite
+P1=[1,2,0]
+P2=[3,0,-1]
+P3=[0,0,0]
+P=[x,y,z]
+M=[[P[1],P[2],P[3],1],[P1[1],P1[2],P1[3],1],[P2[1],P2[2],P2[3],1],[P3[1],P3[2],P3[3],1]]
+det(M)
+```
+@Algebrite.eval
+
 
 Anwendungen
 ===
 
 
-Die Wirkung einer Kraft beziehungsweise eines Systems von Kräften auf einen drehbaren Körper lässt sich mithilfe des [Drehmomentes](https://de.wikipedia.org/wiki/Drehmoment) $\vec{M}$ physikalisch beschreiben. Dieses berechnet sich $\vec{M}=\vec{r}\times\vec{F}$, worin $\vec{F}$ die wirkende (resultierende) Kraft und $\vec{r}$ den Verbindungsvektor vom Bezugspunkt des Drehmoments zum Angriffspunkt der Kraft bezeichnen. Für die vektorielle Größe $\vec{M}$ gelten hierbei
+Die Wirkung einer Kraft beziehungsweise eines Systems von Kräften auf einen drehbaren Körper lässt sich mithilfe des [Drehmomentes](https://de.wikipedia.org/wiki/Drehmoment) $\vec{M}$ physikalisch beschreiben. Dieses berechnet sich $$\vec{M}=\vec{r}\times\vec{F}$$ worin $\vec{F}$ die wirkende Kraft und $\vec{r}$ den Verbindungsvektor vom Bezugspunkt des Drehmoments zum Angriffspunkt der Kraft bezeichnen. Für die vektorielle Größe $\vec{M}$ gelten hierbei die nachstehenden Eigenschaften.
 
 1. $\vec{M}\perp\vec{r}$ und $\vec{M}\perp\vec{F}$ sowie $|\vec{M}|=|\vec{r}|\cdot|\vec{F}|\cdot\sin{\varphi}$ mit $\varphi=\measuredangle{(\vec{r},\vec{F})}$, vergleiche Definition des Vektorproduktes
-2. Greift $\vec{F}$ an einem (beliebigen) Punkt $Q$ entlang ihrer Wirkungslinie durch $P$ an, so gilt $\vec{r}_Q=\vec{r}+\overrightarrow{PQ}$ mit $\overrightarrow{PQ}=\vec{s}$. Die in $Q$ angreifende Kraft $\vec{F}$ erzeugt ein Drehmoment $$ \vec{M}_Q=\vec{r}_Q\times\vec{F}=(\vec{r}+\vec{s})\times\vec{F}=\vec{r}\times\vec{F}+\vec{s}\times\vec{F}=\vec{M} $$ d. h. das Drehmoment bleibt entlang der Wirkungslinie von $\vec{F}$ durch $P$ (bzw. $Q$) erhalten.
+2. Greift $\vec{F}$ an einem (beliebigen) Punkt $Q$ entlang ihrer Wirkungslinie durch $P$ an, so gilt $$ \vec{r}_Q=\vec{r}+\overrightarrow{PQ}\quad\text{mit}\quad \overrightarrow{PQ}=\vec{s} $$ Die in $Q$ angreifende Kraft $\vec{F}$ erzeugt ein Drehmoment $$ \vec{M}_Q=\vec{r}_Q\times\vec{F}=(\vec{r}+\vec{s})\times\vec{F}=\vec{r}\times\vec{F}+\vec{s}\times\vec{F}=\vec{M} $$ d. h. das Drehmoment bleibt entlang der Wirkungslinie von $\vec{F}$ durch $P$ beziehungsweise $Q$ erhalten.
+3. Wirken mehrere Kräfte $\vec{F}_i$ mit $i=1,2,...,n$ auf verschiedene Punkte $P_i$ mit Abstandsvektor $\vec{r}_i=\overrightarrow{DP_i}$ vom Drehpunkt $D$ ein, so gilt für das gesamte Drehmoment $$ \vec{M}=\sum _{i=1}^n{\left(\vec{r}_i\times\vec{F}_i\right)} $$ d. i. ist die Vektorsumme der einzelnen Drehmomente.
 
 ![Drehmoment](img/mat-bild-32.png "_Fig._ Drehmoment $\vec{M}$ an einer drehbar gelagerten Scheibe durch Wirkung einer Kraft $\vec{F}$ in $P$. Die Scheibe ist um eine Gerade durch $D$ drehbar gelagert. Wird die Kraft entlang ihrer Wirkungslnie nach $Q$ verschoben, ändert sich das erzeugte Drehmoment nicht.")
 
 
-**Bemerkung 1.** Im Ingenieurwesen auftretende, vektorielle Größen, die entlang ihrer Wirkungslinie unverändert bleiben, heißen **linienflüchtig**. Demgegenüber werden auch [ortsgebundene](https://de.wikipedia.org/wiki/Gebundener_Vektor) - (fester Angriffspunkt) und **freien**, physikalischen Größen betrachtet.
+**Bemerkung 2.** Im Ingenieurwesen auftretende, vektorielle Größen, die entlang ihrer Wirkungslinie unverändert bleiben, werden **linienflüchtig** genannt. Demgegenüber werden auch [ortsgebundene](https://de.wikipedia.org/wiki/Gebundener_Vektor) physikalische Größen (fester Angriffspunkt) sowie **freie** physikalische Größen betrachtet.
 
-**Beispiel 1.** In der $xy$-Ebene des dreidimensionalen (affinen) Raumes befinde sich eine ovale Scheibe, die um eine Achse parallel zur $z$-Achse durch den Punkt $D$ drehbar gelagert ist, siehe nachstehende Abbildung. Es wirken Kräfte $\vec{F}_j$, $j\in\{1,2,3\}$, entlang der Scheibe in den Punkten $P_j$.
+**Beispiel 3.** In der $xy$-Ebene des dreidimensionalen affinen Raumes befinde sich eine ovale Scheibe, die um eine Achse parallel zur $z$-Achse durch den Punkt $D$ drehbar gelagert ist, siehe nachstehende Abbildung. Es wirken Kräfte $\vec{F}_j$, $j\in\{1,2,3\}$, entlang der Scheibe in den Punkten $P_j$.
 
-1. Aus der Abbildung soll jeweils die Kraft $\vec{F}_j$ mit $j\in\{1,2,3\}$ ermittelt und deren Betrag (Einheit $1{\rm N}$) berechnet werden.
-2. Das Drehmoment berechnet sich gemäß $\vec{M}_i=\vec{r}_i\times\vec{F}_i$ mit $i\in\{1,2\}$, worin $\vec{F}_i$ die linienflüchtige Kraftwirkung und $\vec{r}_i$ (Einheit $1{\rm m}$) den Differenzvektor von $D$ zu einem beliebigen Punkt auf der Wirkungslinie von $\vec{F}_i$ bezeichnen. ... Hiermit lässt sich anschließend begründen, das $\vec{M}_3=\vec{o}$ der Nullvektor ist.
-3. Schließlich lässt sich aus den Anteilen $\vec{M}_1$ und $\vec{M}_2$ das resultierende Drehmoment $\vec{M}=\vec{r}\times\vec{F}$ berechnen.
+Aus der Abbildung lässt sich zunächst jeweils die Kraft $\vec{F}_j$ mit $j\in\{1,2,3\}$ ermitteln $$ \vec{F}_1=\begin{pmatrix} 0-5 \\ 7-(-5) \\ 0-0 \end{pmatrix}=\begin{pmatrix} -5 \\ 12 \\ 0 \end{pmatrix} ({\rm N})\,,\quad \vec{F}_2=\begin{pmatrix} 8-0 \\ 2-(-4) \\ 0-0 \end{pmatrix}=\begin{pmatrix} 8 \\ 6 \\ 0 \end{pmatrix} ({\rm N})\quad\text{bzw.}\quad \vec{F}_3=\begin{pmatrix} 5-0 \\ 3-6 \\ 0-0 \end{pmatrix}=\begin{pmatrix} 5 \\ -3 \\ 0 \end{pmatrix} ({\rm N})\,,\quad $$ sowie deren Betrag (Einheit $1{\rm N}$) $$ |\vec{F}_1|=\sqrt{(-5)^2+12^2+0^2}=13\, ({\rm N})\,,\quad |\vec{F}_2|=\sqrt{8^2+6^2+0^2}=10\, ({\rm N})\quad\text{bzw.}\quad |\vec{F}_2|=\sqrt{5^2+(-3)^2+0^2}=\sqrt{34}\, ({\rm N}) $$ berechnen.
 
+Das Drehmoment berechnet sich gemäß $$ \vec{M}_i=\vec{r}_i\times\vec{F}_i\quad\text{mit}\quad i\in\{1,2\} $$ worin $\vec{F}_i$ die linienflüchtige Kraftwirkung und $\vec{r}_i$ (Einheit $1{\rm m}$) den Differenzvektor von $D$ zu einem beliebigen Punkt auf der Wirkungslinie von $\vec{F}_i$ bezeichnen. $$ \vec{M}_1=\overrightarrow{DP_1}\times\vec{F}_1=\begin{pmatrix} 0 \\ -8 \\ 0 \end{pmatrix}\times\begin{pmatrix} -5 \\ 12 \\ 0 \end{pmatrix}=\begin{pmatrix} 0 \\ 0 \\ -40 \end{pmatrix} ({\rm Nm})\quad\text{bzw.}\quad \vec{M}_2=\overrightarrow{DP_2}\times\vec{F}_2=\begin{pmatrix} -5 \\ -7 \\ 0 \end{pmatrix}\times\begin{pmatrix} 8 \\ 6 \\ 0 \end{pmatrix}=\begin{pmatrix} 0 \\ 0 \\ 26 \end{pmatrix} ({\rm Nm}) $$ Die Vektoren der Anteile des Drehmomentes zeigen in Richtung der vertikalen Achse. Hierüber lässt sich dann auch begründen, das $\vec{M}_3=\vec{o}$ der Nullvektor ist. 
+
+Schließlich lässt sich aus den Anteilen $\vec{M}_1$ und $\vec{M}_2$ das resultierende Drehmoment $\vec{M}_{res}=\vec{r}\times\vec{F}$ berechnen. Aufgrund der vorgenannten Eigenschaft 2. ergibt sich das resultierende Drehmoment auf zweifach verschiedene Weise $$ \vec{M}_{res}=\vec{M}_1+\vec{M}_2=\left(\overrightarrow{DP_1}\times\vec{F}_1\right)+\left(\overrightarrow{DP_2}\times\vec{F}_2\right)=\left(\overrightarrow{DQ}\times\vec{F}_1\right)+\left(\overrightarrow{DQ}\times\vec{F}_2\right)=\overrightarrow{DQ}\times\left(\vec{F}_1+\vec{F}_2\right)=\overrightarrow{DQ}\times\vec{F}_{res} $$ mit dem Ergebnis $$ \vec{M}_{res}=\vec{M}_1+\vec{M}_2= \begin{pmatrix} 0 \\ 0 \\ -14 \end{pmatrix} ({\rm Nm})\quad\text{bzw.}\quad \vec{M}_{res}=\overrightarrow{DQ}\times\vec{F}_{res}=\begin{pmatrix} -\frac{95}{63} \\ -\frac{92}{21} \\ 0 \end{pmatrix}\times\begin{pmatrix} 3 \\ 18 \\ 0 \end{pmatrix}=\begin{pmatrix} 0 \\ 0 \\ -14 \end{pmatrix} ({\rm Nm}) $$ Die zweite Rechnung vermöge dem gemeinsamen Punkt $Q$ der beiden Wirkungslinien der Kräfte $\vec{F}_1$ und $\vec{F}_2$. (Bitte nachrechnen.)
+
+![Drehmoment2](img/mat-bild-41.png "_Fig._ Drehmoment $\vec{M}$ an einer drehbar gelagerten ovalen Scheibe in der $xy$-Ebene, die Scheibe um eine vertikale Achse durch $D$ drehbar gelagert ist. In den Punkten $P_i$ wirken die Kräfte $\vec{F}_i$ entlang der Scheibe. Die resultierende $\vec{F}_{res}$ der Kräfte $\vec{F}_1$ und $\vec{F}_2$ wirkt im gemeinsamen Punkt $Q$ der zugehörenden Wirklinien.")
 
 Sicher gewusst
 ===
