@@ -1885,8 +1885,8 @@ $$ Damit folgt für den Abstand von $w_k$ zum Koordinatenursprung des Koordinate
   |w_k|=\left|\sqrt[n]{r}\cdot\left(\cos{\left(\frac{\varphi+2\cdot k\cdot\pi}{n}\right)}+i\cdot\sin{\left(\frac{\varphi+2\cdot k\cdot\pi}{n}\right)}\right)\right|=\left|\sqrt[n]{r}\right|\cdot\left|\cos{\left(\frac{\varphi+2\cdot k\cdot\pi}{n}\right)}+i\cdot\sin{\left(\frac{\varphi+2\cdot k\cdot\pi}{n}\right)}\right|=\left|\sqrt[n]{r}\right|
 $$ d. h. unabhängig von der Wahl $k\in\{0,1,...,n-1\}$.
 2. Für die Argumente zweier Wurzelwerte $w_j$ und $w_{j+1}$ mit $j\in\{0,1,...,n-1\}$ und $j+1\in\{0,1,...,n-1\}$[^5] gilt: $$
-  \left(\frac{\varphi+2\cdot (j+1)\cdot\pi}{n}\right)-\left(\frac{\varphi+2\cdot j\cdot\pi}{n}\right)=\frac{2\cdot\pi}{n}
-$$ d. h. die Differenz der Argumente zweier 'benachbarter' Wurzeln ist unabhängig von der Wahl $k\in\{0,1,...,n-1\}$. Der Vollwinkel wird in $n$ gleichgroße Winkel geteilt.
+  \left(\frac{\varphi+2\cdot (j+1)\cdot\pi}{n}\right)-\left(\frac{\varphi+2\cdot j\cdot\pi}{n}\right)=\frac{2\cdot\pi}{n} $$ 
+d. h. die Differenz der Argumente zweier 'benachbarter' Wurzeln ist unabhängig von der Wahl $k\in\{0,1,...,n-1\}$. Der Vollwinkel wird in $n$ gleichgroße Winkel geteilt.
 
 $\square$
 
@@ -2900,12 +2900,34 @@ Im nachstehenden Video werden die Rechenoperationen für Vektoren des $\mathbb{R
 
 1. Werden zwei beliebige Vektoren $x$ und $y$ im Ursprung $O$ eines Koordinatensystems angetragen, so dass diese benachbarte Seiten eines Parallelogrammes aufspannen, so bildet der Summenvektor $x+y$ die von $O$ ausgehende Diagonale im aufgespannten Parallelogramm. Siehe nachstehende Abbildung.
 2. Ein Vektor $$
-  x\not=\begin{pmatrix} 0 \\ \vdots \\ 0 \end{pmatrix}
-$$ und dessen Skalarvielfaches $\lambda\cdot x$ besitzen für $\lambda\not=0$ die gleiche Richtung, so dass letzterer als mit dem Faktor $\lambda$ gestreckter Vektor interpretiert werden kann.
+  x\not=\begin{pmatrix} 0 \\ \vdots \\ 0 \end{pmatrix} $$ 
+  und dessen Skalarvielfaches $\lambda\cdot x$ besitzen für $\lambda\not=0$ die gleiche Richtung, so dass letzterer als mit dem Faktor $\lambda$ gestreckter Vektor interpretiert werden kann.
 
 Für die Operationen der Addition und Skalarvielfachbildung im $\mathbb{R}^n$ gelten die nachstehenden Rechenoperationen, die im Satz 1 zusammengefasst sind.
 
 ![Vektoraddition](img/mat-bild-17.png "_Fig._ Zwei ein Parallelogramm aufspannende Vektoren $x$, $y$ und die Vektorsumme $x+y$, dargestellt als Ortsvektoren bezogen auf den Ursprung eines Koordinatensystems mit den Komponenten $x_i$, $y_i$ beziehungsweise $x_i+y_i$.")
+
+Ein interaktives Beispiel zur graphischen Bestimmung einer Vektorsumme im $\mathbb{R}^2$ ist nachfolgend angegeben. Prüfen Sie die Parallelogrammregel für den Fall linear abhängiger Vektoren $\vec{F}_1$ und $\vec{F}_2$.
+
+<div style="width: 100%; max-width: 1335px; margin: 0; padding: 0; box-sizing: border-box; display: block;">
+  <div style="position: relative; width: 100%; height: 0; padding-bottom: 51.78%; /* 479 / 925 ≈ 51.78% */">
+    <iframe
+      scrolling="no"
+      title="Kräfteparallelogramm"
+      src="https://www.geogebra.org/material/iframe/id/JmJJ7g5D/width/1335/height/690/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/true/ld/true/sdz/true/ctl/false"
+      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 1px solid #ccc; border-radius: 8px; display: block; overflow: hidden;"
+      allowfullscreen
+      loading="lazy"
+    ></iframe>
+  </div>
+</div>
+
+<p>
+  <strong>Interaktive Anwendung:</strong> 
+  <a href="https://www.geogebra.org/m/JmJJ7g5D">Kräfteparallelogramm</a>  
+  von <a href="https://www.geogebra.org/u/kaischmidt">Kai Schmidt</a>  
+  ist unter der Lizenz <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> verfügbar.
+</p>
 
 > **Satz 1.** Es gelten die folgenden Rechenregeln [^3]
 >
@@ -2962,7 +2984,7 @@ $$ sowie eine Skalarvielfachbildung $$
 $$ und $$
   \lambda\cdot f(x)=\lambda\cdot (a\cdot x^2+b\cdot x+c)=
   (\lambda\cdot a)\cdot x^2+(\lambda\cdot b)\cdot x+(\lambda\cdot c)
-$$ erklärt. D. h. Summe und Skalarvielfaches von Polynomfunktion $f$ mit Grad $\deg{f}\leq2$ sind wieder Polynomfunktionen. Die Rechenregeln aus Satz 2 lassen sich unmittelbar nachrechnen: Beispielsweise bildet die 'Nullfunktion' $$
+$$ erklärt. D. h. Summe und Skalarvielfaches von Polynomfunktion $f$ mit Grad $\deg{f}\leq2$ sind wieder Polynomfunktionen. Die Rechenregeln aus Satz 1 lassen sich unmittelbar nachrechnen: Beispielsweise bildet die 'Nullfunktion' $$
   o:x\mapsto y=o(x)=0\cdot x^2+0\cdot x+0=0\,,\quad x\in\mathbb{R}
 $$ das neutrale Element und $$
   y=(-f)(x)=(-1)\cdot(a\cdot x^2+b\cdot x+c)=-a\cdot x^2-b\cdot x-c
@@ -3665,8 +3687,7 @@ $$ worin $\varphi$ den Drehwinkel bezeichnet. Dies entspricht dem Vorgehen unter
     \textcolor{magenta}{\sin{\varphi}}\cdot\textcolor{blue}{\cos{\psi}}+\textcolor{magenta}{\cos{\varphi}}\cdot\textcolor{blue}{\sin{\psi}} &
     \textcolor{magenta}{\cos{\varphi}}\cdot\textcolor{blue}{\cos{\psi}}-\textcolor{magenta}{\sin{\varphi}}\cdot\textcolor{blue}{\sin{\psi}}
   \end{pmatrix}
-$$ wobei mit Hilfe der Additionstheoreme für Sinus und Kosinus gilt $$
-  \begin{pmatrix}
+$$ wobei mit Hilfe der Additionstheoreme für Sinus und Kosinus gilt $$   \begin{pmatrix}
     \textcolor{magenta}{\cos{\varphi}}\cdot\textcolor{blue}{\cos{\psi}}-\textcolor{magenta}{\sin{\varphi}}\cdot\textcolor{blue}{\sin{\psi}} &
     -\textcolor{magenta}{\sin{\varphi}}\cdot\textcolor{blue}{\cos{\psi}}-\textcolor{magenta}{\cos{\varphi}}\cdot\textcolor{blue}{\sin{\psi}} \\
     \textcolor{magenta}{\sin{\varphi}}\cdot\textcolor{blue}{\cos{\psi}}+\textcolor{magenta}{\cos{\varphi}}\cdot\textcolor{blue}{\sin{\psi}} &
@@ -3674,10 +3695,9 @@ $$ wobei mit Hilfe der Additionstheoreme für Sinus und Kosinus gilt $$
   \end{pmatrix}=
   \begin{pmatrix}
     \cos{\left(\varphi+\psi\right)} & -\sin{\left(\varphi+\psi\right)} \\ \sin{\left(\varphi+\psi\right)} & \cos{\left(\varphi+\psi\right)}
-  \end{pmatrix}
-$$ d. h. das Matrixprodukt ist erneut eine Matrix von gleicher Bauart zum Parameter $\varphi+\psi$.
+  \end{pmatrix} $$ d. h. das Matrixprodukt ist erneut eine Matrix von gleicher Bauart zum Parameter $\varphi+\psi$.
 
-Die Rechnung kann unter Benutzung der Javascript Bibliothek [Algebrite](http://algebrite.org/) nachvollzogen werden.
+Die Rechnung kann unter Benutzung der Javascript Bibliothek [Algebrite](http://algebrite.org/) nachvollzogen werden. Der Befehl `subst(a,b,c)` setzt den Wert $a$ für die Variable $b$ in den Term $c$ ein und gibt diesen aus.
 
 ```algebrite
 D=[[cos(t),-sin(t)],[sin(t),cos(t)]]
@@ -3908,10 +3928,8 @@ Rechenregeln
   \begin{pmatrix} s_{1} & s_{2} \end{pmatrix}\in K^{2,2}
 $$ eine zweireihige Matrix über $K$ mit den Spaltenvektoren $s_1$, $s_2$. Dann gelten die folgenden Rechenregeln:
 >
->1. $$ \det{A}=\det{A^\top} $$
->2. Durch einmaliges Tauschen beider Spalten wird die Determinante mit dem Faktor 'Minus Eins' multipliziert $$
-  \det{A}=-\det{B} \quad\text{mit}\quad B=\begin{pmatrix} s_{2} & s_{1} \end{pmatrix}
-$$
+>1. Für die Transposition der Matrix gilt $$ \det{A}=\det{A^\top} $$
+>2. Durch einmaliges Tauschen beider Spalten wird die Determinante mit dem Faktor 'Minus Eins' multipliziert $$ \det{A}=-\det{B} \quad\text{mit}\quad B=\begin{pmatrix} s_{2} & s_{1} \end{pmatrix} $$
 >3. Wird eine der Spaltenvektoren der Matrix $A$ mit dem Faktor $\lambda\in K$ multipliziert, so ändert sich die Determinante mit dem Faktor $\lambda$ $$
   \lambda\cdot\det{A}=\det{C}\quad\text{mit}\quad C=\begin{pmatrix} \lambda\cdot s_{1} & s_{2} \end{pmatrix}\quad\text{bzw.}\quad C=\begin{pmatrix} s_{1} & \lambda\cdot s_{2} \end{pmatrix}
 $$
@@ -4097,6 +4115,8 @@ $$ lassen sich in der nachstehenden Abbildung ablesen.
 
 >**Satz 4.** Die Sätze 1, 2 und 3 gelten sinngemäß auch für Determinanten dritter Ordnung.
 
+(ohne Beweis)
+
 >**Definition 3.** Gegeben sei eine Matrix $A\in K^{3,3}$ mit Komponentendarstellung $$
   A=\left(a_{ij}\right)_{i=1,...,3,\; j=1,...,3}
 $$ mit der Determinante dritter Ordnung $\det{A}\in K$.
@@ -4130,12 +4150,14 @@ $$ Man sagt, die Determinante ist entwickelt nach (den Komponenten) der ersten Z
   A=\begin{pmatrix} a_{ij} \end{pmatrix}_{i=1,...,3,\;j=1,...,3}
 $$ und Determinante $\det{A}\in K$.
 >
-> Dann berechnet sich
+> Dann lässt sich die Determinante von $A$
 >
->1. $$ \det{A}=\sum_{i=1}^3{(a_{ik}\cdot A_{ik})}\,,\quad k\in\{1,2,3\} $$ durch Entwicklung nach der $k$-ten Spalte.
->2. $$ \det{A}=\sum_{k=1}^3{(a_{ik}\cdot A_{ik})}\,,\quad i\in\{1,2,3\} $$ durch Entwicklung nach der $i$-ten Zeile.
+>1. durch Entwicklung nach der $k$-ten Spalte $$ \det{A}=\sum_{i=1}^3{(a_{ik}\cdot A_{ik})}\,,\quad k\in\{1,2,3\} $$
+>2. durch Entwicklung nach der $i$-ten Zeile $$ \det{A}=\sum_{k=1}^3{(a_{ik}\cdot A_{ik})}\,,\quad i\in\{1,2,3\} $$
 >
->Diese Aussage wird **Entwicklungssatz von Laplace** genannt. (Ohne Nachweis.)
+> also nach einer beliebigen Spalte oder Zeile berechnen. Diese Aussage wird [Entwicklungssatz von Laplace](https://de.wikipedia.org/wiki/Determinante#Laplacescher_Entwicklungssatz) genannt.
+
+(ohne Beweis)
 
 **Beispiel 6.** Gegeben ist die Matrix $$
   A=\begin{pmatrix} 1 & -5 & 3 \\ 4 & 0 & 2 \\ 3 & 6 & -7 \end{pmatrix}
@@ -4171,15 +4193,13 @@ det(A)
 Determinanten $n$-ter Ordnung
 =============================
 
-Gegeben ist eine $n$-reihige Matrix $A\in K^{n,n}$ mit der Komponentendarstellung $$
- A=\left(
-  \begin{array}{ccc} a_{11} & \ldots & a_{1n} \\ \vdots & \ddots & \vdots \\ a_{n1} & \ldots & a_{nn} \end{array}
- \right) = \left( a_{ij} \right)_{i=1,...,n,\; j=1,...,n}\quad\text{mit}\quad n\in\mathbb{N}\setminus\{0\}
-$$ Es lässt sich rekursiv der Wert der Determinante $n$-ter Ordnung $\det{A}$ berechnen $$
-  \det{A} =\sum_{j=1}^n{a_{1j}\cdot A_{1j}}=a_{11}\cdot A_{11}+a_{12}\cdot A_{12}+\ldots +a_{1n}\cdot A_{1n}
-$$ worin $$
-  A_{1j}=(-1)^{1+j}\cdot D_{1j}
-$$  das algebraische Komplement zu $a_{1j}$ und $D_{1j}$ Unterdeterminante $(n-1)$-ter Ordnung sind.
+Die Aussage aus dem vorstehenden Satz lässt sich nun verwenden, um Determinanten höherer Ordnung zu definieren. 
+
+<!-- style="background-color: lightgray;"-->
+> Betrachtet wird hierfür eine $n$-reihige Matrix $A\in K^{n,n}$ mit der Komponentendarstellung $$ A=\left(\begin{array}{ccc} a_{11} & \ldots & a_{1n} \\ \vdots & \ddots & \vdots \\ a_{n1} & \ldots & a_{nn} \end{array}\right) = \left( a_{ij} \right)_{i=1,...,n,\; j=1,...,n}\quad\text{mit}\quad n\in\mathbb{N}\setminus\{0\}$$ 
+> Es lässt sich rekursiv der Wert der Determinante $n$-ter Ordnung $\det{A}$ berechnen $$ \det{A} =\sum_{j=1}^n{a_{1j}\cdot A_{1j}}=a_{11}\cdot A_{11}+a_{12}\cdot A_{12}+\ldots +a_{1n}\cdot A_{1n} $$ 
+> worin $$ A_{1j}=(-1)^{1+j}\cdot D_{1j} $$  
+> das algebraische Komplement zu $a_{1j}$ und $D_{1j}$ Unterdeterminante $(n-1)$-ter Ordnung sind.
 
 **Beispiel 7.** Zu berechnen ist die nachstehende Determinante der Matrix $A$. $$
 \det{\left(
@@ -4254,6 +4274,8 @@ $$
   \det{(A\cdot B)}=\det{A}\cdot\det{B}
 $$
 
+(ohne Beweis)
+
 
 Sicher gewusst
 ===============
@@ -4321,11 +4343,40 @@ $$
 
 ---
 
-Für die Matrix gilt nach Anwendung der Rechenregeln aus Satz 4 in diesem Abschnitt $$
+Für die Matrix gilt nach Anwendung der Rechenregeln aus Satz 4 in diesem Abschnitt $$ 
   L=\begin{pmatrix} \lambda & \lambda & \lambda \\ \lambda & \lambda & \lambda \\ \lambda & \lambda & \lambda \end{pmatrix}=
   \lambda\cdot\begin{pmatrix} 1 & 1 & 1 \\ 1 & 1 & 1 \\ 1 & 1 & 1 \end{pmatrix}\quad\leadsto\quad
-  \det{L}=\lambda^3\cdot\det{\begin{pmatrix} 1 & 1 & 1 \\ 1 & 1 & 1 \\ 1 & 1 & 1 \end{pmatrix}}=0\;\;\forall\;\lambda\in\mathbb{R}
-$$ da die Spalten / Zeilen der Matrix identisch, und damit linear abhängig sind.
+  \det{L}=\lambda^3\cdot\det{\begin{pmatrix} 1 & 1 & 1 \\ 1 & 1 & 1 \\ 1 & 1 & 1 \end{ pmatrix}}=0\;\;\forall\;\lambda\in\mathbb{R} $$ 
+da die Spalten / Zeilen der Matrix identisch, und damit linear abhängig sind.
+
+****************************************
+
+**Frage 4.** Entscheiden Sie, ob die folgenden Aussagen wahr oder falsch sind.
+
+[[Wahr] [Falsch]]
+[(X) ( )]  1. Für eine Dreiecksmatrix $A$ gilt $\det{A} = a_{11}\cdot a_{22}\cdot\ldots\cdot a_{nn}$
+[( ) (X)]  2. Die Determinante einer $n$-reihigen Einheitsmatrix ist $\det{E}=n$
+[(X) ( )]  3. Besteht eine Zeile bzw. Spalte einer $n$-reihigen Matrix aus Nullen, so ist deren Determinante 'Null'.
+[(X) ( )]  4. Sind zwei Zeilen bzw. Spalten einer $n$-reihigen Matrix gleich, so ist deren Determinante 'Null'.
+[[?]] Nutzen Sie zur Beantwortung der Fragen den Laplaceschen Entwicklungssatz und die Regeln zum Berechnen von Determinanten.
+****************************************
+
+1. Ist $A$ Dreiecksmatrix der Form $$
+  \begin{pmatrix}
+    a_{11} & a_{12} & \ldots & a_{1m} \\
+    0 & a_{22} & \ldots & a_{2m} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    0 & 0 & \ldots & a_{mm}
+  \end{pmatrix} $$ so lässt sich durch wiederholtes Entwickeln der Determinante nach der ersten Spalte berechnen $$
+    \det{A}=a_{11}\cdot(-1)^{1+1}\cdot\left|
+    \begin{pmatrix} a_{22} & a_{23} & \ldots & a_{2m} \\ 0 & a_{33} & \ldots & a_{3m} \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \ldots & a_{mm} \end{pmatrix}
+    \right|=a_{11}\cdot a_{22}\cdot\left((-1)^{1+1}\right)^2\cdot\left|
+    \begin{pmatrix} a_{33} & a_{34} & \ldots & a_{3m} \\ 0 & a_{44} & \ldots & a_{4m} \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \ldots & a_{mm} \end{pmatrix}
+    \right|=...=a_{11}\cdot a_{22}\cdot...\cdot a_{mm}\cdot\left((-1)^{1+1}\right)^{n-1} $$ woraus die Behauptung folgt.
+2. Durch wiederholtes Entwickeln der Determinante nach der ersten Zeile berechnet sich $$
+  \det{E}=1^{n-1}\cdot\left((-1){1+1}\right)^{n-1}\cdot 1=1$$
+3. Wird die Determinante nach einer Zeile entwickelt, in der ausschließlich 'Nullen' sind, so muss nach dem Laplaceschen Entwicklungssatz deren Determinante 'Null' ergeben.
+4. Sind zwei Zeilen bzw. Spalten einer $n$-reihigen Matrix gleich, so lässt sich mithilfe der Rechenregeln für Determinanten die eine Zeile (Spalte) von der anderen, identischen Zeile (Spalte) subtrahiert werden, ohne, dass sich der Wert der Determinante ändert. Hierdurch entsteht eine 'Nullzeile'. Nach dem vorgenannten Punkt besitzt die Determinante den Wert 'Null'.
 
 ****************************************
 
@@ -4337,6 +4388,7 @@ $$ da die Spalten / Zeilen der Matrix identisch, und damit linear abhängig sind
 
 
 ### Lineare Gleichungssysteme
+
 
 In diesem Abschnitt werden Systeme von linearen Gleichungen der Form $$
   \begin{array}{rrrrrrrrr}
@@ -4737,9 +4789,7 @@ $$ Zur Überführung in die gestaffelte Form sind gegebenenfalls
 2. Spalten von $A$ zu tauschen
 
 Für die Untersuchung des Lösungsverhaltens ist folgende Definition hilfreich.
-Hier können Sie Ihr Wissen aus diesem Abschnitt testen.
 
-Frage 1. Zu drei verschieden
 >**Definition 4.** Der Rang einer Matrix $A\in K^{m,n}$ ist die Maximalzahl linear unabhängiger Zeilenvektoren in $A$. Kurz: $\mathrm{rg}{A}$.
 
 Unter Betrachtung der elementaren Zeilenumformungen folgen unmittelbar $$
@@ -5118,7 +5168,7 @@ Orthogonale Vektoren
 
 >**Definition 5.** Ist $(V,\cdot)$ ein euklidischer Vektorraum und $M\not=\emptyset$ eine Teilmenge von Vektoren. Dann heißt $$
   M^\perp=\left\{x\in V\;(x\cdot y=0\;\,\forall\, y\in M)\right\}
-$$ das orthogonale Komplement von $M$.
+$$ das **orthogonale Komplement** von $M$.
 
 **Beispiel 6.** Gegeben ist der euklidische Vektorraum $\mathbb{R}^3$ mit dem kanonischen Skalarprodukt auf $\mathbb{R}^3$.
 
@@ -5150,9 +5200,13 @@ Bei der Analyse von Systemen von Kräften ist es mitunter notwendig, Kraftkompon
 
 ![Kräftezerlegung](img/mat-bild-31.png "_Fig._ Zerlegung der Gewichtskraft $\vec{F}_G$ eines Körpers in Hangabtriebskraft $\vec{F}_H$ und Kraftkomponente $\vec{F}_N$ orthogonal zum geneigten Hang.")
 
-Wir leiten eine Formel für die Zerlegung eines Vektors in Komponenten in Richtung eines Untervektorraumes und seines orthogonalen Komplementes her. Hierfür bezeichne $x\in V$ den vom Nullvektor $o\in V$ verschiedenen Vektor und $M\subset V$ mit $$
+Wir leiten eine Formel für die Zerlegung eines Vektors in Komponenten in Richtung eines Untervektorraumes und seines orthogonalen Komplementes her. 
+
+Es bezeichne $x\in V$ den vom Nullvektor $o\in V$ verschiedenen Vektor und $M\subset V$ mit $$
   M=\left\{\lambda\cdot a|\,a\in V\setminus\{o\},\lambda\in\mathbb{R}\right\}
-$$ einen eindimensionalen Untervektorraum in $V$, der durch einen beliebig, aber fest gewählten Vektor $a$ aufgespannt wird. Gesucht sind die eindeutig bestimmten Vektoren $y\in M$ sowie $h\in M^\perp$ der Zerlegung $x=y+h$.
+$$ einen eindimensionalen Untervektorraum in $V$, der durch einen beliebig, aber fest gewählten Vektor $a$ aufgespannt wird. 
+
+Gesucht sind die eindeutig bestimmten Vektoren $y\in M$ sowie $h\in M^\perp$ der Zerlegung $x=y+h$.
 
 Bezeichnet $\varphi=\measuredangle{(x,a)}$ und wird benutzt, dass $(y,a)$ linear abhängig sind, so ergeben sich schrittweise:
 
@@ -5161,7 +5215,13 @@ Bezeichnet $\varphi=\measuredangle{(x,a)}$ und wird benutzt, dass $(y,a)$ linear
 3. $$ \frac{1}{|y|}\cdot y=\frac{1}{|a|}\cdot a\cdot\mathrm{sgn}{(x\cdot a)}\quad\leftrightarrow\quad y=\frac{|y|}{|a|}\cdot\mathrm{sgn}{(x\cdot a)}\cdot a\stackrel{2.}{=}\frac{x\cdot a}{a\cdot a}\cdot a $$ 
 4. $$ h=x-y=x-\frac{x\cdot a}{a\cdot a}\cdot a $$
 
-für $|y|\not=0$. Die Vektoren $y\not=o$ und $h\not=o$ sind orthogonal, $y\perp h$, denn es gilt $$ y\cdot h=\left(\frac{x\cdot a}{a\cdot a}\cdot a\right)\cdot\left(x-\frac{x\cdot a}{a\cdot a}\cdot a\right)=\frac{(x\cdot a)^2}{a\cdot a}-\frac{(x\cdot a)^2}{(a\cdot a)^2}\cdot(a\cdot a)=0 $$ 
+falls $|y|\not=0$. Für die beiden Vektoren gilt $$ y\cdot h=\left(\frac{x\cdot a}{a\cdot a}\cdot a\right)\cdot\left(x-\frac{x\cdot a}{a\cdot a}\cdot a\right)=\frac{(x\cdot a)^2}{a\cdot a}-\frac{(x\cdot a)^2}{(a\cdot a)^2}\cdot(a\cdot a)=0 $$ d. h. die Vektoren $y$ und $h$ sind orthogonal, $y\perp h$ (falls keiner der Vektoren der Nullvektor ist).
+
+<!-- style="background-color: lightgray;"-->
+> **Projektion in orthogonale Unterräume.** Der Vektor $x\not=o$ wird durch orthogonale Projektion auf den eindimensionalen Untervektorraum $$
+  M=\left\{\lambda\cdot a|\,a\in V\setminus\{o\},\lambda\in\mathbb{R}\right\} $$ zerlegt in die Summe $$
+  x=y+h\quad\text{mit}\quad y=\frac{x\cdot a}{a\cdot a}\cdot a\quad\text{und}\quad h= x-\frac{x\cdot a}{a\cdot a}\cdot a $$
+> worin $y\in M$ und $h\in M^\perp$. Falls beide Anteile der Zerlegung verschieden vom Nullvektor sind, so sind diese Vektoren orthogonal, $y\perp h$.
 
 **Beispiel 7.** Zu gegebener Kraft $\vec{F}=\left(\begin{array}{ccc} 4 & 2 & 6 \end{array}\right)^\top({\rm 1N})$ und Richtung $\vec{s}=\left(\begin{array}{ccc} 2 & -1 & 2 \end{array}\right)^\top({\rm 1m})$ ist die Kraftkomponente $\vec{F}_s$ in Richtung des Weges $\vec{s}$ zu berechnen.
 
@@ -5171,7 +5231,7 @@ Es gilt $$ \vec{F}\cdot\vec{s}=\left(\begin{array}{r} 4 \\ 2 \\ 6 \end{array}\ri
 
 Die orthogonale Projektion von $x$ auf den durch $e_j$ aufgespannten Untervektorraum ergibt $$ \frac{x\cdot e_j}{\vert e_j\vert^2}\cdot e_j=\vert x\vert\cdot\cos{\varphi}_j\cdot e_j = \left\{\begin{array}{lcl} \frac{3}{2}\cdot e_1 & \text{für} & j=1 \\ 2\cdot e_2 & \text{für} & j=2 \\ \frac{3}{4}\cdot e_3 & \text{für} & j=3 \end{array} \right. $$ mit $\varphi_i=\measuredangle(x,e_j)$. Die Ausdrücke $\cos{\varphi_j}$ heißen **Richtungskosinus** von $x=\left(\begin{array}{ccc} x_1 & x_2 & x_3 \end{array}\right)^\top$ bezüglich der Basisvektoren ${e}_j$. Es gilt $$ (\cos{\varphi_1})^2+(\cos{\varphi_2})^2+(\cos{\varphi_3})^2=\frac{x_1^2}{\vert{x}\vert^2}+\frac{x_2^2}{\vert{x}\vert^2}+\frac{x_3^2}{\vert{x}\vert^2}=1 $$ d. h. $\varphi_1$, $\varphi_2$ und $\varphi_3$ sind nicht unabhängig voneinander.
 
-Das Prinzip der orthogonalen Projektion von Vektoren lässt sich nutzen, um zu einem gegebenen System $\{w_1,w_2,...,w_n\}$ von linear unabhängigen Vektoren ein System $\{v_1,v_2,...,v_n\}$ orthogonalen Vektoren zu erzeugen, die beide denselben Untervektorraum aufspannen.
+Das Prinzip der orthogonalen Projektion von Vektoren lässt sich nutzen, um zu einem gegebenen System $\{w_1,w_2,...,w_n\}$ von linear unabhängigen Vektoren ein System $\{v_1,v_2,...,v_n\}$ orthogonaler Vektoren zu erzeugen, die beide denselben Untervektorraum aufspannen.
 
 <!-- style="background-color: lightgray;"-->
 > [Orthogonalisierungsverfahren nach Gram-Schmidt](https://de.wikipedia.org/wiki/Gram-Schmidtsches_Orthogonalisierungsverfahren). Die Vektoren $v_j$ berechnen sich rekursiv gemäß
@@ -5186,6 +5246,28 @@ Das Prinzip der orthogonalen Projektion von Vektoren lässt sich nutzen, um zu e
 Ist ein gemäß obigem Orthogonalisierungsverfahren bestimmtes System von Vektoren $\{v_1,v_2,...,v_{j-1}\}$ orthogonal, so folgt für die Skalarprodukte mit dem dort nachfolgend berechneten Vektor $v_j$ mit $j\in\{2,3,...,n\}$ $$ v_j\cdot v_l = \left[w_j-\left(\sum_{k=1}^{j-1}{\frac{w_j\cdot v_k}{v_k\cdot v_k}\cdot v_k}\right)\right]\cdot v_l=w_j\cdot v_l-\left(\sum_{k=1}^{j-1}{\frac{w_j\cdot v_k}{v_k\cdot v_k}\cdot v_k}\right)\cdot v_l=w_j\cdot v_l-\frac{w_j\cdot v_l}{v_l\cdot v_l}\cdot(v_l\cdot v_l)=0\quad \forall l\in\{1,2,...,j-1\} $$ da $v_k\cdot v_l=0$ für alle $k\not=l$ des vorgenannten Systems gilt. Unter erneuter Benutzung der linearen Unabhängigkeit der Vektoren $w_j$ lässt sich analog die paarweise Orthogonalität der Vektoren in $\{v_1,v_2,...,v_{j}\}$ schließen, und zusammen  mit $v_1\perp v_2$ schließlich die Aussage des Satzes beweisen. 
 
 $\square$
+
+Eine interaktive Anwendung des Gram-Schmidtschen Orthogonalisierungsverfahrens zur Bildung einer orthonormalen Basis im $\mathbb{R}^3$ ist im nachstehenden Beispiel dargestellt.
+
+<div style="width: 100%; max-width: 1335px; margin: 0; padding: 0; box-sizing: border-box; display: block;">
+  <div style="position: relative; width: 100%; height: 0; padding-bottom: 99.63%;">
+    <iframe
+      scrolling="no"
+      title="Gram-Schmidt-Verfahren"
+      src="https://www.geogebra.org/material/iframe/id/mw57fcqt/width/1335/height/1330/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/true/asb/false/sri/true/rc/false/ld/false/sdz/false/ctl/false"
+      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 1px solid #ccc; border-radius: 8px; display: block;"
+      allowfullscreen
+      loading="lazy"
+    ></iframe>
+  </div>
+</div>
+
+<p>
+  <strong>Interaktive Anwendung:</strong> 
+  <a href="https://www.geogebra.org/m/mw57fcqt">Gram-Schmidt-Verfahren</a>  
+  von <a href="https://www.geogebra.org/u/hawe">hawe</a>  
+  ist unter der Lizenz <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> verfügbar.
+</p>
 
 **Beispiel 9.** Gegeben sind die linear unabhängigen Vektoren im euklidischen Vektorraum $\left(\mathbb{R}^3,\cdot\right)$ $$ w_1=\begin{pmatrix} 1 \\ 2 \\ 0 \end{pmatrix}\,,\quad w_2=\begin{pmatrix} 3 \\ 0 \\ -1 \end{pmatrix}\quad\text{und}\quad w_3=\begin{pmatrix} 0 \\ 7 \\ 2 \end{pmatrix} $$ worin das Multiplikationszeichen das kanonische Skalarprodukt gemäß Beispiel 1 darstellt. Die lineare Unabhängigkeit der drei Vektoren ist unmittelbar einsichtig.
 
@@ -5215,7 +5297,7 @@ Vektorprodukt
 ===
 
 
-Für Vektoren des euklidischen dreidimensionalen Vektorraumes $V=\mathbb{R}^3$ mit dem eingeführten (kanonischen) Skalarprodukt lässt sich das Vektorprodukt zweier Vekatoren $a\in\mathbb{R}^3$ und $b\in\mathbb{R}^3$ erklären.
+Für Vektoren des euklidischen dreidimensionalen Vektorraumes $V=\mathbb{R}^3$ mit dem eingeführten (kanonischen) Skalarprodukt lässt sich das Vektorprodukt zweier Vektoren $a\in\mathbb{R}^3$ und $b\in\mathbb{R}^3$ erklären.
 
 >**Definition 6.** Gegeben seien $a\in\mathbb{R}^3$ und $b\in\mathbb{R}^3$. Dann existiert ein eindeutig bestimmter Vektor $c\in\mathbb{R}^3$ mit
 >
@@ -5244,6 +5326,15 @@ Für die Berechnung des Vektorproduktes werden die Faktoren $a$ und $b$ (eindeut
 1. Die ersten drei Summanden zur Berechnung des Vektorproduktes in der Darstellung $$ c=a\times b=\textcolor{magenta}{(a_{2}b_{3})\cdot e_1}+\textcolor{pink}{(a_{3}b_{1})\cdot e_2}+\textcolor{blue}{(a_{1}b_{2})\cdot e_3}-(a_{2}b_{1})\cdot e_3-(a_{3}b_{2})\cdot e_1-(a_{1}b_{3})\cdot e_2$$ entsprechen den Produkten in dem rechteckig erweiterten Schema der Komponenten der Matrix $$ \begin{array}{|rrr|rr} \textcolor{magenta}{e_{1}} & \textcolor{pink}{e_{2}} & \textcolor{blue}{e_{3}} & e_{1} & e_{2} \\\hdashline a_{1} & \textcolor{magenta}{a_{2}} & \textcolor{pink}{a_{3}} & \textcolor{blue}{a_{1}} & a_{2} \\ b_{1} & b_{2} & \textcolor{magenta}{b_{3}} & \textcolor{pink}{b_{1}} & \textcolor{blue}{b_{2}} \end{array} $$
 2. Die letzten drei Subtrahenden zur Berechnung des Vektorproduktes in der Darstellung $$ c=a\times b=(a_{2}b_{3})\cdot e_1+(a_{3}b_{1})\cdot e_2+(a_{1}b_{2})\cdot e_3-\textcolor{brown}{(a_{2}b_{1})\cdot e_3}-\textcolor{orange}{(a_{3}b_{2})\cdot e_1}-\textcolor{red}{(a_{1}b_{3})\cdot e_2}$$ entsprechen den Produkten in dem rechteckig erweiterten Schema der Komponenten der Matrix $$ \begin{array}{|rrr|rr} e_{1} & e_{2} & \textcolor{brown}{e_{3}} & \textcolor{orange}{e_{1}} & \textcolor{red}{e_{2}} \\\hdashline a_{1} & \textcolor{brown}{a_{2}} & \textcolor{orange}{a_{3}} & \textcolor{red}{a_{1}} & a_{2} \\ \textcolor{brown}{b_{1}} & \textcolor{orange}{b_{2}} & \textcolor{red}{b_{3}} & b_{1} & b_{2} \end{array} $$
 
+**Bemerkung 5.** Eine Schreibweise des Vektorproduktes unter Verwendung von Determinanten zweiter Ordnung ist $$
+  c=a\times b
+  =\begin{pmatrix} a_2b_3-a_3b_2 \\ a_3b_1-a_1b_3 \\ a_1b_2-a_2b_1 \end{pmatrix}
+  =\left[\det\begin{pmatrix} a_2 & a_3 \\ b_2 & b_3 \end{pmatrix}\,,\; \det\begin{pmatrix} a_3 & a_1 \\ b_3 & b_1 \end{pmatrix}\,,\; \det\begin{pmatrix} a_1 & a_2 \\ b_1 & b_2 \end{pmatrix}\right]^\top $$
+Schließlich kann der Koordinatenvektor des Vektorproduktes auch unter Verwendung einer so genannten [schiefsymmetrischen Matrix](https://de.wikipedia.org/wiki/Schiefsymmetrische_Matrix) dargestellt und berechnet werden $$
+  c=a\times b
+  =\begin{pmatrix} 0 & -a_3 & a_2 \\ a_3 & 0 & -a_1 \\ -a_2 & a_1 & 0 \end{pmatrix}\cdot\begin{pmatrix} b_1 \\ b_2 \\ b_3 \end{pmatrix} $$
+wie es in der Mechanik öfters gemacht wird.
+
 Die Berechnung des Vektorproduktes zweier Vektoren aus $\mathbb{R}^3$ ist im nachstehenden Video erläutert sowie Eigenschaften aufgezeigt.
 
 !?[Vektorprodukt1](https://www.youtube.com/watch?v=63FWetdwNb8 "Vektorprodukt / Kreuzprodukt, Daniel Jung.")
@@ -5271,7 +5362,7 @@ Spatprodukt
 
 >**Definition 7.** Für drei Vektoren $a\in\mathbb{R}^3$,$b\in\mathbb{R}^3$ und $c\in\mathbb{R}^3$ heißt die reelle Zahl $$ (a\times b)\cdot c=\left[\begin{pmatrix} a_1 \\ a_2 \\ a_3 \end{pmatrix}\times\begin{pmatrix} b_1 \\ b_2 \\ b_3 \end{pmatrix}\right]\cdot\begin{pmatrix} c_1 \\ c_2 \\ c_3 \end{pmatrix}=\begin{pmatrix} a_2b_3-a_3b_2 \\ a_3b_1-a_1b_3 \\ a_1b_2-a_2b_1 \end{pmatrix}\cdot\begin{pmatrix} c_1 \\ c_2 \\ c_3 \end{pmatrix}= (a_2b_3-a_3b_2)\cdot c_1+(a_3b_1-a_1b_3)\cdot c_2+(a_1b_2-a_2b_1)\cdot c_3 $$ das [Spatprodukt](https://de.wikipedia.org/wiki/Spatprodukt) der Vektoren $a$, $b$ und $c$.
 
-**Bemerkung 5.** Aus der vorstehenden Definition folgt unmittelbar $(a\times b)\cdot c=\det(a,b,c)$, d. h. das Spatprodukt lässt sich als Determinante einer dreireihigen Matrix darstellen, in deren Zeilen / Spalten die Komponenten der drei Faktoren $a$, $b$ und $c$ stehen. Vergleiche hierzu die Definition einer Determinante dritter Ordnung im Abschnitt [Determinanten](#Determinanten). Mit den Eigenschaften von Determinanten folgen aus dieser Darstellung wiederum die Gleichheiten $$ (a\times b)\cdot c=(b\times c)\cdot a=(c\times a)\cdot b $$ die durch zyklisches Vertauschen der einzelnen Faktoren entstehen. Das Spatprodukt ist jedoch **nicht kommutativ** (bei beliebigem Tauschen der Reihenfolge aller drei Faktoren.)
+**Bemerkung 6.** Aus der vorstehenden Definition folgt unmittelbar $(a\times b)\cdot c=\det(a,b,c)$, d. h. das Spatprodukt lässt sich als Determinante einer dreireihigen Matrix darstellen, in deren Zeilen / Spalten die Komponenten der drei Faktoren $a$, $b$ und $c$ stehen. Vergleiche hierzu die Definition einer Determinante dritter Ordnung im Abschnitt [Determinanten](#Determinanten). Mit den Eigenschaften von Determinanten folgen aus dieser Darstellung wiederum die Gleichheiten $$ (a\times b)\cdot c=(b\times c)\cdot a=(c\times a)\cdot b $$ die durch zyklisches Vertauschen der einzelnen Faktoren entstehen. Das Spatprodukt ist jedoch **nicht kommutativ** (bei beliebigem Tauschen der Reihenfolge aller drei Faktoren.)
 
 Für eine geometrische Deutung des Spatproduktes von drei Vektoren $a\in\mathbb{R}^3$,$b\in\mathbb{R}^3$ und $c\in\mathbb{R}^3$ lässt sich im Fall ihrer linearen Unabhängigkeit ein [Spat](https://de.wikipedia.org/wiki/Parallelepiped) (Parallelepiped) vorstellen, dessen Kantenvektoren die gegebenen Vektoren darstellen. Für das Volumen dieses Spats ergibt sich durch direktes Nachrechnen $V=|(a\times b)\cdot c|$.
 
@@ -5280,6 +5371,27 @@ Für eine geometrische Deutung des Spatproduktes von drei Vektoren $a\in\mathbb{
 1. Das Volumen berechnet sich mithilfe des Spatprodukts gemäß Bemerkung 6 $$ V=|\det(a,b,c)|=\left|\begin{pmatrix} 5 & 1 & 2 \\ 1 & 6 & -1 \\ 2 & 3 & 8 \end{pmatrix}\right|=227 $$
 2. Der Inhalt der Oberfläche des Parallelepipeds berechnet sich unter Benutzung des Vektorproduktes gemäß $$ A_0=2\cdot\left( |a\times b|+|a\times c|+|b\times c| \right) $$ worin die Normen der Vektorprodukte die Flächeninhalte der paarweise auftretenden Seitenflächen beschreiben. Mit den Produkten $$ a\times b=\begin{pmatrix} 5 \\ 1 \\ 2 \end{pmatrix}\times \begin{pmatrix} 1 \\ 6 \\ 3 \end{pmatrix}=\begin{pmatrix} -9 \\ -13 \\ 29 \end{pmatrix} \,,\quad  a\times c=\begin{pmatrix} 5 \\ 1 \\ 2 \end{pmatrix}\times \begin{pmatrix} 2 \\ -1 \\ 8 \end{pmatrix}=\begin{pmatrix} 10 \\ -36 \\ -7 \end{pmatrix} \quad\text{und}\quad b\times c=\begin{pmatrix} 1 \\ 6 \\ 3 \end{pmatrix}\times \begin{pmatrix} 2 \\ -1 \\ 8 \end{pmatrix}=\begin{pmatrix} 51 \\ -2 \\ -13 \end{pmatrix} $$ ergibt sich $$ A_0=2\cdot\left(\sqrt{81+169+841}+\sqrt{100+1296+49}+\sqrt{2601+4+169}\right)\approx 247.424 $$
 
+Ein interaktives Beispiel für den Zusammenhang des Spatproduktes dreier Vektoren $a\in\mathbb{R}^3$, $b\in\mathbb{R}^3$ und $c\in\mathbb{R}^3$ mit dem Volumen einer durch diese aufgespannte, dreiseitige Pyramide ist nachfolgend angegeben.
+
+<div style="width: 100%; max-width: 1335px; margin: 0; padding: 0; box-sizing: border-box; display: block;">
+  <div style="position: relative; width: 100%; height: 0; padding-bottom: 59.65%;">
+    <iframe
+      scrolling="no"
+      title="Spatprodukt"
+      src="https://www.geogebra.org/material/iframe/id/abgdsVn9/width/1335/height/796/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false"
+      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 1px solid #ccc; border-radius: 8px; display: block;"
+      allowfullscreen
+      loading="lazy"
+    ></iframe>
+  </div>
+</div>
+
+<p>
+  <strong>Interaktive Anwendung:</strong> 
+  <a href="https://www.geogebra.org/m/abgdsVn9">Spatprodukt</a>  
+  von <a href="https://www.geogebra.org/u/lwolf">C. Wolfseher</a>  
+  ist unter der Lizenz <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> verfügbar.
+</p>
 
 Eine Kennzeichnung des Spatproduktes dreier Vektoren aus $\mathbb{R}^3$ ist im nachstehenden Video erklärt. Die Bezugnahme zum Volumen des von den Vektoren aufgespannten Spates ist ebenso genannt. 
 
@@ -5765,10 +5877,15 @@ Denn die Menge $\mathcal{V}=\left\{x\in\mathbb{R}^n\;\middle |\; Ax=\mathcal{o}\
 $$ gilt $$ Ay-Ax=b-b=\mathcal{o}=A(y-x) $$ d. h. $\alpha(x,y)=y-x\in\mathcal{V}$.
 
 
-### Grundelemente in der Ebene
+### Grundelemente
 
 
-In diesem Abschnitt wird die Darstellung von Grundelementen des affinen Raumes $\mathbb{R}^2$ betrachtet.
+In diesem Abschnitt wird die Darstellung von Grundelementen der affinen Ebene $\mathbb{R}^2$ beziehungsweise des affinen Raumes $\mathbb{R}^3$ betrachtet.
+
+
+Grundelemente in der Ebene
+===
+
 
 Ein Punkt des affinen Raumes $\mathbb{R}^2$ ist ein Element der Menge $\mathbb{R}^2$, zum Beispiel $$ A=\left(\begin{array}{c}1\\2\end{array}\right) $$
 
@@ -5781,9 +5898,7 @@ Durch je zwei verschiedene Punkte $A$ und $B$ in $\mathbb{R}^2$ wird eindeutig e
 >* *Parameterdarstellung*. Sind $A, B\in\mathbb{R}^2$ mit $A\neq B$ zwei verschiedene Punkte und $g$ die eindeutig durch $A$ und $B$ festgelegte Gerade. Dann kann jeder Punkt $X$ von  $g$ durch die Gleichung $$
   X=A+\lambda\cdot (B-A)=A+\lambda\cdot \overrightarrow{AB}\quad\text{mit}\quad \lambda\in\mathbb{R}
 $$ beschrieben werden. Der Vektor $\overrightarrow{AB}$ ist dann ein **Richtungsvektor** von $g$.
->* *Normalengleichung*. Jede Gerade $g$ kann durch einen Normalenvektor $n\in\mathbb{R}^2$ und einen auf ihr liegenden Punkt $A\in\mathbb{R}^2$ durch $$
-  n\cdot (X-A)=n\cdot \overrightarrow{AX}=0
-$$ angegeben werden. Der Punkt $X\in\mathbb{R}^2$ liegt genau dann auf $g$, wenn die Gleichung erfüllt ist. Ist der Vektor $n$ normiert, d. h. $|n|=1$, so heißt diese Gleichung [Hessesche Normalform](https://de.wikipedia.org/wiki/Hessesche_Normalform) von $g$.
+>* *Normalengleichung*. Jede Gerade $g$ kann durch einen Normalenvektor $n\in\mathbb{R}^2$ und einen auf ihr liegenden Punkt $A\in\mathbb{R}^2$ durch $$ n\cdot (X-A)=n\cdot \overrightarrow{AX}=0 $$ angegeben werden. Der Punkt $X\in\mathbb{R}^2$ liegt genau dann auf $g$, wenn die Gleichung erfüllt ist. Ist der Vektor $n$ normiert, d. h. $|n|=1$, so heißt diese Gleichung [Hessesche Normalform](https://de.wikipedia.org/wiki/Hessesche_Normalform) von $g$.
 
 
 **Beispiel 1.** Gegeben seien die beiden Punkte $A=(1,2)^\top$ und $B=(3,-1)^\top$ in $\mathbb{R}^2$ und $g$ die durch $A$ und $B$ eindeutig festgelegte Gerade. Hieraus lassen sich ableiten: 
@@ -5797,6 +5912,54 @@ $$ angegeben werden. Der Punkt $X\in\mathbb{R}^2$ liegt genau dann auf $g$, wenn
 **Bemerkung 2.** Jede allgemeine Gleichung einer Geraden $g$, die nicht parallel zu einer der beiden Koordinatenachsen liegt, lässt sich in der Form $$ a\cdot x_1+b\cdot x_2+c=0 \quad\leftrightarrow\quad\frac{x}{\alpha}+\frac{y}{\beta}=1 $$ angeben, worin $\alpha=-\frac{c}{a}$ und $\beta=-\frac{c}{b}$ gelten. Die rechte Form wird **Achsenabschnittsform** genannt. Mithilfe der Koeffizienten $a$, $b$ und $c$ in der allgemeinen Gleichung lassen sich somit die Achsenabschnitte $\alpha$ und $\beta$ auf $x$- und $y$-Achse angeben.
 
 **Beispiel 2.** Die Gerade $h$ mit der allgemeinen Gleichung $x-2y+3=0$ besitzt die Achsenabschnittsform $$ \frac{x}{-3}+\frac{y}{\frac{3}{2}}=1 $$ Die Achsenabschnitte auf $x$- beziehungsweise $y$-Achse sind $\alpha=-3$ beziehungsweise $\beta=\frac{3}{2}$.
+
+
+Grundelemente im  Raum
+===
+
+
+Punkte, Geraden und Ebenen in $\mathbb{R}^3$ sind genau die $0$-, $1$- und $2$-dimensionalen affinen Unterräume des affinen Raumes $\mathbb{R}^3$. Siehe auch den Abschnitt [Affine Räume](#Affine-Räume).
+
+Ein Punkt des affinen Raumes $\mathbb{R}^3$ ist ein Element der Menge $\mathbb{R}^2$, zum Beispiel $$ A=\left(\begin{array}{c}1\\2\\3\end{array}\right) $$
+
+Durch je zwei verschiedene Punkte $A$ und $B$ in $\mathbb{R}^3$ wird eindeutig eine Gerade festgelegt. Umgekehrt ist jede Gerade durch zwei verschiedene auf ihr liegende Punkte eindeutig bestimmt.            
+
+<!-- style="background-color: lightgray;"-->
+> **Darstellung von Geraden**
+>
+>* *Lösungsmenge zweier linearer Gleichungen.* Die Lösungsmenge zweier[^1] linearer Gleichungen $$ \left\{\begin{array}{rrr} a_1\cdot x_1+b_1\cdot x_2+c_1\cdot x_3+d_1 & = & 0 \\ a_2\cdot x_1+b_2\cdot x_2+c_2\cdot x_3+d_2 & = & 0 \end{array}\right. $$ mit $a_i, b_i, c_i, d_i\in\mathbb{R}$ für $i\in\{1,2\}$ ist genau dann die Punktemenge einer Gerade in $\mathbb{R}^3$, wenn die beiden Vektoren $$ (a_1,b_1,c_1)^\top\quad\text{und}\quad (a_2,b_2,c_2)^\top $$ linear unabhängig sind. Umgekehrt lässt sich jede Gerade durch zwei lineare Gleichungen dieser Form beschreiben.
+>
+>* *Parameterdarstellung.* Sind $A$ und $B$ zwei verschiedene Punkte des $\mathbb{R}^3$, so kann jeder Punkt $X\in\mathbb{R}^3$ der durch $A$ und $B$ eindeutig festgelegten Geraden durch $$X=A+\lambda\cdot (B-A)=A+\lambda\cdot\overrightarrow{AB}$$ mit $\lambda\in\mathbb{R}$ berechnet werden.
+
+**Beispiel 3.** Gegeben sind zwei verschiedene Punkte $A=(1,2,0)^\top$ und $B=(3,0,-1)^\top$ in $\mathbb{R}^3$ und $g$ die durch $A$ und $B$ eindeutig festgelegte Gerade. Hieraus lässt sich unmittelbar eine Parameterdarstellung von $g$ ableiten mit $$ X=\left(\begin{array}{c}x\\y\\z\end{array}\right)=\left(\begin{array}{c}1\\2\\0\end{array}\right)+\lambda\cdot \left(\begin{array}{c}2\\-2\\-1\end{array}\right)\quad\,,\;\lambda\in\mathbb{R} $$ worin $$ \left(\begin{array}{c}1\\2\\0\end{array}\right)\quad\text{bzw.}\quad \left(\begin{array}{c}2\\-2\\-1\end{array}\right)=\left(\begin{array}{c}3\\0\\-1\end{array}\right)-\left(\begin{array}{c}1\\2\\0\end{array}\right) $$ einen möglichen Stütz- beziehungsweise Richtungsvektor von $g$ darstellen.
+
+**Bemerkung 3.** Die Parameterdarstellung der Gerade $g=AB$ lässt sich als Linearkombination der Ortsvektoren der Punkte $A$ und $B$ darstellen, d. h. $$ X=A+\lambda\cdot(B-A)=(1-\lambda)\cdot A+\lambda\cdot B \quad\text{mit}\quad (1-\lambda)+\lambda=1\;\;\forall\; \lambda\in\mathbb{R} $$ worin die Summe der Koeffizienten für jede Wahl von $\lambda$ 'Eins' ergibt.
+
+Durch je drei verschiedene Punkte $P$, $Q$ und $R$ in $\mathbb{R}^3$ wird eindeutig eine Ebene festgelegt, wenn die Punkte ein eigentliches Dreieck bilden. Umgekehrt ist jede Ebene durch drei nicht auf einer Geraden liegende Punkte eindeutig bestimmt.            
+
+<!-- style="background-color: lightgray;"-->
+>**Darstellung von Ebenen**
+>
+>* *Lösungsmenge einer linearen Gleichung.* Die Lösungsmenge einer linearen Gleichung der Form $$
+  a\cdot x_1+b\cdot x_2+c\cdot x_3+d=0\quad\text{mit}\quad a^2+b^2+c^2\neq 0
+$$ ist die Punktmenge einer Ebene $E$ in $\mathbb{R}^3$. Der Punkt $(x,y,z)^\top\in\mathbb{R}^3$ liegt genau dann in $E$, wenn seine Koordinaten die Gleichung lösen. Umgekehrt ist jede Ebene Lösungsmenge einer solchen Gleichung.
+>* *Parameterdarstellung.* Sind $P, Q, R\in\mathbb{R}^3$ drei Punkte einer Ebene $E$, welche nicht auf einer gemeinsamen Geraden liegen, so kann jeder Punkt $X$ der Ebene durch die Gleichung $$X=P+\lambda\cdot \left(Q-P\right)+\mu\cdot\left(R-P\right)=P+\lambda\cdot\overrightarrow{PQ}+\mu\cdot\overrightarrow{PR}$$ mit $\lambda, \mu\in\mathbb{R}$ angegeben werden. Der Punkt $P$ wird manchmal **Aufpunkt** von $E$ genannt und die beiden Vektoren $Q-P$ und $R-P$ sind **Richtungsvektoren** der Ebene.
+>
+>* *Normalenform.* Sind $P, Q, R\in\mathbb{R}^3$ drei Punkte einer Ebene $E$, welche nicht auf einer gemeinsamen Geraden liegen, so kann jeder Punkt $X$ der Ebene durch die Gleichung $$ n\cdot\left(X-P\right)=n\cdot\overrightarrow{PX}=0 $$ mit $$n=(Q-P)\times (R-P)=\overrightarrow{PQ}\times\overrightarrow{PR}$$ beschrieben werden. Hierbei ist $\times$ das Vektorprodukt in $\mathbb{R}^3$. Speziell für Vektoren $n$ der Norm/Länge $|n|=1$ heißt diese Normalengleichung auch [Hessesche Normalform](https://de.wikipedia.org/wiki/Hessesche_Normalform) von $E$. Der Vektor $n$ ist dann ein **Einheitsnormalenvektor** der Ebene $E$.
+
+**Beispiel 4.** Die Gerade $g$ aus dem vorangegangenen Beispiel enthält weder den Koordinatenursprung $O=(0,0,0)^\top$ noch den Punkt $C=(1,0,0)^\top$. Werden diese Punkte jeweils zu $A$ und $B$ hinzugefügt, so entsteht jeweils eine Ebene $ABO$ beziehungsweise $ABC$. Die Gleichungen dieser beiden Ebenen berechnen sich gemäß Beispiel 8 im Abschnitt [Determinanten](#Determinanten) $$ \det{\left(\begin{array}{rrr} x & y & z & 1 \\ 1 & 2 & 0 & 1 \\ 3 & 0 & -1 & 1 \\ 0 & 0 & 0 & 1\end{array}\right)}=-2\cdot x+y-6\cdot z=0 \quad\text{bzw.}\quad \det{\left(\begin{array}{rrr} x & y & z & 1 \\ 1 & 2 & 0 & 1 \\ 3 & 0 & -1 & 1 \\ 1 & 0 & 0 & 1\end{array}\right)}=-2\cdot x-4\cdot z+2=0  $$ Die Gerade $g$ lässt sich somit in Ergänzung zum vorangegangenen Beispiel auch als gemeinsame Gerade (Schnittgerade) der beiden Ebenen festlegen. 
+
+Die Rechnung lässt sich unter Nutzung der Javascript-Bibliothek [Algebrite](algebrite.com) interaktiv prüfen.
+
+```algebrite
+P1=[1,2,0]
+P2=[3,0,-1]
+P3=[0,0,0]
+P=[x,y,z]
+M=[[P[1],P[2],P[3],1],[P1[1],P1[2],P1[3],1],[P2[1],P2[2],P2[3],1],[P3[1],P3[2],P3[3],1]]
+det(M)
+```
+@Algebrite.eval
 
 
 Sicher gewusst
@@ -5841,92 +6004,7 @@ Zwei markante Punkte auf $h$ sind ihre Schnittpunkte mit den beiden Koordinatena
 
 ****************************************
 
-
-### Grundelemente im  Raum
-
-
-Begriffe
-===
-
-
-In diesem Abschnitt wird die Darstellung von Grundelementen des affinen Raumes $\mathbb{R}^3$ betrachtet.
-
-Punkte, Geraden und Ebenen in $\mathbb{R}^3$ sind genau die $0$-, $1$- und $2$-dimensionalen affinen Unterräume des affinen Raumes $\mathbb{R}^3$. Siehe auch den Abschnitt [Affine Räume](#Affine-Räume).
-
-Ein Punkt des affinen Raumes $\mathbb{R}^3$ ist ein Element der Menge $\mathbb{R}^2$, zum Beispiel $$ A=\left(\begin{array}{c}1\\2\\3\end{array}\right) $$
-
-Durch je zwei verschiedene Punkte $A$ und $B$ in $\mathbb{R}^3$ wird eindeutig eine Gerade festgelegt. Umgekehrt ist jede Gerade durch zwei verschiedene auf ihr liegende Punkte eindeutig bestimmt.            
-
-<!-- style="background-color: lightgray;"-->
-> **Darstellung von Geraden**
->
->* *Lösungsmenge zweier linearer Gleichungen.* Die Lösungsmenge zweier[^1] linearer Gleichungen $$ \left\{\begin{array}{rrr} a_1\cdot x_1+b_1\cdot x_2+c_1\cdot x_3+d_1 & = & 0 \\ a_2\cdot x_1+b_2\cdot x_2+c_2\cdot x_3+d_2 & = & 0 \end{array}\right. $$ mit $a_i, b_i, c_i, d_i\in\mathbb{R}$ für $i\in\{1,2\}$ ist genau dann die Punktemenge einer Gerade in $\mathbb{R}^3$, wenn die beiden Vektoren $$ (a_1,b_1,c_1)^\top\quad\text{und}\quad (a_2,b_2,c_2)^\top $$ linear unabhängig sind. Umgekehrt lässt sich jede Gerade durch zwei lineare Gleichungen dieser Form beschreiben.
->
->* *Parameterdarstellung.* Sind $A$ und $B$ zwei verschiedene Punkte des $\mathbb{R}^3$, so kann jeder Punkt $X\in\mathbb{R}^3$ der durch $A$ und $B$ eindeutig festgelegten Geraden durch $$X=A+\lambda\cdot (B-A)=A+\lambda\cdot\overrightarrow{AB}$$ mit $\lambda\in\mathbb{R}$ berechnet werden.
-
-**Beispiel 1.** Gegeben sind zwei verschiedene Punkte $A=(1,2,0)^\top$ und $B=(3,0,-1)^\top$ in $\mathbb{R}^3$ und $g$ die durch $A$ und $B$ eindeutig festgelegte Gerade. Hieraus lässt sich unmittelbar eine Parameterdarstellung von $g$ ableiten mit $$ X=\left(\begin{array}{c}x\\y\\z\end{array}\right)=\left(\begin{array}{c}1\\2\\0\end{array}\right)+\lambda\cdot \left(\begin{array}{c}2\\-2\\-1\end{array}\right)\quad\,,\;\lambda\in\mathbb{R} $$ worin $$ \left(\begin{array}{c}1\\2\\0\end{array}\right)\quad\text{bzw.}\quad \left(\begin{array}{c}2\\-2\\-1\end{array}\right)=\left(\begin{array}{c}3\\0\\-1\end{array}\right)-\left(\begin{array}{c}1\\2\\0\end{array}\right) $$ einen möglichen Stütz- beziehungsweise Richtungsvektor von $g$ darstellen.
-
-**Bemerkung 1.** Die Parameterdarstellung der Gerade $g=AB$ lässt sich als Linearkombination der Ortsvektoren der Punkte $A$ und $B$ darstellen, d. h. $$ X=A+\lambda\cdot(B-A)=(1-\lambda)\cdot A+\lambda\cdot B \quad\text{mit}\quad (1-\lambda)+\lambda=1\;\;\forall\; \lambda\in\mathbb{R} $$ worin die Summe der Koeffizienten für jede Wahl von $\lambda$ 'Eins' ergibt.
-
-Durch je drei verschiedene Punkte $P$, $Q$ und $R$ in $\mathbb{R}^3$ wird eindeutig eine Ebene festgelegt, wenn die Punkte ein eigentliches Dreieck bilden. Umgekehrt ist jede Ebene durch drei nicht auf einer Geraden liegende Punkte eindeutig bestimmt.            
-
-<!-- style="background-color: lightgray;"-->
->**Darstellung von Ebenen**
->
->* *Lösungsmenge einer linearen Gleichung.* Die Lösungsmenge einer linearen Gleichung der Form $$
-  a\cdot x_1+b\cdot x_2+c\cdot x_3+d=0\quad\text{mit}\quad a^2+b^2+c^2\neq 0
-$$ ist die Punktmenge einer Ebene $E$ in $\mathbb{R}^3$. Der Punkt $(x,y,z)^\top\in\mathbb{R}^3$ liegt genau dann in $E$, wenn seine Koordinaten die Gleichung lösen. Umgekehrt ist jede Ebene Lösungsmenge einer solchen Gleichung.
->* *Parameterdarstellung.* Sind $P, Q, R\in\mathbb{R}^3$ drei Punkte einer Ebene $E$, welche nicht auf einer gemeinsamen Geraden liegen, so kann jeder Punkt $X$ der Ebene durch die Gleichung $$X=P+\lambda\cdot \left(Q-P\right)+\mu\cdot\left(R-P\right)=P+\lambda\cdot\overrightarrow{PQ}+\mu\cdot\overrightarrow{PR}$$ mit $\lambda, \mu\in\mathbb{R}$ angegeben werden. Der Punkt $P$ wird manchmal **Aufpunkt** von $E$ genannt und die beiden Vektoren $Q-P$ und $R-P$ sind **Richtungsvektoren** der Ebene.
->
->* *Normalenform.* Sind $P, Q, R\in\mathbb{R}^3$ drei Punkte einer Ebene $E$, welche nicht auf einer gemeinsamen Geraden liegen, so kann jeder Punkt $X$ der Ebene durch die Gleichung $$ n\cdot\left(X-P\right)=n\cdot\overrightarrow{PX}=0 $$ mit $$n=(Q-P)\times (R-P)=\overrightarrow{PQ}\times\overrightarrow{PR}$$ beschrieben werden. Hierbei ist $\times$ das Vektorprodukt in $\mathbb{R}^3$. Speziell für Vektoren $n$ der Norm/Länge $|n|=1$ heißt diese Normalengleichung auch [Hessesche Normalform](https://de.wikipedia.org/wiki/Hessesche_Normalform) von $E$. Der Vektor $n$ ist dann ein **Einheitsnormalenvektor** der Ebene $E$.
-
-**Beispiel 2.** Die Gerade $g$ aus dem vorangegangenen Beispiel enthält weder den Koordinatenursprung $O=(0,0,0)^\top$ noch den Punkt $C=(1,0,0)^\top$. Werden diese Punkte jeweils zu $A$ und $B$ hinzugefügt, so entsteht jeweils eine Ebene $ABO$ beziehungsweise $ABC$. Die Gleichungen dieser beiden Ebenen berechnen sich gemäß Beispiel 8 im Abschnitt [Determinanten](#Determinanten) $$ \det{\left(\begin{array}{rrr} x & y & z & 1 \\ 1 & 2 & 0 & 1 \\ 3 & 0 & -1 & 1 \\ 0 & 0 & 0 & 1\end{array}\right)}=-2\cdot x+y-6\cdot z=0 \quad\text{bzw.}\quad \det{\left(\begin{array}{rrr} x & y & z & 1 \\ 1 & 2 & 0 & 1 \\ 3 & 0 & -1 & 1 \\ 1 & 0 & 0 & 1\end{array}\right)}=-2\cdot x-4\cdot z+2=0  $$ Die Gerade $g$ lässt sich somit in Ergänzung zum vorangegangenen Beispiel auch als gemeinsame Gerade (Schnittgerade) der beiden Ebenen festlegen. 
-
-Die Rechnung lässt sich unter Nutzung der Javascript-Bibliothek [Algebrite](algebrite.com) interaktiv prüfen.
-
-```algebrite
-P1=[1,2,0]
-P2=[3,0,-1]
-P3=[0,0,0]
-P=[x,y,z]
-M=[[P[1],P[2],P[3],1],[P1[1],P1[2],P1[3],1],[P2[1],P2[2],P2[3],1],[P3[1],P3[2],P3[3],1]]
-det(M)
-```
-@Algebrite.eval
-
-
-Anwendungen
-===
-
-
-Die Wirkung einer Kraft beziehungsweise eines Systems von Kräften auf einen drehbaren Körper lässt sich mithilfe des [Drehmomentes](https://de.wikipedia.org/wiki/Drehmoment) $\vec{M}$ physikalisch beschreiben. Dieses berechnet sich $$\vec{M}=\vec{r}\times\vec{F}$$ worin $\vec{F}$ die wirkende Kraft und $\vec{r}$ den Verbindungsvektor vom Bezugspunkt des Drehmoments zum Angriffspunkt der Kraft bezeichnen. Für die vektorielle Größe $\vec{M}$ gelten hierbei die nachstehenden Eigenschaften.
-
-1. $\vec{M}\perp\vec{r}$ und $\vec{M}\perp\vec{F}$ sowie $|\vec{M}|=|\vec{r}|\cdot|\vec{F}|\cdot\sin{\varphi}$ mit $\varphi=\measuredangle{(\vec{r},\vec{F})}$, vergleiche Definition des Vektorproduktes
-2. Greift $\vec{F}$ an einem (beliebigen) Punkt $Q$ entlang ihrer Wirkungslinie durch $P$ an, so gilt $$ \vec{r}_Q=\vec{r}+\overrightarrow{PQ}\quad\text{mit}\quad \overrightarrow{PQ}=\vec{s} $$ Die in $Q$ angreifende Kraft $\vec{F}$ erzeugt ein Drehmoment $$ \vec{M}_Q=\vec{r}_Q\times\vec{F}=(\vec{r}+\vec{s})\times\vec{F}=\vec{r}\times\vec{F}+\vec{s}\times\vec{F}=\vec{M} $$ d. h. das Drehmoment bleibt entlang der Wirkungslinie von $\vec{F}$ durch $P$ beziehungsweise $Q$ erhalten.
-3. Wirken mehrere Kräfte $\vec{F}_i$ mit $i=1,2,...,n$ auf verschiedene Punkte $P_i$ mit Abstandsvektor $\vec{r}_i=\overrightarrow{DP_i}$ vom Drehpunkt $D$ ein, so gilt für das gesamte Drehmoment $$ \vec{M}=\sum _{i=1}^n{\left(\vec{r}_i\times\vec{F}_i\right)} $$ d. i. ist die Vektorsumme der einzelnen Drehmomente.
-
-![Drehmoment](img/mat-bild-32.png "_Fig._ Drehmoment $\vec{M}$ an einer drehbar gelagerten Scheibe durch Wirkung einer Kraft $\vec{F}$ in $P$. Die Scheibe ist um eine Gerade durch $D$ drehbar gelagert. Wird die Kraft entlang ihrer Wirkungslnie nach $Q$ verschoben, ändert sich das erzeugte Drehmoment nicht.")
-
-
-**Bemerkung 2.** Im Ingenieurwesen auftretende, vektorielle Größen, die entlang ihrer Wirkungslinie unverändert bleiben, werden **linienflüchtig** genannt. Demgegenüber werden auch [ortsgebundene](https://de.wikipedia.org/wiki/Gebundener_Vektor) physikalische Größen (fester Angriffspunkt) sowie **freie** physikalische Größen betrachtet.
-
-**Beispiel 3.** In der $xy$-Ebene des dreidimensionalen affinen Raumes befinde sich eine ovale Scheibe, die um eine Achse parallel zur $z$-Achse durch den Punkt $D$ drehbar gelagert ist, siehe nachstehende Abbildung. Es wirken Kräfte $\vec{F}_j$, $j\in\{1,2,3\}$, entlang der Scheibe in den Punkten $P_j$.
-
-Aus der Abbildung lässt sich zunächst jeweils die Kraft $\vec{F}_j$ mit $j\in\{1,2,3\}$ ermitteln $$ \vec{F}_1=\begin{pmatrix} 0-5 \\ 7-(-5) \\ 0-0 \end{pmatrix}=\begin{pmatrix} -5 \\ 12 \\ 0 \end{pmatrix} ({\rm N})\,,\quad \vec{F}_2=\begin{pmatrix} 8-0 \\ 2-(-4) \\ 0-0 \end{pmatrix}=\begin{pmatrix} 8 \\ 6 \\ 0 \end{pmatrix} ({\rm N})\quad\text{bzw.}\quad \vec{F}_3=\begin{pmatrix} 5-0 \\ 3-6 \\ 0-0 \end{pmatrix}=\begin{pmatrix} 5 \\ -3 \\ 0 \end{pmatrix} ({\rm N})\,,\quad $$ sowie deren Betrag (Einheit $1{\rm N}$) $$ |\vec{F}_1|=\sqrt{(-5)^2+12^2+0^2}=13\, ({\rm N})\,,\quad |\vec{F}_2|=\sqrt{8^2+6^2+0^2}=10\, ({\rm N})\quad\text{bzw.}\quad |\vec{F}_2|=\sqrt{5^2+(-3)^2+0^2}=\sqrt{34}\, ({\rm N}) $$ berechnen.
-
-Das Drehmoment berechnet sich gemäß $$ \vec{M}_i=\vec{r}_i\times\vec{F}_i\quad\text{mit}\quad i\in\{1,2\} $$ worin $\vec{F}_i$ die linienflüchtige Kraftwirkung und $\vec{r}_i$ (Einheit $1{\rm m}$) den Differenzvektor von $D$ zu einem beliebigen Punkt auf der Wirkungslinie von $\vec{F}_i$ bezeichnen. $$ \vec{M}_1=\overrightarrow{DP_1}\times\vec{F}_1=\begin{pmatrix} 0 \\ -8 \\ 0 \end{pmatrix}\times\begin{pmatrix} -5 \\ 12 \\ 0 \end{pmatrix}=\begin{pmatrix} 0 \\ 0 \\ -40 \end{pmatrix} ({\rm Nm})\quad\text{bzw.}\quad \vec{M}_2=\overrightarrow{DP_2}\times\vec{F}_2=\begin{pmatrix} -5 \\ -7 \\ 0 \end{pmatrix}\times\begin{pmatrix} 8 \\ 6 \\ 0 \end{pmatrix}=\begin{pmatrix} 0 \\ 0 \\ 26 \end{pmatrix} ({\rm Nm}) $$ Die Vektoren der Anteile des Drehmomentes zeigen in Richtung der vertikalen Achse. Hierüber lässt sich dann auch begründen, das $\vec{M}_3=\vec{o}$ der Nullvektor ist. 
-
-Schließlich lässt sich aus den Anteilen $\vec{M}_1$ und $\vec{M}_2$ das resultierende Drehmoment $\vec{M}_{res}=\vec{r}\times\vec{F}$ berechnen. Aufgrund der vorgenannten Eigenschaft 2. ergibt sich das resultierende Drehmoment auf zweifach verschiedene Weise $$ \vec{M}_{res}=\vec{M}_1+\vec{M}_2=\left(\overrightarrow{DP_1}\times\vec{F}_1\right)+\left(\overrightarrow{DP_2}\times\vec{F}_2\right)=\left(\overrightarrow{DQ}\times\vec{F}_1\right)+\left(\overrightarrow{DQ}\times\vec{F}_2\right)=\overrightarrow{DQ}\times\left(\vec{F}_1+\vec{F}_2\right)=\overrightarrow{DQ}\times\vec{F}_{res} $$ mit dem Ergebnis $$ \vec{M}_{res}=\vec{M}_1+\vec{M}_2= \begin{pmatrix} 0 \\ 0 \\ -14 \end{pmatrix} ({\rm Nm})\quad\text{bzw.}\quad \vec{M}_{res}=\overrightarrow{DQ}\times\vec{F}_{res}=\begin{pmatrix} -\frac{95}{63} \\ -\frac{92}{21} \\ 0 \end{pmatrix}\times\begin{pmatrix} 3 \\ 18 \\ 0 \end{pmatrix}=\begin{pmatrix} 0 \\ 0 \\ -14 \end{pmatrix} ({\rm Nm}) $$ Die zweite Rechnung vermöge dem gemeinsamen Punkt $Q$ der beiden Wirkungslinien der Kräfte $\vec{F}_1$ und $\vec{F}_2$. (Bitte nachrechnen.)
-
-![Drehmoment2](img/mat-bild-41.png "_Fig._ Drehmoment $\vec{M}$ an einer drehbar gelagerten ovalen Scheibe in der $xy$-Ebene, die Scheibe um eine vertikale Achse durch $D$ drehbar gelagert ist. In den Punkten $P_i$ wirken die Kräfte $\vec{F}_i$ entlang der Scheibe. Die resultierende $\vec{F}_{res}$ der Kräfte $\vec{F}_1$ und $\vec{F}_2$ wirkt im gemeinsamen Punkt $Q$ der zugehörenden Wirklinien.")
-
-Sicher gewusst
-===
-
-
-Hier können Sie Ihr Wissen aus diesem Abschnitt testen.
-
-**Frage 1.** Zu drei verschiedenen Punkten $P_1(x_1,y_1,z_1)$, $P_2(x_2,y_2,z_2)$ und $P_3(x_3,y_3,z_3)$ lässt sich die Determinantengleichung $$ \det{\begin{pmatrix} 1 & x & y & z \\ 1 & x_1 & y_1 & z_1 \\ 1 & x_2 & y_2 & z_2 \\ 1 & x_3 & y_3 & z_3 \end{pmatrix}}=0 $$ angeben, worin $(x,y,z)$ die Koordinaten eines allgemeinen Punktes bezeichnen. Die Lösungsmenge $$ \mathcal{L}=\left\{(x,y,z)\in\mathbb{R}^3:\det{\begin{pmatrix}  1 & x & y & z \\ 1 & x_1 & y_1 & z_1 \\ 1 & x_2 & y_2 & z_2 \\ 1 & x_3 & y_3 & z_3 \end{pmatrix}}=0\right\} $$ der Gleichung beschreibt
+**Frage 4.** Zu drei verschiedenen Punkten $P_1(x_1,y_1,z_1)$, $P_2(x_2,y_2,z_2)$ und $P_3(x_3,y_3,z_3)$ lässt sich die Determinantengleichung $$ \det{\begin{pmatrix} 1 & x & y & z \\ 1 & x_1 & y_1 & z_1 \\ 1 & x_2 & y_2 & z_2 \\ 1 & x_3 & y_3 & z_3 \end{pmatrix}}=0 $$ angeben, worin $(x,y,z)$ die Koordinaten eines allgemeinen Punktes bezeichnen. Die Lösungsmenge $$ \mathcal{L}=\left\{(x,y,z)\in\mathbb{R}^3:\det{\begin{pmatrix}  1 & x & y & z \\ 1 & x_1 & y_1 & z_1 \\ 1 & x_2 & y_2 & z_2 \\ 1 & x_3 & y_3 & z_3 \end{pmatrix}}=0\right\} $$ der Gleichung beschreibt
 
 [( )] die Punkte $P_1$, $P_2$ und $P_3$, jedoch keinen weiteren Punkt der Ebene $\Sigma=P_1P_2P_3$.
 [(X)] die Ebene $\Sigma=P_1P_2P_3$.
@@ -5975,7 +6053,7 @@ Für zwei Geraden $g$ und $h$ in $\mathbb{R}^2$ sind die folgenden Lagebeziehung
 * $g$ und $h$ schneiden sich in genau einem Punkt
 * $g$ und $h$ sind *echt* parallel (und besitzen damit keinen gemeinsamen Punkt)
 
-Die gegenseitige Lage zweier Geraden in $\mathbb{R}^2$ lässt sich somit anhand der Menge der gemeinsamen Punkte kennzeichnen. Werden $g$ und $h$ jeweils durch eine Gleichung in den Variablen $x$ und $y$ beschrieben, so ist die Menge gemeinamer Punkte durch ein System linearer Gleichungen vom Typ $(2,2)$ beschrieben, siehe auch die Abschnitte [Determinanten](#Determinanten) und [Grundelemente in der Ebene](#Grundelemente-in-der-Ebene).
+Die gegenseitige Lage zweier Geraden in $\mathbb{R}^2$ lässt sich somit anhand der Menge der gemeinsamen Punkte kennzeichnen. Werden $g$ und $h$ jeweils durch eine Gleichung in den Variablen $x$ und $y$ beschrieben, so ist die Menge gemeinamer Punkte durch ein System linearer Gleichungen vom Typ $(2,2)$ beschrieben, vergleiche Abschnitt [Determinanten](#Determinanten).
 
 Sind abweichend beide Geraden durch eine Parameterdarstellung gegeben, so sind die gemeinsamen Punkte durch Gleichsetzen der Parameterdarstellungen berechenbar.
 
@@ -6039,7 +6117,7 @@ Punkt und Ebene
 
 Für die relative Lage eines Punktes $A$ und einer Ebene $E$ sind genau zwei Fälle möglich: entweder ist $A$ ein Punkte aus $E$, d. h. $A\in E$, oder es gilt $A\not\in E$. In beiden Fällen berechnet sich der Abstand von $A$ zu $E$ unter Benutzung der Hesse-Normalform von $E$ gemäß $$ \operatorname{dist}(A,E)=n\cdot\overrightarrow{PA}=n_1\cdot x_1+n_2\cdot x_2+n_3\cdot x_3-d $$ worin $n=(n_1,n_2,n_3)^\top$ ein Einheitsnormalenvektor von $E$ und $d=n\cdot P$ den orientierten Abstand (bezogen auf die Richtung $n$) von $E$ zum Ursprung des Koordinatensystems bestimmt. Vergleiche Abschnitt [Grundelemente im Raum](#Grundelemente-im-Raum). Für den Lotfußpunkt $L$ ergibt sich damit die Formel $$ L=A-\operatorname{dist}(A,E)\cdot n $$
 
-**Beispiel 2.** Gegeben ist die Ebene $E$ durch die Einheitspunkte $$ E_1(1,0,0)\,,\quad E_2(0,1,0)\quad\text{sowie}\quad E_3(0,0,1) $$ auf den Koordinatenachsen des dreidimensionalen kartesichen Koordinatensystems im $\mathbb{R}^3$. Es ergibt sich die Gleichung von $E$ in Achsenabschnittsform $x_1+x_2+x_3=1$, vergleiche Bemerkung 2 im Abschnitt [Grundelemente in der Ebene](#Grundelemente-in-der-Ebene). Der Normalenvektor $n=(1,1,1)^\top$ der Ebene besitzt die Norm $|n|=\sqrt{3}$, kann daher normiert werden zu $$ n=\frac{1}{\sqrt{3}}\cdot\begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix} $$ Hieraus ergibt sich die Hesse-Normalform von $E$ gemäß $$ \frac{1}{\sqrt{3}}\cdot x_1+\frac{1}{\sqrt{3}}\cdot x_2+\frac{1}{\sqrt{3}}\cdot x_3-\frac{1}{\sqrt{3}}=0 $$ Die Distanz eines beliebigen Punktes $A(x_1,x_2,x_3)$ von der Ebene berechnet sich gemäß $$ \operatorname{dist}(A,E)= \frac{1}{\sqrt{3}}\cdot x_1+\frac{1}{\sqrt{3}}\cdot x_2+\frac{1}{\sqrt{3}}\cdot x_3-\frac{1}{\sqrt{3}} $$ Für $A\in E$ ergibt sich insbesondere die Distanz Null.
+**Beispiel 2.** Gegeben ist die Ebene $E$ durch die Einheitspunkte $$ E_1(1,0,0)\,,\quad E_2(0,1,0)\quad\text{sowie}\quad E_3(0,0,1) $$ auf den Koordinatenachsen des dreidimensionalen kartesichen Koordinatensystems im $\mathbb{R}^3$. Es ergibt sich die Gleichung von $E$ in Achsenabschnittsform $x_1+x_2+x_3=1$, vergleiche Bemerkung 2 im Abschnitt [Grundelemente](#grundelemente). Der Normalenvektor $n=(1,1,1)^\top$ der Ebene besitzt die Norm $|n|=\sqrt{3}$, kann daher normiert werden zu $$ n=\frac{1}{\sqrt{3}}\cdot\begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix} $$ Hieraus ergibt sich die Hesse-Normalform von $E$ gemäß $$ \frac{1}{\sqrt{3}}\cdot x_1+\frac{1}{\sqrt{3}}\cdot x_2+\frac{1}{\sqrt{3}}\cdot x_3-\frac{1}{\sqrt{3}}=0 $$ Die Distanz eines beliebigen Punktes $A(x_1,x_2,x_3)$ von der Ebene berechnet sich gemäß $$ \operatorname{dist}(A,E)= \frac{1}{\sqrt{3}}\cdot x_1+\frac{1}{\sqrt{3}}\cdot x_2+\frac{1}{\sqrt{3}}\cdot x_3-\frac{1}{\sqrt{3}} $$ Für $A\in E$ ergibt sich insbesondere die Distanz Null.
 
 **Bemerkung 1.** Alternative geometrische Ideen zur Berechnung des Absatndes eines Punktes von einer Ebene im dreidimensionalen Punktraum werden graphisch diskutiert unter [Abstand Punkt von Ebene](https://www.geogebra.org/m/xurgsjh3#chapter/471443).
 
@@ -6099,9 +6177,191 @@ Sind $E$ und $G$ Ebenen in $\mathbb{R}^3$, so sind genau drei Fälle ihrer gegen
 >**Schnittwinkel zwischen zwei Ebenen.** Es seien $E$ und $G$ Ebene welche sich in einer Geraden schneiden. Ein Normalenvektor von $E$ sei $n$ und ein Normalenvektor von $G$ sei $m$. Dann kann der Schnittwinkel $\alpha$ zwischen $E$ und $G$ durch $$ \cos{\alpha}=\frac{|n\cdot m|}{|n|\cdot |m|} $$ berechnet werden.
 
 
+### Allgemeine Kraftsysteme
+
+
+In der Statik werden Gleichgewichtszustände von Kräften und Momenten in ruhenden oder gleichförmig bewegten Systemen untersucht. Um die Wirkung von Kräften und Momenten auf Bauteile, Tragwerke oder mechanische Systeme zu analysieren, ist ein Verständnis der räumlichen Beziehungen zwischen Angriffspunkten und Wirkungslinien von Kräften sowie Drehachsen notwendig. 
+
+Die affinen Räume bieten ein geeignetes mathematisches Werkzeug, da sie die Struktur eines Vektorraums mit einem zugrunde liegenden Punkt (dem Ursprung) kombinieren, ohne dass ein fester Nullpunkt vorausgesetzt werden muss. Dies ist in der Statik von Bedeutung, wo Kräfte nicht an einem festen Ursprung angreifen, sondern an beliebigen Punkten im Raum wirken. Die affine Struktur ermöglicht es, sowohl die Lage von Angriffspunkten als auch die Richtung und Größe von Kräften und Momenten zu beschreiben und zu manipulieren.
+
+
+Ebene Kraftsysteme
+===
+
+
+Kräfte, deren Wirkungslinien sich nicht notwendigerweise in einem Punkt schneiden, werden Kraftsysteme genannt. Eine Grundaufgabe in der Statik ist es, diese - soweit möglich - zu reduzieren.
+
+<!-- style="background-color: lightgray;"-->
+> Für Kräftesysteme gelten die folgenden Regeln:
+>
+>* Kräfte dürfen in ihrer Wirkungslinie verschoben werden.
+>* Zwei Kräfte/Kraftkomponenten mit demselben Angriffspunkt lassen sich auf eine davon ausgehende 'resultierende' Kraft, die Diagonale des Kräfteparallelogramms ist, reduzieren.
+>* Jede Kraft ist vermöge der Parallelogrammregel in Komponenten zerlegbar.
+>* Kräftesysteme, die sich bloß durch Nullkräfte (beziehungsweise ein Paar gleich großer, entgegengesetzter Kräfte mit derselben Wirkungslinie) unterscheiden, sind äquivalent. (*Erweiterungsregel*)
+>* Ein Paar gleich großer, entgegengesetzter Kräfte mit nicht zusammenfallenden Wirkungslinien sind nicht auf eine einzige Kraft reduzierbar; sie bestimmen ein sogenanntes *Kräftepaar*.
+>
+>Mit diesen Regeln lassen sich die Reduktionsaufgaben von (ebenen) Kräftesystemen graphisch lösen.
+
+**Bemerkung 1.** Im Ingenieurwesen auftretende, vektorielle Größen, die entlang ihrer Wirkungslinie unverändert bleiben, werden **linienflüchtig** genannt. Demgegenüber werden auch [ortsgebundene](https://de.wikipedia.org/wiki/Gebundener_Vektor) physikalische Größen (fester Angriffspunkt) sowie **freie** physikalische Größen betrachtet.
+
+**Beispiel 1.** Zu zwei in den Punkten $P_1$ beziehungsweise in $P_2$ wirkenden Kräften $\vec{F}_1$ beziehungsweise $\vec{F}_2$ mit parallelen aber nicht zusammenfallenden Wirkungslinien und $|\vec{F}_1|\not=|\vec{F}_2|$ soll die resultierende $(\vec{F}_{res},P)$ gebildet werden. Dabei ist das Kräftesystem äquivalent zu  $$ \{\vec{F}_1\,,\vec{F}_2\}\;\equiv\; \{\vec{F}_1\,,\vec{F}_2\,,\vec{F}_{12}\,,-\vec{F}_{12}\} $$ unter Hinzunahme der gleich großen aber entgegengesetzten Kräfte $\vec{F}_{12}$ und $-\vec{F}_{12}$ mit derselben Wirkungslinie. Die jeweils resultierenden Kräfte $$ \vec{K}_1=\vec{F}_1+\vec{F}_{12}\quad\text{bzw.}\quad \vec{K}_2=\vec{F}_2-\vec{F}_{12} $$ lassen sich entlang ihrer (nichtparallelen) Wirkungslinien zum gemeinsamen Angriffspunkt verschieben und ergeben vermöge der Vektoraddition die resultierende Kraft $\vec{F}_{res}=\vec{K}_1+\vec{K}_2 $. Die Wirkungslinie von $\vec{F}_{res}$ ist dabei parallel zu den Wirkungslinien von $\vec{F}_1$ beziehungsweise $\vec{F}_2$.
+
+![Drehmoment2](img/mat-bild-42.png "_Fig._ Zu zwei in den Punkten $P_1$ beziehungsweise in $P_2$ wirkenden Kräften $\vec{F}_1$ beziehungsweise $\vec{F}_2$ mit parallelen aber nicht zusammenfallenden Wirkungslinien wird die resultierende $(\vec{F}_{res},P)$ gebildet.")
+
+Zur graphischen Lösung von Reduktionsaufgaben für ebene Kräftesysteme lässt sich auch das [Seileckverfahren](https://de.wikipedia.org/wiki/Seileckverfahren) benutzen.
+
+
+Momente
+===
+
+
+Die Wirkung einer Kraft beziehungsweise eines Systems von Kräften auf einen drehbaren Körper lässt sich physikalisch mithilfe des [Drehmomentes](https://de.wikipedia.org/wiki/Drehmoment) $\vec{M}^{(D)}$ beschreiben. Dieses berechnet sich $$\vec{M}^{(D)}=\vec{r}\times\vec{F}$$ worin $\vec{F}$ die wirkende Kraft und $\vec{r}$ den Verbindungsvektor vom Bezugspunkt $D$ des Drehmoments zum Angriffspunkt der Kraft bezeichnen. 
+
+<!-- style="background-color: lightgray;"-->
+> Für die vektorielle Größe $\vec{M}^{(D)}$ gelten die Eigenschaften:
+>
+> 1. Für ein nicht verschwindendes Drehmoment gelten $\vec{M}^{(D)}\perp\vec{r}$ und $\vec{M}^{(D)}\perp\vec{F}$ sowie $$ 
+  \left|\vec{M}^{(D)}\right|=|\vec{r}|\cdot|\vec{F}|\cdot\sin{\varphi} $$ mit $\varphi=\measuredangle{(\vec{r},\vec{F})}$, vergleiche Definition des Vektorproduktes.
+> 2. Greift $\vec{F}$ an einem (beliebigen) Punkt $Q$ entlang ihrer Wirkungslinie durch $P$ an, so gilt $$ \vec{r}_Q=\vec{r}+\overrightarrow{PQ}\quad\text{mit}\quad \overrightarrow{PQ}=\vec{s} $$ Die in $Q$ angreifende Kraft $\vec{F}$ erzeugt ein Drehmoment $$ \vec{M}=\vec{r}_Q\times\vec{F}=(\vec{r}+\vec{s})\times\vec{F}=\vec{r}\times\vec{F}+\vec{s}\times\vec{F}=\vec{M}^{(D)} $$ d. h. das Drehmoment bleibt entlang der Wirkungslinie von $\vec{F}$ durch $P$ beziehungsweise $Q$ erhalten.
+> 3. Wirken mehrere Kräfte $\vec{F}_j$ mit $j=1,2,...,n$ auf verschiedene Punkte $P_j$ mit Abstandsvektor $\vec{r}_j=\overrightarrow{DP_j}$ vom Drehpunkt $D$ (oder allgemein: einem Bezugspunkt $D$) ein, so gilt für das gesamte Drehmoment $$ \vec{M}^{(D)}=\sum _{j=1}^n{\vec{M}_j^{(D)}}=\sum _{j=1}^n{\left(\vec{r}_j\times\vec{F}_j\right)} $$ d. i. ist die Vektorsumme der einzelnen Drehmomente, bezogen auf den Punkt $D$.
+
+![Drehmoment](img/mat-bild-32.png "_Fig._ Drehmoment $\vec{M}$ an einer drehbar gelagerten Scheibe durch Wirkung einer Kraft $\vec{F}$ in $P$. Die Scheibe ist um eine Gerade durch $D$ drehbar gelagert. Wird die Kraft entlang ihrer Wirkungslnie nach $Q$ verschoben, ändert sich das erzeugte Drehmoment nicht.")
+
+**Beispiel 2.** In der $xy$-Ebene des dreidimensionalen affinen Raumes befinde sich eine ovale Scheibe, die um eine Achse parallel zur $z$-Achse durch den Punkt $D$ drehbar gelagert ist, siehe nachstehende Abbildung. Es wirken Kräfte $\vec{F}_j$, $j\in\{1,2,3\}$, entlang der Scheibe in den Punkten $P_j$.
+
+Aus der Abbildung lässt sich zunächst jeweils die Kraft $\vec{F}_j$ mit $j\in\{1,2,3\}$ ermitteln $$ \vec{F}_1=\begin{pmatrix} 0-5 \\ 7-(-5) \\ 0-0 \end{pmatrix}=\begin{pmatrix} -5 \\ 12 \\ 0 \end{pmatrix} ({\rm N})\,,\quad \vec{F}_2=\begin{pmatrix} 8-0 \\ 2-(-4) \\ 0-0 \end{pmatrix}=\begin{pmatrix} 8 \\ 6 \\ 0 \end{pmatrix} ({\rm N})\quad\text{bzw.}\quad \vec{F}_3=\begin{pmatrix} 5-0 \\ 3-6 \\ 0-0 \end{pmatrix}=\begin{pmatrix} 5 \\ -3 \\ 0 \end{pmatrix} ({\rm N})\,,\quad $$ sowie deren Betrag (Einheit $1{\rm N}$) $$ |\vec{F}_1|=\sqrt{(-5)^2+12^2+0^2}=13\, ({\rm N})\,,\quad |\vec{F}_2|=\sqrt{8^2+6^2+0^2}=10\, ({\rm N})\quad\text{bzw.}\quad |\vec{F}_2|=\sqrt{5^2+(-3)^2+0^2}=\sqrt{34}\, ({\rm N}) $$ berechnen.
+
+Das Drehmoment berechnet sich gemäß $$ \vec{M}_j^{(D)}=\vec{r}_j\times\vec{F}_j\quad\text{mit}\quad j\in\{1,2\} $$ worin $\vec{F}_j$ die linienflüchtige Kraftwirkung und $\vec{r}_j$ (Einheit $1{\rm m}$) den Differenzvektor von $D$ zu einem beliebigen Punkt auf der Wirkungslinie von $\vec{F}_j$ bezeichnen. $$ \vec{M}_1^{(D)}=\overrightarrow{DP_1}\times\vec{F}_1=\begin{pmatrix} 0 \\ -8 \\ 0 \end{pmatrix}\times\begin{pmatrix} -5 \\ 12 \\ 0 \end{pmatrix}=\begin{pmatrix} 0 \\ 0 \\ -40 \end{pmatrix} ({\rm Nm})\quad\text{bzw.}\quad \vec{M}_2^{(D)}=\overrightarrow{DP_2}\times\vec{F}_2=\begin{pmatrix} -5 \\ -7 \\ 0 \end{pmatrix}\times\begin{pmatrix} 8 \\ 6 \\ 0 \end{pmatrix}=\begin{pmatrix} 0 \\ 0 \\ 26 \end{pmatrix} ({\rm Nm}) $$ Die Vektoren der Anteile des Drehmomentes zeigen in Richtung der vertikalen Achse. Hierüber lässt sich dann auch begründen, das $\vec{M}_3^{(D)}=\vec{o}$ der Nullvektor ist. 
+
+Schließlich lässt sich aus den Anteilen $\vec{M}_1^{(D)}$ und $\vec{M}_2^{(D)}$ das resultierende Drehmoment $\vec{M}_{res}^{(D)}=\vec{r}\times\vec{F}$ berechnen. Aufgrund der vorgenannten Eigenschaft 2. ergibt sich hier das resultierende Drehmoment auf zweifach verschiedene Weise $$ \vec{M}_{res}^{(D)}=\vec{M}_1^{(D)}+\vec{M}_2^{(D)}=\left(\overrightarrow{DP_1}\times\vec{F}_1\right)+\left(\overrightarrow{DP_2}\times\vec{F}_2\right)=\left(\overrightarrow{DQ}\times\vec{F}_1\right)+\left(\overrightarrow{DQ}\times\vec{F}_2\right)=\overrightarrow{DQ}\times\left(\vec{F}_1+\vec{F}_2\right)=\overrightarrow{DQ}\times\vec{F}_{res} $$ mit dem Ergebnis $$ \vec{M}_{res}^{(D)}=\vec{M}_1^{(D)}+\vec{M}_2^{(D)}= \begin{pmatrix} 0 \\ 0 \\ -14 \end{pmatrix} ({\rm Nm})\quad\text{bzw.}\quad \vec{M}_{res}^{(D)}=\overrightarrow{DQ}\times\vec{F}_{res}=\begin{pmatrix} -\frac{95}{63} \\ -\frac{92}{21} \\ 0 \end{pmatrix}\times\begin{pmatrix} 3 \\ 18 \\ 0 \end{pmatrix}=\begin{pmatrix} 0 \\ 0 \\ -14 \end{pmatrix} ({\rm Nm}) $$ Die zweite Rechnung vermöge dem gemeinsamen Punkt $Q$ der beiden Wirkungslinien der Kräfte $\vec{F}_1$ und $\vec{F}_2$. (Bitte nachrechnen.)
+
+![Drehmoment2](img/mat-bild-41.png "_Fig._ Drehmoment $\vec{M}$ an einer drehbar gelagerten ovalen Scheibe in der $xy$-Ebene, die Scheibe um eine vertikale Achse durch $D$ drehbar gelagert ist. In den Punkten $P_i$ wirken die Kräfte $\vec{F}_i$ entlang der Scheibe. Die resultierende $\vec{F}_{res}$ der Kräfte $\vec{F}_1$ und $\vec{F}_2$ wirkt im gemeinsamen Punkt $Q$ der zugehörenden Wirklinien.")
+
+**Bemerkung 2.** Ein [Kräftepaar](https://de.wikipedia.org/wiki/Drehmoment#Drehmoment_eines_Kr%C3%A4ftepaares) besteht aus zwei gleich großen, entgegengesetzt gerichteten Kräften $(\vec{F},-\vec{F})$ auf parallelen, nicht zusammenfallenden Wirkungslinien. Es bewirkt keine Verschiebung, sondern eine Drehbewegung eines Körpers. Für das erzeugte Drehmoment gilt dabei $$ \left|\vec{M}\right|=a\cdot \left|\vec{F}\right| $$ worin $a$ den Abstand der Wirkungslinien beider Kräfte bezeichnet. 
+
+Der Drehmomentenvektor eines Kräftepaares ist unabhängig von einem Bezugspunkt und kann beliebig verschoben werden – er ist ein **freier** Vektor. Im Gegensatz zu einzelnen Kräften kann ein Kräftepaar durch sein Drehmoment ersetzt werden, ohne die Wirkung auf den Körper zu ändern.
+
+
+### Speerkoordinaten
+
+
+Im Abschnitt [Grundelemente im Raum](#Grundelemente-im-Raum) wurde die Möglichkeit einer Parameterdarstellung von Geraden genannt, mit deren Hilfe sich Geraden als affine Punktmengen beschreiben lassen. Sind $A$ und $B$ zwei verschiedene Punkte einer Geraden $g$, so lässt sich jeder Punkt $X\in g$ gemäß $$ X=A+\lambda\cdot (B-A) $$ für einen bestimmten Wert $\lambda\in\mathbb{R}$ darstellen. In der Parameterdarstellung werden $A$ Stützpunkt und $d=B-A$ Richtungsvektor von $g$.
+
+In diesem Abschnitt soll eine orientierte Gerade als Grundelement des dreidimensionalen Raumes betrachtet und ihre Lage parameterfrei mit Hilfe von Koordinaten beschrieben werden. Hiermit lassen sich beispielsweise in der Statik resultierende Kraft und Moment eines Kräftesystems berechnen. Weitere Anwendungen ergeben sich beispielsweise in der geometrischen Kinematik und in der Robotik.
+
+Orientierte Geraden des dreidimensionalen euklidischen Raumes heißen **Speere**. Ein Speer lässt sich dabei durch ein Vektorpaar $(d,m)\in\mathbb{R}^3\times\mathbb{R}^3$ beschreiben, bei dem $d$ mit gewählter Norm $|d|=1$ der eindeutig bestimmte Einheitsrichtungsvektor der Gerade $g$ ist und $m$ sich aus obiger Parameterdarstellung gemäß $m=A\times d$ berechnet. Hieraus folgt für das Vektorpaar unmittelbar $$ d\cdot m=d\cdot(A\times d)=\det{(d,A,d)}=0 \quad\forall\, A\in g $$ Außerdem gilt für einen beliebigen weiteren Punkt $A'\in g$ $$ A'=A+\lambda\cdot d\quad\leadsto\quad A'\times d=(A+\lambda\cdot d)\times d=A\times d=m $$ wonach der zweite Vektor des Vektorpaares nicht von der Wahl eines speziellen Punktes $A\in g$ abhängt.
+
+>**Satz 1.** Jeder Speer $g$ des dreidimensionalen (euklidischen) Raumes ist umkehrbar eindeutig beschrieben durch ein Vektorpaar $$ (d,m)\in\mathbb{R}^3\times\mathbb{R}^3\quad\text{mit}\quad |d|=1\quad\text{und}\quad d\cdot m=0 $$ worin $d$ **Einheitsrichtungsvektor** und $m$ **Momentenvektor** von $g$ (bezüglich des Koordinatenursprungs $O$) genannt werden.
+>
+>Die Orthogonalebene zum Vektor $d$ durch den Koordinatenursprung  $O$ schneidet die Gerade $g$ im Punkt $F=d\times m$.
+
+**Beweis.** Die zu einer orientierten Geraden $g$ gehörende Richtung wird nach Konstruktion der Speerkoordinaten normiert, $d=1/|g|\cdot g$, ist also eindeutig bestimmt. Ebenso ist der Momentenvektor der Geraden $g$ durch $m=A\times d$ laut obiger Rechnung unabhängig von der Wahl von $A\in g$ und somit eindeutig bestimmt. 
+
+Sind umgekehrt Speervektoren $(d,m)$ mit $d\cdot m=0$ und $|d|=1$ gegeben, so stellt $d$ eine normierte Richtung eines Speers in $\mathbb{R}^3$ dar, des Weiteren bezeichnet $F=d\times m$ mit $$ F\times d=(d\times m)\times d=(d\cdot d)\cdot m-(d\cdot m)\cdot d=m $$ den Ortsvektor eines Punktes $F$, durch den die hierdurch bestimmte Gerade $g$ verläuft. $F\in g$ ist der Lotfußpunkt des Lotes vom Koordinatenursprung $O$ auf die Gerade $g$.
+
+$\square$
+
+**Beispiel 1.** Die Speerkoordinaten einer orientierten Geraden lassen sich mithilfe zweier Punkte der Geraden $A=(a_x, a_y, a_z)$ und $B=(b_x, b_y, b_z)$ wie folgt berechnen:
+
+1. der Einheitsrichtungsvektor $d$ mit $$ d=\frac{1}{|B-A|}\cdot(B-A)=\frac{1}{\sqrt{(b_x-a_x)^2+(b_y-a_y)^2+(b_z-a_z)^2}}\cdot\begin{pmatrix} b_x-a_x \\ b_y-a_y \\ b_z-a_z \end{pmatrix} $$
+2. der Momentvektor $m$ mit $$ m=A\times d=\frac{1}{|B-A|}\cdot\left(A\times (B-A)\right)=\frac{1}{|B-A|}\cdot\left(A\times B\right)=\frac{1}{\sqrt{(b_x-a_x)^2+(b_y-a_y)^2+(b_z-a_z)^2}}\cdot\begin{pmatrix} a_y b_z - a_z b_y \\ a_z b_x - a_x b_z \\ a_x b_y - a_y b_x \end{pmatrix} $$
+
+Die Speerkoordinaten einer Geraden $g=AB$ lässt sich unter Verwendung der Javascript-Biliothek [Algebrite](http://algebrite.org/) interaktiv berechnen. Der hierbei verwendete Befehl `abs(B-A)` berechnet hier die Länge/Norm des (Differenz-) Vektors $B-A$. Der Befehl `cross(A,B)` berechnet das Vektorprodukt zweier dreidimensionaler (Orts-) Vektoren.
+
+```algebrite
+A=[1,2,3]
+B=[0,1,3]
+d=1/abs(B-A)*(B-A)
+m=1/abs(B-A)*cross(A,B)
+d
+m
+dot(d,m)
+```
+@Algebrite.eval
+
+Für eine beliebig gewählte orientierte Gerade durch den Koordinatenursprung $O$ ergibt sich so der Momentenvektor $m=o$ (Nullvektor), da ohne Beschränkung der Allgemeinheit $A=O$ gewählt werden kann. Ist $m\not=o$ (Nullvektor), so gilt $d\perp m$. Hingegen kann der Richtungsvektor $d$ einer orientierten Geraden des $\mathbb{R}^3$ niemals der Nullvektor sein.
+
+**Bemerkung 1.** Nach der Konstruktion der Speerkoordinaten bezeichnen $$ (d,m)=\left((1,0,0)^\top,(0,0,0)^\top\right)\sim(1,0,0,0,0,0) \quad\text{bzw.}\quad (-1,0,0,0,0,0) $$ die *positiv orientierte* beziehungsweise die *negativ orientierte* $x$-Achse eines zugrundeliegenden kartesischen Koordinatensystems, und somit zwei zu unterscheidende Speere.
+
+<!-- style="background-color: lightgray;"-->
+>**Ausblick in die projektive Geometrie.** Die Speerkoordinaten sind ein Sonderfall der in der projektiven Geometrie benutzten [Plücker-Koordinaten](https://de.wikipedia.org/wiki/Pl%C3%BCcker-Koordinaten) für die Verbindungsgerade $g=AB$ zweier Punkte im projektiven dreidimensionalen Raum. Gelten nämlich $$ \underline{A}=(1:a_x:a_y:a_z)^\top \quad\text{sowie}\quad \underline{B}=(0:d_x:d_y:d_z)^\top $$ für homogenen Koordinaten eines Punktes $A\in\mathbb{R}^3$ und für die Richtung $d\in\mathbb{R}^3$ von $g$, so entsprechen die Plücker-Koordinaten von $g$ den wesentlich voneinander verschiedenen Unterdeterminanten der zweireihigen Matrix[^1] $$ G:=\begin{pmatrix} 1 & a_x & a_y & a_z \\ 0 & d_x & d_y & d_z \end{pmatrix} $$ das sind $$ 
+\begin{array}{llllll}
+& g_{01}:=\left|\begin{pmatrix} 1 & a_x \\ 0 & d_x \end{pmatrix}\right|=d_x &
+& g_{02}:=\left|\begin{pmatrix} 1 & a_y \\ 0 & d_y \end{pmatrix}\right|=d_y & 
+& g_{03}:=\left|\begin{pmatrix} 1 & a_z \\ 0 & d_z \end{pmatrix}\right|=d_z \\
+& g_{23}:=\left|\begin{pmatrix} a_y & a_z \\ d_y & d_z \end{pmatrix}\right|=m_x &
+& g_{31}:=\left|\begin{pmatrix} a_z & a_x \\ d_z & d_x \end{pmatrix}\right|=m_y & 
+& g_{12}:=\left|\begin{pmatrix} a_x & a_y \\ d_x & d_y \end{pmatrix}\right|=m_z 
+\end{array} $$
+>
+>Im Gegensatz zu den Speerkoordinaten sind sowohl $\underline{A}$ und $\underline{B}$ als auch die Plücker-Koordinaten von $g$ [homogen](https://de.wikipedia.org/wiki/Homogene_Koordinaten), d. h. nur bis auf einen von Null verschiedenen Faktor eindeutig bestimmt $$ \left(g_{01}:g_{02}:g_{03}:g_{23}:g_{31}:g_{12}\right)=\lambda\cdot\left(d_x:d_y:d_z:m_x:m_y:m_z\right) $$ Analog zu den Speerkoordinaten erfüllen die Plücker-Koordinaten eine Gleichung $$ g_{01}\cdot g_{23}+g_{02}\cdot g_{31}+g_{03}\cdot g_{12}=0 $$ die **Plückerbedingung** genannt wird.
+
+>**Satz 2.** Für zwei Speere $g_j\subset\mathbb{R}^3$ mit den Speerkoordinaten $(d_j,m_j)$ und $j\in\{1,2\}$ gilt die nachstehende Aussage.
+>
+> Die Speere $g_1$ und $g_2$ **schneiden sich** beziehungsweise liegen die zu diesen zugehörenden Geraden zueinander **parallel** genau dann, wenn die Gleichung $$ d_1\cdot m_2+m_1\cdot g_2=0 $$ in ihren Speerkoordinaten gilt. Vergleich hierzu [Bilinearformen](https://de.wikipedia.org/wiki/Bilinearform).
+
+**Beweis.** Mit den Momentenvektoren $m_j=X_j\times d_j$ der Speere $g_j$ ist $$ d_1\cdot m_2+m_1\cdot g_2=\det{(d_1,X_2,d_2)}+\det{(X_1,d_1,d_2)}=-\det{(X_2,d_1,d_2)}+\det{(X_1,d_1,d_2)}=(X_1-X_2)\cdot(d_1\times d_2)=s $$ Hieraus ergeben sich die nachstehenden Fälle.
+
+1. Der erste Faktor ist der Nullvektor: $(X_1-X_2)=o\;\leftrightarrow\; X_1=X_2$ und somit $X_1\in g_1\cap g_2$. D. h. der Schnitt beider Speere ist nichtleer.
+2. Das Vektorprodukt verschwindet: $(d_1\times d_2)=o$ genau dann wenn $d_1\parallel d_2$. Die zu $g_j$ gehörenden Geraden sind zueinander parallel.
+3. Es gelten $(X_1-X_2)\perp(d_1\times d_2)$ und $d_1\parallel d_2\not=o$ für alle $X_j\in g_j$ und $j\in\{1,2\}$. Beise Speere spannen eine Ebene auf, ohne zu parallelen Geraden zu gehören. Es existiert ein nichtleerer Schnitt.
+
+$\square$
+
+**Beispiel 2.** Gegeben ist ein räumliches Kraftsystem mit den Kräften $$
+  \vec{F}_1=\begin{pmatrix} 1 \\ -1 \\ 0 \end{pmatrix}\,({1}\rm N)\,,\quad
+  \vec{F}_2=\begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix}\,({1}\rm N)\,,\quad
+  \vec{F}_3=\begin{pmatrix} -1 \\ 1 \\ 0 \end{pmatrix}\,({1}\rm N) $$
+die entlang der Linien $g_j$ durch die Punkte $$
+  P_1=\begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix}\quad\text{bzw.}\quad 
+  P_2=\begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}\quad\text{bzw.}\quad
+  P_3=\begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix} $$
+wirken.
+
+1. Hieraus berechnen sich die Speerkoordinaten $(d_j,m_j)$ der Wirkungslinien gemäß $d_j=\frac{1}{\left|\vec{F}_j\right|}\cdot\vec{F}_j$ und $m_j=P_j\times d_j$ zu $$ (d_1,m_1)=\frac{1}{2}\sqrt{2}\cdot\left(\begin{pmatrix} 1 \\ -1 \\ 0 \end{pmatrix}\,,\, \begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix}\right)\quad\text{bzw.}\quad (d_2,m_2)=\frac{1}{2}\sqrt{2}\cdot\left(\begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix}\,,\, \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}\right)\quad\text{bzw.}\quad (d_3,m_3)=\frac{1}{2}\sqrt{2}\cdot\left(\begin{pmatrix} -1 \\ 1 \\ 0 \end{pmatrix}\,,\, \begin{pmatrix} 0 \\ 0 \\ 2 \end{pmatrix}\right) $$ worin die auftretenden skalaren Faktoren mit beiden Vektoren des Paares zu multiplizieren sind. Die Vektoren $m_j$ beschreiben jeweils das durch $\vec{F}_j$ bezogen auf den Koordinatenusprung erzeugte Drehmoment $\vec{M}_j^{(O)}$, normiert mit dem Faktor $\left|\vec{F}_j\right|^{-1}$.
+2. Die Wirkungslinien $(g_2,g_3)$ schneiden einander, da $(d_2,d_3)$ nicht linear abhängig und $$ d_2\cdot m_3+m_2\cdot d_3 = \left(\frac{1}{2}\sqrt{2}\right)^2\cdot\left[\begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix}\cdot\begin{pmatrix} 0 \\ 0 \\ 2 \end{pmatrix}+\begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}\cdot\begin{pmatrix} -1 \\ 1 \\ 0 \end{pmatrix}\right]=0 $$ Ebenso sind $(g_1,g_3)$ zueinander parallel, da $d_1=-d_3$ und $$ d_1\cdot m_3+m_1\cdot d_3 = \left(\frac{1}{2}\sqrt{2}\right)^2\cdot\left[\begin{pmatrix} 1 \\ -1 \\ 0 \end{pmatrix}\cdot\begin{pmatrix} 0 \\ 0 \\ 2 \end{pmatrix}+\begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix}\cdot\begin{pmatrix} -1 \\ 1 \\ 0 \end{pmatrix}\right]=0 $$ Die Wirkungslinien $(g_1,g_2)$ sind windschief, da $$ d_1\cdot m_2+m_1\cdot d_2 = \left(\frac{1}{2}\sqrt{2}\right)^2\cdot\left[\begin{pmatrix} 1 \\ -1 \\ 0 \end{pmatrix}\cdot\begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}+\begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix}\cdot\begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix}\right]=1\not=0 $$
+3. Die resultierende Kraft des Kraftsystems ergibt sich direkt $$ \vec{F}_{res}=\vec{F}_1+\vec{F}_2+\vec{F}_3= \begin{pmatrix} 1 \\ -1 \\ 0 \end{pmatrix}+\begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix}+\begin{pmatrix} -1 \\ 1 \\ 0 \end{pmatrix}=\begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix}\,({1}\rm N) $$ beziehungsweise unter Verwendung der Einheitsrichtungsvektoren der Speerkoordinaten gemäß $$ \vec{F}_{res}=\left|\vec{F}_1\right|\cdot d_1+\left|\vec{F}_2\right|\cdot d_2+\left|\vec{F}_3\right|\cdot d_3=\left|\vec{F}\right|\cdot(d_1+d_2+d_3)\quad\text{für}\quad \left|\vec{F}\right|=\left|\vec{F}_1\right|=\left|\vec{F}_2\right|=\left|\vec{F}_3\right| $$ Entsprechend berechnet sich das resultierende Moment $$ \vec{M}_{res}^{(O)}=\vec{M}_1^{(O)}+\vec{M}_2^{(O)}+\vec{M}_3^{(O)}= \begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix}+\begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}+\begin{pmatrix} 0 \\ 0 \\ 2 \end{pmatrix}=\begin{pmatrix} 1 \\ 1 \\ 2 \end{pmatrix}\,({1}\rm N) $$ beziehungsweise unter Verwendung der Momentenvektoren der Speerkoordinaten gemäß $$ \vec{M}_{res}^{(O)}=\left|\vec{F}_1\right|\cdot m_1+\left|\vec{F}_2\right|\cdot m_2+\left|\vec{F}_3\right|\cdot m_3=\left|\vec{F}\right|\cdot(m_1+m_2+m_3)\quad\text{für}\quad \left|\vec{F}\right|=\left|\vec{F}_1\right|=\left|\vec{F}_2\right|=\left|\vec{F}_3\right| $$ Aus den Vektoren der resultierenden Kraft bzw. resultierendem Momement ist erkennbar, dass beide nicht orthogonal sind und somit keine Wirkungslinie einer Kraft beschreiben.
+4. Wird der Vektor $\vec{M}_{res}^{(O)}$ in das orthogonale Komplement von $\vec{F}_{res}$ projiziert, so ergibt sich die Zerlegung $$ \vec{M}_{res}^{(O)}=\vec{M}_{\parallel}^{(O)}+\vec{M}_{\perp}^{(O)}= \left(\frac{\vec{M}_{res}^{(O)}\cdot\vec{F}_{res}}{\vec{F}_{res}\cdot\vec{F}_{res}}\cdot\vec{F}_{res}\right)+ \left(\vec{M}_{res}^{(O)}-\frac{\vec{M}_{res}^{(O)}\cdot\vec{F}_{res}}{\vec{F}_{res}\cdot\vec{F}_{res}}\cdot\vec{F}_{res}\right)=\begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix}+\begin{pmatrix} 0 \\ 0 \\ 2 \end{pmatrix}\,({1}\rm Nm) $$ in Richtung der resultierenden Kraft und orthogonal hierzu. Hieraus lässt sich bilden $$ \left(\vec{F}_{res}\,,\vec{M}_{res}^{(O)}\right)=\frac{1}{2}\sqrt{2}\cdot\left(\begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix}\,,\begin{pmatrix} 0 \\ 0 \\ 2 \end{pmatrix}\right)+\frac{1}{2}\sqrt{2}\cdot\left(\begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}\,,\begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix}\right) $$
+
+Die Berechnung von räumlichen Kraftsystemen lässt sich unter Nutzung des Vektorproduktes und des Skalarproduktes in $\mathbb{R}^3$ durchführen. Wie zuvor in diesem Abschnitt werden die Befehle `cross(d,m)` und `dot(d,m)` sowie `abs(F)` verwendet. Zur Untersuchung der gegenseitigen Lage der Wirkungslinien der Kräfte ist es ausreichend, mit den 'unnormierten' Speerkoordinaten (=Plückerkoordinaten) zu rechnen.
+
+```algebrite
+F1=[1,-1,0]
+F2=[1,1,0]
+F3=[-1,1,0]
+P1=[0,0,1]
+P2=[0,0,0]
+P3=[1,1,0]
+M1=cross(P1,F1)
+M2=cross(P2,F2)
+M3=cross(P3,F3)
+dot(F1,M2)+dot(M1,F2)
+dot(F1,M3)+dot(M1,F3)
+dot(F2,M3)+dot(M2,F3))
+```
+@Algebrite.eval
+
+
+Physikalische Interpretation
+===
+
+
+Für die resultierende Kraft $$ \vec{F}_{res}=\sum_{j=1}^n{\vec{F}_j} $$ und das resultierende Drehmoment eines räumlichen Kräftesystems $$ \vec{M}_{res}^{(A)}=\sum_{j=1}^n{\vec{M}_{j}^{(A)}} $$ bezogen auf einen gewählten Bezugspunkt $A$ gilt im Allgemeinen $\vec{F}_{res}\not\perp\vec{M}_{res}^{(A)}$, was bedeutet, dass das resultierende Moment nicht durch die resultierende Kraft entlang einer Wirkungslinie erzeugt werden kann. Daneben treten die in nachstehender Tabelle genannten Sonderfälle auf.
+
+| resultierende Kraft   | resultierendes Moment   | Plückerbedingung   | physikalische Interpretation für Kraftsystem  |
+| :--------- | :--------- | :--------- | :--------- |
+| $\vec{F}_{res}\not=o$   | $\vec{M}_{res}^{(A)}=o$ | $\vec{F}_{res}\cdot\vec{M}_{res}^{(A)}=0$  | resultierende Kraft entlang Wirkungslinie ~~durch~~ $A$ |
+| $\vec{F}_{res}\not=o$   | $\vec{M}_{res}^{(A)}\not=o$ | $\vec{F}_{res}\cdot\vec{M}_{res}^{(A)}=0$  | resultierende Kraft entlang Wirkungslinie ~~nicht~~ durch $A$ |
+| $\vec{F}_{res}=o$   | $\vec{M}_{res}^{(A)}\not=o$ | $\vec{F}_{res}\cdot\vec{M}_{res}^{(A)}=0$  | freies Moment, durch Kräftepaar erzeugt |
+| $\vec{F}_{res}=o$   | $\vec{M}_{res}^{(A)}=o$ | $\vec{F}_{res}\cdot\vec{M}_{res}^{(A)}=0$  | Kraft- und Momentengleichgewicht |
+
+[^1]: Neben den Koordinaten treten in der zweireihigen Matrix - etwas unvermittelt - eine 'Eins' und 'Null' auf. Diese besitzen ebenso Bedeutung innerhalb der projektiven Geometrie bzw. bei homogenen koordinaten. Auf diese wird hier jedoch nicht eingegangen. 
+
+
 ## Differentialrechnung
 
 ### Funktionsbegriff
+
 
 Definition und Grundbegriffe
 ===
@@ -6112,7 +6372,7 @@ In diesem Abschnitt werden Funktionen und ihre Darstellungsformen betrachtet. Ei
 >**Definition 1.** Eine [Funktion](https://de.wikipedia.org/wiki/Funktion_%28Mathematik%29#Definition) einer Menge $D$ in die Menge $Z$ ist eine Menge $f$ mit den nachstehenden Eigenschaften:
 >
 >1. $f$ ist Teilmenge des kartesischen Produktes $D\times Z$, d. h. $f\subset D\times Z$
->2. Für jedes Element $x\in D$ existiert ein $y\in Z$, so dass $(x,y)\in f$, d. h. $f$ ist *definal*.
+>2. Für jedes Element $x\in D$ existiert ein $y\in Z$, so dass Der erste Faktor ist der Nullvektor: (X1−X2)=o  ↔  X1=X2(X1$(x,y)\in f$, d. h. $f$ ist *definal*.
 >3. Für alle $x\in D$ und für alle $y_1\in Z$ und $y_2\in Z$ gilt die Implikation $$
   \left[(x,y_1)\in f\;\land\;(x,y_2)\in f\right]\quad\rightarrow\quad y_1=y_2
 $$ d. h. $f$ ist *rechtseindeutig* bzw. *funktional*.
