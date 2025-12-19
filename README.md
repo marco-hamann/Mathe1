@@ -7,13 +7,14 @@ version:  0.0.1
 
 language: de
 
-comment:  Dieser Kurs richtet sich an Studierende der Hochschule für Technik und Wirtschaft Dresden im Studiengang Fahrzeugtechnik im 1. Semester.
+comment:  Dieser Kurs richtet sich an Studierende der Hochschule für Technik und Wirtschaft Dresden im Studiengang Maschinenbau im 1. Semester.
 
 import: https://raw.githubusercontent.com/liaTemplates/algebrite/master/README.md
 
 -->
 
 # Mathematik 1 (I945)
+
 
 Dieser Kurs richtet sich an Studierende der Hochschule für Technik und Wirtschaft Dresden im Studiengang Maschinenbau im 1. Semester.
 
@@ -5048,7 +5049,7 @@ Hiermit lässt sich der Begriff eines euklidischen Vektorraumes festlegen
   b=\begin{pmatrix} b_1 & b_2 & ... & b_n \end{pmatrix}^\top
 $$ heißt $$
   a\cdot b=\sum_{i=1}^n{a_i\cdot b_i}=a_1\cdot b_1+...+a_n\cdot b_n\;(\in\mathbb{R})
-$$ das kanonische Skalarprodukt der Vektoren $a$ und $b$.
+$$ das **kanonische Skalarprodukt** der Vektoren $a$ und $b$.
 
 Das kanonische Skalarprodukt kann unter Benutzung der Javascript Bibliothek [Algebrite](http://algebrite.org/) berechnet und die Eigenschaften 1. bis 4. an Beispielen nachvollzogen werden.
 
@@ -5146,7 +5147,7 @@ $$ und hieraus mit der strengen Monotonie der reellen Quadratwurzelfunktion $$
   |x+y|\leq|x|+|y|
 $$ Auf den Nachweis der Cauchy-Schwarzschen Ungleichung wird hier verzichtet.[^2] $\square$
 
->**Definition 4.** Für zwei Vektoren $x\not=o$ und $y\not=o$ eines euklidischen Vektorraumes wird der *Öffnungswinkel* $\varphi(x,y)=\measuredangle{(x,y)}$ definiert durch $$
+>**Definition 4.** Für zwei Vektoren $x\not=o$ und $y\not=o$ eines euklidischen Vektorraumes wird der **Öffnungswinkel** $\varphi(x,y)=\measuredangle{(x,y)}$ definiert durch $$
   \cos{\varphi}=\frac{x\cdot y}{|x|\cdot|y|}\,,\quad 0\leq\varphi(x,y)\leq\pi
 $$
 
@@ -5350,6 +5351,20 @@ b=[-1,1,0]
 cross(a,b)-cross(b,a)
 ```
 @Algebrite.eval
+
+>**Satz 4.** [(Mehrfache Vektorprodukte)](https://de.wikipedia.org/wiki/Kreuzprodukt#Gra%C3%9Fmann-Identit%C3%A4t) Für das wiederholte Bilden eines Vektorproduktes gelten die nachstehenden Identitäten.
+>
+> 1. $a\times(b\times c)=b\cdot(a\cdot c)-c\cdot(a\cdot b)\quad\text{("bac-cab"-Regel)}$
+> 2. $(a\times b)\cdot(c\times d)=(a\cdot c)\cdot(b\cdot d)-(b\cdot c)\cdot(a\cdot d)$
+> 3. $(a\times b)\times(c\times d)=b\cdot\det{(a,c,d)}-a\cdot\det{(b,c,d)}$
+
+**Beweis.** DerFür den Nachweis der Eigenschaften wird hier die Eigenschaft des Vektorproduktes genutzt, linear in jedem der beiden Faktoren zu sein [(bilinear)](https://de.wikipedia.org/wiki/Kreuzprodukt#Eigenschaften). Siehe Eigenschaften 2.-4. in Proposition 3. Hieraus folgt, dass die Regeln lediglich bezogen auf die Basisvektoren der kanonischen Basis $(e_1,e_2,e_3)$ nachgerechnet werden brauchen.
+
+1. Für $b=e_j=c$ folgt für linke und rechte Seite der zu prüfenden Identität $$ a\times(e_j\times e_j)=a\times o=o\quad\text{bzw.}\quad e_j\cdot(a\cdot e_j)-e_j\cdot(a\cdot e_j)=o $$ während $b=e_j$ und $c=e_k\not=e_j$ $$ a\times(e_j\times e_k)=a\times (\pm e_i)\quad\text{bzw.}\quad e_j\cdot(a\cdot e_k)-e_k\cdot(a\cdot e_j)=e_j\cdot a_k-e_k\cdot a_j $$ impliziert, worin $a_k$ und $a_j$ zwei Komponenten des Vektors $a$ bezeichnen. Für jede Wahl der Indizes $(i,j,k)\in\{1,2,3\}^3$ mit $i\not= j\not= k\not= i$ folgt die Gleichheit beider Seiten.
+2. Für $a=e_j=b$ folgt für linke und rechte Seite der zu prüfenden Identität $$ (e_j\times e_j)\cdot(c\times d)=o\cdot(c\times d)=0\quad\text{bzw.}\quad(e_j\cdot c)\cdot(e_j\cdot d)-(e_j\cdot c)\cdot(e_j\cdot d)=c_j\cdot d_j-c_j\cdot d_j=0 $$ mit Komponenten $c_j$ bzw. $d_j$ der Vektoren $c$ und $d$, während für $a=e_j$ und $b=e_k\not=e_j$ $$ (e_j\times e_k)\cdot(c\times d)=\pm e_i\cdot(c\times d)\quad\text{bzw.}\quad(e_j\cdot c)\cdot(e_k\cdot d)-(e_k\cdot c)\cdot(e_j\cdot d)=c_j\cdot d_k-c_k\cdot d_j $$ das ergibt auf linker wie rechter Seite die $i$-te Komponente von $c\times d$ mit $i\in\{1,2,3\}$ und $i\not= j\not= k\not= i$, multipliziert jeweils mit $\pm1$.
+3. Bitte analog zu den vorstehenden Ansätzen beweisen.
+
+$\square$
 
 Im nachstehenden Video werden einzelne (mathematische) Anwendungsmöglichkeiten des Vektorproduktes erläutert.
 
@@ -6242,6 +6257,24 @@ Schließlich lässt sich aus den Anteilen $\vec{M}_1^{(D)}$ und $\vec{M}_2^{(D)}
 Der Drehmomentenvektor eines Kräftepaares ist unabhängig von einem Bezugspunkt und kann beliebig verschoben werden – er ist ein **freier** Vektor. Im Gegensatz zu einzelnen Kräften kann ein Kräftepaar durch sein Drehmoment ersetzt werden, ohne die Wirkung auf den Körper zu ändern.
 
 
+Physikalische Interpretation
+===
+
+6 + 6
+
+[[12]]
+@Algebrite.check(12)
+
+
+Sicher gewusst
+===
+
+
+Testen Sie Ihr Wissen aus diesem Abschnitt bei der Beantwortung der nachstehenden Fragen.
+
+**Frage 1.** Gegeben sind ..
+
+
 ### Speerkoordinaten
 
 
@@ -6372,7 +6405,7 @@ In diesem Abschnitt werden Funktionen und ihre Darstellungsformen betrachtet. Ei
 >**Definition 1.** Eine [Funktion](https://de.wikipedia.org/wiki/Funktion_%28Mathematik%29#Definition) einer Menge $D$ in die Menge $Z$ ist eine Menge $f$ mit den nachstehenden Eigenschaften:
 >
 >1. $f$ ist Teilmenge des kartesischen Produktes $D\times Z$, d. h. $f\subset D\times Z$
->2. Für jedes Element $x\in D$ existiert ein $y\in Z$, so dass Der erste Faktor ist der Nullvektor: (X1−X2)=o  ↔  X1=X2(X1$(x,y)\in f$, d. h. $f$ ist *definal*.
+>2. Für jedes Element $x\in D$ existiert ein $y\in Z$, so dass $(x,y)\in f$, d. h. $f$ ist *definal*.
 >3. Für alle $x\in D$ und für alle $y_1\in Z$ und $y_2\in Z$ gilt die Implikation $$
   \left[(x,y_1)\in f\;\land\;(x,y_2)\in f\right]\quad\rightarrow\quad y_1=y_2
 $$ d. h. $f$ ist *rechtseindeutig* bzw. *funktional*.
@@ -6540,7 +6573,7 @@ $$ geschrieben werden. Die Reihenfolge der einzelnen Funktionen ist jedoch im Al
 
 **Bemerkung 4.** Eine Funktion $f:A\to A$ kann mit sich selbst verkettet werden, es entsteht wieder eine Funktion $A\to A$. Mit der Assoziativität der Verkettung lässt sich nun iterativ fortsetzen $$
   f^{\langle 0\rangle}:=\operatorname{id}_A\,,\quad f^{\langle 1\rangle}:=f\,,\quad f^{\langle 2\rangle}:=f\circ f\,,\quad f^{\langle n+1\rangle}:=f\circ f^{\langle n\rangle}
-$$ worin $\operatorname{id}_A:A\to a,\,x\mapsto x$ die identische Abbildung von $A$ auf sich bezeichnet. Die so definierte Funktion $f^{\langle n\rangle}$ mit $n\in\mathbb{N}$ wird **n-te Iterierte** von $f$ bezeichnet. Für die Funktion $$
+$$ worin $\operatorname{id}_A:A\to A,\,x\mapsto x$ die identische Abbildung von $A$ auf sich bezeichnet. Die so definierte Funktion $f^{\langle n\rangle}$ mit $n\in\mathbb{N}$ wird **n-te Iterierte** von $f$ bezeichnet. Für die Funktion $$
   f:\mathbb{R}^\times\to\mathbb{R}^\times,\, x\mapsto y=f(x)=\frac{x^2+2}{2\cdot x}
 $$ folgt für die Iterierten an der Stelle $x_0=1$ $$
   f^{\langle 1\rangle}(1)=\frac{3}{2}=1.5\,,\quad
