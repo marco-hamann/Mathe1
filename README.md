@@ -11,6 +11,8 @@ comment:  Dieser Kurs richtet sich an Studierende der Hochschule für Technik un
 
 import: https://raw.githubusercontent.com/liaTemplates/algebrite/master/README.md
 
+import: https://raw.githubusercontent.com/LiaScript/CodeRunner/master/README.md
+
 -->
 
 # Mathematik 1 (I945)
@@ -6274,6 +6276,12 @@ Testen Sie Ihr Wissen aus diesem Abschnitt bei der Beantwortung der nachstehende
 
 [[12]]
 @Algebrite.check(12)
+
+
+```octave
+2+3
+```
+@LIA.eval(["main.m"], none, octave --no-window-system main.m)
 
 
 ### Speerkoordinaten
