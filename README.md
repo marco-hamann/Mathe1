@@ -6278,11 +6278,6 @@ Testen Sie Ihr Wissen aus diesem Abschnitt bei der Beantwortung der nachstehende
 @Algebrite.check(12)
 
 
-```octave
-2+3
-```
-@LIA.eval(["main.m"], none, octave --no-window-system main.m)
-
 
 ### Speerkoordinaten
 
