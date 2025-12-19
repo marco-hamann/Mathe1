@@ -6260,10 +6260,8 @@ Der Drehmomentenvektor eines Kräftepaares ist unabhängig von einem Bezugspunkt
 Physikalische Interpretation
 ===
 
-6 + 6
 
-[[12]]
-@Algebrite.check(12)
+..
 
 
 Sicher gewusst
@@ -6272,7 +6270,10 @@ Sicher gewusst
 
 Testen Sie Ihr Wissen aus diesem Abschnitt bei der Beantwortung der nachstehenden Fragen.
 
-**Frage 1.** Gegeben sind ..
+**Frage 1.** Berechnen Sie $$ 6 + 6 $$
+
+[[12]]
+@Algebrite.check(12)
 
 
 ### Speerkoordinaten
