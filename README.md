@@ -6563,11 +6563,13 @@ $$ beziehungsweise $$
   (f\circ g):[0,\infty)\to \mathbb{R},\;x\mapsto(f\circ g)(x):=(\sqrt[3]{x}+1)^2\quad \forall x\in[0,\infty)
 $$
 
-Wie im letzten Beispiel ersichtlich, sind Verkettungen von Funktionen im Allgemeinen *nicht kommutativ*. Ausnahmen bilden beispielsweise $$
+<!-- style="background-color: lightgray;"-->
+>Wie im letzten Beispiel ersichtlich, sind Verkettungen von Funktionen im Allgemeinen *nicht kommutativ*. Ausnahmen bilden beispielsweise $$
   f(x)=\lambda\cdot x^n\,,\quad g(x)=\mu\cdot x^m\quad\leadsto\quad (g\circ f)(x)=(f\circ g)(x)=\lambda\cdot\mu\cdot x^{m+n}
 $$ mit dem gemeinsamen Definitionsbereich $D=\mathbb{R}$ und Parametern $\lambda\in\mathbb{R}$, $\mu\in\mathbb{R}$ sowie $m\in\mathbb{N}$, $n\in\mathbb{N}$.
 
-Die Verkettung von Funktionen ist *assoziativ*, d. h. für Funktionen $f:A\to B$, $g:B\to C$ und $h:C\to D$ definieren $$
+<!-- style="background-color: lightgray;"-->
+>Die Verkettung von Funktionen ist *assoziativ*, d. h. für Funktionen $f:A\to B$, $g:B\to C$ und $h:C\to D$ definieren $$
   (h\circ(g\circ f))(x)=h((g\circ f)(x))=h(g(f(x)))\quad\forall\,x\in A
 $$ und $$
   ((h\circ g)\circ f)(x)=(h\circ g)(f(x))=h(g(f(x)))\quad\forall\,x\in A
@@ -6581,9 +6583,9 @@ $$ worin $\operatorname{id}_A:A\to A,\,x\mapsto x$ die identische Abbildung von 
   f:\mathbb{R}^\times\to\mathbb{R}^\times,\, x\mapsto y=f(x)=\frac{x^2+2}{2\cdot x}
 $$ folgt für die Iterierten an der Stelle $x_0=1$ $$
   f^{\langle 1\rangle}(1)=\frac{3}{2}=1.5\,,\quad
-  f^{\langle 2\rangle}(1)=\frac{17}{12}\approx 1.4166667\,,\quad
-  f^{\langle 3\rangle}(1)=\frac{577}{408}\approx 1.4142157\,,\quad
-  f^{\langle 4\rangle}(1)=\frac{665857}{470832}\approx 1.4142136\,,\quad ...
+  f^{\langle 2\rangle}(1)=f\left(\frac{3}{2}\right)=\frac{17}{12}\approx 1.4166667\,,\quad
+  f^{\langle 3\rangle}(1)=f\left(\frac{17}{12}\right)=\frac{577}{408}\approx 1.4142157\,,\quad
+  f^{\langle 4\rangle}(1)=f\left(\frac{577}{408}\right)=\frac{665857}{470832}\approx 1.4142136\,,\quad ...
 $$ während an der Stelle $x_1=-3$ für die Iterierten folgt $$
   f^{\langle 1\rangle}(-3)=-\frac{11}{6}\approx -1.8333333\,,\quad
   f^{\langle 2\rangle}(-3)=-\frac{193}{132}\approx -1.4621212\,,\quad
@@ -6592,8 +6594,8 @@ $$ während an der Stelle $x_1=-3$ für die Iterierten folgt $$
 $$ Für ein allgemeines $x$ ergeben sich die Iterierten von $f$ mit $$
   f^{\langle 1\rangle}(x)={{x^2+2}\over{2\,x}}\,,\quad
   f^{\langle 2\rangle}(x)={{x^4+12\,x^2+4}\over{4\,x^3+8\,x}}\,,\quad
-  f^{\langle 3\rangle}(x)={{x^8+56\,x^6+280\,x^4+224\,x^2+16}\over{8\,x^7+112\,x^5+224\,x^3+64\,x}}\,,\quad
-  f^{\langle 4\rangle}(x)={{x^{16}+240\,x^{14}+7280\,x^{12}+64064\,x^{10}+205920\,x^8+256256\,x^6+116480\,x^4+15360\,x^2+256}\over{16\,x^{15}+1120\,x^{13}+17472\,x^{11}+91520\,x^9+183040\,x^7+139776\,x^5+35840\,x^3+2048\,x}}\,, ... $$ Der Funktionsgraph zu $f^{\langle 3\rangle}$ ist im Bereich $x\in[-5,5]$ in der nachstehenden Abbildung dargestellt.
+  f^{\langle 3\rangle}(x)={{x^8+56\,x^6+280\,x^4+224\,x^2+16}\over{8\,x^7+112\,x^5+224\,x^3+64\,x}} $$ sowie $$
+  f^{\langle 4\rangle}(x)={{x^{16}+240\,x^{14}+7280\,x^{12}+64064\,x^{10}+205920\,x^8+256256\,x^6+116480\,x^4+15360\,x^2+256}\over{16\,x^{15}+1120\,x^{13}+17472\,x^{11}+91520\,x^9+183040\,x^7+139776\,x^5+35840\,x^3+2048\,x}}\,,\quad ... $$ Die Funktionsgraphen zu $f^{\langle n\rangle}$ mit $n\in\{1,2,3\}$ sind im Bereich $x\in[-5,5]$ in der nachstehenden Abbildung dargestellt.
 
 ![Iteration](img/mat-bild-25.png "_Fig._ Funktionsgraphen der $n$-ten Iterierten $f^{\langle n\rangle}$ mit $n\in\{1,2,3\}$ zur Funktion $f:\mathbb{R}\to\mathbb{R},\;x\mapsto(x^2+2)/(2\cdot x)$. Im dargestellten Intervall $[-5,5]$ sind beispielsweise $f^{\langle 3\rangle}(-3)\approx -1.4$ und $f^{\langle 3\rangle}(1)\approx 1.4$ ablesbar.")<!-- style="display: block; margin-left: auto; margin-right: auto; max-width: 1000px;" -->
 
@@ -6617,7 +6619,7 @@ Sicher gewusst
 Testen Sie Ihr Wissen zu diesem Abschnitt bei der Beantwortung der nachstehenden Fragen.
 
 
-**Frage 1.** Die reelle Sinusfunktion $\sin:\mathbb{R}\to\mathbb{R}$ ist weder injektiv noch surjektiv. Entscheiden Sie, welche der nachfolgenden Funktionen mit der gemeinsamen Zuordnungsvorschrift $x\mapsto y=\sin{x}$ injektiv bzw. surjektiv sind.
+**Frage 1.** Die reelle Sinusfunktion $\sin:\mathbb{R}\to\mathbb{R}$ ist weder injektiv noch surjektiv. Entscheiden Sie, welche der nachfolgenden Funktionen mit der gemeinsamen Zuordnungsvorschrift $$ x\mapsto y=\sin{x} $$ injektiv bzw. surjektiv sind.
 
 [[$f_1:\left[0,\frac{\pi}{2}\right]\to[-1,1]$] [$f_2:\left[0,\frac{\pi}{2}\right]\to[0,1]$] [$f_3:\left[0,\pi\right]\to[0,1]$]]
 [[X] [X] [ ]]  injektiv
@@ -6803,7 +6805,8 @@ Unendliche Folgen können gegen einen Grenzwert konvergieren: ein wichtiger Begr
   |a_n-a|<\epsilon\quad\forall\;n>N
 $$ Die Zahl $a\in\mathbb{R}$ heißt in diesem Fall **Grenzwert** der Zahlenfolge $(a_j)_{j\in D}$. Eine nichtkonvergente Zahlenfolge heißt **divergent**.
 
-Konvergiert eine Zahlenfolge $(a_n)_{n\in D}$ mit $D\subseteq\mathbb{N}$ gegen ihren Grenzwert $a\in\mathbb{R}$, so schreibt man $$
+<!-- style="background-color: lightgray;"-->
+>Konvergiert eine Zahlenfolge $(a_n)_{n\in D}$ mit $D\subseteq\mathbb{N}$ gegen ihren Grenzwert $a\in\mathbb{R}$, so schreibt man $$
   \lim_{n\to\infty}{a_n}=a\quad\text{bzw.}\quad a_n\stackrel{n\to\infty}{\longrightarrow} a
 $$ sprich: "Limes von $a_n$ für $n$ gegen $\infty$".
 
@@ -6868,7 +6871,9 @@ $$ so dass sich für den Quotienten $$
   \lim_{n\to\infty}{\left(\frac{3\cdot n^2-4\cdot n+5}{4\cdot n^2-5\cdot n+6}\right)}=\frac{3-4\cdot 0+5\cdot 0}{4-5\cdot 0++6\cdot 0}=\frac{3}{4}
 $$ ergibt. Das ist der Quotient der Koeffizienten zu $n^2$ aus Zähler und Nenner.
 
-**Bemerkung 3.** Das Vorgehen in Beispiel 5 ist auf beliebige gebrochenrationale Funktionsterme $f(n)=Z(n)/N(n)$ übertragbar: "*Im Zählerpolynom $Z(n)$ und Nennerpolynom $N(n)$ wird jeweils die höchste in $N(n)$ auftretende Potenz von $n$ ausgeklammert.*"
+**Bemerkung 3.** Das Vorgehen in Beispiel 5 ist auf beliebige gebrochenrationale Funktionsterme $f(n)=Z(n)/N(n)$ übertragbar: 
+
+"*Im Zählerpolynom $Z(n)$ und Nennerpolynom $N(n)$ wird jeweils die höchste in $N(n)$ auftretende Potenz von $n$ ausgeklammert.*"
 
 Tritt die höchste auftretende Potenz von $n$
 
@@ -6898,7 +6903,8 @@ $$ für beliebige Zahlenfolgen von Argumenten $x_n$, so heißt $g$ [Funktionsgre
 >
 > Andernfalls divergiert $f$ für $x$ gegen $x_0$.
 
-Existiert der Funktionsgrenzwert $g$ einer Funktion $f$ an der Stelle $x_0$, so schreibt man $$
+<!-- style="background-color: lightgray;"-->
+> Existiert der Funktionsgrenzwert $g$ einer Funktion $f$ an der Stelle $x_0$, so schreibt man $$
   \lim_{x\to x_0}{f(x)}=g\quad\text{bzw.}\quad f(x)\stackrel{x\to x_0}{\longrightarrow}g
 $$
 
@@ -6956,7 +6962,7 @@ $$ d. h. linksseitiger und rechtsseitiger Grenzwert von $f$ für $x\to 1\pm0$ un
 >
 > Gilt wenigstens eine der drei Bedingungen nicht, so heißt $f$ in $x_0$ **nicht stetig**.
 
-**Bemerkung 6.** Ist $f$ an jeder Stelle $x_0\in D$ stetig, so heißt $f$ stetig. An Intervallgrenzen wird auf links- bzw. rechtsseitig steig untersucht.
+**Bemerkung 6.** Ist $f$ an jeder Stelle $x_0\in D$ stetig, so heißt $f$ stetig. An Intervallgrenzen wird auf links- bzw. rechtsseitige Stetigkeit untersucht.
 
 **Beispiel 8.**
 
@@ -6987,7 +6993,7 @@ $$ somit ist $g$ in $x=1$ stetig.
 >
 >1. zwar links- und rechtsseitiger Grenzwert existieren und einander gleich sind, jedoch diese verschieden vom Funktionswert $f(x_0)$ sind $$
   \lim_{x\to x_0-0}{f(x)}=\lim_{x\to x_0+0}{f(x)}\not=f(x_0)
-$$ Siehe Aufgabe 3 im vorangestellten Beispiel 8.
+$$ Vergleiche mit Aufgabe 3 im vorangestellten Beispiel 8.
 >2. links- und rechtsseitiger Grenzwert existieren, jedoch verschieden sind $$
   \lim_{x\to x_0-0}{f(x)}\not=\lim_{x\to x_0+0}{f(x)}
 $$ Eine solche Stelle $x_0$ wird **Sprungstelle endlicher Höhe** genannt. Vergleiche die Aufgaben 1 und 2 im vorangestellten Beispiel 8.
@@ -7379,6 +7385,10 @@ simplify(d(f,x,3))
 
 Die Ableitungsformel ist somit für beliebige natürliche Ordnungen $n>0$ beweisen. $\square$
 
+Einen informativen Überblick über den Ableitungsbegriff, Ableitungsregeln und höhere Ableitungen bietet die nachstehend verlinkte Vorlesung.
+
+!?[Differentialrechnung](https://www.youtube.com/watch?v=NW9nVWDXtsE "RM I - 05 - Differentialrechnung 1 Ableitung, Differentiationsregeln, höhere Ableitungen")
+
 
 Sicher gewusst
 ===
@@ -7574,3 +7584,5 @@ Oszillierendes Verhalten ergibt sich für das Polynom $f(x)=x^3-2x+2$ an der Ste
 ![Newton 2](img/mat-bild-40.png "_Fig._ Graph der Funktion $f$ mit den Tangenten an den Stellen $x_{2k}=0$ und $x_{2k+1}=1$. Diese sind jeweils Schnittstellen der jeweils anderen Tangente mit der $x$-Achse.")
 
 ****************************************
+
+
