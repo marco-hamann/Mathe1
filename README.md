@@ -9,6 +9,8 @@ language: de
 
 comment:  Dieser Kurs richtet sich an Studierende der Hochschule für Technik und Wirtschaft Dresden im Studiengang Maschinenbau im 1. Semester.
 
+import: https://raw.githubusercontent.com/liaTemplates/algebrite/master/README.md
+
 script: dist/index.js
 
 @Algebrite.eval: <script> window.Algebrite.run(`@input`) </script>
