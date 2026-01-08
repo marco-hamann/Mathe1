@@ -6274,15 +6274,7 @@ Testen Sie Ihr Wissen aus diesem Abschnitt bei der Beantwortung der nachstehende
 
 **Frage 1.** ..
 
-$6+6=$
 
-[[12]]
-@Algebrite.check(12)
-
-$\frac{2}{3}-\frac{1}{3}=$
-
-[[1/3]]
-@Algebrite.check2(1/3,0.01)
 
 
 
