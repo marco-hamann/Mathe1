@@ -9,7 +9,116 @@ language: de
 
 comment:  Dieser Kurs richtet sich an Studierende der Hochschule für Technik und Wirtschaft Dresden im Studiengang Maschinenbau im 1. Semester.
 
-import: https://raw.githubusercontent.com/liaTemplates/algebrite/master/README.md
+script: dist/index.js
+
+@Algebrite.eval: <script> window.Algebrite.run(`@input`) </script>
+
+@Algebrite.check: <script>
+  let input = `@input`;
+  
+  try {
+    const json = JSON.parse(input);
+    if (Array.isArray(json)) {
+      input = json[0];
+    } 
+  } catch (e) {}
+  input = input.trim();
+
+  if (input.length == 0) {
+    send.lia("No input provided",[],false);
+  } else {
+    try {
+      let expression = `(${input}) - (@0) == 0`;
+      expression = expression.replace(/\,/g, ".");
+      let result = window.Algebrite.simplify(expression);
+      result == "1";
+    } catch(e) {
+      send.lia("Error in expression",[],false);
+    }
+  }
+  </script>
+
+@Algebrite.check2: <script>
+  let input = `@input`;
+  
+  try {
+    const json = JSON.parse(input);
+    if (typeof json === "string") {
+      input = [json.trim()];
+    } else {
+      input = json.map(item => item.trim());
+    }
+  } catch (e) {
+    input = [input.trim()];
+  }
+
+  if (input.length == 0) {
+    send.lia("No input provided",[],false);
+  }
+
+  let lowerBounds = "@0".trim();
+  let upperBounds = "@1".trim();
+
+  if(lowerBounds.startsWith("[") && lowerBounds.endsWith("]")) {
+    lowerBounds = lowerBounds.slice(1, -1).split(";").map(item => item.trim());
+  } else {
+    lowerBounds = [lowerBounds];
+  }
+
+  if(upperBounds.startsWith("[") && upperBounds.endsWith("]")) {
+    upperBounds = upperBounds.slice(1, -1).split(";").map(item => item.trim());
+  } else {
+    upperBounds = [upperBounds];
+  }
+
+  let rslt = true;
+  for (let i=0; i<input.length; i++) {
+    if (input[i] == "") {
+        rslt = false;
+        break;
+    }
+    try {
+      let expression = `abs((${input[i]}) - (${lowerBounds[i]})) < ${upperBounds[i]}`;
+      expression = window.inputClean(expression);
+      let result = window.Algebrite.simplify(expression);
+
+      window.console.warn("Result:", result);
+      if (!result.q.a || result.q.a.value != 1n ) {
+        rslt = false;
+        break;
+      }
+    } catch(e) {
+      rslt = false;
+      break;
+    }
+    rslt;
+  }
+  </script>
+
+@Algebrite.check_margin: <script>
+  let input = `@input`; 
+  try {
+    const json = JSON.parse(input);
+    if (Array.isArray(json)) {
+      input = json[0];
+    } 
+  } catch (e) {}
+
+  input = input.trim();
+
+  if (input.length == 0) {
+    send.lia("No input provided",[],false);
+  } else {
+    try {
+      let expression = input.replace(/\,/g, ".");
+      expression = `and((@0) <= (${expression}), (${expression}) <= (@1))`;
+      let result = window.Algebrite.simplify(expression);
+      result == "1";
+    } catch(e) {
+      send.lia("Error in expression",[],false);
+    }
+  }
+  </script>
 
 import: https://raw.githubusercontent.com/LiaScript/CodeRunner/master/README.md
 
@@ -6272,10 +6381,17 @@ Sicher gewusst
 
 Testen Sie Ihr Wissen aus diesem Abschnitt bei der Beantwortung der nachstehenden Fragen.
 
-**Frage 1.** Berechnen Sie $$ 6 + 6 $$
+**Frage 1.** ..
+
+$6+6=$
 
 [[12]]
 @Algebrite.check(12)
+
+$\frac{2}{3}-\frac{1}{3}=$
+
+[[1/3]]
+@Algebrite.check2(1/3,0.01)
 
 
 
@@ -7586,3 +7702,10 @@ Oszillierendes Verhalten ergibt sich für das Polynom $f(x)=x^3-2x+2$ an der Ste
 ****************************************
 
 
+
+### Differentiation von Vektoren
+
+
+Die Differenzierbarkeit bei reellen Funktionen lässt sich auf vektorwertige Funktionen einer reellen Variablen $$ f:D\to\mathbb{R}\,,\;t\mapsto (f_1(t)\,,\;f_2(t)\,,\;...\,,\; f_n(t)) $$ übertragen, worin die reellen (Koordinaten-) Funktionen $f_k$ über dem gleichen Definitionsbereich  $D\subset\mathbb{R}$ betrachtet werden. Diese werden im Folgenden auf $D$ differenzierbar vorausgesetzt. Aus Abschnitt [Differenzierbarkeit](#Differenzierbarkeit) lässt sich die Ableitung komponentenweise festlegen gemäß $$ \frac{\mathrm{d}}{\mathrm{d}x}f(t):=\dot{f}(t)= \left(\dot{f}_1(t)\,,\;\dot{f}_2(t)\,,\;...\,,\;\dot{f}_n(t)\right) $$
+
+>**Satz 1.** Ist $f:D\to\mathbb{R}^n$ mit $n\in\mathbb{N}$
