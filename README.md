@@ -7637,12 +7637,33 @@ b.on('drag', function() { txt.update(); });
 c.on('drag', function() { txt.update(); });
 ```
 <script>
-  try{
+  try {
     eval(`@input`);
   } catch (e) {
-    var log = e.stack.match(/((.*?):(.*))\n.*?(:(\d+):(\d+)\)\n)/);
-    var err_msg = new LiaError(log[1] + " =>  (" + log[4], 1);
-    err_msg.add_detail(0, log[3], "error", log[5]-1, log[6]);
+    // Sicherstellen, dass e.stack existiert
+    if (!e.stack) {
+      var err_msg = new LiaError("JavaScript-Fehler", 1);
+      err_msg.add_detail(0, "Unbekannter Fehler", "error", 1, 1);
+      throw err_msg;
+    }
+
+    // Robustes Regex: Sucht nach "file:line:column"
+    const stackMatch = e.stack.match(/((.*?):(\d+):(\d+))\n/);
+    
+    if (!stackMatch) {
+      var err_msg = new LiaError("JavaScript-Fehler", 1);
+      err_msg.add_detail(0, e.message || "Fehler", "error", 1, 1);
+      throw err_msg;
+    }
+
+    // Extrahiere: Dateiname, Zeile, Spalte
+    const fileName = stackMatch[1]; // z. B. "script.js:12:34"
+    const errorLine = stackMatch[3]; // Zeilennummer (String)
+    const errorColumn = stackMatch[4]; // Spaltennummer (String)
+
+    // Erstelle Fehlermeldung für LiaScript
+    var err_msg = new LiaError(fileName + " => " + (e.message || "Fehler"), 1);
+    err_msg.add_detail(0, e.message || "Fehler", "error", parseInt(errorLine) - 1, parseInt(errorColumn));
     throw err_msg;
   }
 </script>
