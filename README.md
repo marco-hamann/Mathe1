@@ -11,9 +11,12 @@ comment:  Dieser Kurs richtet sich an Studierende der Hochschule für Technik un
 
 import: https://raw.githubusercontent.com/liaTemplates/algebrite/master/README.md
 
+import: https://raw.githubusercontent.com/liaTemplates/JSXGraph/main/README.md
+
 import: https://raw.githubusercontent.com/LiaScript/CodeRunner/master/README.md
 
 -->
+
 
 # Mathematik 1 (I945)
 
@@ -7573,22 +7576,74 @@ Testen Sie Ihr Wissen bei der Beantwortung der nachstehenden Fragen.
 [(X) ( ) ( )]  $f(x)=x^3-2x+2$, $x_0=-2$
 [( ) ( ) (X)]  $f(x)=x^3-2x+2$, $x_0=0$
 [( ) (X) ( )]  $f(x)=x^3-1$, $x_0=-\frac{1}{\sqrt[3]{2}}$
-[[?]] ......... Berechnen Sie zunächst mit Hilfe des Newtonverfahrens die nächsten Argumente $x_1$, $x_2$, ... der Zahlenfolge. Hierfür lässt sich auch das obige Code-Beispiel verwenden. Für einen Nachweis des an der Argumentenfolge beobachteten Verhaltens überlegen Sie bitte die einzelnen Schritte am Funktionsgraphen. (geometrische Vorstellung des Newtonverfahrens)
+[[?]] Berechnen Sie zunächst mit Hilfe des Newtonverfahrens die nächsten Argumente $x_1$, $x_2$, ... der Zahlenfolge. Hierfür lässt sich auch das obige Code-Beispiel verwenden. Für einen Nachweis des an der Argumentenfolge beobachteten Verhaltens überlegen Sie bitte die einzelnen Schritte am Funktionsgraphen. (geometrische Vorstellung des Newtonverfahrens)
 ****************************************
 
-Für die Funktion $f:\mathbb{R}\to\mathbb{R}$ mit $f(x)=x^3-2x+2$ existiert eine Nullstelle $x^\ast\in(-2,-1)$, da nach Mittelwertsatz $f(-2)\cdot f(-1)=(-2)\cdot 3=-6<0$.
+Für die Funktion $f:\mathbb{R}\to\mathbb{R}$ mit $f(x)=x^3-2x+2$ existiert eine Nullstelle $x^\ast\in(-2,-1)$, da nach Mittelwertsatz $f(-2)\cdot f(-1)=(-2)\cdot 3=-6<0$ gilt.
 
-Oszillierendes Verhalten ergibt sich für das Polynom $f(x)=x^3-2x+2$ an der Stelle $x_0=0$. Mit $f(0)=0^3-2*0+2=2$ und der Ableitung $f'(0)=3*0^2-2=-2$ berechnen sich unmittelbar $x_1=0-2/(-1)=1$ sowie mit $f(1)=1$ und $f'(1)=1$ dann $x_2=0$. Die Newton-Iteration mit einem dieser Argumente als Startwert ergibt jeweils eine periodische Folge. Das Newtonverfahren oszilliert in beiden Fällen. Siehe nachstehende Abbildung.
+Oszillierendes Verhalten ergibt sich für das Polynom $f(x)=x^3-2x+2$ an der Stelle $x_0=0$. Mit $f(0)=0^3-2\cdot 0+2=2$ und der Ableitung $f'(0)=3\cdot 0^2-2=-2$ berechnen sich unmittelbar $x_1=0-2/(-1)=1$ sowie mit $f(1)=1$ und $f'(1)=1$ dann $x_2=0$. Die Newton-Iteration mit einem dieser Argumente als Startwert ergibt jeweils eine periodische Folge. Das Newtonverfahren oszilliert in beiden Fällen. Siehe nachstehende Abbildung.
 
 ![Newton 2](img/mat-bild-40.png "_Fig._ Graph der Funktion $f$ mit den Tangenten an den Stellen $x_{2k}=0$ und $x_{2k+1}=1$. Diese sind jeweils Schnittstellen der jeweils anderen Tangente mit der $x$-Achse.")
 
 ****************************************
 
 
-
 ### Differentiation von Vektoren
 
 
-Die Differenzierbarkeit bei reellen Funktionen lässt sich auf vektorwertige Funktionen einer reellen Variablen $$ f:D\to\mathbb{R}\,,\;t\mapsto (f_1(t)\,,\;f_2(t)\,,\;...\,,\; f_n(t)) $$ übertragen, worin die reellen (Koordinaten-) Funktionen $f_k$ über dem gleichen Definitionsbereich  $D\subset\mathbb{R}$ betrachtet werden. Diese werden im Folgenden auf $D$ differenzierbar vorausgesetzt. Aus Abschnitt [Differenzierbarkeit](#Differenzierbarkeit) lässt sich die Ableitung komponentenweise festlegen gemäß $$ \frac{\mathrm{d}}{\mathrm{d}x}f(t):=\dot{f}(t)= \left(\dot{f}_1(t)\,,\;\dot{f}_2(t)\,,\;...\,,\;\dot{f}_n(t)\right) $$
+Die Differenzierbarkeit bei reellen Funktionen lässt sich auf vektorwertige Funktionen einer reellen Variablen $$ f:D\to\mathbb{R}^n\,,\;t\mapsto (f_1(t)\,,\;f_2(t)\,,\;...\,,\; f_n(t)) $$ übertragen, worin die reellen (Koordinaten-) Funktionen $f_k$ über dem gleichen Definitionsbereich  $D\subset\mathbb{R}$ betrachtet werden. Diese werden im Folgenden auf $D$ differenzierbar vorausgesetzt. Aus Abschnitt [Differenzierbarkeit](#Differenzierbarkeit) lässt sich die Ableitung komponentenweise festlegen gemäß $$ \frac{\mathrm{d}}{\mathrm{d}x}f(t):=\dot{f}(t)= \left(\dot{f}_1(t)\,,\;\dot{f}_2(t)\,,\;...\,,\;\dot{f}_n(t)\right) $$ worin $\dot{f}_k$ die Ableitungsfunktionen der Funktionen $f_k$ bezeichnen.
 
->**Satz 1.** Ist $f:D\to\mathbb{R}^n$ mit $n\in\mathbb{N}$
+>**Satz 1.** Ist $f:D\to\mathbb{R}^n$ mit $n\in\mathbb{N}$ auf $D\subseteq\mathbb{R}$ differenzierbar, so beschreibt der Wertebereich $$ W=\left\{(x_1,x_2,...,x_n)\in\mathbb{R}^n\left|\,x_k=f_k(t)\;\forall k\in\{1,2,...,n\}\,,\;t\in D\right.\right\} $$ eine Kurve in $\mathbb{R}^n$. Für jedes $t_0\in D$ existiert eine [Tangente](https://de.wikipedia.org/wiki/Tangente) an die Kurve mit der Parameterdarstellung $$ 
+  \begin{pmatrix} y_1 \\ y_2 \\ \vdots \\ y_n \end{pmatrix}(t_0,\lambda)= 
+  \begin{pmatrix} f_1 \\ f_2 \\ \vdots \\ f_n \end{pmatrix}(t_0)+\lambda\cdot
+  \begin{pmatrix} \dot{f}_1 \\ \dot{f}_2 \\ \vdots \\ \dot{f}_n \end{pmatrix}(t_0) $$ 
+> sofern $\dot{f}(t_0)$ verschieden vom Nullvektor ist.
+
+**Beweis.** ohne Nachweis
+
+**Beispiel 1.** Gegeben ist die Funktion $f:\mathbb{R}\to\mathbb{R}^2$ mit $$ t\mapsto f(t)=(t,t^2) $$ mit den Koordinatenfunktionen $t\mapsto x_1=f_1(t)=t$ und $t\mapsto x_2=f_2(t)=t^2$. Der Wertebereich von $f$ ist eine Parabel $k$ mit der Gleichung $x_2=x_1^2$. Für die Tangente an die Parabel erhalten wir mit dem vorstehenden Satz die Parameterdarstellung  
+$$ \begin{pmatrix} y_1 \\ y_2 \end{pmatrix}(t_0,\lambda)= 
+   \begin{pmatrix} t_0 \\ t_0^2 \end{pmatrix}+\lambda\cdot
+   \begin{pmatrix} 1 \\ 2t_0 \end{pmatrix}\,,\quad\lambda\in\mathbb{R} $$ 
+
+Für die Tangenten an die Parabel aus einem gegebenen Punkt $Y=(y_1,y_2)^\top$ ist das in $\lambda$ lineare - und in $t$ quadratische Gleichungssystem 
+$$ \left.\begin{array}{lll} y_1 & = & t+\lambda \\ y_2 & = & t^2+2t\cdot\lambda \end{array}\right\}\quad\leftrightarrow\quad 
+   \left\{\begin{array}{rll} t^2-2y_1\cdot t+y_2 & = & 0 \\ \lambda & = & y_1-t \end{array}\right. $$
+und die sich hierzu äquivalent ergebende quadratische Gleichung in $t$ zu lösen. Es ergeben sich die nachstehenden Fälle.
+
+| Anzahl der Tangenten aus $Y$   | Bedingung   |
+| :--------- | :--------- |
+| $m=2$ | $y_1^2-y_2>0$ |
+| $m=1$ | $y_1^2-y_2=0\;\leftrightarrow\;Y\in k$ |
+| $m=0$ | $y_1^2-y_2<0$ |
+
+Die Fälle $m=2$ versus $m=0$ lassen eine Unterscheidung "außerhalb" versus "innerhalb" bezogen auf die Parabel $k$ zu.
+
+```javascript
+JXG.Options.slider.snapValues = [-5, -2, -1, 0, 1, 2, 5];
+JXG.Options.slider.snapValueDistance = 0.2;
+
+var a = board.create('slider', [[2, -5], [7, -5], [-5, 1, 5]], { name: 'a' });
+var b = board.create('slider', [[2, -6], [7, -6], [-5, 0, 5]], { name: 'b' });
+var c = board.create('slider', [[2, -7], [7, -7], [-5, 0, 5]], { name: 'c' });
+ 
+var f = board.create('functiongraph', [(x) => a.Value() * x * x + b.Value() * x + c.Value()]);
+ 
+var txt = board.create('text', [-9, -5,
+       () => JXG.Math.Numerics.generatePolynomialTerm([c.Value(), b.Value(), a.Value()], 2, 'x', 2)
+], { fontSize: 18 });
+```
+<script>
+  try{
+    eval(`@input`);
+  } catch (e) {
+    var log = e.stack.match(/((.*?):(.*))\n.*?(:(\d+):(\d+)\)\n)/);
+    var err_msg = new LiaError(log[1] + " =>  (" + log[4], 1);
+    err_msg.add_detail(0, log[3], "error", log[5]-1, log[6]);
+    throw err_msg;
+  }
+</script>
+
+
+**Beispiel 2.** Betrachtet wird die differenzierbare Funktion 
+$$ 
