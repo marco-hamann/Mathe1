@@ -9,9 +9,9 @@ language: de
 
 comment:  Dieser Kurs richtet sich an Studierende der Hochschule für Technik und Wirtschaft Dresden im Studiengang Maschinenbau im 1. Semester.
 
-import: https://raw.githubusercontent.com/liaTemplates/algebrite/master/README.md
+import: https://raw.githubusercontent.com/LiaTemplates/JSXGraph/0.0.3/README.md
 
-import: https://raw.githubusercontent.com/liaTemplates/JSXGraph/main/README.md
+import: https://raw.githubusercontent.com/liaTemplates/algebrite/master/README.md
 
 import: https://raw.githubusercontent.com/LiaScript/CodeRunner/master/README.md
 
@@ -7619,19 +7619,22 @@ und die sich hierzu äquivalent ergebende quadratische Gleichung in $t$ zu löse
 
 Die Fälle $m=2$ versus $m=0$ lassen eine Unterscheidung "außerhalb" versus "innerhalb" bezogen auf die Parabel $k$ zu.
 
-```javascript
+``` javascript
 JXG.Options.slider.snapValues = [-5, -2, -1, 0, 1, 2, 5];
-JXG.Options.slider.snapValueDistance = 0.2;
 
 var a = board.create('slider', [[2, -5], [7, -5], [-5, 1, 5]], { name: 'a' });
 var b = board.create('slider', [[2, -6], [7, -6], [-5, 0, 5]], { name: 'b' });
 var c = board.create('slider', [[2, -7], [7, -7], [-5, 0, 5]], { name: 'c' });
- 
+
 var f = board.create('functiongraph', [(x) => a.Value() * x * x + b.Value() * x + c.Value()]);
- 
+
 var txt = board.create('text', [-9, -5,
-       () => JXG.Math.Numerics.generatePolynomialTerm([c.Value(), b.Value(), a.Value()], 2, 'x', 2)
+    () => JXG.Math.Numerics.generatePolynomialTerm([c.Value(), b.Value(), a.Value()], 2, 'x', 2)
 ], { fontSize: 18 });
+
+a.on('drag', function() { txt.update(); });
+b.on('drag', function() { txt.update(); });
+c.on('drag', function() { txt.update(); });
 ```
 <script>
   try{
@@ -7645,5 +7648,4 @@ var txt = board.create('text', [-9, -5,
 </script>
 
 
-**Beispiel 2.** Betrachtet wird die differenzierbare Funktion 
-$$ 
+**Beispiel 2.** Betrachtet wird die differenzierbare Funktion  
