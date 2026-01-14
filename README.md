@@ -9,7 +9,7 @@ language: de
 
 comment:  Dieser Kurs richtet sich an Studierende der Hochschule für Technik und Wirtschaft Dresden im Studiengang Maschinenbau im 1. Semester.
 
-import: https://raw.githubusercontent.com/LiaTemplates/JSXGraph/0.0.3/README.md
+import: https://raw.githubusercontent.com/liaTemplates/JSXGraph/main/README.md
 
 import: https://raw.githubusercontent.com/liaTemplates/algebrite/master/README.md
 
@@ -7606,67 +7606,113 @@ $$ \begin{pmatrix} y_1 \\ y_2 \end{pmatrix}(t_0,\lambda)=
    \begin{pmatrix} t_0 \\ t_0^2 \end{pmatrix}+\lambda\cdot
    \begin{pmatrix} 1 \\ 2t_0 \end{pmatrix}\,,\quad\lambda\in\mathbb{R} $$ 
 
-Für die Tangenten an die Parabel aus einem gegebenen Punkt $Y=(y_1,y_2)^\top$ ist das in $\lambda$ lineare - und in $t$ quadratische Gleichungssystem 
-$$ \left.\begin{array}{lll} y_1 & = & t+\lambda \\ y_2 & = & t^2+2t\cdot\lambda \end{array}\right\}\quad\leftrightarrow\quad 
-   \left\{\begin{array}{rll} t^2-2y_1\cdot t+y_2 & = & 0 \\ \lambda & = & y_1-t \end{array}\right. $$
-und die sich hierzu äquivalent ergebende quadratische Gleichung in $t$ zu lösen. Es ergeben sich die nachstehenden Fälle.
+Für die Tangenten an die Parabel aus einem gegebenen Punkt $P=(x_p,y_p)^\top$ ist das in $\lambda$ lineare - und in $t$ quadratische Gleichungssystem 
+$$ \left.\begin{array}{lll} x_p & = & t+\lambda \\ y_p & = & t^2+2t\cdot\lambda \end{array}\right\}\quad\leftrightarrow\quad 
+   \left\{\begin{array}{rll} t^2-2x_p\cdot t+y_p & = & 0 \\ \lambda & = & x_p-t \end{array}\right. $$
+beziehungsweise die sich hierzu äquivalent ergebende quadratische Gleichung in $t$ zu lösen. Es ergeben sich die nachstehenden Fälle.
 
-| Anzahl der Tangenten aus $Y$   | Bedingung   |
+| Anzahl der Tangenten aus $Y$   | Diskriminante  |
 | :--------- | :--------- |
-| $m=2$ | $y_1^2-y_2>0$ |
-| $m=1$ | $y_1^2-y_2=0\;\leftrightarrow\;Y\in k$ |
-| $m=0$ | $y_1^2-y_2<0$ |
+| $m=2$ | $x_p^2-y_p>0$ |
+| $m=1$ | $x_p^2-y_p=0\;\leftrightarrow\;P\in k$ |
+| $m=0$ | $x_p^2-y_p<0$ |
 
-Die Fälle $m=2$ versus $m=0$ lassen eine Unterscheidung "außerhalb" versus "innerhalb" bezogen auf die Parabel $k$ zu.
+Die Fälle $m=2$ versus $m=0$ lassen eine Unterscheidung "außerhalb" versus "innerhalb" bezogen auf die Parabel $k$ zu. Siehe nachstehende Abbildung.
 
-``` javascript
+```javascript @JSX.Graph
 JXG.Options.slider.snapValues = [-5, -2, -1, 0, 1, 2, 5];
+JXG.Options.slider.snapValueDistance = 0.2;
 
-var a = board.create('slider', [[2, -5], [7, -5], [-5, 1, 5]], { name: 'a' });
-var b = board.create('slider', [[2, -6], [7, -6], [-5, 0, 5]], { name: 'b' });
-var c = board.create('slider', [[2, -7], [7, -7], [-5, 0, 5]], { name: 'c' });
+// Slider für Koordinaten von P
+var xp = board.create('slider', [[-5, -5], [5, -5], [-5, 1, 5]], { name: 'x_p', snapWidth: 0.1 });
+var yp = board.create('slider', [[-5, -6], [5, -6], [-5, -2, 5]], { name: 'y_p', snapWidth: 0.1 });
 
-var f = board.create('functiongraph', [(x) => a.Value() * x * x + b.Value() * x + c.Value()]);
+// Parabel
+var parabel = board.create('functiongraph', [function(x) { return x * x; }], {
+    strokeColor: 'blue',
+    strokeWidth: 2,
+    name: 'k'
+});
 
-var txt = board.create('text', [-9, -5,
-    () => JXG.Math.Numerics.generatePolynomialTerm([c.Value(), b.Value(), a.Value()], 2, 'x', 2)
-], { fontSize: 18 });
+// Punkt P
+var P = board.create('point', [function() { return xp.Value(); }, function() { return yp.Value(); }], {
+    name: 'P',
+    size: 4,
+    color: 'red'
+});
 
-a.on('drag', function() { txt.update(); });
-b.on('drag', function() { txt.update(); });
-c.on('drag', function() { txt.update(); });
+// Tangenten
+var tangente1 = board.create('line', [
+    function() {
+        var t = xp.Value() + Math.sqrt(Math.max(0, xp.Value() * xp.Value() - yp.Value()));
+        var x1 = t - 2; // Punkt links
+        var y1 = 2 * t * x1 - t * t;
+        return [x1, y1];
+    },
+    function() {
+        var t = xp.Value() + Math.sqrt(Math.max(0, xp.Value() * xp.Value() - yp.Value()));
+        var x2 = t + 2; // Punkt rechts
+        var y2 = 2 * t * x2 - t * t;
+        return [x2, y2];
+    }
+], { strokeColor: 'green', strokeWidth: 1.5, dash: 1 });
+
+var tangente2 = board.create('line', [
+    function() {
+        var t = xp.Value() - Math.sqrt(Math.max(0, xp.Value() * xp.Value() - yp.Value()));
+        var x1 = t - 2;
+        var y1 = 2 * t * x1 - t * t;
+        return [x1, y1];
+    },
+    function() {
+        var t = xp.Value() - Math.sqrt(Math.max(0, xp.Value() * xp.Value() - yp.Value()));
+        var x2 = t + 2;
+        var y2 = 2 * t * x2 - t * t;
+        return [x2, y2];
+    }
+], { strokeColor: 'green', strokeWidth: 1.5, dash: 1 });
+
+// Schnittpunkte
+var S1 = board.create('intersection', [parabel, tangente1, 0], {
+    name: 'S₁',
+    size: 3,
+    color: 'purple'
+});
+
+var S2 = board.create('intersection', [parabel, tangente2, 0], {
+    name: 'S₂',
+    size: 3,
+    color: 'purple'
+});
+
+// Anzeige
+var txt = board.create('text', [-8, 5,
+    function() {
+        var xp_val = xp.Value();
+        var yp_val = yp.Value();
+        var discriminant = xp_val * xp_val - yp_val;
+        if (discriminant < 0) {
+            return "Keine Tangente (Punkt unterhalb der Parabel wählen)";
+        } else if (discriminant === 0) {
+            return "Eine Tangente (Punkt liegt auf der Parabel)";
+        } else {
+            return "Zwei Tangenten";
+        }
+    }
+], { fontSize: 16, color: 'black' });
+
+// Aktualisierung
+xp.on('drag', function() { board.update(); });
+yp.on('drag', function() { board.update(); });
 ```
-<script>
-  try {
-    eval(`@input`);
-  } catch (e) {
-    // Sicherstellen, dass e.stack existiert
-    if (!e.stack) {
-      var err_msg = new LiaError("JavaScript-Fehler", 1);
-      err_msg.add_detail(0, "Unbekannter Fehler", "error", 1, 1);
-      throw err_msg;
-    }
+<a href="https://jsxgraph.org" target="_blank" title="Visit JSXGraph">
+    <img src="https://jsxgraph.org/home/media/logos/jsxgraph/png/screen/jsxgraph-logo_blue-banner-solid-text-solid.png" 
+         alt="JSXGraph Logo" 
+         width="200" 
+         style="width:100px;cursor:pointer;">
+</a>
 
-    // Robustes Regex: Sucht nach "file:line:column"
-    const stackMatch = e.stack.match(/((.*?):(\d+):(\d+))\n/);
-    
-    if (!stackMatch) {
-      var err_msg = new LiaError("JavaScript-Fehler", 1);
-      err_msg.add_detail(0, e.message || "Fehler", "error", 1, 1);
-      throw err_msg;
-    }
-
-    // Extrahiere: Dateiname, Zeile, Spalte
-    const fileName = stackMatch[1]; // z. B. "script.js:12:34"
-    const errorLine = stackMatch[3]; // Zeilennummer (String)
-    const errorColumn = stackMatch[4]; // Spaltennummer (String)
-
-    // Erstelle Fehlermeldung für LiaScript
-    var err_msg = new LiaError(fileName + " => " + (e.message || "Fehler"), 1);
-    err_msg.add_detail(0, e.message || "Fehler", "error", parseInt(errorLine) - 1, parseInt(errorColumn));
-    throw err_msg;
-  }
-</script>
-
-
-**Beispiel 2.** Betrachtet wird die differenzierbare Funktion  
+**Beispiel 2.** Betrachtet wird die differenzierbare Funktion $f:[0,2\pi)\to\mathbb{R}^2$ mit $$ t\mapsto f(t)=(\cos{t},\sin{t}) $$ mit den Koordinatenfunktionen $t\mapsto x_1=f_1(t)=\cos{t}$ und $t\mapsto x_2=f_2(t)=\sin{t}$. Der Wertebereich von $f$ ist ein Kreis $k$ mit der Gleichung $x_1^2+x_2^2=1$. Für die Tangente an $k$$ erhalten wir mit dem vorstehenden Satz die Parameterdarstellung  
+$$ \begin{pmatrix} y_1 \\ y_2 \end{pmatrix}(t_0,\lambda)= 
+   \begin{pmatrix} \cos{t_0} \\ \sin{t_0} \end{pmatrix}+\lambda\cdot
+   \begin{pmatrix} -\sin{t_0} \\ \cos{t_0} \end{pmatrix}\,,\quad\lambda\in\mathbb{R} $$ 
