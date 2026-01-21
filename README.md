@@ -7237,9 +7237,9 @@ Allgemeine Ableitungsregeln für die Verkettung und Verknüpfung von Funktionen 
 >
 >Die Differentiation nach der unabhängigen Variablen $x$ 
 >
->1. einer **Linearkombination** von $f$ und $g$ an der Stelle $x_0$ ist $$\left.\left(\alpha\cdot f(x)+\beta\cdot g(x)\right)^\prime\right|_{x=x=0}=\alpha\cdot f^\prime(x_0)+\beta\cdot g^\prime(x_0),\quad \alpha,\beta\in\mathbb{R} $$
->2. des **Produkts** von $f$ und $g$ an der Stelle $x_0$ ist $$ \left.\left(f(x)\cdot g(x)\right)^\prime\right|_{x=x=0}=f^\prime(x_0)\cdot g(x_0)+f(x_0)\cdot g^\prime(x_0) $$
->3. des **Quotienten** von $f$ und $g$ an der Stelle $x_0$ ist $$\left.\left(\frac{f(x)}{g(x)}\right)^\prime\right|_{x=x=0}=\frac{f^\prime(x_0)\cdot g(x_0)-f(x_0)\cdot g^\prime(x_0)}{\left(g(x_0)\right)^2} $$
+>1. einer **Linearkombination** von $f$ und $g$ an der Stelle $x_0$ ist $$\left.\left(\alpha\cdot f(x)+\beta\cdot g(x)\right)^\prime\right|_{x=x_0}=\alpha\cdot f^\prime(x_0)+\beta\cdot g^\prime(x_0),\quad \alpha,\beta\in\mathbb{R} $$
+>2. des **Produkts** von $f$ und $g$ an der Stelle $x_0$ ist $$ \left.\left(f(x)\cdot g(x)\right)^\prime\right|_{x=x_0}=f^\prime(x_0)\cdot g(x_0)+f(x_0)\cdot g^\prime(x_0) $$
+>3. des **Quotienten** von $f$ und $g$ an der Stelle $x_0$ ist $$\left.\left(\frac{f(x)}{g(x)}\right)^\prime\right|_{x=x_0}=\frac{f^\prime(x_0)\cdot g(x_0)-f(x_0)\cdot g^\prime(x_0)}{\left(g(x_0)\right)^2} $$
 >
 >Die erste Ableitungsregel wird *Linearität der Ableitung* genannt. 
 
@@ -7275,7 +7275,7 @@ Für die Umkehrfunktion gilt in $f(x_0)$ $$f^{-1}\circ f=\operatorname{id}_D\qua
 **Bemerkung 3.** Geometrisch lässt sich die erste Ableitung einer Funktion $f$ an einer Stelle $x_0\in D_f$ als Tangens des Anstiegswinkels $\alpha$ der Tangente an den Funktionsgraph in $P(x_0,f(x_0))$ auffassen, d. h. $$ f'(x_0)=\tan{\alpha} $$ Unter den hier getroffenen Voraussetzungen folgt dann unter Nutzung der Additionstheoreme für Sinus und Kosinus für die Ableitung der Umkehrfunktion $$ \left(f^{-1}\right)'(f(x_0))=\tan{\beta}=\tan{\left(\frac{\pi}{2}-\alpha\right)}=\frac{\sin{\left(\frac{\pi}{2}-\alpha\right)}}{\cos{\left(\frac{\pi}{2}-\alpha\right)}}=\frac{\cos{\alpha}}{\sin{\alpha}}=\frac{1}{\tan{\alpha}}=\frac{1}{f'(x_0)} $$ Vergleiche das verlinkte [Beispiel](https://www.geogebra.org/m/bpteh6eq) und Bemerkung 3 im Abschnitt [Funktionsbegriff](#Funktionsbegriff).
 
 
-Übertragen des Ableitungsbegriffs auf andere Funktionenklassen
+Übertragen auf andere Funktionenklassen
 ===
 
 
@@ -7286,7 +7286,7 @@ Der Begriff des Differentialquotienten für differenzierbare reelle Funktionen e
 
 **Beispiel 6.** Das [Widerstandsmoment](https://de.wikipedia.org/wiki/Widerstandsmoment#Beispiele) $W$ eines Balkens mit rechteckigem Querschnitt lässt sich mithilfe der reellen Funktion $$ f:(0,\infty)^2\to\mathbb{R}\quad\text{mit}\quad(b,h)\mapsto W=f(b,h)=\frac{1}{6}\cdot b\cdot h^2 $$ berechnen, worin die unabhängigen Variablen $b$ die Breite des Profils (parallel zur $y$-Achse) sowie $h$ dessen Höhe bezeichnen. Die partiellen Ableitungen von $f$ nach $b$ bzw. $h$ lassen sich als gewöhnliche Ableitungen nach diesen Variablen berechnen, in dem die jeweils andere als (konstant gewählter) Parameter betrachtet wird $$ W_b:=\frac{\partial f}{\partial b}=\frac{1}{6}\cdot h^2\cdot 1=\frac{1}{6}\cdot h^2\quad\text{sowie}\quad W_h:=\frac{\partial f}{\partial h}=\frac{1}{6}\cdot 2\cdot h\cdot b=\frac{2}{3}\cdot h\cdot b $$ Wir werden diese partielle Ableitungen (später) bei der Berechnung der Abweichung einer Zielgröße in Abhängigkeit mehrerer unabhängige fehlerbehaftete Messgrößen verwenden ([Lineare Fehlerfortpflanzung](https://de.wikipedia.org/wiki/Fehlerfortpflanzung#Mehrere_fehlerbehaftete_Gr%C3%B6%C3%9Fen_2)). Im Beispiel werden wir vermöge der Formel $$ \delta W\approx\frac{\partial f}{\partial b}\cdot\delta b+\frac{\partial f}{\partial h}\cdot \delta h $$ die Unsicherheit $\delta W$ des Widerstandsmoments aus den (bekannten) Unsicherheiten $\delta b$ und $\delta h$ der Messgrößen $(b,h)$ berechnen.
 
-Die partiellen ersten Ableitungen lassen sich unter Verwendung der Javascript-Bibliothek [Algebrite](http://algebrite.org/) interaktiv berechnen. Der Befehl `d(f,b)` berechnet die partielle erste Ableitung einer Funktion $f$ nach der unabhängigen Variablen $b$, `d(f,h)` entsprechend nach der unabhängigen Variablen $h$. Hängt eine Funktion nicht von einer Variablen $x$ ab, so ist der Funktionsterm als 'konstant' bezüglich dieser Variablen zu betrachten: die partielle Ableitung nach dieser Variablen liefert den Ausdruck Null.
+Die **partiellen ersten Ableitungen** lassen sich unter Verwendung der Javascript-Bibliothek [Algebrite](http://algebrite.org/) interaktiv berechnen. Der Befehl `d(f,b)` berechnet die partielle erste Ableitung einer Funktion $f$ nach der unabhängigen Variablen $b$, `d(f,h)` entsprechend nach der unabhängigen Variablen $h$. Hängt eine Funktion nicht von einer Variablen $x$ ab, so ist der Funktionsterm als 'konstant' bezüglich dieser Variablen zu betrachten: die partielle Ableitung nach dieser Variablen liefert den Ausdruck Null.
 
 ```algebrite
 f=1/6*b*h^2
@@ -7387,6 +7387,37 @@ simplify(d(f,x,3))
 
 Die Ableitungsformel ist somit für beliebige natürliche Ordnungen $n>0$ beweisen. $\square$
 
+Für die $k$-te Ableitung eines Produktes zweier Funktionen gilt allgemein der nachstehende Satz.
+
+>**Satz 3.** Gegeben sind zwei mindestens $n$-mal stetig differenzierbare Funktionen $f:D\to\mathbb{R}$ und $g:D\to\mathbb{R}$. 
+>
+> Dann berechnet sich die $n$-te Ableitung des Produktes beider Funktionen gemäß $$
+  \frac{\mathrm{d}^n}{\mathrm{d}x^n}\left(f(x)\cdot g(x)\right)=\sum_{j=0}^n{\left(\binom{n}{j}\cdot f^{(j)}(x)\cdot g^{(n-j)}(x)\right)} $$ 
+> worin 
+>
+>* $f^{(j)}$ die $j$-te Ableitung von $f$ und 
+>* $g^{(n-j)}$ die $(n-j)$-te Ableitung von $g$ bezeichnen 
+>
+> und $n\in\mathbb{N}$ mit $n\geq 1$ gilt.
+
+**Beweis.** Für den Nachweis wird hier das Verfahren der vollständigen Induktion genutzt. Für $n=1$ folgt unmittelbar die Produktregel in Satz 1 (Induktionsanfang). Gilt für ein $n=k$ die Produktregel aus Satz 3, so folgt für den Nachfolger $n=k+1$ $$
+  \begin{split} 
+    \frac{\mathrm{d}^{k+1}}{\mathrm{d}x^{k+1}}\left(f(x)\cdot g(x)\right) & = \frac{\mathrm{d}}{\mathrm{d}x}\left(\frac{\mathrm{d}^{k}}{\mathrm{d}x^{k}}\left(f(x)\cdot g(x)\right)\right) \\
+    & = \frac{\mathrm{d}}{\mathrm{d}x}\left(\sum_{j=0}^k{\left(\binom{k}{j}\cdot f^{(j)}(x)\cdot g^{(k-j)}(x)\right)}\right) \\
+    & = \sum_{j=0}^k{\left(\binom{k}{j}\cdot\left[ f^{(j+1)}(x)\cdot g^{(k-j)}(x)+f^{(j)}(x)\cdot g^{(k-j+1)}(x) \right]\right)} \\
+    & = \sum_{j=0}^k{\left(\binom{k}{j}\cdot f^{(j+1)}(x)\cdot g^{(k-j)}(x)\right)} + \sum_{j=0}^k{\left(\binom{k}{j}\cdot f^{(j)}(x)\cdot g^{(k-j+1)}(x)\right)}
+  \end{split} $$ 
+Unter Nutzung der Indexverschiebung $j+1=i\leftrightarrow j=i-1$ im ersten der beiden Summanden berechnet sich hieraus unter Nutzung der **Rekursionsformel**<!-- style="color: purple" --> für [Binomialkoeffizienten](https://de.wikipedia.org/wiki/Binomialkoeffizient#Eigenschaften) $$
+  \begin{split} 
+    \frac{\mathrm{d}^{k+1}}{\mathrm{d}x^{k+1}}\left(f(x)\cdot g(x)\right) & = \sum_{i=1}^k{\left(\binom{k}{i-1}\cdot f^{(i)}(x)\cdot g^{(k+1-i)}(x)\right)} + \sum_{i=0}^k{\left(\binom{k}{i}\cdot f^{(i)}(x)\cdot g^{(k+1-i)}(x)\right)} \\
+    & = \binom{k}{0}\cdot f^{(0)}(x)\cdot g^{(k+1)}(x) + \sum_{i=1}^k{\left(\textcolor{purple}{\left[\binom{k}{i-1}+\binom{k}{i}\right]}\cdot f^{(i)}(x)\cdot g^{(k+1-i)}(x)\right)} + \binom{k}{k}\cdot f^{(k+1)}(x)\cdot g^{(0)}(x) \\
+    & = \binom{k+1}{0}\cdot f^{(0)}(x)\cdot g^{(k+1)}(x) + \sum_{i=1}^k{\left(\textcolor{purple}{\binom{k+1}{i}}\cdot f^{(i)}(x)\cdot g^{(k+1-i)}(x)\right)} + \binom{k+1}{k+1}\cdot f^{(k+1)}(x)\cdot g^{(0)}(x) \\
+    & = \sum_{i=0}^{k+1}{\left(\binom{k+1}{i}\cdot f^{(i)}(x)\cdot g^{(k+1-i)}(x)\right)}
+    \end{split} $$ 
+woraus die Behauptung des Satzes für $n=k+1$ folgt. Zusammen mit der Induktionsvoraussetzung folgt die Gültigkeit obigen Satzes für alle $n\in\mathbb{N}$ mit $n\geq 1$.
+
+$\square$
+
 Einen informativen Überblick über den Ableitungsbegriff, Ableitungsregeln und höhere Ableitungen bietet die nachstehend verlinkte Vorlesung.
 
 !?[Differentialrechnung](https://www.youtube.com/watch?v=NW9nVWDXtsE "RM I - 05 - Differentialrechnung 1 Ableitung, Differentiationsregeln, höhere Ableitungen")
@@ -7424,6 +7455,33 @@ Für den Funktionsterm von $f$ gilt unter Umformen der Potenzen in Produkte $$ f
 Allgemein lässt sich für eine differenzierbare Funktion $f$ mit $$ f(x) = k \cdot (u(x))^a \cdot (v(x))^b \cdot (w(x))^c \cdot \dots $$ in der unabhängigen Variablen $x\in D\subseteq\mathbb{R}$ mit $k\in\mathbb{R}$ und natürlichen Konstanten $a\in\mathbb{N}^\ast$, $b\in\mathbb{N}^\ast$, $c\in\mathbb{N}^\ast$ usw. die logarithmische Ableitung zu $$ \operatorname{L}(f) = \left(a\cdot\operatorname{L}(u) + b\cdot\operatorname{L}(v) + c\cdot\operatorname{L}(w) + \dots\right) $$ berechnen. Für verschiedene Parameter lassen sich hieraus unterschiedliche Rechenregeln ableiten: bei den Faktoren $k=1$, $a=1$, $b=1$ die Produktregel, bei den Faktoren $k=1$, $a=1$, $b=-1$ die Quotientenregel und mit $k=1$, $a=-1$ die Reziprokenregel. Siehe [Rechenregeln](https://de.wikipedia.org/wiki/Logarithmische_Ableitung#Rechenregeln).
 
 ****************************************
+
+**Frage 3.** Berechnen Sie die neunte Ableitung der Funktion $f:\mathbb{R}\to\mathbb{R}$ mit $$ y=f(x)=x^{10} $$
+
+[[3628800*x]]
+@Algebrite.check(3628800*x)
+
+**Frage 4.** Berechnen Sie die ersten Ableitungen der Polynomfunktionen $f_j:[0,1]\to\mathbb{R}$ mit $$ y=f_j(t)=\binom{3}{j}\cdot(1-t)^{3-j}\cdot t^{j} $$ mit $j\in\{0,1,2,3\}$. Für die erste Ableitung wird das Symbol $\dot{f}_j$ benutzt.
+
+$\dot{f}_0(t)$
+
+[[-3+6*t-3*t^2]]
+@Algebrite.check(-3+6*t-3*t^2)
+
+$\dot{f}_1(t)$
+
+[[9*t^2-12*t+3]]
+@Algebrite.check(9*t^2-12*t+3)
+
+$\dot{f}_2(t)$
+
+[[-9*t^2+6*t]]
+@Algebrite.check(-9*t^2+6*t)
+
+$\dot{f}_3(t)$
+
+[[3*t^2]]
+@Algebrite.check(3*t^2)
 
 [^1]: Ist eine Funktion $f$ durch eine Bildungsvorschrift der Form $y=f(x)$ beschrieben, so nennt man diese Darstellung *explizite Darstellungsform*. Ist $f$ hingegen durch $F(x,f(x))=0$ beschrieben, so spricht man von einer *impliziten Darstellungsform*.
 
@@ -7519,13 +7577,19 @@ Tangentenverfahren nach Newton
 ===
 
 
-Viele Gleichungen lassen sich mit dem Ansatz 'Differential einer Funktion' näherungsweise lösen. Hierfür wird die Gleichung in die Form $f(x)=0$ gebracht, worin $x$ eine reelle Variable bezeichnet, welche als Lösung von $f(x)=0$ Nullstelle einer Funktion $f$ ist. 
+Viele Gleichungen lassen sich mit dem Ansatz 'Differential einer Funktion' näherungsweise lösen. Hierfür wird die Gleichung in die Form $f(x)=0$ gebracht, worin $x$ eine reelle Variable bezeichnet, welche als Lösung von $f(x)=0$ Nullstelle einer Funktion $f$ ist. Im Unterschied zum Ansatz *Regula falsi* im Abschnitt [Stetigkeit](#Stetigkeit) wird die Funktion $f$ in einer hinreichend großen Umgebung $U(x^\ast)$ einer Lösung $x^\ast$ mit $f(x^\ast)=0$ als differenzierbar vorausgesetzt. 
 
-Im Unterschied zum Ansatz *Regula falsi* im Abschnitt [Stetigkeit](#Stetigkeit) wird die Funktion $f$ in einer hinreichend großen Umgebung $U(x^\ast)$ einer Lösung $x^\ast$ mit $f(x^\ast)=0$ als differenzierbar vorausgesetzt. An einer geeigneten Startstelle $x_0\in U(x^\ast)$ wird die Tangente an den Graph der Funktion $f$ im Punkt $P_0(x_0,f(x_0))$ gebildet und an dessen Stelle mit der $x$-Achse geschnitten. Die Schnittstelle $x_1$ bildet den neuen Startwert, zu welchem in $P_1(x_1,f(x_1))$ erneut die Tangente gebildet und mit der $x$-Achse zum Schnitt gebracht wird, woraus sich die Schnittstelle $x_2$ ergibt usf. Im einzelnen berechnen sich:
+<!-- style="background-color: lightgray;"-->
+> **Verfahren.** 
+> An einer geeigneten Startstelle $x_0\in U(x^\ast)$ wird die Tangente an den Graph der Funktion $f$ im Punkt $P_0(x_0,f(x_0))$ gebildet und an dessen Stelle mit der $x$-Achse geschnitten. Die Schnittstelle $x_1$ bildet den neuen Startwert, zu welchem in $P_1(x_1,f(x_1))$ erneut die Tangente gebildet und mit der $x$-Achse zum Schnitt gebracht wird, woraus sich die Schnittstelle $x_2$ ergibt usf. 
+>
+> Im Einzelnen berechnen sich:
+>
+> 1. Zu einer Stelle $x_j\in U(x^\ast)$ berechnet sich die Gleichung der Tangente an den Graph im Kurvenpunkt $P_j(x_j,f(x_j))$ mithilfe des Differentials $$ \operatorname{d}y=f'(x_j)\cdot\operatorname{d}x\quad\leadsto\quad y=f'(x_j)\cdot x+f(x_j)-f'(x_j)\cdot x_j $$ worin $x_j$ den Startwert im $j$-ten Iterationsschritt bezeichnet. Speziell ist $x_0$ der geeignet zu wählende Startwert des Verfahrens.
+> 2. Der neue Startwert $x_{j+1}$ berechnet sich als Nullstelle der Tangente in $x_j$ gemäß $$ 0=f'(x_j)\cdot x+f(x_j)-f'(x_j)\cdot x_j \quad\leftrightarrow\quad x_{j+1}:=x=\frac{f'(x_j)\cdot x_j-f(x_j)}{f'(x_j)}=x_j-\frac{f(x_j)}{f'(x_j)} $$ vorausgesetzt, $f'(x_j)\not=0$.
+> 3. Werden mit dem neuen Startwert die Schritte 1. und 2. wiederholt, so entsteht eine Iterationsfolge von Argumenten $x_0,x_1,x_2,...$ mit $$ x_{j+1}=x_j-\frac{f(x_j)}{(f'(x_j))}\,,\;j\in\mathbb{N} $$ die sich rekursiv bestimmen lassen. Das Iterationsverfahren konvergiert, falls $$ \lim_{j\to\infty}{x_j}=x^\ast\,(\in\mathbb{R}) $$ d. h. falls $x^\ast$ als Lösung der Gleichung $f(x)=0$ Grenzwert dieser Zahlenfolge ist.
 
-1. Zu einer Stelle $x_j\in U(x^\ast)$ berechnet sich die Gleichung der Tangente an den Graph im Kurvenpunkt $P_j(x_j,f(x_j))$ mithilfe des Differentials $$ \operatorname{d}y=f'(x_j)\cdot\operatorname{d}x\quad\leadsto\quad y=f'(x_j)\cdot x+f(x_j)-f'(x_j)\cdot x_j $$ worin $x_j$ den Startwert im $j$-ten Iterationsschritt bezeichnet. Speziell ist $x_0$ der geeignet zu wählende Startwert des Verfahrens.
-2. Der neue Startwert $x_{j+1}$ berechnet sich als Nullstelle der Tangente in $x_j$ gemäß $$ 0=f'(x_j)\cdot x+f(x_j)-f'(x_j)\cdot x_j \quad\leftrightarrow\quad x_{j+1}:=x=\frac{f'(x_j)\cdot x_j-f(x_j)}{f'(x_j)}=x_j-\frac{f(x_j)}{f'(x_j)} $$ vorausgesetzt, $f'(x_j)\not=0$.
-3. Werden mit dem neuen Startwert die Schritte 1. und 2. wiederholt, so entsteht eine Iterationsfolge von Argumenten $x_0,x_1,x_2,...$ mit $$ x_{j+1}=x_j-\frac{f(x_j)}{(f'(x_j))}\,,\;j\in\mathbb{N} $$ die sich rekursiv bestimmen lassen. Das Iterationsverfahren konvergiert, falls $$ \lim_{j\to\infty}{x_j}=x^\ast\,(\in\mathbb{R}) $$ d. h. falls $x^\ast$ als Lösung der Gleichung $f(x)=0$ Grenzwert dieser Zahlenfolge ist.
+Das Tangentenverfahren zur näherungsweisen Lösung einer Gleichung ist für die Beispielgleichung $$ 3\cdot 1.5^x=4\quad\leftrightarrow\quad f(x):=3\cdot 1.5^x-4=0\,,\quad x\in\mathbb{R} $$ in nachstehender Abbildung graphisch dargestellt.
 
 ![Tangentenverfahren Newton](img/mat-bild-39.png "_Fig._ Graphische Darstellung des Tangentenverfahrens nach Newton zur Berechnung einer Lösung einer Gleichung. Im Beispiel ist die Lösung von $3\cdot 1.5^x=4$ gesucht. Im Schaubild wird bei einem gewählten Startwert $x_0\approx 3.3$ der Näherungswert der Lösung $x_3\approx 0.7$ abgelesen.")
 
@@ -7587,8 +7651,37 @@ Oszillierendes Verhalten ergibt sich für das Polynom $f(x)=x^3-2x+2$ an der Ste
 
 ****************************************
 
+**Frage 2.** Die Quadratwurzel aus $2$ lässt sich unter Nutzung des Newtonschen Tangentenverfahrens aus der Gleichung $$ \sqrt{2}=x\quad\leftrightarrow\quad f(x)=x^2-2=0 $$ näherungsweise berechnen. 
 
-### Differentiation von Vektoren
+Berechnen Sie Iterationsvorschrift $x_{n+1}=g(x_n)$.
+
+*Bemerkung.* Tragen Sie die Iterationsvorschrift in der Form $x_{n+1}-g(x_n)=0$ ein. Nutzen Sie für die Eingabe der Variablen $x_n$ bzw. $x_{n+1}$ die Ausdrücke **xn** bzw. **xn1**.
+
+[[xn1=xn-1/2*xn+1/xn]]
+@Algebrite.check_expression(xn1-xn+1/2*xn-1/xn=0)
+****************************************
+
+Die Iterationsvorschrift für die näherungsweise Berechnung von $\sqrt{2}$ nach dem Newtonschen Tangentenverfahren berechnet sich zu $$ x_{n+1}=x_{n}-\frac{x_n^2-2}{2\cdot x_n}\quad\leftrightarrow\quad x_{n+1}-x_{n}+\frac{x_n^2-2}{2\cdot x_n}=0 $$
+
+****************************************
+
+**Frage 3.** Der Wert $\ln{2}$ lässt sich unter Nutzung des Newtonschen Tangentenverfahrens aus der Gleichung $$ \ln{2}=x\quad\leftrightarrow\quad f(x)=\exp{x}-2=0 $$ näherungsweise berechnen. 
+
+Berechnen Sie mit Hilfe der Iterationsvorschrift $ x_{n+1}=g(x_n) $ für den Startwert $x_0=0.5$ den Näherungswert $x_2$. Geben Sie den Wert auf vier Stellen nach dem Komma gerundet an.
+
+*Bemerkung.* Benutzen Sie für die Eingabe den Punkt als Dezimaltrenner.
+
+[[0.6933]]
+@Algebrite.check2(0.6933,0.0001)
+****************************************
+
+Die Iterationsvorschrift für die näherungsweise Berechnung von $\ln{2}$ nach dem Newtonschen Tangentenverfahren berechnet sich zu $$ x_{n+1}=x_{n}-\frac{\exp{x}-2}{\exp{x}}\quad\leftrightarrow\quad x_{n+1}-x_{n}+\frac{\exp{x}-2}{\exp{x}}=0 $$
+Mit dem Startwert $x_0=0.5$ berechnen sich schrittweise $$
+  x_1=0.5-\frac{\exp{0.5}-2}{\exp{0.5}}\approx 0.7131\quad\text{und}\quad x_2\approx 0.7131-\frac{\exp{0.7131}-2}{\exp{0.7131}}\approx 0.6933 $$
+
+****************************************
+
+### Differenzierbarkeit von Vektoren
 
 
 Die Differenzierbarkeit bei reellen Funktionen lässt sich auf vektorwertige Funktionen einer reellen Variablen $$ f:D\to\mathbb{R}^n\,,\;t\mapsto (f_1(t)\,,\;f_2(t)\,,\;...\,,\; f_n(t)) $$ übertragen, worin die reellen (Koordinaten-) Funktionen $f_k$ über dem gleichen Definitionsbereich  $D\subset\mathbb{R}$ betrachtet werden. Diese werden im Folgenden auf $D$ differenzierbar vorausgesetzt. Aus Abschnitt [Differenzierbarkeit](#Differenzierbarkeit) lässt sich die Ableitung komponentenweise festlegen gemäß $$ \frac{\mathrm{d}}{\mathrm{d}x}f(t):=\dot{f}(t)= \left(\dot{f}_1(t)\,,\;\dot{f}_2(t)\,,\;...\,,\;\dot{f}_n(t)\right) $$ worin $\dot{f}_k$ die Ableitungsfunktionen der Funktionen $f_k$ bezeichnen.
@@ -7716,3 +7809,334 @@ yp.on('drag', function() { board.update(); });
 $$ \begin{pmatrix} y_1 \\ y_2 \end{pmatrix}(t_0,\lambda)= 
    \begin{pmatrix} \cos{t_0} \\ \sin{t_0} \end{pmatrix}+\lambda\cdot
    \begin{pmatrix} -\sin{t_0} \\ \cos{t_0} \end{pmatrix}\,,\quad\lambda\in\mathbb{R} $$ 
+Hierbei liegen Stützvektor und Richtungsvektor zueinander orthogonal, denn es gilt 
+$$ \begin{pmatrix} \cos{t_0} \\ \sin{t_0} \end{pmatrix}\cdot\begin{pmatrix} -\sin{t_0} \\ \cos{t_0} \end{pmatrix}=-\cos{t_0}\cdot\sin{t_0}+\sin{t_0}\cdot\cos{t_0}=0 $$
+d. h. "Tangente und Radius stehen am Kreis senkrecht aufeinander".
+
+
+Bézier-Kurven
+===
+
+
+Hier werden nun Bézier-Kurven – eine zentrale Methode im Computer-Aided Design (CAD) – betrachtet. Diese Kurven werden in CAD-Systemen verwendet, um Kurven und Konturen zu modellieren. 
+
+Mathematisch lassen sie sich durch vektorwertige Funktionen beschreiben. Die Eigenschaft der *Differenzierbarkeit* dieser Funktionen ist hierbei entscheidend, um glatte, kontinuierliche Bewegungen und Formen im Maschinenbau, beispielsweise in der Fahrzeugtechnik zu erzeugen. Sprunghafte Änderungen von Richtungen führen zu Ruckeln, schlechter Fahrdynamik und erhöhtem Verschleiß.
+
+Eine Bézier-Kurve ist eine parametrisierte Kurve, die durch eine endliche Anzahl von **Kontrollpunkten** definiert wird. Der Verlauf der Bézier-Kurve wird durch das aus den Kontrollpunkten gebildete **Konrollpolygon** bestimmt. 
+
+**Beispiel 3.** Eine quadratische Bézier-Kurve bzw. Bézier-Kurve zweiter Ordnung wird über die Punkte
+
+- $ \textcolor{red}{P_0 = (0, 0)^\top} $
+- $ \textcolor{magenta}{P_1 = (2, 3)^\top} $
+- $ \textcolor{blue}{P_2 = (4, 1)^\top} $
+
+festgelegt. Die Parameterdarstellung der zugehörigen Bézier-Kurve $k$ wird nach dem Muster $$ f(t) = (1 - t)^2\cdot \textcolor{red}{P_0} + 2(1 - t)t\cdot \textcolor{magenta}{P_1} + t^2\cdot \textcolor{blue}{P_2}\,,\quad t \in [0, 1]  $$ gebildet. Das ist eine vektorwertige Funktion $f:[0,1]\to\mathbb{R}^2$ mit den Koordinatenfunktionen 
+$$ \begin{split} 
+    t\mapsto x_1=f_1(t)= \textcolor{red}{0}\cdot(1 - t)^2 + \textcolor{magenta}{2}\cdot 2(1 - t)t + \textcolor{blue}{4}\cdot t^2 & = 4t\quad\text{sowie}\quad \\
+    t\mapsto x_2=f_2(t)= \textcolor{red}{0}\cdot(1 - t)^2 + \textcolor{magenta}{3}\cdot 2(1 - t)t + \textcolor{blue}{1}\cdot t^2 & = 6t-5t^2
+   \end{split} $$ 
+dies sind ganzrationale Funktionen vom Grad $n=2$.
+
+Die Vorschrift zur Bildung einer Bézier-Kurve zweiter Ordnung kann auf den Fall $n>2$ verallgemeinert werden. Hierfür werden Kontrollpunkte $P_0$, $P_1$ bis $P_{n-1}$ und $P_n$ nagenommen. 
+
+> **Definition 1.** Die [Bézier-Kurve](https://de.wikipedia.org/wiki/B%C3%A9zierkurve) $n$-ter Ordnung zum Kontrollpolygon $$ [P_0,P_1,...,P_{n-1},P_n] $$ besitzt die Parametrisierung $$
+  t\in[0,1]\mapsto X=f(t)=\sum_{i=0}^n{B_i^n(t)\cdot P_i}\,,\quad n\in\mathbb{N},\;n\geq2 $$ 
+> worin $P_i$ die Ortsvektoren der Kontrollpunkte $P_i$ und $$
+  B_i^n(t)=\binom{n}{i}\cdot(1-t)^{n-i}\cdot t^i $$ 
+> die [Bernsteinpolynome](https://de.wikipedia.org/wiki/Bernsteinpolynom) $n$-ten Grades bezeichnen.[^1]
+
+**Beispiel 4.** Die Bernsteinpolynome für $n\leq2$ lassen sich mit der expliziten Bildungsvorschrift in der vorstehenden Definition berechnen. 
+
+* Für den Indexwert $n=2$ berechnen sich die Bernsteinpolynome zweiten Grades gemäß $$
+  \begin{array}{lll}
+    B_0^2(t) & = 1\cdot(1-t)^2\cdot t^0 & = (1-t)^2 \\
+    B_1^2(t) & = 2\cdot(1-t)^1\cdot t^1 & = 2t(1-t) \\
+    B_2^2(t) & = 1\cdot(1-t)^0\cdot t^2 & = t^2
+  \end{array} $$ vergleiche Beispiel 3.
+* Für $n=3$ berechnen sich entsprechend die Bernsteinpolynome dritten Grades $$
+  \begin{array}{lll}
+    B_0^3(t) & = 1\cdot(1-t)^3\cdot t^0 & = (1-t)^3 \\
+    B_1^3(t) & = 3\cdot(1-t)^2\cdot t^1 & = 3t(1-t)^2 \\
+    B_2^3(t) & = 3\cdot(1-t)^1\cdot t^2 & = 3t^2(1-t)^1 \\
+    B_2^3(t) & = 1\cdot(1-t)^0\cdot t^3 & = t^3
+  \end{array} $$
+
+Eine Berechnung der Bernsteinpolynome zu beliebigem Grad $n\in\mathbb{N}$ lässt sich unter Nutzung der Javascript-Bibliothek [Algebrite](http://algebrite.org/) interaktiv berechnen. Hierbei gilt für beliebige Grade $n$, dass $\sum_{i=0}^n{B^n_i(t)}=1$ für alle $t\in[0,1]$ wie sich unter Nutzung des [Binomischen Lehrsatzes](https://de.wikipedia.org/wiki/Binomischer_Lehrsatz) unmittelbar nachweisen lässt.
+
+```algebrite
+n=3
+j=2
+binomial(n,j)*t^j*(1-t)^(n-j)
+sum(binomial(n,i)*t^i*(1-t)^(n-i),i,0,n)
+```
+@Algebrite.eval
+
+Eine vektorwertige Funktion $f$ ist **differenzierbar**, wenn ihre Komponentenfunktionen $f_k$ mit $k\in\{1,2,...,m\}$ differenzierbar sind. Die Ableitung $\dot{f}(t) $ gibt die Geschwindigkeit (kinematisch) beziehungsweise Tangentenrichtung (geometrisch) der Kurve an.
+
+Für den **Tangentenvektor** an eine Bézierkurve zweiter Ordnung in $X_0=f(t_0)\in k$ mit $t_0\in[0,1]$ gilt beispielsweise $$ 
+  \dot{f}(t_0) =\frac{\mathrm{d}}{\mathrm{d}t}{f(t)}|_{t=t_0}=\dot{B}_0^2(t_0)\cdot P_0+\dot{B}_1^2(t_0)\cdot P_1+\dot{B}_2^2(t_0)\cdot P_2= -2\cdot(1-t_0)\cdot P_0+\left(2\cdot(1-t_0)-2\cdot t_0\right)\cdot P_1+2\cdot t_0\cdot P_2 $$ 
+Diese Ableitung ist **stetig** – also ist die Kurve **glatt**. Insbesondere berechnen sich mit $$
+  \dot{f}(0)=2\cdot(P_1-P_0) \quad\text{bzw.}\quad \dot{f}(1)=2\cdot(P_2-P_1) $$ 
+die Tangentenvektoren in $X_0=f(0)=P_0$ beziehungsweise $X_1=f(1)=P_2$.
+
+```algebrite
+clearall
+B=d(binomial(2,j)*t^j*(1-t)^(2-j),t)
+B0=subst(0,j,B)
+B1=subst(1,j,B)
+B2=subst(2,j,B)
+T=B0*P0+B1*P1+B2*P2
+subst(0,t,T)
+```
+@Algebrite.eval
+
+> **Satz 2.** Die Tangentenvekoren einer Bézier-Kurve $n$-ter Ordnung (n>2) im Startpunkt $P_0$ beziehungsweise Endpunkt $P_n$ lassen sich als Differenzvektoren der Kontrollpunkte $[P_0,P_1,...,P_{n-1},P_n]$ angeben $$
+  \dot{f}(0)=n\cdot(P_1-P_0) \quad\text{bzw.}\quad \dot{f}(1)=n\cdot(P_n-P_{n-1}) $$ 
+> Die Bézier-Kurve berührt demnach in $P_0$ und $P_n$ die Seiten des Kontrollpolygons.
+
+**Beweis.** Nach Definition 1 berechnet sich die Bézier-Kurve mit der Funktion $$ X=f(t)=\sum_{j=0}^n{B_j^n(t)\cdot P_j} $$ der Richtungsvektor der Tangente wird mittels $$ \dot{f}(t)=\sum_{j=0}^n{\dot{B}_j^n(t)\cdot P_j} $$ berechnet: Hierfür sind also nur die Bernstein-Polynome abzuleiten. Mit der Produktregel berechnen sich $$
+  \dot{B}_j^n(t)=\left\{\begin{array}{lcl} 
+    -n\cdot(1-t)^{n-1} & \text{für} & j=0 \\ 
+    n\cdot\left(-(n-1)\cdot(1-t)^{n-2}\cdot t+(1-t)^{n-1}\right) & \text{für} & j=1 \\
+    \binom{n}{j}\cdot\left(-(n-j)\cdot(1-t)^{n-j-1}\cdot t^j+(1-t)^{n-j}\cdot j\cdot t^{j-1}\right) & \text{für} & j\in\{2,3,...,n-2\} \\
+    n\cdot\left((-1)\cdot t^{n-1}+(1-t)\cdot(n-1)\cdot t^{n-2}\right) & \text{für} & j=n-1 \\
+    n\cdot t^{n-1} & \text{für} & j=n
+  \end{array}\right. $$
+An den Stellen $t=0$ beziehungsweise $t=1$ berechnen sich diese somit $$
+  \dot{B}_j^n(0)=\left\{\begin{array}{ccl}
+    -n & \text{für} & j=0 \\ n & \text{für} & j=1 \\ 0 & \text{für} & sonst 
+  \end{array}\right.\quad\text{sowie}\quad
+  \dot{B}_j^n(1)=\left\{\begin{array}{ccl}
+    -n & \text{für} & j=n-1 \\ n & \text{für} & j=n \\ 0 & \text{für} & sonst 
+  \end{array}\right.$$
+Hieraus folgen schließlich $$
+  \dot{f}(0)=\sum_{j=0}^n{\dot{B}_j^n(0)\cdot P_j}=n\cdot(P_1-P_0)\quad\text{bzw.}\quad
+  \dot{f}(1)=\sum_{j=0}^n{\dot{B}_j^n(1)\cdot P_j}=n\cdot(P_n-P_{n-1}) $$
+und damit die Behauptung.
+
+$\square$
+
+Mit der nachstehenden interaktiven Graphik lassen sich Bézier-Kurven dritter Ordnung mit dynamischen Segmenten erstellen und bearbeiten: die Lage gesetzter Kontrollpunkte lässt sich ändern. Über den Schalter "Entferne Segment" kann die zuletzt erzeugte Bézier-Kurve wieder entfernt werden.
+
+<button onclick="window.addSegment();">Erzeuge Segment</button>
+<button onclick="window.removeSegment();">Entferne Segment</button>
+
+``` javascript @JSX.Graph
+// Globale Variablen
+var p = [];
+var col = 'red';
+
+// Erstelle Startpunkte
+p.push(board.create('point', [6, 2], { color: col }));
+col = 'blue';
+p.push(board.create('point', [4, 8], { color: col }));
+p.push(board.create('point', [0, 0], { color: col }));
+col = 'red';
+p.push(board.create('point', [-4, 2], { color: col }));
+col = 'blue';
+p.push(board.create('point', [-4, -6], { color: col }));
+p.push(board.create('point', [2, -2], { color: col }));
+col = 'red';
+p.push(board.create('point', [2, -6], { color: col }));
+
+// Bezier-Kurve
+var c = board.create('curve', JXG.Math.Numerics.bezier(p), {
+    strokeColor: 'blue',
+    strokeOpacity: 0.6,
+    strokeWidth: 5
+});
+
+// Funktionen im window-Scope definieren
+window.addSegment = function() {
+    col = 'blue';
+    p.push(board.create('point', [Math.random() * 8 - 4, Math.random() * 8 - 4], {
+        strokeColor: col,
+        fillColor: col
+    }));
+    p.push(board.create('point', [Math.random() * 8 - 4, Math.random() * 8 - 4], {
+        strokeColor: col,
+        fillColor: col
+    }));
+    col = 'red';
+    p.push(board.create('point', [Math.random() * 8 - 4, Math.random() * 8 - 4], {
+        strokeColor: col,
+        fillColor: col
+    }));
+    board.update();
+};
+
+window.removeSegment = function() {
+    if (p.length > 4) {
+        board.removeObject(p[p.length - 1]);
+        board.removeObject(p[p.length - 2]);
+        board.removeObject(p[p.length - 3]);
+        p.splice(p.length - 3, 3);
+    }
+    board.update();
+};
+```
+<p>
+  <strong>Interaktive Anwendung:</strong> 
+  <a href="https://jsxgraph.org/share/example/bezier-curves">Bezier curves</a>  
+  von <a href="https://mobile-learning.uni-bayreuth.de/">Center of Mobile Learning with Digital Technology</a>  
+  ist unter der Lizenz <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> verfügbar.
+</p>
+<a href="https://jsxgraph.org" target="_blank" title="Visit JSXGraph">
+    <img src="https://jsxgraph.org/home/media/logos/jsxgraph/png/screen/jsxgraph-logo_blue-banner-solid-text-solid.png" 
+         alt="JSXGraph Logo" 
+         width="200" 
+         style="width:100px;cursor:pointer;">
+</a>
+
+**Bemerkung 1.** In praktischen Anwendungen werden häufig Bézier-Kurven benutzt, um Bewegungsvorgänge beziehungsweise Bahnen von Werkzeugen zu beschreiben. Folgt beispielsweise ein Fräskopf einer solchen Bahn, so ändern sich Geschwindigkeit und Beschleunigung entlang der Bahn *stetig*. Hierdurch werden Vibrationen und Oberflächenfehler im Vergleich zu nicht stetigen Geschwindigkeitsverläufen verringert beziehungsweise der Bruch der Werkzeugspitze vermieden.
+
+Werden in einer Anwendung mehrere Bézier-Kurven verwendet, so unterscheidet man am Übergangspunkt:
+
+| Stetigkeit | Bedeutung | Beispiel |
+|-----------|----------|--------|
+| $ C^0 $ | Kurve ist stetig (keine Sprünge) | Kurve verläuft ohne Unterbrechung |
+| $ C^1 $ | Kurve und Geschwindigkeit sind stetig | Keine Ecken, glatte Übergänge |
+| $ C^2 $ | Kurve, Geschwindigkeit und Beschleunigung sind stetig | Ideal für hochwertige Oberflächen (z. B. bei Autos) |
+
+
+Lissajous-Figuren
+===
+
+
+In der Analysis bieten Lissajous-Figuren eine faszinierende Verbindung zwischen *trigonometrischen Funktionen*, *parametrischen Kurven* und *physikalischen Schwingungen* – besonders relevant in der Mechanik, Akustik und Signalverarbeitung. Lissajous-Figuren entstehen, wenn zwei harmonische Schwingungen senkrecht zueinander überlagert werden. 
+
+<!-- style="background-color: lightgray;"-->
+> Mathematisch beschreibt man **Lissajous-Figuren** durch eine *vektorwertige Funktion* der Form
+>
+>$$
+  t\mapsto f(t) = \begin{pmatrix} A\cdot\sin{(a\cdot t + \delta)} \\ B\cdot\sin{(b\cdot t +\varphi)} \end{pmatrix}, \quad t \in \mathbb{R} $$
+>
+> Hierin bezeichnen:
+>
+>- $A>0$, $B>0$ Amplituden der Schwingungen in die Koordinatenrichtungen,
+>- $a>0$, $b>0$ die Kreisfrequenzen,
+>- $\delta\in(-\pi,\pi]$, entsprechend $\varphi$ die Phasenverschiebungen
+>
+>der entsprechenden Schwingungen.
+>
+>- Eine Lissajous-Figur ist periodisch und damit geschlossen, wenn das Frequenzverhältnis $a/b\in\mathbb{Q}$, d. h. rational ist.
+>- Die [Form einer Lissajous-Figur](https://de.wikipedia.org/wiki/Lissajous-Figur#Abbildungen) hängt vom Verhältnis der Frequenzen und der Phasenverschiebung ab.
+
+
+**Beispiel 5.** Gegeben ist eine Lissajous-Figur zu den Koordinatenfunktionen
+
+$$ x(t)=A\cdot\sin{(a\cdot t+\delta)}\,,\quad y(t)=B\cdot\sin{(b\cdot t)}\,,\quad t\in[0,2\pi) $$
+
+Variieren Sie die auftretenden Pareameter, um verschiedene Formen zu erzeugen. Beispielsweise ergibt sich mit den Parameterwerten $A=2$, $B=4$, $a=1$, $b=2$ und $\delta=\frac{\pi}{2}$ $$
+f(t) = \begin{pmatrix} 2\cdot\sin{\left(t+\frac{\pi}{2}\right)} \\ 4\cdot\sin{\left(2\cdot t + \frac{\pi}{2}\right)} \end{pmatrix} = \begin{pmatrix} 2\cdot\cos{t} \\ 4\cdot\sin{(2\cdot t)} \end{pmatrix} $$
+Diese Kurve erzeugt eine charakteristische „8“-Form – ein klassisches Muster in der Physik und Technik.
+
+```javascript @JSX.Graph
+var a = board.create('slider', [[4, 8], [8, 8], [0, 4, 6]], { name: 'a' });
+var b = board.create('slider', [[4, 7], [8, 7], [0, 2, 6]], { name: 'b' });
+var A = board.create('slider', [[4, 6], [8, 6], [0, 5, 6]], { name: 'A' });
+var B = board.create('slider', [[4, 5], [8, 5], [0, 4, 6]], { name: 'B' });
+var delta = board.create('slider', [[4, 4], [8, 4], [0, 0, Math.PI]], { name: 'δ' });
+
+var c = board.create('curve', [
+          function(t) { return A.Value() * Math.sin(a.Value() * t + delta.Value()); },
+          function(t) { return B.Value() * Math.sin(b.Value() * t); },
+          0, 2 * Math.PI], { strokeColor: 'blue', strokeWidth: 3 });
+board.unsuspendUpdate();
+```
+<p>
+  <strong>Interaktive Anwendung:</strong> 
+  <a href="https://jsxgraph.org/share/example/lissajous-curves">Lissajous curve</a>  
+  von <a href="https://mobile-learning.uni-bayreuth.de/">Center of Mobile Learning with Digital Technology</a>  
+  ist unter der Lizenz <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> verfügbar.
+</p>
+<a href="https://jsxgraph.org" target="_blank" title="Visit JSXGraph">
+    <img src="https://jsxgraph.org/home/media/logos/jsxgraph/png/screen/jsxgraph-logo_blue-banner-solid-text-solid.png" 
+         alt="JSXGraph Logo" 
+         width="200" 
+         style="width:100px;cursor:pointer;">
+</a>
+
+Für eben Kurven wie beispielsweise für Lissajous-Figuren lassen sich Tangenten mit besonderer Lage zu den Koordinatenachsen auszeichnen.
+
+>**Definition 2.** Gegeben ist eine vektorwertige Funktion $f:D\to\mathbb{R}^2$ mit $D\subseteq\mathbb{R}$ und $$
+  f:t\mapsto (x,y)=f(t)=(f_1(t),f_2(t))\,,\quad t\in D $$
+> Ist $f$ differenzierbar in $t_0\in D$, so nehmen für eine
+>
+>1. **horizontale** Tangente in $t_0$ die Ableitungen der Koordinatenfunktionen Werte $\dot{f}_2(t_0))=0$ und $\dot{f}_1(t_0))\not=0$ an.
+>2. **vertikale** Tangente in $t_0$ die Ableitungen der Koordinatenfunktionen Werte $\dot{f}_1(t_0))=0$ und $\dot{f}_2(t_0))\not=0$ an.
+
+**Beispiel 6.** Für die in Beispiel 5 angeführte "8"-Kurve mit $$
+  f(t) = \begin{pmatrix} 2\cdot\cos{t} \\ 4\cdot\sin{(2\cdot t)} \end{pmatrix} $$
+berechnen sich die Ableitungen der Koordinatenfunktionen $$
+  \dot{f}_1(t)=-2\cdot\sin{t}\quad\text{sowie}\quad 
+  \dot{f}_2(t)=8\cdot\cos{(2\cdot t)} $$
+Es ergeben sich hiermit $$
+  \dot{f}_1(t)=-2\cdot\sin{t}=0\;\leftrightarrow\; t_0=j\cdot\pi\quad\text{sowie}\quad 
+  \dot{f}_2(t)=8\cdot\cos{(2\cdot t)}=0\;\leftrightarrow\; t_0=\frac{2\cdot k+1}{4}\cdot\pi $$
+worin $j\in\mathbb{Z}$ beziehungsweise $k\in\mathbb{Z}$ gelten. Offensichtlich können beide Ableitungen nicht gleichzeitig 'Null' ergeben, so dass beispielsweise im Intervall $[0,2\pi)$ folgende horizontale beziehungsweise vertikale Tangenten existieren. Machen Sie sich die Lagen dieser Tangenten in der vorstehenden Abbildung graphisch geometrisch bewusst.
+
+| Argument | Stützpunkt | Richtungsvektor | Eigenschaft |
+| :------- | :------- | :------- | :------ |
+| $t_0=0$ | $f(t_0)=(2,0)^\top$ | $\dot{f}(t_0)=(0,8)^\top$ | vertikal |
+| $t_0=\frac{1}{4}\pi$ | $f(t_0)=\left(\sqrt{2},4\right)^\top$ | $\dot{f}(t_0)=(-\sqrt{2},0)^\top$ | horizontal |
+| $t_0=\frac{3}{4}\pi$ | $f(t_0)=(-\sqrt{2},-4)^\top$ | $\dot{f}(t_0)=(-\sqrt{2},0)^\top$ | horizontal |
+| $t_0=\pi$ | $f(t_0)=(-2,0)^\top$ | $\dot{f}(t_0)=(0,8)^\top$ | vertikal |
+| $t_0=\frac{5}{4}\pi$ | $f(t_0)=(-\sqrt{2},4)^\top$ | $\dot{f}(t_0)=(\sqrt{2},0)^\top$ | horizontal |
+| $t_0=\frac{7}{4}\pi$ | $f(t_0)=(\sqrt{2},-4)^\top$ | $\dot{f}(t_0)=(\sqrt{2},0)^\top$ | horizontal |
+
+**Bemerkung 2.** Umgekehrt lassen sich aus einer Lissajous-Figur häufig Aussagen über die Parameter einer zugehörigen vektorwertigen Funktion ableiten. Mit der obigen Bezeichnung lassen sich bestimmen:
+
+1. **Amplituden:** Mit Hilfe einer "Bounding box" lassen sich die Amplituden $A$ beziehungsweise $B$ der Koordinatenfunktion bestimmen. Ist $$ \dot{f}(t)=(\dot{f}_1(t),\dot{f}_2(t))\not= o\quad\text{für}\quad t\in D $$ d. h. ist der Tangentenvektor verschieden vom Nullvektor, so lässt sich $A$ als Abstand gegenüberliegender vertikaler Tangenten deuten. Analog die Amplitude $B$ als Abstand horizontaler Tangenten. $$ f(t)\in[-A,A]\times[-B,B]\quad\leadsto\quad A\,,B $$
+2. **Frequenzverhältnis:** Die Lissajous-Figur ist periodisch, falls das Frequenzverhältnis $a:b$ eine rationale Zahl ist. In diesem Fall lässt sich $a:b$ als Verhältnis der Anzahl der Punkte mit vertikalen zu - mit horizontalen Tangenten während eines geschlossenen "Umlaufs" ermitteln.
+3. **Phasendifferenz.** Gilt für das Frequenzverhältnis $a:b=1:1$, so lässt sich die Phasendifferenz $\delta-\varphi$ zwischen beiden Schwingungsvorgängen berechnen. Mit dem Ansatz $$ \dot{f}_1(t)=a\cdot A\cdot\cos{(a\cdot t+\delta)}=0 \quad\leftrightarrow\quad t_0=\frac{1}{a}\cdot\left(\frac{2k+1}{2}\cdot\pi-\delta\right) $$ für eine vertiakle Tangente folgen $$ f_1(t_0)=A\cdot\sin{\left(a\cdot\frac{1}{a}\cdot\left(\frac{2k+1}{2}\cdot\pi-\delta\right)+\delta\right)}=A\cdot\sin{\left(\frac{2k+1}{2}\cdot\pi\right)} $$ sowie unter Benutzung der Annahme $b/a=1$ und dem Additionstheorem für den Sinus $$
+  \begin{split}
+  f_2(t_0) & = B\cdot\sin{\left(b\cdot\frac{1}{a}\cdot\left(\frac{2k+1}{2}\cdot\pi-\delta\right)+\varphi\right)}\stackrel{b/a=1}{=}B\cdot\sin{\left(\frac{2k+1}{2}\cdot\pi-(\delta-\varphi)\right)} \\
+  & = B\cdot\left[\sin{\left(\frac{2k+1}{2}\cdot\pi\right)}\cdot\cos{(\delta-\varphi)}-\sin{(\delta-\varphi)}\cdot\cos{\left(\frac{2k+1}{2}\cdot\pi\right)}\right] \\
+  & = B\cdot\sin{\left(\frac{2k+1}{2}\cdot\pi\right)}\cdot\cos{(\delta-\varphi)}
+  \end{split} $$ Damit folgt schließlich $$ A\cdot f_2(t_0)= A\cdot B\cdot\sin{\left(\frac{2k+1}{2}\cdot\pi\right)}\cdot\cos{(\delta-\varphi)}=B\cdot f_1(t_0)\cdot\cos{(\delta-\varphi)}\quad\leftrightarrow\quad \underline{\cos{(\delta-\varphi)}=\frac{A}{B}\cdot\frac{f_2(t_0)}{f_1(t_0)}} $$
+
+
+
+Sicher gewusst
+===
+
+
+Testen Sie Ihr Wissen bei der Beantwortung der nachstehenden Fragen.
+
+**Frage 1.** Für die Binomialkoeffizienten $$
+  \binom{n}{i} \quad\text{mit}\quad n\in\mathbb{N}\,,\;i\in\mathbb{N}\,,\;i\leq n
+$$ gilt die Symmetrie
+$$
+  \binom{n}{i}=\binom{n}{n-i}
+$$
+
+[[X]] Wahr
+[[ ]] Falsch
+[[?]] Die Binomialkoeffizienten berechnen sich für $n\in\mathbb{N}$ und $i\in\mathbb{N}$ mit $i\leq n$ nach der Formel $$
+  \binom{n}{i}=\frac{n!}{i!\cdot(n-i)!}
+$$
+****************************************
+
+Der Binomialkoeffizient berechnet sich $$
+  \binom{n}{n-i}=\frac{n!}{(n-i)!\cdot(n-(n-i))!}=\frac{n!}{(n-i)!\cdot i!}=\binom{n}{i} $$
+
+****************************************
+
+**Frage 2.** Gegeben ist das Kontrollpolygon $$
+  P_0(1,0)\,,\quad P_1(1,1)\,,\quad P_2(0,1)
+$$ einer Bézier-Kurve $c$. Kennzeichnen Sie die wahren Aussagen in den folgenden Aussagen.
+
+[[ ]] $c$ enthält den Punkt $P_1$.
+[[X]] $c$ berührt die Geraden $y=1$ und $x=1$.
+[[ ]] $c$ berührt die Geraden $y=0$ und $x=0$.
+[[X]] $c$ enthält den Punkt $P_0$.
+[[X]] $c$ liegt im Inneren und dem Rand des Dreiecks $P_0P_1P_2$.
+[[?]] Die Bézier-Kurve $c$ besitzt die Parametrisierung in Bézierdarstellung $$ x(t)=\sum_{i=0}^n{B_i^2(t)\cdot p_i}\,,\quad t\in[0,1] $$ worin $B_i^2(t)$ die Bernsteinpolynome zweiten Grades und $p_i$ die Ortsvektoren der Kontrollpunkte bezeichnen.
+****************************************
+
+Die Bézier-Kurve $c$ interpoliert den ersten und letzten Punkt des Kontrollpolygons, also $P_0$ und $P_2$. $P_1\not\in c$, da $$ p_1\not=x(t)=(1-t)^2\cdot p_0+2\cdot(1-t)\cdot t\cdot p_1+t^2\cdot p_2\quad\forall\, t\in[0,1] $$ was nach Einsetzen der Ortsvektoren für $p_i$ ersichtlich ist. $c$ besitzt in $P_0$ den Tangentenvektor $2\cdot(p_1-p_0)$ und in $P_2$ den Tangentenvektor $2\cdot(p_2-p_1)$. Die Bézier-Kurve $c$ liegt in der konvexen Hülle der Kontrollpunkte.
+
+****************************************
+
+[^1]: Genauer heißt $X=f(t)$ Bézierdarstellung, da diese Parametrisierung in der Basis der Bernsteinpolynome (hier zunächst ohne Nachweis) angegeben ist.
