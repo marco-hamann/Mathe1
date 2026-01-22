@@ -32,7 +32,7 @@ https://github.com/marco-hamann/Mathe1
 
 
 Überblick
------
+====
 
 
 In diesem ersten Kapitel lernen Sie allgemeine, elementare Begriffe der Mathematik kennen, die grundlegend für das Verständnis des strukturellen mathematischen Vorgehens sind. Dazu zählen u. a.
@@ -51,7 +51,7 @@ Für einen Überblick über die Themen dieses Kapitels sehen Sie in der nachsteh
 
 
 Lernziele
------
+====
 
 
 * Sie wissen, was eine logische Aussage ist und wie sie sich von anderen sprachlich und grammatikalisch korrekten Sätzen unterscheidet.
@@ -954,7 +954,7 @@ $$ lässt sich aufgrund der Beschränktheit von $x$ und $y$ in $(x,y)$ als achse
 
 
 Überblick
------
+===
 
 
 In diesem Kapitel soll der Zahlbegriff betrachtet werden. Ein Fokus liegt dabei auf dem Lösen algebraischer Gleichungen. Ausgehend von den reellen Zahlen werden hierfür die komplexen Zahlen eingeführt. Es werden u. a. betrachtet:
@@ -967,11 +967,11 @@ In diesem Kapitel soll der Zahlbegriff betrachtet werden. Ein Fokus liegt dabei 
 
 Für einen Überblick über die Themen dieses Kapitels sehen Sie in der nachstehenden Graphik einige zentrale Begriffe. Schlagen Sie diese in diesem Abschnitt nach.
 
-![Wordcloud Mengen](img/wc_zahlen.png)<!-- style="display: block; margin-left: auto; margin-right: auto; max-width: 1000px;" -->
+![Wordcloud Gleichungen](img/wc_zahlen.png)<!-- style="display: block; margin-left: auto; margin-right: auto; max-width: 1000px;" -->
 
 
 Lernziele
------
+====
 
 
 * Sie können die Gesetze für die Grundrechenarten zur Berechnung von Summen und Produkten endlich vieler reeller Zahlen anwenden.
@@ -2798,6 +2798,10 @@ Die Quaternion beschreibt eine Drehung um $ 90^\circ $ um die $x$-Achse.
 ## Lineare Algebra
 
 
+Überblick
+===
+
+
 Ziel dieses Kapitels ist eine Einführung in den Themenbereich der linearen Algebra. Schwerpunkt ist unter anderem eine Vertiefung aus der Schulmathematik bekannter Begriffe "Vektor" und "lineare Gleichungssysteme". Darüber hinaus werden allgemeinere algebraische Strukturen wie Vektorräume, Matrizen und Determinanten betrachtet. Eine Verbindung zur analytischen Geometrie der Ebene und des dreidimensionalen Raumes wird nachfolgend gezogen.
 
 Für einen Überblick über die Themen dieses Kapitels sehen Sie in der nachstehenden Graphik einige zentrale Begriffe. Schlagen Sie diese in diesem Abschnitt nach.
@@ -2806,7 +2810,7 @@ Für einen Überblick über die Themen dieses Kapitels sehen Sie in der nachsteh
 
 
 Lernziele
------
+===
 
 
 * Sie kennen die algebraische Struktur 'Vektorraum' und nutzen diese im Umgang mit vektoriellen Größen in physikalischen und technischen Anwendungen, z. B. resultierende Kraft eines Systems von Kräften
@@ -5795,8 +5799,8 @@ $$ Dies lässt sich durch Einsetzen in die Eigenwertaufgabe prüfen $$
   \begin{pmatrix} 3 & 1 & -1 \\ 2 & 2 & -1 \\ 2 & 2 & 0\end{pmatrix}\cdot
   \begin{pmatrix} 1 \\ 1 \\ 2 \end{pmatrix}=
   \begin{pmatrix} 2 \\ 2 \\ 4 \end{pmatrix}=
-  2\cdot\begin{pmatrix} 1 \\ 1 \\ 2 \end{pmatrix}
-$$ Der Eigenraum besitzt hier die Dimension $3-2=1$, da der Rang der Koeffizientenmatrix zwei ist. (Die Zeilen eins und drei der Koeffizientenmatrix des Gleichungssystems sind identisch.
+  2\cdot\begin{pmatrix} 1 \\ 1 \\ 2 \end{pmatrix} $$ 
+Der Eigenraum besitzt hier die Dimension $3-2=1$, da der Rang der Koeffizientenmatrix zwei ist. (Die Zeilen eins und drei der Koeffizientenmatrix des Gleichungssystems sind identisch.
 
 ****************************************
 
@@ -5811,21 +5815,29 @@ $$ Der Eigenraum besitzt hier die Dimension $3-2=1$, da der Rang der Koeffizient
 ## Analytische Geometrie
 
 
-Die analytische Geometrie beschäftigt sich mit Eigenschaften ausgezeichneter Punktmengen in der Ebene oder im dreidimensionalen Raum und verwendet algebraische Methoden - vor allem der linearen Algebra - zur Beantwortung von Fragen beispielsweise zur relativen Lage von Punkten, Geraden und Ebenen.
+Überblick
+====
+
+Die analytische Geometrie beschäftigt sich mit Eigenschaften ausgezeichneter Punktmengen in der Ebene oder beziehungsweise im dreidimensionalen Raum. Hierfür werden Methoden vor allem der linearen Algebra zur Untersuchung von Fragen wie zur relativen Lage von Punkten, Geraden und Ebenen benutzt. 
+
+Im Bezug zur Kraft- und Momentenanalyse in der Statik wird der Fokus auf orientierte Geraden des dreidimensionalen euklidischen Raums gerichtet. Diese lassen sich - unter Verwendung geeigneter Koordinaten - als Grundelemente in einem höherdimensionalen affinen Raum betrachten.
 
 Für einen Überblick über die Themen dieses Kapitels sehen Sie in der nachstehenden Graphik einige zentrale Begriffe. Schlagen Sie diese in diesem Abschnitt nach.
 
-![Wordcloud Algebra](img/wc_geometrie.png)<!-- style="display: block; margin-left: auto; margin-right: auto; max-width: 1000px;" -->
+![Wordcloud Geometrie](img/wc_analytische-geometrie_v2.png)<!-- style="display: block; margin-left: auto; margin-right: auto; max-width: 1000px;" -->
 
 
 Lernziele
------
+====
 
 
 * Sie kennen den Begriff eines affinen Raumes, der einen Vektorraum mit einem zuordenbaren Punktraum verbindet. Die Begriffe 'Ortsvektor' eines Punktes beziehungsweise 'affiner Unterraum' leiten sich aus dieser Beziehung ab.
 * Sie können Grundelemente Punkte und Geraden einer affinen Ebene durch analytische Hilfsmittel wie Gleichungen beziehungsweise Parameterdarstellungen beschreiben. Analog können Grundelemente eines affinen Raumes verschiedenlich analytisch dargestellt werden.
 * Die geometrische Bedeutung der Koeffizienten in der Hesseschen Normalform einer Geraden- / Ebenengleichung kann genutzt werden, um die relative Lagebeziehung von Grundelementen zu beschreiben. 
-* Daneben lassen sich unter Benutzung des Vektorkalküls Winkel bzw. Abstände zwischen Grundelementen berechnen.
+* Unter Benutzung des Vektorkalküls lassen sich Winkel beziehungsweise Abstände zwischen Grundelementen berechnen.
+* Die Wirkungslinie einer (linienflüchtigen) Kraft im dreidimensionalen Raum unserer Anschauung wird unter Verwendung von Speerkoordinaten berechnet. Der Bezug zur Richtung der Kraft und des hierdurch erzeugten Drehmoments bezogen auf den Ursprung des Koordinatensystems können hergestellt werden.
+* Die Regeln zur Kraftreduktion können für ebene Kraftsysteme angewendet werden, um Resultierende zu konstruieren beziehungsweise imVektorkalkül des dreidimesionalen Raumes zu berechnen.
+* Kraft- und Momentenanalyse räumlicher Kraftsysteme können unter Benutzung von Speerkoordinaten berechnet werden.
 
 
 ### Affine Räume
@@ -6399,6 +6411,26 @@ Für die resultierende Kraft $$ \vec{F}_{res}=\sum_{j=1}^n{\vec{F}_j} $$ und das
 
 ## Differentialrechnung
 
+
+Überblick
+====
+
+...
+
+Für einen Überblick über die Themen dieses Kapitels sehen Sie in der nachstehenden Graphik einige zentrale Begriffe. Schlagen Sie diese in diesem Abschnitt nach.
+
+<img src="img/wc_funktionen.png" 
+     style="display: block; margin: 0 auto; max-width: 100%; height: auto; width: 100%;" 
+     alt="Beschreibung" />
+
+
+Lernziele
+====
+
+
+* ...
+
+
 ### Funktionsbegriff
 
 
@@ -6731,8 +6763,8 @@ Bestimmen Sie die Wertemenge von $f_m$.
 Für die (kleinste) natürliche Zahl $n=0$ gilt $f_m(n)=0$. Hieraus folgen unmittelbar $$
   f_m(1)=1\,,\quad f_m(2)=2\,,\quad ...,\quad f_m(m-1)=m-1
 $$ Mit $f_m(n)=f_m(n+m)=r$ für alle $n\in\mathbb{N}$ folgt hieraus schließlich $$
-  f_m(a\cdot m+r)=r \quad\text{mit}\quad r\in\{0,1,2,...,m-1\}
-$$ für beliebige $a\in}mathbb{N}$.
+  f_m(a\cdot m+r)=r \quad\text{mit}\quad r\in\{0,1,2,...,m-1\}  $$ 
+für beliebige $a\in}mathbb{N}$.
 
 ****************************************
 
@@ -7542,7 +7574,12 @@ Werden die Änderungen einer Größe als Unsicherheiten beispielsweise während 
 <!-- style="background-color: lightgray;"-->
 > **Grundbegriffe der Fehlerrechnung.** 
 >
-> Bezeichnet $x_0$ den wahren, aber oft unbekannten Wert einer zu messenden Größe und $x$ den gemessenen, aber fehlerbehafteten Wert dieser Größe, so bezeichnen die in nachstehender Tabelle aufgeführten Terme verschiedene Fehlergrößen.
+> Bezeichnen 
+>
+>* $x_0$ den wahren, aber oft unbekannten Wert einer zu messenden Größe und 
+>* $x$ den gemessenen, aber fehlerbehafteten Wert dieser Größe, 
+>
+> so bezeichnen die in nachstehender Tabelle aufgeführten Terme verschiedene Fehlergrößen.
 >
 ><!-- data-type="none" -->
 >| Fehlergröße | Bezeichnung |
