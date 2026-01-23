@@ -47,8 +47,16 @@ Neben dieser strukturellen Sicht wird hierbei auch sichtbar, wie mathematische A
 
 Für einen Überblick über die Themen dieses Kapitels sehen Sie in der nachstehenden Graphik einige zentrale Begriffe. Schlagen Sie diese in diesem Abschnitt nach.
 
-![Wordcloud Mengen](img/wc_mengen.png)<!-- style="display: block; margin-left: auto; margin-right: auto; max-width: 1000px;" -->
-
+![Mengenlehre und Logik](./img/wc_mengen.png)<!--
+      title = "Zentrale Begriffe und Themen dieses Abschnitts"
+      style = "display: block;
+        margin: 0 auto; 
+        max-width: 100%;  
+        width: 100%;
+        height: auto;
+        border: 1px solid #ddd;
+        border-radius: 4px;"
+    -->
 
 Lernziele
 ====
@@ -967,7 +975,16 @@ In diesem Kapitel soll der Zahlbegriff betrachtet werden. Ein Fokus liegt dabei 
 
 Für einen Überblick über die Themen dieses Kapitels sehen Sie in der nachstehenden Graphik einige zentrale Begriffe. Schlagen Sie diese in diesem Abschnitt nach.
 
-![Wordcloud Gleichungen](img/wc_zahlen.png)<!-- style="display: block; margin-left: auto; margin-right: auto; max-width: 1000px;" -->
+![Zahlen und Gleichungen](./img/wc_zahlen.png)<!--
+      title = "Zentrale Begriffe und Themen dieses Abschnitts"
+      style = "display: block;
+        margin: 0 auto; 
+        max-width: 100%;  
+        width: 100%;
+        height: auto;
+        border: 1px solid #ddd;
+        border-radius: 4px;"
+    -->
 
 
 Lernziele
@@ -2806,7 +2823,16 @@ Ziel dieses Kapitels ist eine Einführung in den Themenbereich der linearen Alge
 
 Für einen Überblick über die Themen dieses Kapitels sehen Sie in der nachstehenden Graphik einige zentrale Begriffe. Schlagen Sie diese in diesem Abschnitt nach.
 
-![Wordcloud Algebra](img/wc_algebra-1.png)<!-- style="display: block; margin-left: auto; margin-right: auto; max-width: 1000px;" -->
+![Lineare Algebra](./img/wc_algebra-1.png)<!--
+      title = "Zentrale Begriffe und Themen dieses Abschnitts"
+      style = "display: block;
+        margin: 0 auto; 
+        max-width: 100%;  
+        width: 100%;
+        height: auto;
+        border: 1px solid #ddd;
+        border-radius: 4px;"
+    -->
 
 
 Lernziele
@@ -5824,7 +5850,16 @@ Im Bezug zur Kraft- und Momentenanalyse in der Statik wird der Fokus auf orienti
 
 Für einen Überblick über die Themen dieses Kapitels sehen Sie in der nachstehenden Graphik einige zentrale Begriffe. Schlagen Sie diese in diesem Abschnitt nach.
 
-![Wordcloud Geometrie](img/wc_analytische-geometrie_v2.png)<!-- style="display: block; margin-left: auto; margin-right: auto; max-width: 1000px;" -->
+![Analytische Geometrie](./img/wc_analytische-geometrie_v2.png)<!--
+      title = "Zentrale Begriffe und Themen dieses Abschnitts"
+      style = "display: block;
+        margin: 0 auto; 
+        max-width: 100%;  
+        width: 100%;
+        height: auto;
+        border: 1px solid #ddd;
+        border-radius: 4px;"
+    -->
 
 
 Lernziele
@@ -6415,20 +6450,42 @@ Für die resultierende Kraft $$ \vec{F}_{res}=\sum_{j=1}^n{\vec{F}_j} $$ und das
 Überblick
 ====
 
-...
+In der Ingenieurwissenschaft, insbesondere im Maschinenbau, ist die Fähigkeit, Veränderungsraten zu beschreiben und zu analysieren, von zentraler Bedeutung. Die Differentialrechnung liefert die mathematischen Werkzeuge dafür. 
+
+* Zunächst wird der [Funktionsbegriff](#Funktionsbegriff) betrachtet: Eine Funktion beschreibt, wie sich ein Ausgabewert (abhängige Variable) ändert, wenn sich ein Eingabewert (unabhängige Variable) verändert. In der Technik repräsentieren Funktionen oft physikalische Zusammenhänge – beispielsweise die Weg-Zeit-Funktion eines bewegten Körpers oder die Temperaturverteilung in einem Bauteil.
+* Ein zentraler Aspekt ist die [Stetigkeit](#Stetigkeit) einer Funktion: Eine Funktion ist stetig, wenn sie keine Sprünge oder Unterbrechungen aufweist. In der Praxis bedeutet das, dass kleine Änderungen der Eingabe zu kleinen Änderungen der Ausgabe führen – eine Voraussetzung dafür, dass physikalische Prozesse realistisch modelliert werden können.
+* Die [Differenzierbarkeit](#Differenzierbarkeit) ist eine stärkere Eigenschaft: Eine Funktion ist differenzierbar, wenn sie an einer Stelle eine eindeutige Tangente besitzt – also eine definierte momentane Änderungsrate (Ableitung). Diese Änderungsrate ist entscheidend, um Geschwindigkeiten, Beschleunigungen oder Spannungen in Bauteilen zu berechnen. Nicht jede stetige Funktion ist differenzierbar – scharfe Ecken oder Knicke sind typische Beispiele für Nicht-Differenzierbarkeit.
+* Das [Differential](#Differential) ist ein mathematisches Konzept, das die lokale lineare Näherung einer Funktion beschreibt. Es ermöglicht, kleine Änderungen der Eingabe auf die resultierende Änderung der Ausgabe zu schätzen – eine Grundlage für Näherungsverfahren und Fehlerabschätzungen in der Technik.
+* Schließlich werden [vektorwertige Funktionen](#Differenzierbarkeit-von-Vektoren) betrachtet, die mehrere Ausgabewerte gleichzeitig beschreiben – beispielsweise die Position eines Robotergelenks im Raum als Funktion der Zeit. Die Differenzierbarkeit solcher Funktionen bedeutet, dass jede Komponente differenzierbar ist. Die Ableitung ist dann ein Vektor, der die Geschwindigkeit oder Richtungsänderung des Objekts beschreibt – ein zentrales Werkzeug in der Kinematik und Dynamik.
 
 Für einen Überblick über die Themen dieses Kapitels sehen Sie in der nachstehenden Graphik einige zentrale Begriffe. Schlagen Sie diese in diesem Abschnitt nach.
 
-<img src="img/wc_funktionen.png" 
-     style="display: block; margin: 0 auto; max-width: 100%; height: auto; width: 100%;" 
-     alt="Beschreibung" />
+![Differentialrechnung](./img/wc_funktionen.png)<!--
+      title = "Zentrale Begriffe und Themen dieses Abschnitts"
+      style = "display: block;
+        margin: 0 auto; 
+        max-width: 100%;  
+        width: 100%;
+        height: auto;
+        border: 1px solid #ddd;
+        border-radius: 4px;"
+    -->
 
 
 Lernziele
 ====
 
+Nach Bearbeitung dieses Abschnitts können Sie:
 
-* ...
+- den Funktionsbegriff korrekt erklären und Beispiele aus dem Maschinenbau (z. B. Weg-Zeit-Gesetze) als Funktionen darstellen.
+- den Begriff der Stetigkeit verstehen und anhand von Graphen oder physikalischen Modellen erkennen, wann eine Funktion stetig ist – insbesondere im Kontext realer technischer Prozesse.
+- die Differenzierbarkeit einer Funktion an einer Stelle erkennen und erklären, warum sie eine stärkere Bedingung als Stetigkeit ist.
+- die Ableitung einer Funktion als momentane Änderungsrate interpretieren und in technischen Kontexten (z. B. Geschwindigkeit, Beschleunigung, Spannungsgradient) anwenden.
+- das Differential als lineare Näherung einer Funktion verstehen und es zur Schätzung kleiner Änderungen nutzen (z. B. bei Fehlerfortpflanzung).
+- vektorwertige Funktionen (z. B. Ortsvektor in Abhängigkeit von der Zeit) erkennen und deren Differenzierbarkeit überprüfen.
+- die Ableitung einer vektorwertigen Funktion interpretieren – insbesondere als Geschwindigkeitsvektor in der Kinematik – und sie in einfachen Anwendungen berechnen.
+
+Diese Lernziele unterstützen Sie dabei, die Differentialrechnung nicht nur als abstraktes mathematisches Werkzeug, sondern als praktisches Instrument für die Modellierung und Analyse technischer Systeme im Maschinenbau zu verstehen.
 
 
 ### Funktionsbegriff
